@@ -13,17 +13,17 @@ class CrossIndustryInvoiceType
     /**
      * @var \horstoeko\zugferd\entities\basicwl\ram\ExchangedDocumentContextType $exchangedDocumentContext
      */
-    private $exchangedDocumentContext = null;
+    private $exchangedDocumentContext;
 
     /**
      * @var \horstoeko\zugferd\entities\basicwl\ram\ExchangedDocumentType $exchangedDocument
      */
-    private $exchangedDocument = null;
+    private $exchangedDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\basicwl\ram\SupplyChainTradeTransactionType $supplyChainTradeTransaction
      */
-    private $supplyChainTradeTransaction = null;
+    private $supplyChainTradeTransaction;
 
     /**
      * Gets as exchangedDocumentContext
@@ -37,11 +37,8 @@ class CrossIndustryInvoiceType
 
     /**
      * Sets a new exchangedDocumentContext
-     *
-     * @param  \horstoeko\zugferd\entities\basicwl\ram\ExchangedDocumentContextType $exchangedDocumentContext
-     * @return self
      */
-    public function setExchangedDocumentContext(\horstoeko\zugferd\entities\basicwl\ram\ExchangedDocumentContextType $exchangedDocumentContext)
+    public function setExchangedDocumentContext(\horstoeko\zugferd\entities\basicwl\ram\ExchangedDocumentContextType $exchangedDocumentContext): self
     {
         $this->exchangedDocumentContext = $exchangedDocumentContext;
         return $this;
@@ -59,11 +56,8 @@ class CrossIndustryInvoiceType
 
     /**
      * Sets a new exchangedDocument
-     *
-     * @param  \horstoeko\zugferd\entities\basicwl\ram\ExchangedDocumentType $exchangedDocument
-     * @return self
      */
-    public function setExchangedDocument(\horstoeko\zugferd\entities\basicwl\ram\ExchangedDocumentType $exchangedDocument)
+    public function setExchangedDocument(\horstoeko\zugferd\entities\basicwl\ram\ExchangedDocumentType $exchangedDocument): self
     {
         $this->exchangedDocument = $exchangedDocument;
         return $this;
@@ -81,11 +75,8 @@ class CrossIndustryInvoiceType
 
     /**
      * Sets a new supplyChainTradeTransaction
-     *
-     * @param  \horstoeko\zugferd\entities\basicwl\ram\SupplyChainTradeTransactionType $supplyChainTradeTransaction
-     * @return self
      */
-    public function setSupplyChainTradeTransaction(\horstoeko\zugferd\entities\basicwl\ram\SupplyChainTradeTransactionType $supplyChainTradeTransaction)
+    public function setSupplyChainTradeTransaction(\horstoeko\zugferd\entities\basicwl\ram\SupplyChainTradeTransactionType $supplyChainTradeTransaction): self
     {
         $this->supplyChainTradeTransaction = $supplyChainTradeTransaction;
         return $this;

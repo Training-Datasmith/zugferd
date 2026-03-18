@@ -13,17 +13,17 @@ class ExchangedDocumentContextType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IndicatorType $testIndicator
      */
-    private $testIndicator = null;
+    private $testIndicator;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter
      */
-    private $businessProcessSpecifiedDocumentContextParameter = null;
+    private $businessProcessSpecifiedDocumentContextParameter;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter
      */
-    private $guidelineSpecifiedDocumentContextParameter = null;
+    private $guidelineSpecifiedDocumentContextParameter;
 
     /**
      * Gets as testIndicator
@@ -39,9 +39,8 @@ class ExchangedDocumentContextType
      * Sets a new testIndicator
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IndicatorType $testIndicator
-     * @return self
      */
-    public function setTestIndicator(?\horstoeko\zugferd\entities\extended\udt\IndicatorType $testIndicator = null)
+    public function setTestIndicator(?\horstoeko\zugferd\entities\extended\udt\IndicatorType $testIndicator = null): self
     {
         $this->testIndicator = $testIndicator;
         return $this;
@@ -61,9 +60,8 @@ class ExchangedDocumentContextType
      * Sets a new businessProcessSpecifiedDocumentContextParameter
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter
-     * @return self
      */
-    public function setBusinessProcessSpecifiedDocumentContextParameter(?\horstoeko\zugferd\entities\extended\ram\DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter = null)
+    public function setBusinessProcessSpecifiedDocumentContextParameter(?\horstoeko\zugferd\entities\extended\ram\DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter = null): self
     {
         $this->businessProcessSpecifiedDocumentContextParameter = $businessProcessSpecifiedDocumentContextParameter;
         return $this;
@@ -81,11 +79,8 @@ class ExchangedDocumentContextType
 
     /**
      * Sets a new guidelineSpecifiedDocumentContextParameter
-     *
-     * @param  \horstoeko\zugferd\entities\extended\ram\DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter
-     * @return self
      */
-    public function setGuidelineSpecifiedDocumentContextParameter(\horstoeko\zugferd\entities\extended\ram\DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter)
+    public function setGuidelineSpecifiedDocumentContextParameter(\horstoeko\zugferd\entities\extended\ram\DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter): self
     {
         $this->guidelineSpecifiedDocumentContextParameter = $guidelineSpecifiedDocumentContextParameter;
         return $this;

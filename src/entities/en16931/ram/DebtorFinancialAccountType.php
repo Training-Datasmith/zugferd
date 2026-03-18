@@ -13,7 +13,7 @@ class DebtorFinancialAccountType
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType $iBANID
      */
-    private $iBANID = null;
+    private $iBANID;
 
     /**
      * Gets as iBANID
@@ -27,11 +27,8 @@ class DebtorFinancialAccountType
 
     /**
      * Sets a new iBANID
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\udt\IDType $iBANID
-     * @return self
      */
-    public function setIBANID(\horstoeko\zugferd\entities\en16931\udt\IDType $iBANID)
+    public function setIBANID(\horstoeko\zugferd\entities\en16931\udt\IDType $iBANID): self
     {
         $this->iBANID = $iBANID;
         return $this;

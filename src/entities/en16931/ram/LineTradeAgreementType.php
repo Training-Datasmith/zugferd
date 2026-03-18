@@ -13,17 +13,17 @@ class LineTradeAgreementType
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType $buyerOrderReferencedDocument
      */
-    private $buyerOrderReferencedDocument = null;
+    private $buyerOrderReferencedDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\TradePriceType $grossPriceProductTradePrice
      */
-    private $grossPriceProductTradePrice = null;
+    private $grossPriceProductTradePrice;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\TradePriceType $netPriceProductTradePrice
      */
-    private $netPriceProductTradePrice = null;
+    private $netPriceProductTradePrice;
 
     /**
      * Gets as buyerOrderReferencedDocument
@@ -39,9 +39,8 @@ class LineTradeAgreementType
      * Sets a new buyerOrderReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType $buyerOrderReferencedDocument
-     * @return self
      */
-    public function setBuyerOrderReferencedDocument(?\horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType $buyerOrderReferencedDocument = null)
+    public function setBuyerOrderReferencedDocument(?\horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType $buyerOrderReferencedDocument = null): self
     {
         $this->buyerOrderReferencedDocument = $buyerOrderReferencedDocument;
         return $this;
@@ -61,9 +60,8 @@ class LineTradeAgreementType
      * Sets a new grossPriceProductTradePrice
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\TradePriceType $grossPriceProductTradePrice
-     * @return self
      */
-    public function setGrossPriceProductTradePrice(?\horstoeko\zugferd\entities\en16931\ram\TradePriceType $grossPriceProductTradePrice = null)
+    public function setGrossPriceProductTradePrice(?\horstoeko\zugferd\entities\en16931\ram\TradePriceType $grossPriceProductTradePrice = null): self
     {
         $this->grossPriceProductTradePrice = $grossPriceProductTradePrice;
         return $this;
@@ -81,11 +79,8 @@ class LineTradeAgreementType
 
     /**
      * Sets a new netPriceProductTradePrice
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\ram\TradePriceType $netPriceProductTradePrice
-     * @return self
      */
-    public function setNetPriceProductTradePrice(\horstoeko\zugferd\entities\en16931\ram\TradePriceType $netPriceProductTradePrice)
+    public function setNetPriceProductTradePrice(\horstoeko\zugferd\entities\en16931\ram\TradePriceType $netPriceProductTradePrice): self
     {
         $this->netPriceProductTradePrice = $netPriceProductTradePrice;
         return $this;

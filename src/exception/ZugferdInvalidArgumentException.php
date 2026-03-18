@@ -24,9 +24,6 @@ class ZugferdInvalidArgumentException extends ZugferdBaseException
 {
     /**
      * Constructor
-     *
-     * @param string         $message
-     * @param Throwable|null $previous
      */
     public function __construct(string $message, ?Throwable $previous = null)
     {

@@ -24,9 +24,6 @@ class ZugferdUnknownProfileIdException extends ZugferdBaseException
 {
     /**
      * Constructor
-     *
-     * @param int            $profileId
-     * @param Throwable|null $previous
      */
     public function __construct(int $profileId, ?Throwable $previous = null)
     {

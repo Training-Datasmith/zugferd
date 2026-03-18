@@ -13,12 +13,12 @@ class HeaderTradeSettlementType
     /**
      * @var string $invoiceCurrencyCode
      */
-    private $invoiceCurrencyCode = null;
+    private $invoiceCurrencyCode;
 
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation
      */
-    private $specifiedTradeSettlementHeaderMonetarySummation = null;
+    private $specifiedTradeSettlementHeaderMonetarySummation;
 
     /**
      * Gets as invoiceCurrencyCode
@@ -34,9 +34,8 @@ class HeaderTradeSettlementType
      * Sets a new invoiceCurrencyCode
      *
      * @param  string $invoiceCurrencyCode
-     * @return self
      */
-    public function setInvoiceCurrencyCode($invoiceCurrencyCode)
+    public function setInvoiceCurrencyCode($invoiceCurrencyCode): self
     {
         $this->invoiceCurrencyCode = $invoiceCurrencyCode;
         return $this;
@@ -54,11 +53,8 @@ class HeaderTradeSettlementType
 
     /**
      * Sets a new specifiedTradeSettlementHeaderMonetarySummation
-     *
-     * @param  \horstoeko\zugferd\entities\minimum\ram\TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation
-     * @return self
      */
-    public function setSpecifiedTradeSettlementHeaderMonetarySummation(\horstoeko\zugferd\entities\minimum\ram\TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation)
+    public function setSpecifiedTradeSettlementHeaderMonetarySummation(\horstoeko\zugferd\entities\minimum\ram\TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation): self
     {
         $this->specifiedTradeSettlementHeaderMonetarySummation = $specifiedTradeSettlementHeaderMonetarySummation;
         return $this;

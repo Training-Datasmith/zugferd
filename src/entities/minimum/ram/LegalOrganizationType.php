@@ -13,7 +13,7 @@ class LegalOrganizationType
     /**
      * @var \horstoeko\zugferd\entities\minimum\udt\IDType $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * Gets as iD
@@ -29,9 +29,8 @@ class LegalOrganizationType
      * Sets a new iD
      *
      * @param  \horstoeko\zugferd\entities\minimum\udt\IDType $iD
-     * @return self
      */
-    public function setID(?\horstoeko\zugferd\entities\minimum\udt\IDType $iD = null)
+    public function setID(?\horstoeko\zugferd\entities\minimum\udt\IDType $iD = null): self
     {
         $this->iD = $iD;
         return $this;

@@ -13,7 +13,7 @@ class LineTradeDeliveryType
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\QuantityType $billedQuantity
      */
-    private $billedQuantity = null;
+    private $billedQuantity;
 
     /**
      * Gets as billedQuantity
@@ -27,11 +27,8 @@ class LineTradeDeliveryType
 
     /**
      * Sets a new billedQuantity
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\udt\QuantityType $billedQuantity
-     * @return self
      */
-    public function setBilledQuantity(\horstoeko\zugferd\entities\en16931\udt\QuantityType $billedQuantity)
+    public function setBilledQuantity(\horstoeko\zugferd\entities\en16931\udt\QuantityType $billedQuantity): self
     {
         $this->billedQuantity = $billedQuantity;
         return $this;

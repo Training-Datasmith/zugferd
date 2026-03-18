@@ -24,8 +24,6 @@ class ZugferdUnsupportedMimetype extends ZugferdBaseException
 {
     /**
      * Constructor
-     *
-     * @param Throwable|null $previous
      */
     public function __construct(?Throwable $previous = null)
     {

@@ -13,7 +13,7 @@ class TradeDeliveryTermsType
     /**
      * @var string $deliveryTypeCode
      */
-    private $deliveryTypeCode = null;
+    private $deliveryTypeCode;
 
     /**
      * Gets as deliveryTypeCode
@@ -29,9 +29,8 @@ class TradeDeliveryTermsType
      * Sets a new deliveryTypeCode
      *
      * @param  string $deliveryTypeCode
-     * @return self
      */
-    public function setDeliveryTypeCode($deliveryTypeCode)
+    public function setDeliveryTypeCode($deliveryTypeCode): self
     {
         $this->deliveryTypeCode = $deliveryTypeCode;
         return $this;

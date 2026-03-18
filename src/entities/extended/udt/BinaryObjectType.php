@@ -13,17 +13,17 @@ class BinaryObjectType
     /**
      * @var string $__value
      */
-    private $__value = null;
+    private $__value;
 
     /**
      * @var string $mimeCode
      */
-    private $mimeCode = null;
+    private $mimeCode;
 
     /**
      * @var string $filename
      */
-    private $filename = null;
+    private $filename;
 
     /**
      * Construct
@@ -51,10 +51,8 @@ class BinaryObjectType
 
     /**
      * Gets a string value
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return strval($this->__value);
     }
@@ -73,9 +71,8 @@ class BinaryObjectType
      * Sets a new mimeCode
      *
      * @param  string $mimeCode
-     * @return self
      */
-    public function setMimeCode($mimeCode)
+    public function setMimeCode($mimeCode): self
     {
         $this->mimeCode = $mimeCode;
         return $this;
@@ -95,9 +92,8 @@ class BinaryObjectType
      * Sets a new filename
      *
      * @param  string $filename
-     * @return self
      */
-    public function setFilename($filename)
+    public function setFilename($filename): self
     {
         $this->filename = $filename;
         return $this;

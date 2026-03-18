@@ -13,32 +13,32 @@ class ExchangedDocumentType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * @var string $name
      */
-    private $name = null;
+    private $name;
 
     /**
      * @var string $typeCode
      */
-    private $typeCode = null;
+    private $typeCode;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $issueDateTime
      */
-    private $issueDateTime = null;
+    private $issueDateTime;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IndicatorType $copyIndicator
      */
-    private $copyIndicator = null;
+    private $copyIndicator;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $languageID
      */
-    private $languageID = null;
+    private $languageID;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\NoteType[] $includedNote
@@ -50,7 +50,7 @@ class ExchangedDocumentType
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\SpecifiedPeriodType $effectiveSpecifiedPeriod
      */
-    private $effectiveSpecifiedPeriod = null;
+    private $effectiveSpecifiedPeriod;
 
     /**
      * Gets as iD
@@ -64,11 +64,8 @@ class ExchangedDocumentType
 
     /**
      * Sets a new iD
-     *
-     * @param  \horstoeko\zugferd\entities\extended\udt\IDType $iD
-     * @return self
      */
-    public function setID(\horstoeko\zugferd\entities\extended\udt\IDType $iD)
+    public function setID(\horstoeko\zugferd\entities\extended\udt\IDType $iD): self
     {
         $this->iD = $iD;
         return $this;
@@ -88,9 +85,8 @@ class ExchangedDocumentType
      * Sets a new name
      *
      * @param  string $name
-     * @return self
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
         return $this;
@@ -110,9 +106,8 @@ class ExchangedDocumentType
      * Sets a new typeCode
      *
      * @param  string $typeCode
-     * @return self
      */
-    public function setTypeCode($typeCode)
+    public function setTypeCode($typeCode): self
     {
         $this->typeCode = $typeCode;
         return $this;
@@ -130,11 +125,8 @@ class ExchangedDocumentType
 
     /**
      * Sets a new issueDateTime
-     *
-     * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $issueDateTime
-     * @return self
      */
-    public function setIssueDateTime(\horstoeko\zugferd\entities\extended\udt\DateTimeType $issueDateTime)
+    public function setIssueDateTime(\horstoeko\zugferd\entities\extended\udt\DateTimeType $issueDateTime): self
     {
         $this->issueDateTime = $issueDateTime;
         return $this;
@@ -154,9 +146,8 @@ class ExchangedDocumentType
      * Sets a new copyIndicator
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IndicatorType $copyIndicator
-     * @return self
      */
-    public function setCopyIndicator(?\horstoeko\zugferd\entities\extended\udt\IndicatorType $copyIndicator = null)
+    public function setCopyIndicator(?\horstoeko\zugferd\entities\extended\udt\IndicatorType $copyIndicator = null): self
     {
         $this->copyIndicator = $copyIndicator;
         return $this;
@@ -176,9 +167,8 @@ class ExchangedDocumentType
      * Sets a new languageID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $languageID
-     * @return self
      */
-    public function setLanguageID(?\horstoeko\zugferd\entities\extended\udt\IDType $languageID = null)
+    public function setLanguageID(?\horstoeko\zugferd\entities\extended\udt\IDType $languageID = null): self
     {
         $this->languageID = $languageID;
         return $this;
@@ -186,11 +176,8 @@ class ExchangedDocumentType
 
     /**
      * Adds as includedNote
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\NoteType $includedNote
      */
-    public function addToIncludedNote(\horstoeko\zugferd\entities\extended\ram\NoteType $includedNote)
+    public function addToIncludedNote(\horstoeko\zugferd\entities\extended\ram\NoteType $includedNote): self
     {
         $this->includedNote[] = $includedNote;
         return $this;
@@ -200,9 +187,8 @@ class ExchangedDocumentType
      * isset includedNote
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetIncludedNote($index)
+    public function issetIncludedNote($index): bool
     {
         return isset($this->includedNote[$index]);
     }
@@ -211,9 +197,8 @@ class ExchangedDocumentType
      * unset includedNote
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetIncludedNote($index)
+    public function unsetIncludedNote($index): void
     {
         unset($this->includedNote[$index]);
     }
@@ -232,9 +217,8 @@ class ExchangedDocumentType
      * Sets a new includedNote
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\NoteType[] $includedNote
-     * @return self
      */
-    public function setIncludedNote(?array $includedNote = null)
+    public function setIncludedNote(?array $includedNote = null): self
     {
         $this->includedNote = $includedNote;
         return $this;
@@ -254,9 +238,8 @@ class ExchangedDocumentType
      * Sets a new effectiveSpecifiedPeriod
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\SpecifiedPeriodType $effectiveSpecifiedPeriod
-     * @return self
      */
-    public function setEffectiveSpecifiedPeriod(?\horstoeko\zugferd\entities\extended\ram\SpecifiedPeriodType $effectiveSpecifiedPeriod = null)
+    public function setEffectiveSpecifiedPeriod(?\horstoeko\zugferd\entities\extended\ram\SpecifiedPeriodType $effectiveSpecifiedPeriod = null): self
     {
         $this->effectiveSpecifiedPeriod = $effectiveSpecifiedPeriod;
         return $this;

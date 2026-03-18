@@ -13,27 +13,27 @@ class SupplyChainTradeLineItemType
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\DocumentLineDocumentType $associatedDocumentLineDocument
      */
-    private $associatedDocumentLineDocument = null;
+    private $associatedDocumentLineDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\TradeProductType $specifiedTradeProduct
      */
-    private $specifiedTradeProduct = null;
+    private $specifiedTradeProduct;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\LineTradeAgreementType $specifiedLineTradeAgreement
      */
-    private $specifiedLineTradeAgreement = null;
+    private $specifiedLineTradeAgreement;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\LineTradeDeliveryType $specifiedLineTradeDelivery
      */
-    private $specifiedLineTradeDelivery = null;
+    private $specifiedLineTradeDelivery;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\LineTradeSettlementType $specifiedLineTradeSettlement
      */
-    private $specifiedLineTradeSettlement = null;
+    private $specifiedLineTradeSettlement;
 
     /**
      * Gets as associatedDocumentLineDocument
@@ -47,11 +47,8 @@ class SupplyChainTradeLineItemType
 
     /**
      * Sets a new associatedDocumentLineDocument
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\ram\DocumentLineDocumentType $associatedDocumentLineDocument
-     * @return self
      */
-    public function setAssociatedDocumentLineDocument(\horstoeko\zugferd\entities\en16931\ram\DocumentLineDocumentType $associatedDocumentLineDocument)
+    public function setAssociatedDocumentLineDocument(\horstoeko\zugferd\entities\en16931\ram\DocumentLineDocumentType $associatedDocumentLineDocument): self
     {
         $this->associatedDocumentLineDocument = $associatedDocumentLineDocument;
         return $this;
@@ -69,11 +66,8 @@ class SupplyChainTradeLineItemType
 
     /**
      * Sets a new specifiedTradeProduct
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\ram\TradeProductType $specifiedTradeProduct
-     * @return self
      */
-    public function setSpecifiedTradeProduct(\horstoeko\zugferd\entities\en16931\ram\TradeProductType $specifiedTradeProduct)
+    public function setSpecifiedTradeProduct(\horstoeko\zugferd\entities\en16931\ram\TradeProductType $specifiedTradeProduct): self
     {
         $this->specifiedTradeProduct = $specifiedTradeProduct;
         return $this;
@@ -91,11 +85,8 @@ class SupplyChainTradeLineItemType
 
     /**
      * Sets a new specifiedLineTradeAgreement
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\ram\LineTradeAgreementType $specifiedLineTradeAgreement
-     * @return self
      */
-    public function setSpecifiedLineTradeAgreement(\horstoeko\zugferd\entities\en16931\ram\LineTradeAgreementType $specifiedLineTradeAgreement)
+    public function setSpecifiedLineTradeAgreement(\horstoeko\zugferd\entities\en16931\ram\LineTradeAgreementType $specifiedLineTradeAgreement): self
     {
         $this->specifiedLineTradeAgreement = $specifiedLineTradeAgreement;
         return $this;
@@ -113,11 +104,8 @@ class SupplyChainTradeLineItemType
 
     /**
      * Sets a new specifiedLineTradeDelivery
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\ram\LineTradeDeliveryType $specifiedLineTradeDelivery
-     * @return self
      */
-    public function setSpecifiedLineTradeDelivery(\horstoeko\zugferd\entities\en16931\ram\LineTradeDeliveryType $specifiedLineTradeDelivery)
+    public function setSpecifiedLineTradeDelivery(\horstoeko\zugferd\entities\en16931\ram\LineTradeDeliveryType $specifiedLineTradeDelivery): self
     {
         $this->specifiedLineTradeDelivery = $specifiedLineTradeDelivery;
         return $this;
@@ -135,11 +123,8 @@ class SupplyChainTradeLineItemType
 
     /**
      * Sets a new specifiedLineTradeSettlement
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\ram\LineTradeSettlementType $specifiedLineTradeSettlement
-     * @return self
      */
-    public function setSpecifiedLineTradeSettlement(\horstoeko\zugferd\entities\en16931\ram\LineTradeSettlementType $specifiedLineTradeSettlement)
+    public function setSpecifiedLineTradeSettlement(\horstoeko\zugferd\entities\en16931\ram\LineTradeSettlementType $specifiedLineTradeSettlement): self
     {
         $this->specifiedLineTradeSettlement = $specifiedLineTradeSettlement;
         return $this;

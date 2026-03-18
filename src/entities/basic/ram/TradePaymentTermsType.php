@@ -13,17 +13,17 @@ class TradePaymentTermsType
     /**
      * @var string $description
      */
-    private $description = null;
+    private $description;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\DateTimeType $dueDateDateTime
      */
-    private $dueDateDateTime = null;
+    private $dueDateDateTime;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\IDType $directDebitMandateID
      */
-    private $directDebitMandateID = null;
+    private $directDebitMandateID;
 
     /**
      * Gets as description
@@ -39,9 +39,8 @@ class TradePaymentTermsType
      * Sets a new description
      *
      * @param  string $description
-     * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description): self
     {
         $this->description = $description;
         return $this;
@@ -61,9 +60,8 @@ class TradePaymentTermsType
      * Sets a new dueDateDateTime
      *
      * @param  \horstoeko\zugferd\entities\basic\udt\DateTimeType $dueDateDateTime
-     * @return self
      */
-    public function setDueDateDateTime(?\horstoeko\zugferd\entities\basic\udt\DateTimeType $dueDateDateTime = null)
+    public function setDueDateDateTime(?\horstoeko\zugferd\entities\basic\udt\DateTimeType $dueDateDateTime = null): self
     {
         $this->dueDateDateTime = $dueDateDateTime;
         return $this;
@@ -83,9 +81,8 @@ class TradePaymentTermsType
      * Sets a new directDebitMandateID
      *
      * @param  \horstoeko\zugferd\entities\basic\udt\IDType $directDebitMandateID
-     * @return self
      */
-    public function setDirectDebitMandateID(?\horstoeko\zugferd\entities\basic\udt\IDType $directDebitMandateID = null)
+    public function setDirectDebitMandateID(?\horstoeko\zugferd\entities\basic\udt\IDType $directDebitMandateID = null): self
     {
         $this->directDebitMandateID = $directDebitMandateID;
         return $this;

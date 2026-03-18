@@ -13,7 +13,7 @@ class SupplyChainEventType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $occurrenceDateTime
      */
-    private $occurrenceDateTime = null;
+    private $occurrenceDateTime;
 
     /**
      * Gets as occurrenceDateTime
@@ -27,11 +27,8 @@ class SupplyChainEventType
 
     /**
      * Sets a new occurrenceDateTime
-     *
-     * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $occurrenceDateTime
-     * @return self
      */
-    public function setOccurrenceDateTime(\horstoeko\zugferd\entities\extended\udt\DateTimeType $occurrenceDateTime)
+    public function setOccurrenceDateTime(\horstoeko\zugferd\entities\extended\udt\DateTimeType $occurrenceDateTime): self
     {
         $this->occurrenceDateTime = $occurrenceDateTime;
         return $this;

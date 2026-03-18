@@ -13,22 +13,22 @@ class HeaderTradeAgreementType
     /**
      * @var string $buyerReference
      */
-    private $buyerReference = null;
+    private $buyerReference;
 
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\TradePartyType $sellerTradeParty
      */
-    private $sellerTradeParty = null;
+    private $sellerTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\TradePartyType $buyerTradeParty
      */
-    private $buyerTradeParty = null;
+    private $buyerTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\ReferencedDocumentType $buyerOrderReferencedDocument
      */
-    private $buyerOrderReferencedDocument = null;
+    private $buyerOrderReferencedDocument;
 
     /**
      * Gets as buyerReference
@@ -44,9 +44,8 @@ class HeaderTradeAgreementType
      * Sets a new buyerReference
      *
      * @param  string $buyerReference
-     * @return self
      */
-    public function setBuyerReference($buyerReference)
+    public function setBuyerReference($buyerReference): self
     {
         $this->buyerReference = $buyerReference;
         return $this;
@@ -64,11 +63,8 @@ class HeaderTradeAgreementType
 
     /**
      * Sets a new sellerTradeParty
-     *
-     * @param  \horstoeko\zugferd\entities\minimum\ram\TradePartyType $sellerTradeParty
-     * @return self
      */
-    public function setSellerTradeParty(\horstoeko\zugferd\entities\minimum\ram\TradePartyType $sellerTradeParty)
+    public function setSellerTradeParty(\horstoeko\zugferd\entities\minimum\ram\TradePartyType $sellerTradeParty): self
     {
         $this->sellerTradeParty = $sellerTradeParty;
         return $this;
@@ -86,11 +82,8 @@ class HeaderTradeAgreementType
 
     /**
      * Sets a new buyerTradeParty
-     *
-     * @param  \horstoeko\zugferd\entities\minimum\ram\TradePartyType $buyerTradeParty
-     * @return self
      */
-    public function setBuyerTradeParty(\horstoeko\zugferd\entities\minimum\ram\TradePartyType $buyerTradeParty)
+    public function setBuyerTradeParty(\horstoeko\zugferd\entities\minimum\ram\TradePartyType $buyerTradeParty): self
     {
         $this->buyerTradeParty = $buyerTradeParty;
         return $this;
@@ -110,9 +103,8 @@ class HeaderTradeAgreementType
      * Sets a new buyerOrderReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\minimum\ram\ReferencedDocumentType $buyerOrderReferencedDocument
-     * @return self
      */
-    public function setBuyerOrderReferencedDocument(?\horstoeko\zugferd\entities\minimum\ram\ReferencedDocumentType $buyerOrderReferencedDocument = null)
+    public function setBuyerOrderReferencedDocument(?\horstoeko\zugferd\entities\minimum\ram\ReferencedDocumentType $buyerOrderReferencedDocument = null): self
     {
         $this->buyerOrderReferencedDocument = $buyerOrderReferencedDocument;
         return $this;

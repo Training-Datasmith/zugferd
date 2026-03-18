@@ -95,8 +95,6 @@ class ZugferdSettings
 
     /**
      * Get the number of decimals to use for amount values
-     *
-     * @return integer
      */
     public static function getAmountDecimals(): int
     {
@@ -105,9 +103,6 @@ class ZugferdSettings
 
     /**
      * Set the number of decimals to use for amount values
-     *
-     * @param  integer $amountDecimals
-     * @return void
      */
     public static function setAmountDecimals(int $amountDecimals): void
     {
@@ -116,8 +111,6 @@ class ZugferdSettings
 
     /**
      * Get the number of decimals to use for amount values
-     *
-     * @return integer
      */
     public static function getQuantityDecimals(): int
     {
@@ -126,9 +119,6 @@ class ZugferdSettings
 
     /**
      * Set the number of decimals to use for quantity values
-     *
-     * @param  integer $quantityDecimals
-     * @return void
      */
     public static function setQuantityDecimals(int $quantityDecimals): void
     {
@@ -137,8 +127,6 @@ class ZugferdSettings
 
     /**
      * Get the number of decimals to use for percent values
-     *
-     * @return integer
      */
     public static function getPercentDecimals(): int
     {
@@ -147,9 +135,6 @@ class ZugferdSettings
 
     /**
      * Set the number of decimals to use for percent values
-     *
-     * @param  integer $percentDecimals
-     * @return void
      */
     public static function setPercentDecimals(int $percentDecimals): void
     {
@@ -158,8 +143,6 @@ class ZugferdSettings
 
     /**
      * Get the number of decimals to use for measure values
-     *
-     * @return integer
      */
     public static function getMeasureDecimals(): int
     {
@@ -168,9 +151,6 @@ class ZugferdSettings
 
     /**
      * Set the number of decimals to use for measure values
-     *
-     * @param  integer $measureDecimals
-     * @return void
      */
     public static function setMeasureDecimals(int $measureDecimals): void
     {
@@ -179,8 +159,6 @@ class ZugferdSettings
 
     /**
      * Get the decimal separator
-     *
-     * @return string
      */
     public static function getDecimalSeparator(): string
     {
@@ -189,9 +167,6 @@ class ZugferdSettings
 
     /**
      * Set the decimal separator
-     *
-     * @param  string $decimalSeparator
-     * @return void
      */
     public static function setDecimalSeparator(string $decimalSeparator): void
     {
@@ -200,8 +175,6 @@ class ZugferdSettings
 
     /**
      * Get the thousands separator
-     *
-     * @return string
      */
     public static function getThousandsSeparator(): string
     {
@@ -210,9 +183,6 @@ class ZugferdSettings
 
     /**
      * Set the thousands separator
-     *
-     * @param  string $thousandsSeparator
-     * @return void
      */
     public static function setThousandsSeparator(string $thousandsSeparator): void
     {
@@ -221,8 +191,6 @@ class ZugferdSettings
 
     /**
      * Get the filename of the ICC Profile
-     *
-     * @return string
      */
     public static function getIccProfileFilename(): string
     {
@@ -231,9 +199,6 @@ class ZugferdSettings
 
     /**
      * Set the filename of the ICC Profile
-     *
-     * @param  string $iccProfileFilename
-     * @return void
      */
     public static function setIccProfileFilename(string $iccProfileFilename): void
     {
@@ -242,8 +207,6 @@ class ZugferdSettings
 
     /**
      * Get the filename for the XMP meta data
-     *
-     * @return string
      */
     public static function getXmpMetaDataFilename(): string
     {
@@ -252,9 +215,6 @@ class ZugferdSettings
 
     /**
      * Set the filename for the XMP meta data
-     *
-     * @param  string $xmpMetaDataFilename
-     * @return void
      */
     public static function setXmpMetaDataFilename(string $xmpMetaDataFilename): void
     {
@@ -263,8 +223,6 @@ class ZugferdSettings
 
     /**
      * Returns a list of node paths which have a special number of decimal places
-     *
-     * @return array
      */
     public static function getSpecialDecimalPlacesMaps(): array
     {
@@ -274,10 +232,6 @@ class ZugferdSettings
     /**
      * Get a specific map for node paths with a special number of decimal places. If not map
      * is found then the default value is returns
-     *
-     * @param  string  $nodePath
-     * @param  integer $defaultDecimalPlaces
-     * @return integer
      */
     public static function getSpecialDecimalPlacesMap(string $nodePath, int $defaultDecimalPlaces): int
     {
@@ -287,9 +241,6 @@ class ZugferdSettings
 
     /**
      * Update the map of node paths which have a special number of decimal places
-     *
-     * @param  array $specialDecimalPlacesMaps
-     * @return void
      */
     public static function setSpecialDecimalPlacesMaps(array $specialDecimalPlacesMaps): void
     {
@@ -298,10 +249,6 @@ class ZugferdSettings
 
     /**
      * Add a new map for a node path with a special number of decimal places
-     *
-     * @param  string  $nodePath
-     * @param  integer $defaultDecimalPlaces
-     * @return void
      */
     public static function addSpecialDecimalPlacesMap(string $nodePath, int $defaultDecimalPlaces): void
     {
@@ -311,9 +258,6 @@ class ZugferdSettings
 
     /**
      * Set the number of decimals to use for unit single amount (unit prices) values
-     *
-     * @param  integer $defaultDecimalPlaces
-     * @return void
      */
     public static function setUnitAmountDecimals(int $defaultDecimalPlaces): void
     {
@@ -323,9 +267,6 @@ class ZugferdSettings
 
     /**
      * Set the cache directory for the internal serializer
-     *
-     * @param  string $serializerCacheDirectoty
-     * @return void
      */
     public static function setSerializerCacheDirectory(string $serializerCacheDirectoty): void
     {
@@ -334,8 +275,6 @@ class ZugferdSettings
 
     /**
      * Returns the cache directory for the internal serializer. This might be empty
-     *
-     * @return string
      */
     public static function getSerializerCacheDirectory(): string
     {
@@ -344,8 +283,6 @@ class ZugferdSettings
 
     /**
      * Returns true if a cache directory for the internal serializer is configured, otherwise false
-     *
-     * @return boolean
      */
     public static function hasSerializerCacheDirectory(): bool
     {
@@ -354,8 +291,6 @@ class ZugferdSettings
 
     /**
      * Get root directory
-     *
-     * @return string
      */
     public static function getRootDirectory(): string
     {
@@ -364,8 +299,6 @@ class ZugferdSettings
 
     /**
      * Get the directory where all the sources are stored
-     *
-     * @return string
      */
     public static function getSourceDirectory(): string
     {
@@ -374,8 +307,6 @@ class ZugferdSettings
 
     /**
      * Get the directory where all the assets are stored
-     *
-     * @return string
      */
     public static function getAssetDirectory(): string
     {
@@ -384,8 +315,6 @@ class ZugferdSettings
 
     /**
      * Get the directory where all the assets are stored
-     *
-     * @return string
      */
     public static function getYamlDirectory(): string
     {
@@ -394,8 +323,6 @@ class ZugferdSettings
 
     /**
      * Get the directory where all the validation files are located
-     *
-     * @return string
      */
     public static function getValidationDirectory(): string
     {
@@ -404,8 +331,6 @@ class ZugferdSettings
 
     /**
      * Get the directory where all the schema (XSD) files are located
-     *
-     * @return string
      */
     public static function getSchemaDirectory(): string
     {
@@ -414,8 +339,6 @@ class ZugferdSettings
 
     /**
      * Get the directory where all the stylesheets (XSLT) files are located
-     *
-     * @return string
      */
     public static function getSchematronDirectory(): string
     {
@@ -424,8 +347,6 @@ class ZugferdSettings
 
     /**
      * Get the directory where all the stylesheets (XSLT) files are located
-     *
-     * @return string
      */
     public static function getXsltDirectory(): string
     {
@@ -434,8 +355,6 @@ class ZugferdSettings
 
     /**
      * Get the full filename of the ICC profile to use
-     *
-     * @return string
      */
     public static function getFullIccProfileFilename(): string
     {
@@ -444,8 +363,6 @@ class ZugferdSettings
 
     /**
      * Get the full filename containg the XNP information to user
-     *
-     * @return string
      */
     public static function getFullXmpMetaDataFilename(): string
     {

@@ -45,8 +45,6 @@ class ZugferdXsdValidator
 
     /**
      * Constructor
-     *
-     * @param ZugferdDocument $document
      */
     public function __construct(ZugferdDocument $document)
     {
@@ -55,8 +53,6 @@ class ZugferdXsdValidator
 
     /**
      * Perform validation of document
-     *
-     * @return ZugferdXsdValidator
      */
     public function validate(): ZugferdXsdValidator
     {
@@ -80,7 +76,6 @@ class ZugferdXsdValidator
      * Returns true if validation passed otherwise false
      *
      * @deprecated 1.0.65 Use hasNoValidationErrors instead
-     * @return     boolean
      */
     public function validationPased(): bool
     {
@@ -91,7 +86,6 @@ class ZugferdXsdValidator
      * Returns true if validation failed otherwise false
      *
      * @deprecated 1.0.65 Use hasValidationErrors instead
-     * @return     boolean
      */
     public function validationFailed(): bool
     {
@@ -100,8 +94,6 @@ class ZugferdXsdValidator
 
     /**
      * Returns true if validation passed otherwise false
-     *
-     * @return boolean
      */
     public function hasNoValidationErrors(): bool
     {
@@ -110,8 +102,6 @@ class ZugferdXsdValidator
 
     /**
      * Returns true if validation errors are present otherwise false
-     *
-     * @return boolean
      */
     public function hasValidationErrors(): bool
     {
@@ -120,8 +110,6 @@ class ZugferdXsdValidator
 
     /**
      * Returns an array of all validation errors
-     *
-     * @return array
      */
     public function validationErrors(): array
     {
@@ -130,8 +118,6 @@ class ZugferdXsdValidator
 
     /**
      * Initialize LibXML
-     *
-     * @return void
      */
     private function initLibXml(): void
     {
@@ -140,8 +126,6 @@ class ZugferdXsdValidator
 
     /**
      * Finalize LibXML
-     *
-     * @return void
      */
     private function finalizeLibXml(): void
     {
@@ -151,8 +135,6 @@ class ZugferdXsdValidator
 
     /**
      * Get the content of the document
-     *
-     * @return string
      */
     private function getDocumentContent(): string
     {
@@ -161,8 +143,6 @@ class ZugferdXsdValidator
 
     /**
      * Get the content of the document as a DOMDocument
-     *
-     * @return DOMDocument
      */
     private function getDocumentContentAsDomDocument(): DOMDocument
     {
@@ -174,8 +154,6 @@ class ZugferdXsdValidator
 
     /**
      * Get the XSD file (schema definition) for the document
-     *
-     * @return string
      */
     private function getDocumentXsdFilename(): string
     {
@@ -193,8 +171,6 @@ class ZugferdXsdValidator
 
     /**
      * Clear the internal error bag
-     *
-     * @return void
      */
     private function clearErrorBag(): void
     {
@@ -205,7 +181,6 @@ class ZugferdXsdValidator
      * Add message to error bag
      *
      * @param  string|Exception|Throwable|LibXMLError $error
-     * @return void
      */
     private function addToErrorBag($error): void
     {
@@ -222,8 +197,6 @@ class ZugferdXsdValidator
 
     /**
      * Pushes validation errors to error bag
-     *
-     * @return void
      */
     private function pushLibXmlErrorsToErrorBag(): void
     {

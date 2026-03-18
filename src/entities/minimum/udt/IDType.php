@@ -13,12 +13,12 @@ class IDType
     /**
      * @var string $__value
      */
-    private $__value = null;
+    private $__value;
 
     /**
      * @var string $schemeID
      */
-    private $schemeID = null;
+    private $schemeID;
 
     /**
      * Construct
@@ -46,10 +46,8 @@ class IDType
 
     /**
      * Gets a string value
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return strval($this->__value);
     }
@@ -68,9 +66,8 @@ class IDType
      * Sets a new schemeID
      *
      * @param  string $schemeID
-     * @return self
      */
-    public function setSchemeID($schemeID)
+    public function setSchemeID($schemeID): self
     {
         $this->schemeID = $schemeID;
         return $this;

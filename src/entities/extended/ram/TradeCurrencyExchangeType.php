@@ -13,22 +13,22 @@ class TradeCurrencyExchangeType
     /**
      * @var string $sourceCurrencyCode
      */
-    private $sourceCurrencyCode = null;
+    private $sourceCurrencyCode;
 
     /**
      * @var string $targetCurrencyCode
      */
-    private $targetCurrencyCode = null;
+    private $targetCurrencyCode;
 
     /**
      * @var float $conversionRate
      */
-    private $conversionRate = null;
+    private $conversionRate;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $conversionRateDateTime
      */
-    private $conversionRateDateTime = null;
+    private $conversionRateDateTime;
 
     /**
      * Gets as sourceCurrencyCode
@@ -44,9 +44,8 @@ class TradeCurrencyExchangeType
      * Sets a new sourceCurrencyCode
      *
      * @param  string $sourceCurrencyCode
-     * @return self
      */
-    public function setSourceCurrencyCode($sourceCurrencyCode)
+    public function setSourceCurrencyCode($sourceCurrencyCode): self
     {
         $this->sourceCurrencyCode = $sourceCurrencyCode;
         return $this;
@@ -66,9 +65,8 @@ class TradeCurrencyExchangeType
      * Sets a new targetCurrencyCode
      *
      * @param  string $targetCurrencyCode
-     * @return self
      */
-    public function setTargetCurrencyCode($targetCurrencyCode)
+    public function setTargetCurrencyCode($targetCurrencyCode): self
     {
         $this->targetCurrencyCode = $targetCurrencyCode;
         return $this;
@@ -88,9 +86,8 @@ class TradeCurrencyExchangeType
      * Sets a new conversionRate
      *
      * @param  float $conversionRate
-     * @return self
      */
-    public function setConversionRate($conversionRate)
+    public function setConversionRate($conversionRate): self
     {
         $this->conversionRate = $conversionRate;
         return $this;
@@ -110,9 +107,8 @@ class TradeCurrencyExchangeType
      * Sets a new conversionRateDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $conversionRateDateTime
-     * @return self
      */
-    public function setConversionRateDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $conversionRateDateTime = null)
+    public function setConversionRateDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $conversionRateDateTime = null): self
     {
         $this->conversionRateDateTime = $conversionRateDateTime;
         return $this;

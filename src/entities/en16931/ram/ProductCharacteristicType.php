@@ -13,12 +13,12 @@ class ProductCharacteristicType
     /**
      * @var string $description
      */
-    private $description = null;
+    private $description;
 
     /**
      * @var string $value
      */
-    private $value = null;
+    private $value;
 
     /**
      * Gets as description
@@ -34,9 +34,8 @@ class ProductCharacteristicType
      * Sets a new description
      *
      * @param  string $description
-     * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description): self
     {
         $this->description = $description;
         return $this;
@@ -56,9 +55,8 @@ class ProductCharacteristicType
      * Sets a new value
      *
      * @param  string $value
-     * @return self
      */
-    public function setValue($value)
+    public function setValue($value): self
     {
         $this->value = $value;
         return $this;

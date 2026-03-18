@@ -13,7 +13,7 @@ class TradeAccountingAccountType
     /**
      * @var \horstoeko\zugferd\entities\basicwl\udt\IDType $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * Gets as iD
@@ -27,11 +27,8 @@ class TradeAccountingAccountType
 
     /**
      * Sets a new iD
-     *
-     * @param  \horstoeko\zugferd\entities\basicwl\udt\IDType $iD
-     * @return self
      */
-    public function setID(\horstoeko\zugferd\entities\basicwl\udt\IDType $iD)
+    public function setID(\horstoeko\zugferd\entities\basicwl\udt\IDType $iD): self
     {
         $this->iD = $iD;
         return $this;

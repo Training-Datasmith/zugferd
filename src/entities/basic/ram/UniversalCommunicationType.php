@@ -13,7 +13,7 @@ class UniversalCommunicationType
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\IDType $uRIID
      */
-    private $uRIID = null;
+    private $uRIID;
 
     /**
      * Gets as uRIID
@@ -27,11 +27,8 @@ class UniversalCommunicationType
 
     /**
      * Sets a new uRIID
-     *
-     * @param  \horstoeko\zugferd\entities\basic\udt\IDType $uRIID
-     * @return self
      */
-    public function setURIID(\horstoeko\zugferd\entities\basic\udt\IDType $uRIID)
+    public function setURIID(\horstoeko\zugferd\entities\basic\udt\IDType $uRIID): self
     {
         $this->uRIID = $uRIID;
         return $this;

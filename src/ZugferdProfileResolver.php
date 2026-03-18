@@ -30,8 +30,6 @@ class ZugferdProfileResolver
     /**
      * Resolve profile id and profile definition by the content of $xmlContent
      *
-     * @param  string $xmlContent
-     * @return array
      * @throws ZugferdUnknownXmlContentException
      * @throws ZugferdUnknownProfileException
      */
@@ -75,8 +73,6 @@ class ZugferdProfileResolver
     /**
      * Resolve profile id by the content of $xmlContent
      *
-     * @param  string $xmlContent
-     * @return int
      * @throws ZugferdUnknownXmlContentException
      * @throws ZugferdUnknownProfileException
      */
@@ -88,8 +84,6 @@ class ZugferdProfileResolver
     /**
      * Resolve profile definition by the content of $xmlContent
      *
-     * @param  string $xmlContent
-     * @return array
      * @throws ZugferdUnknownXmlContentException
      * @throws ZugferdUnknownProfileException
      */
@@ -101,8 +95,6 @@ class ZugferdProfileResolver
     /**
      * Resolve profile id and profile definition by it's id
      *
-     * @param  int $profileId
-     * @return array
      * @throws ZugferdUnknownProfileIdException
      */
     public static function resolveById(int $profileId): array
@@ -117,8 +109,6 @@ class ZugferdProfileResolver
     /**
      * Resolve profile profile definition by it's id
      *
-     * @param  int $profileId
-     * @return array
      * @throws ZugferdUnknownProfileIdException
      */
     public static function resolveProfileDefById(int $profileId): array

@@ -13,12 +13,12 @@ class UniversalCommunicationType
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType $uRIID
      */
-    private $uRIID = null;
+    private $uRIID;
 
     /**
      * @var string $completeNumber
      */
-    private $completeNumber = null;
+    private $completeNumber;
 
     /**
      * Gets as uRIID
@@ -34,9 +34,8 @@ class UniversalCommunicationType
      * Sets a new uRIID
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\IDType $uRIID
-     * @return self
      */
-    public function setURIID(?\horstoeko\zugferd\entities\en16931\udt\IDType $uRIID = null)
+    public function setURIID(?\horstoeko\zugferd\entities\en16931\udt\IDType $uRIID = null): self
     {
         $this->uRIID = $uRIID;
         return $this;
@@ -56,9 +55,8 @@ class UniversalCommunicationType
      * Sets a new completeNumber
      *
      * @param  string $completeNumber
-     * @return self
      */
-    public function setCompleteNumber($completeNumber)
+    public function setCompleteNumber($completeNumber): self
     {
         $this->completeNumber = $completeNumber;
         return $this;

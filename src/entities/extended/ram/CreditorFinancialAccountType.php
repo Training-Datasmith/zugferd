@@ -13,17 +13,17 @@ class CreditorFinancialAccountType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iBANID
      */
-    private $iBANID = null;
+    private $iBANID;
 
     /**
      * @var string $accountName
      */
-    private $accountName = null;
+    private $accountName;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $proprietaryID
      */
-    private $proprietaryID = null;
+    private $proprietaryID;
 
     /**
      * Gets as iBANID
@@ -39,9 +39,8 @@ class CreditorFinancialAccountType
      * Sets a new iBANID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $iBANID
-     * @return self
      */
-    public function setIBANID(?\horstoeko\zugferd\entities\extended\udt\IDType $iBANID = null)
+    public function setIBANID(?\horstoeko\zugferd\entities\extended\udt\IDType $iBANID = null): self
     {
         $this->iBANID = $iBANID;
         return $this;
@@ -61,9 +60,8 @@ class CreditorFinancialAccountType
      * Sets a new accountName
      *
      * @param  string $accountName
-     * @return self
      */
-    public function setAccountName($accountName)
+    public function setAccountName($accountName): self
     {
         $this->accountName = $accountName;
         return $this;
@@ -83,9 +81,8 @@ class CreditorFinancialAccountType
      * Sets a new proprietaryID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $proprietaryID
-     * @return self
      */
-    public function setProprietaryID(?\horstoeko\zugferd\entities\extended\udt\IDType $proprietaryID = null)
+    public function setProprietaryID(?\horstoeko\zugferd\entities\extended\udt\IDType $proprietaryID = null): self
     {
         $this->proprietaryID = $proprietaryID;
         return $this;

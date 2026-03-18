@@ -92,7 +92,6 @@ class ZugferdPdfWriter extends PdfFpdi
      *
      * @param  string $version     Contains the PDF version number.
      * @param  bool   $binary_data This is true for binary data
-     * @return void
      */
     public function setPdfVersion($version = '1.3', $binary_data = false): void
     {
@@ -122,7 +121,6 @@ class ZugferdPdfWriter extends PdfFpdi
      * The url-encoded mimetype of the attached file
      * @param  bool   $isUTF8
      * Set to true, if the attached file is UTF-8 encoded
-     * @return void
      */
     public function attach($file, $name = '', $desc = '', $relationship = 'Unspecified', $mimetype = '', $isUTF8 = false): void
     {
@@ -152,8 +150,6 @@ class ZugferdPdfWriter extends PdfFpdi
 
     /**
      * Open attachment panel on PDF.
-     *
-     * @return void
      */
     public function openAttachmentPane(): void
     {
@@ -165,7 +161,6 @@ class ZugferdPdfWriter extends PdfFpdi
      *
      * @param  string $description
      * The description of the metadata
-     * @return void
      */
     public function addMetadataDescriptionNode($description): void
     {
@@ -177,7 +172,6 @@ class ZugferdPdfWriter extends PdfFpdi
      *
      * @param  array $metaDataInfos
      * The array with metadata information applied to the pdf
-     * @return void
      */
     public function setPdfMetadataInfos(array &$metaDataInfos): void
     {
@@ -192,9 +186,6 @@ class ZugferdPdfWriter extends PdfFpdi
     /**
      * Set the status of the deterministic mode. This mode should only be used
      * for testing purposes
-     *
-     * @param  bool $deterministicModeEnabled
-     * @return void
      */
     public function setDeterministicModeEnabled(bool $deterministicModeEnabled): void
     {
@@ -204,7 +195,6 @@ class ZugferdPdfWriter extends PdfFpdi
     /**
      * Put files.
      *
-     * @return void
      *
      * @codingStandardsIgnoreStart
      */
@@ -221,9 +211,6 @@ class ZugferdPdfWriter extends PdfFpdi
 
     /**
      * Put file attachment specification.
-     *
-     * @param array $file_info
-     * @return void
      */
     protected function putFileSpecification(array $file_info): void
     {
@@ -251,8 +238,6 @@ class ZugferdPdfWriter extends PdfFpdi
 
     /**
      * Put file stream.
-     *
-     * @param array $file_info
      */
     protected function putFileStream(array $file_info): void
     {
@@ -294,8 +279,6 @@ class ZugferdPdfWriter extends PdfFpdi
 
     /**
      * Put file dictionnary.
-     *
-     * @return void
      */
     protected function putFileDictionary(): void
     {
@@ -304,7 +287,7 @@ class ZugferdPdfWriter extends PdfFpdi
         $this->_put('<<');
         $s = '';
         $files = $this->files;
-        usort($files, function ($a, $b) { // Sorting files in name order as PDF specs (if not, issue with Acrobat Reader when trying to download attachments)
+        usort($files, function (array $a, array $b): int { // Sorting files in name order as PDF specs (if not, issue with Acrobat Reader when trying to download attachments)
             return strcmp($a['name'], $b['name']);
         });
         foreach ($files as $info) {
@@ -318,8 +301,6 @@ class ZugferdPdfWriter extends PdfFpdi
 
     /**
      * Put metadata descriptions.
-     *
-     * @return void
      */
     protected function putMetadataDescriptions(): void
     {
@@ -347,7 +328,6 @@ class ZugferdPdfWriter extends PdfFpdi
     /**
      * Put resources including files and metadata descriptions.
      *
-     * @return void
      * @codingStandardsIgnoreStart
      */
     protected function _putresources(): void
@@ -368,7 +348,6 @@ class ZugferdPdfWriter extends PdfFpdi
     /**
      * Put output intent with ICC profile.
      *
-     * @return void
      * @codingStandardsIgnoreStart
      */
     protected function _putoutputintent(): void
@@ -401,7 +380,6 @@ class ZugferdPdfWriter extends PdfFpdi
     /**
      * Put catalog node, including associated files.
      *
-     * @return void
      * @codingStandardsIgnoreStart
      */
     protected function _putcatalog(): void
@@ -448,7 +426,6 @@ class ZugferdPdfWriter extends PdfFpdi
     /**
      * Put trailer including ID.
      *
-     * @return void
      * @codingStandardsIgnoreStart
      */
     protected function _puttrailer(): void
@@ -463,8 +440,6 @@ class ZugferdPdfWriter extends PdfFpdi
 
     /**
      * Put general information
-     *
-     * @return void
      */
     protected function _putinfo(): void
     {

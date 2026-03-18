@@ -13,17 +13,17 @@ class ExchangedDocumentType
     /**
      * @var \horstoeko\zugferd\entities\basicwl\udt\IDType $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * @var string $typeCode
      */
-    private $typeCode = null;
+    private $typeCode;
 
     /**
      * @var \horstoeko\zugferd\entities\basicwl\udt\DateTimeType $issueDateTime
      */
-    private $issueDateTime = null;
+    private $issueDateTime;
 
     /**
      * @var \horstoeko\zugferd\entities\basicwl\ram\NoteType[] $includedNote
@@ -44,11 +44,8 @@ class ExchangedDocumentType
 
     /**
      * Sets a new iD
-     *
-     * @param  \horstoeko\zugferd\entities\basicwl\udt\IDType $iD
-     * @return self
      */
-    public function setID(\horstoeko\zugferd\entities\basicwl\udt\IDType $iD)
+    public function setID(\horstoeko\zugferd\entities\basicwl\udt\IDType $iD): self
     {
         $this->iD = $iD;
         return $this;
@@ -68,9 +65,8 @@ class ExchangedDocumentType
      * Sets a new typeCode
      *
      * @param  string $typeCode
-     * @return self
      */
-    public function setTypeCode($typeCode)
+    public function setTypeCode($typeCode): self
     {
         $this->typeCode = $typeCode;
         return $this;
@@ -88,11 +84,8 @@ class ExchangedDocumentType
 
     /**
      * Sets a new issueDateTime
-     *
-     * @param  \horstoeko\zugferd\entities\basicwl\udt\DateTimeType $issueDateTime
-     * @return self
      */
-    public function setIssueDateTime(\horstoeko\zugferd\entities\basicwl\udt\DateTimeType $issueDateTime)
+    public function setIssueDateTime(\horstoeko\zugferd\entities\basicwl\udt\DateTimeType $issueDateTime): self
     {
         $this->issueDateTime = $issueDateTime;
         return $this;
@@ -100,11 +93,8 @@ class ExchangedDocumentType
 
     /**
      * Adds as includedNote
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\basicwl\ram\NoteType $includedNote
      */
-    public function addToIncludedNote(\horstoeko\zugferd\entities\basicwl\ram\NoteType $includedNote)
+    public function addToIncludedNote(\horstoeko\zugferd\entities\basicwl\ram\NoteType $includedNote): self
     {
         $this->includedNote[] = $includedNote;
         return $this;
@@ -114,9 +104,8 @@ class ExchangedDocumentType
      * isset includedNote
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetIncludedNote($index)
+    public function issetIncludedNote($index): bool
     {
         return isset($this->includedNote[$index]);
     }
@@ -125,9 +114,8 @@ class ExchangedDocumentType
      * unset includedNote
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetIncludedNote($index)
+    public function unsetIncludedNote($index): void
     {
         unset($this->includedNote[$index]);
     }
@@ -146,9 +134,8 @@ class ExchangedDocumentType
      * Sets a new includedNote
      *
      * @param  \horstoeko\zugferd\entities\basicwl\ram\NoteType[] $includedNote
-     * @return self
      */
-    public function setIncludedNote(?array $includedNote = null)
+    public function setIncludedNote(?array $includedNote = null): self
     {
         $this->includedNote = $includedNote;
         return $this;

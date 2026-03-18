@@ -13,7 +13,7 @@ class DocumentContextParameterType
     /**
      * @var \horstoeko\zugferd\entities\minimum\udt\IDType $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * Gets as iD
@@ -27,11 +27,8 @@ class DocumentContextParameterType
 
     /**
      * Sets a new iD
-     *
-     * @param  \horstoeko\zugferd\entities\minimum\udt\IDType $iD
-     * @return self
      */
-    public function setID(\horstoeko\zugferd\entities\minimum\udt\IDType $iD)
+    public function setID(\horstoeko\zugferd\entities\minimum\udt\IDType $iD): self
     {
         $this->iD = $iD;
         return $this;

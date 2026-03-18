@@ -169,9 +169,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
 
     /**
      * Starts a HTTP download of the generated PDF document
-     *
-     * @param  string $toFilename
-     * @return string
      */
     public function saveDocumentInline(string $toFilename): string
     {
@@ -180,8 +177,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
 
     /**
      * Returns the content of the generared PDF as a string
-     *
-     * @return string
      */
     public function downloadString(): string
     {
@@ -203,8 +198,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
 
     /**
      * Returns the creator tool name (the PHP library, and if given also the additional creator tool)
-     *
-     * @return string
      */
     public function getCreatorToolName(): string
     {
@@ -238,8 +231,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
     /**
      * Returns the relationship type for the XML attachment. This
      * can return 'Data', 'Alternative'
-     *
-     * @return string
      */
     public function getAttachmentRelationshipType(): string
     {
@@ -280,9 +271,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      * Attach an additional file to PDF. The file that is specified in $fullFilename
      * must exists
      *
-     * @param  string $fullFilename
-     * @param  string $displayName
-     * @param  string $relationshipType
      * @return static
      * @throws ZugferdInvalidArgumentException
      * @throws ZugferdFileNotFoundException
@@ -324,10 +312,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
     /**
      * Attach an additional file to PDF by a content string
      *
-     * @param  string $content
-     * @param  string $filename
-     * @param  string $displayName
-     * @param  string $relationshipType
      * @return static
      * @throws ZugferdInvalidArgumentException
      * @throws ZugferdUnknownMimetype
@@ -387,7 +371,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      * Set the the deterministic mode. This mode should only be used
      * for testing purposes
      *
-     * @param  bool $deterministicModeEnabled
      * @return static
      */
     public function setDeterministicModeEnabled(bool $deterministicModeEnabled)
@@ -400,7 +383,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
     /**
      * Set the template for the author meta information
      *
-     * @param  string $authorTemplate
      * @return static
      */
     public function setAuthorTemplate(string $authorTemplate)
@@ -413,7 +395,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
     /**
      * Set the template for the keyword meta information
      *
-     * @param  string $keywordTemplate
      * @return static
      */
     public function setKeywordTemplate(string $keywordTemplate)
@@ -426,7 +407,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
     /**
      * Set the template for the title meta information
      *
-     * @param  string $titleTemplate
      * @return static
      */
     public function setTitleTemplate(string $titleTemplate)
@@ -439,7 +419,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
     /**
      * Set the template for the subject meta information
      *
-     * @param  string $subjectTemplate
      * @return static
      */
     public function setSubjectTemplate(string $subjectTemplate)
@@ -452,7 +431,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
     /**
      * Set the user defined callback for generating custom meta information
      *
-     * @param  callable|null $callback
      * @return static
      */
     public function setMetaInformationCallback(?callable $callback = null)
@@ -478,8 +456,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
 
     /**
      * Returns true if the attachment pane is visible, otherwise false
-     *
-     * @return boolean
      */
     public function getAttachmentPaneIsVisible(): bool
     {
@@ -512,36 +488,26 @@ abstract class ZugferdDocumentPdfBuilderAbstract
 
     /**
      * Get the content of XML to attach
-     *
-     * @return string
      */
     abstract protected function getXmlContent(): string;
 
     /**
      * Get the filename of the XML to attach
-     *
-     * @return string
      */
     abstract protected function getXmlAttachmentFilename(): string;
 
     /**
      * Get the XMP name for the XML to attach
-     *
-     * @return string
      */
     abstract protected function getXmlAttachmentXmpName(): string;
 
     /**
      * Get the XMP version for the XML to attach
-     *
-     * @return string
      */
     abstract protected function getXmlAttachmentXmpVersion(): string;
 
     /**
      * Internal function which sets up the PDF
-     *
-     * @return void
      */
     private function startCreatePdf(): void
     {
@@ -608,8 +574,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
 
     /**
      * Update PDF metadata to according to FacturX/ZUGFeRD XML data.
-     *
-     * @return void
      */
     private function updatePdfMetadata(): void
     {
@@ -661,8 +625,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
 
     /**
      * Prepare PDF Metadata informations from FacturX/ZUGFeRD XML.
-     *
-     * @return array
      */
     private function preparePdfMetadata(): array
     {
@@ -687,8 +649,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
 
     /**
      * Extract major invoice information from FacturX/ZUGFeRD XML.
-     *
-     * @return array
      */
     protected function extractInvoiceInformations(): array
     {
@@ -732,7 +692,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      * Otherwise it will return false
      *
      * @param  string $pdfData
-     * @return boolean
      */
     protected function isFile($pdfData): bool
     {
@@ -745,11 +704,6 @@ abstract class ZugferdDocumentPdfBuilderAbstract
 
     /**
      * Returns the parsed meta-field content
-     *
-     * @param  string $which
-     * @param  string $default
-     * @param  array  $invoiceInformation
-     * @return string
      */
     private function buildMetadataField(string $which, string $default, array $invoiceInformation): string
     {

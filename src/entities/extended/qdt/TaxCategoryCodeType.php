@@ -13,7 +13,7 @@ class TaxCategoryCodeType
     /**
      * @var string $__value
      */
-    private $__value = null;
+    private $__value;
 
     /**
      * Construct
@@ -41,10 +41,8 @@ class TaxCategoryCodeType
 
     /**
      * Gets a string value
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return strval($this->__value);
     }

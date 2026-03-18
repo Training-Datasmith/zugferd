@@ -61,10 +61,6 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
     /**
      * Convert from file to file
      *
-     * @param  string $fromFilename
-     * @param  string $toFile
-     * @param  int    $newProfileId
-     * @return void
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws ZugferdFileNotFoundException
@@ -82,9 +78,6 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
     /**
      * Convert from file to string
      *
-     * @param  string $fromFilename
-     * @param  int    $newProfileId
-     * @return string
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws ZugferdFileNotFoundException
@@ -102,10 +95,6 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
     /**
      * Convert from content to file
      *
-     * @param  string $fromContent
-     * @param  string $toFile
-     * @param  int    $newProfileId
-     * @return void
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws ZugferdUnknownProfileException
@@ -121,9 +110,6 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
     /**
      * Convert from content to string
      *
-     * @param  string $fromContent
-     * @param  int    $newProfileId
-     * @return string
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws ZugferdUnknownProfileException
@@ -139,9 +125,6 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
     /**
      * Create an instance by filename
      *
-     * @param  string $fromFilename
-     * @param  int    $newProfileId
-     * @return ZugferdDocumentProfileConverter
      * @throws ZugferdFileNotFoundException
      * @throws ZugferdFileNotReadableException
      * @throws ZugferdUnknownXmlContentException
@@ -165,9 +148,6 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
     /**
      * Create an instance by cpntent
      *
-     * @param  string $fromContent
-     * @param  int    $newProfileId
-     * @return ZugferdDocumentProfileConverter
      * @throws ZugferdUnknownXmlContentException
      * @throws ZugferdUnknownProfileException
      */
@@ -184,9 +164,6 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
 
     /**
      * Set the destination (the new) profile id
-     *
-     * @param  int $toProfileId
-     * @return ZugferdDocumentProfileConverter
      */
     protected function setConvertToProfileId(int $toProfileId): ZugferdDocumentProfileConverter
     {
@@ -197,9 +174,6 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
 
     /**
      * Set the source-content
-     *
-     * @param  string $fromContent
-     * @return ZugferdDocumentProfileConverter
      */
     protected function setConvertFromContent(string $fromContent): ZugferdDocumentProfileConverter
     {
@@ -211,8 +185,6 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
     /**
      * Convert and save to file
      *
-     * @param  string $toFile
-     * @return ZugferdDocumentProfileConverter
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws ZugferdUnknownProfileIdException
@@ -228,7 +200,6 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
     /**
      * Convert and get xml content as string
      *
-     * @return string
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws ZugferdUnknownProfileIdException
@@ -242,7 +213,6 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
     /**
      * Internal conversion method
      *
-     * @return ZugferdDocumentProfileConverter
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws ZugferdUnknownProfileIdException

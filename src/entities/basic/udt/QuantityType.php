@@ -13,12 +13,12 @@ class QuantityType
     /**
      * @var float $__value
      */
-    private $__value = null;
+    private $__value;
 
     /**
      * @var string $unitCode
      */
-    private $unitCode = null;
+    private $unitCode;
 
     /**
      * Construct
@@ -46,10 +46,8 @@ class QuantityType
 
     /**
      * Gets a string value
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return strval($this->__value);
     }
@@ -68,9 +66,8 @@ class QuantityType
      * Sets a new unitCode
      *
      * @param  string $unitCode
-     * @return self
      */
-    public function setUnitCode($unitCode)
+    public function setUnitCode($unitCode): self
     {
         $this->unitCode = $unitCode;
         return $this;

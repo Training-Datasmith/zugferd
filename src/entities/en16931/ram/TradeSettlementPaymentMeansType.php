@@ -13,32 +13,32 @@ class TradeSettlementPaymentMeansType
     /**
      * @var string $typeCode
      */
-    private $typeCode = null;
+    private $typeCode;
 
     /**
      * @var string $information
      */
-    private $information = null;
+    private $information;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard
      */
-    private $applicableTradeSettlementFinancialCard = null;
+    private $applicableTradeSettlementFinancialCard;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount
      */
-    private $payerPartyDebtorFinancialAccount = null;
+    private $payerPartyDebtorFinancialAccount;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount
      */
-    private $payeePartyCreditorFinancialAccount = null;
+    private $payeePartyCreditorFinancialAccount;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution
      */
-    private $payeeSpecifiedCreditorFinancialInstitution = null;
+    private $payeeSpecifiedCreditorFinancialInstitution;
 
     /**
      * Gets as typeCode
@@ -54,9 +54,8 @@ class TradeSettlementPaymentMeansType
      * Sets a new typeCode
      *
      * @param  string $typeCode
-     * @return self
      */
-    public function setTypeCode($typeCode)
+    public function setTypeCode($typeCode): self
     {
         $this->typeCode = $typeCode;
         return $this;
@@ -76,9 +75,8 @@ class TradeSettlementPaymentMeansType
      * Sets a new information
      *
      * @param  string $information
-     * @return self
      */
-    public function setInformation($information)
+    public function setInformation($information): self
     {
         $this->information = $information;
         return $this;
@@ -98,9 +96,8 @@ class TradeSettlementPaymentMeansType
      * Sets a new applicableTradeSettlementFinancialCard
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard
-     * @return self
      */
-    public function setApplicableTradeSettlementFinancialCard(?\horstoeko\zugferd\entities\en16931\ram\TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard = null)
+    public function setApplicableTradeSettlementFinancialCard(?\horstoeko\zugferd\entities\en16931\ram\TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard = null): self
     {
         $this->applicableTradeSettlementFinancialCard = $applicableTradeSettlementFinancialCard;
         return $this;
@@ -120,9 +117,8 @@ class TradeSettlementPaymentMeansType
      * Sets a new payerPartyDebtorFinancialAccount
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount
-     * @return self
      */
-    public function setPayerPartyDebtorFinancialAccount(?\horstoeko\zugferd\entities\en16931\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount = null)
+    public function setPayerPartyDebtorFinancialAccount(?\horstoeko\zugferd\entities\en16931\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount = null): self
     {
         $this->payerPartyDebtorFinancialAccount = $payerPartyDebtorFinancialAccount;
         return $this;
@@ -142,9 +138,8 @@ class TradeSettlementPaymentMeansType
      * Sets a new payeePartyCreditorFinancialAccount
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount
-     * @return self
      */
-    public function setPayeePartyCreditorFinancialAccount(?\horstoeko\zugferd\entities\en16931\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount = null)
+    public function setPayeePartyCreditorFinancialAccount(?\horstoeko\zugferd\entities\en16931\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount = null): self
     {
         $this->payeePartyCreditorFinancialAccount = $payeePartyCreditorFinancialAccount;
         return $this;
@@ -164,9 +159,8 @@ class TradeSettlementPaymentMeansType
      * Sets a new payeeSpecifiedCreditorFinancialInstitution
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution
-     * @return self
      */
-    public function setPayeeSpecifiedCreditorFinancialInstitution(?\horstoeko\zugferd\entities\en16931\ram\CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution = null)
+    public function setPayeeSpecifiedCreditorFinancialInstitution(?\horstoeko\zugferd\entities\en16931\ram\CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution = null): self
     {
         $this->payeeSpecifiedCreditorFinancialInstitution = $payeeSpecifiedCreditorFinancialInstitution;
         return $this;

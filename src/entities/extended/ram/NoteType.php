@@ -13,17 +13,17 @@ class NoteType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\CodeType $contentCode
      */
-    private $contentCode = null;
+    private $contentCode;
 
     /**
      * @var string $content
      */
-    private $content = null;
+    private $content;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\CodeType $subjectCode
      */
-    private $subjectCode = null;
+    private $subjectCode;
 
     /**
      * Gets as contentCode
@@ -39,9 +39,8 @@ class NoteType
      * Sets a new contentCode
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\CodeType $contentCode
-     * @return self
      */
-    public function setContentCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $contentCode = null)
+    public function setContentCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $contentCode = null): self
     {
         $this->contentCode = $contentCode;
         return $this;
@@ -61,9 +60,8 @@ class NoteType
      * Sets a new content
      *
      * @param  string $content
-     * @return self
      */
-    public function setContent($content)
+    public function setContent($content): self
     {
         $this->content = $content;
         return $this;
@@ -83,9 +81,8 @@ class NoteType
      * Sets a new subjectCode
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\CodeType $subjectCode
-     * @return self
      */
-    public function setSubjectCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $subjectCode = null)
+    public function setSubjectCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $subjectCode = null): self
     {
         $this->subjectCode = $subjectCode;
         return $this;

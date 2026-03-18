@@ -13,12 +13,12 @@ class AdvancePaymentType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $paidAmount
      */
-    private $paidAmount = null;
+    private $paidAmount;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType $formattedReceivedDateTime
      */
-    private $formattedReceivedDateTime = null;
+    private $formattedReceivedDateTime;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeTaxType[] $includedTradeTax
@@ -30,7 +30,7 @@ class AdvancePaymentType
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $invoiceSpecifiedReferencedDocument
      */
-    private $invoiceSpecifiedReferencedDocument = null;
+    private $invoiceSpecifiedReferencedDocument;
 
     /**
      * Gets as paidAmount
@@ -44,11 +44,8 @@ class AdvancePaymentType
 
     /**
      * Sets a new paidAmount
-     *
-     * @param  \horstoeko\zugferd\entities\extended\udt\AmountType $paidAmount
-     * @return self
      */
-    public function setPaidAmount(\horstoeko\zugferd\entities\extended\udt\AmountType $paidAmount)
+    public function setPaidAmount(\horstoeko\zugferd\entities\extended\udt\AmountType $paidAmount): self
     {
         $this->paidAmount = $paidAmount;
         return $this;
@@ -68,9 +65,8 @@ class AdvancePaymentType
      * Sets a new formattedReceivedDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType $formattedReceivedDateTime
-     * @return self
      */
-    public function setFormattedReceivedDateTime(?\horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType $formattedReceivedDateTime = null)
+    public function setFormattedReceivedDateTime(?\horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType $formattedReceivedDateTime = null): self
     {
         $this->formattedReceivedDateTime = $formattedReceivedDateTime;
         return $this;
@@ -78,11 +74,8 @@ class AdvancePaymentType
 
     /**
      * Adds as includedTradeTax
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\TradeTaxType $includedTradeTax
      */
-    public function addToIncludedTradeTax(\horstoeko\zugferd\entities\extended\ram\TradeTaxType $includedTradeTax)
+    public function addToIncludedTradeTax(\horstoeko\zugferd\entities\extended\ram\TradeTaxType $includedTradeTax): self
     {
         $this->includedTradeTax[] = $includedTradeTax;
         return $this;
@@ -92,9 +85,8 @@ class AdvancePaymentType
      * isset includedTradeTax
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetIncludedTradeTax($index)
+    public function issetIncludedTradeTax($index): bool
     {
         return isset($this->includedTradeTax[$index]);
     }
@@ -103,9 +95,8 @@ class AdvancePaymentType
      * unset includedTradeTax
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetIncludedTradeTax($index)
+    public function unsetIncludedTradeTax($index): void
     {
         unset($this->includedTradeTax[$index]);
     }
@@ -124,9 +115,8 @@ class AdvancePaymentType
      * Sets a new includedTradeTax
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeTaxType[] $includedTradeTax
-     * @return self
      */
-    public function setIncludedTradeTax(array $includedTradeTax)
+    public function setIncludedTradeTax(array $includedTradeTax): self
     {
         $this->includedTradeTax = $includedTradeTax;
         return $this;
@@ -146,9 +136,8 @@ class AdvancePaymentType
      * Sets a new invoiceSpecifiedReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $invoiceSpecifiedReferencedDocument
-     * @return self
      */
-    public function setInvoiceSpecifiedReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $invoiceSpecifiedReferencedDocument = null)
+    public function setInvoiceSpecifiedReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $invoiceSpecifiedReferencedDocument = null): self
     {
         $this->invoiceSpecifiedReferencedDocument = $invoiceSpecifiedReferencedDocument;
         return $this;

@@ -13,22 +13,22 @@ class LineTradeAgreementType
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $sellerOrderReferencedDocument
      */
-    private $sellerOrderReferencedDocument = null;
+    private $sellerOrderReferencedDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $buyerOrderReferencedDocument
      */
-    private $buyerOrderReferencedDocument = null;
+    private $buyerOrderReferencedDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $quotationReferencedDocument
      */
-    private $quotationReferencedDocument = null;
+    private $quotationReferencedDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $contractReferencedDocument
      */
-    private $contractReferencedDocument = null;
+    private $contractReferencedDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $additionalReferencedDocument
@@ -40,12 +40,12 @@ class LineTradeAgreementType
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePriceType $grossPriceProductTradePrice
      */
-    private $grossPriceProductTradePrice = null;
+    private $grossPriceProductTradePrice;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePriceType $netPriceProductTradePrice
      */
-    private $netPriceProductTradePrice = null;
+    private $netPriceProductTradePrice;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $ultimateCustomerOrderReferencedDocument
@@ -68,9 +68,8 @@ class LineTradeAgreementType
      * Sets a new sellerOrderReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $sellerOrderReferencedDocument
-     * @return self
      */
-    public function setSellerOrderReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $sellerOrderReferencedDocument = null)
+    public function setSellerOrderReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $sellerOrderReferencedDocument = null): self
     {
         $this->sellerOrderReferencedDocument = $sellerOrderReferencedDocument;
         return $this;
@@ -90,9 +89,8 @@ class LineTradeAgreementType
      * Sets a new buyerOrderReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $buyerOrderReferencedDocument
-     * @return self
      */
-    public function setBuyerOrderReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $buyerOrderReferencedDocument = null)
+    public function setBuyerOrderReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $buyerOrderReferencedDocument = null): self
     {
         $this->buyerOrderReferencedDocument = $buyerOrderReferencedDocument;
         return $this;
@@ -112,9 +110,8 @@ class LineTradeAgreementType
      * Sets a new quotationReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $quotationReferencedDocument
-     * @return self
      */
-    public function setQuotationReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $quotationReferencedDocument = null)
+    public function setQuotationReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $quotationReferencedDocument = null): self
     {
         $this->quotationReferencedDocument = $quotationReferencedDocument;
         return $this;
@@ -134,9 +131,8 @@ class LineTradeAgreementType
      * Sets a new contractReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $contractReferencedDocument
-     * @return self
      */
-    public function setContractReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $contractReferencedDocument = null)
+    public function setContractReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $contractReferencedDocument = null): self
     {
         $this->contractReferencedDocument = $contractReferencedDocument;
         return $this;
@@ -144,11 +140,8 @@ class LineTradeAgreementType
 
     /**
      * Adds as additionalReferencedDocument
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $additionalReferencedDocument
      */
-    public function addToAdditionalReferencedDocument(\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $additionalReferencedDocument)
+    public function addToAdditionalReferencedDocument(\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $additionalReferencedDocument): self
     {
         $this->additionalReferencedDocument[] = $additionalReferencedDocument;
         return $this;
@@ -158,9 +151,8 @@ class LineTradeAgreementType
      * isset additionalReferencedDocument
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetAdditionalReferencedDocument($index)
+    public function issetAdditionalReferencedDocument($index): bool
     {
         return isset($this->additionalReferencedDocument[$index]);
     }
@@ -169,9 +161,8 @@ class LineTradeAgreementType
      * unset additionalReferencedDocument
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetAdditionalReferencedDocument($index)
+    public function unsetAdditionalReferencedDocument($index): void
     {
         unset($this->additionalReferencedDocument[$index]);
     }
@@ -190,9 +181,8 @@ class LineTradeAgreementType
      * Sets a new additionalReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $additionalReferencedDocument
-     * @return self
      */
-    public function setAdditionalReferencedDocument(?array $additionalReferencedDocument = null)
+    public function setAdditionalReferencedDocument(?array $additionalReferencedDocument = null): self
     {
         $this->additionalReferencedDocument = $additionalReferencedDocument;
         return $this;
@@ -212,9 +202,8 @@ class LineTradeAgreementType
      * Sets a new grossPriceProductTradePrice
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePriceType $grossPriceProductTradePrice
-     * @return self
      */
-    public function setGrossPriceProductTradePrice(?\horstoeko\zugferd\entities\extended\ram\TradePriceType $grossPriceProductTradePrice = null)
+    public function setGrossPriceProductTradePrice(?\horstoeko\zugferd\entities\extended\ram\TradePriceType $grossPriceProductTradePrice = null): self
     {
         $this->grossPriceProductTradePrice = $grossPriceProductTradePrice;
         return $this;
@@ -232,11 +221,8 @@ class LineTradeAgreementType
 
     /**
      * Sets a new netPriceProductTradePrice
-     *
-     * @param  \horstoeko\zugferd\entities\extended\ram\TradePriceType $netPriceProductTradePrice
-     * @return self
      */
-    public function setNetPriceProductTradePrice(\horstoeko\zugferd\entities\extended\ram\TradePriceType $netPriceProductTradePrice)
+    public function setNetPriceProductTradePrice(\horstoeko\zugferd\entities\extended\ram\TradePriceType $netPriceProductTradePrice): self
     {
         $this->netPriceProductTradePrice = $netPriceProductTradePrice;
         return $this;
@@ -244,11 +230,8 @@ class LineTradeAgreementType
 
     /**
      * Adds as ultimateCustomerOrderReferencedDocument
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
      */
-    public function addToUltimateCustomerOrderReferencedDocument(\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $ultimateCustomerOrderReferencedDocument)
+    public function addToUltimateCustomerOrderReferencedDocument(\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $ultimateCustomerOrderReferencedDocument): self
     {
         $this->ultimateCustomerOrderReferencedDocument[] = $ultimateCustomerOrderReferencedDocument;
         return $this;
@@ -258,9 +241,8 @@ class LineTradeAgreementType
      * isset ultimateCustomerOrderReferencedDocument
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetUltimateCustomerOrderReferencedDocument($index)
+    public function issetUltimateCustomerOrderReferencedDocument($index): bool
     {
         return isset($this->ultimateCustomerOrderReferencedDocument[$index]);
     }
@@ -269,9 +251,8 @@ class LineTradeAgreementType
      * unset ultimateCustomerOrderReferencedDocument
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetUltimateCustomerOrderReferencedDocument($index)
+    public function unsetUltimateCustomerOrderReferencedDocument($index): void
     {
         unset($this->ultimateCustomerOrderReferencedDocument[$index]);
     }
@@ -290,9 +271,8 @@ class LineTradeAgreementType
      * Sets a new ultimateCustomerOrderReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $ultimateCustomerOrderReferencedDocument
-     * @return self
      */
-    public function setUltimateCustomerOrderReferencedDocument(?array $ultimateCustomerOrderReferencedDocument = null)
+    public function setUltimateCustomerOrderReferencedDocument(?array $ultimateCustomerOrderReferencedDocument = null): self
     {
         $this->ultimateCustomerOrderReferencedDocument = $ultimateCustomerOrderReferencedDocument;
         return $this;

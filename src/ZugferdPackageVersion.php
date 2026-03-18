@@ -26,8 +26,6 @@ final class ZugferdPackageVersion
 {
     /**
      * Get the installed version of this library
-     *
-     * @return string
      */
     public static function getInstalledVersion(): string
     {
@@ -40,8 +38,6 @@ final class ZugferdPackageVersion
 
     /**
      * Return the default version used for this package, when no installation was found
-     *
-     * @return string
      */
     private static function getDefaultVersion(): string
     {

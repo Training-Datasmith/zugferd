@@ -13,7 +13,7 @@ class TaxRegistrationType
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\IDType $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * Gets as iD
@@ -27,11 +27,8 @@ class TaxRegistrationType
 
     /**
      * Sets a new iD
-     *
-     * @param  \horstoeko\zugferd\entities\basic\udt\IDType $iD
-     * @return self
      */
-    public function setID(\horstoeko\zugferd\entities\basic\udt\IDType $iD)
+    public function setID(\horstoeko\zugferd\entities\basic\udt\IDType $iD): self
     {
         $this->iD = $iD;
         return $this;

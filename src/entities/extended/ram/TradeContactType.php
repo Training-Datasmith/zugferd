@@ -13,32 +13,32 @@ class TradeContactType
     /**
      * @var string $personName
      */
-    private $personName = null;
+    private $personName;
 
     /**
      * @var string $departmentName
      */
-    private $departmentName = null;
+    private $departmentName;
 
     /**
      * @var string $typeCode
      */
-    private $typeCode = null;
+    private $typeCode;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $telephoneUniversalCommunication
      */
-    private $telephoneUniversalCommunication = null;
+    private $telephoneUniversalCommunication;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $faxUniversalCommunication
      */
-    private $faxUniversalCommunication = null;
+    private $faxUniversalCommunication;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $emailURIUniversalCommunication
      */
-    private $emailURIUniversalCommunication = null;
+    private $emailURIUniversalCommunication;
 
     /**
      * Gets as personName
@@ -54,9 +54,8 @@ class TradeContactType
      * Sets a new personName
      *
      * @param  string $personName
-     * @return self
      */
-    public function setPersonName($personName)
+    public function setPersonName($personName): self
     {
         $this->personName = $personName;
         return $this;
@@ -76,9 +75,8 @@ class TradeContactType
      * Sets a new departmentName
      *
      * @param  string $departmentName
-     * @return self
      */
-    public function setDepartmentName($departmentName)
+    public function setDepartmentName($departmentName): self
     {
         $this->departmentName = $departmentName;
         return $this;
@@ -98,9 +96,8 @@ class TradeContactType
      * Sets a new typeCode
      *
      * @param  string $typeCode
-     * @return self
      */
-    public function setTypeCode($typeCode)
+    public function setTypeCode($typeCode): self
     {
         $this->typeCode = $typeCode;
         return $this;
@@ -120,9 +117,8 @@ class TradeContactType
      * Sets a new telephoneUniversalCommunication
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $telephoneUniversalCommunication
-     * @return self
      */
-    public function setTelephoneUniversalCommunication(?\horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $telephoneUniversalCommunication = null)
+    public function setTelephoneUniversalCommunication(?\horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $telephoneUniversalCommunication = null): self
     {
         $this->telephoneUniversalCommunication = $telephoneUniversalCommunication;
         return $this;
@@ -142,9 +138,8 @@ class TradeContactType
      * Sets a new faxUniversalCommunication
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $faxUniversalCommunication
-     * @return self
      */
-    public function setFaxUniversalCommunication(?\horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $faxUniversalCommunication = null)
+    public function setFaxUniversalCommunication(?\horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $faxUniversalCommunication = null): self
     {
         $this->faxUniversalCommunication = $faxUniversalCommunication;
         return $this;
@@ -164,9 +159,8 @@ class TradeContactType
      * Sets a new emailURIUniversalCommunication
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $emailURIUniversalCommunication
-     * @return self
      */
-    public function setEmailURIUniversalCommunication(?\horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $emailURIUniversalCommunication = null)
+    public function setEmailURIUniversalCommunication(?\horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $emailURIUniversalCommunication = null): self
     {
         $this->emailURIUniversalCommunication = $emailURIUniversalCommunication;
         return $this;

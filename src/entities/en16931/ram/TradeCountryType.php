@@ -13,7 +13,7 @@ class TradeCountryType
     /**
      * @var string $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * Gets as iD
@@ -29,9 +29,8 @@ class TradeCountryType
      * Sets a new iD
      *
      * @param  string $iD
-     * @return self
      */
-    public function setID($iD)
+    public function setID($iD): self
     {
         $this->iD = $iD;
         return $this;

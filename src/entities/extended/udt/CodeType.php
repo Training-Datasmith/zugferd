@@ -13,17 +13,17 @@ class CodeType
     /**
      * @var string $__value
      */
-    private $__value = null;
+    private $__value;
 
     /**
      * @var string $listID
      */
-    private $listID = null;
+    private $listID;
 
     /**
      * @var string $listVersionID
      */
-    private $listVersionID = null;
+    private $listVersionID;
 
     /**
      * Construct
@@ -51,10 +51,8 @@ class CodeType
 
     /**
      * Gets a string value
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return strval($this->__value);
     }
@@ -73,9 +71,8 @@ class CodeType
      * Sets a new listID
      *
      * @param  string $listID
-     * @return self
      */
-    public function setListID($listID)
+    public function setListID($listID): self
     {
         $this->listID = $listID;
         return $this;
@@ -95,9 +92,8 @@ class CodeType
      * Sets a new listVersionID
      *
      * @param  string $listVersionID
-     * @return self
      */
-    public function setListVersionID($listVersionID)
+    public function setListVersionID($listVersionID): self
     {
         $this->listVersionID = $listVersionID;
         return $this;

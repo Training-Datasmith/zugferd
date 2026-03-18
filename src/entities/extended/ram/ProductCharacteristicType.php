@@ -13,22 +13,22 @@ class ProductCharacteristicType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\CodeType $typeCode
      */
-    private $typeCode = null;
+    private $typeCode;
 
     /**
      * @var string $description
      */
-    private $description = null;
+    private $description;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\MeasureType $valueMeasure
      */
-    private $valueMeasure = null;
+    private $valueMeasure;
 
     /**
      * @var string $value
      */
-    private $value = null;
+    private $value;
 
     /**
      * Gets as typeCode
@@ -44,9 +44,8 @@ class ProductCharacteristicType
      * Sets a new typeCode
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\CodeType $typeCode
-     * @return self
      */
-    public function setTypeCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $typeCode = null)
+    public function setTypeCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $typeCode = null): self
     {
         $this->typeCode = $typeCode;
         return $this;
@@ -66,9 +65,8 @@ class ProductCharacteristicType
      * Sets a new description
      *
      * @param  string $description
-     * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description): self
     {
         $this->description = $description;
         return $this;
@@ -88,9 +86,8 @@ class ProductCharacteristicType
      * Sets a new valueMeasure
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\MeasureType $valueMeasure
-     * @return self
      */
-    public function setValueMeasure(?\horstoeko\zugferd\entities\extended\udt\MeasureType $valueMeasure = null)
+    public function setValueMeasure(?\horstoeko\zugferd\entities\extended\udt\MeasureType $valueMeasure = null): self
     {
         $this->valueMeasure = $valueMeasure;
         return $this;
@@ -110,9 +107,8 @@ class ProductCharacteristicType
      * Sets a new value
      *
      * @param  string $value
-     * @return self
      */
-    public function setValue($value)
+    public function setValue($value): self
     {
         $this->value = $value;
         return $this;

@@ -13,47 +13,47 @@ class LineTradeDeliveryType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\QuantityType $billedQuantity
      */
-    private $billedQuantity = null;
+    private $billedQuantity;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\QuantityType $chargeFreeQuantity
      */
-    private $chargeFreeQuantity = null;
+    private $chargeFreeQuantity;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\QuantityType $packageQuantity
      */
-    private $packageQuantity = null;
+    private $packageQuantity;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $shipToTradeParty
      */
-    private $shipToTradeParty = null;
+    private $shipToTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $ultimateShipToTradeParty
      */
-    private $ultimateShipToTradeParty = null;
+    private $ultimateShipToTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
      */
-    private $actualDeliverySupplyChainEvent = null;
+    private $actualDeliverySupplyChainEvent;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
      */
-    private $despatchAdviceReferencedDocument = null;
+    private $despatchAdviceReferencedDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $receivingAdviceReferencedDocument
      */
-    private $receivingAdviceReferencedDocument = null;
+    private $receivingAdviceReferencedDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $deliveryNoteReferencedDocument
      */
-    private $deliveryNoteReferencedDocument = null;
+    private $deliveryNoteReferencedDocument;
 
     /**
      * Gets as billedQuantity
@@ -67,11 +67,8 @@ class LineTradeDeliveryType
 
     /**
      * Sets a new billedQuantity
-     *
-     * @param  \horstoeko\zugferd\entities\extended\udt\QuantityType $billedQuantity
-     * @return self
      */
-    public function setBilledQuantity(\horstoeko\zugferd\entities\extended\udt\QuantityType $billedQuantity)
+    public function setBilledQuantity(\horstoeko\zugferd\entities\extended\udt\QuantityType $billedQuantity): self
     {
         $this->billedQuantity = $billedQuantity;
         return $this;
@@ -91,9 +88,8 @@ class LineTradeDeliveryType
      * Sets a new chargeFreeQuantity
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\QuantityType $chargeFreeQuantity
-     * @return self
      */
-    public function setChargeFreeQuantity(?\horstoeko\zugferd\entities\extended\udt\QuantityType $chargeFreeQuantity = null)
+    public function setChargeFreeQuantity(?\horstoeko\zugferd\entities\extended\udt\QuantityType $chargeFreeQuantity = null): self
     {
         $this->chargeFreeQuantity = $chargeFreeQuantity;
         return $this;
@@ -113,9 +109,8 @@ class LineTradeDeliveryType
      * Sets a new packageQuantity
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\QuantityType $packageQuantity
-     * @return self
      */
-    public function setPackageQuantity(?\horstoeko\zugferd\entities\extended\udt\QuantityType $packageQuantity = null)
+    public function setPackageQuantity(?\horstoeko\zugferd\entities\extended\udt\QuantityType $packageQuantity = null): self
     {
         $this->packageQuantity = $packageQuantity;
         return $this;
@@ -135,9 +130,8 @@ class LineTradeDeliveryType
      * Sets a new shipToTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $shipToTradeParty
-     * @return self
      */
-    public function setShipToTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $shipToTradeParty = null)
+    public function setShipToTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $shipToTradeParty = null): self
     {
         $this->shipToTradeParty = $shipToTradeParty;
         return $this;
@@ -157,9 +151,8 @@ class LineTradeDeliveryType
      * Sets a new ultimateShipToTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $ultimateShipToTradeParty
-     * @return self
      */
-    public function setUltimateShipToTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $ultimateShipToTradeParty = null)
+    public function setUltimateShipToTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $ultimateShipToTradeParty = null): self
     {
         $this->ultimateShipToTradeParty = $ultimateShipToTradeParty;
         return $this;
@@ -179,9 +172,8 @@ class LineTradeDeliveryType
      * Sets a new actualDeliverySupplyChainEvent
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
-     * @return self
      */
-    public function setActualDeliverySupplyChainEvent(?\horstoeko\zugferd\entities\extended\ram\SupplyChainEventType $actualDeliverySupplyChainEvent = null)
+    public function setActualDeliverySupplyChainEvent(?\horstoeko\zugferd\entities\extended\ram\SupplyChainEventType $actualDeliverySupplyChainEvent = null): self
     {
         $this->actualDeliverySupplyChainEvent = $actualDeliverySupplyChainEvent;
         return $this;
@@ -201,9 +193,8 @@ class LineTradeDeliveryType
      * Sets a new despatchAdviceReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
-     * @return self
      */
-    public function setDespatchAdviceReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $despatchAdviceReferencedDocument = null)
+    public function setDespatchAdviceReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $despatchAdviceReferencedDocument = null): self
     {
         $this->despatchAdviceReferencedDocument = $despatchAdviceReferencedDocument;
         return $this;
@@ -223,9 +214,8 @@ class LineTradeDeliveryType
      * Sets a new receivingAdviceReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $receivingAdviceReferencedDocument
-     * @return self
      */
-    public function setReceivingAdviceReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $receivingAdviceReferencedDocument = null)
+    public function setReceivingAdviceReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $receivingAdviceReferencedDocument = null): self
     {
         $this->receivingAdviceReferencedDocument = $receivingAdviceReferencedDocument;
         return $this;
@@ -245,9 +235,8 @@ class LineTradeDeliveryType
      * Sets a new deliveryNoteReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $deliveryNoteReferencedDocument
-     * @return self
      */
-    public function setDeliveryNoteReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $deliveryNoteReferencedDocument = null)
+    public function setDeliveryNoteReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $deliveryNoteReferencedDocument = null): self
     {
         $this->deliveryNoteReferencedDocument = $deliveryNoteReferencedDocument;
         return $this;

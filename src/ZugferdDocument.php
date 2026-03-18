@@ -68,7 +68,6 @@ class ZugferdDocument
      * Constructor
      *
      * @param  integer $profile The ID of the profile of the document
-     * @return void
      * @throws ZugferdUnknownProfileIdException
      * @throws ZugferdUnknownProfileParameterException
      * @throws InvalidArgumentException
@@ -125,8 +124,6 @@ class ZugferdDocument
 
     /**
      * Returns the selected profile id
-     *
-     * @return integer
      */
     public function getProfileId(): int
     {
@@ -135,8 +132,6 @@ class ZugferdDocument
 
     /**
      * Returns the profile definition
-     *
-     * @return array
      */
     public function getProfileDefinition(): array
     {
@@ -146,7 +141,6 @@ class ZugferdDocument
     /**
      * Get a parameter from profile definition
      *
-     * @param  string $parameterName
      * @return mixed
      * @throws ZugferdUnknownProfileParameterException
      */
@@ -164,8 +158,6 @@ class ZugferdDocument
     /**
      * Sets the internal profile definitions
      *
-     * @param  int $profile
-     * @return ZugferdDocument
      * @throws ZugferdUnknownProfileIdException
      */
     protected function initProfile(int $profile): ZugferdDocument
@@ -178,8 +170,6 @@ class ZugferdDocument
 
     /**
      * Build the internal object helper
-     *
-     * @return ZugferdDocument
      */
     protected function initObjectHelper(): ZugferdDocument
     {
@@ -191,7 +181,6 @@ class ZugferdDocument
     /**
      * Build the internal serialzer
      *
-     * @return ZugferdDocument
      * @throws ZugferdUnknownProfileParameterException
      * @throws InvalidArgumentException
      * @throws RuntimeException
@@ -253,7 +242,7 @@ class ZugferdDocument
         $this->serializerBuilder->addDefaultHandlers();
 
         $this->serializerBuilder->configureHandlers(
-            function (HandlerRegistryInterface $handler) {
+            function (HandlerRegistryInterface $handler): void {
                 $handler->registerSubscribingHandler(new BaseTypesHandler());
                 $handler->registerSubscribingHandler(new XmlSchemaDateHandler());
                 $handler->registerSubscribingHandler(new ZugferdTypesHandler());
@@ -283,7 +272,6 @@ class ZugferdDocument
     /**
      * Serialize internal invoice object as XML
      *
-     * @return string
      * @throws RuntimeException
      */
     public function serializeAsXml(): string
@@ -294,7 +282,6 @@ class ZugferdDocument
     /**
      * Serialize internal invoice object as JSON
      *
-     * @return string
      * @throws RuntimeException
      */
     public function serializeAsJson(): string

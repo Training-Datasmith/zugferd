@@ -13,7 +13,7 @@ class IndicatorType
     /**
      * @var bool $indicator
      */
-    private $indicator = null;
+    private $indicator;
 
     /**
      * Gets as indicator
@@ -29,9 +29,8 @@ class IndicatorType
      * Sets a new indicator
      *
      * @param  bool $indicator
-     * @return self
      */
-    public function setIndicator($indicator)
+    public function setIndicator($indicator): self
     {
         $this->indicator = $indicator;
         return $this;

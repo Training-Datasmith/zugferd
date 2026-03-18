@@ -33,8 +33,6 @@ class ZugferdDocumentPdfReader
     /**
      * Tries to load a PDF file (ZUGFeRD/Factur-X) and return a ZugferdDocumentReader
      *
-     * @param  string $pdfFilename
-     * @return ZugferdDocumentReader
      * @throws Exception
      * @throws RuntimeException
      * @throws ZugferdFileNotFoundException
@@ -52,8 +50,6 @@ class ZugferdDocumentPdfReader
     /**
      * Tries to load an attachment content from PDF and return a ZugferdDocumentReader
      *
-     * @param  string $pdfContent
-     * @return ZugferdDocumentReader
      * @throws Exception
      * @throws RuntimeException
      * @throws ZugferdNoPdfAttachmentFoundException
@@ -69,8 +65,6 @@ class ZugferdDocumentPdfReader
     /**
      * Returns a XML content from a PDF file
      *
-     * @param  string $pdfFilename
-     * @return string
      * @throws Exception
      * @throws ZugferdFileNotFoundException
      * @throws ZugferdFileNotReadableException
@@ -84,8 +78,6 @@ class ZugferdDocumentPdfReader
     /**
      * Returns a XML content from a PDF binary stream (string)
      *
-     * @param  string $pdfContent
-     * @return string
      * @throws Exception
      * @throws ZugferdNoPdfAttachmentFoundException
      */

@@ -13,50 +13,47 @@ class HeaderTradeDeliveryType
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType[] $relatedSupplyChainConsignment
      */
-    private $relatedSupplyChainConsignment = null;
+    private $relatedSupplyChainConsignment;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $shipToTradeParty
      */
-    private $shipToTradeParty = null;
+    private $shipToTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $ultimateShipToTradeParty
      */
-    private $ultimateShipToTradeParty = null;
+    private $ultimateShipToTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $shipFromTradeParty
      */
-    private $shipFromTradeParty = null;
+    private $shipFromTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
      */
-    private $actualDeliverySupplyChainEvent = null;
+    private $actualDeliverySupplyChainEvent;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
      */
-    private $despatchAdviceReferencedDocument = null;
+    private $despatchAdviceReferencedDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $receivingAdviceReferencedDocument
      */
-    private $receivingAdviceReferencedDocument = null;
+    private $receivingAdviceReferencedDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $deliveryNoteReferencedDocument
      */
-    private $deliveryNoteReferencedDocument = null;
+    private $deliveryNoteReferencedDocument;
 
     /**
      * Adds as specifiedLogisticsTransportMovement
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType $specifiedLogisticsTransportMovement
      */
-    public function addToRelatedSupplyChainConsignment(\horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType $specifiedLogisticsTransportMovement)
+    public function addToRelatedSupplyChainConsignment(\horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType $specifiedLogisticsTransportMovement): self
     {
         $this->relatedSupplyChainConsignment[] = $specifiedLogisticsTransportMovement;
         return $this;
@@ -66,9 +63,8 @@ class HeaderTradeDeliveryType
      * isset relatedSupplyChainConsignment
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetRelatedSupplyChainConsignment($index)
+    public function issetRelatedSupplyChainConsignment($index): bool
     {
         return isset($this->relatedSupplyChainConsignment[$index]);
     }
@@ -77,9 +73,8 @@ class HeaderTradeDeliveryType
      * unset relatedSupplyChainConsignment
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetRelatedSupplyChainConsignment($index)
+    public function unsetRelatedSupplyChainConsignment($index): void
     {
         unset($this->relatedSupplyChainConsignment[$index]);
     }
@@ -98,9 +93,8 @@ class HeaderTradeDeliveryType
      * Sets a new relatedSupplyChainConsignment
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType[] $relatedSupplyChainConsignment
-     * @return self
      */
-    public function setRelatedSupplyChainConsignment(?array $relatedSupplyChainConsignment = null)
+    public function setRelatedSupplyChainConsignment(?array $relatedSupplyChainConsignment = null): self
     {
         $this->relatedSupplyChainConsignment = $relatedSupplyChainConsignment;
         return $this;
@@ -120,9 +114,8 @@ class HeaderTradeDeliveryType
      * Sets a new shipToTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $shipToTradeParty
-     * @return self
      */
-    public function setShipToTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $shipToTradeParty = null)
+    public function setShipToTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $shipToTradeParty = null): self
     {
         $this->shipToTradeParty = $shipToTradeParty;
         return $this;
@@ -142,9 +135,8 @@ class HeaderTradeDeliveryType
      * Sets a new ultimateShipToTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $ultimateShipToTradeParty
-     * @return self
      */
-    public function setUltimateShipToTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $ultimateShipToTradeParty = null)
+    public function setUltimateShipToTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $ultimateShipToTradeParty = null): self
     {
         $this->ultimateShipToTradeParty = $ultimateShipToTradeParty;
         return $this;
@@ -164,9 +156,8 @@ class HeaderTradeDeliveryType
      * Sets a new shipFromTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $shipFromTradeParty
-     * @return self
      */
-    public function setShipFromTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $shipFromTradeParty = null)
+    public function setShipFromTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $shipFromTradeParty = null): self
     {
         $this->shipFromTradeParty = $shipFromTradeParty;
         return $this;
@@ -186,9 +177,8 @@ class HeaderTradeDeliveryType
      * Sets a new actualDeliverySupplyChainEvent
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
-     * @return self
      */
-    public function setActualDeliverySupplyChainEvent(?\horstoeko\zugferd\entities\extended\ram\SupplyChainEventType $actualDeliverySupplyChainEvent = null)
+    public function setActualDeliverySupplyChainEvent(?\horstoeko\zugferd\entities\extended\ram\SupplyChainEventType $actualDeliverySupplyChainEvent = null): self
     {
         $this->actualDeliverySupplyChainEvent = $actualDeliverySupplyChainEvent;
         return $this;
@@ -208,9 +198,8 @@ class HeaderTradeDeliveryType
      * Sets a new despatchAdviceReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
-     * @return self
      */
-    public function setDespatchAdviceReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $despatchAdviceReferencedDocument = null)
+    public function setDespatchAdviceReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $despatchAdviceReferencedDocument = null): self
     {
         $this->despatchAdviceReferencedDocument = $despatchAdviceReferencedDocument;
         return $this;
@@ -230,9 +219,8 @@ class HeaderTradeDeliveryType
      * Sets a new receivingAdviceReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $receivingAdviceReferencedDocument
-     * @return self
      */
-    public function setReceivingAdviceReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $receivingAdviceReferencedDocument = null)
+    public function setReceivingAdviceReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $receivingAdviceReferencedDocument = null): self
     {
         $this->receivingAdviceReferencedDocument = $receivingAdviceReferencedDocument;
         return $this;
@@ -252,9 +240,8 @@ class HeaderTradeDeliveryType
      * Sets a new deliveryNoteReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $deliveryNoteReferencedDocument
-     * @return self
      */
-    public function setDeliveryNoteReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $deliveryNoteReferencedDocument = null)
+    public function setDeliveryNoteReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $deliveryNoteReferencedDocument = null): self
     {
         $this->deliveryNoteReferencedDocument = $deliveryNoteReferencedDocument;
         return $this;

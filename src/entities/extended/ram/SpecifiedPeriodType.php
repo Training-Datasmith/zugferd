@@ -13,22 +13,22 @@ class SpecifiedPeriodType
     /**
      * @var string $description
      */
-    private $description = null;
+    private $description;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $startDateTime
      */
-    private $startDateTime = null;
+    private $startDateTime;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $endDateTime
      */
-    private $endDateTime = null;
+    private $endDateTime;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $completeDateTime
      */
-    private $completeDateTime = null;
+    private $completeDateTime;
 
     /**
      * Gets as description
@@ -44,9 +44,8 @@ class SpecifiedPeriodType
      * Sets a new description
      *
      * @param  string $description
-     * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description): self
     {
         $this->description = $description;
         return $this;
@@ -66,9 +65,8 @@ class SpecifiedPeriodType
      * Sets a new startDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $startDateTime
-     * @return self
      */
-    public function setStartDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $startDateTime = null)
+    public function setStartDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $startDateTime = null): self
     {
         $this->startDateTime = $startDateTime;
         return $this;
@@ -88,9 +86,8 @@ class SpecifiedPeriodType
      * Sets a new endDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $endDateTime
-     * @return self
      */
-    public function setEndDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $endDateTime = null)
+    public function setEndDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $endDateTime = null): self
     {
         $this->endDateTime = $endDateTime;
         return $this;
@@ -110,9 +107,8 @@ class SpecifiedPeriodType
      * Sets a new completeDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $completeDateTime
-     * @return self
      */
-    public function setCompleteDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $completeDateTime = null)
+    public function setCompleteDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $completeDateTime = null): self
     {
         $this->completeDateTime = $completeDateTime;
         return $this;

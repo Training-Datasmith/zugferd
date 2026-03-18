@@ -77,8 +77,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
 
     /**
      * Returns the profile of the descriptor
-     *
-     * @return integer
      */
     protected static function getProfile(): int
     {
@@ -87,8 +85,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
 
     /**
      * Creates a new ZugferdDocumentBuilder with profile EN16931
-     *
-     * @return ZugferdQuickDescriptor
      */
     public static function doCreateNew(): ZugferdQuickDescriptor
     {
@@ -112,7 +108,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  \DateTime   $invoiceDate        __BT-2, From MINIMUM__ Date of invoice. The date when the document was issued by the seller
      * @param  string      $currency           __BT-5, From MINIMUM__ Code for the invoice currency
      * @param  string|null $invoiceNoReference __BT-83, From BASIC WL__ Intended use for payment
-     * @return ZugferdQuickDescriptor
      */
     public function doCreateInvoice(string $invoiceNo, \DateTime $invoiceDate, string $currency, ?string $invoiceNoReference = null): ZugferdQuickDescriptor
     {
@@ -128,7 +123,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  \DateTime $invoiceDate           __BT-2, From MINIMUM__ Date of invoice. The date when the document was issued by the seller
      * @param  string    $currency              __BT-5, From MINIMUM__ Code for the invoice currency
      * @param  string    $creditMemoNoReference __BT-83, From BASIC WL__ Intended use for refund. If null the number of the credit memo is used
-     * @return ZugferdQuickDescriptor
      */
     public function doCreateCreditMemo(string $creditMemoNo, \DateTime $invoiceDate, string $currency, string $creditMemoNoReference = ""): ZugferdQuickDescriptor
     {
@@ -142,7 +136,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *
      * @param  string|null   $description __BT-20, From _BASIC WL__ A text description of the payment terms that apply to the payment amount due (including a description of possible penalties). Note: This element can contain multiple lines and multiple conditions.
      * @param  DateTime|null $dueDate     __BT-9, From BASIC WL__ The date by which payment is due Note: The payment due date reflects the net payment due date. In the case of partial payments, this indicates the first due date of a net payment. The corresponding description of more complex payment terms can be given in BT-20.
-     * @return ZugferdQuickDescriptor
      */
     public function doSetPaymentTerms(string $description, ?DateTime $dueDate = null): ZugferdQuickDescriptor
     {
@@ -158,11 +151,10 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *
      * @param  boolean $isSEPA    __BT-81, From BASIC WL__ The expected or used means of payment, expressed as a code. The entries from the UNTDID 4461 code list must be used. A distinction should be made between SEPA and non-SEPA payments as well as between credit payments, direct debits, card payments and other means of payment In particular, the following codes can be used:
      * @param  string  $buyerIban __BT-91, From BASIC WL__ The account to be debited by the direct debit
-     * @return ZugferdQuickDescriptor
      */
     public function doSetPaymentMeansForDebitTransfer(bool $isSEPA, string $buyerIban): ZugferdQuickDescriptor
     {
-        $this->addDocumentPaymentMean($isSEPA === false ? ZugferdPaymentMeans::UNTDID_4461_31 : ZugferdPaymentMeans::UNTDID_4461_59, null, null, null, null, $buyerIban, null, null, null, null);
+        $this->addDocumentPaymentMean($isSEPA === false ? ZugferdPaymentMeans::UNTDID_4461_31 : ZugferdPaymentMeans::UNTDID_4461_59, null, null, null, null, $buyerIban);
         return $this;
     }
 
@@ -177,7 +169,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $payeeAccountName __BT-85, From BASIC WL__ The name of the payment account held with a payment service provider to which the payment should be made
      * @param  string|null $payeePropId      __BT-BT-84-0, From BASIC WL__ National account number (not for SEPA)
      * @param  string|null $payeeBic         __BT-86, From EN 16931__ An identifier for the payment service provider with which the payment account is held
-     * @return ZugferdQuickDescriptor
      */
     public function doSetPaymentMeansForCreditTransfer(bool $isSEPA, string $payeeIban, ?string $payeeAccountName = null, ?string $payeePropId = null, ?string $payeeBic = null): ZugferdQuickDescriptor
     {
@@ -191,11 +182,10 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $cardType       __BT-, From __ The type of the card
      * @param  string $cardId         __BT-87, From EN 16931__ The primary account number (PAN) to which the card used for payment belongs. In accordance with card payment security standards, an invoice should never contain a full payment card master account number. The following specification of the PCI Security Standards Council currently applies: The first 6 and last 4 digits at most are to be displayed
      * @param  string $cardHolderName __BT-88, From EN 16931__ Name of the payment card holder
-     * @return ZugferdQuickDescriptor
      */
     public function doSetPaymentMeansForBankCard(string $cardType, string $cardId, string $cardHolderName): ZugferdQuickDescriptor
     {
-        $this->addDocumentPaymentMean(ZugferdPaymentMeans::UNTDID_4461_48, null, $cardType, $cardId, $cardHolderName, null, null, null, null, null);
+        $this->addDocumentPaymentMean(ZugferdPaymentMeans::UNTDID_4461_48, null, $cardType, $cardId, $cardHolderName);
         return $this;
     }
 
@@ -205,11 +195,10 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $cardType       __BT-, From __ The type of the card
      * @param  string $cardId         __BT-87, From EN 16931__ The primary account number (PAN) to which the card used for payment belongs. In accordance with card payment security standards, an invoice should never contain a full payment card master account number. The following specification of the PCI Security Standards Council currently applies: The first 6 and last 4 digits at most are to be displayed
      * @param  string $cardHolderName __BT-88, From EN 16931__ Name of the payment card holder
-     * @return ZugferdQuickDescriptor
      */
     public function doSetPaymentMeansForCreditCard(string $cardType, string $cardId, string $cardHolderName): ZugferdQuickDescriptor
     {
-        $this->addDocumentPaymentMean(ZugferdPaymentMeans::UNTDID_4461_54, null, $cardType, $cardId, $cardHolderName, null, null, null, null, null);
+        $this->addDocumentPaymentMean(ZugferdPaymentMeans::UNTDID_4461_54, null, $cardType, $cardId, $cardHolderName);
         return $this;
     }
 
@@ -219,11 +208,10 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $cardType       __BT-, From __ The type of the card
      * @param  string $cardId         __BT-87, From EN 16931__ The primary account number (PAN) to which the card used for payment belongs. In accordance with card payment security standards, an invoice should never contain a full payment card master account number. The following specification of the PCI Security Standards Council currently applies: The first 6 and last 4 digits at most are to be displayed
      * @param  string $cardHolderName __BT-88, From EN 16931__ Name of the payment card holder
-     * @return ZugferdQuickDescriptor
      */
     public function doSetPaymentMeansForDebitCard(string $cardType, string $cardId, string $cardHolderName): ZugferdQuickDescriptor
     {
-        $this->addDocumentPaymentMean(ZugferdPaymentMeans::UNTDID_4461_55, null, $cardType, $cardId, $cardHolderName, null, null, null, null, null);
+        $this->addDocumentPaymentMean(ZugferdPaymentMeans::UNTDID_4461_55, null, $cardType, $cardId, $cardHolderName);
         return $this;
     }
 
@@ -233,7 +221,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string      $note        __BT-22, From BASIC WL__ A free text containing unstructured information that is relevant to the invoice as a whole
      * @param  string|null $subjectCode __BT-21, From BASIC WL__ The qualification of the free text for the invoice from BT-22
      * @param  string|null $contentCode __BT-X-5, From EXTENDED__ A code to classify the content of the free text of the invoice
-     * @return ZugferdQuickDescriptor
      */
     public function doAddNote(string $note, ?string $subjectCode = null, ?string $contentCode = null): ZugferdQuickDescriptor
     {
@@ -246,7 +233,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *
      * @param  string   $orderNo   __BT-13, From MINIMUM__ An identifier issued by the buyer for a referenced order (order number)
      * @param  DateTime $orderDate __BT-X-147, From EXTENDED__ Date of order
-     * @return ZugferdQuickDescriptor
      */
     public function doSetBuyerOrderReferenceDocument(string $orderNo, DateTime $orderDate): ZugferdQuickDescriptor
     {
@@ -274,7 +260,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null   $name              __BT-123, From EN 16931__ A description of the document, e.g. Hourly billing, usage or consumption report, etc.
      * @param  string|null   $referenceTypeCode __BT-, From __ The identifier for the identification scheme of the identifier of the item invoiced. If it is not clear to the recipient which scheme is used for the identifier, an identifier of the scheme should be used, which must be selected from UNTDID 1153 in accordance with the code list entries.
      * @param  string|null   $filename          __BT-125, From EN 16931__ Contains a file name of an attachment document embedded as a binary object
-     * @return ZugferdQuickDescriptor
      */
     public function doAddAdditionalReferencedDocument(string $issuerAssignedID, ?DateTime $issueDateTime = null, ?string $typeCode = null, ?string $name = null, ?string $referenceTypeCode = null, ?string $filename = null): ZugferdQuickDescriptor
     {
@@ -287,7 +272,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *
      * @param  string   $deliveryNoteNo   __BT-X-202, From EXTENDED__ Delivery slip number
      * @param  DateTime $deliveryNoteDate __BT-X-203, From EXTENDED__ Delivery slip date
-     * @return ZugferdQuickDescriptor
      */
     public function doSetDeliveryNoteReferenceDocument(string $deliveryNoteNo, DateTime $deliveryNoteDate): ZugferdQuickDescriptor
     {
@@ -305,7 +289,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *
      * @param  string        $id            __BT-25, From BASIC WL__ The identification of an invoice previously sent by the seller
      * @param  DateTime|null $issueDateTime __BT-26, From BASIC WL__ Date of the previous invoice
-     * @return ZugferdQuickDescriptor
      */
     public function doSetInvoiceReferencedDocument(string $id, ?DateTime $issueDateTime = null): ZugferdQuickDescriptor
     {
@@ -318,7 +301,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *
      * @param  string $id   __BT-11, From EN 16931__ The identifier of the project to which the invoice relates
      * @param  string $name __BT-11-0, From EN 16931__  The name of the project to which the invoice relates
-     * @return ZugferdQuickDescriptor
      */
     public function doSetSpecifiedProcuringProject(string $id, string $name): ZugferdQuickDescriptor
     {
@@ -330,7 +312,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * Set detailed information on the actual delivery
      *
      * @param  DateTime|null $date __BT-72, From BASIC WL__ Actual delivery time
-     * @return ZugferdQuickDescriptor
      */
     public function doSetSupplyChainEvent(?DateTime $date): ZugferdQuickDescriptor
     {
@@ -351,12 +332,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string      $id             __BT-46, From BASIC WL__ An identifier of the buyer. In many systems, buyer identification is key information. Multiple buyer IDs can be assigned or specified. They can be differentiated by using different identification schemes. If no scheme is given, it should be known to the buyer and buyer, e.g. a previously exchanged, seller-assigned identifier of the buyer
      * @param  string|null $globalID       __BT-46-0, From BASIC WL__ The buyers's identifier identification scheme is an identifier uniquely assigned to a buyer by a global registration organization.
      * @param  string|null $globalIDscheme __BT-46-1, From BASIC WL__ If the identifier is used for the identification scheme, it must be selected from the entries in the list published by the ISO / IEC 6523 Maintenance Agency.
-     * @return ZugferdQuickDescriptor
      */
     public function doSetBuyer(string $name, string $postcode, string $city, string $street, string $country, ?string $buyerReference = null, ?string $id = null, ?string $globalID = null, ?string $globalIDscheme = null): ZugferdQuickDescriptor
     {
         $this->setDocumentBuyer($name, $id);
-        $this->setDocumentBuyerAddress($street, null, null, $postcode, $city, $country, null);
+        $this->setDocumentBuyerAddress($street, null, null, $postcode, $city, $country);
         $this->addDocumentBuyerGlobalId($globalID, $globalIDscheme);
         if ($buyerReference != null) {
             $this->setDocumentBuyerReference($buyerReference);
@@ -373,7 +353,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $emailAddress __BT-58, From EN 16931__ An e-mail address of the contact point
      * @param  string|null $phoneno      __BT-57, From EN 16931__ A telephone number for the contact point
      * @param  string|null $faxno        __BT-X-115, From EXTENDED__ A fax number of the contact point
-     * @return ZugferdQuickDescriptor
      */
     public function doSetBuyerContact(string $name, ?string $orgunit = null, ?string $emailAddress = null, ?string $phoneno = null, ?string $faxno = null): ZugferdQuickDescriptor
     {
@@ -393,7 +372,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *
      * @param  string $no       __BT-48-0, From BASIC WL__ Type of tax number (FC = Tax number, VA = Sales tax identification number)
      * @param  string $schemeID __BT-48, From BASIC WL__ Tax number or sales tax identification number
-     * @return ZugferdQuickDescriptor
      */
     public function doAddBuyerTaxRegistration(string $no, string $schemeID): ZugferdQuickDescriptor
     {
@@ -406,7 +384,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *
      * @param  string $uri       __BT-49, From BASIC WL__ Specifies the buyer's electronic address to which the invoice is sent
      * @param  string $uriScheme __BT-49-1, From BASIC WL__ The identifier for the identification scheme of the buyer's electronic address (Default: EM)
-     * @return ZugferdQuickDescriptor
      */
     public function doSetBuyerElectronicCommunication(string $uri, string $uriScheme = "EM"): ZugferdQuickDescriptor
     {
@@ -426,12 +403,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $id             __BT-29, From BASIC WL__ An identifier of the seller. In many systems, seller identification is key information. Multiple seller IDs can be assigned or specified. They can be differentiated by using different identification schemes. If no scheme is given, it should be known to the buyer and seller, e.g. a previously exchanged, buyer-assigned identifier of the seller
      * @param  string|null $globalID       __BT-29/BT-29-0, From BASIC WL__ The seller's identifier identification scheme is an identifier uniquely assigned to a seller by a global registration organization.
      * @param  string|null $globalIDscheme __BT-29-1, From BASIC WL__ If the identifier is used for the identification scheme, it must be selected from the entries in the list published by the ISO / IEC 6523 Maintenance Agency.
-     * @return ZugferdQuickDescriptor
      */
     public function doSetSeller(string $name, string $postcode, string $city, string $street, string $country, ?string $id = null, ?string $globalID = null, ?string $globalIDscheme = null): ZugferdQuickDescriptor
     {
         $this->setDocumentSeller($name, $id);
-        $this->setDocumentSellerAddress($street, null, null, $postcode, $city, $country, null);
+        $this->setDocumentSellerAddress($street, null, null, $postcode, $city, $country);
         $this->addDocumentSellerGlobalId($globalID, $globalIDscheme);
         return $this;
     }
@@ -444,7 +420,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $emailAddress __BT-43, From EN 16931__ An e-mail address of the contact point
      * @param  string|null $phoneno      __BT-42, From EN 16931__ A telephone number for the contact point
      * @param  string|null $faxno        __BT-X-107, From EXTENDED__ A fax number of the contact point
-     * @return ZugferdQuickDescriptor
      */
     public function doSetSellerContact(string $name, ?string $orgunit = null, ?string $emailAddress = null, ?string $phoneno = null, ?string $faxno = null): ZugferdQuickDescriptor
     {
@@ -464,7 +439,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *
      * @param  string $no       __BT-31/32, From MINIMUM/EN 16931__ Tax number of the seller or sales tax identification number of the seller
      * @param  string $schemeID __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax number of the seller (FC = Tax number, VA = Sales tax identification number)
-     * @return ZugferdQuickDescriptor
      */
     public function doAddSellerTaxRegistration(string $no, string $schemeID): ZugferdQuickDescriptor
     {
@@ -477,7 +451,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *
      * @param  string $uri       __BT-34, From BASIC WL__ Specifies the electronic address of the seller to which the response to the invoice can be sent at application level
      * @param  string $uriScheme __BT-34-1, From BASIC WL__ The identifier for the identification scheme of the seller's electronic address (Default: EM)
-     * @return ZugferdQuickDescriptor
      */
     public function doSetSellerElectronicCommunication(string $uri, string $uriScheme = "EM"): ZugferdQuickDescriptor
     {
@@ -490,7 +463,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *
      * @param      string $lineId  __BT-126, From BASIC__ Identification of the invoice item
      * @param      string $comment __BT-127, From BASIC__ A free text that contains unstructured information that is relevant to the invoice item
-     * @return     ZugferdQuickDescriptor
      * @deprecated 1.0.75
      */
     public function doAddTradeLineCommentItem(string $lineId, string $comment): ZugferdQuickDescriptor
@@ -514,7 +486,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $taxTypeCode           __BT-151-0, From BASIC__ In EN 16931 only the tax type “sales tax” with the code “VAT” is supported. Should other types of tax be specified, such as an insurance tax or a mineral oil tax the EXTENDED profile must be used. The code for the tax type must then be taken from the code list
      *                                       UNTDID 5153.
      * @param  float  $taxPercent            __BT-152, From BASIC__ The VAT rate applicable to the item invoiced and expressed as a percentage. Note: The code of the sales tax category and the category-specific sales tax rate  must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
-     * @return ZugferdQuickDescriptor
      */
     public function doAddTradeLineItem(string $lineId, string $productName, float $unitPrice, float $quantity, string $unitCode, float $allowanceChargeAmount, string $allowanceChargeReason, string $taxCategoryCode, string $taxTypeCode, float $taxPercent): ZugferdQuickDescriptor
     {
@@ -553,7 +524,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * Add detailed information on the free text on the position
      *
      * @param  string $content __BT-127, From BASIC__ A free text that contains unstructured information that is relevant to the invoice item
-     * @return ZugferdQuickDescriptor
      */
     public function doSetDocumentPositionNote(string $content): ZugferdQuickDescriptor
     {
@@ -576,7 +546,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $taxTypeCode     __BT-151-0, From BASIC__ In EN 16931 only the tax type “sales tax” with the code “VAT” is supported. Should other types of tax be specified, such as an insurance tax or a mineral oil tax the EXTENDED profile must be used. The code for the tax type must then be taken from the code list
      *                                 UNTDID 5153.
      * @param  float  $taxPercent      __BT-152, From BASIC__ The VAT rate applicable to the item invoiced and expressed as a percentage. Note: The code of the sales tax category and the category-specific sales tax rate  must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
-     * @return ZugferdQuickDescriptor
      */
     public function doAddTradeLineItemWithSurcharge(string $lineId, string $productName, float $unitPrice, float $chargeAmount, string $chargeReason, float $quantity, string $unitCode, string $taxCategoryCode, string $taxTypeCode, float $taxPercent): ZugferdQuickDescriptor
     {
@@ -598,7 +567,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $taxTypeCode     __BT-151-0, From BASIC__ In EN 16931 only the tax type “sales tax” with the code “VAT” is supported. Should other types of tax be specified, such as an insurance tax or a mineral oil tax the EXTENDED profile must be used. The code for the tax type must then be taken from the code list
      *                                 UNTDID 5153.
      * @param  float  $taxPercent      __BT-152, From BASIC__ The VAT rate applicable to the item invoiced and expressed as a percentage. Note: The code of the sales tax category and the category-specific sales tax rate  must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
-     * @return ZugferdQuickDescriptor
      */
     public function doAddTradeLineItemWithDiscount(string $lineId, string $productName, float $unitPrice, float $discountAmount, string $discountReason, float $quantity, string $unitCode, string $taxCategoryCode, string $taxTypeCode, float $taxPercent): ZugferdQuickDescriptor
     {
@@ -614,7 +582,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $taxTypeCode     __BT-X-273-0, From EXTENDED__ Code of the Tax type. Note: Fixed value = "VAT"
      * @param  string $taxCategoryCode __BT-X-273, From EXTENDED__ Code of the VAT category
      * @param  float  $taxPercent      __BT-X-274, From EXTENDED__ The sales tax rate, expressed as the percentage applicable to the sales tax category in question. Note: The code of the sales tax category and the category-specific sales tax rate must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
-     * @return ZugferdQuickDescriptor
      */
     public function doAddLogisticsServiceCharge(float $amount, string $description, string $taxTypeCode, string $taxCategoryCode, float $taxPercent): ZugferdQuickDescriptor
     {
@@ -642,7 +609,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $taxCategoryCode __BT-95/BT-102, From BASIC WL__ A coded indication of which sales tax category applies to the surcharge or deduction at document level
      * @param  string $taxTypeCode     __BT-95-0/BT-102-0, From BASIC WL__ Code for the VAT category of the surcharge or charge at document level. Note: Fixed value = "VAT"
      * @param  float  $taxPercent      __BT-96/BT-103, From BASIC WL__ VAT rate for the surcharge or discount on document level. Note: The code of the sales tax category and the category-specific sales tax rate must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
-     * @return ZugferdQuickDescriptor
      */
     public function doAddTradeAllowanceCharge(float $actualAmount, string $reason, string $taxCategoryCode, string $taxTypeCode, float $taxPercent): ZugferdQuickDescriptor
     {
@@ -679,7 +645,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  float|null  $allowanceChargeBasisAmount __BT-X-263, From EXTENDED__ Total amount Additions and deductions to the tax rate at document level
      * @param  string|null $exemptionReasonCode        __BT-121, From BASIC WL__ Reason given in code form for the exemption of the amount from VAT. Note: Code list issued and maintained by the Connecting Europe Facility.
      * @param  string|null $exemptionReason            __BT-120, From BASIC WL__ Reason for tax exemption (free text)
-     * @return ZugferdQuickDescriptor
      */
     public function doAddApplicableTradeTax(float $basisAmount, float $percent, string $categoryCode, ?string $typeCode = null, ?float $allowanceChargeBasisAmount = null, ?string $exemptionReasonCode = null, ?string $exemptionReason = null): ZugferdQuickDescriptor
     {
@@ -697,7 +662,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  float|null  $allowanceChargeBasisAmount __BT-X-263, From EXTENDED__ Total amount Additions and deductions to the tax rate at document level
      * @param  string|null $exemptionReasonCode        __BT-121, From BASIC WL__ Reason given in code form for the exemption of the amount from VAT. Note: Code list issued and maintained by the Connecting Europe Facility.
      * @param  string|null $exemptionReason            __BT-120, From BASIC WL__ Reason for tax exemption (free text)
-     * @return ZugferdQuickDescriptor
      */
     public function doAddApplicableTradeTax2(float $basisAmount, float $calculatedAmount, string $categoryCode, ?string $typeCode = null, ?float $allowanceChargeBasisAmount = null, ?string $exemptionReasonCode = null, ?string $exemptionReason = null): ZugferdQuickDescriptor
     {
@@ -709,7 +673,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * Sets the prepaid amount
      *
      * @param  float $totalPrepaidAmount __BT-113, From BASIC WL__ Prepayment amount
-     * @return ZugferdQuickDescriptor
      */
     public function doSetPrepaidAmount(float $totalPrepaidAmount = 0.0): ZugferdQuickDescriptor
     {
@@ -719,8 +682,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
 
     /**
      * Writes the vat breakdowns and the summation of the document
-     *
-     * @return ZugferdQuickDescriptor
      */
     protected function doCalcTotals(): ZugferdQuickDescriptor
     {
@@ -750,12 +711,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * Insert into internal vat table for later using, e.g. when creating
      * the vat breakdown
      *
-     * @param  string $taxCategoryCode
-     * @param  string $taxTypeCode
-     * @param  float  $taxPercent
-     * @param  float  $lineTotalAmount
-     * @param  float  $chargeAmount
-     * @param  float  $allowanceAmount
      * @return void
      */
     protected function addToInternalVatBuffer(string $taxCategoryCode, string $taxTypeCode, float $taxPercent, float $lineTotalAmount, float $chargeAmount, float $allowanceAmount, float $logisticServiceCharge)
@@ -797,8 +752,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
 
     /**
      * Writes the document vat breakdown from the internal vat buffer
-     *
-     * @return void
      */
     protected function writeVatBreakDown(): void
     {
@@ -819,9 +772,6 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
 
     /**
      * Summarizes an array element in the internal vat table
-     *
-     * @param  integer $index
-     * @return float
      */
     protected function summarizeVatTableElement(int $index): float
     {

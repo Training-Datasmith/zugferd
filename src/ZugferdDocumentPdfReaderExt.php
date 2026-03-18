@@ -90,7 +90,6 @@ class ZugferdDocumentPdfReaderExt
      * Load a PDF file
      *
      * @param  string $pdfFilename Contains a full-qualified filename which must exist and must be readable
-     * @return ZugferdDocumentPdfReaderExt
      * @throws ZugferdFileNotFoundException
      * @throws ZugferdFileNotReadableException
      * @throws Exception
@@ -114,7 +113,6 @@ class ZugferdDocumentPdfReaderExt
      * Load a PDF content string
      *
      * @param  string $pdfContent Contains the raw data of a PDF
-     * @return ZugferdDocumentPdfReaderExt
      * @throws Exception
      */
     public static function fromContent(string $pdfContent): ZugferdDocumentPdfReaderExt
@@ -128,7 +126,6 @@ class ZugferdDocumentPdfReaderExt
      * @param  string $pdfFilename Contains a full-qualified filename which must exist and must be readable
      * @throws Exception
      * @throws RuntimeException
-     * @return ZugferdDocumentReader
      * @throws ZugferdFileNotFoundException
      * @throws ZugferdFileNotReadableException
      * @throws ZugferdNoPdfAttachmentFoundException
@@ -148,7 +145,6 @@ class ZugferdDocumentPdfReaderExt
      * @param  string $pdfContent Contains the raw data of a PDF
      * @throws Exception
      * @throws RuntimeException
-     * @return ZugferdDocumentReader
      * @throws ZugferdNoPdfAttachmentFoundException
      * @throws ZugferdUnknownXmlContentException
      * @throws ZugferdUnknownProfileException
@@ -165,7 +161,6 @@ class ZugferdDocumentPdfReaderExt
      * similar to ZugferdDocumentPdfReader::getXmlFromContent
      *
      * @param  string $pdfFilename Contains a full-qualified filename which must exist and must be readable
-     * @return string
      * @throws ZugferdFileNotFoundException
      * @throws ZugferdFileNotReadableException
      * @throws Exception
@@ -181,7 +176,6 @@ class ZugferdDocumentPdfReaderExt
      * Returns a invoice document XML content from a PDF content string
      *
      * @param  string $pdfContent Contains the raw data of a PDF
-     * @return string
      * @throws Exception
      * @throws ZugferdNoPdfAttachmentFoundException
      * @see    \horstoeko\zugferd\ZugferdDocumentPdfReader::getXmlFromContent() For a similar purpose in another context.
@@ -220,7 +214,6 @@ class ZugferdDocumentPdfReaderExt
     /**
      * Returns an instance of ZugferdDocumentReader by a valid invoice attachment
      *
-     * @return ZugferdDocumentReader
      * @throws ZugferdNoPdfAttachmentFoundException
      * @throws ZugferdUnknownXmlContentException
      * @throws ZugferdUnknownProfileException
@@ -236,7 +229,6 @@ class ZugferdDocumentPdfReaderExt
      * Returns the content as string if a valid invoice attachment was found, otherwise
      * an exception will be raised
      *
-     * @return string
      * @throws ZugferdNoPdfAttachmentFoundException
      */
     public function resolveInvoiceDocumentContent(): string
@@ -245,7 +237,7 @@ class ZugferdDocumentPdfReaderExt
             array_values(
                 array_filter(
                     $this->attachmentContentList,
-                    function ($attachmentContentItem) {
+                    function (array $attachmentContentItem): bool {
                         return $attachmentContentItem[ZugferdDocumentPdfReaderExt::ATTACHMENT_KEY_TYPE] === ZugferdDocumentPdfReaderExt::ATTACHMENT_TYPE_XMLINVOICE;
                     }
                 )
@@ -269,7 +261,7 @@ class ZugferdDocumentPdfReaderExt
             array_values(
                 array_filter(
                     $this->attachmentContentList,
-                    function ($attachmentContentItem) {
+                    function (array $attachmentContentItem): bool {
                         return $attachmentContentItem[ZugferdDocumentPdfReaderExt::ATTACHMENT_KEY_TYPE] === ZugferdDocumentPdfReaderExt::ATTACHMENT_TYPE_ADDITIONAL;
                     }
                 )
@@ -280,7 +272,6 @@ class ZugferdDocumentPdfReaderExt
      * Get a list of all the attachments.
      *
      * @param  string $pdfContent Contains the raw data of a PDF
-     * @return ZugferdDocumentPdfReaderExt
      * @throws Exception
      */
     protected function collectAttachmentsFromPdfContent(string $pdfContent): ZugferdDocumentPdfReaderExt
@@ -293,7 +284,7 @@ class ZugferdDocumentPdfReaderExt
 
         $fileSpecs = array_filter(
             $fileSpecs,
-            function ($fileSpec) {
+            function ($fileSpec): bool {
                 return $fileSpec->has('F') && $fileSpec->has('EF');
             }
         );

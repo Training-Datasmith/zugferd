@@ -13,12 +13,12 @@ class TradeProductType
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\IDType $globalID
      */
-    private $globalID = null;
+    private $globalID;
 
     /**
      * @var string $name
      */
-    private $name = null;
+    private $name;
 
     /**
      * Gets as globalID
@@ -34,9 +34,8 @@ class TradeProductType
      * Sets a new globalID
      *
      * @param  \horstoeko\zugferd\entities\basic\udt\IDType $globalID
-     * @return self
      */
-    public function setGlobalID(?\horstoeko\zugferd\entities\basic\udt\IDType $globalID = null)
+    public function setGlobalID(?\horstoeko\zugferd\entities\basic\udt\IDType $globalID = null): self
     {
         $this->globalID = $globalID;
         return $this;
@@ -56,9 +55,8 @@ class TradeProductType
      * Sets a new name
      *
      * @param  string $name
-     * @return self
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
         return $this;

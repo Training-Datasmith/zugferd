@@ -156,9 +156,6 @@ class ZugferdKositValidator
 
     /**
      * Create a KositValidator-Instance by a given content string
-     *
-     * @param  string $document
-     * @return ZugferdKositValidator
      */
     public static function fromString(string $document): ZugferdKositValidator
     {
@@ -167,9 +164,6 @@ class ZugferdKositValidator
 
     /**
      * Create a KositValidator-Instance by a given ZugferdDocument (ZugferdDocumentReader, ZugferdDocumentBuilder)
-     *
-     * @param  ZugferdDocument $zugferdDocument
-     * @return ZugferdKositValidator
      */
     public static function fromZugferdDocument(ZugferdDocument $zugferdDocument): ZugferdKositValidator
     {
@@ -191,7 +185,6 @@ class ZugferdKositValidator
      * Set the ZugferdDocument instance to validate
      *
      * @param  ZugferdDocument|string $document
-     * @return ZugferdKositValidator
      */
     public function setDocument($document): ZugferdKositValidator
     {
@@ -207,9 +200,6 @@ class ZugferdKositValidator
     /**
      * Setup the base directory. In the base directory all files will be downloaded
      * and created
-     *
-     * @param  string $newBaseDirectory
-     * @return ZugferdKositValidator
      */
     public function setBaseDirectory(string $newBaseDirectory): ZugferdKositValidator
     {
@@ -222,9 +212,6 @@ class ZugferdKositValidator
 
     /**
      * Setup the KOSIT validator application download url
-     *
-     * @param  string $newValidatorDownloadUrl
-     * @return ZugferdKositValidator
      */
     public function setValidatorDownloadUrl(string $newValidatorDownloadUrl): ZugferdKositValidator
     {
@@ -237,9 +224,6 @@ class ZugferdKositValidator
 
     /**
      * Setup the KOSIT validator scenario download url
-     *
-     * @param  string $newValidatorScenarioDownloadUrl
-     * @return ZugferdKositValidator
      */
     public function setValidatorScenarioDownloadUrl(string $newValidatorScenarioDownloadUrl): ZugferdKositValidator
     {
@@ -252,9 +236,6 @@ class ZugferdKositValidator
 
     /**
      * Set the filename of the ZIP file which contains the validation application
-     *
-     * @param  string $newValidatorAppZipFilename
-     * @return ZugferdKositValidator
      */
     public function setValidatorAppZipFilename(string $newValidatorAppZipFilename): ZugferdKositValidator
     {
@@ -265,9 +246,6 @@ class ZugferdKositValidator
 
     /**
      * Set the filename of the ZIP file which contains the validation scenarios
-     *
-     * @param  string $newValidatorScenarioZipFilename
-     * @return ZugferdKositValidator
      */
     public function setValidatorScenarioZipFilename(string $newValidatorScenarioZipFilename): ZugferdKositValidator
     {
@@ -278,9 +256,6 @@ class ZugferdKositValidator
 
     /**
      * Set the filename of the applications JAR
-     *
-     * @param  string $newValidatorAppJarFilename
-     * @return ZugferdKositValidator
      */
     public function setValidatorAppJarFilename(string $newValidatorAppJarFilename): ZugferdKositValidator
     {
@@ -291,9 +266,6 @@ class ZugferdKositValidator
 
     /**
      * Set the filename of the application scenario file
-     *
-     * @param  string $newValidatorAppScenarioFilename
-     * @return ZugferdKositValidator
      */
     public function setValidatorAppScenarioFilename(string $newValidatorAppScenarioFilename): ZugferdKositValidator
     {
@@ -304,8 +276,6 @@ class ZugferdKositValidator
 
     /**
      * Disable cleanup base directory
-     *
-     * @return ZugferdKositValidator
      */
     public function disableCleanup(): ZugferdKositValidator
     {
@@ -316,8 +286,6 @@ class ZugferdKositValidator
 
     /**
      * Enable cleanup base directory
-     *
-     * @return ZugferdKositValidator
      */
     public function enableCleanup(): ZugferdKositValidator
     {
@@ -328,8 +296,6 @@ class ZugferdKositValidator
 
     /**
      * Disable the usage of a remote host validation
-     *
-     * @return ZugferdKositValidator
      */
     public function disableRemoteMode(): ZugferdKositValidator
     {
@@ -340,8 +306,6 @@ class ZugferdKositValidator
 
     /**
      * Enable the usage of a remote host validation
-     *
-     * @return ZugferdKositValidator
      */
     public function enableRemoteMode(): ZugferdKositValidator
     {
@@ -353,9 +317,6 @@ class ZugferdKositValidator
     /**
      * Set the hostname or the ip of the remote host where the validation application
      * is running in daemon mode
-     *
-     * @param  string $remoteModeHost
-     * @return ZugferdKositValidator
      */
     public function setRemoteModeHost(string $remoteModeHost): ZugferdKositValidator
     {
@@ -371,9 +332,6 @@ class ZugferdKositValidator
     /**
      * Set the port of the remote host where the validation application
      * is running in daemon mode
-     *
-     * @param  integer $remoteModePort
-     * @return ZugferdKositValidator
      */
     public function setRemoteModePort(int $remoteModePort): ZugferdKositValidator
     {
@@ -388,8 +346,6 @@ class ZugferdKositValidator
 
     /**
      * Returns the full remote mode URL
-     *
-     * @return string
      */
     public function getRemoteModeUrl(): string
     {
@@ -398,8 +354,6 @@ class ZugferdKositValidator
 
     /**
      * Perform validation
-     *
-     * @return ZugferdKositValidator
      */
     public function validate(): ZugferdKositValidator
     {
@@ -428,8 +382,6 @@ class ZugferdKositValidator
 
     /**
      * Internal get the content of the document
-     *
-     * @return string
      */
     private function getDocumentContent(): string
     {
@@ -442,8 +394,6 @@ class ZugferdKositValidator
 
     /**
      * Internal get (and create) the directory for downloads and file creation
-     *
-     * @return string
      */
     private function resolveBaseDirectory(): string
     {
@@ -460,8 +410,6 @@ class ZugferdKositValidator
 
     /**
      * Get the full filename of the archive to download which contains the Java validation application
-     *
-     * @return string
      */
     private function resolveAppZipFilename(): string
     {
@@ -470,8 +418,6 @@ class ZugferdKositValidator
 
     /**
      * Get the full filename of the archive to download which contains the Java validation application scenarios
-     *
-     * @return string
      */
     private function resolveScenatioZipFilename(): string
     {
@@ -480,8 +426,6 @@ class ZugferdKositValidator
 
     /**
      * Get the full filename of the validator application jar file
-     *
-     * @return string
      */
     private function resolveAppJarFilename(): string
     {
@@ -490,8 +434,6 @@ class ZugferdKositValidator
 
     /**
      * Get the full filename of the validator application scenario file
-     *
-     * @return string
      */
     private function resolveAppScenarioFilename(): string
     {
@@ -500,8 +442,6 @@ class ZugferdKositValidator
 
     /**
      * Reset the internal filename where data of the PDF to validate are stored
-     *
-     * @return void
      */
     private function resetFileToValidateFilename(): void
     {
@@ -510,8 +450,6 @@ class ZugferdKositValidator
 
     /**
      * Get the full filename which contains the PDF to validate
-     *
-     * @return string
      */
     private function resolveFileToValidateFilename(): string
     {
@@ -524,8 +462,6 @@ class ZugferdKositValidator
 
     /**
      * Clear the internal error bag
-     *
-     * @return void
      */
     private function clearMessageBag(): void
     {
@@ -536,7 +472,6 @@ class ZugferdKositValidator
      * Add message to error bag
      *
      * @param  string|Throwable $error
-     * @return void
      */
     private function addToMessageBag($error, string $messageType = ""): void
     {
@@ -551,19 +486,16 @@ class ZugferdKositValidator
 
     /**
      * Get messages from messagebag filtered by message type
-     *
-     * @param  string $messageType
-     * @return array
      */
     private function getMessageBagFiltered(string $messageType): array
     {
         return array_map(
-            function ($data) {
+            function (array $data) {
                 return $data["message"];
             },
             array_filter(
                 $this->messageBag,
-                function ($data) use ($messageType) {
+                function (array $data) use ($messageType): bool {
                     return $data['type'] == $messageType;
                 }
             )
@@ -572,8 +504,6 @@ class ZugferdKositValidator
 
     /**
      * Returns an array of all validation errors
-     *
-     * @return array
      */
     public function getValidationErrors(): array
     {
@@ -582,8 +512,6 @@ class ZugferdKositValidator
 
     /**
      * Returns true if __no__ validation errors are present otherwise false
-     *
-     * @return boolean
      */
     public function hasNoValidationErrors(): bool
     {
@@ -592,8 +520,6 @@ class ZugferdKositValidator
 
     /**
      * Returns true if validation errors are present otherwise false
-     *
-     * @return boolean
      */
     public function hasValidationErrors(): bool
     {
@@ -602,8 +528,6 @@ class ZugferdKositValidator
 
     /**
      * Returns an array of all validation warnings
-     *
-     * @return array
      */
     public function getValidationWarnings(): array
     {
@@ -612,8 +536,6 @@ class ZugferdKositValidator
 
     /**
      * Returns true if __no__ validation warnings are present otherwise false
-     *
-     * @return boolean
      */
     public function hasNoValidationWarnings(): bool
     {
@@ -622,8 +544,6 @@ class ZugferdKositValidator
 
     /**
      * Returns true if validation warnings are present otherwise false
-     *
-     * @return boolean
      */
     public function hasValidationWarnings(): bool
     {
@@ -632,8 +552,6 @@ class ZugferdKositValidator
 
     /**
      * Returns an array of all validation information
-     *
-     * @return array
      */
     public function getValidationInformation(): array
     {
@@ -642,8 +560,6 @@ class ZugferdKositValidator
 
     /**
      * Returns true if __no__ validation information are present otherwise false
-     *
-     * @return boolean
      */
     public function hasNoValidationInformation(): bool
     {
@@ -652,8 +568,6 @@ class ZugferdKositValidator
 
     /**
      * Returns true if validation Information are present otherwise false
-     *
-     * @return boolean
      */
     public function hasValidationInformation(): bool
     {
@@ -662,8 +576,6 @@ class ZugferdKositValidator
 
     /**
      * Return an array of all internal errors (such as download error or system exceptions)
-     *
-     * @return array
      */
     public function getProcessErrors(): array
     {
@@ -672,8 +584,6 @@ class ZugferdKositValidator
 
     /**
      * Returns true if there are __no__ system errors (e.g. exceptions before the validation app was called)
-     *
-     * @return boolean
      */
     public function hasNoProcessErrors(): bool
     {
@@ -682,8 +592,6 @@ class ZugferdKositValidator
 
     /**
      * Returns true if there are any system errors (e.g. exceptions before the validation app was called)
-     *
-     * @return boolean
      */
     public function hasProcessErrors(): bool
     {
@@ -692,8 +600,6 @@ class ZugferdKositValidator
 
     /**
      * Returns an array of all messages from process system (calling external applications)
-     *
-     * @return array
      */
     public function getProcessOutput(): array
     {
@@ -702,8 +608,6 @@ class ZugferdKositValidator
 
     /**
      * Check Requirements
-     *
-     * @return boolean
      */
     private function checkRequirements(): bool
     {
@@ -720,8 +624,6 @@ class ZugferdKositValidator
 
     /**
      * CHeck general requirements (common for local and remote validation)
-     *
-     * @return boolean
      */
     private function checkRequirementsGeneral(): bool
     {
@@ -735,8 +637,6 @@ class ZugferdKositValidator
 
     /**
      * CHeck requirements for usage on a local installation
-     *
-     * @return boolean
      */
     private function checkRequirementsLocal(): bool
     {
@@ -762,8 +662,6 @@ class ZugferdKositValidator
     /**
      * CHeck requirements for usage on a remote host which is running the application
      * in daemon mode
-     *
-     * @return boolean
      */
     private function checkRequirementsRemote(): bool
     {
@@ -829,8 +727,6 @@ class ZugferdKositValidator
 
     /**
      * Download required files
-     *
-     * @return boolean
      */
     private function downloadRequiredFiles(): bool
     {
@@ -853,8 +749,6 @@ class ZugferdKositValidator
 
     /**
      * Unpack required files
-     *
-     * @return boolean
      */
     private function unpackRequiredFiles(): bool
     {
@@ -880,9 +774,6 @@ class ZugferdKositValidator
 
     /**
      * Unpack single required file
-     *
-     * @param  string $filename
-     * @return boolean
      */
     private function unpackRequiredFile(string $filename): bool
     {
@@ -924,8 +815,6 @@ class ZugferdKositValidator
 
     /**
      * Runs the validator java application
-     *
-     * @return boolean
      */
     private function performValidation(): bool
     {
@@ -938,8 +827,6 @@ class ZugferdKositValidator
 
     /**
      * Runs the validator java application locally
-     *
-     * @return boolean
      */
     private function performValidationLocal(): bool
     {
@@ -975,8 +862,6 @@ class ZugferdKositValidator
 
     /**
      * Runs the validator java application on the remote host
-     *
-     * @return boolean
      */
     private function performValidationRemote(): bool
     {
@@ -1032,8 +917,6 @@ class ZugferdKositValidator
     /**
      * Parses the XML report from the validation app (JAVA application) and put errors
      * to messagebag
-     *
-     * @return void
      */
     private function parseValidatorXmlReportByFile(): void
     {
@@ -1056,9 +939,6 @@ class ZugferdKositValidator
     /**
      * Parses the XML content string containing the response from the validation app (JAVA application) and put errors
      * to messagebag
-     *
-     * @param  string $xmlContent
-     * @return void
      */
     private function parseValidatorXmlReportByContent(string $xmlContent): void
     {
@@ -1075,9 +955,6 @@ class ZugferdKositValidator
     /**
      * Parses the XML DOMDocument containing the response from the validation app (JAVA application) and put errors
      * to messagebag
-     *
-     * @param  DOMDocument $domDocument
-     * @return void
      */
     private function parseValidatorXmlReportByDomDocument(DOMDocument $domDocument): void
     {
@@ -1109,8 +986,6 @@ class ZugferdKositValidator
 
     /**
      * Cleanup downloads and created files
-     *
-     * @return void
      */
     private function cleanupBaseDirectory(): void
     {
@@ -1131,9 +1006,6 @@ class ZugferdKositValidator
 
     /**
      * Helper method for removeBaseDirectory
-     *
-     * @param  string $directoryToRemove
-     * @return void
      */
     private function cleanupBaseDirectoryInternal(string $directoryToRemove): void
     {
@@ -1164,10 +1036,6 @@ class ZugferdKositValidator
     /**
      * Runs a process. If the process runned successfully this method
      * returns true, otherwise false
-     *
-     * @param  array  $command
-     * @param  string $workingdirectory
-     * @return boolean
      */
     private function runValidationApplication(array $command, string $workingdirectory): bool
     {
@@ -1206,11 +1074,6 @@ class ZugferdKositValidator
 
     /**
      * Run a file download.
-     *
-     * @param  string  $url
-     * @param  string  $toFilePath
-     * @param  boolean $forceOverwrite
-     * @return boolean
      */
     private function runFileDownload(string $url, string $toFilePath, bool $forceOverwrite = false): bool
     {

@@ -13,17 +13,17 @@ class TradeSettlementPaymentMeansType
     /**
      * @var string $typeCode
      */
-    private $typeCode = null;
+    private $typeCode;
 
     /**
      * @var \horstoeko\zugferd\entities\basicwl\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount
      */
-    private $payerPartyDebtorFinancialAccount = null;
+    private $payerPartyDebtorFinancialAccount;
 
     /**
      * @var \horstoeko\zugferd\entities\basicwl\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount
      */
-    private $payeePartyCreditorFinancialAccount = null;
+    private $payeePartyCreditorFinancialAccount;
 
     /**
      * Gets as typeCode
@@ -39,9 +39,8 @@ class TradeSettlementPaymentMeansType
      * Sets a new typeCode
      *
      * @param  string $typeCode
-     * @return self
      */
-    public function setTypeCode($typeCode)
+    public function setTypeCode($typeCode): self
     {
         $this->typeCode = $typeCode;
         return $this;
@@ -61,9 +60,8 @@ class TradeSettlementPaymentMeansType
      * Sets a new payerPartyDebtorFinancialAccount
      *
      * @param  \horstoeko\zugferd\entities\basicwl\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount
-     * @return self
      */
-    public function setPayerPartyDebtorFinancialAccount(?\horstoeko\zugferd\entities\basicwl\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount = null)
+    public function setPayerPartyDebtorFinancialAccount(?\horstoeko\zugferd\entities\basicwl\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount = null): self
     {
         $this->payerPartyDebtorFinancialAccount = $payerPartyDebtorFinancialAccount;
         return $this;
@@ -83,9 +81,8 @@ class TradeSettlementPaymentMeansType
      * Sets a new payeePartyCreditorFinancialAccount
      *
      * @param  \horstoeko\zugferd\entities\basicwl\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount
-     * @return self
      */
-    public function setPayeePartyCreditorFinancialAccount(?\horstoeko\zugferd\entities\basicwl\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount = null)
+    public function setPayeePartyCreditorFinancialAccount(?\horstoeko\zugferd\entities\basicwl\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount = null): self
     {
         $this->payeePartyCreditorFinancialAccount = $payeePartyCreditorFinancialAccount;
         return $this;

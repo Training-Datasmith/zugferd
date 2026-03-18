@@ -13,7 +13,7 @@ class FormattedDateTimeType
     /**
      * @var \horstoeko\zugferd\entities\basic\qdt\FormattedDateTimeType\DateTimeStringAType $dateTimeString
      */
-    private $dateTimeString = null;
+    private $dateTimeString;
 
     /**
      * Gets as dateTimeString
@@ -27,11 +27,8 @@ class FormattedDateTimeType
 
     /**
      * Sets a new dateTimeString
-     *
-     * @param  \horstoeko\zugferd\entities\basic\qdt\FormattedDateTimeType\DateTimeStringAType $dateTimeString
-     * @return self
      */
-    public function setDateTimeString(\horstoeko\zugferd\entities\basic\qdt\FormattedDateTimeType\DateTimeStringAType $dateTimeString)
+    public function setDateTimeString(\horstoeko\zugferd\entities\basic\qdt\FormattedDateTimeType\DateTimeStringAType $dateTimeString): self
     {
         $this->dateTimeString = $dateTimeString;
         return $this;

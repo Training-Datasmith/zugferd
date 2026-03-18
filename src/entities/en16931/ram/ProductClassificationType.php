@@ -13,7 +13,7 @@ class ProductClassificationType
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\CodeType $classCode
      */
-    private $classCode = null;
+    private $classCode;
 
     /**
      * Gets as classCode
@@ -29,9 +29,8 @@ class ProductClassificationType
      * Sets a new classCode
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\CodeType $classCode
-     * @return self
      */
-    public function setClassCode(?\horstoeko\zugferd\entities\en16931\udt\CodeType $classCode = null)
+    public function setClassCode(?\horstoeko\zugferd\entities\en16931\udt\CodeType $classCode = null): self
     {
         $this->classCode = $classCode;
         return $this;

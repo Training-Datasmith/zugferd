@@ -13,17 +13,17 @@ class ExchangedDocumentType
     /**
      * @var \horstoeko\zugferd\entities\minimum\udt\IDType $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * @var string $typeCode
      */
-    private $typeCode = null;
+    private $typeCode;
 
     /**
      * @var \horstoeko\zugferd\entities\minimum\udt\DateTimeType $issueDateTime
      */
-    private $issueDateTime = null;
+    private $issueDateTime;
 
     /**
      * Gets as iD
@@ -37,11 +37,8 @@ class ExchangedDocumentType
 
     /**
      * Sets a new iD
-     *
-     * @param  \horstoeko\zugferd\entities\minimum\udt\IDType $iD
-     * @return self
      */
-    public function setID(\horstoeko\zugferd\entities\minimum\udt\IDType $iD)
+    public function setID(\horstoeko\zugferd\entities\minimum\udt\IDType $iD): self
     {
         $this->iD = $iD;
         return $this;
@@ -61,9 +58,8 @@ class ExchangedDocumentType
      * Sets a new typeCode
      *
      * @param  string $typeCode
-     * @return self
      */
-    public function setTypeCode($typeCode)
+    public function setTypeCode($typeCode): self
     {
         $this->typeCode = $typeCode;
         return $this;
@@ -81,11 +77,8 @@ class ExchangedDocumentType
 
     /**
      * Sets a new issueDateTime
-     *
-     * @param  \horstoeko\zugferd\entities\minimum\udt\DateTimeType $issueDateTime
-     * @return self
      */
-    public function setIssueDateTime(\horstoeko\zugferd\entities\minimum\udt\DateTimeType $issueDateTime)
+    public function setIssueDateTime(\horstoeko\zugferd\entities\minimum\udt\DateTimeType $issueDateTime): self
     {
         $this->issueDateTime = $issueDateTime;
         return $this;

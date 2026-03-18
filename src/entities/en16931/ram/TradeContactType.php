@@ -13,22 +13,22 @@ class TradeContactType
     /**
      * @var string $personName
      */
-    private $personName = null;
+    private $personName;
 
     /**
      * @var string $departmentName
      */
-    private $departmentName = null;
+    private $departmentName;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\UniversalCommunicationType $telephoneUniversalCommunication
      */
-    private $telephoneUniversalCommunication = null;
+    private $telephoneUniversalCommunication;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\UniversalCommunicationType $emailURIUniversalCommunication
      */
-    private $emailURIUniversalCommunication = null;
+    private $emailURIUniversalCommunication;
 
     /**
      * Gets as personName
@@ -44,9 +44,8 @@ class TradeContactType
      * Sets a new personName
      *
      * @param  string $personName
-     * @return self
      */
-    public function setPersonName($personName)
+    public function setPersonName($personName): self
     {
         $this->personName = $personName;
         return $this;
@@ -66,9 +65,8 @@ class TradeContactType
      * Sets a new departmentName
      *
      * @param  string $departmentName
-     * @return self
      */
-    public function setDepartmentName($departmentName)
+    public function setDepartmentName($departmentName): self
     {
         $this->departmentName = $departmentName;
         return $this;
@@ -88,9 +86,8 @@ class TradeContactType
      * Sets a new telephoneUniversalCommunication
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\UniversalCommunicationType $telephoneUniversalCommunication
-     * @return self
      */
-    public function setTelephoneUniversalCommunication(?\horstoeko\zugferd\entities\en16931\ram\UniversalCommunicationType $telephoneUniversalCommunication = null)
+    public function setTelephoneUniversalCommunication(?\horstoeko\zugferd\entities\en16931\ram\UniversalCommunicationType $telephoneUniversalCommunication = null): self
     {
         $this->telephoneUniversalCommunication = $telephoneUniversalCommunication;
         return $this;
@@ -110,9 +107,8 @@ class TradeContactType
      * Sets a new emailURIUniversalCommunication
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\UniversalCommunicationType $emailURIUniversalCommunication
-     * @return self
      */
-    public function setEmailURIUniversalCommunication(?\horstoeko\zugferd\entities\en16931\ram\UniversalCommunicationType $emailURIUniversalCommunication = null)
+    public function setEmailURIUniversalCommunication(?\horstoeko\zugferd\entities\en16931\ram\UniversalCommunicationType $emailURIUniversalCommunication = null): self
     {
         $this->emailURIUniversalCommunication = $emailURIUniversalCommunication;
         return $this;

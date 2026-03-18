@@ -13,42 +13,42 @@ class ReferencedDocumentType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $issuerAssignedID
      */
-    private $issuerAssignedID = null;
+    private $issuerAssignedID;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $uRIID
      */
-    private $uRIID = null;
+    private $uRIID;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $lineID
      */
-    private $lineID = null;
+    private $lineID;
 
     /**
      * @var string $typeCode
      */
-    private $typeCode = null;
+    private $typeCode;
 
     /**
      * @var string $name
      */
-    private $name = null;
+    private $name;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\BinaryObjectType $attachmentBinaryObject
      */
-    private $attachmentBinaryObject = null;
+    private $attachmentBinaryObject;
 
     /**
      * @var string $referenceTypeCode
      */
-    private $referenceTypeCode = null;
+    private $referenceTypeCode;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType $formattedIssueDateTime
      */
-    private $formattedIssueDateTime = null;
+    private $formattedIssueDateTime;
 
     /**
      * Gets as issuerAssignedID
@@ -64,9 +64,8 @@ class ReferencedDocumentType
      * Sets a new issuerAssignedID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $issuerAssignedID
-     * @return self
      */
-    public function setIssuerAssignedID(?\horstoeko\zugferd\entities\extended\udt\IDType $issuerAssignedID = null)
+    public function setIssuerAssignedID(?\horstoeko\zugferd\entities\extended\udt\IDType $issuerAssignedID = null): self
     {
         $this->issuerAssignedID = $issuerAssignedID;
         return $this;
@@ -86,9 +85,8 @@ class ReferencedDocumentType
      * Sets a new uRIID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $uRIID
-     * @return self
      */
-    public function setURIID(?\horstoeko\zugferd\entities\extended\udt\IDType $uRIID = null)
+    public function setURIID(?\horstoeko\zugferd\entities\extended\udt\IDType $uRIID = null): self
     {
         $this->uRIID = $uRIID;
         return $this;
@@ -108,9 +106,8 @@ class ReferencedDocumentType
      * Sets a new lineID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $lineID
-     * @return self
      */
-    public function setLineID(?\horstoeko\zugferd\entities\extended\udt\IDType $lineID = null)
+    public function setLineID(?\horstoeko\zugferd\entities\extended\udt\IDType $lineID = null): self
     {
         $this->lineID = $lineID;
         return $this;
@@ -130,9 +127,8 @@ class ReferencedDocumentType
      * Sets a new typeCode
      *
      * @param  string $typeCode
-     * @return self
      */
-    public function setTypeCode($typeCode)
+    public function setTypeCode($typeCode): self
     {
         $this->typeCode = $typeCode;
         return $this;
@@ -152,9 +148,8 @@ class ReferencedDocumentType
      * Sets a new name
      *
      * @param  string $name
-     * @return self
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
         return $this;
@@ -174,9 +169,8 @@ class ReferencedDocumentType
      * Sets a new attachmentBinaryObject
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\BinaryObjectType $attachmentBinaryObject
-     * @return self
      */
-    public function setAttachmentBinaryObject(?\horstoeko\zugferd\entities\extended\udt\BinaryObjectType $attachmentBinaryObject = null)
+    public function setAttachmentBinaryObject(?\horstoeko\zugferd\entities\extended\udt\BinaryObjectType $attachmentBinaryObject = null): self
     {
         $this->attachmentBinaryObject = $attachmentBinaryObject;
         return $this;
@@ -196,9 +190,8 @@ class ReferencedDocumentType
      * Sets a new referenceTypeCode
      *
      * @param  string $referenceTypeCode
-     * @return self
      */
-    public function setReferenceTypeCode($referenceTypeCode)
+    public function setReferenceTypeCode($referenceTypeCode): self
     {
         $this->referenceTypeCode = $referenceTypeCode;
         return $this;
@@ -218,9 +211,8 @@ class ReferencedDocumentType
      * Sets a new formattedIssueDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType $formattedIssueDateTime
-     * @return self
      */
-    public function setFormattedIssueDateTime(?\horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType $formattedIssueDateTime = null)
+    public function setFormattedIssueDateTime(?\horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType $formattedIssueDateTime = null): self
     {
         $this->formattedIssueDateTime = $formattedIssueDateTime;
         return $this;

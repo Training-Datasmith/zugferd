@@ -13,17 +13,17 @@ class TradePriceType
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\AmountType $chargeAmount
      */
-    private $chargeAmount = null;
+    private $chargeAmount;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\QuantityType $basisQuantity
      */
-    private $basisQuantity = null;
+    private $basisQuantity;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\TradeAllowanceChargeType $appliedTradeAllowanceCharge
      */
-    private $appliedTradeAllowanceCharge = null;
+    private $appliedTradeAllowanceCharge;
 
     /**
      * Gets as chargeAmount
@@ -37,11 +37,8 @@ class TradePriceType
 
     /**
      * Sets a new chargeAmount
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\udt\AmountType $chargeAmount
-     * @return self
      */
-    public function setChargeAmount(\horstoeko\zugferd\entities\en16931\udt\AmountType $chargeAmount)
+    public function setChargeAmount(\horstoeko\zugferd\entities\en16931\udt\AmountType $chargeAmount): self
     {
         $this->chargeAmount = $chargeAmount;
         return $this;
@@ -61,9 +58,8 @@ class TradePriceType
      * Sets a new basisQuantity
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\QuantityType $basisQuantity
-     * @return self
      */
-    public function setBasisQuantity(?\horstoeko\zugferd\entities\en16931\udt\QuantityType $basisQuantity = null)
+    public function setBasisQuantity(?\horstoeko\zugferd\entities\en16931\udt\QuantityType $basisQuantity = null): self
     {
         $this->basisQuantity = $basisQuantity;
         return $this;
@@ -83,9 +79,8 @@ class TradePriceType
      * Sets a new appliedTradeAllowanceCharge
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\TradeAllowanceChargeType $appliedTradeAllowanceCharge
-     * @return self
      */
-    public function setAppliedTradeAllowanceCharge(?\horstoeko\zugferd\entities\en16931\ram\TradeAllowanceChargeType $appliedTradeAllowanceCharge = null)
+    public function setAppliedTradeAllowanceCharge(?\horstoeko\zugferd\entities\en16931\ram\TradeAllowanceChargeType $appliedTradeAllowanceCharge = null): self
     {
         $this->appliedTradeAllowanceCharge = $appliedTradeAllowanceCharge;
         return $this;

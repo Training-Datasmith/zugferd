@@ -13,27 +13,27 @@ class TradeProductType
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType $globalID
      */
-    private $globalID = null;
+    private $globalID;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType $sellerAssignedID
      */
-    private $sellerAssignedID = null;
+    private $sellerAssignedID;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType $buyerAssignedID
      */
-    private $buyerAssignedID = null;
+    private $buyerAssignedID;
 
     /**
      * @var string $name
      */
-    private $name = null;
+    private $name;
 
     /**
      * @var string $description
      */
-    private $description = null;
+    private $description;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\ProductCharacteristicType[] $applicableProductCharacteristic
@@ -52,7 +52,7 @@ class TradeProductType
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\TradeCountryType $originTradeCountry
      */
-    private $originTradeCountry = null;
+    private $originTradeCountry;
 
     /**
      * Gets as globalID
@@ -68,9 +68,8 @@ class TradeProductType
      * Sets a new globalID
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\IDType $globalID
-     * @return self
      */
-    public function setGlobalID(?\horstoeko\zugferd\entities\en16931\udt\IDType $globalID = null)
+    public function setGlobalID(?\horstoeko\zugferd\entities\en16931\udt\IDType $globalID = null): self
     {
         $this->globalID = $globalID;
         return $this;
@@ -90,9 +89,8 @@ class TradeProductType
      * Sets a new sellerAssignedID
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\IDType $sellerAssignedID
-     * @return self
      */
-    public function setSellerAssignedID(?\horstoeko\zugferd\entities\en16931\udt\IDType $sellerAssignedID = null)
+    public function setSellerAssignedID(?\horstoeko\zugferd\entities\en16931\udt\IDType $sellerAssignedID = null): self
     {
         $this->sellerAssignedID = $sellerAssignedID;
         return $this;
@@ -112,9 +110,8 @@ class TradeProductType
      * Sets a new buyerAssignedID
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\IDType $buyerAssignedID
-     * @return self
      */
-    public function setBuyerAssignedID(?\horstoeko\zugferd\entities\en16931\udt\IDType $buyerAssignedID = null)
+    public function setBuyerAssignedID(?\horstoeko\zugferd\entities\en16931\udt\IDType $buyerAssignedID = null): self
     {
         $this->buyerAssignedID = $buyerAssignedID;
         return $this;
@@ -134,9 +131,8 @@ class TradeProductType
      * Sets a new name
      *
      * @param  string $name
-     * @return self
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
         return $this;
@@ -156,9 +152,8 @@ class TradeProductType
      * Sets a new description
      *
      * @param  string $description
-     * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description): self
     {
         $this->description = $description;
         return $this;
@@ -166,11 +161,8 @@ class TradeProductType
 
     /**
      * Adds as applicableProductCharacteristic
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\en16931\ram\ProductCharacteristicType $applicableProductCharacteristic
      */
-    public function addToApplicableProductCharacteristic(\horstoeko\zugferd\entities\en16931\ram\ProductCharacteristicType $applicableProductCharacteristic)
+    public function addToApplicableProductCharacteristic(\horstoeko\zugferd\entities\en16931\ram\ProductCharacteristicType $applicableProductCharacteristic): self
     {
         $this->applicableProductCharacteristic[] = $applicableProductCharacteristic;
         return $this;
@@ -180,9 +172,8 @@ class TradeProductType
      * isset applicableProductCharacteristic
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetApplicableProductCharacteristic($index)
+    public function issetApplicableProductCharacteristic($index): bool
     {
         return isset($this->applicableProductCharacteristic[$index]);
     }
@@ -191,9 +182,8 @@ class TradeProductType
      * unset applicableProductCharacteristic
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetApplicableProductCharacteristic($index)
+    public function unsetApplicableProductCharacteristic($index): void
     {
         unset($this->applicableProductCharacteristic[$index]);
     }
@@ -212,9 +202,8 @@ class TradeProductType
      * Sets a new applicableProductCharacteristic
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\ProductCharacteristicType[] $applicableProductCharacteristic
-     * @return self
      */
-    public function setApplicableProductCharacteristic(?array $applicableProductCharacteristic = null)
+    public function setApplicableProductCharacteristic(?array $applicableProductCharacteristic = null): self
     {
         $this->applicableProductCharacteristic = $applicableProductCharacteristic;
         return $this;
@@ -222,11 +211,8 @@ class TradeProductType
 
     /**
      * Adds as designatedProductClassification
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\en16931\ram\ProductClassificationType $designatedProductClassification
      */
-    public function addToDesignatedProductClassification(\horstoeko\zugferd\entities\en16931\ram\ProductClassificationType $designatedProductClassification)
+    public function addToDesignatedProductClassification(\horstoeko\zugferd\entities\en16931\ram\ProductClassificationType $designatedProductClassification): self
     {
         $this->designatedProductClassification[] = $designatedProductClassification;
         return $this;
@@ -236,9 +222,8 @@ class TradeProductType
      * isset designatedProductClassification
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetDesignatedProductClassification($index)
+    public function issetDesignatedProductClassification($index): bool
     {
         return isset($this->designatedProductClassification[$index]);
     }
@@ -247,9 +232,8 @@ class TradeProductType
      * unset designatedProductClassification
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetDesignatedProductClassification($index)
+    public function unsetDesignatedProductClassification($index): void
     {
         unset($this->designatedProductClassification[$index]);
     }
@@ -268,9 +252,8 @@ class TradeProductType
      * Sets a new designatedProductClassification
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\ProductClassificationType[] $designatedProductClassification
-     * @return self
      */
-    public function setDesignatedProductClassification(?array $designatedProductClassification = null)
+    public function setDesignatedProductClassification(?array $designatedProductClassification = null): self
     {
         $this->designatedProductClassification = $designatedProductClassification;
         return $this;
@@ -290,9 +273,8 @@ class TradeProductType
      * Sets a new originTradeCountry
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\TradeCountryType $originTradeCountry
-     * @return self
      */
-    public function setOriginTradeCountry(?\horstoeko\zugferd\entities\en16931\ram\TradeCountryType $originTradeCountry = null)
+    public function setOriginTradeCountry(?\horstoeko\zugferd\entities\en16931\ram\TradeCountryType $originTradeCountry = null): self
     {
         $this->originTradeCountry = $originTradeCountry;
         return $this;

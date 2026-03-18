@@ -13,12 +13,12 @@ class NoteType
     /**
      * @var string $content
      */
-    private $content = null;
+    private $content;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\CodeType $subjectCode
      */
-    private $subjectCode = null;
+    private $subjectCode;
 
     /**
      * Gets as content
@@ -34,9 +34,8 @@ class NoteType
      * Sets a new content
      *
      * @param  string $content
-     * @return self
      */
-    public function setContent($content)
+    public function setContent($content): self
     {
         $this->content = $content;
         return $this;
@@ -56,9 +55,8 @@ class NoteType
      * Sets a new subjectCode
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\CodeType $subjectCode
-     * @return self
      */
-    public function setSubjectCode(?\horstoeko\zugferd\entities\en16931\udt\CodeType $subjectCode = null)
+    public function setSubjectCode(?\horstoeko\zugferd\entities\en16931\udt\CodeType $subjectCode = null): self
     {
         $this->subjectCode = $subjectCode;
         return $this;

@@ -13,7 +13,7 @@ class DateTimeType
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\DateTimeType\DateTimeStringAType $dateTimeString
      */
-    private $dateTimeString = null;
+    private $dateTimeString;
 
     /**
      * Gets as dateTimeString
@@ -29,9 +29,8 @@ class DateTimeType
      * Sets a new dateTimeString
      *
      * @param  \horstoeko\zugferd\entities\basic\udt\DateTimeType\DateTimeStringAType $dateTimeString
-     * @return self
      */
-    public function setDateTimeString(?\horstoeko\zugferd\entities\basic\udt\DateTimeType\DateTimeStringAType $dateTimeString = null)
+    public function setDateTimeString(?\horstoeko\zugferd\entities\basic\udt\DateTimeType\DateTimeStringAType $dateTimeString = null): self
     {
         $this->dateTimeString = $dateTimeString;
         return $this;

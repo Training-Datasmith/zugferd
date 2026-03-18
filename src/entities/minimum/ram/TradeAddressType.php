@@ -13,7 +13,7 @@ class TradeAddressType
     /**
      * @var string $countryID
      */
-    private $countryID = null;
+    private $countryID;
 
     /**
      * Gets as countryID
@@ -29,9 +29,8 @@ class TradeAddressType
      * Sets a new countryID
      *
      * @param  string $countryID
-     * @return self
      */
-    public function setCountryID($countryID)
+    public function setCountryID($countryID): self
     {
         $this->countryID = $countryID;
         return $this;

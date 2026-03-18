@@ -32,8 +32,6 @@ class ZugferdDocumentJsonExporter
 
     /**
      * Constructor
-     *
-     * @param ZugferdDocument $document
      */
     public function __construct(ZugferdDocument $document)
     {
@@ -42,8 +40,6 @@ class ZugferdDocumentJsonExporter
 
     /**
      * Returns the invoice object as a json string
-     *
-     * @return string
      */
     public function toJsonString(): string
     {
@@ -52,8 +48,6 @@ class ZugferdDocumentJsonExporter
 
     /**
      * Returns the invoice object as a json object
-     *
-     * @return null|stdClass
      */
     public function toJsonObject(): ?\stdClass
     {

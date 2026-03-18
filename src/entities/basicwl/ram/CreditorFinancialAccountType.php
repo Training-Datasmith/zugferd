@@ -13,12 +13,12 @@ class CreditorFinancialAccountType
     /**
      * @var \horstoeko\zugferd\entities\basicwl\udt\IDType $iBANID
      */
-    private $iBANID = null;
+    private $iBANID;
 
     /**
      * @var \horstoeko\zugferd\entities\basicwl\udt\IDType $proprietaryID
      */
-    private $proprietaryID = null;
+    private $proprietaryID;
 
     /**
      * Gets as iBANID
@@ -34,9 +34,8 @@ class CreditorFinancialAccountType
      * Sets a new iBANID
      *
      * @param  \horstoeko\zugferd\entities\basicwl\udt\IDType $iBANID
-     * @return self
      */
-    public function setIBANID(?\horstoeko\zugferd\entities\basicwl\udt\IDType $iBANID = null)
+    public function setIBANID(?\horstoeko\zugferd\entities\basicwl\udt\IDType $iBANID = null): self
     {
         $this->iBANID = $iBANID;
         return $this;
@@ -56,9 +55,8 @@ class CreditorFinancialAccountType
      * Sets a new proprietaryID
      *
      * @param  \horstoeko\zugferd\entities\basicwl\udt\IDType $proprietaryID
-     * @return self
      */
-    public function setProprietaryID(?\horstoeko\zugferd\entities\basicwl\udt\IDType $proprietaryID = null)
+    public function setProprietaryID(?\horstoeko\zugferd\entities\basicwl\udt\IDType $proprietaryID = null): self
     {
         $this->proprietaryID = $proprietaryID;
         return $this;

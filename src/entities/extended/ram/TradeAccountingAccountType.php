@@ -13,12 +13,12 @@ class TradeAccountingAccountType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * @var string $typeCode
      */
-    private $typeCode = null;
+    private $typeCode;
 
     /**
      * Gets as iD
@@ -32,11 +32,8 @@ class TradeAccountingAccountType
 
     /**
      * Sets a new iD
-     *
-     * @param  \horstoeko\zugferd\entities\extended\udt\IDType $iD
-     * @return self
      */
-    public function setID(\horstoeko\zugferd\entities\extended\udt\IDType $iD)
+    public function setID(\horstoeko\zugferd\entities\extended\udt\IDType $iD): self
     {
         $this->iD = $iD;
         return $this;
@@ -56,9 +53,8 @@ class TradeAccountingAccountType
      * Sets a new typeCode
      *
      * @param  string $typeCode
-     * @return self
      */
-    public function setTypeCode($typeCode)
+    public function setTypeCode($typeCode): self
     {
         $this->typeCode = $typeCode;
         return $this;

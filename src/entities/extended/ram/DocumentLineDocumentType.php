@@ -13,22 +13,22 @@ class DocumentLineDocumentType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $lineID
      */
-    private $lineID = null;
+    private $lineID;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $parentLineID
      */
-    private $parentLineID = null;
+    private $parentLineID;
 
     /**
      * @var string $lineStatusCode
      */
-    private $lineStatusCode = null;
+    private $lineStatusCode;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\CodeType $lineStatusReasonCode
      */
-    private $lineStatusReasonCode = null;
+    private $lineStatusReasonCode;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\NoteType[] $includedNote
@@ -49,11 +49,8 @@ class DocumentLineDocumentType
 
     /**
      * Sets a new lineID
-     *
-     * @param  \horstoeko\zugferd\entities\extended\udt\IDType $lineID
-     * @return self
      */
-    public function setLineID(\horstoeko\zugferd\entities\extended\udt\IDType $lineID)
+    public function setLineID(\horstoeko\zugferd\entities\extended\udt\IDType $lineID): self
     {
         $this->lineID = $lineID;
         return $this;
@@ -73,9 +70,8 @@ class DocumentLineDocumentType
      * Sets a new parentLineID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $parentLineID
-     * @return self
      */
-    public function setParentLineID(?\horstoeko\zugferd\entities\extended\udt\IDType $parentLineID = null)
+    public function setParentLineID(?\horstoeko\zugferd\entities\extended\udt\IDType $parentLineID = null): self
     {
         $this->parentLineID = $parentLineID;
         return $this;
@@ -95,9 +91,8 @@ class DocumentLineDocumentType
      * Sets a new lineStatusCode
      *
      * @param  string $lineStatusCode
-     * @return self
      */
-    public function setLineStatusCode($lineStatusCode)
+    public function setLineStatusCode($lineStatusCode): self
     {
         $this->lineStatusCode = $lineStatusCode;
         return $this;
@@ -117,9 +112,8 @@ class DocumentLineDocumentType
      * Sets a new lineStatusReasonCode
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\CodeType $lineStatusReasonCode
-     * @return self
      */
-    public function setLineStatusReasonCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $lineStatusReasonCode = null)
+    public function setLineStatusReasonCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $lineStatusReasonCode = null): self
     {
         $this->lineStatusReasonCode = $lineStatusReasonCode;
         return $this;
@@ -127,11 +121,8 @@ class DocumentLineDocumentType
 
     /**
      * Adds as includedNote
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\NoteType $includedNote
      */
-    public function addToIncludedNote(\horstoeko\zugferd\entities\extended\ram\NoteType $includedNote)
+    public function addToIncludedNote(\horstoeko\zugferd\entities\extended\ram\NoteType $includedNote): self
     {
         $this->includedNote[] = $includedNote;
         return $this;
@@ -141,9 +132,8 @@ class DocumentLineDocumentType
      * isset includedNote
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetIncludedNote($index)
+    public function issetIncludedNote($index): bool
     {
         return isset($this->includedNote[$index]);
     }
@@ -152,9 +142,8 @@ class DocumentLineDocumentType
      * unset includedNote
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetIncludedNote($index)
+    public function unsetIncludedNote($index): void
     {
         unset($this->includedNote[$index]);
     }
@@ -173,9 +162,8 @@ class DocumentLineDocumentType
      * Sets a new includedNote
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\NoteType[] $includedNote
-     * @return self
      */
-    public function setIncludedNote(?array $includedNote = null)
+    public function setIncludedNote(?array $includedNote = null): self
     {
         $this->includedNote = $includedNote;
         return $this;

@@ -13,17 +13,17 @@ class HeaderTradeDeliveryType
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradePartyType $shipToTradeParty
      */
-    private $shipToTradeParty = null;
+    private $shipToTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
      */
-    private $actualDeliverySupplyChainEvent = null;
+    private $actualDeliverySupplyChainEvent;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
      */
-    private $despatchAdviceReferencedDocument = null;
+    private $despatchAdviceReferencedDocument;
 
     /**
      * Gets as shipToTradeParty
@@ -39,9 +39,8 @@ class HeaderTradeDeliveryType
      * Sets a new shipToTradeParty
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\TradePartyType $shipToTradeParty
-     * @return self
      */
-    public function setShipToTradeParty(?\horstoeko\zugferd\entities\basic\ram\TradePartyType $shipToTradeParty = null)
+    public function setShipToTradeParty(?\horstoeko\zugferd\entities\basic\ram\TradePartyType $shipToTradeParty = null): self
     {
         $this->shipToTradeParty = $shipToTradeParty;
         return $this;
@@ -61,9 +60,8 @@ class HeaderTradeDeliveryType
      * Sets a new actualDeliverySupplyChainEvent
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
-     * @return self
      */
-    public function setActualDeliverySupplyChainEvent(?\horstoeko\zugferd\entities\basic\ram\SupplyChainEventType $actualDeliverySupplyChainEvent = null)
+    public function setActualDeliverySupplyChainEvent(?\horstoeko\zugferd\entities\basic\ram\SupplyChainEventType $actualDeliverySupplyChainEvent = null): self
     {
         $this->actualDeliverySupplyChainEvent = $actualDeliverySupplyChainEvent;
         return $this;
@@ -83,9 +81,8 @@ class HeaderTradeDeliveryType
      * Sets a new despatchAdviceReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
-     * @return self
      */
-    public function setDespatchAdviceReferencedDocument(?\horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $despatchAdviceReferencedDocument = null)
+    public function setDespatchAdviceReferencedDocument(?\horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $despatchAdviceReferencedDocument = null): self
     {
         $this->despatchAdviceReferencedDocument = $despatchAdviceReferencedDocument;
         return $this;

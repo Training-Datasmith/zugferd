@@ -13,7 +13,7 @@ class LogisticsTransportMovementType
     /**
      * @var string $modeCode
      */
-    private $modeCode = null;
+    private $modeCode;
 
     /**
      * Gets as modeCode
@@ -29,9 +29,8 @@ class LogisticsTransportMovementType
      * Sets a new modeCode
      *
      * @param  string $modeCode
-     * @return self
      */
-    public function setModeCode($modeCode)
+    public function setModeCode($modeCode): self
     {
         $this->modeCode = $modeCode;
         return $this;

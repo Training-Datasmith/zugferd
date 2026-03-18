@@ -20,25 +20,22 @@ class SupplyChainTradeTransactionType
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\HeaderTradeAgreementType $applicableHeaderTradeAgreement
      */
-    private $applicableHeaderTradeAgreement = null;
+    private $applicableHeaderTradeAgreement;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\HeaderTradeDeliveryType $applicableHeaderTradeDelivery
      */
-    private $applicableHeaderTradeDelivery = null;
+    private $applicableHeaderTradeDelivery;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\HeaderTradeSettlementType $applicableHeaderTradeSettlement
      */
-    private $applicableHeaderTradeSettlement = null;
+    private $applicableHeaderTradeSettlement;
 
     /**
      * Adds as includedSupplyChainTradeLineItem
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\en16931\ram\SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem
      */
-    public function addToIncludedSupplyChainTradeLineItem(\horstoeko\zugferd\entities\en16931\ram\SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem)
+    public function addToIncludedSupplyChainTradeLineItem(\horstoeko\zugferd\entities\en16931\ram\SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem): self
     {
         $this->includedSupplyChainTradeLineItem[] = $includedSupplyChainTradeLineItem;
         return $this;
@@ -48,9 +45,8 @@ class SupplyChainTradeTransactionType
      * isset includedSupplyChainTradeLineItem
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetIncludedSupplyChainTradeLineItem($index)
+    public function issetIncludedSupplyChainTradeLineItem($index): bool
     {
         return isset($this->includedSupplyChainTradeLineItem[$index]);
     }
@@ -59,9 +55,8 @@ class SupplyChainTradeTransactionType
      * unset includedSupplyChainTradeLineItem
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetIncludedSupplyChainTradeLineItem($index)
+    public function unsetIncludedSupplyChainTradeLineItem($index): void
     {
         unset($this->includedSupplyChainTradeLineItem[$index]);
     }
@@ -80,9 +75,8 @@ class SupplyChainTradeTransactionType
      * Sets a new includedSupplyChainTradeLineItem
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\SupplyChainTradeLineItemType[] $includedSupplyChainTradeLineItem
-     * @return self
      */
-    public function setIncludedSupplyChainTradeLineItem(array $includedSupplyChainTradeLineItem)
+    public function setIncludedSupplyChainTradeLineItem(array $includedSupplyChainTradeLineItem): self
     {
         $this->includedSupplyChainTradeLineItem = $includedSupplyChainTradeLineItem;
         return $this;
@@ -100,11 +94,8 @@ class SupplyChainTradeTransactionType
 
     /**
      * Sets a new applicableHeaderTradeAgreement
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\ram\HeaderTradeAgreementType $applicableHeaderTradeAgreement
-     * @return self
      */
-    public function setApplicableHeaderTradeAgreement(\horstoeko\zugferd\entities\en16931\ram\HeaderTradeAgreementType $applicableHeaderTradeAgreement)
+    public function setApplicableHeaderTradeAgreement(\horstoeko\zugferd\entities\en16931\ram\HeaderTradeAgreementType $applicableHeaderTradeAgreement): self
     {
         $this->applicableHeaderTradeAgreement = $applicableHeaderTradeAgreement;
         return $this;
@@ -122,11 +113,8 @@ class SupplyChainTradeTransactionType
 
     /**
      * Sets a new applicableHeaderTradeDelivery
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\ram\HeaderTradeDeliveryType $applicableHeaderTradeDelivery
-     * @return self
      */
-    public function setApplicableHeaderTradeDelivery(\horstoeko\zugferd\entities\en16931\ram\HeaderTradeDeliveryType $applicableHeaderTradeDelivery)
+    public function setApplicableHeaderTradeDelivery(\horstoeko\zugferd\entities\en16931\ram\HeaderTradeDeliveryType $applicableHeaderTradeDelivery): self
     {
         $this->applicableHeaderTradeDelivery = $applicableHeaderTradeDelivery;
         return $this;
@@ -144,11 +132,8 @@ class SupplyChainTradeTransactionType
 
     /**
      * Sets a new applicableHeaderTradeSettlement
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\ram\HeaderTradeSettlementType $applicableHeaderTradeSettlement
-     * @return self
      */
-    public function setApplicableHeaderTradeSettlement(\horstoeko\zugferd\entities\en16931\ram\HeaderTradeSettlementType $applicableHeaderTradeSettlement)
+    public function setApplicableHeaderTradeSettlement(\horstoeko\zugferd\entities\en16931\ram\HeaderTradeSettlementType $applicableHeaderTradeSettlement): self
     {
         $this->applicableHeaderTradeSettlement = $applicableHeaderTradeSettlement;
         return $this;

@@ -19,11 +19,8 @@ class SupplyChainConsignmentType
 
     /**
      * Adds as specifiedLogisticsTransportMovement
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType $specifiedLogisticsTransportMovement
      */
-    public function addToSpecifiedLogisticsTransportMovement(\horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType $specifiedLogisticsTransportMovement)
+    public function addToSpecifiedLogisticsTransportMovement(\horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType $specifiedLogisticsTransportMovement): self
     {
         $this->specifiedLogisticsTransportMovement[] = $specifiedLogisticsTransportMovement;
         return $this;
@@ -33,9 +30,8 @@ class SupplyChainConsignmentType
      * isset specifiedLogisticsTransportMovement
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetSpecifiedLogisticsTransportMovement($index)
+    public function issetSpecifiedLogisticsTransportMovement($index): bool
     {
         return isset($this->specifiedLogisticsTransportMovement[$index]);
     }
@@ -44,9 +40,8 @@ class SupplyChainConsignmentType
      * unset specifiedLogisticsTransportMovement
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetSpecifiedLogisticsTransportMovement($index)
+    public function unsetSpecifiedLogisticsTransportMovement($index): void
     {
         unset($this->specifiedLogisticsTransportMovement[$index]);
     }
@@ -65,9 +60,8 @@ class SupplyChainConsignmentType
      * Sets a new specifiedLogisticsTransportMovement
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType[] $specifiedLogisticsTransportMovement
-     * @return self
      */
-    public function setSpecifiedLogisticsTransportMovement(?array $specifiedLogisticsTransportMovement = null)
+    public function setSpecifiedLogisticsTransportMovement(?array $specifiedLogisticsTransportMovement = null): self
     {
         $this->specifiedLogisticsTransportMovement = $specifiedLogisticsTransportMovement;
         return $this;

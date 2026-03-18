@@ -13,17 +13,17 @@ class TradePartyType
     /**
      * @var string $name
      */
-    private $name = null;
+    private $name;
 
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\LegalOrganizationType $specifiedLegalOrganization
      */
-    private $specifiedLegalOrganization = null;
+    private $specifiedLegalOrganization;
 
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\TradeAddressType $postalTradeAddress
      */
-    private $postalTradeAddress = null;
+    private $postalTradeAddress;
 
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\TaxRegistrationType[] $specifiedTaxRegistration
@@ -46,9 +46,8 @@ class TradePartyType
      * Sets a new name
      *
      * @param  string $name
-     * @return self
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
         return $this;
@@ -68,9 +67,8 @@ class TradePartyType
      * Sets a new specifiedLegalOrganization
      *
      * @param  \horstoeko\zugferd\entities\minimum\ram\LegalOrganizationType $specifiedLegalOrganization
-     * @return self
      */
-    public function setSpecifiedLegalOrganization(?\horstoeko\zugferd\entities\minimum\ram\LegalOrganizationType $specifiedLegalOrganization = null)
+    public function setSpecifiedLegalOrganization(?\horstoeko\zugferd\entities\minimum\ram\LegalOrganizationType $specifiedLegalOrganization = null): self
     {
         $this->specifiedLegalOrganization = $specifiedLegalOrganization;
         return $this;
@@ -90,9 +88,8 @@ class TradePartyType
      * Sets a new postalTradeAddress
      *
      * @param  \horstoeko\zugferd\entities\minimum\ram\TradeAddressType $postalTradeAddress
-     * @return self
      */
-    public function setPostalTradeAddress(?\horstoeko\zugferd\entities\minimum\ram\TradeAddressType $postalTradeAddress = null)
+    public function setPostalTradeAddress(?\horstoeko\zugferd\entities\minimum\ram\TradeAddressType $postalTradeAddress = null): self
     {
         $this->postalTradeAddress = $postalTradeAddress;
         return $this;
@@ -100,11 +97,8 @@ class TradePartyType
 
     /**
      * Adds as specifiedTaxRegistration
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\minimum\ram\TaxRegistrationType $specifiedTaxRegistration
      */
-    public function addToSpecifiedTaxRegistration(\horstoeko\zugferd\entities\minimum\ram\TaxRegistrationType $specifiedTaxRegistration)
+    public function addToSpecifiedTaxRegistration(\horstoeko\zugferd\entities\minimum\ram\TaxRegistrationType $specifiedTaxRegistration): self
     {
         $this->specifiedTaxRegistration[] = $specifiedTaxRegistration;
         return $this;
@@ -114,9 +108,8 @@ class TradePartyType
      * isset specifiedTaxRegistration
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetSpecifiedTaxRegistration($index)
+    public function issetSpecifiedTaxRegistration($index): bool
     {
         return isset($this->specifiedTaxRegistration[$index]);
     }
@@ -125,9 +118,8 @@ class TradePartyType
      * unset specifiedTaxRegistration
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetSpecifiedTaxRegistration($index)
+    public function unsetSpecifiedTaxRegistration($index): void
     {
         unset($this->specifiedTaxRegistration[$index]);
     }
@@ -146,9 +138,8 @@ class TradePartyType
      * Sets a new specifiedTaxRegistration
      *
      * @param  \horstoeko\zugferd\entities\minimum\ram\TaxRegistrationType[] $specifiedTaxRegistration
-     * @return self
      */
-    public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null)
+    public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null): self
     {
         $this->specifiedTaxRegistration = $specifiedTaxRegistration;
         return $this;

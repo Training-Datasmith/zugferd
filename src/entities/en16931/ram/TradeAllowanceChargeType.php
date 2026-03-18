@@ -13,37 +13,37 @@ class TradeAllowanceChargeType
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IndicatorType $chargeIndicator
      */
-    private $chargeIndicator = null;
+    private $chargeIndicator;
 
     /**
      * @var float $calculationPercent
      */
-    private $calculationPercent = null;
+    private $calculationPercent;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\AmountType $basisAmount
      */
-    private $basisAmount = null;
+    private $basisAmount;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\AmountType $actualAmount
      */
-    private $actualAmount = null;
+    private $actualAmount;
 
     /**
      * @var string $reasonCode
      */
-    private $reasonCode = null;
+    private $reasonCode;
 
     /**
      * @var string $reason
      */
-    private $reason = null;
+    private $reason;
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\TradeTaxType $categoryTradeTax
      */
-    private $categoryTradeTax = null;
+    private $categoryTradeTax;
 
     /**
      * Gets as chargeIndicator
@@ -57,11 +57,8 @@ class TradeAllowanceChargeType
 
     /**
      * Sets a new chargeIndicator
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\udt\IndicatorType $chargeIndicator
-     * @return self
      */
-    public function setChargeIndicator(\horstoeko\zugferd\entities\en16931\udt\IndicatorType $chargeIndicator)
+    public function setChargeIndicator(\horstoeko\zugferd\entities\en16931\udt\IndicatorType $chargeIndicator): self
     {
         $this->chargeIndicator = $chargeIndicator;
         return $this;
@@ -81,9 +78,8 @@ class TradeAllowanceChargeType
      * Sets a new calculationPercent
      *
      * @param  float $calculationPercent
-     * @return self
      */
-    public function setCalculationPercent($calculationPercent)
+    public function setCalculationPercent($calculationPercent): self
     {
         $this->calculationPercent = $calculationPercent;
         return $this;
@@ -103,9 +99,8 @@ class TradeAllowanceChargeType
      * Sets a new basisAmount
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\AmountType $basisAmount
-     * @return self
      */
-    public function setBasisAmount(?\horstoeko\zugferd\entities\en16931\udt\AmountType $basisAmount = null)
+    public function setBasisAmount(?\horstoeko\zugferd\entities\en16931\udt\AmountType $basisAmount = null): self
     {
         $this->basisAmount = $basisAmount;
         return $this;
@@ -123,11 +118,8 @@ class TradeAllowanceChargeType
 
     /**
      * Sets a new actualAmount
-     *
-     * @param  \horstoeko\zugferd\entities\en16931\udt\AmountType $actualAmount
-     * @return self
      */
-    public function setActualAmount(\horstoeko\zugferd\entities\en16931\udt\AmountType $actualAmount)
+    public function setActualAmount(\horstoeko\zugferd\entities\en16931\udt\AmountType $actualAmount): self
     {
         $this->actualAmount = $actualAmount;
         return $this;
@@ -147,9 +139,8 @@ class TradeAllowanceChargeType
      * Sets a new reasonCode
      *
      * @param  string $reasonCode
-     * @return self
      */
-    public function setReasonCode($reasonCode)
+    public function setReasonCode($reasonCode): self
     {
         $this->reasonCode = $reasonCode;
         return $this;
@@ -169,9 +160,8 @@ class TradeAllowanceChargeType
      * Sets a new reason
      *
      * @param  string $reason
-     * @return self
      */
-    public function setReason($reason)
+    public function setReason($reason): self
     {
         $this->reason = $reason;
         return $this;
@@ -191,9 +181,8 @@ class TradeAllowanceChargeType
      * Sets a new categoryTradeTax
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\TradeTaxType $categoryTradeTax
-     * @return self
      */
-    public function setCategoryTradeTax(?\horstoeko\zugferd\entities\en16931\ram\TradeTaxType $categoryTradeTax = null)
+    public function setCategoryTradeTax(?\horstoeko\zugferd\entities\en16931\ram\TradeTaxType $categoryTradeTax = null): self
     {
         $this->categoryTradeTax = $categoryTradeTax;
         return $this;

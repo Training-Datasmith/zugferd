@@ -187,9 +187,6 @@ class ZugferdPdfValidator
 
     /**
      * Create a ZugferdPdfValidator-Instance by an existing PDF-File
-     *
-     * @param  string $pdfFilename
-     * @return ZugferdPdfValidator
      */
     public static function fromFile(string $pdfFilename): ZugferdPdfValidator
     {
@@ -208,9 +205,6 @@ class ZugferdPdfValidator
 
     /**
      * Create a ZugferdPdfValidator-Instance by a given content string
-     *
-     * @param  string $pdfContent
-     * @return ZugferdPdfValidator
      */
     public static function fromContent(string $pdfContent): ZugferdPdfValidator
     {
@@ -219,8 +213,6 @@ class ZugferdPdfValidator
 
     /**
      * Constructor
-     *
-     * @param string|null $pdfContent
      */
     final protected function __construct(?string $pdfContent = null)
     {
@@ -230,9 +222,6 @@ class ZugferdPdfValidator
 
     /**
      * Set the PDF content to validate
-     *
-     * @param  string $pdfContent
-     * @return ZugferdPdfValidator
      */
     public function setPdfContent(string $pdfContent): ZugferdPdfValidator
     {
@@ -244,9 +233,6 @@ class ZugferdPdfValidator
     /**
      * Setup the base directory. In the base directory all files will be downloaded
      * and created
-     *
-     * @param  string $newBaseDirectory
-     * @return ZugferdPdfValidator
      */
     public function setBaseDirectory(string $newBaseDirectory): ZugferdPdfValidator
     {
@@ -259,9 +245,6 @@ class ZugferdPdfValidator
 
     /**
      * Setup the VeraPDF validator application download url
-     *
-     * @param  string $newValidatorDownloadUrl
-     * @return ZugferdPdfValidator
      */
     public function setValidatorDownloadUrl(string $newValidatorDownloadUrl): ZugferdPdfValidator
     {
@@ -274,9 +257,6 @@ class ZugferdPdfValidator
 
     /**
      * Set the filename of the ZIP file which contains the validation application
-     *
-     * @param  string $newValidatorAppZipFilename
-     * @return ZugferdPdfValidator
      */
     public function setValidatorAppZipFilename(string $newValidatorAppZipFilename): ZugferdPdfValidator
     {
@@ -288,9 +268,6 @@ class ZugferdPdfValidator
     /**
      * Set the Ruleset to use for validation.
      * Allowed values are 0, 1a, 1b, 2a, 2b, 2u, 3a, 3b, 3u, 4, 4f, 4e, ua1, ua2
-     *
-     * @param  string $newVlidatorRuleset
-     * @return ZugferdPdfValidator
      */
     public function setValidatorRuleset(string $newVlidatorRuleset): ZugferdPdfValidator
     {
@@ -305,8 +282,6 @@ class ZugferdPdfValidator
 
     /**
      * Disable cleanup base directory
-     *
-     * @return ZugferdPdfValidator
      */
     public function disableCleanup(): ZugferdPdfValidator
     {
@@ -317,8 +292,6 @@ class ZugferdPdfValidator
 
     /**
      * Enable cleanup base directory
-     *
-     * @return ZugferdPdfValidator
      */
     public function enableCleanup(): ZugferdPdfValidator
     {
@@ -329,8 +302,6 @@ class ZugferdPdfValidator
 
     /**
      * Perform validation
-     *
-     * @return ZugferdPdfValidator
      */
     public function validate(): ZugferdPdfValidator
     {
@@ -364,8 +335,6 @@ class ZugferdPdfValidator
 
     /**
      * Internal get (and create) the directory for downloads and file creation
-     *
-     * @return string
      */
     private function resolveBaseDirectory(): string
     {
@@ -382,8 +351,6 @@ class ZugferdPdfValidator
 
     /**
      * Get the full filename of the archive to download which contains the Java validation application
-     *
-     * @return string
      */
     private function resolveAppZipFilename(): string
     {
@@ -392,8 +359,6 @@ class ZugferdPdfValidator
 
     /**
      * Get the executable of the validator
-     *
-     * @return string
      */
     private function resolveValidatorExecutable(): string
     {
@@ -402,8 +367,6 @@ class ZugferdPdfValidator
 
     /**
      * Reset the internal filename where data of the PDF to validate are stored
-     *
-     * @return void
      */
     private function resetFileToValidateFilename(): void
     {
@@ -412,8 +375,6 @@ class ZugferdPdfValidator
 
     /**
      * Get the full filename which contains the PDF to validate
-     *
-     * @return string
      */
     private function resolveFileToValidateFilename(): string
     {
@@ -426,8 +387,6 @@ class ZugferdPdfValidator
 
     /**
      * Clear the internal error bag
-     *
-     * @return void
      */
     private function clearMessageBag(): void
     {
@@ -438,7 +397,6 @@ class ZugferdPdfValidator
      * Add message to error bag
      *
      * @param  string|Throwable $error
-     * @return void
      */
     private function addToMessageBag($error, string $messageType = ""): void
     {
@@ -453,19 +411,16 @@ class ZugferdPdfValidator
 
     /**
      * Get messages from messagebag filtered by message type
-     *
-     * @param  string $messageType
-     * @return array
      */
     private function getMessageBagFiltered(string $messageType): array
     {
         return array_map(
-            function ($data) {
+            function (array $data) {
                 return $data["message"];
             },
             array_filter(
                 $this->messageBag,
-                function ($data) use ($messageType) {
+                function (array $data) use ($messageType): bool {
                     return $data['type'] == $messageType;
                 }
             )
@@ -474,8 +429,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns an array of all validation errors
-     *
-     * @return array
      */
     public function getValidationErrors(): array
     {
@@ -484,8 +437,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns true if __no__ validation errors are present otherwise false
-     *
-     * @return boolean
      */
     public function hasNoValidationErrors(): bool
     {
@@ -494,8 +445,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns true if validation errors are present otherwise false
-     *
-     * @return boolean
      */
     public function hasValidationErrors(): bool
     {
@@ -504,8 +453,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns an array of all validation warnings
-     *
-     * @return array
      */
     public function getValidationWarnings(): array
     {
@@ -514,8 +461,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns true if __no__ validation warnings are present otherwise false
-     *
-     * @return boolean
      */
     public function hasNoValidationWarnings(): bool
     {
@@ -524,8 +469,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns true if validation warnings are present otherwise false
-     *
-     * @return boolean
      */
     public function hasValidationWarnings(): bool
     {
@@ -534,8 +477,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns an array of all validation information
-     *
-     * @return array
      */
     public function getValidationInformation(): array
     {
@@ -544,8 +485,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns true if __no__ validation information are present otherwise false
-     *
-     * @return boolean
      */
     public function hasNoValidationInformation(): bool
     {
@@ -554,8 +493,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns true if validation Information are present otherwise false
-     *
-     * @return boolean
      */
     public function hasValidationInformation(): bool
     {
@@ -564,8 +501,6 @@ class ZugferdPdfValidator
 
     /**
      * Return an array of all internal errors (such as download error or system exceptions)
-     *
-     * @return array
      */
     public function getProcessErrors(): array
     {
@@ -574,8 +509,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns true if there are __no__ system errors (e.g. exceptions before the validation app was called)
-     *
-     * @return boolean
      */
     public function hasNoProcessErrors(): bool
     {
@@ -584,8 +517,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns true if there are any system errors (e.g. exceptions before the validation app was called)
-     *
-     * @return boolean
      */
     public function hasProcessErrors(): bool
     {
@@ -594,8 +525,6 @@ class ZugferdPdfValidator
 
     /**
      * Returns an array of all messages from process system (calling external applications)
-     *
-     * @return array
      */
     public function getProcessOutput(): array
     {
@@ -604,8 +533,6 @@ class ZugferdPdfValidator
 
     /**
      * Check Requirements
-     *
-     * @return boolean
      */
     private function checkRequirements(): bool
     {
@@ -631,8 +558,6 @@ class ZugferdPdfValidator
 
     /**
      * Download required files
-     *
-     * @return boolean
      */
     private function downloadRequiredFiles(): bool
     {
@@ -646,8 +571,6 @@ class ZugferdPdfValidator
 
     /**
      * Unpack required files
-     *
-     * @return boolean
      */
     private function unpackRequiredFiles(): bool
     {
@@ -663,10 +586,6 @@ class ZugferdPdfValidator
 
     /**
      * Unpack single required file
-     *
-     * @param  string $zipFilename
-     * @param  bool   $flatExtraction
-     * @return bool
      */
     private function unpackRequiredFile(string $zipFilename, bool $flatExtraction = false): bool
     {
@@ -679,9 +598,6 @@ class ZugferdPdfValidator
 
     /**
      * Unpack single required file (Non-Flat)
-     *
-     * @param  string $zipFilename
-     * @return bool
      */
     private function unpackRequiredFileNonFlat(string $zipFilename): bool
     {
@@ -719,9 +635,6 @@ class ZugferdPdfValidator
 
     /**
      * Unpack single required file (Flat)
-     *
-     * @param  string $zipFilename
-     * @return bool
      */
     private function unpackRequiredFileFlat(string $zipFilename): bool
     {
@@ -760,7 +673,6 @@ class ZugferdPdfValidator
     /**
      * Install the validator
      *
-     * @return bool
      * @throws DirectoryNotFoundException
      * @throws LogicException
      */
@@ -829,8 +741,6 @@ class ZugferdPdfValidator
 
     /**
      * Runs the validator java application
-     *
-     * @return boolean
      */
     private function performValidation(): bool
     {
@@ -865,9 +775,6 @@ class ZugferdPdfValidator
 
     /**
      * Read and parse the JSON response
-     *
-     * @param  string $validatorExecutableOutput
-     * @return bool
      */
     private function checkValidatorExecutableOutput(string $validatorExecutableOutput): bool
     {
@@ -951,8 +858,6 @@ class ZugferdPdfValidator
 
     /**
      * Cleanup downloads and created files
-     *
-     * @return void
      */
     private function cleanupBaseDirectory(): void
     {
@@ -969,9 +874,6 @@ class ZugferdPdfValidator
 
     /**
      * Helper method for removeBaseDirectory
-     *
-     * @param  string $directoryToRemove
-     * @return void
      */
     private function cleanupBaseDirectoryInternal(string $directoryToRemove): void
     {
@@ -998,10 +900,6 @@ class ZugferdPdfValidator
     /**
      * Runs a process. If the process runned successfully this method
      * returns true, otherwise false
-     *
-     * @param  array  $command
-     * @param  string $workingdirectory
-     * @return bool
      */
     private function runProcess(array $command, string $workingdirectory): bool
     {
@@ -1012,11 +910,6 @@ class ZugferdPdfValidator
      * Runs a process. If the process runned successfully this method
      * returns true, otherwise false. The output of the process wil be
      * returned in $processOutput
-     *
-     * @param  array       $command
-     * @param  string      $workingdirectory
-     * @param  null|string &$processOutput
-     * @return bool
      */
     private function runProcessAndGetOutput(array $command, string $workingdirectory, ?string &$processOutput): bool
     {
@@ -1045,11 +938,6 @@ class ZugferdPdfValidator
 
     /**
      * Run a file download.
-     *
-     * @param  string $url
-     * @param  string $toFilePath
-     * @param  bool   $forceOverwrite
-     * @return bool
      */
     private function runFileDownload(string $url, string $toFilePath, bool $forceOverwrite = false): bool
     {

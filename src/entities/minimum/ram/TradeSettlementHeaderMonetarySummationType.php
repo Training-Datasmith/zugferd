@@ -13,7 +13,7 @@ class TradeSettlementHeaderMonetarySummationType
     /**
      * @var \horstoeko\zugferd\entities\minimum\udt\AmountType $taxBasisTotalAmount
      */
-    private $taxBasisTotalAmount = null;
+    private $taxBasisTotalAmount;
 
     /**
      * @var \horstoeko\zugferd\entities\minimum\udt\AmountType[] $taxTotalAmount
@@ -25,12 +25,12 @@ class TradeSettlementHeaderMonetarySummationType
     /**
      * @var \horstoeko\zugferd\entities\minimum\udt\AmountType $grandTotalAmount
      */
-    private $grandTotalAmount = null;
+    private $grandTotalAmount;
 
     /**
      * @var \horstoeko\zugferd\entities\minimum\udt\AmountType $duePayableAmount
      */
-    private $duePayableAmount = null;
+    private $duePayableAmount;
 
     /**
      * Gets as taxBasisTotalAmount
@@ -44,11 +44,8 @@ class TradeSettlementHeaderMonetarySummationType
 
     /**
      * Sets a new taxBasisTotalAmount
-     *
-     * @param  \horstoeko\zugferd\entities\minimum\udt\AmountType $taxBasisTotalAmount
-     * @return self
      */
-    public function setTaxBasisTotalAmount(\horstoeko\zugferd\entities\minimum\udt\AmountType $taxBasisTotalAmount)
+    public function setTaxBasisTotalAmount(\horstoeko\zugferd\entities\minimum\udt\AmountType $taxBasisTotalAmount): self
     {
         $this->taxBasisTotalAmount = $taxBasisTotalAmount;
         return $this;
@@ -56,11 +53,8 @@ class TradeSettlementHeaderMonetarySummationType
 
     /**
      * Adds as taxTotalAmount
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\minimum\udt\AmountType $taxTotalAmount
      */
-    public function addToTaxTotalAmount(\horstoeko\zugferd\entities\minimum\udt\AmountType $taxTotalAmount)
+    public function addToTaxTotalAmount(\horstoeko\zugferd\entities\minimum\udt\AmountType $taxTotalAmount): self
     {
         $this->taxTotalAmount[] = $taxTotalAmount;
         return $this;
@@ -70,9 +64,8 @@ class TradeSettlementHeaderMonetarySummationType
      * isset taxTotalAmount
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetTaxTotalAmount($index)
+    public function issetTaxTotalAmount($index): bool
     {
         return isset($this->taxTotalAmount[$index]);
     }
@@ -81,9 +74,8 @@ class TradeSettlementHeaderMonetarySummationType
      * unset taxTotalAmount
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetTaxTotalAmount($index)
+    public function unsetTaxTotalAmount($index): void
     {
         unset($this->taxTotalAmount[$index]);
     }
@@ -102,9 +94,8 @@ class TradeSettlementHeaderMonetarySummationType
      * Sets a new taxTotalAmount
      *
      * @param  \horstoeko\zugferd\entities\minimum\udt\AmountType[] $taxTotalAmount
-     * @return self
      */
-    public function setTaxTotalAmount(?array $taxTotalAmount = null)
+    public function setTaxTotalAmount(?array $taxTotalAmount = null): self
     {
         $this->taxTotalAmount = $taxTotalAmount;
         return $this;
@@ -122,11 +113,8 @@ class TradeSettlementHeaderMonetarySummationType
 
     /**
      * Sets a new grandTotalAmount
-     *
-     * @param  \horstoeko\zugferd\entities\minimum\udt\AmountType $grandTotalAmount
-     * @return self
      */
-    public function setGrandTotalAmount(\horstoeko\zugferd\entities\minimum\udt\AmountType $grandTotalAmount)
+    public function setGrandTotalAmount(\horstoeko\zugferd\entities\minimum\udt\AmountType $grandTotalAmount): self
     {
         $this->grandTotalAmount = $grandTotalAmount;
         return $this;
@@ -144,11 +132,8 @@ class TradeSettlementHeaderMonetarySummationType
 
     /**
      * Sets a new duePayableAmount
-     *
-     * @param  \horstoeko\zugferd\entities\minimum\udt\AmountType $duePayableAmount
-     * @return self
      */
-    public function setDuePayableAmount(\horstoeko\zugferd\entities\minimum\udt\AmountType $duePayableAmount)
+    public function setDuePayableAmount(\horstoeko\zugferd\entities\minimum\udt\AmountType $duePayableAmount): self
     {
         $this->duePayableAmount = $duePayableAmount;
         return $this;

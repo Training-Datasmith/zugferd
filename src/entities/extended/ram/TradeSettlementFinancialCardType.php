@@ -13,12 +13,12 @@ class TradeSettlementFinancialCardType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * @var string $cardholderName
      */
-    private $cardholderName = null;
+    private $cardholderName;
 
     /**
      * Gets as iD
@@ -32,11 +32,8 @@ class TradeSettlementFinancialCardType
 
     /**
      * Sets a new iD
-     *
-     * @param  \horstoeko\zugferd\entities\extended\udt\IDType $iD
-     * @return self
      */
-    public function setID(\horstoeko\zugferd\entities\extended\udt\IDType $iD)
+    public function setID(\horstoeko\zugferd\entities\extended\udt\IDType $iD): self
     {
         $this->iD = $iD;
         return $this;
@@ -56,9 +53,8 @@ class TradeSettlementFinancialCardType
      * Sets a new cardholderName
      *
      * @param  string $cardholderName
-     * @return self
      */
-    public function setCardholderName($cardholderName)
+    public function setCardholderName($cardholderName): self
     {
         $this->cardholderName = $cardholderName;
         return $this;

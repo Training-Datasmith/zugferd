@@ -13,37 +13,37 @@ class TradeAddressType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\CodeType $postcodeCode
      */
-    private $postcodeCode = null;
+    private $postcodeCode;
 
     /**
      * @var string $lineOne
      */
-    private $lineOne = null;
+    private $lineOne;
 
     /**
      * @var string $lineTwo
      */
-    private $lineTwo = null;
+    private $lineTwo;
 
     /**
      * @var string $lineThree
      */
-    private $lineThree = null;
+    private $lineThree;
 
     /**
      * @var string $cityName
      */
-    private $cityName = null;
+    private $cityName;
 
     /**
      * @var string $countryID
      */
-    private $countryID = null;
+    private $countryID;
 
     /**
      * @var string $countrySubDivisionName
      */
-    private $countrySubDivisionName = null;
+    private $countrySubDivisionName;
 
     /**
      * Gets as postcodeCode
@@ -59,9 +59,8 @@ class TradeAddressType
      * Sets a new postcodeCode
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\CodeType $postcodeCode
-     * @return self
      */
-    public function setPostcodeCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $postcodeCode = null)
+    public function setPostcodeCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $postcodeCode = null): self
     {
         $this->postcodeCode = $postcodeCode;
         return $this;
@@ -81,9 +80,8 @@ class TradeAddressType
      * Sets a new lineOne
      *
      * @param  string $lineOne
-     * @return self
      */
-    public function setLineOne($lineOne)
+    public function setLineOne($lineOne): self
     {
         $this->lineOne = $lineOne;
         return $this;
@@ -103,9 +101,8 @@ class TradeAddressType
      * Sets a new lineTwo
      *
      * @param  string $lineTwo
-     * @return self
      */
-    public function setLineTwo($lineTwo)
+    public function setLineTwo($lineTwo): self
     {
         $this->lineTwo = $lineTwo;
         return $this;
@@ -125,9 +122,8 @@ class TradeAddressType
      * Sets a new lineThree
      *
      * @param  string $lineThree
-     * @return self
      */
-    public function setLineThree($lineThree)
+    public function setLineThree($lineThree): self
     {
         $this->lineThree = $lineThree;
         return $this;
@@ -147,9 +143,8 @@ class TradeAddressType
      * Sets a new cityName
      *
      * @param  string $cityName
-     * @return self
      */
-    public function setCityName($cityName)
+    public function setCityName($cityName): self
     {
         $this->cityName = $cityName;
         return $this;
@@ -169,9 +164,8 @@ class TradeAddressType
      * Sets a new countryID
      *
      * @param  string $countryID
-     * @return self
      */
-    public function setCountryID($countryID)
+    public function setCountryID($countryID): self
     {
         $this->countryID = $countryID;
         return $this;
@@ -191,9 +185,8 @@ class TradeAddressType
      * Sets a new countrySubDivisionName
      *
      * @param  string $countrySubDivisionName
-     * @return self
      */
-    public function setCountrySubDivisionName($countrySubDivisionName)
+    public function setCountrySubDivisionName($countrySubDivisionName): self
     {
         $this->countrySubDivisionName = $countrySubDivisionName;
         return $this;

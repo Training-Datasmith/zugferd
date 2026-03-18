@@ -13,52 +13,52 @@ class HeaderTradeSettlementType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $creditorReferenceID
      */
-    private $creditorReferenceID = null;
+    private $creditorReferenceID;
 
     /**
      * @var string $paymentReference
      */
-    private $paymentReference = null;
+    private $paymentReference;
 
     /**
      * @var string $taxCurrencyCode
      */
-    private $taxCurrencyCode = null;
+    private $taxCurrencyCode;
 
     /**
      * @var string $invoiceCurrencyCode
      */
-    private $invoiceCurrencyCode = null;
+    private $invoiceCurrencyCode;
 
     /**
      * @var string $invoiceIssuerReference
      */
-    private $invoiceIssuerReference = null;
+    private $invoiceIssuerReference;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $invoicerTradeParty
      */
-    private $invoicerTradeParty = null;
+    private $invoicerTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $invoiceeTradeParty
      */
-    private $invoiceeTradeParty = null;
+    private $invoiceeTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $payeeTradeParty
      */
-    private $payeeTradeParty = null;
+    private $payeeTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $payerTradeParty
      */
-    private $payerTradeParty = null;
+    private $payerTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeCurrencyExchangeType $taxApplicableTradeCurrencyExchange
      */
-    private $taxApplicableTradeCurrencyExchange = null;
+    private $taxApplicableTradeCurrencyExchange;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeSettlementPaymentMeansType[] $specifiedTradeSettlementPaymentMeans
@@ -77,7 +77,7 @@ class HeaderTradeSettlementType
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\SpecifiedPeriodType $billingSpecifiedPeriod
      */
-    private $billingSpecifiedPeriod = null;
+    private $billingSpecifiedPeriod;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeAllowanceChargeType[] $specifiedTradeAllowanceCharge
@@ -103,7 +103,7 @@ class HeaderTradeSettlementType
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation
      */
-    private $specifiedTradeSettlementHeaderMonetarySummation = null;
+    private $specifiedTradeSettlementHeaderMonetarySummation;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $invoiceReferencedDocument
@@ -140,9 +140,8 @@ class HeaderTradeSettlementType
      * Sets a new creditorReferenceID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $creditorReferenceID
-     * @return self
      */
-    public function setCreditorReferenceID(?\horstoeko\zugferd\entities\extended\udt\IDType $creditorReferenceID = null)
+    public function setCreditorReferenceID(?\horstoeko\zugferd\entities\extended\udt\IDType $creditorReferenceID = null): self
     {
         $this->creditorReferenceID = $creditorReferenceID;
         return $this;
@@ -162,9 +161,8 @@ class HeaderTradeSettlementType
      * Sets a new paymentReference
      *
      * @param  string $paymentReference
-     * @return self
      */
-    public function setPaymentReference($paymentReference)
+    public function setPaymentReference($paymentReference): self
     {
         $this->paymentReference = $paymentReference;
         return $this;
@@ -184,9 +182,8 @@ class HeaderTradeSettlementType
      * Sets a new taxCurrencyCode
      *
      * @param  string $taxCurrencyCode
-     * @return self
      */
-    public function setTaxCurrencyCode($taxCurrencyCode)
+    public function setTaxCurrencyCode($taxCurrencyCode): self
     {
         $this->taxCurrencyCode = $taxCurrencyCode;
         return $this;
@@ -206,9 +203,8 @@ class HeaderTradeSettlementType
      * Sets a new invoiceCurrencyCode
      *
      * @param  string $invoiceCurrencyCode
-     * @return self
      */
-    public function setInvoiceCurrencyCode($invoiceCurrencyCode)
+    public function setInvoiceCurrencyCode($invoiceCurrencyCode): self
     {
         $this->invoiceCurrencyCode = $invoiceCurrencyCode;
         return $this;
@@ -228,9 +224,8 @@ class HeaderTradeSettlementType
      * Sets a new invoiceIssuerReference
      *
      * @param  string $invoiceIssuerReference
-     * @return self
      */
-    public function setInvoiceIssuerReference($invoiceIssuerReference)
+    public function setInvoiceIssuerReference($invoiceIssuerReference): self
     {
         $this->invoiceIssuerReference = $invoiceIssuerReference;
         return $this;
@@ -250,9 +245,8 @@ class HeaderTradeSettlementType
      * Sets a new invoicerTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $invoicerTradeParty
-     * @return self
      */
-    public function setInvoicerTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $invoicerTradeParty = null)
+    public function setInvoicerTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $invoicerTradeParty = null): self
     {
         $this->invoicerTradeParty = $invoicerTradeParty;
         return $this;
@@ -272,9 +266,8 @@ class HeaderTradeSettlementType
      * Sets a new invoiceeTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $invoiceeTradeParty
-     * @return self
      */
-    public function setInvoiceeTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $invoiceeTradeParty = null)
+    public function setInvoiceeTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $invoiceeTradeParty = null): self
     {
         $this->invoiceeTradeParty = $invoiceeTradeParty;
         return $this;
@@ -294,9 +287,8 @@ class HeaderTradeSettlementType
      * Sets a new payeeTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $payeeTradeParty
-     * @return self
      */
-    public function setPayeeTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $payeeTradeParty = null)
+    public function setPayeeTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $payeeTradeParty = null): self
     {
         $this->payeeTradeParty = $payeeTradeParty;
         return $this;
@@ -316,9 +308,8 @@ class HeaderTradeSettlementType
      * Sets a new payerTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $payerTradeParty
-     * @return self
      */
-    public function setPayerTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $payerTradeParty = null)
+    public function setPayerTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $payerTradeParty = null): self
     {
         $this->payerTradeParty = $payerTradeParty;
         return $this;
@@ -338,9 +329,8 @@ class HeaderTradeSettlementType
      * Sets a new taxApplicableTradeCurrencyExchange
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeCurrencyExchangeType $taxApplicableTradeCurrencyExchange
-     * @return self
      */
-    public function setTaxApplicableTradeCurrencyExchange(?\horstoeko\zugferd\entities\extended\ram\TradeCurrencyExchangeType $taxApplicableTradeCurrencyExchange = null)
+    public function setTaxApplicableTradeCurrencyExchange(?\horstoeko\zugferd\entities\extended\ram\TradeCurrencyExchangeType $taxApplicableTradeCurrencyExchange = null): self
     {
         $this->taxApplicableTradeCurrencyExchange = $taxApplicableTradeCurrencyExchange;
         return $this;
@@ -348,11 +338,8 @@ class HeaderTradeSettlementType
 
     /**
      * Adds as specifiedTradeSettlementPaymentMeans
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans
      */
-    public function addToSpecifiedTradeSettlementPaymentMeans(\horstoeko\zugferd\entities\extended\ram\TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans)
+    public function addToSpecifiedTradeSettlementPaymentMeans(\horstoeko\zugferd\entities\extended\ram\TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans): self
     {
         $this->specifiedTradeSettlementPaymentMeans[] = $specifiedTradeSettlementPaymentMeans;
         return $this;
@@ -362,9 +349,8 @@ class HeaderTradeSettlementType
      * isset specifiedTradeSettlementPaymentMeans
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetSpecifiedTradeSettlementPaymentMeans($index)
+    public function issetSpecifiedTradeSettlementPaymentMeans($index): bool
     {
         return isset($this->specifiedTradeSettlementPaymentMeans[$index]);
     }
@@ -373,9 +359,8 @@ class HeaderTradeSettlementType
      * unset specifiedTradeSettlementPaymentMeans
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetSpecifiedTradeSettlementPaymentMeans($index)
+    public function unsetSpecifiedTradeSettlementPaymentMeans($index): void
     {
         unset($this->specifiedTradeSettlementPaymentMeans[$index]);
     }
@@ -394,9 +379,8 @@ class HeaderTradeSettlementType
      * Sets a new specifiedTradeSettlementPaymentMeans
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeSettlementPaymentMeansType[] $specifiedTradeSettlementPaymentMeans
-     * @return self
      */
-    public function setSpecifiedTradeSettlementPaymentMeans(?array $specifiedTradeSettlementPaymentMeans = null)
+    public function setSpecifiedTradeSettlementPaymentMeans(?array $specifiedTradeSettlementPaymentMeans = null): self
     {
         $this->specifiedTradeSettlementPaymentMeans = $specifiedTradeSettlementPaymentMeans;
         return $this;
@@ -404,11 +388,8 @@ class HeaderTradeSettlementType
 
     /**
      * Adds as applicableTradeTax
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\TradeTaxType $applicableTradeTax
      */
-    public function addToApplicableTradeTax(\horstoeko\zugferd\entities\extended\ram\TradeTaxType $applicableTradeTax)
+    public function addToApplicableTradeTax(\horstoeko\zugferd\entities\extended\ram\TradeTaxType $applicableTradeTax): self
     {
         $this->applicableTradeTax[] = $applicableTradeTax;
         return $this;
@@ -418,9 +399,8 @@ class HeaderTradeSettlementType
      * isset applicableTradeTax
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetApplicableTradeTax($index)
+    public function issetApplicableTradeTax($index): bool
     {
         return isset($this->applicableTradeTax[$index]);
     }
@@ -429,9 +409,8 @@ class HeaderTradeSettlementType
      * unset applicableTradeTax
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetApplicableTradeTax($index)
+    public function unsetApplicableTradeTax($index): void
     {
         unset($this->applicableTradeTax[$index]);
     }
@@ -450,9 +429,8 @@ class HeaderTradeSettlementType
      * Sets a new applicableTradeTax
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeTaxType[] $applicableTradeTax
-     * @return self
      */
-    public function setApplicableTradeTax(array $applicableTradeTax)
+    public function setApplicableTradeTax(array $applicableTradeTax): self
     {
         $this->applicableTradeTax = $applicableTradeTax;
         return $this;
@@ -472,9 +450,8 @@ class HeaderTradeSettlementType
      * Sets a new billingSpecifiedPeriod
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\SpecifiedPeriodType $billingSpecifiedPeriod
-     * @return self
      */
-    public function setBillingSpecifiedPeriod(?\horstoeko\zugferd\entities\extended\ram\SpecifiedPeriodType $billingSpecifiedPeriod = null)
+    public function setBillingSpecifiedPeriod(?\horstoeko\zugferd\entities\extended\ram\SpecifiedPeriodType $billingSpecifiedPeriod = null): self
     {
         $this->billingSpecifiedPeriod = $billingSpecifiedPeriod;
         return $this;
@@ -482,11 +459,8 @@ class HeaderTradeSettlementType
 
     /**
      * Adds as specifiedTradeAllowanceCharge
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\TradeAllowanceChargeType $specifiedTradeAllowanceCharge
      */
-    public function addToSpecifiedTradeAllowanceCharge(\horstoeko\zugferd\entities\extended\ram\TradeAllowanceChargeType $specifiedTradeAllowanceCharge)
+    public function addToSpecifiedTradeAllowanceCharge(\horstoeko\zugferd\entities\extended\ram\TradeAllowanceChargeType $specifiedTradeAllowanceCharge): self
     {
         $this->specifiedTradeAllowanceCharge[] = $specifiedTradeAllowanceCharge;
         return $this;
@@ -496,9 +470,8 @@ class HeaderTradeSettlementType
      * isset specifiedTradeAllowanceCharge
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetSpecifiedTradeAllowanceCharge($index)
+    public function issetSpecifiedTradeAllowanceCharge($index): bool
     {
         return isset($this->specifiedTradeAllowanceCharge[$index]);
     }
@@ -507,9 +480,8 @@ class HeaderTradeSettlementType
      * unset specifiedTradeAllowanceCharge
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetSpecifiedTradeAllowanceCharge($index)
+    public function unsetSpecifiedTradeAllowanceCharge($index): void
     {
         unset($this->specifiedTradeAllowanceCharge[$index]);
     }
@@ -528,9 +500,8 @@ class HeaderTradeSettlementType
      * Sets a new specifiedTradeAllowanceCharge
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeAllowanceChargeType[] $specifiedTradeAllowanceCharge
-     * @return self
      */
-    public function setSpecifiedTradeAllowanceCharge(?array $specifiedTradeAllowanceCharge = null)
+    public function setSpecifiedTradeAllowanceCharge(?array $specifiedTradeAllowanceCharge = null): self
     {
         $this->specifiedTradeAllowanceCharge = $specifiedTradeAllowanceCharge;
         return $this;
@@ -538,11 +509,8 @@ class HeaderTradeSettlementType
 
     /**
      * Adds as specifiedLogisticsServiceCharge
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\LogisticsServiceChargeType $specifiedLogisticsServiceCharge
      */
-    public function addToSpecifiedLogisticsServiceCharge(\horstoeko\zugferd\entities\extended\ram\LogisticsServiceChargeType $specifiedLogisticsServiceCharge)
+    public function addToSpecifiedLogisticsServiceCharge(\horstoeko\zugferd\entities\extended\ram\LogisticsServiceChargeType $specifiedLogisticsServiceCharge): self
     {
         $this->specifiedLogisticsServiceCharge[] = $specifiedLogisticsServiceCharge;
         return $this;
@@ -552,9 +520,8 @@ class HeaderTradeSettlementType
      * isset specifiedLogisticsServiceCharge
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetSpecifiedLogisticsServiceCharge($index)
+    public function issetSpecifiedLogisticsServiceCharge($index): bool
     {
         return isset($this->specifiedLogisticsServiceCharge[$index]);
     }
@@ -563,9 +530,8 @@ class HeaderTradeSettlementType
      * unset specifiedLogisticsServiceCharge
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetSpecifiedLogisticsServiceCharge($index)
+    public function unsetSpecifiedLogisticsServiceCharge($index): void
     {
         unset($this->specifiedLogisticsServiceCharge[$index]);
     }
@@ -584,9 +550,8 @@ class HeaderTradeSettlementType
      * Sets a new specifiedLogisticsServiceCharge
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\LogisticsServiceChargeType[] $specifiedLogisticsServiceCharge
-     * @return self
      */
-    public function setSpecifiedLogisticsServiceCharge(?array $specifiedLogisticsServiceCharge = null)
+    public function setSpecifiedLogisticsServiceCharge(?array $specifiedLogisticsServiceCharge = null): self
     {
         $this->specifiedLogisticsServiceCharge = $specifiedLogisticsServiceCharge;
         return $this;
@@ -594,11 +559,8 @@ class HeaderTradeSettlementType
 
     /**
      * Adds as specifiedTradePaymentTerms
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\TradePaymentTermsType $specifiedTradePaymentTerms
      */
-    public function addToSpecifiedTradePaymentTerms(\horstoeko\zugferd\entities\extended\ram\TradePaymentTermsType $specifiedTradePaymentTerms)
+    public function addToSpecifiedTradePaymentTerms(\horstoeko\zugferd\entities\extended\ram\TradePaymentTermsType $specifiedTradePaymentTerms): self
     {
         $this->specifiedTradePaymentTerms[] = $specifiedTradePaymentTerms;
         return $this;
@@ -608,9 +570,8 @@ class HeaderTradeSettlementType
      * isset specifiedTradePaymentTerms
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetSpecifiedTradePaymentTerms($index)
+    public function issetSpecifiedTradePaymentTerms($index): bool
     {
         return isset($this->specifiedTradePaymentTerms[$index]);
     }
@@ -619,9 +580,8 @@ class HeaderTradeSettlementType
      * unset specifiedTradePaymentTerms
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetSpecifiedTradePaymentTerms($index)
+    public function unsetSpecifiedTradePaymentTerms($index): void
     {
         unset($this->specifiedTradePaymentTerms[$index]);
     }
@@ -640,9 +600,8 @@ class HeaderTradeSettlementType
      * Sets a new specifiedTradePaymentTerms
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePaymentTermsType[] $specifiedTradePaymentTerms
-     * @return self
      */
-    public function setSpecifiedTradePaymentTerms(?array $specifiedTradePaymentTerms = null)
+    public function setSpecifiedTradePaymentTerms(?array $specifiedTradePaymentTerms = null): self
     {
         $this->specifiedTradePaymentTerms = $specifiedTradePaymentTerms;
         return $this;
@@ -660,11 +619,8 @@ class HeaderTradeSettlementType
 
     /**
      * Sets a new specifiedTradeSettlementHeaderMonetarySummation
-     *
-     * @param  \horstoeko\zugferd\entities\extended\ram\TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation
-     * @return self
      */
-    public function setSpecifiedTradeSettlementHeaderMonetarySummation(\horstoeko\zugferd\entities\extended\ram\TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation)
+    public function setSpecifiedTradeSettlementHeaderMonetarySummation(\horstoeko\zugferd\entities\extended\ram\TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation): self
     {
         $this->specifiedTradeSettlementHeaderMonetarySummation = $specifiedTradeSettlementHeaderMonetarySummation;
         return $this;
@@ -672,11 +628,8 @@ class HeaderTradeSettlementType
 
     /**
      * Adds as invoiceReferencedDocument
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $invoiceReferencedDocument
      */
-    public function addToInvoiceReferencedDocument(\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $invoiceReferencedDocument)
+    public function addToInvoiceReferencedDocument(\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $invoiceReferencedDocument): self
     {
         $this->invoiceReferencedDocument[] = $invoiceReferencedDocument;
         return $this;
@@ -686,9 +639,8 @@ class HeaderTradeSettlementType
      * isset invoiceReferencedDocument
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetInvoiceReferencedDocument($index)
+    public function issetInvoiceReferencedDocument($index): bool
     {
         return isset($this->invoiceReferencedDocument[$index]);
     }
@@ -697,9 +649,8 @@ class HeaderTradeSettlementType
      * unset invoiceReferencedDocument
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetInvoiceReferencedDocument($index)
+    public function unsetInvoiceReferencedDocument($index): void
     {
         unset($this->invoiceReferencedDocument[$index]);
     }
@@ -718,9 +669,8 @@ class HeaderTradeSettlementType
      * Sets a new invoiceReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $invoiceReferencedDocument
-     * @return self
      */
-    public function setInvoiceReferencedDocument(?array $invoiceReferencedDocument = null)
+    public function setInvoiceReferencedDocument(?array $invoiceReferencedDocument = null): self
     {
         $this->invoiceReferencedDocument = $invoiceReferencedDocument;
         return $this;
@@ -728,11 +678,8 @@ class HeaderTradeSettlementType
 
     /**
      * Adds as receivableSpecifiedTradeAccountingAccount
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount
      */
-    public function addToReceivableSpecifiedTradeAccountingAccount(\horstoeko\zugferd\entities\extended\ram\TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount)
+    public function addToReceivableSpecifiedTradeAccountingAccount(\horstoeko\zugferd\entities\extended\ram\TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount): self
     {
         $this->receivableSpecifiedTradeAccountingAccount[] = $receivableSpecifiedTradeAccountingAccount;
         return $this;
@@ -742,9 +689,8 @@ class HeaderTradeSettlementType
      * isset receivableSpecifiedTradeAccountingAccount
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetReceivableSpecifiedTradeAccountingAccount($index)
+    public function issetReceivableSpecifiedTradeAccountingAccount($index): bool
     {
         return isset($this->receivableSpecifiedTradeAccountingAccount[$index]);
     }
@@ -753,9 +699,8 @@ class HeaderTradeSettlementType
      * unset receivableSpecifiedTradeAccountingAccount
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetReceivableSpecifiedTradeAccountingAccount($index)
+    public function unsetReceivableSpecifiedTradeAccountingAccount($index): void
     {
         unset($this->receivableSpecifiedTradeAccountingAccount[$index]);
     }
@@ -774,9 +719,8 @@ class HeaderTradeSettlementType
      * Sets a new receivableSpecifiedTradeAccountingAccount
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeAccountingAccountType[] $receivableSpecifiedTradeAccountingAccount
-     * @return self
      */
-    public function setReceivableSpecifiedTradeAccountingAccount(?array $receivableSpecifiedTradeAccountingAccount = null)
+    public function setReceivableSpecifiedTradeAccountingAccount(?array $receivableSpecifiedTradeAccountingAccount = null): self
     {
         $this->receivableSpecifiedTradeAccountingAccount = $receivableSpecifiedTradeAccountingAccount;
         return $this;
@@ -784,11 +728,8 @@ class HeaderTradeSettlementType
 
     /**
      * Adds as specifiedAdvancePayment
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\AdvancePaymentType $specifiedAdvancePayment
      */
-    public function addToSpecifiedAdvancePayment(\horstoeko\zugferd\entities\extended\ram\AdvancePaymentType $specifiedAdvancePayment)
+    public function addToSpecifiedAdvancePayment(\horstoeko\zugferd\entities\extended\ram\AdvancePaymentType $specifiedAdvancePayment): self
     {
         $this->specifiedAdvancePayment[] = $specifiedAdvancePayment;
         return $this;
@@ -798,9 +739,8 @@ class HeaderTradeSettlementType
      * isset specifiedAdvancePayment
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetSpecifiedAdvancePayment($index)
+    public function issetSpecifiedAdvancePayment($index): bool
     {
         return isset($this->specifiedAdvancePayment[$index]);
     }
@@ -809,9 +749,8 @@ class HeaderTradeSettlementType
      * unset specifiedAdvancePayment
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetSpecifiedAdvancePayment($index)
+    public function unsetSpecifiedAdvancePayment($index): void
     {
         unset($this->specifiedAdvancePayment[$index]);
     }
@@ -830,9 +769,8 @@ class HeaderTradeSettlementType
      * Sets a new specifiedAdvancePayment
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\AdvancePaymentType[] $specifiedAdvancePayment
-     * @return self
      */
-    public function setSpecifiedAdvancePayment(?array $specifiedAdvancePayment = null)
+    public function setSpecifiedAdvancePayment(?array $specifiedAdvancePayment = null): self
     {
         $this->specifiedAdvancePayment = $specifiedAdvancePayment;
         return $this;

@@ -13,12 +13,12 @@ class AmountType
     /**
      * @var float $__value
      */
-    private $__value = null;
+    private $__value;
 
     /**
      * @var string $currencyID
      */
-    private $currencyID = null;
+    private $currencyID;
 
     /**
      * Construct
@@ -46,10 +46,8 @@ class AmountType
 
     /**
      * Gets a string value
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return strval($this->__value);
     }
@@ -68,9 +66,8 @@ class AmountType
      * Sets a new currencyID
      *
      * @param  string $currencyID
-     * @return self
      */
-    public function setCurrencyID($currencyID)
+    public function setCurrencyID($currencyID): self
     {
         $this->currencyID = $currencyID;
         return $this;

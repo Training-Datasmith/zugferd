@@ -37,8 +37,6 @@ class ZugferdDocumentValidator
 
     /**
      * Constructor
-     *
-     * @param ZugferdDocument $document
      */
     public function __construct(ZugferdDocument $document)
     {
@@ -48,8 +46,6 @@ class ZugferdDocumentValidator
 
     /**
      * Perform the validation of the document
-     *
-     * @return ConstraintViolationListInterface
      */
     public function validateDocument(): ConstraintViolationListInterface
     {
@@ -58,8 +54,6 @@ class ZugferdDocumentValidator
 
     /**
      * Initialize the internal validator object
-     *
-     * @return void
      */
     private function initValidator(): void
     {
@@ -84,10 +78,6 @@ class ZugferdDocumentValidator
 
     /**
      * Helper for find all files by pattern
-     *
-     * @param  string  $pattern
-     * @param  integer $flags
-     * @return array
      */
     private function globRecursive(string $pattern, int $flags = 0): array
     {

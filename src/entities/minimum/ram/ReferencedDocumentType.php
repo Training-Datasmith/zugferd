@@ -13,7 +13,7 @@ class ReferencedDocumentType
     /**
      * @var \horstoeko\zugferd\entities\minimum\udt\IDType $issuerAssignedID
      */
-    private $issuerAssignedID = null;
+    private $issuerAssignedID;
 
     /**
      * Gets as issuerAssignedID
@@ -27,11 +27,8 @@ class ReferencedDocumentType
 
     /**
      * Sets a new issuerAssignedID
-     *
-     * @param  \horstoeko\zugferd\entities\minimum\udt\IDType $issuerAssignedID
-     * @return self
      */
-    public function setIssuerAssignedID(\horstoeko\zugferd\entities\minimum\udt\IDType $issuerAssignedID)
+    public function setIssuerAssignedID(\horstoeko\zugferd\entities\minimum\udt\IDType $issuerAssignedID): self
     {
         $this->issuerAssignedID = $issuerAssignedID;
         return $this;

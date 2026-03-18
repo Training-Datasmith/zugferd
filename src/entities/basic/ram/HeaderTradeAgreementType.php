@@ -13,32 +13,32 @@ class HeaderTradeAgreementType
     /**
      * @var string $buyerReference
      */
-    private $buyerReference = null;
+    private $buyerReference;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradePartyType $sellerTradeParty
      */
-    private $sellerTradeParty = null;
+    private $sellerTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradePartyType $buyerTradeParty
      */
-    private $buyerTradeParty = null;
+    private $buyerTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradePartyType $sellerTaxRepresentativeTradeParty
      */
-    private $sellerTaxRepresentativeTradeParty = null;
+    private $sellerTaxRepresentativeTradeParty;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $buyerOrderReferencedDocument
      */
-    private $buyerOrderReferencedDocument = null;
+    private $buyerOrderReferencedDocument;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $contractReferencedDocument
      */
-    private $contractReferencedDocument = null;
+    private $contractReferencedDocument;
 
     /**
      * Gets as buyerReference
@@ -54,9 +54,8 @@ class HeaderTradeAgreementType
      * Sets a new buyerReference
      *
      * @param  string $buyerReference
-     * @return self
      */
-    public function setBuyerReference($buyerReference)
+    public function setBuyerReference($buyerReference): self
     {
         $this->buyerReference = $buyerReference;
         return $this;
@@ -74,11 +73,8 @@ class HeaderTradeAgreementType
 
     /**
      * Sets a new sellerTradeParty
-     *
-     * @param  \horstoeko\zugferd\entities\basic\ram\TradePartyType $sellerTradeParty
-     * @return self
      */
-    public function setSellerTradeParty(\horstoeko\zugferd\entities\basic\ram\TradePartyType $sellerTradeParty)
+    public function setSellerTradeParty(\horstoeko\zugferd\entities\basic\ram\TradePartyType $sellerTradeParty): self
     {
         $this->sellerTradeParty = $sellerTradeParty;
         return $this;
@@ -96,11 +92,8 @@ class HeaderTradeAgreementType
 
     /**
      * Sets a new buyerTradeParty
-     *
-     * @param  \horstoeko\zugferd\entities\basic\ram\TradePartyType $buyerTradeParty
-     * @return self
      */
-    public function setBuyerTradeParty(\horstoeko\zugferd\entities\basic\ram\TradePartyType $buyerTradeParty)
+    public function setBuyerTradeParty(\horstoeko\zugferd\entities\basic\ram\TradePartyType $buyerTradeParty): self
     {
         $this->buyerTradeParty = $buyerTradeParty;
         return $this;
@@ -120,9 +113,8 @@ class HeaderTradeAgreementType
      * Sets a new sellerTaxRepresentativeTradeParty
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\TradePartyType $sellerTaxRepresentativeTradeParty
-     * @return self
      */
-    public function setSellerTaxRepresentativeTradeParty(?\horstoeko\zugferd\entities\basic\ram\TradePartyType $sellerTaxRepresentativeTradeParty = null)
+    public function setSellerTaxRepresentativeTradeParty(?\horstoeko\zugferd\entities\basic\ram\TradePartyType $sellerTaxRepresentativeTradeParty = null): self
     {
         $this->sellerTaxRepresentativeTradeParty = $sellerTaxRepresentativeTradeParty;
         return $this;
@@ -142,9 +134,8 @@ class HeaderTradeAgreementType
      * Sets a new buyerOrderReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $buyerOrderReferencedDocument
-     * @return self
      */
-    public function setBuyerOrderReferencedDocument(?\horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $buyerOrderReferencedDocument = null)
+    public function setBuyerOrderReferencedDocument(?\horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $buyerOrderReferencedDocument = null): self
     {
         $this->buyerOrderReferencedDocument = $buyerOrderReferencedDocument;
         return $this;
@@ -164,9 +155,8 @@ class HeaderTradeAgreementType
      * Sets a new contractReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $contractReferencedDocument
-     * @return self
      */
-    public function setContractReferencedDocument(?\horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $contractReferencedDocument = null)
+    public function setContractReferencedDocument(?\horstoeko\zugferd\entities\basic\ram\ReferencedDocumentType $contractReferencedDocument = null): self
     {
         $this->contractReferencedDocument = $contractReferencedDocument;
         return $this;

@@ -13,7 +13,7 @@ class CreditorFinancialInstitutionType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $bICID
      */
-    private $bICID = null;
+    private $bICID;
 
     /**
      * Gets as bICID
@@ -27,11 +27,8 @@ class CreditorFinancialInstitutionType
 
     /**
      * Sets a new bICID
-     *
-     * @param  \horstoeko\zugferd\entities\extended\udt\IDType $bICID
-     * @return self
      */
-    public function setBICID(\horstoeko\zugferd\entities\extended\udt\IDType $bICID)
+    public function setBICID(\horstoeko\zugferd\entities\extended\udt\IDType $bICID): self
     {
         $this->bICID = $bICID;
         return $this;

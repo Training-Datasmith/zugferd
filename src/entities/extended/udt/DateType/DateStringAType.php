@@ -11,12 +11,12 @@ class DateStringAType
     /**
      * @var string $__value
      */
-    private $__value = null;
+    private $__value;
 
     /**
      * @var string $format
      */
-    private $format = null;
+    private $format;
 
     /**
      * Construct
@@ -44,10 +44,8 @@ class DateStringAType
 
     /**
      * Gets a string value
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return strval($this->__value);
     }
@@ -66,9 +64,8 @@ class DateStringAType
      * Sets a new format
      *
      * @param  string $format
-     * @return self
      */
-    public function setFormat($format)
+    public function setFormat($format): self
     {
         $this->format = $format;
         return $this;

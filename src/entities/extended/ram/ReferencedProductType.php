@@ -13,7 +13,7 @@ class ReferencedProductType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType[] $globalID
@@ -25,32 +25,32 @@ class ReferencedProductType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $sellerAssignedID
      */
-    private $sellerAssignedID = null;
+    private $sellerAssignedID;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $buyerAssignedID
      */
-    private $buyerAssignedID = null;
+    private $buyerAssignedID;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $industryAssignedID
      */
-    private $industryAssignedID = null;
+    private $industryAssignedID;
 
     /**
      * @var string $name
      */
-    private $name = null;
+    private $name;
 
     /**
      * @var string $description
      */
-    private $description = null;
+    private $description;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\QuantityType $unitQuantity
      */
-    private $unitQuantity = null;
+    private $unitQuantity;
 
     /**
      * Gets as iD
@@ -66,9 +66,8 @@ class ReferencedProductType
      * Sets a new iD
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $iD
-     * @return self
      */
-    public function setID(?\horstoeko\zugferd\entities\extended\udt\IDType $iD = null)
+    public function setID(?\horstoeko\zugferd\entities\extended\udt\IDType $iD = null): self
     {
         $this->iD = $iD;
         return $this;
@@ -76,11 +75,8 @@ class ReferencedProductType
 
     /**
      * Adds as globalID
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\udt\IDType $globalID
      */
-    public function addToGlobalID(\horstoeko\zugferd\entities\extended\udt\IDType $globalID)
+    public function addToGlobalID(\horstoeko\zugferd\entities\extended\udt\IDType $globalID): self
     {
         $this->globalID[] = $globalID;
         return $this;
@@ -90,9 +86,8 @@ class ReferencedProductType
      * isset globalID
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetGlobalID($index)
+    public function issetGlobalID($index): bool
     {
         return isset($this->globalID[$index]);
     }
@@ -101,9 +96,8 @@ class ReferencedProductType
      * unset globalID
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetGlobalID($index)
+    public function unsetGlobalID($index): void
     {
         unset($this->globalID[$index]);
     }
@@ -122,9 +116,8 @@ class ReferencedProductType
      * Sets a new globalID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType[] $globalID
-     * @return self
      */
-    public function setGlobalID(?array $globalID = null)
+    public function setGlobalID(?array $globalID = null): self
     {
         $this->globalID = $globalID;
         return $this;
@@ -144,9 +137,8 @@ class ReferencedProductType
      * Sets a new sellerAssignedID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $sellerAssignedID
-     * @return self
      */
-    public function setSellerAssignedID(?\horstoeko\zugferd\entities\extended\udt\IDType $sellerAssignedID = null)
+    public function setSellerAssignedID(?\horstoeko\zugferd\entities\extended\udt\IDType $sellerAssignedID = null): self
     {
         $this->sellerAssignedID = $sellerAssignedID;
         return $this;
@@ -166,9 +158,8 @@ class ReferencedProductType
      * Sets a new buyerAssignedID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $buyerAssignedID
-     * @return self
      */
-    public function setBuyerAssignedID(?\horstoeko\zugferd\entities\extended\udt\IDType $buyerAssignedID = null)
+    public function setBuyerAssignedID(?\horstoeko\zugferd\entities\extended\udt\IDType $buyerAssignedID = null): self
     {
         $this->buyerAssignedID = $buyerAssignedID;
         return $this;
@@ -188,9 +179,8 @@ class ReferencedProductType
      * Sets a new industryAssignedID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $industryAssignedID
-     * @return self
      */
-    public function setIndustryAssignedID(?\horstoeko\zugferd\entities\extended\udt\IDType $industryAssignedID = null)
+    public function setIndustryAssignedID(?\horstoeko\zugferd\entities\extended\udt\IDType $industryAssignedID = null): self
     {
         $this->industryAssignedID = $industryAssignedID;
         return $this;
@@ -210,9 +200,8 @@ class ReferencedProductType
      * Sets a new name
      *
      * @param  string $name
-     * @return self
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
         return $this;
@@ -232,9 +221,8 @@ class ReferencedProductType
      * Sets a new description
      *
      * @param  string $description
-     * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description): self
     {
         $this->description = $description;
         return $this;
@@ -254,9 +242,8 @@ class ReferencedProductType
      * Sets a new unitQuantity
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\QuantityType $unitQuantity
-     * @return self
      */
-    public function setUnitQuantity(?\horstoeko\zugferd\entities\extended\udt\QuantityType $unitQuantity = null)
+    public function setUnitQuantity(?\horstoeko\zugferd\entities\extended\udt\QuantityType $unitQuantity = null): self
     {
         $this->unitQuantity = $unitQuantity;
         return $this;

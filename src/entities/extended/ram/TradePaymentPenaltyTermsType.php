@@ -13,27 +13,27 @@ class TradePaymentPenaltyTermsType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $basisDateTime
      */
-    private $basisDateTime = null;
+    private $basisDateTime;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\MeasureType $basisPeriodMeasure
      */
-    private $basisPeriodMeasure = null;
+    private $basisPeriodMeasure;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $basisAmount
      */
-    private $basisAmount = null;
+    private $basisAmount;
 
     /**
      * @var float $calculationPercent
      */
-    private $calculationPercent = null;
+    private $calculationPercent;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $actualPenaltyAmount
      */
-    private $actualPenaltyAmount = null;
+    private $actualPenaltyAmount;
 
     /**
      * Gets as basisDateTime
@@ -49,9 +49,8 @@ class TradePaymentPenaltyTermsType
      * Sets a new basisDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $basisDateTime
-     * @return self
      */
-    public function setBasisDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $basisDateTime = null)
+    public function setBasisDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $basisDateTime = null): self
     {
         $this->basisDateTime = $basisDateTime;
         return $this;
@@ -71,9 +70,8 @@ class TradePaymentPenaltyTermsType
      * Sets a new basisPeriodMeasure
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\MeasureType $basisPeriodMeasure
-     * @return self
      */
-    public function setBasisPeriodMeasure(?\horstoeko\zugferd\entities\extended\udt\MeasureType $basisPeriodMeasure = null)
+    public function setBasisPeriodMeasure(?\horstoeko\zugferd\entities\extended\udt\MeasureType $basisPeriodMeasure = null): self
     {
         $this->basisPeriodMeasure = $basisPeriodMeasure;
         return $this;
@@ -93,9 +91,8 @@ class TradePaymentPenaltyTermsType
      * Sets a new basisAmount
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\AmountType $basisAmount
-     * @return self
      */
-    public function setBasisAmount(?\horstoeko\zugferd\entities\extended\udt\AmountType $basisAmount = null)
+    public function setBasisAmount(?\horstoeko\zugferd\entities\extended\udt\AmountType $basisAmount = null): self
     {
         $this->basisAmount = $basisAmount;
         return $this;
@@ -115,9 +112,8 @@ class TradePaymentPenaltyTermsType
      * Sets a new calculationPercent
      *
      * @param  float $calculationPercent
-     * @return self
      */
-    public function setCalculationPercent($calculationPercent)
+    public function setCalculationPercent($calculationPercent): self
     {
         $this->calculationPercent = $calculationPercent;
         return $this;
@@ -137,9 +133,8 @@ class TradePaymentPenaltyTermsType
      * Sets a new actualPenaltyAmount
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\AmountType $actualPenaltyAmount
-     * @return self
      */
-    public function setActualPenaltyAmount(?\horstoeko\zugferd\entities\extended\udt\AmountType $actualPenaltyAmount = null)
+    public function setActualPenaltyAmount(?\horstoeko\zugferd\entities\extended\udt\AmountType $actualPenaltyAmount = null): self
     {
         $this->actualPenaltyAmount = $actualPenaltyAmount;
         return $this;

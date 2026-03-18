@@ -13,7 +13,7 @@ class DateType
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\DateType\DateStringAType $dateString
      */
-    private $dateString = null;
+    private $dateString;
 
     /**
      * Gets as dateString
@@ -29,9 +29,8 @@ class DateType
      * Sets a new dateString
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\DateType\DateStringAType $dateString
-     * @return self
      */
-    public function setDateString(?\horstoeko\zugferd\entities\en16931\udt\DateType\DateStringAType $dateString = null)
+    public function setDateString(?\horstoeko\zugferd\entities\en16931\udt\DateType\DateStringAType $dateString = null): self
     {
         $this->dateString = $dateString;
         return $this;

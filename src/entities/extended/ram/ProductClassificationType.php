@@ -13,12 +13,12 @@ class ProductClassificationType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\CodeType $classCode
      */
-    private $classCode = null;
+    private $classCode;
 
     /**
      * @var string $className
      */
-    private $className = null;
+    private $className;
 
     /**
      * Gets as classCode
@@ -34,9 +34,8 @@ class ProductClassificationType
      * Sets a new classCode
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\CodeType $classCode
-     * @return self
      */
-    public function setClassCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $classCode = null)
+    public function setClassCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $classCode = null): self
     {
         $this->classCode = $classCode;
         return $this;
@@ -56,9 +55,8 @@ class ProductClassificationType
      * Sets a new className
      *
      * @param  string $className
-     * @return self
      */
-    public function setClassName($className)
+    public function setClassName($className): self
     {
         $this->className = $className;
         return $this;

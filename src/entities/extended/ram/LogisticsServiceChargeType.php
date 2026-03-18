@@ -13,12 +13,12 @@ class LogisticsServiceChargeType
     /**
      * @var string $description
      */
-    private $description = null;
+    private $description;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $appliedAmount
      */
-    private $appliedAmount = null;
+    private $appliedAmount;
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeTaxType[] $appliedTradeTax
@@ -41,9 +41,8 @@ class LogisticsServiceChargeType
      * Sets a new description
      *
      * @param  string $description
-     * @return self
      */
-    public function setDescription($description)
+    public function setDescription($description): self
     {
         $this->description = $description;
         return $this;
@@ -61,11 +60,8 @@ class LogisticsServiceChargeType
 
     /**
      * Sets a new appliedAmount
-     *
-     * @param  \horstoeko\zugferd\entities\extended\udt\AmountType $appliedAmount
-     * @return self
      */
-    public function setAppliedAmount(\horstoeko\zugferd\entities\extended\udt\AmountType $appliedAmount)
+    public function setAppliedAmount(\horstoeko\zugferd\entities\extended\udt\AmountType $appliedAmount): self
     {
         $this->appliedAmount = $appliedAmount;
         return $this;
@@ -73,11 +69,8 @@ class LogisticsServiceChargeType
 
     /**
      * Adds as appliedTradeTax
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\extended\ram\TradeTaxType $appliedTradeTax
      */
-    public function addToAppliedTradeTax(\horstoeko\zugferd\entities\extended\ram\TradeTaxType $appliedTradeTax)
+    public function addToAppliedTradeTax(\horstoeko\zugferd\entities\extended\ram\TradeTaxType $appliedTradeTax): self
     {
         $this->appliedTradeTax[] = $appliedTradeTax;
         return $this;
@@ -87,9 +80,8 @@ class LogisticsServiceChargeType
      * isset appliedTradeTax
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetAppliedTradeTax($index)
+    public function issetAppliedTradeTax($index): bool
     {
         return isset($this->appliedTradeTax[$index]);
     }
@@ -98,9 +90,8 @@ class LogisticsServiceChargeType
      * unset appliedTradeTax
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetAppliedTradeTax($index)
+    public function unsetAppliedTradeTax($index): void
     {
         unset($this->appliedTradeTax[$index]);
     }
@@ -119,9 +110,8 @@ class LogisticsServiceChargeType
      * Sets a new appliedTradeTax
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeTaxType[] $appliedTradeTax
-     * @return self
      */
-    public function setAppliedTradeTax(array $appliedTradeTax)
+    public function setAppliedTradeTax(array $appliedTradeTax): self
     {
         $this->appliedTradeTax = $appliedTradeTax;
         return $this;

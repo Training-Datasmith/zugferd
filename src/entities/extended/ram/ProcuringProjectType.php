@@ -13,12 +13,12 @@ class ProcuringProjectType
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iD
      */
-    private $iD = null;
+    private $iD;
 
     /**
      * @var string $name
      */
-    private $name = null;
+    private $name;
 
     /**
      * Gets as iD
@@ -32,11 +32,8 @@ class ProcuringProjectType
 
     /**
      * Sets a new iD
-     *
-     * @param  \horstoeko\zugferd\entities\extended\udt\IDType $iD
-     * @return self
      */
-    public function setID(\horstoeko\zugferd\entities\extended\udt\IDType $iD)
+    public function setID(\horstoeko\zugferd\entities\extended\udt\IDType $iD): self
     {
         $this->iD = $iD;
         return $this;
@@ -56,9 +53,8 @@ class ProcuringProjectType
      * Sets a new name
      *
      * @param  string $name
-     * @return self
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
         return $this;

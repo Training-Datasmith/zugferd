@@ -27,22 +27,22 @@ class TradePartyType
     /**
      * @var string $name
      */
-    private $name = null;
+    private $name;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\LegalOrganizationType $specifiedLegalOrganization
      */
-    private $specifiedLegalOrganization = null;
+    private $specifiedLegalOrganization;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradeAddressType $postalTradeAddress
      */
-    private $postalTradeAddress = null;
+    private $postalTradeAddress;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\UniversalCommunicationType $uRIUniversalCommunication
      */
-    private $uRIUniversalCommunication = null;
+    private $uRIUniversalCommunication;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TaxRegistrationType[] $specifiedTaxRegistration
@@ -53,11 +53,8 @@ class TradePartyType
 
     /**
      * Adds as iD
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\basic\udt\IDType $iD
      */
-    public function addToID(\horstoeko\zugferd\entities\basic\udt\IDType $iD)
+    public function addToID(\horstoeko\zugferd\entities\basic\udt\IDType $iD): self
     {
         $this->iD[] = $iD;
         return $this;
@@ -67,9 +64,8 @@ class TradePartyType
      * isset iD
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetID($index)
+    public function issetID($index): bool
     {
         return isset($this->iD[$index]);
     }
@@ -78,9 +74,8 @@ class TradePartyType
      * unset iD
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetID($index)
+    public function unsetID($index): void
     {
         unset($this->iD[$index]);
     }
@@ -99,9 +94,8 @@ class TradePartyType
      * Sets a new iD
      *
      * @param  \horstoeko\zugferd\entities\basic\udt\IDType[] $iD
-     * @return self
      */
-    public function setID(?array $iD = null)
+    public function setID(?array $iD = null): self
     {
         $this->iD = $iD;
         return $this;
@@ -109,11 +103,8 @@ class TradePartyType
 
     /**
      * Adds as globalID
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\basic\udt\IDType $globalID
      */
-    public function addToGlobalID(\horstoeko\zugferd\entities\basic\udt\IDType $globalID)
+    public function addToGlobalID(\horstoeko\zugferd\entities\basic\udt\IDType $globalID): self
     {
         $this->globalID[] = $globalID;
         return $this;
@@ -123,9 +114,8 @@ class TradePartyType
      * isset globalID
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetGlobalID($index)
+    public function issetGlobalID($index): bool
     {
         return isset($this->globalID[$index]);
     }
@@ -134,9 +124,8 @@ class TradePartyType
      * unset globalID
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetGlobalID($index)
+    public function unsetGlobalID($index): void
     {
         unset($this->globalID[$index]);
     }
@@ -155,9 +144,8 @@ class TradePartyType
      * Sets a new globalID
      *
      * @param  \horstoeko\zugferd\entities\basic\udt\IDType[] $globalID
-     * @return self
      */
-    public function setGlobalID(?array $globalID = null)
+    public function setGlobalID(?array $globalID = null): self
     {
         $this->globalID = $globalID;
         return $this;
@@ -177,9 +165,8 @@ class TradePartyType
      * Sets a new name
      *
      * @param  string $name
-     * @return self
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
         return $this;
@@ -199,9 +186,8 @@ class TradePartyType
      * Sets a new specifiedLegalOrganization
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\LegalOrganizationType $specifiedLegalOrganization
-     * @return self
      */
-    public function setSpecifiedLegalOrganization(?\horstoeko\zugferd\entities\basic\ram\LegalOrganizationType $specifiedLegalOrganization = null)
+    public function setSpecifiedLegalOrganization(?\horstoeko\zugferd\entities\basic\ram\LegalOrganizationType $specifiedLegalOrganization = null): self
     {
         $this->specifiedLegalOrganization = $specifiedLegalOrganization;
         return $this;
@@ -221,9 +207,8 @@ class TradePartyType
      * Sets a new postalTradeAddress
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\TradeAddressType $postalTradeAddress
-     * @return self
      */
-    public function setPostalTradeAddress(?\horstoeko\zugferd\entities\basic\ram\TradeAddressType $postalTradeAddress = null)
+    public function setPostalTradeAddress(?\horstoeko\zugferd\entities\basic\ram\TradeAddressType $postalTradeAddress = null): self
     {
         $this->postalTradeAddress = $postalTradeAddress;
         return $this;
@@ -243,9 +228,8 @@ class TradePartyType
      * Sets a new uRIUniversalCommunication
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\UniversalCommunicationType $uRIUniversalCommunication
-     * @return self
      */
-    public function setURIUniversalCommunication(?\horstoeko\zugferd\entities\basic\ram\UniversalCommunicationType $uRIUniversalCommunication = null)
+    public function setURIUniversalCommunication(?\horstoeko\zugferd\entities\basic\ram\UniversalCommunicationType $uRIUniversalCommunication = null): self
     {
         $this->uRIUniversalCommunication = $uRIUniversalCommunication;
         return $this;
@@ -253,11 +237,8 @@ class TradePartyType
 
     /**
      * Adds as specifiedTaxRegistration
-     *
-     * @return self
-     * @param  \horstoeko\zugferd\entities\basic\ram\TaxRegistrationType $specifiedTaxRegistration
      */
-    public function addToSpecifiedTaxRegistration(\horstoeko\zugferd\entities\basic\ram\TaxRegistrationType $specifiedTaxRegistration)
+    public function addToSpecifiedTaxRegistration(\horstoeko\zugferd\entities\basic\ram\TaxRegistrationType $specifiedTaxRegistration): self
     {
         $this->specifiedTaxRegistration[] = $specifiedTaxRegistration;
         return $this;
@@ -267,9 +248,8 @@ class TradePartyType
      * isset specifiedTaxRegistration
      *
      * @param  int|string $index
-     * @return bool
      */
-    public function issetSpecifiedTaxRegistration($index)
+    public function issetSpecifiedTaxRegistration($index): bool
     {
         return isset($this->specifiedTaxRegistration[$index]);
     }
@@ -278,9 +258,8 @@ class TradePartyType
      * unset specifiedTaxRegistration
      *
      * @param  int|string $index
-     * @return void
      */
-    public function unsetSpecifiedTaxRegistration($index)
+    public function unsetSpecifiedTaxRegistration($index): void
     {
         unset($this->specifiedTaxRegistration[$index]);
     }
@@ -299,9 +278,8 @@ class TradePartyType
      * Sets a new specifiedTaxRegistration
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\TaxRegistrationType[] $specifiedTaxRegistration
-     * @return self
      */
-    public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null)
+    public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null): self
     {
         $this->specifiedTaxRegistration = $specifiedTaxRegistration;
         return $this;

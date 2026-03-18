@@ -13,12 +13,12 @@ class LineTradeAgreementType
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradePriceType $grossPriceProductTradePrice
      */
-    private $grossPriceProductTradePrice = null;
+    private $grossPriceProductTradePrice;
 
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradePriceType $netPriceProductTradePrice
      */
-    private $netPriceProductTradePrice = null;
+    private $netPriceProductTradePrice;
 
     /**
      * Gets as grossPriceProductTradePrice
@@ -34,9 +34,8 @@ class LineTradeAgreementType
      * Sets a new grossPriceProductTradePrice
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\TradePriceType $grossPriceProductTradePrice
-     * @return self
      */
-    public function setGrossPriceProductTradePrice(?\horstoeko\zugferd\entities\basic\ram\TradePriceType $grossPriceProductTradePrice = null)
+    public function setGrossPriceProductTradePrice(?\horstoeko\zugferd\entities\basic\ram\TradePriceType $grossPriceProductTradePrice = null): self
     {
         $this->grossPriceProductTradePrice = $grossPriceProductTradePrice;
         return $this;
@@ -54,11 +53,8 @@ class LineTradeAgreementType
 
     /**
      * Sets a new netPriceProductTradePrice
-     *
-     * @param  \horstoeko\zugferd\entities\basic\ram\TradePriceType $netPriceProductTradePrice
-     * @return self
      */
-    public function setNetPriceProductTradePrice(\horstoeko\zugferd\entities\basic\ram\TradePriceType $netPriceProductTradePrice)
+    public function setNetPriceProductTradePrice(\horstoeko\zugferd\entities\basic\ram\TradePriceType $netPriceProductTradePrice): self
     {
         $this->netPriceProductTradePrice = $netPriceProductTradePrice;
         return $this;
