@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\testcases\issues;
 
 use DateTime;
-use horstoeko\zugferd\tests\TestCase;
-use horstoeko\zugferd\ZugferdProfiles;
-use horstoeko\zugferd\ZugferdDocumentBuilder;
-use horstoeko\zugferd\codelists\ZugferdInvoiceType;
-use horstoeko\zugferd\tests\traits\HandlesXmlTests;
 use horstoeko\zugferd\codelists\ZugferdCurrencyCodes;
+use horstoeko\zugferd\codelists\ZugferdInvoiceType;
 use horstoeko\zugferd\exception\ZugferdUnsupportedMimetype;
+use horstoeko\zugferd\tests\TestCase;
+use horstoeko\zugferd\tests\traits\HandlesXmlTests;
+use horstoeko\zugferd\ZugferdDocumentBuilder;
+use horstoeko\zugferd\ZugferdProfiles;
 
 class Issue337Test extends TestCase
 {
@@ -22,7 +24,7 @@ class Issue337Test extends TestCase
         self::$document->setDocumentInformation(
             'R-2024/00001',
             ZugferdInvoiceType::INVOICE,
-            DateTime::createFromFormat("Ymd", "20241231"),
+            DateTime::createFromFormat('Ymd', '20241231'),
             ZugferdCurrencyCodes::EURO
         );
     }

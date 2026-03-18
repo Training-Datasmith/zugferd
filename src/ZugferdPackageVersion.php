@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -41,6 +43,6 @@ final class ZugferdPackageVersion
      */
     private static function getDefaultVersion(): string
     {
-        return "1.0.x";
+        return '1.0.x';
     }
 }

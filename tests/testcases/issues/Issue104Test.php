@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\testcases\issues;
 
+use horstoeko\zugferd\exception\ZugferdUnknownXmlContentException;
 use horstoeko\zugferd\tests\TestCase;
 use horstoeko\zugferd\ZugferdDocumentReader;
-use horstoeko\zugferd\exception\ZugferdUnknownXmlContentException;
 
 class Issue104Test extends TestCase
 {

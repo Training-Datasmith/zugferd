@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\basicwl\udt;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\basicwl\udt;
  */
 class TextType
 {
-
     /**
      * @var string $__value
      */

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -9,8 +11,6 @@
 
 namespace horstoeko\zugferd;
 
-use horstoeko\zugferd\ZugferdDocumentBuilder;
-use horstoeko\zugferd\ZugferdDocumentPdfBuilderAbstract;
 use horstoeko\zugferd\exception\ZugferdFileNotFoundException;
 
 /**
@@ -37,7 +37,7 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
      *
      * @var string
      */
-    private $xmlDataCache = "";
+    private $xmlDataCache = '';
 
     /**
      * @see self::__construct
@@ -99,7 +99,7 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
      */
     protected function getXmlAttachmentXmpName(): string
     {
-        return $this->documentBuilder->getProfileDefinitionParameter("xmpname");
+        return $this->documentBuilder->getProfileDefinitionParameter('xmpname');
     }
 
     /**
@@ -107,6 +107,6 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
      */
     protected function getXmlAttachmentXmpVersion(): string
     {
-        return $this->documentBuilder->getProfileDefinitionParameter("xmpversion");
+        return $this->documentBuilder->getProfileDefinitionParameter('xmpversion');
     }
 }

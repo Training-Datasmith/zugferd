@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\testcases;
 
 use horstoeko\zugferd\tests\TestCase;
@@ -17,7 +19,7 @@ class ValidatorValidTest extends TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$document = ZugferdDocumentReader::readAndGuessFromFile(__DIR__ . "/../assets/xml_en16931_1.xml");
+        self::$document = ZugferdDocumentReader::readAndGuessFromFile(__DIR__ . '/../assets/xml_en16931_1.xml');
     }
 
     public function testValidateDocument(): void

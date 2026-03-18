@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\en16931\qdt;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\en16931\qdt;
  */
 class TaxTypeCodeType
 {
-
     /**
      * @var string $__value
      */

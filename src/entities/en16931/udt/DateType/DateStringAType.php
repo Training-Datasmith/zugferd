@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\en16931\udt\DateType;
 
 /**
@@ -7,7 +9,6 @@ namespace horstoeko\zugferd\entities\en16931\udt\DateType;
  */
 class DateStringAType
 {
-
     /**
      * @var string $__value
      */

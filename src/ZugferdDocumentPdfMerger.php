@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -9,13 +11,11 @@
 
 namespace horstoeko\zugferd;
 
-use Throwable;
-use horstoeko\zugferd\ZugferdProfileResolver;
-use horstoeko\zugferd\ZugferdDocumentPdfBuilderAbstract;
-use horstoeko\zugferd\exception\ZugferdUnknownProfileException;
 use horstoeko\zugferd\exception\ZugferdFileNotReadableException;
-use horstoeko\zugferd\exception\ZugferdUnknownXmlContentException;
+use horstoeko\zugferd\exception\ZugferdUnknownProfileException;
 use horstoeko\zugferd\exception\ZugferdUnknownProfileParameterException;
+use horstoeko\zugferd\exception\ZugferdUnknownXmlContentException;
+use Throwable;
 
 /**
  * Class representing the facillity adding existing XML data (file or data-string)
@@ -34,14 +34,14 @@ class ZugferdDocumentPdfMerger extends ZugferdDocumentPdfBuilderAbstract
      *
      * @var string
      */
-    private $xmlDataOrFilename = "";
+    private $xmlDataOrFilename = '';
 
     /**
      * Cached XML data
      *
      * @var string
      */
-    private $xmlDataCache = "";
+    private $xmlDataCache = '';
 
     /**
      * Constructor
@@ -96,7 +96,7 @@ class ZugferdDocumentPdfMerger extends ZugferdDocumentPdfBuilderAbstract
      */
     protected function getXmlAttachmentXmpName(): string
     {
-        return $this->getProfileDefinitionParameter("xmpname");
+        return $this->getProfileDefinitionParameter('xmpname');
     }
 
     /**
@@ -104,7 +104,7 @@ class ZugferdDocumentPdfMerger extends ZugferdDocumentPdfBuilderAbstract
      */
     protected function getXmlAttachmentXmpVersion(): string
     {
-        return $this->getProfileDefinitionParameter("xmpversion");
+        return $this->getProfileDefinitionParameter('xmpversion');
     }
 
     /**

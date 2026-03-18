@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\minimum\rsm;
 
 /**
@@ -7,6 +9,4 @@ namespace horstoeko\zugferd\entities\minimum\rsm;
  */
 class CrossIndustryInvoice extends CrossIndustryInvoiceType
 {
-
-
 }

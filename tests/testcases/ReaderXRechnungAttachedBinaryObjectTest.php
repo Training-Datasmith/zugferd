@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\testcases;
 
 use horstoeko\zugferd\codelists\ZugferdInvoiceType;
@@ -16,7 +18,7 @@ class ReaderXRechnungAttachedBinaryObjectTest extends TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$document = ZugferdDocumentReader::readAndGuessFromFile(__DIR__ . "/../assets/xml_xrechnung_2.xml");
+        self::$document = ZugferdDocumentReader::readAndGuessFromFile(__DIR__ . '/../assets/xml_xrechnung_2.xml');
     }
 
     public function testDocumentProfile(): void
@@ -57,10 +59,10 @@ class ReaderXRechnungAttachedBinaryObjectTest extends TestCase
         $this->assertSame(ZugferdInvoiceType::INVOICE, $documenttypecode);
         $this->assertInstanceOf(\DateTime::class, $documentdate);
         $this->assertEquals((\DateTime::createFromFormat('Ymd', '20180605'))->format('Ymd'), $documentdate->format('Ymd'));
-        $this->assertSame("EUR", $invoiceCurrency);
-        $this->assertSame("", $taxCurrency);
-        $this->assertSame("", $documentname);
-        $this->assertSame("", $documentlanguage);
+        $this->assertSame('EUR', $invoiceCurrency);
+        $this->assertSame('', $taxCurrency);
+        $this->assertSame('', $documentname);
+        $this->assertSame('', $documentlanguage);
         $this->assertNotInstanceOf(\DateTime::class, $effectiveSpecifiedPeriod);
     }
 
@@ -72,12 +74,12 @@ class ReaderXRechnungAttachedBinaryObjectTest extends TestCase
     public function testGetDocumentAdditionalReferencedDocumentNoDirectorySet(): void
     {
         self::$document->getDocumentAdditionalReferencedDocument($issuerassignedid, $typecode, $uriid, $name, $reftypecode, $issueddate, $binarydatafilename);
-        $this->assertSame("01_15_Anhang_01.pdf", $issuerassignedid);
-        $this->assertSame("916", $typecode);
+        $this->assertSame('01_15_Anhang_01.pdf', $issuerassignedid);
+        $this->assertSame('916', $typecode);
         $this->assertArrayHasKey(0, $name);
         $this->assertArrayNotHasKey(1, $name);
-        $this->assertEquals("Aufschlüsselung der einzelnen Leistungspositionen", $name[0]);
-        $this->assertSame("", $binarydatafilename);
+        $this->assertEquals('Aufschlüsselung der einzelnen Leistungspositionen', $name[0]);
+        $this->assertSame('', $binarydatafilename);
         $this->assertFileDoesNotExist($binarydatafilename);
     }
 
@@ -85,16 +87,16 @@ class ReaderXRechnungAttachedBinaryObjectTest extends TestCase
     {
         self::$document->setBinaryDataDirectory(__DIR__);
         self::$document->getDocumentAdditionalReferencedDocument($issuerassignedid, $typecode, $uriid, $name, $reftypecode, $issueddate, $binarydatafilename);
-        $this->assertSame("01_15_Anhang_01.pdf", $issuerassignedid);
-        $this->assertSame("916", $typecode);
+        $this->assertSame('01_15_Anhang_01.pdf', $issuerassignedid);
+        $this->assertSame('916', $typecode);
         $this->assertArrayHasKey(0, $name);
         $this->assertArrayNotHasKey(1, $name);
-        $this->assertEquals("Aufschlüsselung der einzelnen Leistungspositionen", $name[0]);
-        $this->assertNotSame("", $binarydatafilename);
-        $this->assertSame(__DIR__ . DIRECTORY_SEPARATOR . "01_15_Anhang_01.pdf", $binarydatafilename);
+        $this->assertEquals('Aufschlüsselung der einzelnen Leistungspositionen', $name[0]);
+        $this->assertNotSame('', $binarydatafilename);
+        $this->assertSame(__DIR__ . DIRECTORY_SEPARATOR . '01_15_Anhang_01.pdf', $binarydatafilename);
         $this->assertFileExists($binarydatafilename);
         $this->assertSame(150128, filesize($binarydatafilename));
-        $this->assertSame("%PDF", substr(file_get_contents($binarydatafilename), 0, 4));
+        $this->assertSame('%PDF', substr(file_get_contents($binarydatafilename), 0, 4));
         @unlink($binarydatafilename);
     }
 

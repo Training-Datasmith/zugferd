@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\minimum\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\minimum\ram;
  */
 class TradePartyType
 {
-
     /**
      * @var string $name
      */
@@ -29,7 +30,7 @@ class TradePartyType
      * @var \horstoeko\zugferd\entities\minimum\ram\TaxRegistrationType[] $specifiedTaxRegistration
      */
     private $specifiedTaxRegistration = [
-        
+
     ];
 
     /**

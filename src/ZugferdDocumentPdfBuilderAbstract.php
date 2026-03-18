@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -12,19 +14,16 @@ namespace horstoeko\zugferd;
 use DateTime;
 use DOMDocument;
 use DOMXpath;
-use Throwable;
 use horstoeko\mimedb\MimeDb;
 use horstoeko\stringmanagement\FileUtils;
 use horstoeko\stringmanagement\StringUtils;
 use horstoeko\zugferd\codelists\ZugferdInvoiceType;
 use horstoeko\zugferd\exception\ZugferdFileNotFoundException;
 use horstoeko\zugferd\exception\ZugferdFileNotReadableException;
-use horstoeko\zugferd\exception\ZugferdUnknownMimetype;
 use horstoeko\zugferd\exception\ZugferdInvalidArgumentException;
-use horstoeko\zugferd\ZugferdPackageVersion;
-use horstoeko\zugferd\ZugferdPdfWriter;
-use horstoeko\zugferd\ZugferdSettings;
+use horstoeko\zugferd\exception\ZugferdUnknownMimetype;
 use setasign\Fpdi\PdfParser\StreamReader as PdfStreamReader;
+use Throwable;
 
 /**
  * Class representing the base facillity adding XML data
@@ -42,22 +41,22 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      * Constants for Relationship types
      * 'Data', 'Alternative', 'Source', 'Supplement', 'Unspecified'
      */
-    public const AF_RELATIONSHIP_DATA = "Data";
+    public const AF_RELATIONSHIP_DATA = 'Data';
 
-    public const AF_RELATIONSHIP_ALTERNATIVE = "Alternative";
+    public const AF_RELATIONSHIP_ALTERNATIVE = 'Alternative';
 
-    public const AF_RELATIONSHIP_SOURCE = "Source";
+    public const AF_RELATIONSHIP_SOURCE = 'Source';
 
-    public const AF_RELATIONSHIP_SUPPLEMENT = "Supplement";
+    public const AF_RELATIONSHIP_SUPPLEMENT = 'Supplement';
 
-    public const AF_RELATIONSHIP_UNSPECIFIED = "Unspecified";
+    public const AF_RELATIONSHIP_UNSPECIFIED = 'Unspecified';
 
     /**
      * Additional creator tool (e.g. the ERP software that called the PHP library)
      *
      * @var string
      */
-    private $additionalCreatorTool = "";
+    private $additionalCreatorTool = '';
 
     /**
      * The relationship type to use for the XML attachment. Detault is Data
@@ -78,7 +77,7 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      *
      * @var string
      */
-    private $pdfData = "";
+    private $pdfData = '';
 
     /**
      * List of files which should be additionally attached to PDF
@@ -92,28 +91,28 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      *
      * @var string
      */
-    private $authorTemplate = "";
+    private $authorTemplate = '';
 
     /**
      * User-defined template for the keyword-metainformation
      *
      * @var string
      */
-    private $keywordTemplate = "";
+    private $keywordTemplate = '';
 
     /**
      * User-defined template for the title-metainformation
      *
      * @var string
      */
-    private $titleTemplate = "";
+    private $titleTemplate = '';
 
     /**
      * User-defined template for the subject-metainformation
      *
      * @var string
      */
-    private $subjectTemplate = "";
+    private $subjectTemplate = '';
 
     /**
      * User-defined callback function for all metainformation
@@ -277,12 +276,12 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      * @throws ZugferdFileNotReadableException
      * @throws ZugferdUnknownMimetype
      */
-    public function attachAdditionalFileByRealFile(string $fullFilename, string $displayName = "", string $relationshipType = "")
+    public function attachAdditionalFileByRealFile(string $fullFilename, string $displayName = '', string $relationshipType = '')
     {
         // Checks that the file really exists
 
         if ($fullFilename === '') {
-            throw new ZugferdInvalidArgumentException("You must specify a filename for the content to attach");
+            throw new ZugferdInvalidArgumentException('You must specify a filename for the content to attach');
         }
 
         if (!file_exists($fullFilename)) {
@@ -316,18 +315,18 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      * @throws ZugferdInvalidArgumentException
      * @throws ZugferdUnknownMimetype
      */
-    public function attachAdditionalFileByContent(string $content, string $filename, string $displayName = "", string $relationshipType = "")
+    public function attachAdditionalFileByContent(string $content, string $filename, string $displayName = '', string $relationshipType = '')
     {
         // Check content. The content must not be empty
 
         if ($content === '') {
-            throw new ZugferdInvalidArgumentException("You must specify a content to attach");
+            throw new ZugferdInvalidArgumentException('You must specify a content to attach');
         }
 
         // Check filename. The filename must not be empty
 
         if ($filename === '') {
-            throw new ZugferdInvalidArgumentException("You must specify a filename for the content to attach");
+            throw new ZugferdInvalidArgumentException('You must specify a filename for the content to attach');
         }
 
         // Mimetype for the file must exist
@@ -361,7 +360,7 @@ abstract class ZugferdDocumentPdfBuilderAbstract
             FileUtils::getFilenameWithExtension($filename),
             $displayName,
             $relationshipType,
-            str_replace('/', '#2F', $mimeType)
+            str_replace('/', '#2F', $mimeType),
         ];
 
         return $this;

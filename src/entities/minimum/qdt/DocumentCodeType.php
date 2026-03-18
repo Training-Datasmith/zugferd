@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\minimum\qdt;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\minimum\qdt;
  */
 class DocumentCodeType
 {
-
     /**
      * @var string $__value
      */

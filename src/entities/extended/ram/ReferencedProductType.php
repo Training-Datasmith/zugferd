@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\extended\ram;
  */
 class ReferencedProductType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iD
      */
@@ -19,7 +20,7 @@ class ReferencedProductType
      * @var \horstoeko\zugferd\entities\extended\udt\IDType[] $globalID
      */
     private $globalID = [
-        
+
     ];
 
     /**

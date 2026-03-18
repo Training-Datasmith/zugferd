@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 use horstoeko\stringmanagement\PathUtils;
 
-require __DIR__ . "/../vendor/autoload.php";
+require __DIR__ . '/../vendor/autoload.php';
 
 define('DOWNLOADDEF_KEY_ENABLED', 'enabled');
 define('DOWNLOADDEF_LIB_NAME', 'libname');
@@ -40,13 +42,13 @@ set_time_limit(0);
  */
 function handleUmlauts(string $str): string
 {
-    $str = str_replace("Ö", "Oe", $str);
-    $str = str_replace("Ä", "Ae", $str);
-    $str = str_replace("Ü", "Ue", $str);
-    $str = str_replace("ö", "oe", $str);
-    $str = str_replace("ä", "ae", $str);
-    $str = str_replace("ü", "ue", $str);
-    return str_replace("Å", "A", $str);
+    $str = str_replace('Ö', 'Oe', $str);
+    $str = str_replace('Ä', 'Ae', $str);
+    $str = str_replace('Ü', 'Ue', $str);
+    $str = str_replace('ö', 'oe', $str);
+    $str = str_replace('ä', 'ae', $str);
+    $str = str_replace('ü', 'ue', $str);
+    return str_replace('Å', 'A', $str);
 }
 
 /**
@@ -58,9 +60,9 @@ function handleUmlauts(string $str): string
 function strComment(string $str): string
 {
     $str = handleUmlauts($str);
-    $str = str_replace("\n", "", $str);
-    $str = str_replace("\r", "", $str);
-    $str = str_replace("\t", "", $str);
+    $str = str_replace("\n", '', $str);
+    $str = str_replace("\r", '', $str);
+    $str = str_replace("\t", '', $str);
     $str = preg_replace('/\s+/', ' ', $str);
     return wordwrap($str);
 }
@@ -75,21 +77,21 @@ function strComment(string $str): string
  */
 function strIdentifier(string $str, bool $shortIdentifier, int $partLength = 4): string
 {
-    $strNew = "";
+    $strNew = '';
     $str = handleUmlauts($str);
-    $str = str_replace("\n", "", $str);
-    $str = str_replace("\r", "", $str);
-    $str = str_replace("\t", "", $str);
+    $str = str_replace("\n", '', $str);
+    $str = str_replace("\r", '', $str);
+    $str = str_replace("\t", '', $str);
     $str = strtoupper($str);
-    $str = preg_replace("/[^A-Za-z0-9\s]/", "", $str);
+    $str = preg_replace("/[^A-Za-z0-9\s]/", '', $str);
 
-    $strArray = explode(" ", $str);
+    $strArray = explode(' ', $str);
     if (count($strArray) == 1) {
         $strNew = $strArray[0];
     } else {
         foreach ($strArray as $item) {
-            if ($strNew !== "") {
-                $strNew .= "_";
+            if ($strNew !== '') {
+                $strNew .= '_';
             }
 
             if ($shortIdentifier) {
@@ -102,7 +104,7 @@ function strIdentifier(string $str, bool $shortIdentifier, int $partLength = 4):
 
     $strNew = preg_replace('/__+/', '_', $strNew);
     $strNew = preg_replace('~\d~', '', $strNew, 5);
-    return rtrim(ltrim($strNew, "_"), "_");
+    return rtrim(ltrim($strNew, '_'), '_');
 }
 
 /**
@@ -115,9 +117,9 @@ function strDesc(string $str): string
 {
     $str = handleUmlauts($str);
     $str = str_replace("'", "\'", $str);
-    $str = str_replace("\n", " ", $str);
-    $str = str_replace("\r", " ", $str);
-    $str = str_replace("\t", " ", $str);
+    $str = str_replace("\n", ' ', $str);
+    $str = str_replace("\r", ' ', $str);
+    $str = str_replace("\t", ' ', $str);
     return preg_replace('/\s+/', ' ', $str);
 }
 
@@ -157,7 +159,7 @@ function downloadList(array $fileToDownload): void
 
         $downloadedContent = file_get_contents($downloadFromUrl);
 
-        if ($downloadedContent=== false) {
+        if ($downloadedContent === false) {
             throw new \Exception('Failed to download the file.');
         }
 
@@ -192,7 +194,7 @@ function createCodeClassFromKositJson(array $fileToDownload): void
     $classGenerationEnabled = $fileToDownload[DOWNLOADDEF_KEY_ENABLED] ?? false;
     $classNamespace = $fileToDownload[DOWNLOADDEF_KEY_CLASSNAMESPACE];
     $className = $fileToDownload[DOWNLOADDEF_KEY_CLASSNAME];
-    $classDir = PathUtils::combineAllPaths(__DIR__, "classes");
+    $classDir = PathUtils::combineAllPaths(__DIR__, 'classes');
     $classTitle = $fileToDownload[DOWNLOADDEF_KEY_TITLE];
     $classTitleList = $fileToDownload[DOWNLOADDEF_KEY_TITLE_LIST];
     $classHomepageUrls = is_array($fileToDownload[DOWNLOADDEF_KEY_URL_HP]) ? $fileToDownload[DOWNLOADDEF_KEY_URL_HP] : [$fileToDownload[DOWNLOADDEF_KEY_URL_HP]];
@@ -212,13 +214,13 @@ function createCodeClassFromKositJson(array $fileToDownload): void
     // Check enabled
 
     if ($classGenerationEnabled !== true) {
-        outputline(sprintf("Generating class %s is disabled", $className));
+        outputline(sprintf('Generating class %s is disabled', $className));
         return;
     }
 
     // Logging
 
-    outputline(sprintf("Generating class %s", $className));
+    outputline(sprintf('Generating class %s', $className));
 
     // Check destination directory
 
@@ -234,11 +236,11 @@ function createCodeClassFromKositJson(array $fileToDownload): void
 
     // Create PHP Printer
 
-    $phpPrinter = new Nette\PhpGenerator\Printer;
+    $phpPrinter = new Nette\PhpGenerator\Printer();
 
     // Create PHP File
 
-    $phpFile = new Nette\PhpGenerator\PhpFile;
+    $phpFile = new Nette\PhpGenerator\PhpFile();
     $phpFile->addComment(sprintf("This file is a part of horstoeko/%s.\n\nFor the full copyright and license information, please view the LICENSE\nfile that was distributed with this source code.", $libName));
 
     // Create PHP Class
@@ -246,7 +248,7 @@ function createCodeClassFromKositJson(array $fileToDownload): void
     $phpClass = $phpFile->addNamespace($classNamespace)->addClass($className);
     $phpClass->addComment(sprintf("Class representing %s\nName of list: %s\n\n@category %s\n@package  %s\n@author   D. Erling <horstoeko@erling.com.de>\n@license  https://opensource.org/licenses/MIT MIT\n@link     https://github.com/horstoeko/zugferd", $classTitle, $classTitleList, $libTitle, $libTitle));
     foreach ($classHomepageUrls as $classHomepageUrl) {
-        $phpClass->addComment(sprintf("@see      %s", $classHomepageUrl));
+        $phpClass->addComment(sprintf('@see      %s', $classHomepageUrl));
     }
 
     // Fill PHP Class
@@ -254,8 +256,8 @@ function createCodeClassFromKositJson(array $fileToDownload): void
     foreach ($fileToDownload[DOWNLOADDEF_KEY_TOFILE] as $idx => $dummy) {
         $downloadedContent = file_get_contents($fileToDownload[DOWNLOADDEF_KEY_TOFILE][$idx]);
         $downloadedContentObject = json_decode($downloadedContent, true);
-        $downloadedContentObjectData = $downloadedContentObject["daten"];
-        $constantPrefix = $classConstantPrefixes[$idx] ?? "";
+        $downloadedContentObjectData = $downloadedContentObject['daten'];
+        $constantPrefix = $classConstantPrefixes[$idx] ?? '';
 
         usort(
             $downloadedContentObjectData,
@@ -267,8 +269,8 @@ function createCodeClassFromKositJson(array $fileToDownload): void
         foreach ($downloadedContentObjectData as $line) {
             $phpClass
                 ->addConstant(sprintf('%s%s', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength)), $line[$dataCodeIndex])
-                ->addComment("\n" . (strComment($line[$dataDescIndex] ?? "")) . " (" . (strComment($line[$dataCodeIndex] ?? "")) . ")")
-                ->addComment("\n" . strComment($line[$dataDescLongIndex] ?? ($line[$dataDescIndex] ?? "")));
+                ->addComment("\n" . (strComment($line[$dataDescIndex] ?? '')) . ' (' . (strComment($line[$dataCodeIndex] ?? '')) . ')')
+                ->addComment("\n" . strComment($line[$dataDescLongIndex] ?? ($line[$dataDescIndex] ?? '')));
         }
     }
 
@@ -282,15 +284,15 @@ function createCodeClassFromKositJson(array $fileToDownload): void
         $phpClassMethod->setStatic();
         $phpClassMethod->setReturnType('array');
         $phpClassMethod->addComment("Returns an array of all available codes\n");
-        $phpClassMethod->addComment("@return array");
-        $phpClassMethod->addComment("@codeCoverageIgnore");
+        $phpClassMethod->addComment('@return array');
+        $phpClassMethod->addComment('@codeCoverageIgnore');
         $phpClassMethod->addBody('return [');
 
         foreach ($fileToDownload[DOWNLOADDEF_KEY_TOFILE] as $idx => $dummy) {
             $downloadedContent = file_get_contents($fileToDownload[DOWNLOADDEF_KEY_TOFILE][$idx]);
             $downloadedContentObject = json_decode($downloadedContent, true);
-            $downloadedContentObjectData = $downloadedContentObject["daten"];
-            $constantPrefix = $classConstantPrefixes[$idx] ?? "";
+            $downloadedContentObjectData = $downloadedContentObject['daten'];
+            $constantPrefix = $classConstantPrefixes[$idx] ?? '';
 
             usort(
                 $downloadedContentObjectData,
@@ -300,7 +302,7 @@ function createCodeClassFromKositJson(array $fileToDownload): void
             );
 
             foreach ($downloadedContentObjectData as $line) {
-                $phpClassMethod->addBody(sprintf("    static::%s%s,", $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength)));
+                $phpClassMethod->addBody(sprintf('    static::%s%s,', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength)));
             }
         }
 
@@ -313,15 +315,15 @@ function createCodeClassFromKositJson(array $fileToDownload): void
         $phpClassMethod->setStatic();
         $phpClassMethod->setReturnType('array');
         $phpClassMethod->addComment("Returns an array of code descriptions indexed by code\n");
-        $phpClassMethod->addComment("@return array");
-        $phpClassMethod->addComment("@codeCoverageIgnore");
+        $phpClassMethod->addComment('@return array');
+        $phpClassMethod->addComment('@codeCoverageIgnore');
         $phpClassMethod->addBody('return [');
 
         foreach ($fileToDownload[DOWNLOADDEF_KEY_TOFILE] as $idx => $dummy) {
             $downloadedContent = file_get_contents($fileToDownload[DOWNLOADDEF_KEY_TOFILE][$idx]);
             $downloadedContentObject = json_decode($downloadedContent, true);
-            $downloadedContentObjectData = $downloadedContentObject["daten"];
-            $constantPrefix = $classConstantPrefixes[$idx] ?? "";
+            $downloadedContentObjectData = $downloadedContentObject['daten'];
+            $constantPrefix = $classConstantPrefixes[$idx] ?? '';
 
             usort(
                 $downloadedContentObjectData,
@@ -344,10 +346,10 @@ function createCodeClassFromKositJson(array $fileToDownload): void
         $phpClassMethod->setStatic();
         $phpClassMethod->setReturnType('bool');
         $phpClassMethod->addComment("Returns true if a code exists in the list, otherwise false\n");
-        $phpClassMethod->addComment("@param string \$code");
-        $phpClassMethod->addComment("@return boolean");
-        $phpClassMethod->addComment("@codeCoverageIgnore");
-        $phpClassMethod->addParameter('code')->setType("string");
+        $phpClassMethod->addComment('@param string $code');
+        $phpClassMethod->addComment('@return boolean');
+        $phpClassMethod->addComment('@codeCoverageIgnore');
+        $phpClassMethod->addParameter('code')->setType('string');
         $phpClassMethod->addBody('return isset(static::getAllCodes()[$code]);');
 
         // Add method which returns the description of a code
@@ -357,10 +359,10 @@ function createCodeClassFromKositJson(array $fileToDownload): void
         $phpClassMethod->setStatic();
         $phpClassMethod->setReturnType('string');
         $phpClassMethod->addComment("Returns the description of a code. If code is not found an empty string is returned\n");
-        $phpClassMethod->addComment("@param string \$code");
-        $phpClassMethod->addComment("@return string");
-        $phpClassMethod->addComment("@codeCoverageIgnore");
-        $phpClassMethod->addParameter('code')->setType("string");
+        $phpClassMethod->addComment('@param string $code');
+        $phpClassMethod->addComment('@return string');
+        $phpClassMethod->addComment('@codeCoverageIgnore');
+        $phpClassMethod->addParameter('code')->setType('string');
         $phpClassMethod->addBody('if (static::checkCodeExists($code) === true) {');
         $phpClassMethod->addBody('    return static::getAllCodeDescriptions()[$code];');
         $phpClassMethod->addBody('}');
@@ -375,7 +377,6 @@ function createCodeClassFromKositJson(array $fileToDownload): void
     file_put_contents($classFilename, $phpPrinter->printFile($phpFile));
 }
 
-
 /**
  * Create a code class
  *
@@ -388,7 +389,7 @@ function createCodeClassFromCsv(array $fileToDownload): void
     $classGenerationEnabled = $fileToDownload[DOWNLOADDEF_KEY_ENABLED] ?? false;
     $classNamespace = $fileToDownload[DOWNLOADDEF_KEY_CLASSNAMESPACE];
     $className = $fileToDownload[DOWNLOADDEF_KEY_CLASSNAME];
-    $classDir = PathUtils::combineAllPaths(__DIR__, "classes");
+    $classDir = PathUtils::combineAllPaths(__DIR__, 'classes');
     $classTitle = $fileToDownload[DOWNLOADDEF_KEY_TITLE];
     $classTitleList = $fileToDownload[DOWNLOADDEF_KEY_TITLE_LIST];
     $classHomepageUrls = is_array($fileToDownload[DOWNLOADDEF_KEY_URL_HP]) ? $fileToDownload[DOWNLOADDEF_KEY_URL_HP] : [$fileToDownload[DOWNLOADDEF_KEY_URL_HP]];
@@ -408,13 +409,13 @@ function createCodeClassFromCsv(array $fileToDownload): void
     // Check enabled
 
     if ($classGenerationEnabled !== true) {
-        outputline(sprintf("Generating class %s is disabled", $className));
+        outputline(sprintf('Generating class %s is disabled', $className));
         return;
     }
 
     // Logging
 
-    outputline(sprintf("Generating class %s", $className));
+    outputline(sprintf('Generating class %s', $className));
 
     // Check destination directory
 
@@ -430,11 +431,11 @@ function createCodeClassFromCsv(array $fileToDownload): void
 
     // Create PHP Printer
 
-    $phpPrinter = new Nette\PhpGenerator\Printer;
+    $phpPrinter = new Nette\PhpGenerator\Printer();
 
     // Create PHP File
 
-    $phpFile = new Nette\PhpGenerator\PhpFile;
+    $phpFile = new Nette\PhpGenerator\PhpFile();
     $phpFile->addComment(sprintf("This file is a part of horstoeko/%s.\n\nFor the full copyright and license information, please view the LICENSE\nfile that was distributed with this source code.", $libName));
 
     // Create PHP Class
@@ -442,7 +443,7 @@ function createCodeClassFromCsv(array $fileToDownload): void
     $phpClass = $phpFile->addNamespace($classNamespace)->addClass($className);
     $phpClass->addComment(sprintf("Class representing %s\nName of list: %s\n\n@category %s\n@package  %s\n@author   D. Erling <horstoeko@erling.com.de>\n@license  https://opensource.org/licenses/MIT MIT\n@link     https://github.com/horstoeko/zugferd", $classTitle, $classTitleList, $libTitle, $libTitle));
     foreach ($classHomepageUrls as $classHomepageUrl) {
-        $phpClass->addComment(sprintf("@see      %s", $classHomepageUrl));
+        $phpClass->addComment(sprintf('@see      %s', $classHomepageUrl));
     }
 
     // Fill PHP Class
@@ -450,17 +451,17 @@ function createCodeClassFromCsv(array $fileToDownload): void
     foreach ($fileToDownload[DOWNLOADDEF_KEY_TOFILE] as $idx => $dummy) {
         $downloadedContentObjectData = [];
 
-        if (($handle = fopen($fileToDownload[DOWNLOADDEF_KEY_TOFILE][$idx], "r")) !== false) {
-            while (($row = fgetcsv($handle, null, "|")) !== false) {
+        if (($handle = fopen($fileToDownload[DOWNLOADDEF_KEY_TOFILE][$idx], 'r')) !== false) {
+            while (($row = fgetcsv($handle, null, '|')) !== false) {
                 $downloadedContentObjectData[] = $row;
             }
 
             fclose($handle);
         } else {
-            echo "Die Datei konnte nicht geöffnet werden.";
+            echo 'Die Datei konnte nicht geöffnet werden.';
         }
 
-        $constantPrefix = $classConstantPrefixes[$idx] ?? "";
+        $constantPrefix = $classConstantPrefixes[$idx] ?? '';
 
         usort(
             $downloadedContentObjectData,
@@ -472,8 +473,8 @@ function createCodeClassFromCsv(array $fileToDownload): void
         foreach ($downloadedContentObjectData as $line) {
             $phpClass
                 ->addConstant(sprintf('%s%s', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength)), $line[$dataCodeIndex])
-                ->addComment("\n" . (strComment($line[$dataDescIndex] ?? "")) . " (" . (strComment($line[$dataCodeIndex] ?? "")) . ")")
-                ->addComment("\n" . strComment($line[$dataDescLongIndex] ?? ($line[$dataDescIndex] ?? "")));
+                ->addComment("\n" . (strComment($line[$dataDescIndex] ?? '')) . ' (' . (strComment($line[$dataCodeIndex] ?? '')) . ')')
+                ->addComment("\n" . strComment($line[$dataDescLongIndex] ?? ($line[$dataDescIndex] ?? '')));
         }
     }
 
@@ -487,24 +488,24 @@ function createCodeClassFromCsv(array $fileToDownload): void
         $phpClassMethod->setStatic();
         $phpClassMethod->setReturnType('array');
         $phpClassMethod->addComment("Returns an array of all available codes\n");
-        $phpClassMethod->addComment("@return array");
-        $phpClassMethod->addComment("@codeCoverageIgnore");
+        $phpClassMethod->addComment('@return array');
+        $phpClassMethod->addComment('@codeCoverageIgnore');
         $phpClassMethod->addBody('return [');
 
         foreach ($fileToDownload[DOWNLOADDEF_KEY_TOFILE] as $idx => $dummy) {
             $downloadedContentObjectData = [];
 
-            if (($handle = fopen($fileToDownload[DOWNLOADDEF_KEY_TOFILE][$idx], "r")) !== false) {
-                while (($row = fgetcsv($handle, null, "|", '"', "\\")) !== false) {
+            if (($handle = fopen($fileToDownload[DOWNLOADDEF_KEY_TOFILE][$idx], 'r')) !== false) {
+                while (($row = fgetcsv($handle, null, '|', '"', '\\')) !== false) {
                     $downloadedContentObjectData[] = $row;
                 }
 
                 fclose($handle);
             } else {
-                echo "Die Datei konnte nicht geöffnet werden.";
+                echo 'Die Datei konnte nicht geöffnet werden.';
             }
 
-            $constantPrefix = $classConstantPrefixes[$idx] ?? "";
+            $constantPrefix = $classConstantPrefixes[$idx] ?? '';
 
             usort(
                 $downloadedContentObjectData,
@@ -514,7 +515,7 @@ function createCodeClassFromCsv(array $fileToDownload): void
             );
 
             foreach ($downloadedContentObjectData as $line) {
-                $phpClassMethod->addBody(sprintf("    static::%s%s,", $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength)));
+                $phpClassMethod->addBody(sprintf('    static::%s%s,', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength)));
             }
         }
 
@@ -527,24 +528,24 @@ function createCodeClassFromCsv(array $fileToDownload): void
         $phpClassMethod->setStatic();
         $phpClassMethod->setReturnType('array');
         $phpClassMethod->addComment("Returns an array of code descriptions indexed by code\n");
-        $phpClassMethod->addComment("@return array");
-        $phpClassMethod->addComment("@codeCoverageIgnore");
+        $phpClassMethod->addComment('@return array');
+        $phpClassMethod->addComment('@codeCoverageIgnore');
         $phpClassMethod->addBody('return [');
 
         foreach ($fileToDownload[DOWNLOADDEF_KEY_TOFILE] as $idx => $dummy) {
             $downloadedContentObjectData = [];
 
-            if (($handle = fopen($fileToDownload[DOWNLOADDEF_KEY_TOFILE][$idx], "r")) !== false) {
-                while (($row = fgetcsv($handle, null, "|")) !== false) {
+            if (($handle = fopen($fileToDownload[DOWNLOADDEF_KEY_TOFILE][$idx], 'r')) !== false) {
+                while (($row = fgetcsv($handle, null, '|')) !== false) {
                     $downloadedContentObjectData[] = $row;
                 }
 
                 fclose($handle);
             } else {
-                echo "Die Datei konnte nicht geöffnet werden.";
+                echo 'Die Datei konnte nicht geöffnet werden.';
             }
 
-            $constantPrefix = $classConstantPrefixes[$idx] ?? "";
+            $constantPrefix = $classConstantPrefixes[$idx] ?? '';
 
             usort(
                 $downloadedContentObjectData,
@@ -567,10 +568,10 @@ function createCodeClassFromCsv(array $fileToDownload): void
         $phpClassMethod->setStatic();
         $phpClassMethod->setReturnType('bool');
         $phpClassMethod->addComment("Returns true if a code exists in the list, otherwise false\n");
-        $phpClassMethod->addComment("@param string \$code");
-        $phpClassMethod->addComment("@return boolean");
-        $phpClassMethod->addComment("@codeCoverageIgnore");
-        $phpClassMethod->addParameter('code')->setType("string");
+        $phpClassMethod->addComment('@param string $code');
+        $phpClassMethod->addComment('@return boolean');
+        $phpClassMethod->addComment('@codeCoverageIgnore');
+        $phpClassMethod->addParameter('code')->setType('string');
         $phpClassMethod->addBody('return isset(static::getAllCodes()[$code]);');
 
         // Add method which returns the description of a code
@@ -580,10 +581,10 @@ function createCodeClassFromCsv(array $fileToDownload): void
         $phpClassMethod->setStatic();
         $phpClassMethod->setReturnType('string');
         $phpClassMethod->addComment("Returns the description of a code. If code is not found an empty string is returned\n");
-        $phpClassMethod->addComment("@param string \$code");
-        $phpClassMethod->addComment("@return string");
-        $phpClassMethod->addComment("@codeCoverageIgnore");
-        $phpClassMethod->addParameter('code')->setType("string");
+        $phpClassMethod->addComment('@param string $code');
+        $phpClassMethod->addComment('@return string');
+        $phpClassMethod->addComment('@codeCoverageIgnore');
+        $phpClassMethod->addParameter('code')->setType('string');
         $phpClassMethod->addBody('if (static::checkCodeExists($code) === true) {');
         $phpClassMethod->addBody('    return static::getAllCodeDescriptions()[$code];');
         $phpClassMethod->addBody('}');
@@ -622,18 +623,18 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.7161_3/download/UNTDID_7161_3.json",
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.5189_3/download/UNTDID_5189_3.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.7161_3/download/UNTDID_7161_3.json',
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.5189_3/download/UNTDID_5189_3.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNTDID_7161.json"),
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNTDID_5189.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_7161.json'),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_5189.json'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.7161",
+        DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.7161',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdAllowanceChargeCodes",
-        DOWNLOADDEF_KEY_TITLE => "list of allowance and charge identification codes",
-        DOWNLOADDEF_KEY_TITLE_LIST => "UNTDID 7161 Special service description code, UNTDID 5189 Allowance or charge identification code",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdAllowanceChargeCodes',
+        DOWNLOADDEF_KEY_TITLE => 'list of allowance and charge identification codes',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 7161 Special service description code, UNTDID 5189 Allowance or charge identification code',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => true,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_SORTINDEX => 1,
@@ -644,16 +645,16 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:country-codes_8/download/Country_Codes_8.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:country-codes_8/download/Country_Codes_8.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "ISO_COUNTRY_CODES.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'ISO_COUNTRY_CODES.json'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:country-codes",
+        DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:country-codes',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdCountryCodes",
-        DOWNLOADDEF_KEY_TITLE => "list of country codes",
-        DOWNLOADDEF_KEY_TITLE_LIST => "ISO",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdCountryCodes',
+        DOWNLOADDEF_KEY_TITLE => 'list of country codes',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'ISO',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => true,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_CODEINDEX => 0,
@@ -667,16 +668,16 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:currency-codes_3/download/Currency_Codes_3.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:currency-codes_3/download/Currency_Codes_3.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "ISO_CURRENCY_CODES.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'ISO_CURRENCY_CODES.json'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:currency-codes",
+        DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:currency-codes',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdCurrencyCodes",
-        DOWNLOADDEF_KEY_TITLE => "list of currency codes",
-        DOWNLOADDEF_KEY_TITLE_LIST => "ISO",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdCurrencyCodes',
+        DOWNLOADDEF_KEY_TITLE => 'list of currency codes',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'ISO',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => false,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_CODEINDEX => 0,
@@ -690,16 +691,16 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.5305_3/download/UNTDID_5305_3.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.5305_3/download/UNTDID_5305_3.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNTDID_5305.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_5305.json'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.5305",
+        DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.5305',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdDutyTaxFeeCategories",
-        DOWNLOADDEF_KEY_TITLE => "list of duty or tax or fee category codes",
-        DOWNLOADDEF_KEY_TITLE_LIST => "UNTDID 5305 Duty or tax or fee category code",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdDutyTaxFeeCategories',
+        DOWNLOADDEF_KEY_TITLE => 'list of duty or tax or fee category codes',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 5305 Duty or tax or fee category code',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => false,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_CODEINDEX => 0,
@@ -713,16 +714,16 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.1001_4/download/UNTDID_1001_4.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.1001_4/download/UNTDID_1001_4.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNTDID_1001.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_1001.json'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.1001",
+        DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.1001',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdDocumentType",
-        DOWNLOADDEF_KEY_TITLE => "list of document name codes",
-        DOWNLOADDEF_KEY_TITLE_LIST => "UNTDID 1001 Document name code",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdDocumentType',
+        DOWNLOADDEF_KEY_TITLE => 'list of document name codes',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 1001 Document name code',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => false,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_SORTINDEX => 1,
@@ -733,16 +734,16 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.7143_4/download/UNTDID_7143_4.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.7143_4/download/UNTDID_7143_4.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNTDID_7143.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_7143.json'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.7143",
+        DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.7143',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdItemTypeIdentificationCodes",
-        DOWNLOADDEF_KEY_TITLE => "list of item type identification codes",
-        DOWNLOADDEF_KEY_TITLE_LIST => "UNTDID 7143 Item type identification code",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdItemTypeIdentificationCodes',
+        DOWNLOADDEF_KEY_TITLE => 'list of item type identification codes',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 7143 Item type identification code',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => true,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_SORTINDEX => 1,
@@ -753,16 +754,16 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:xrechnung:codeliste:untdid.4461_3/download/UNTDID_4461_3.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:xrechnung:codeliste:untdid.4461_3/download/UNTDID_4461_3.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNTDID_4461.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_4461.json'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://www.xrepository.de/details/urn:xoev-de:xrechnung:codeliste:untdid.4461",
+        DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:xrechnung:codeliste:untdid.4461',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdPaymentMeans",
-        DOWNLOADDEF_KEY_TITLE => "list of payment means codes",
-        DOWNLOADDEF_KEY_TITLE_LIST => "UNTDID 4461 Payment means code",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdPaymentMeans',
+        DOWNLOADDEF_KEY_TITLE => 'list of payment means codes',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 4461 Payment means code',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => true,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_SORTINDEX => 1,
@@ -773,16 +774,16 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.1153_3/download/UNTDID_1153_3.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.1153_3/download/UNTDID_1153_3.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNTDID_1153.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_1153.json'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.1153",
+        DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.1153',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdReferenceCodeQualifiers",
-        DOWNLOADDEF_KEY_TITLE => "list of reference code qualifiers",
-        DOWNLOADDEF_KEY_TITLE_LIST => "UNTDID 1153 Reference code qualifier",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdReferenceCodeQualifiers',
+        DOWNLOADDEF_KEY_TITLE => 'list of reference code qualifiers',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 1153 Reference code qualifier',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => true,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_SORTINDEX => 1,
@@ -793,16 +794,16 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.4451_4/download/UNTDID_4451_4.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.4451_4/download/UNTDID_4451_4.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNTDID_4451.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_4451.json'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.4451",
+        DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.4451',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdTextSubjectCodeQualifiers",
-        DOWNLOADDEF_KEY_TITLE => "list of text subject code qualifiers",
-        DOWNLOADDEF_KEY_TITLE_LIST => "UNTDID 4451 Text subject code qualifier",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdTextSubjectCodeQualifiers',
+        DOWNLOADDEF_KEY_TITLE => 'list of text subject code qualifiers',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 4451 Text subject code qualifier',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => true,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_SORTINDEX => 1,
@@ -813,16 +814,16 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:icd_5/download/ICD_5.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:icd_5/download/ICD_5.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "ICD_5.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'ICD_5.json'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:icd",
+        DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:icd',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdSchemeIdentifiers",
-        DOWNLOADDEF_KEY_TITLE => "list of codes for the identification of organizations and organization parts",
-        DOWNLOADDEF_KEY_TITLE_LIST => "ISO/IEC 17 6523 - Identifier scheme code (ICD)",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdSchemeIdentifiers',
+        DOWNLOADDEF_KEY_TITLE => 'list of codes for the identification of organizations and organization parts',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'ISO/IEC 17 6523 - Identifier scheme code (ICD)',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => true,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_SORTINDEX => 1,
@@ -833,41 +834,41 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:rec20_3/download/UN_ECE_Recommendation_N_20_3.json",
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:rec21_3/download/UN_ECE_Recommendation_N_21_3.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:rec20_3/download/UN_ECE_Recommendation_N_20_3.json',
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:rec21_3/download/UN_ECE_Recommendation_N_21_3.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNECE_REC_20.json"),
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNECE_REC_21.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNECE_REC_20.json'),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNECE_REC_21.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => [
-            "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:rec20",
-            "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:rec21",
+            'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:rec20',
+            'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:rec21',
         ],
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdUnitCodes",
-        DOWNLOADDEF_KEY_TITLE => "list of codes for units of measure used in international trade",
-        DOWNLOADDEF_KEY_TITLE_LIST => "UN/ECE Recommendation N°20 and N°21",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdUnitCodes',
+        DOWNLOADDEF_KEY_TITLE => 'list of codes for units of measure used in international trade',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'UN/ECE Recommendation N°20 and N°21',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => true,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_SORTINDEX => 1,
-        DOWNLOADDEF_KEY_CLASSCONSTANT_PREFIX => ["REC20_", "REC21_"],
+        DOWNLOADDEF_KEY_CLASSCONSTANT_PREFIX => ['REC20_', 'REC21_'],
     ],
     [
         DOWNLOADDEF_KEY_ENABLED => true,
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.5305_3/download/UNTDID_5305_3.json",
+            'https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:codeliste:untdid.5305_3/download/UNTDID_5305_3.json',
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNTDID_5305.json"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_5305.json'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.5305_3",
+        DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.5305_3',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdVatCategoryCodes",
-        DOWNLOADDEF_KEY_TITLE => "list of duty or tax or fee category codes",
-        DOWNLOADDEF_KEY_TITLE_LIST => "UNTDID 5305 Duty or tax or fee category code",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdVatCategoryCodes',
+        DOWNLOADDEF_KEY_TITLE => 'list of duty or tax or fee category codes',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 5305 Duty or tax or fee category code',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => true,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,
         DOWNLOADDEF_KEY_DATA_SORTINDEX => 1,
@@ -878,16 +879,16 @@ $filesToDownload = [
         DOWNLOADDEF_LIB_NAME => 'zugferd',
         DOWNLOADDEF_LIB_TITLE => 'Zugferd',
         DOWNLOADDEF_KEY_URL => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNTDID_1229.csv"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_1229.csv'),
         ],
         DOWNLOADDEF_KEY_TOFILE => [
-            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "download"), "UNTDID_1229.csv"),
+            PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_1229.csv'),
         ],
-        DOWNLOADDEF_KEY_URL_HP => "https://service.unece.org/trade/untdid/d05a/tred/tred1229.htm",
+        DOWNLOADDEF_KEY_URL_HP => 'https://service.unece.org/trade/untdid/d05a/tred/tred1229.htm',
         DOWNLOADDEF_KEY_CLASSNAMESPACE => "horstoeko\zugferd\codelists",
-        DOWNLOADDEF_KEY_CLASSNAME => "ZugferdLineStatusCodes",
-        DOWNLOADDEF_KEY_TITLE => "list of codes specifying an action request/notification",
-        DOWNLOADDEF_KEY_TITLE_LIST => "UNTDID 1229 Action request/notification description code",
+        DOWNLOADDEF_KEY_CLASSNAME => 'ZugferdLineStatusCodes',
+        DOWNLOADDEF_KEY_TITLE => 'list of codes specifying an action request/notification',
+        DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 1229 Action request/notification description code',
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS => true,
         DOWNLOADDEF_KEY_SHORTIDENTIFIERS_LENGTH => 6,
         DOWNLOADDEF_KEY_ADDMETHODS => DOWNLOADDEF_KEY_ADDMETHODS_DEFAULT,

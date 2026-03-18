@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use horstoeko\zugferd\ZugferdDocument;
 use horstoeko\zugferd\ZugferdKositValidator;
 
@@ -20,7 +22,7 @@ function validationEnabled(): bool
  */
 function getKositValidatorRemoteHost(): string
 {
-    return "127.0.0.1";
+    return '127.0.0.1';
 }
 
 /**
@@ -98,7 +100,7 @@ function implodeAssocArray(string $separator, array $array): string
         implode(
             $separator,
             array_map(function ($key, $value) {
-                return sprintf("%s=%s", $key, $value);
+                return sprintf('%s=%s', $key, $value);
             }, array_keys($array), $array)
         );
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -34,7 +36,7 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
      *
      * @var string
      */
-    protected $convertFromContent = "";
+    protected $convertFromContent = '';
 
     /**
      * The new profile ID

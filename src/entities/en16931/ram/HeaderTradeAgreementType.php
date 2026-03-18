@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  */
 class HeaderTradeAgreementType
 {
-
     /**
      * @var string $buyerReference
      */
@@ -49,7 +50,7 @@ class HeaderTradeAgreementType
      * @var \horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType[] $additionalReferencedDocument
      */
     private $additionalReferencedDocument = [
-        
+
     ];
 
     /**

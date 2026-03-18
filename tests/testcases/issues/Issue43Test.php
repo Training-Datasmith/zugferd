@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\testcases\issues;
 
-use horstoeko\zugferd\tests\TestCase;
-use horstoeko\zugferd\ZugferdProfiles;
-use horstoeko\zugferd\ZugferdDocumentBuilder;
 use horstoeko\zugferd\codelists\ZugferdInvoiceType;
+use horstoeko\zugferd\tests\TestCase;
 use horstoeko\zugferd\tests\traits\HandlesXmlTests;
+use horstoeko\zugferd\ZugferdDocumentBuilder;
+use horstoeko\zugferd\ZugferdProfiles;
 
 class Issue43Test extends TestCase
 {
@@ -26,23 +28,23 @@ class Issue43Test extends TestCase
      */
     public function testIssue(): void
     {
-        $date = "05.05.24";
-        $duedate = "05.06.24";
-        $invoice = "Invoice123";
+        $date = '05.05.24';
+        $duedate = '05.06.24';
+        $invoice = 'Invoice123';
 
         self::$document->setDocumentInformation(
             $invoice,
             ZugferdInvoiceType::INVOICE,
-            \DateTime::createFromFormat("d.m.y", $date),
-            "EUR",
+            \DateTime::createFromFormat('d.m.y', $date),
+            'EUR',
             $invoice,
             null,
-            \DateTime::createFromFormat("d.m.y", $duedate)
+            \DateTime::createFromFormat('d.m.y', $duedate)
         );
 
-        self::$document->addDocumentPaymentTerm('PaymentTerm', \DateTime::createFromFormat("d.m.y", $duedate), "MandateId");
+        self::$document->addDocumentPaymentTerm('PaymentTerm', \DateTime::createFromFormat('d.m.y', $duedate), 'MandateId');
 
-        $this->assertXPathValueWithAttribute('/rsm:CrossIndustryInvoice/rsm:ExchangedDocument/ram:IssueDateTime/udt:DateTimeString', "20240505", "format", "102");
-        $this->assertXPathValueWithIndexAndAttribute('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradePaymentTerms/ram:DueDateDateTime/udt:DateTimeString', 0, "20240605", "format", "102");
+        $this->assertXPathValueWithAttribute('/rsm:CrossIndustryInvoice/rsm:ExchangedDocument/ram:IssueDateTime/udt:DateTimeString', '20240505', 'format', '102');
+        $this->assertXPathValueWithIndexAndAttribute('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradePaymentTerms/ram:DueDateDateTime/udt:DateTimeString', 0, '20240605', 'format', '102');
     }
 }

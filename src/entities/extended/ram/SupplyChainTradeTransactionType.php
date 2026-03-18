@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,12 +11,11 @@ namespace horstoeko\zugferd\entities\extended\ram;
  */
 class SupplyChainTradeTransactionType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\SupplyChainTradeLineItemType[] $includedSupplyChainTradeLineItem
      */
     private $includedSupplyChainTradeLineItem = [
-        
+
     ];
 
     /**

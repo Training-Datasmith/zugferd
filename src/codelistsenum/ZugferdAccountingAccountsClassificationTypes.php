@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -20,7 +22,6 @@ namespace horstoeko\zugferd\codelistsenum;
  */
 enum ZugferdAccountingAccountsClassificationTypes: int
 {
-
     /**
      * The code indicates a general chart of accounts
      */

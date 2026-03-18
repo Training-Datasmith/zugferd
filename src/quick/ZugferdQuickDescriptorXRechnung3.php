@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -10,7 +12,6 @@
 namespace horstoeko\zugferd\quick;
 
 use horstoeko\zugferd\ZugferdProfiles;
-use horstoeko\zugferd\quick\ZugferdQuickDescriptor;
 
 /**
  * Class representing the document descriptor for outgoing documents in XRECHNUNG 3.x profile

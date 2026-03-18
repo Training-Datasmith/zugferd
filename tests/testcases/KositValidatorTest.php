@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\testcases;
 
 use horstoeko\stringmanagement\PathUtils;
@@ -58,7 +60,7 @@ class KositValidatorTest extends TestCase
         $this->assertTrue($kositValidator->hasNoValidationInformation());
         $this->assertFalse($kositValidator->hasValidationInformation());
         $this->assertArrayHasKey(0, $kositValidator->getProcessErrors());
-        $this->assertSame('SomeError', $kositValidator->getProcessErrors()[0] ?? "");
+        $this->assertSame('SomeError', $kositValidator->getProcessErrors()[0] ?? '');
 
         $this->getPrivateMethodFromObject($kositValidator, 'addToMessageBag')->invokeArgs($kositValidator, ['SomeError', 'validationerror']);
 
@@ -185,9 +187,9 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $kositValidator->setBaseDirectory("/dummydirectory");
+        $kositValidator->setBaseDirectory('/dummydirectory');
 
-        $this->assertNotEquals("/dummydirectory", $this->getPrivatePropertyFromObject($kositValidator, 'baseDirectory')->getValue($kositValidator));
+        $this->assertNotEquals('/dummydirectory', $this->getPrivatePropertyFromObject($kositValidator, 'baseDirectory')->getValue($kositValidator));
         $this->assertSame(sys_get_temp_dir(), $this->getPrivatePropertyFromObject($kositValidator, 'baseDirectory')->getValue($kositValidator));
     }
 
@@ -197,9 +199,9 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $kositValidator->setValidatorDownloadUrl("https://some.url");
+        $kositValidator->setValidatorDownloadUrl('https://some.url');
 
-        $this->assertSame("https://some.url", $this->getPrivatePropertyFromObject($kositValidator, 'validatorDownloadUrl')->getValue($kositValidator));
+        $this->assertSame('https://some.url', $this->getPrivatePropertyFromObject($kositValidator, 'validatorDownloadUrl')->getValue($kositValidator));
     }
 
     public function testSetInvalidValidatorDownloadUrl(): void
@@ -208,9 +210,9 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $kositValidator->setValidatorDownloadUrl("dummy");
+        $kositValidator->setValidatorDownloadUrl('dummy');
 
-        $this->assertSame("https://github.com/itplr-kosit/validator/releases/download/v1.5.0/validator-1.5.0-distribution.zip", $this->getPrivatePropertyFromObject($kositValidator, 'validatorDownloadUrl')->getValue($kositValidator));
+        $this->assertSame('https://github.com/itplr-kosit/validator/releases/download/v1.5.0/validator-1.5.0-distribution.zip', $this->getPrivatePropertyFromObject($kositValidator, 'validatorDownloadUrl')->getValue($kositValidator));
     }
 
     public function testSetValidValidatorScenarioDownloadUrl(): void
@@ -219,9 +221,9 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $kositValidator->setValidatorScenarioDownloadUrl("https://some.url");
+        $kositValidator->setValidatorScenarioDownloadUrl('https://some.url');
 
-        $this->assertSame("https://some.url", $this->getPrivatePropertyFromObject($kositValidator, 'validatorScenarioDownloadUrl')->getValue($kositValidator));
+        $this->assertSame('https://some.url', $this->getPrivatePropertyFromObject($kositValidator, 'validatorScenarioDownloadUrl')->getValue($kositValidator));
     }
 
     public function testSetInvalidValidatorScenarioDownloadUrl(): void
@@ -230,9 +232,9 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $kositValidator->setValidatorDownloadUrl("dummy");
+        $kositValidator->setValidatorDownloadUrl('dummy');
 
-        $this->assertSame("https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/download/release-2025-03-21/validator-configuration-xrechnung_3.0.2_2025-03-21.zip", $this->getPrivatePropertyFromObject($kositValidator, 'validatorScenarioDownloadUrl')->getValue($kositValidator));
+        $this->assertSame('https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/download/release-2025-03-21/validator-configuration-xrechnung_3.0.2_2025-03-21.zip', $this->getPrivatePropertyFromObject($kositValidator, 'validatorScenarioDownloadUrl')->getValue($kositValidator));
     }
 
     public function testSetValidatorAppZipFilename(): void
@@ -241,9 +243,9 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $kositValidator->setValidatorAppZipFilename("dummy.zip");
+        $kositValidator->setValidatorAppZipFilename('dummy.zip');
 
-        $this->assertSame("dummy.zip", $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppZipFilename')->getValue($kositValidator));
+        $this->assertSame('dummy.zip', $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppZipFilename')->getValue($kositValidator));
     }
 
     public function testSetValidatorScenarioZipFilename(): void
@@ -252,9 +254,9 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $kositValidator->setValidatorScenarioZipFilename("dummyscenario.zip");
+        $kositValidator->setValidatorScenarioZipFilename('dummyscenario.zip');
 
-        $this->assertSame("dummyscenario.zip", $this->getPrivatePropertyFromObject($kositValidator, 'validatorScenarioZipFilename')->getValue($kositValidator));
+        $this->assertSame('dummyscenario.zip', $this->getPrivatePropertyFromObject($kositValidator, 'validatorScenarioZipFilename')->getValue($kositValidator));
     }
 
     public function testSetValidatorAppJarFilename(): void
@@ -263,9 +265,9 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $kositValidator->setValidatorAppJarFilename("dummy.jar");
+        $kositValidator->setValidatorAppJarFilename('dummy.jar');
 
-        $this->assertSame("dummy.jar", $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppJarFilename')->getValue($kositValidator));
+        $this->assertSame('dummy.jar', $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppJarFilename')->getValue($kositValidator));
     }
 
     public function testSetValidatorAppScenarioFilename(): void
@@ -274,9 +276,9 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $kositValidator->setValidatorAppScenarioFilename("dummyscenario.xml");
+        $kositValidator->setValidatorAppScenarioFilename('dummyscenario.xml');
 
-        $this->assertSame("dummyscenario.xml", $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppScenarioFilename')->getValue($kositValidator));
+        $this->assertSame('dummyscenario.xml', $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppScenarioFilename')->getValue($kositValidator));
     }
 
     public function testDisableCleanup(): void
@@ -329,9 +331,9 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $kositValidator->setRemoteModeHost("127.0.0.1");
+        $kositValidator->setRemoteModeHost('127.0.0.1');
 
-        $this->assertSame("127.0.0.1", $this->getPrivatePropertyFromObject($kositValidator, 'remoteModeHost')->getValue($kositValidator));
+        $this->assertSame('127.0.0.1', $this->getPrivatePropertyFromObject($kositValidator, 'remoteModeHost')->getValue($kositValidator));
     }
 
     public function testSetRemoteModeHostWhichIsInvalid(): void
@@ -340,13 +342,13 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $kositValidator->setRemoteModeHost("127.0.0.1");
+        $kositValidator->setRemoteModeHost('127.0.0.1');
 
-        $this->assertSame("127.0.0.1", $this->getPrivatePropertyFromObject($kositValidator, 'remoteModeHost')->getValue($kositValidator));
+        $this->assertSame('127.0.0.1', $this->getPrivatePropertyFromObject($kositValidator, 'remoteModeHost')->getValue($kositValidator));
 
-        $kositValidator->setRemoteModeHost("");
+        $kositValidator->setRemoteModeHost('');
 
-        $this->assertSame("127.0.0.1", $this->getPrivatePropertyFromObject($kositValidator, 'remoteModeHost')->getValue($kositValidator));
+        $this->assertSame('127.0.0.1', $this->getPrivatePropertyFromObject($kositValidator, 'remoteModeHost')->getValue($kositValidator));
     }
 
     public function testSetRemoteModePortWhichIsValid(): void
@@ -381,7 +383,7 @@ class KositValidatorTest extends TestCase
 
         $this->assertInitialValues($kositValidator);
 
-        $this->assertSame("http://:0", $kositValidator->getRemoteModeUrl());
+        $this->assertSame('http://:0', $kositValidator->getRemoteModeUrl());
     }
 
     public function testCheckRequirementsLocalNoDocument(): void
@@ -392,7 +394,7 @@ class KositValidatorTest extends TestCase
 
         $this->assertFalse($this->getPrivateMethodFromObject($kositValidator, 'checkRequirements')->invokeArgs($kositValidator, []), 'A document is missing');
         $this->assertCount(1, $kositValidator->getProcessErrors());
-        $this->assertSame("You must specify an instance of the ZugferdDocument class", $kositValidator->getProcessErrors()[0]);
+        $this->assertSame('You must specify an instance of the ZugferdDocument class', $kositValidator->getProcessErrors()[0]);
     }
 
     public function testCheckRequirementsLocalWithDocument(): void
@@ -407,7 +409,7 @@ class KositValidatorTest extends TestCase
         } else {
             $this->assertFalse($this->getPrivateMethodFromObject($kositValidator, 'checkRequirements')->invokeArgs($kositValidator, []));
             $this->assertCount(1, $kositValidator->getProcessErrors());
-            $this->assertSame("JAVA not installed on this machine", $kositValidator->getProcessErrors()[0]);
+            $this->assertSame('JAVA not installed on this machine', $kositValidator->getProcessErrors()[0]);
         }
     }
 
@@ -418,12 +420,12 @@ class KositValidatorTest extends TestCase
         $this->assertInitialValues($kositValidator);
 
         $kositValidator->enableRemoteMode();
-        $kositValidator->setRemoteModeHost("127.0.0.1");
+        $kositValidator->setRemoteModeHost('127.0.0.1');
         $kositValidator->setRemoteModePort(8080);
 
         $this->assertFalse($this->getPrivateMethodFromObject($kositValidator, 'checkRequirements')->invokeArgs($kositValidator, []), 'A document is missing');
         $this->assertCount(1, $kositValidator->getProcessErrors());
-        $this->assertSame("You must specify an instance of the ZugferdDocument class", $kositValidator->getProcessErrors()[0]);
+        $this->assertSame('You must specify an instance of the ZugferdDocument class', $kositValidator->getProcessErrors()[0]);
         $this->assertClearMessageBag($kositValidator);
     }
 
@@ -448,11 +450,11 @@ class KositValidatorTest extends TestCase
         $this->assertInitialValues($kositValidator);
 
         $kositValidator->enableRemoteMode();
-        $kositValidator->setRemoteModeHost("127.0.0.1");
+        $kositValidator->setRemoteModeHost('127.0.0.1');
 
         $this->assertFalse($this->getPrivateMethodFromObject($kositValidator, 'checkRequirements')->invokeArgs($kositValidator, []));
         $this->assertCount(1, $kositValidator->getProcessErrors());
-        $this->assertSame("You must specify the port of the host where the Validator is running in daemon mode", $kositValidator->getProcessErrors()[0]);
+        $this->assertSame('You must specify the port of the host where the Validator is running in daemon mode', $kositValidator->getProcessErrors()[0]);
         $this->assertClearMessageBag($kositValidator);
     }
 
@@ -463,12 +465,12 @@ class KositValidatorTest extends TestCase
         $this->assertInitialValues($kositValidator);
 
         $kositValidator->enableRemoteMode();
-        $kositValidator->setRemoteModeHost("127.0.0.1");
+        $kositValidator->setRemoteModeHost('127.0.0.1');
         $kositValidator->setRemoteModePort(8080);
 
         $this->assertFalse($this->getPrivateMethodFromObject($kositValidator, 'checkRequirements')->invokeArgs($kositValidator, []));
         $this->assertCount(2, $kositValidator->getProcessErrors());
-        $this->assertSame("Failed to connect to the host where the Validator is running in daemon mode", $kositValidator->getProcessErrors()[0]);
+        $this->assertSame('Failed to connect to the host where the Validator is running in daemon mode', $kositValidator->getProcessErrors()[0]);
         $this->assertClearMessageBag($kositValidator);
     }
 
@@ -500,7 +502,7 @@ class KositValidatorTest extends TestCase
         $this->assertInitialValues($kositValidator);
 
         $kositValidator->enableRemoteMode();
-        $kositValidator->setRemoteModeHost("127.0.0.1");
+        $kositValidator->setRemoteModeHost('127.0.0.1');
         $kositValidator->setRemoteModePort(8080);
 
         $filenameAppZip = $this->getPrivateMethodFromObject($kositValidator, 'resolveAppZipFilename')->invokeArgs($kositValidator, []);
@@ -536,9 +538,9 @@ class KositValidatorTest extends TestCase
         $this->assertFileDoesNotExist($filenameAppZip);
         $this->assertFileDoesNotExist($filenameScenarioZip);
         $this->assertCount(2, $kositValidator->getProcessErrors());
-        $this->assertStringContainsString("HTTP/1.1 404 Not Found", $kositValidator->getProcessErrors()[0]);
-        $this->assertStringContainsString("Unable to download from", $kositValidator->getProcessErrors()[1]);
-        $this->assertStringContainsString("containing the JAVA-Application", $kositValidator->getProcessErrors()[1]);
+        $this->assertStringContainsString('HTTP/1.1 404 Not Found', $kositValidator->getProcessErrors()[0]);
+        $this->assertStringContainsString('Unable to download from', $kositValidator->getProcessErrors()[1]);
+        $this->assertStringContainsString('containing the JAVA-Application', $kositValidator->getProcessErrors()[1]);
         $this->assertClearMessageBag($kositValidator);
 
         $this->invokeCleanup($kositValidator);
@@ -562,9 +564,9 @@ class KositValidatorTest extends TestCase
         $this->assertFileExists($filenameAppZip);
         $this->assertFileDoesNotExist($filenameScenarioZip);
         $this->assertCount(2, $kositValidator->getProcessErrors());
-        $this->assertStringContainsString("HTTP/1.1 404 Not Found", $kositValidator->getProcessErrors()[0]);
-        $this->assertStringContainsString("Unable to download from", $kositValidator->getProcessErrors()[1]);
-        $this->assertStringContainsString("containing the validation scenarios", $kositValidator->getProcessErrors()[1]);
+        $this->assertStringContainsString('HTTP/1.1 404 Not Found', $kositValidator->getProcessErrors()[0]);
+        $this->assertStringContainsString('Unable to download from', $kositValidator->getProcessErrors()[1]);
+        $this->assertStringContainsString('containing the validation scenarios', $kositValidator->getProcessErrors()[1]);
         $this->assertClearMessageBag($kositValidator);
 
         $this->invokeCleanup($kositValidator);
@@ -591,12 +593,12 @@ class KositValidatorTest extends TestCase
         $this->assertClearMessageBag($kositValidator);
 
         $this->assertTrue($this->getPrivateMethodFromObject($kositValidator, 'unpackRequiredFiles')->invokeArgs($kositValidator, []));
-        $this->assertFileExists(PathUtils::combinePathWithFile($baseDirectory, "scenarios.xml"));
-        $this->assertFileExists(PathUtils::combinePathWithFile($baseDirectory, "validationtool-1.5.0.jar"));
-        $this->assertFileExists(PathUtils::combinePathWithFile($baseDirectory, "validationtool-1.5.0-java8-standalone.jar"));
-        $this->assertFileExists(PathUtils::combinePathWithFile($baseDirectory, "validationtool-1.5.0-standalone.jar"));
-        $this->assertDirectoryExists(PathUtils::combinePathWithPath($baseDirectory, "resources"));
-        $this->assertDirectoryExists(PathUtils::combinePathWithPath($baseDirectory, "libs"));
+        $this->assertFileExists(PathUtils::combinePathWithFile($baseDirectory, 'scenarios.xml'));
+        $this->assertFileExists(PathUtils::combinePathWithFile($baseDirectory, 'validationtool-1.5.0.jar'));
+        $this->assertFileExists(PathUtils::combinePathWithFile($baseDirectory, 'validationtool-1.5.0-java8-standalone.jar'));
+        $this->assertFileExists(PathUtils::combinePathWithFile($baseDirectory, 'validationtool-1.5.0-standalone.jar'));
+        $this->assertDirectoryExists(PathUtils::combinePathWithPath($baseDirectory, 'resources'));
+        $this->assertDirectoryExists(PathUtils::combinePathWithPath($baseDirectory, 'libs'));
 
         $this->invokeCleanup($kositValidator);
     }
@@ -608,7 +610,7 @@ class KositValidatorTest extends TestCase
         $this->assertInitialValues($kositValidator);
 
         $kositValidator->enableRemoteMode();
-        $kositValidator->setRemoteModeHost("127.0.0.1");
+        $kositValidator->setRemoteModeHost('127.0.0.1');
         $kositValidator->setRemoteModePort(8080);
 
         $filenameAppZip = $this->getPrivateMethodFromObject($kositValidator, 'resolveAppZipFilename')->invokeArgs($kositValidator, []);
@@ -626,12 +628,12 @@ class KositValidatorTest extends TestCase
         $this->assertClearMessageBag($kositValidator);
 
         $this->assertTrue($this->getPrivateMethodFromObject($kositValidator, 'unpackRequiredFiles')->invokeArgs($kositValidator, []));
-        $this->assertFileDoesNotExist(PathUtils::combinePathWithFile($baseDirectory, "scenarios.xml"));
-        $this->assertFileDoesNotExist(PathUtils::combinePathWithFile($baseDirectory, "validationtool-1.5.0.jar"));
-        $this->assertFileDoesNotExist(PathUtils::combinePathWithFile($baseDirectory, "validationtool-1.5.0-java8-standalone.jar"));
-        $this->assertFileDoesNotExist(PathUtils::combinePathWithFile($baseDirectory, "validationtool-1.5.0-standalone.jar"));
-        $this->assertDirectoryDoesNotExist(PathUtils::combinePathWithPath($baseDirectory, "resources"));
-        $this->assertDirectoryDoesNotExist(PathUtils::combinePathWithPath($baseDirectory, "libs"));
+        $this->assertFileDoesNotExist(PathUtils::combinePathWithFile($baseDirectory, 'scenarios.xml'));
+        $this->assertFileDoesNotExist(PathUtils::combinePathWithFile($baseDirectory, 'validationtool-1.5.0.jar'));
+        $this->assertFileDoesNotExist(PathUtils::combinePathWithFile($baseDirectory, 'validationtool-1.5.0-java8-standalone.jar'));
+        $this->assertFileDoesNotExist(PathUtils::combinePathWithFile($baseDirectory, 'validationtool-1.5.0-standalone.jar'));
+        $this->assertDirectoryDoesNotExist(PathUtils::combinePathWithPath($baseDirectory, 'resources'));
+        $this->assertDirectoryDoesNotExist(PathUtils::combinePathWithPath($baseDirectory, 'libs'));
 
         $this->invokeCleanup($kositValidator);
     }
@@ -665,7 +667,7 @@ class KositValidatorTest extends TestCase
             $this->assertTrue($kositValidator->hasNoValidationInformation());
             $this->assertFalse($kositValidator->hasValidationInformation());
             $this->assertCount(1, $kositValidator->getProcessErrors());
-            $this->assertStringContainsString("JAVA not installed on this machine", $kositValidator->getProcessErrors()[0]);
+            $this->assertStringContainsString('JAVA not installed on this machine', $kositValidator->getProcessErrors()[0]);
             $this->assertEmpty($kositValidator->getProcessOutput());
         }
     }
@@ -690,7 +692,7 @@ class KositValidatorTest extends TestCase
             $this->assertEmpty($kositValidator->getProcessErrors());
             $this->assertNotEmpty($kositValidator->getProcessOutput());
             $this->assertCount(1, $kositValidator->getValidationErrors());
-            $this->assertContains("Validation error. One ore more files were rejected", $kositValidator->getValidationErrors());
+            $this->assertContains('Validation error. One ore more files were rejected', $kositValidator->getValidationErrors());
         } else {
             $this->assertFalse($kositValidator->hasNoProcessErrors());
             $this->assertTrue($kositValidator->hasProcessErrors());
@@ -703,7 +705,7 @@ class KositValidatorTest extends TestCase
             $this->assertCount(1, $kositValidator->getProcessErrors());
             $this->assertEmpty($kositValidator->getProcessOutput());
             $this->assertEmpty($kositValidator->getValidationErrors());
-            $this->assertStringContainsString("JAVA not installed on this machine", $kositValidator->getProcessErrors()[0]);
+            $this->assertStringContainsString('JAVA not installed on this machine', $kositValidator->getProcessErrors()[0]);
         }
     }
 
@@ -717,18 +719,18 @@ class KositValidatorTest extends TestCase
     {
         $this->assertMessageBagIsEmpty($kositValidator);
         $this->assertIsString($this->getPrivatePropertyFromObject($kositValidator, 'baseDirectory')->getValue($kositValidator));
-        $this->assertNotSame("", $this->getPrivatePropertyFromObject($kositValidator, 'baseDirectory')->getValue($kositValidator));
+        $this->assertNotSame('', $this->getPrivatePropertyFromObject($kositValidator, 'baseDirectory')->getValue($kositValidator));
         $this->assertSame(sys_get_temp_dir(), $this->getPrivatePropertyFromObject($kositValidator, 'baseDirectory')->getValue($kositValidator));
-        $this->assertSame("https://github.com/itplr-kosit/validator/releases/download/v1.5.0/validator-1.5.0-distribution.zip", $this->getPrivatePropertyFromObject($kositValidator, 'validatorDownloadUrl')->getValue($kositValidator));
-        $this->assertSame("https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/download/release-2025-03-21/validator-configuration-xrechnung_3.0.2_2025-03-21.zip", $this->getPrivatePropertyFromObject($kositValidator, 'validatorScenarioDownloadUrl')->getValue($kositValidator));
-        $this->assertSame("validator.zip", $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppZipFilename')->getValue($kositValidator));
-        $this->assertSame("validator-configuration.zip", $this->getPrivatePropertyFromObject($kositValidator, 'validatorScenarioZipFilename')->getValue($kositValidator));
-        $this->assertSame("validationtool-1.5.0-standalone.jar", $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppJarFilename')->getValue($kositValidator));
-        $this->assertSame("scenarios.xml", $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppScenarioFilename')->getValue($kositValidator));
-        $this->assertSame("", $this->getPrivatePropertyFromObject($kositValidator, 'fileToValidateFilename')->getValue($kositValidator));
+        $this->assertSame('https://github.com/itplr-kosit/validator/releases/download/v1.5.0/validator-1.5.0-distribution.zip', $this->getPrivatePropertyFromObject($kositValidator, 'validatorDownloadUrl')->getValue($kositValidator));
+        $this->assertSame('https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/download/release-2025-03-21/validator-configuration-xrechnung_3.0.2_2025-03-21.zip', $this->getPrivatePropertyFromObject($kositValidator, 'validatorScenarioDownloadUrl')->getValue($kositValidator));
+        $this->assertSame('validator.zip', $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppZipFilename')->getValue($kositValidator));
+        $this->assertSame('validator-configuration.zip', $this->getPrivatePropertyFromObject($kositValidator, 'validatorScenarioZipFilename')->getValue($kositValidator));
+        $this->assertSame('validationtool-1.5.0-standalone.jar', $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppJarFilename')->getValue($kositValidator));
+        $this->assertSame('scenarios.xml', $this->getPrivatePropertyFromObject($kositValidator, 'validatorAppScenarioFilename')->getValue($kositValidator));
+        $this->assertSame('', $this->getPrivatePropertyFromObject($kositValidator, 'fileToValidateFilename')->getValue($kositValidator));
         $this->assertFalse($this->getPrivatePropertyFromObject($kositValidator, 'cleanupBaseDirectoryIsDisabled')->getValue($kositValidator));
         $this->assertFalse($this->getPrivatePropertyFromObject($kositValidator, 'remoteModeEnabled')->getValue($kositValidator));
-        $this->assertSame("", $this->getPrivatePropertyFromObject($kositValidator, 'remoteModeHost')->getValue($kositValidator));
+        $this->assertSame('', $this->getPrivatePropertyFromObject($kositValidator, 'remoteModeHost')->getValue($kositValidator));
         $this->assertSame(0, $this->getPrivatePropertyFromObject($kositValidator, 'remoteModePort')->getValue($kositValidator));
 
         $this->assertStringStartsWith(sys_get_temp_dir(), $this->getPrivateMethodFromObject($kositValidator, 'resolveBaseDirectory')->invokeArgs($kositValidator, []));

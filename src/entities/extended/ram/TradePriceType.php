@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\extended\ram;
  */
 class TradePriceType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $chargeAmount
      */
@@ -24,7 +25,7 @@ class TradePriceType
      * @var \horstoeko\zugferd\entities\extended\ram\TradeAllowanceChargeType[] $appliedTradeAllowanceCharge
      */
     private $appliedTradeAllowanceCharge = [
-        
+
     ];
 
     /**

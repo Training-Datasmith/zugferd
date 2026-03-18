@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use horstoeko\stringmanagement\StringUtils;
 use horstoeko\zugferd\quick\ZugferdQuickDescriptor;
 use horstoeko\zugferd\quick\ZugferdQuickDescriptorEn16931;
@@ -28,7 +30,7 @@ use phpDocumentor\Reflection\DocBlockFactory;
 use phpDocumentor\Reflection\Exception\PcreException;
 use Webmozart\Assert\InvalidArgumentException;
 
-require __DIR__ . "/../vendor/autoload.php";
+require __DIR__ . '/../vendor/autoload.php';
 
 class CustomPhpPrinter extends Printer
 {
@@ -47,7 +49,7 @@ class ExtractClass
      *
      * @var string
      */
-    protected $className = "";
+    protected $className = '';
 
     /**
      * Class + method name to ignore in inheritance check
@@ -125,13 +127,13 @@ class ExtractClass
             $result['class'] = [
                 'summary' => in_array($classDocBlock->getSummary(), ['', '0'], true) ? '' : $classDocBlock->getSummary(),
                 'description' => (string)$classDocBlock->getDescription() !== '' && (string)$classDocBlock->getDescription() !== '0' ? (string)$classDocBlock->getDescription() : '',
-                'deprecated' => $deprecatedTag === [] ? '' : (string)$deprecatedTag[0]
+                'deprecated' => $deprecatedTag === [] ? '' : (string)$deprecatedTag[0],
             ];
         } else {
             $result['class'] = [
                 'summary' => '',
                 'description' => '',
-                'deprecated' => ''
+                'deprecated' => '',
             ];
         }
 
@@ -144,7 +146,7 @@ class ExtractClass
             $parameters = [];
             $returnDetails = [
                 'type' => 'void',
-                'description' => ''
+                'description' => '',
             ];
             $methodDetails = [
                 'summary' => '',
@@ -177,7 +179,7 @@ class ExtractClass
                     if ($tag instanceof Param) {
                         $paramDescriptions[$tag->getVariableName()] = [
                             'type' => (string) $tag->getType(),
-                            'description' => (string) $tag->getDescription()
+                            'description' => (string) $tag->getDescription(),
                         ];
                     }
                 }
@@ -194,7 +196,7 @@ class ExtractClass
             foreach ($method->getParameters() as $parameter) {
                 $parameterName = $parameter->getName();
                 $parameterType = $parameter->getType();
-                $parameterTypeString = "";
+                $parameterTypeString = '';
 
                 if ($parameterType instanceof ReflectionUnionType) {
                     $types = $parameterType->getTypes();
@@ -215,14 +217,14 @@ class ExtractClass
                     'isNullable' => $parameterType && $parameterType->allowsNull(),
                     'defaultValueavailable' => $parameter->isOptional() && $parameter->isDefaultValueAvailable(),
                     'defaultValue' => $parameter->isOptional() ? ($parameter->isDefaultValueAvailable() ? $parameter->getDefaultValue() : null) : null,
-                    'description' => $paramDescriptions[$parameterName]['description'] ?? ''
+                    'description' => $paramDescriptions[$parameterName]['description'] ?? '',
                 ];
             }
 
             $result['methods'][$method->getName()] = [
                 'methodDetails' => $methodDetails,
                 'parameters' => $parameters,
-                'return' => $returnDetails
+                'return' => $returnDetails,
             ];
         }
 
@@ -290,103 +292,103 @@ class MarkDownGenerator
     {
         $metaData = $this->extractor->getArray();
 
-        $this->addLineH2("Summary");
+        $this->addLineH2('Summary');
 
         $phpPrinter = new CustomPhpPrinter();
         $phpClass = new ClassType($this->extractor->getClassBasename());
 
         if (!empty($metaData['class']['summary'])) {
-            $this->addLine($this->removeSprintfPlaceholder($metaData['class']['summary'] ?? ""))->addEmptyLine();
+            $this->addLine($this->removeSprintfPlaceholder($metaData['class']['summary'] ?? ''))->addEmptyLine();
         }
 
         if (!empty($metaData['class']['description'])) {
-            $this->addLine($this->removeSprintfPlaceholder($metaData['class']['description'] ?? ""))->addEmptyLine();
+            $this->addLine($this->removeSprintfPlaceholder($metaData['class']['description'] ?? ''))->addEmptyLine();
         }
 
         if (!empty($metaData['class']['deprecated'])) {
-            $this->addLine("> [!CAUTION]");
-            $this->addLine("> Deprecated %s", $metaData['class']['deprecated']);
+            $this->addLine('> [!CAUTION]');
+            $this->addLine('> Deprecated %s', $metaData['class']['deprecated']);
             $this->addEmptyLine();
         }
 
         $this->addExample(__DIR__ . sprintf('/md/%s.md', $this->extractor->getClassBasename()), true);
 
         if (!empty($metaData['methods'])) {
-            $this->addLineH2("Methods");
+            $this->addLineH2('Methods');
         }
 
         foreach ($metaData['methods'] as $methodName => $methodData) {
-            $this->addLineH3($methodName, $methodData["methodDetails"]["hasadditional"] === false);
+            $this->addLineH3($methodName, $methodData['methodDetails']['hasadditional'] === false);
 
-            if ($methodData["methodDetails"]["static"] === true) {
-                $this->addToLastLine('<span style="color: white; background-color: blue; padding: 0.2em 0.5em; border-radius: 0.2em; font-size: .8rem">``[static]``</span>', " ");
+            if ($methodData['methodDetails']['static'] === true) {
+                $this->addToLastLine('<span style="color: white; background-color: blue; padding: 0.2em 0.5em; border-radius: 0.2em; font-size: .8rem">``[static]``</span>', ' ');
             }
 
-            if ($methodData["methodDetails"]["abstract"] === true) {
-                $this->addToLastLine('<span style="color: white; background-color: red; padding: 0.2em 0.5em; border-radius: 0.2em; font-size: .8rem">``[abstract]``</span>', " ");
+            if ($methodData['methodDetails']['abstract'] === true) {
+                $this->addToLastLine('<span style="color: white; background-color: red; padding: 0.2em 0.5em; border-radius: 0.2em; font-size: .8rem">``[abstract]``</span>', ' ');
             }
 
-            if ($methodData["methodDetails"]["final"] === true) {
-                $this->addToLastLine('<span style="color: white; background-color: green; padding: 0.2em 0.5em; border-radius: 0.2em; font-size: .8rem">``[final]``</span>', " ");
+            if ($methodData['methodDetails']['final'] === true) {
+                $this->addToLastLine('<span style="color: white; background-color: green; padding: 0.2em 0.5em; border-radius: 0.2em; font-size: .8rem">``[final]``</span>', ' ');
             }
 
-            if ($methodData["methodDetails"]["hasadditional"] === true) {
+            if ($methodData['methodDetails']['hasadditional'] === true) {
                 $this->addEmptyLine();
             }
 
-            if (!empty($methodData["methodDetails"]["deprecated"])) {
-                $this->addLine("> [!CAUTION]");
-                $this->addLine("> Deprecated %s", $methodData["methodDetails"]["deprecated"]);
+            if (!empty($methodData['methodDetails']['deprecated'])) {
+                $this->addLine('> [!CAUTION]');
+                $this->addLine('> Deprecated %s', $methodData['methodDetails']['deprecated']);
                 $this->addEmptyLine();
             }
 
-            $this->addLineH4("Summary");
+            $this->addLineH4('Summary');
 
-            if (!empty($methodData["methodDetails"]["summary"])) {
-                $this->addLineItalic($this->removeSprintfPlaceholder($methodData["methodDetails"]["summary"]))->addEmptyLine();
+            if (!empty($methodData['methodDetails']['summary'])) {
+                $this->addLineItalic($this->removeSprintfPlaceholder($methodData['methodDetails']['summary']))->addEmptyLine();
             }
 
-            if (!empty($methodData["methodDetails"]["description"])) {
-                $this->addLineItalic($this->removeSprintfPlaceholder($methodData["methodDetails"]["description"]))->addEmptyLine();
+            if (!empty($methodData['methodDetails']['description'])) {
+                $this->addLineItalic($this->removeSprintfPlaceholder($methodData['methodDetails']['description']))->addEmptyLine();
             }
 
-            $this->addLineH4("Signature");
+            $this->addLineH4('Signature');
 
             $phpMethod = $phpClass->addMethod($methodName);
             $phpMethod->setPublic();
-            $phpMethod->setStatic($methodData["methodDetails"]["static"] === true);
-            $phpMethod->setAbstract($methodData["methodDetails"]["abstract"] === true);
-            $phpMethod->setFinal($methodData["methodDetails"]["final"] === true);
-            $phpMethod->setReturnType($this->fixPhpType($methodData["return"]["type"]));
+            $phpMethod->setStatic($methodData['methodDetails']['static'] === true);
+            $phpMethod->setAbstract($methodData['methodDetails']['abstract'] === true);
+            $phpMethod->setFinal($methodData['methodDetails']['final'] === true);
+            $phpMethod->setReturnType($this->fixPhpType($methodData['return']['type']));
             //$phpMethod->setBody(null);
 
-            foreach ($methodData["parameters"] as $parameter) {
+            foreach ($methodData['parameters'] as $parameter) {
                 $phpParameter = $phpMethod
-                    ->addParameter($parameter["name"])
-                    ->setType($this->fixPhpType($parameter["type"]))
-                    ->setNullable($parameter["isNullable"]);
+                    ->addParameter($parameter['name'])
+                    ->setType($this->fixPhpType($parameter['type']))
+                    ->setNullable($parameter['isNullable']);
 
                 if ($parameter['defaultValueavailable'] === true) {
-                    $phpParameter->setDefaultValue($parameter["defaultValue"]);
+                    $phpParameter->setDefaultValue($parameter['defaultValue']);
                 }
             }
 
-            $this->addLineRaw("```php");
+            $this->addLineRaw('```php');
             $this->addLineRaw($phpPrinter->printMethod($phpMethod));
-            $this->addLineRaw("```");
+            $this->addLineRaw('```');
 
-            if (!empty($methodData["parameters"])) {
-                $this->addLineH4("Parameters");
-                $this->addLine("| Name | Type | Allows Null | Description");
-                $this->addLine("| :------ | :------ | :-----: | :------");
+            if (!empty($methodData['parameters'])) {
+                $this->addLineH4('Parameters');
+                $this->addLine('| Name | Type | Allows Null | Description');
+                $this->addLine('| :------ | :------ | :-----: | :------');
 
-                foreach ($methodData["parameters"] as $parameter) {
+                foreach ($methodData['parameters'] as $parameter) {
                     $this->addLine(
-                        "| %s | %s | %s | %s",
-                        $parameter["name"],
-                        $parameter["type"],
-                        $this->boolToMarkDown($parameter["isNullable"] ? "Yes" : "No"),
-                        $parameter["description"] ?? "",
+                        '| %s | %s | %s | %s',
+                        $parameter['name'],
+                        $parameter['type'],
+                        $this->boolToMarkDown($parameter['isNullable'] ? 'Yes' : 'No'),
+                        $parameter['description'] ?? '',
                     );
                 }
 
@@ -395,9 +397,9 @@ class MarkDownGenerator
                 $this->addEmptyLine();
             }
 
-            if ($methodData["return"]["type"] && $methodData["return"]["type"] != "void") {
-                $this->addLineH4("Returns");
-                $this->addLineRaw(sprintf("Returns a value of type __%s__", $methodData["return"]["type"]));
+            if ($methodData['return']['type'] && $methodData['return']['type'] != 'void') {
+                $this->addLineH4('Returns');
+                $this->addLineRaw(sprintf('Returns a value of type __%s__', $methodData['return']['type']));
                 $this->addEmptyLine();
             }
 
@@ -463,7 +465,7 @@ class MarkDownGenerator
      */
     private function addEmptyLine(): MarkDownGenerator
     {
-        $this->lines[] = "";
+        $this->lines[] = '';
 
         return $this;
     }
@@ -477,7 +479,7 @@ class MarkDownGenerator
      */
     private function addLineH2(string $string, bool $newLine = true): MarkDownGenerator
     {
-        $this->addLine("## %s", $string);
+        $this->addLine('## %s', $string);
 
         if ($newLine) {
             $this->addEmptyLine();
@@ -495,7 +497,7 @@ class MarkDownGenerator
      */
     private function addLineH3(string $string, bool $newLine = true): MarkDownGenerator
     {
-        $this->addLine("### %s", $string);
+        $this->addLine('### %s', $string);
 
         if ($newLine) {
             $this->addEmptyLine();
@@ -513,7 +515,7 @@ class MarkDownGenerator
      */
     private function addLineH4(string $string, bool $newLine = true): MarkDownGenerator
     {
-        $this->addLine("#### %s", $string);
+        $this->addLine('#### %s', $string);
 
         if ($newLine) {
             $this->addEmptyLine();
@@ -530,7 +532,7 @@ class MarkDownGenerator
      * @param mixed ...$args
      * @return MarkDownGenerator
      */
-    private function addToLastLine(string $string, string $delimiter = "", ...$args): MarkDownGenerator
+    private function addToLastLine(string $string, string $delimiter = '', ...$args): MarkDownGenerator
     {
         if ($this->lines === []) {
             return $this->addLine($string, ...$args);
@@ -551,7 +553,7 @@ class MarkDownGenerator
      */
     private function addLineItalic(string $string, ...$args): MarkDownGenerator
     {
-        return $this->addLine(sprintf("_%s_", $string), ...$args);
+        return $this->addLine(sprintf('_%s_', $string), ...$args);
     }
 
     /**
@@ -574,9 +576,9 @@ class MarkDownGenerator
         }
 
         if ($isClass) {
-            $this->addLineH2("Example");
+            $this->addLineH2('Example');
         } else {
-            $this->addLineH4("Example");
+            $this->addLineH4('Example');
         }
 
         $exampleFileContent = str_replace(["\r\n", "\r", "\n"], "\n", $exampleFileContent);
@@ -598,9 +600,9 @@ class MarkDownGenerator
      */
     private function sanatizeString(string $string): string
     {
-        $string = str_replace("\n", "<br/>", $string);
-        $string = str_replace("__BT-, From __", "", $string);
-        $string = str_replace("__BT-, From", "__BT-??, From", $string);
+        $string = str_replace("\n", '<br/>', $string);
+        $string = str_replace('__BT-, From __', '', $string);
+        $string = str_replace('__BT-, From', '__BT-??, From', $string);
 
         return trim($string);
     }
@@ -613,7 +615,7 @@ class MarkDownGenerator
      */
     private function removeSprintfPlaceholder(string $string): string
     {
-        return str_replace("%", "", $string);
+        return str_replace('%', '', $string);
     }
 
     /**
@@ -647,7 +649,7 @@ class MarkDownGenerator
      */
     private function boolToMarkDown(string $boolText): string
     {
-        return strcasecmp($boolText, "no") === 0 ? ":x:" : ":heavy_check_mark:";
+        return strcasecmp($boolText, 'no') === 0 ? ':x:' : ':heavy_check_mark:';
     }
 }
 

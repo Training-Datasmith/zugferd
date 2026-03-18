@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\basic\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\basic\ram;
  */
 class TradeAllowanceChargeType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\IndicatorType $chargeIndicator
      */

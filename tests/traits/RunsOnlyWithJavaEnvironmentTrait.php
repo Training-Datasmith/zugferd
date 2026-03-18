@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\traits;
 
-use Throwable;
 use Symfony\Component\Process\ExecutableFinder;
+use Throwable;
 
 trait RunsOnlyWithJavaEnvironmentTrait
 {

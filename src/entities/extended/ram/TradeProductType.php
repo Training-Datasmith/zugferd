@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\extended\ram;
  */
 class TradeProductType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iD
      */
@@ -54,7 +55,7 @@ class TradeProductType
      * @var \horstoeko\zugferd\entities\extended\udt\IDType[] $batchID
      */
     private $batchID = [
-        
+
     ];
 
     /**
@@ -71,21 +72,21 @@ class TradeProductType
      * @var \horstoeko\zugferd\entities\extended\ram\ProductCharacteristicType[] $applicableProductCharacteristic
      */
     private $applicableProductCharacteristic = [
-        
+
     ];
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ProductClassificationType[] $designatedProductClassification
      */
     private $designatedProductClassification = [
-        
+
     ];
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeProductInstanceType[] $individualTradeProductInstance
      */
     private $individualTradeProductInstance = [
-        
+
     ];
 
     /**
@@ -97,7 +98,7 @@ class TradeProductType
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedProductType[] $includedReferencedProduct
      */
     private $includedReferencedProduct = [
-        
+
     ];
 
     /**

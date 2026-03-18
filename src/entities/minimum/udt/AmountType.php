@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\minimum\udt;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\minimum\udt;
  */
 class AmountType
 {
-
     /**
      * @var float $__value
      */

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  */
 class HeaderTradeSettlementType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType $creditorReferenceID
      */
@@ -39,14 +40,14 @@ class HeaderTradeSettlementType
      * @var \horstoeko\zugferd\entities\en16931\ram\TradeSettlementPaymentMeansType[] $specifiedTradeSettlementPaymentMeans
      */
     private $specifiedTradeSettlementPaymentMeans = [
-        
+
     ];
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\TradeTaxType[] $applicableTradeTax
      */
     private $applicableTradeTax = [
-        
+
     ];
 
     /**
@@ -58,7 +59,7 @@ class HeaderTradeSettlementType
      * @var \horstoeko\zugferd\entities\en16931\ram\TradeAllowanceChargeType[] $specifiedTradeAllowanceCharge
      */
     private $specifiedTradeAllowanceCharge = [
-        
+
     ];
 
     /**
@@ -75,7 +76,7 @@ class HeaderTradeSettlementType
      * @var \horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType[] $invoiceReferencedDocument
      */
     private $invoiceReferencedDocument = [
-        
+
     ];
 
     /**

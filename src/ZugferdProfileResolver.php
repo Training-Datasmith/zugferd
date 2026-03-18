@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -9,12 +11,11 @@
 
 namespace horstoeko\zugferd;
 
-use Throwable;
-use SimpleXMLElement;
-use horstoeko\zugferd\ZugferdProfiles;
 use horstoeko\zugferd\exception\ZugferdUnknownProfileException;
 use horstoeko\zugferd\exception\ZugferdUnknownProfileIdException;
 use horstoeko\zugferd\exception\ZugferdUnknownXmlContentException;
+use SimpleXMLElement;
+use Throwable;
 
 /**
  * Class representing the profile resolver
@@ -40,8 +41,8 @@ class ZugferdProfileResolver
         try {
             libxml_clear_errors();
             $xmldocument = new SimpleXMLElement($xmlContent);
-            $xmldocument->registerXPathNamespace("rsm", "urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100");
-            $xmldocument->registerXPathNamespace("ram", "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100");
+            $xmldocument->registerXPathNamespace('rsm', 'urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100');
+            $xmldocument->registerXPathNamespace('ram', 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100');
             $typeelement = $xmldocument->xpath('/rsm:CrossIndustryInvoice/rsm:ExchangedDocumentContext/ram:GuidelineSpecifiedDocumentContextParameter/ram:ID');
             if (libxml_get_last_error()) {
                 throw new ZugferdUnknownXmlContentException();
@@ -58,7 +59,7 @@ class ZugferdProfileResolver
         }
 
         foreach (ZugferdProfiles::PROFILEDEF as $profile => $profiledef) {
-            if ($typeelement[0] == $profiledef["contextparameter"]) {
+            if ($typeelement[0] == $profiledef['contextparameter']) {
                 return [$profile, $profiledef];
             }
 

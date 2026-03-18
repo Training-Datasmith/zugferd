@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\extended\ram;
  */
 class AdvancePaymentType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $paidAmount
      */
@@ -24,7 +25,7 @@ class AdvancePaymentType
      * @var \horstoeko\zugferd\entities\extended\ram\TradeTaxType[] $includedTradeTax
      */
     private $includedTradeTax = [
-        
+
     ];
 
     /**

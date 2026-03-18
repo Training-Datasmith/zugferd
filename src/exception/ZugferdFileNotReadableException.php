@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -27,6 +29,6 @@ class ZugferdFileNotReadableException extends ZugferdBaseException
      */
     public function __construct(string $filename, ?Throwable $previous = null)
     {
-        parent::__construct(sprintf("The file %s is not readable", $filename), ZugferdExceptionCodes::FILENOTFOUND, $previous);
+        parent::__construct(sprintf('The file %s is not readable', $filename), ZugferdExceptionCodes::FILENOTFOUND, $previous);
     }
 }

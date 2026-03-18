@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\basic\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\basic\ram;
  */
 class LineTradeSettlementType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradeTaxType $applicableTradeTax
      */
@@ -24,7 +25,7 @@ class LineTradeSettlementType
      * @var \horstoeko\zugferd\entities\basic\ram\TradeAllowanceChargeType[] $specifiedTradeAllowanceCharge
      */
     private $specifiedTradeAllowanceCharge = [
-        
+
     ];
 
     /**

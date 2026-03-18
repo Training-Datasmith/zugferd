@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -56,28 +58,28 @@ class ZugferdSettings
      *
      * @var string
      */
-    protected static $decimalSeparator = ".";
+    protected static $decimalSeparator = '.';
 
     /**
      * The thousands seperator
      *
      * @var string
      */
-    protected static $thousandsSeparator = "";
+    protected static $thousandsSeparator = '';
 
     /**
      * The filename of a ICC profile
      *
      * @var string
      */
-    protected static $iccProfileFilename = "sRGB2014.icc";
+    protected static $iccProfileFilename = 'sRGB2014.icc';
 
     /**
      * The filename of the XMP meta data
      *
      * @var string
      */
-    protected static $xmpMetaDataFilename = "facturx_extension_schema.xmp";
+    protected static $xmpMetaDataFilename = 'facturx_extension_schema.xmp';
 
     /**
      * Node paths which present an amount. Used for special amount formatting
@@ -91,7 +93,7 @@ class ZugferdSettings
      *
      * @var string
      */
-    protected static $serializerCacheDirectory = "";
+    protected static $serializerCacheDirectory = '';
 
     /**
      * Get the number of decimals to use for amount values
@@ -294,7 +296,7 @@ class ZugferdSettings
      */
     public static function getRootDirectory(): string
     {
-        return PathUtils::combineAllPaths(__DIR__, "..");
+        return PathUtils::combineAllPaths(__DIR__, '..');
     }
 
     /**
@@ -302,7 +304,7 @@ class ZugferdSettings
      */
     public static function getSourceDirectory(): string
     {
-        return PathUtils::combineAllPaths(static::getRootDirectory(), "src");
+        return PathUtils::combineAllPaths(static::getRootDirectory(), 'src');
     }
 
     /**
@@ -310,7 +312,7 @@ class ZugferdSettings
      */
     public static function getAssetDirectory(): string
     {
-        return PathUtils::combineAllPaths(static::getSourceDirectory(), "assets");
+        return PathUtils::combineAllPaths(static::getSourceDirectory(), 'assets');
     }
 
     /**
@@ -318,7 +320,7 @@ class ZugferdSettings
      */
     public static function getYamlDirectory(): string
     {
-        return PathUtils::combineAllPaths(static::getSourceDirectory(), "yaml");
+        return PathUtils::combineAllPaths(static::getSourceDirectory(), 'yaml');
     }
 
     /**
@@ -326,7 +328,7 @@ class ZugferdSettings
      */
     public static function getValidationDirectory(): string
     {
-        return PathUtils::combineAllPaths(static::getSourceDirectory(), "validation");
+        return PathUtils::combineAllPaths(static::getSourceDirectory(), 'validation');
     }
 
     /**
@@ -334,7 +336,7 @@ class ZugferdSettings
      */
     public static function getSchemaDirectory(): string
     {
-        return PathUtils::combineAllPaths(static::getSourceDirectory(), "schema");
+        return PathUtils::combineAllPaths(static::getSourceDirectory(), 'schema');
     }
 
     /**
@@ -342,7 +344,7 @@ class ZugferdSettings
      */
     public static function getSchematronDirectory(): string
     {
-        return PathUtils::combineAllPaths(static::getSchemaDirectory(), "schematron");
+        return PathUtils::combineAllPaths(static::getSchemaDirectory(), 'schematron');
     }
 
     /**
@@ -350,7 +352,7 @@ class ZugferdSettings
      */
     public static function getXsltDirectory(): string
     {
-        return PathUtils::combineAllPaths(static::getSchemaDirectory(), "xslt");
+        return PathUtils::combineAllPaths(static::getSchemaDirectory(), 'xslt');
     }
 
     /**

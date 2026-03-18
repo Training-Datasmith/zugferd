@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -22,7 +24,6 @@ namespace horstoeko\zugferd\codelistsenum;
  */
 enum ZugferdReferenceCodeQualifiers: string
 {
-
     /**
      * Accident reference number (APP)
      *

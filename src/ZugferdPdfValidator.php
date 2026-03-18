@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -9,17 +11,17 @@
 
 namespace horstoeko\zugferd;
 
-use LogicException;
-use Throwable;
-use ZipArchive;
 use horstoeko\stringmanagement\PathUtils;
 use horstoeko\stringmanagement\StringUtils;
 use horstoeko\zugferd\exception\ZugferdFileNotFoundException;
 use horstoeko\zugferd\exception\ZugferdFileNotReadableException;
+use LogicException;
 use Symfony\Component\Finder\Exception\DirectoryNotFoundException;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Process\ExecutableFinder;
 use Symfony\Component\Process\Process;
+use Throwable;
+use ZipArchive;
 
 /**
  * Class representing the validator against PDF files using VeraPDF.
@@ -59,14 +61,14 @@ class ZugferdPdfValidator
      *
      * @var string
      */
-    private $validatorDownloadUrl = "https://software.verapdf.org/rel/verapdf-installer.zip";
+    private $validatorDownloadUrl = 'https://software.verapdf.org/rel/verapdf-installer.zip';
 
     /**
      * The filename of the validation application zip archive
      *
      * @var string $validatorAppZipFilename
      */
-    private $validatorAppZipFilename = "verapdf-installer.zip";
+    private $validatorAppZipFilename = 'verapdf-installer.zip';
 
     /**
      * The ruleset to use
@@ -74,14 +76,14 @@ class ZugferdPdfValidator
      *
      * @var string
      */
-    private $validatorRuleset = "3a";
+    private $validatorRuleset = '3a';
 
     /**
      * The temporary filename which contains the PDF data to validate
      *
      * @var string
      */
-    private $fileToValidateFilename = "";
+    private $fileToValidateFilename = '';
 
     /**
      * Internal flag which indicates that the cleanup of the base directory is disables
@@ -340,7 +342,7 @@ class ZugferdPdfValidator
     {
         $baseDirectorySuffix = md5($this->validatorDownloadUrl);
 
-        $baseDirectory = PathUtils::combinePathWithPath($this->baseDirectory, sprintf("verapdf-%s", $baseDirectorySuffix));
+        $baseDirectory = PathUtils::combinePathWithPath($this->baseDirectory, sprintf('verapdf-%s', $baseDirectorySuffix));
 
         if (!is_dir($baseDirectory)) {
             @mkdir($baseDirectory);
@@ -370,7 +372,7 @@ class ZugferdPdfValidator
      */
     private function resetFileToValidateFilename(): void
     {
-        $this->fileToValidateFilename = "";
+        $this->fileToValidateFilename = '';
     }
 
     /**
@@ -398,14 +400,14 @@ class ZugferdPdfValidator
      *
      * @param  string|Throwable $error
      */
-    private function addToMessageBag($error, string $messageType = ""): void
+    private function addToMessageBag($error, string $messageType = ''): void
     {
         $messageType = StringUtils::stringIsNullOrEmpty($messageType) ? static::MSG_TYPE_INTERNALERROR : $messageType;
 
         if (is_string($error)) {
-            $this->messageBag[] = ["type" => $messageType, "message" => $error];
+            $this->messageBag[] = ['type' => $messageType, 'message' => $error];
         } elseif ($error instanceof Throwable) {
-            $this->messageBag[] = ["type" => $messageType, "message" => $error->getMessage()];
+            $this->messageBag[] = ['type' => $messageType, 'message' => $error->getMessage()];
         }
     }
 
@@ -416,7 +418,7 @@ class ZugferdPdfValidator
     {
         return array_map(
             function (array $data) {
-                return $data["message"];
+                return $data['message'];
             },
             array_filter(
                 $this->messageBag,
@@ -537,19 +539,19 @@ class ZugferdPdfValidator
     private function checkRequirements(): bool
     {
         if (is_null($this->pdfContent)) {
-            $this->addToMessageBag("You must specify the content or a filename of a PDF to validate");
+            $this->addToMessageBag('You must specify the content or a filename of a PDF to validate');
             return false;
         }
 
         if (!extension_loaded('zip')) {
-            $this->addToMessageBag("ZIP extension not installed");
+            $this->addToMessageBag('ZIP extension not installed');
             return false;
         }
 
         $executableFinder = new ExecutableFinder();
 
         if (is_null($executableFinder->find('java'))) {
-            $this->addToMessageBag("JAVA not installed on this machine");
+            $this->addToMessageBag('JAVA not installed on this machine');
             return false;
         }
 
@@ -562,7 +564,7 @@ class ZugferdPdfValidator
     private function downloadRequiredFiles(): bool
     {
         if (!$this->runFileDownload($this->validatorDownloadUrl, $this->resolveAppZipFilename())) {
-            $this->addToMessageBag(sprintf("Unable to download from %s containing the JAVA-Application", $this->validatorDownloadUrl));
+            $this->addToMessageBag(sprintf('Unable to download from %s containing the JAVA-Application', $this->validatorDownloadUrl));
             return false;
         }
 
@@ -577,7 +579,7 @@ class ZugferdPdfValidator
         $validatorAppFile = $this->resolveAppZipFilename();
 
         if (!$this->unpackRequiredFile($validatorAppFile, true)) {
-            $this->addToMessageBag(sprintf("Unable to unpack archive %s containing the JAVA-Application", $validatorAppFile));
+            $this->addToMessageBag(sprintf('Unable to unpack archive %s containing the JAVA-Application', $validatorAppFile));
             return false;
         }
 
@@ -604,7 +606,7 @@ class ZugferdPdfValidator
         $zipArchive = new ZipArchive();
 
         if ($zipArchive->open($zipFilename) !== true) {
-            $this->addToMessageBag(sprintf("Failed to open ZIP archive %s", $zipFilename));
+            $this->addToMessageBag(sprintf('Failed to open ZIP archive %s', $zipFilename));
             return false;
         }
 
@@ -624,7 +626,7 @@ class ZugferdPdfValidator
 
         if (!$zipArchive->extractTo($this->resolveBaseDirectory())) {
             $zipArchive->close();
-            $this->addToMessageBag(sprintf("Failed to extract ZIP archive %s", $zipFilename));
+            $this->addToMessageBag(sprintf('Failed to extract ZIP archive %s', $zipFilename));
             return false;
         }
 
@@ -641,7 +643,7 @@ class ZugferdPdfValidator
         $zipArchive = new ZipArchive();
 
         if ($zipArchive->open($zipFilename) !== true) {
-            $this->addToMessageBag(sprintf("Failed to open ZIP archive %s", $zipFilename));
+            $this->addToMessageBag(sprintf('Failed to open ZIP archive %s', $zipFilename));
             return false;
         }
 
@@ -660,7 +662,7 @@ class ZugferdPdfValidator
 
             if (!copy('zip://' . realpath($zipFilename) . '#' . $filenameInZip, $realfilename)) {
                 $zipArchive->close();
-                $this->addToMessageBag(sprintf("Failed to extract %s", $filenameInZip));
+                $this->addToMessageBag(sprintf('Failed to extract %s', $filenameInZip));
                 return false;
             }
         }
@@ -686,7 +688,7 @@ class ZugferdPdfValidator
         $installerJarFinder->files()->name('verapdf-izpack-installer*.jar')->in($this->resolveBaseDirectory());
 
         if ($installerJarFinder->hasResults() === false) {
-            $this->addToMessageBag("There was no installer in the form of a JAR-File found");
+            $this->addToMessageBag('There was no installer in the form of a JAR-File found');
             return false;
         }
 
@@ -715,7 +717,7 @@ class ZugferdPdfValidator
                 )
             ) === false
         ) {
-            $this->addToMessageBag("Failed to create install script");
+            $this->addToMessageBag('Failed to create install script');
             return false;
         }
 
@@ -732,7 +734,7 @@ class ZugferdPdfValidator
         ];
 
         if ($this->runProcess($installerJarOptions, $this->resolveBaseDirectory()) === false) {
-            $this->addToMessageBag("Failed to run installer");
+            $this->addToMessageBag('Failed to run installer');
             return false;
         }
 
@@ -745,14 +747,14 @@ class ZugferdPdfValidator
     private function performValidation(): bool
     {
         if (!file_exists($this->resolveValidatorExecutable())) {
-            $this->addToMessageBag("Validation application not found");
+            $this->addToMessageBag('Validation application not found');
             return false;
         }
 
         $this->resetFileToValidateFilename();
 
         if (file_put_contents($this->resolveFileToValidateFilename(), $this->pdfContent) === false) {
-            $this->addToMessageBag("Cannot create temporary file which contains the PDF to validate");
+            $this->addToMessageBag('Cannot create temporary file which contains the PDF to validate');
             return false;
         }
 
@@ -781,49 +783,49 @@ class ZugferdPdfValidator
         $validatorExecutableOutputObject = json_decode($validatorExecutableOutput);
 
         if ($validatorExecutableOutputObject === null && json_last_error() !== JSON_ERROR_NONE) {
-            $this->addToMessageBag(sprintf("Cannot decode JSON result. Error %s", json_last_error_msg()), static::MSG_TYPE_VALIDATIONERROR);
+            $this->addToMessageBag(sprintf('Cannot decode JSON result. Error %s', json_last_error_msg()), static::MSG_TYPE_VALIDATIONERROR);
             return false;
         }
 
         if (!isset($validatorExecutableOutputObject->report)) {
-            $this->addToMessageBag("Invalid report response - no report property found", static::MSG_TYPE_VALIDATIONERROR);
+            $this->addToMessageBag('Invalid report response - no report property found', static::MSG_TYPE_VALIDATIONERROR);
             return false;
         }
 
         if (!isset($validatorExecutableOutputObject->report->jobs)) {
-            $this->addToMessageBag("Invalid report response - no jobs property found", static::MSG_TYPE_VALIDATIONERROR);
+            $this->addToMessageBag('Invalid report response - no jobs property found', static::MSG_TYPE_VALIDATIONERROR);
             return false;
         }
 
         if (!is_array($validatorExecutableOutputObject->report->jobs)) {
-            $this->addToMessageBag("Invalid report response - jobs property is not an array", static::MSG_TYPE_VALIDATIONERROR);
+            $this->addToMessageBag('Invalid report response - jobs property is not an array', static::MSG_TYPE_VALIDATIONERROR);
             return false;
         }
 
         if (count($validatorExecutableOutputObject->report->jobs) != 1) {
-            $this->addToMessageBag("Invalid report response - jobs property should be an array with one element", static::MSG_TYPE_VALIDATIONERROR);
+            $this->addToMessageBag('Invalid report response - jobs property should be an array with one element', static::MSG_TYPE_VALIDATIONERROR);
             return false;
         }
 
         $validatorExecutableOutputJobObject = $validatorExecutableOutputObject->report->jobs[0];
 
         if (!isset($validatorExecutableOutputJobObject->validationResult)) {
-            $this->addToMessageBag("Invalid report response - job has not a validationResult property", static::MSG_TYPE_VALIDATIONERROR);
+            $this->addToMessageBag('Invalid report response - job has not a validationResult property', static::MSG_TYPE_VALIDATIONERROR);
             return false;
         }
 
         if (!isset($validatorExecutableOutputJobObject->validationResult->details)) {
-            $this->addToMessageBag("Invalid report response - job has not a details property", static::MSG_TYPE_VALIDATIONERROR);
+            $this->addToMessageBag('Invalid report response - job has not a details property', static::MSG_TYPE_VALIDATIONERROR);
             return false;
         }
 
         if (!isset($validatorExecutableOutputJobObject->validationResult->details->failedRules)) {
-            $this->addToMessageBag("Invalid report response - job has not a failedRules property", static::MSG_TYPE_VALIDATIONERROR);
+            $this->addToMessageBag('Invalid report response - job has not a failedRules property', static::MSG_TYPE_VALIDATIONERROR);
             return false;
         }
 
         if (!isset($validatorExecutableOutputJobObject->validationResult->details->failedChecks)) {
-            $this->addToMessageBag("Invalid report response - job has not a failedChecks property", static::MSG_TYPE_VALIDATIONERROR);
+            $this->addToMessageBag('Invalid report response - job has not a failedChecks property', static::MSG_TYPE_VALIDATIONERROR);
             return false;
         }
 
@@ -833,7 +835,7 @@ class ZugferdPdfValidator
 
         $this->addToMessageBag(
             sprintf(
-                "Validation failed. Failed rules: %s, Failed Checks: %s",
+                'Validation failed. Failed rules: %s, Failed Checks: %s',
                 $validatorExecutableOutputJobObject->validationResult->details->failedRules,
                 $validatorExecutableOutputJobObject->validationResult->details->failedChecks
             ),
@@ -843,7 +845,7 @@ class ZugferdPdfValidator
         foreach ($validatorExecutableOutputJobObject->validationResult->details->ruleSummaries ?? [] as $ruleSummary) {
             $this->addToMessageBag(
                 sprintf(
-                    "%s, %s, %s --> %s",
+                    '%s, %s, %s --> %s',
                     $ruleSummary->specification,
                     $ruleSummary->clause,
                     $ruleSummary->object,
@@ -884,7 +886,7 @@ class ZugferdPdfValidator
         $objects = scandir($directoryToRemove);
 
         foreach ($objects as $object) {
-            if ($object !== "." && $object !== "..") {
+            if ($object !== '.' && $object !== '..') {
                 $fullFilename = PathUtils::combinePathWithFile($directoryToRemove, $object);
                 if (is_dir($fullFilename) && !is_link($fullFilename)) {
                     $this->cleanupBaseDirectoryInternal($fullFilename);

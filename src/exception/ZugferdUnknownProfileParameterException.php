@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -27,6 +29,6 @@ class ZugferdUnknownProfileParameterException extends ZugferdBaseException
      */
     public function __construct(string $profileParameter, ?Throwable $previous = null)
     {
-        parent::__construct(sprintf("The profile parameter %s is uknown", $profileParameter), ZugferdExceptionCodes::UNKNOWNPROFILEPARAMETER, $previous);
+        parent::__construct(sprintf('The profile parameter %s is uknown', $profileParameter), ZugferdExceptionCodes::UNKNOWNPROFILEPARAMETER, $previous);
     }
 }

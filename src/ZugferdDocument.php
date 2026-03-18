@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -15,8 +17,6 @@ use horstoeko\stringmanagement\PathUtils;
 use horstoeko\zugferd\exception\ZugferdUnknownProfileIdException;
 use horstoeko\zugferd\exception\ZugferdUnknownProfileParameterException;
 use horstoeko\zugferd\jms\ZugferdTypesHandler;
-use horstoeko\zugferd\ZugferdObjectHelper;
-use horstoeko\zugferd\ZugferdProfileResolver;
 use JMS\Serializer\Exception\InvalidArgumentException;
 use JMS\Serializer\Exception\RuntimeException;
 use JMS\Serializer\Handler\HandlerRegistryInterface;
@@ -192,45 +192,45 @@ class ZugferdDocument
         $this->serializerBuilder->addMetadataDir(
             PathUtils::combineAllPaths(
                 ZugferdSettings::getYamlDirectory(),
-                $this->getProfileDefinitionParameter("name"),
+                $this->getProfileDefinitionParameter('name'),
                 'qdt'
             ),
             sprintf(
                 'horstoeko\zugferd\entities\%s\qdt',
-                $this->getProfileDefinitionParameter("name")
+                $this->getProfileDefinitionParameter('name')
             )
         );
         $this->serializerBuilder->addMetadataDir(
             PathUtils::combineAllPaths(
                 ZugferdSettings::getYamlDirectory(),
-                $this->getProfileDefinitionParameter("name"),
+                $this->getProfileDefinitionParameter('name'),
                 'ram'
             ),
             sprintf(
                 'horstoeko\zugferd\entities\%s\ram',
-                $this->getProfileDefinitionParameter("name")
+                $this->getProfileDefinitionParameter('name')
             )
         );
         $this->serializerBuilder->addMetadataDir(
             PathUtils::combineAllPaths(
                 ZugferdSettings::getYamlDirectory(),
-                $this->getProfileDefinitionParameter("name"),
+                $this->getProfileDefinitionParameter('name'),
                 'rsm'
             ),
             sprintf(
                 'horstoeko\zugferd\entities\%s\rsm',
-                $this->getProfileDefinitionParameter("name")
+                $this->getProfileDefinitionParameter('name')
             )
         );
         $this->serializerBuilder->addMetadataDir(
             PathUtils::combineAllPaths(
                 ZugferdSettings::getYamlDirectory(),
-                $this->getProfileDefinitionParameter("name"),
+                $this->getProfileDefinitionParameter('name'),
                 'udt'
             ),
             sprintf(
                 'horstoeko\zugferd\entities\%s\udt',
-                $this->getProfileDefinitionParameter("name")
+                $this->getProfileDefinitionParameter('name')
             )
         );
 
@@ -264,7 +264,7 @@ class ZugferdDocument
      */
     public function deserialize($xmlContent)
     {
-        $this->invoiceObject = $this->getSerializer()->deserialize($xmlContent, 'horstoeko\zugferd\entities\\' . $this->getProfileDefinitionParameter("name") . '\rsm\CrossIndustryInvoice', 'xml');
+        $this->invoiceObject = $this->getSerializer()->deserialize($xmlContent, 'horstoeko\zugferd\entities\\' . $this->getProfileDefinitionParameter('name') . '\rsm\CrossIndustryInvoice', 'xml');
 
         return $this->invoiceObject;
     }

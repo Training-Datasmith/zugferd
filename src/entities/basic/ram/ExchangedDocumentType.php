@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\basic\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\basic\ram;
  */
 class ExchangedDocumentType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\IDType $iD
      */
@@ -29,7 +30,7 @@ class ExchangedDocumentType
      * @var \horstoeko\zugferd\entities\basic\ram\NoteType[] $includedNote
      */
     private $includedNote = [
-        
+
     ];
 
     /**

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -8,8 +10,6 @@
  */
 
 namespace horstoeko\zugferd;
-
-use stdClass;
 
 /**
  * Class representing the export of a zugferd document

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -176,8 +178,8 @@ class ZugferdPdfWriter extends PdfFpdi
     public function setPdfMetadataInfos(array &$metaDataInfos): void
     {
         if ($this->deterministicModeEnabled === true) {
-            $metaDataInfos['createdDate'] = date('Y-m-d\TH:i:s', strtotime("2000-01-01 23:59:59"));
-            $metaDataInfos['modifiedDate'] = date('Y-m-d\TH:i:s', strtotime("2000-01-01 23:59:59"));
+            $metaDataInfos['createdDate'] = date('Y-m-d\TH:i:s', strtotime('2000-01-01 23:59:59'));
+            $metaDataInfos['modifiedDate'] = date('Y-m-d\TH:i:s', strtotime('2000-01-01 23:59:59'));
         }
 
         $this->metaDataInfos = $metaDataInfos;
@@ -262,7 +264,7 @@ class ZugferdPdfWriter extends PdfFpdi
         }
 
         if ($this->deterministicModeEnabled === true) {
-            $md = @date('YmdHis', strtotime("2000-01-01 23:59:59"));
+            $md = @date('YmdHis', strtotime('2000-01-01 23:59:59'));
         } elseif (is_string($file_info['file'])) {
             $md = @date('YmdHis', filemtime($file_info['file']));
         } else {
@@ -432,8 +434,8 @@ class ZugferdPdfWriter extends PdfFpdi
     {
         parent::_puttrailer();
 
-        $created_id = md5($this->generateMetadataString("created"));
-        $modified_id = md5($this->generateMetadataString("modified"));
+        $created_id = md5($this->generateMetadataString('created'));
+        $modified_id = md5($this->generateMetadataString('modified'));
 
         $this->_put(sprintf('/ID [<%s><%s>]', $created_id, $modified_id));
     }
@@ -444,7 +446,7 @@ class ZugferdPdfWriter extends PdfFpdi
     protected function _putinfo(): void
     {
         if ($this->deterministicModeEnabled === true) {
-            $this->CreationDate = strtotime("2000-01-01 23:59:59");
+            $this->CreationDate = strtotime('2000-01-01 23:59:59');
         }
 
         parent::_putinfo();
@@ -524,7 +526,7 @@ class ZugferdPdfWriter extends PdfFpdi
      */
     protected function generateMetadataString(?string $dateType = null)
     {
-        $dateType = $dateType ?? "created";
+        $dateType = $dateType ?? 'created';
         $metaDataString = '';
 
         if (isset($this->metaDataInfos['title'])) {
@@ -535,11 +537,11 @@ class ZugferdPdfWriter extends PdfFpdi
             $metaDataString .= $this->metaDataInfos['subject'];
         }
 
-        if ($dateType === "modified" && isset($this->metaDataInfos['modifiedDate'])) {
+        if ($dateType === 'modified' && isset($this->metaDataInfos['modifiedDate'])) {
             $metaDataString .= $this->metaDataInfos['modifiedDate'];
         }
 
-        if ($dateType === "created" && isset($this->metaDataInfos['createdDate'])) {
+        if ($dateType === 'created' && isset($this->metaDataInfos['createdDate'])) {
             $metaDataString .= $this->metaDataInfos['createdDate'];
         }
 

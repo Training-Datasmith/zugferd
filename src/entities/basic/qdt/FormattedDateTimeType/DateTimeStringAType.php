@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\basic\qdt\FormattedDateTimeType;
 
 /**
@@ -7,7 +9,6 @@ namespace horstoeko\zugferd\entities\basic\qdt\FormattedDateTimeType;
  */
 class DateTimeStringAType
 {
-
     /**
      * @var string $__value
      */

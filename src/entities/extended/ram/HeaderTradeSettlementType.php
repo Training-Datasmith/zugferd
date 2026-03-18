@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\extended\ram;
  */
 class HeaderTradeSettlementType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $creditorReferenceID
      */
@@ -64,14 +65,14 @@ class HeaderTradeSettlementType
      * @var \horstoeko\zugferd\entities\extended\ram\TradeSettlementPaymentMeansType[] $specifiedTradeSettlementPaymentMeans
      */
     private $specifiedTradeSettlementPaymentMeans = [
-        
+
     ];
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeTaxType[] $applicableTradeTax
      */
     private $applicableTradeTax = [
-        
+
     ];
 
     /**
@@ -83,21 +84,21 @@ class HeaderTradeSettlementType
      * @var \horstoeko\zugferd\entities\extended\ram\TradeAllowanceChargeType[] $specifiedTradeAllowanceCharge
      */
     private $specifiedTradeAllowanceCharge = [
-        
+
     ];
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\LogisticsServiceChargeType[] $specifiedLogisticsServiceCharge
      */
     private $specifiedLogisticsServiceCharge = [
-        
+
     ];
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePaymentTermsType[] $specifiedTradePaymentTerms
      */
     private $specifiedTradePaymentTerms = [
-        
+
     ];
 
     /**
@@ -109,21 +110,21 @@ class HeaderTradeSettlementType
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $invoiceReferencedDocument
      */
     private $invoiceReferencedDocument = [
-        
+
     ];
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeAccountingAccountType[] $receivableSpecifiedTradeAccountingAccount
      */
     private $receivableSpecifiedTradeAccountingAccount = [
-        
+
     ];
 
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\AdvancePaymentType[] $specifiedAdvancePayment
      */
     private $specifiedAdvancePayment = [
-        
+
     ];
 
     /**

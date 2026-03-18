@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -27,6 +29,6 @@ class ZugferdUnknownMimetype extends ZugferdBaseException
      */
     public function __construct(?Throwable $previous = null)
     {
-        parent::__construct("No mimetype found", ZugferdExceptionCodes::UNKNOWNMIMETYPE, $previous);
+        parent::__construct('No mimetype found', ZugferdExceptionCodes::UNKNOWNMIMETYPE, $previous);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  */
 class TradeSettlementLineMonetarySummationType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\AmountType $lineTotalAmount
      */

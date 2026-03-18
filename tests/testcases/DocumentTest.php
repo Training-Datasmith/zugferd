@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\testcases;
 
+use horstoeko\zugferd\tests\TestCase;
+use horstoeko\zugferd\ZugferdDocumentBuilder;
+use horstoeko\zugferd\ZugferdProfiles;
 use ReflectionClass;
 use ReflectionProperty;
-use horstoeko\zugferd\tests\TestCase;
-use horstoeko\zugferd\ZugferdProfiles;
-use horstoeko\zugferd\ZugferdDocumentBuilder;
 
 class DocumentTest extends TestCase
 {
@@ -14,50 +16,50 @@ class DocumentTest extends TestCase
     {
         $doc = ZugferdDocumentBuilder::createNew(ZugferdProfiles::PROFILE_MINIMUM);
         $this->assertSame(ZugferdProfiles::PROFILE_MINIMUM, $doc->getProfileId());
-        $this->assertArrayHasKey("contextparameter", $doc->getProfileDefinition());
-        $this->assertArrayHasKey("name", $doc->getProfileDefinition());
-        $this->assertEquals("urn:factur-x.eu:1p0:minimum", $doc->getProfileDefinitionParameter("contextparameter"));
-        $this->assertEquals("minimum", $doc->getProfileDefinitionParameter("name"));
+        $this->assertArrayHasKey('contextparameter', $doc->getProfileDefinition());
+        $this->assertArrayHasKey('name', $doc->getProfileDefinition());
+        $this->assertEquals('urn:factur-x.eu:1p0:minimum', $doc->getProfileDefinitionParameter('contextparameter'));
+        $this->assertEquals('minimum', $doc->getProfileDefinitionParameter('name'));
     }
 
     public function testDocumentCreationBasic(): void
     {
         $doc = ZugferdDocumentBuilder::createNew(ZugferdProfiles::PROFILE_BASIC);
         $this->assertSame(ZugferdProfiles::PROFILE_BASIC, $doc->getProfileId());
-        $this->assertArrayHasKey("contextparameter", $doc->getProfileDefinition());
-        $this->assertArrayHasKey("name", $doc->getProfileDefinition());
-        $this->assertEquals("urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic", $doc->getProfileDefinitionParameter("contextparameter"));
-        $this->assertEquals("basic", $doc->getProfileDefinitionParameter("name"));
+        $this->assertArrayHasKey('contextparameter', $doc->getProfileDefinition());
+        $this->assertArrayHasKey('name', $doc->getProfileDefinition());
+        $this->assertEquals('urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic', $doc->getProfileDefinitionParameter('contextparameter'));
+        $this->assertEquals('basic', $doc->getProfileDefinitionParameter('name'));
     }
 
     public function testDocumentCreationBasicWl(): void
     {
         $doc = ZugferdDocumentBuilder::createNew(ZugferdProfiles::PROFILE_BASICWL);
         $this->assertSame(ZugferdProfiles::PROFILE_BASICWL, $doc->getProfileId());
-        $this->assertArrayHasKey("contextparameter", $doc->getProfileDefinition());
-        $this->assertArrayHasKey("name", $doc->getProfileDefinition());
-        $this->assertEquals("urn:factur-x.eu:1p0:basicwl", $doc->getProfileDefinitionParameter("contextparameter"));
-        $this->assertEquals("basicwl", $doc->getProfileDefinitionParameter("name"));
+        $this->assertArrayHasKey('contextparameter', $doc->getProfileDefinition());
+        $this->assertArrayHasKey('name', $doc->getProfileDefinition());
+        $this->assertEquals('urn:factur-x.eu:1p0:basicwl', $doc->getProfileDefinitionParameter('contextparameter'));
+        $this->assertEquals('basicwl', $doc->getProfileDefinitionParameter('name'));
     }
 
     public function testDocumentCreationEn16931(): void
     {
         $doc = ZugferdDocumentBuilder::createNew(ZugferdProfiles::PROFILE_EN16931);
         $this->assertSame(ZugferdProfiles::PROFILE_EN16931, $doc->getProfileId());
-        $this->assertArrayHasKey("contextparameter", $doc->getProfileDefinition());
-        $this->assertArrayHasKey("name", $doc->getProfileDefinition());
-        $this->assertEquals("urn:cen.eu:en16931:2017", $doc->getProfileDefinitionParameter("contextparameter"));
-        $this->assertEquals("en16931", $doc->getProfileDefinitionParameter("name"));
+        $this->assertArrayHasKey('contextparameter', $doc->getProfileDefinition());
+        $this->assertArrayHasKey('name', $doc->getProfileDefinition());
+        $this->assertEquals('urn:cen.eu:en16931:2017', $doc->getProfileDefinitionParameter('contextparameter'));
+        $this->assertEquals('en16931', $doc->getProfileDefinitionParameter('name'));
     }
 
     public function testDocumentCreationExtended(): void
     {
         $doc = ZugferdDocumentBuilder::createNew(ZugferdProfiles::PROFILE_EXTENDED);
         $this->assertSame(ZugferdProfiles::PROFILE_EXTENDED, $doc->getProfileId());
-        $this->assertArrayHasKey("contextparameter", $doc->getProfileDefinition());
-        $this->assertArrayHasKey("name", $doc->getProfileDefinition());
-        $this->assertEquals("urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended", $doc->getProfileDefinitionParameter("contextparameter"));
-        $this->assertEquals("extended", $doc->getProfileDefinitionParameter("name"));
+        $this->assertArrayHasKey('contextparameter', $doc->getProfileDefinition());
+        $this->assertArrayHasKey('name', $doc->getProfileDefinition());
+        $this->assertEquals('urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended', $doc->getProfileDefinitionParameter('contextparameter'));
+        $this->assertEquals('extended', $doc->getProfileDefinitionParameter('name'));
     }
 
     public function testDocumentInternals(): void

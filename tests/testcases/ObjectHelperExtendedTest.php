@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\testcases;
 
 use DateTime;
-use horstoeko\zugferd\tests\TestCase;
-use horstoeko\zugferd\ZugferdProfiles;
-use horstoeko\zugferd\ZugferdObjectHelper;
 use horstoeko\zugferd\exception\ZugferdUnknownDateFormatException;
+use horstoeko\zugferd\tests\TestCase;
+use horstoeko\zugferd\ZugferdObjectHelper;
+use horstoeko\zugferd\ZugferdProfiles;
 
 class ObjectHelperExtendedTest extends TestCase
 {
@@ -31,9 +33,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\qdt\DocumentCodeType
          */
-        $codeType = self::$objectHelper->getDocumentCodeType("380");
+        $codeType = self::$objectHelper->getDocumentCodeType('380');
         $this->assertNotNull($codeType);
-        $this->assertEquals("380", $codeType->value());
+        $this->assertEquals('380', $codeType->value());
     }
 
     public function testGetIdTypeWithValue(): void
@@ -41,9 +43,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\IDType
          */
-        $idtype = self::$objectHelper->getIdType("abc");
-        $this->assertEquals("abc", $idtype->value());
-        $this->assertEquals("", $idtype->getSchemeID());
+        $idtype = self::$objectHelper->getIdType('abc');
+        $this->assertEquals('abc', $idtype->value());
+        $this->assertEquals('', $idtype->getSchemeID());
     }
 
     public function testGetIdTypeWithValueAndScheme(): void
@@ -51,9 +53,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\IDType
          */
-        $idtype = self::$objectHelper->getIdType("abc", "0088");
-        $this->assertEquals("abc", $idtype->value());
-        $this->assertEquals("0088", $idtype->getSchemeID());
+        $idtype = self::$objectHelper->getIdType('abc', '0088');
+        $this->assertEquals('abc', $idtype->value());
+        $this->assertEquals('0088', $idtype->getSchemeID());
     }
 
     public function testGetIdTypeAllEmpty(): void
@@ -61,7 +63,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\IDType
          */
-        $idtype = self::$objectHelper->getIdType("", "");
+        $idtype = self::$objectHelper->getIdType('', '');
         $this->assertNull($idtype);
     }
 
@@ -79,7 +81,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\IDType
          */
-        $idtype = self::$objectHelper->getIdType("");
+        $idtype = self::$objectHelper->getIdType('');
         $this->assertNull($idtype);
     }
 
@@ -97,7 +99,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\IDType
          */
-        $idtype = self::$objectHelper->getIdType("", "0088");
+        $idtype = self::$objectHelper->getIdType('', '0088');
         $this->assertNull($idtype);
     }
 
@@ -106,8 +108,8 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\TextType
          */
-        $texttype = self::$objectHelper->getTextType("test");
-        $this->assertEquals("test", $texttype->value());
+        $texttype = self::$objectHelper->getTextType('test');
+        $this->assertEquals('test', $texttype->value());
     }
 
     public function testGetTextTypeAllEmpty(): void
@@ -115,7 +117,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\TextType
          */
-        $texttype = self::$objectHelper->getTextType("");
+        $texttype = self::$objectHelper->getTextType('');
         $this->assertNull($texttype);
     }
 
@@ -133,8 +135,8 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\TextType
          */
-        $texttype = self::$objectHelper->getCodeType("test");
-        $this->assertEquals("test", $texttype->value());
+        $texttype = self::$objectHelper->getCodeType('test');
+        $this->assertEquals('test', $texttype->value());
     }
 
     public function testGetCodeType2WithValue(): void
@@ -142,26 +144,26 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\CodeType
          */
-        $texttype = self::$objectHelper->getCodeType2("test");
-        $this->assertEquals("test", $texttype->value());
+        $texttype = self::$objectHelper->getCodeType2('test');
+        $this->assertEquals('test', $texttype->value());
         $this->assertNull($texttype->getListID());
         $this->assertNull($texttype->getListVersionID());
 
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\CodeType
          */
-        $texttype = self::$objectHelper->getCodeType2("test", "listid");
-        $this->assertEquals("test", $texttype->value());
-        $this->assertEquals("listid", $texttype->getListID());
+        $texttype = self::$objectHelper->getCodeType2('test', 'listid');
+        $this->assertEquals('test', $texttype->value());
+        $this->assertEquals('listid', $texttype->getListID());
         $this->assertNull($texttype->getListVersionID());
 
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\CodeType
          */
-        $texttype = self::$objectHelper->getCodeType2("test", "listid", "listversion");
-        $this->assertEquals("test", $texttype->value());
-        $this->assertEquals("listid", $texttype->getListID());
-        $this->assertEquals("listversion", $texttype->getListVersionID());
+        $texttype = self::$objectHelper->getCodeType2('test', 'listid', 'listversion');
+        $this->assertEquals('test', $texttype->value());
+        $this->assertEquals('listid', $texttype->getListID());
+        $this->assertEquals('listversion', $texttype->getListVersionID());
 
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\CodeType
@@ -175,7 +177,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\TextType
          */
-        $texttype = self::$objectHelper->getCodeType("");
+        $texttype = self::$objectHelper->getCodeType('');
         $this->assertNull($texttype);
     }
 
@@ -225,10 +227,10 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\NoteType
          */
-        $notetype = self::$objectHelper->getNoteType("content", "contentcode", "subjectcode");
-        $this->assertEquals("content", $notetype->getContent());
-        $this->assertEquals("subjectcode", $notetype->getSubjectCode()->value());
-        $this->assertEquals("contentcode", $notetype->getContentCode()->value());
+        $notetype = self::$objectHelper->getNoteType('content', 'contentcode', 'subjectcode');
+        $this->assertEquals('content', $notetype->getContent());
+        $this->assertEquals('subjectcode', $notetype->getSubjectCode()->value());
+        $this->assertEquals('contentcode', $notetype->getContentCode()->value());
     }
 
     public function testGetNoteTypeAllNullValue(): void
@@ -245,7 +247,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\NoteType
          */
-        $notetype = self::$objectHelper->getNoteType("", "", "");
+        $notetype = self::$objectHelper->getNoteType('', '', '');
         $this->assertNull($notetype);
     }
 
@@ -254,7 +256,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\NoteType
          */
-        $notetype = self::$objectHelper->getNoteType("", "", "subjectcode");
+        $notetype = self::$objectHelper->getNoteType('', '', 'subjectcode');
         $this->assertNull($notetype);
     }
 
@@ -264,8 +266,8 @@ class ObjectHelperExtendedTest extends TestCase
          * @var \horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType
          */
         $datetimetype = self::$objectHelper->getFormattedDateTimeType(new \DateTime());
-        $this->assertEquals((new \DateTime())->format("Ymd"), $datetimetype->getDateTimeString());
-        $this->assertEquals("102", $datetimetype->getDateTimeString()->getFormat());
+        $this->assertEquals((new \DateTime())->format('Ymd'), $datetimetype->getDateTimeString());
+        $this->assertEquals('102', $datetimetype->getDateTimeString()->getFormat());
     }
 
     public function testGetFormattedDateTimeTypeWithNullValue(): void
@@ -283,8 +285,8 @@ class ObjectHelperExtendedTest extends TestCase
          * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType
          */
         $datetimetype = self::$objectHelper->getDateTimeType(new \DateTime());
-        $this->assertEquals((new \DateTime())->format("Ymd"), $datetimetype->getDateTimeString());
-        $this->assertEquals("102", $datetimetype->getDateTimeString()->getFormat());
+        $this->assertEquals((new \DateTime())->format('Ymd'), $datetimetype->getDateTimeString());
+        $this->assertEquals('102', $datetimetype->getDateTimeString()->getFormat());
     }
 
     public function testGetDateTimeTypeWithNullValue(): void
@@ -302,8 +304,8 @@ class ObjectHelperExtendedTest extends TestCase
          * @var \horstoeko\zugferd\entities\extended\udt\DateType
          */
         $datetimetype = self::$objectHelper->getDateType(new \DateTime());
-        $this->assertEquals((new \DateTime())->format("Ymd"), $datetimetype->getDateString());
-        $this->assertEquals("102", $datetimetype->getDateString()->getFormat());
+        $this->assertEquals((new \DateTime())->format('Ymd'), $datetimetype->getDateString());
+        $this->assertEquals('102', $datetimetype->getDateString()->getFormat());
     }
 
     public function testGetDateTypeWithNullValue(): void
@@ -322,7 +324,7 @@ class ObjectHelperExtendedTest extends TestCase
          */
         $amounttype = self::$objectHelper->getAmountType(100.0);
         $this->assertEqualsWithDelta(100.0, $amounttype->value(), PHP_FLOAT_EPSILON);
-        $this->assertEquals("", $amounttype->getCurrencyID());
+        $this->assertEquals('', $amounttype->getCurrencyID());
     }
 
     public function testGetAmountTypeWithValueAndCurrency(): void
@@ -330,9 +332,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\AmountType
          */
-        $amounttype = self::$objectHelper->getAmountType(100.0, "EUR");
+        $amounttype = self::$objectHelper->getAmountType(100.0, 'EUR');
         $this->assertEqualsWithDelta(100.0, $amounttype->value(), PHP_FLOAT_EPSILON);
-        $this->assertEquals("EUR", $amounttype->getCurrencyID());
+        $this->assertEquals('EUR', $amounttype->getCurrencyID());
     }
 
     public function testGetAmountTypeAllNull(): void
@@ -349,9 +351,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\AmountType
          */
-        $amounttype = self::$objectHelper->getAmountType(100, "");
+        $amounttype = self::$objectHelper->getAmountType(100, '');
         $this->assertEqualsWithDelta(100.0, $amounttype->value(), PHP_FLOAT_EPSILON);
-        $this->assertEquals("", $amounttype->getCurrencyID());
+        $this->assertEquals('', $amounttype->getCurrencyID());
     }
 
     public function testGetAmountTypeWithNullValueAndCurrency(): void
@@ -359,7 +361,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\AmountType
          */
-        $amounttype = self::$objectHelper->getAmountType(null, "EUR");
+        $amounttype = self::$objectHelper->getAmountType(null, 'EUR');
         $this->assertNull($amounttype);
     }
 
@@ -395,9 +397,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\QuantityType
          */
-        $quantitytype = self::$objectHelper->getQuantityType(100.0, "C62");
+        $quantitytype = self::$objectHelper->getQuantityType(100.0, 'C62');
         $this->assertEqualsWithDelta(100.0, $quantitytype->value(), PHP_FLOAT_EPSILON);
-        $this->assertEquals("C62", $quantitytype->getUnitCode());
+        $this->assertEquals('C62', $quantitytype->getUnitCode());
     }
 
     public function testGetQuantityTypeAllNull(): void
@@ -414,7 +416,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\QuantityType
          */
-        $quantitytype = self::$objectHelper->getQuantityType(null, "C62");
+        $quantitytype = self::$objectHelper->getQuantityType(null, 'C62');
         $this->assertNull($quantitytype);
     }
 
@@ -432,9 +434,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\MeasureType
          */
-        $measuretype = self::$objectHelper->getMeasureType(100.0, "DAY");
+        $measuretype = self::$objectHelper->getMeasureType(100.0, 'DAY');
         $this->assertEqualsWithDelta(100.0, $measuretype->value(), PHP_FLOAT_EPSILON);
-        $this->assertEquals("DAY", $measuretype->getUnitCode());
+        $this->assertEquals('DAY', $measuretype->getUnitCode());
     }
 
     public function testGetMeasureTypeAllNull(): void
@@ -451,7 +453,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\MeasureType
          */
-        $measuretype = self::$objectHelper->getMeasureType(null, "DAY");
+        $measuretype = self::$objectHelper->getMeasureType(null, 'DAY');
         $this->assertNull($measuretype);
     }
 
@@ -478,8 +480,8 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\qdt\TaxCategoryCodeType
          */
-        $taxcategorycodetype = self::$objectHelper->getTaxCategoryCodeType("VAT");
-        $this->assertEquals("VAT", $taxcategorycodetype->value());
+        $taxcategorycodetype = self::$objectHelper->getTaxCategoryCodeType('VAT');
+        $this->assertEquals('VAT', $taxcategorycodetype->value());
     }
 
     public function testGetTaxCategoryCodeTypeAllNull(): void
@@ -496,8 +498,8 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\qdt\TaxTypeCodeType
          */
-        $taxtypecodetype = self::$objectHelper->getTaxTypeCodeType("S");
-        $this->assertEquals("S", $taxtypecodetype->value());
+        $taxtypecodetype = self::$objectHelper->getTaxTypeCodeType('S');
+        $this->assertEquals('S', $taxtypecodetype->value());
     }
 
     public function testGetTaxTypeCodeTypeAllNull(): void
@@ -514,8 +516,8 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\qdt\TimeReferenceCodeType
          */
-        $timereferencecodetype = self::$objectHelper->getTimeReferenceCodeType("REF");
-        $this->assertEquals("REF", $timereferencecodetype->value());
+        $timereferencecodetype = self::$objectHelper->getTimeReferenceCodeType('REF');
+        $this->assertEquals('REF', $timereferencecodetype->value());
     }
 
     public function testGetTimeReferenceCodeTypeAllNull(): void
@@ -532,14 +534,14 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\SpecifiedPeriodType
          */
-        $periodtype = self::$objectHelper->getSpecifiedPeriodType(new \DateTime(), new \DateTime(), new \DateTime(), "Description");
-        $this->assertEquals("Description", $periodtype->getDescription());
-        $this->assertEquals((new \DateTime())->format("Ymd"), $periodtype->getCompleteDateTime()->getDateTimeString());
-        $this->assertEquals("102", $periodtype->getCompleteDateTime()->getDateTimeString()->getFormat());
-        $this->assertEquals((new \DateTime())->format("Ymd"), $periodtype->getStartDateTime()->getDateTimeString());
-        $this->assertEquals("102", $periodtype->getStartDateTime()->getDateTimeString()->getFormat());
-        $this->assertEquals((new \DateTime())->format("Ymd"), $periodtype->getEndDateTime()->getDateTimeString());
-        $this->assertEquals("102", $periodtype->getEndDateTime()->getDateTimeString()->getFormat());
+        $periodtype = self::$objectHelper->getSpecifiedPeriodType(new \DateTime(), new \DateTime(), new \DateTime(), 'Description');
+        $this->assertEquals('Description', $periodtype->getDescription());
+        $this->assertEquals((new \DateTime())->format('Ymd'), $periodtype->getCompleteDateTime()->getDateTimeString());
+        $this->assertEquals('102', $periodtype->getCompleteDateTime()->getDateTimeString()->getFormat());
+        $this->assertEquals((new \DateTime())->format('Ymd'), $periodtype->getStartDateTime()->getDateTimeString());
+        $this->assertEquals('102', $periodtype->getStartDateTime()->getDateTimeString()->getFormat());
+        $this->assertEquals((new \DateTime())->format('Ymd'), $periodtype->getEndDateTime()->getDateTimeString());
+        $this->assertEquals('102', $periodtype->getEndDateTime()->getDateTimeString()->getFormat());
     }
 
     public function testGetSpecifiedPeriodTypeAllNull(): void
@@ -556,10 +558,10 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\BinaryObjectType
          */
-        $binaryobject = self::$objectHelper->getBinaryObjectType("data", "application/pdf", "mypdf.pdf");
-        $this->assertEquals("data", $binaryobject->value());
-        $this->assertEquals("application/pdf", $binaryobject->getMimeCode());
-        $this->assertEquals("mypdf.pdf", $binaryobject->getFilename());
+        $binaryobject = self::$objectHelper->getBinaryObjectType('data', 'application/pdf', 'mypdf.pdf');
+        $this->assertEquals('data', $binaryobject->value());
+        $this->assertEquals('application/pdf', $binaryobject->getMimeCode());
+        $this->assertEquals('mypdf.pdf', $binaryobject->getFilename());
     }
 
     public function testGetBinaryObjectTypeAllNull(): void
@@ -576,7 +578,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\BinaryObjectType
          */
-        $binaryobject = self::$objectHelper->getBinaryObjectType(null, "application/pdf", "mypdf.pdf");
+        $binaryobject = self::$objectHelper->getBinaryObjectType(null, 'application/pdf', 'mypdf.pdf');
         $this->assertNull($binaryobject);
     }
 
@@ -585,7 +587,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\BinaryObjectType
          */
-        $binaryobject = self::$objectHelper->getBinaryObjectType("data", null, "mypdf.pdf");
+        $binaryobject = self::$objectHelper->getBinaryObjectType('data', null, 'mypdf.pdf');
         $this->assertNull($binaryobject);
     }
 
@@ -594,7 +596,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\BinaryObjectType
          */
-        $binaryobject = self::$objectHelper->getBinaryObjectType("data", "application/pdf", null);
+        $binaryobject = self::$objectHelper->getBinaryObjectType('data', 'application/pdf', null);
         $this->assertNull($binaryobject);
     }
 
@@ -603,15 +605,15 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType
          */
-        $refdoctype = self::$objectHelper->getReferencedDocumentType("issuerid", "uriid", "lineid", "typecode", "name", "reftypcode", new \DateTime(), __DIR__ . "/../assets/xml_en16931_2.xml");
-        $this->assertEquals("issuerid", $refdoctype->getIssuerAssignedID()->value());
-        $this->assertEquals("uriid", $refdoctype->getURIID()->value());
-        $this->assertEquals("lineid", $refdoctype->getLineID()->value());
-        $this->assertEquals("typecode", $refdoctype->getTypeCode());
-        $this->assertEquals("name", $refdoctype->getName());
-        $this->assertEquals("reftypcode", $refdoctype->getReferenceTypeCode());
-        $this->assertEquals((new \DateTime())->format("Ymd"), $refdoctype->getFormattedIssueDateTime()->getDateTimeString());
-        $this->assertEquals("102", $refdoctype->getFormattedIssueDateTime()->getDateTimeString()->getFormat());
+        $refdoctype = self::$objectHelper->getReferencedDocumentType('issuerid', 'uriid', 'lineid', 'typecode', 'name', 'reftypcode', new \DateTime(), __DIR__ . '/../assets/xml_en16931_2.xml');
+        $this->assertEquals('issuerid', $refdoctype->getIssuerAssignedID()->value());
+        $this->assertEquals('uriid', $refdoctype->getURIID()->value());
+        $this->assertEquals('lineid', $refdoctype->getLineID()->value());
+        $this->assertEquals('typecode', $refdoctype->getTypeCode());
+        $this->assertEquals('name', $refdoctype->getName());
+        $this->assertEquals('reftypcode', $refdoctype->getReferenceTypeCode());
+        $this->assertEquals((new \DateTime())->format('Ymd'), $refdoctype->getFormattedIssueDateTime()->getDateTimeString());
+        $this->assertEquals('102', $refdoctype->getFormattedIssueDateTime()->getDateTimeString()->getFormat());
     }
 
     public function testGetReferencedDocumentTypeAllNull(): void
@@ -637,12 +639,12 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType
          */
-        $tradeparty = self::$objectHelper->getTradeParty("name", "id", "description");
-        $this->assertEquals("name", $tradeparty->getName());
+        $tradeparty = self::$objectHelper->getTradeParty('name', 'id', 'description');
+        $this->assertEquals('name', $tradeparty->getName());
         $this->assertIsArray($tradeparty->getID());
         $this->assertArrayHasKey(0, $tradeparty->getID());
-        $this->assertEquals("id", $tradeparty->getID()[0]);
-        $this->assertEquals("description", $tradeparty->getDescription());
+        $this->assertEquals('id', $tradeparty->getID()[0]);
+        $this->assertEquals('description', $tradeparty->getDescription());
     }
 
     public function testGetTradePartyNullValues(): void
@@ -659,12 +661,12 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType
          */
-        $tradeparty = self::$objectHelper->getTradePartyAllowEmpty("name", "id", "description");
-        $this->assertEquals("name", $tradeparty->getName());
+        $tradeparty = self::$objectHelper->getTradePartyAllowEmpty('name', 'id', 'description');
+        $this->assertEquals('name', $tradeparty->getName());
         $this->assertIsArray($tradeparty->getID());
         $this->assertArrayHasKey(0, $tradeparty->getID());
-        $this->assertEquals("id", $tradeparty->getID()[0]);
-        $this->assertEquals("description", $tradeparty->getDescription());
+        $this->assertEquals('id', $tradeparty->getID()[0]);
+        $this->assertEquals('description', $tradeparty->getDescription());
     }
 
     public function testGetTradePartyNullValuesWithAllowEmpty(): void
@@ -675,11 +677,11 @@ class ObjectHelperExtendedTest extends TestCase
         $tradeparty = self::$objectHelper->getTradePartyAllowEmpty(null, null, null);
         $this->assertNotNull($tradeparty);
         $this->assertNull($tradeparty->getName());
-        $this->assertEquals("", $tradeparty->getName());
+        $this->assertEquals('', $tradeparty->getName());
         $this->assertIsArray($tradeparty->getID());
         $this->assertArrayNotHasKey(0, $tradeparty->getID());
         $this->assertNull($tradeparty->getDescription());
-        $this->assertEquals("", $tradeparty->getDescription());
+        $this->assertEquals('', $tradeparty->getDescription());
     }
 
     public function testGetTradeAddressAllValues(): void
@@ -687,14 +689,14 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradeAddressType
          */
-        $tradeaddress = self::$objectHelper->getTradeAddress("lineone", "linetwo", "linethree", "00000", "city", "country", "county");
-        $this->assertEquals("lineone", $tradeaddress->getLineOne());
-        $this->assertEquals("linetwo", $tradeaddress->getLineTwo());
-        $this->assertEquals("linethree", $tradeaddress->getLineThree());
-        $this->assertEquals("00000", $tradeaddress->getPostcodeCode());
-        $this->assertEquals("city", $tradeaddress->getCityName());
-        $this->assertEquals("country", $tradeaddress->getCountryID());
-        $this->assertEquals("county", $tradeaddress->getCountrySubDivisionName());
+        $tradeaddress = self::$objectHelper->getTradeAddress('lineone', 'linetwo', 'linethree', '00000', 'city', 'country', 'county');
+        $this->assertEquals('lineone', $tradeaddress->getLineOne());
+        $this->assertEquals('linetwo', $tradeaddress->getLineTwo());
+        $this->assertEquals('linethree', $tradeaddress->getLineThree());
+        $this->assertEquals('00000', $tradeaddress->getPostcodeCode());
+        $this->assertEquals('city', $tradeaddress->getCityName());
+        $this->assertEquals('country', $tradeaddress->getCountryID());
+        $this->assertEquals('county', $tradeaddress->getCountrySubDivisionName());
     }
 
     public function testGetTradeAddressAllNull(): void
@@ -711,10 +713,10 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\LegalOrganizationType
          */
-        $legalorg = self::$objectHelper->getLegalOrganization("orgid", "orgtype", "orgname");
-        $this->assertEquals("orgid", $legalorg->getID());
-        $this->assertEquals("orgtype", $legalorg->getID()->getSchemeID());
-        $this->assertEquals("orgname", $legalorg->getTradingBusinessName());
+        $legalorg = self::$objectHelper->getLegalOrganization('orgid', 'orgtype', 'orgname');
+        $this->assertEquals('orgid', $legalorg->getID());
+        $this->assertEquals('orgtype', $legalorg->getID()->getSchemeID());
+        $this->assertEquals('orgname', $legalorg->getTradingBusinessName());
     }
 
     public function testGetLegalOrganizationAllNull(): void
@@ -731,12 +733,12 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradeContactType
          */
-        $tradecontact = self::$objectHelper->getTradeContact("personname", "departmentname", "phone", "fax", "mail");
-        $this->assertEquals("personname", $tradecontact->getPersonName());
-        $this->assertEquals("departmentname", $tradecontact->getDepartmentName());
-        $this->assertEquals("phone", $tradecontact->getTelephoneUniversalCommunication()->getCompleteNumber());
-        $this->assertEquals("fax", $tradecontact->getFaxUniversalCommunication()->getCompleteNumber());
-        $this->assertEquals("mail", $tradecontact->getEmailURIUniversalCommunication()->getURIID());
+        $tradecontact = self::$objectHelper->getTradeContact('personname', 'departmentname', 'phone', 'fax', 'mail');
+        $this->assertEquals('personname', $tradecontact->getPersonName());
+        $this->assertEquals('departmentname', $tradecontact->getDepartmentName());
+        $this->assertEquals('phone', $tradecontact->getTelephoneUniversalCommunication()->getCompleteNumber());
+        $this->assertEquals('fax', $tradecontact->getFaxUniversalCommunication()->getCompleteNumber());
+        $this->assertEquals('mail', $tradecontact->getEmailURIUniversalCommunication()->getURIID());
     }
 
     public function testGetTradeContactAllNull(): void
@@ -753,10 +755,10 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType
          */
-        $commtype = self::$objectHelper->getUniversalCommunicationType("number", "uriid", "smtp");
-        $this->assertEquals("number", $commtype->getCompleteNumber());
-        $this->assertEquals("uriid", $commtype->getURIID());
-        $this->assertEquals("smtp", $commtype->getURIID()->getSchemeID());
+        $commtype = self::$objectHelper->getUniversalCommunicationType('number', 'uriid', 'smtp');
+        $this->assertEquals('number', $commtype->getCompleteNumber());
+        $this->assertEquals('uriid', $commtype->getURIID());
+        $this->assertEquals('smtp', $commtype->getURIID()->getSchemeID());
     }
 
     public function testGetUniversalCommunicationTypeAllNull(): void
@@ -773,9 +775,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TaxRegistrationType
          */
-        $taxregtype = self::$objectHelper->getTaxRegistrationType("taxregtype", "taxid");
-        $this->assertEquals("taxregtype", $taxregtype->getID()->getSchemeID());
-        $this->assertEquals("taxid", $taxregtype->getID());
+        $taxregtype = self::$objectHelper->getTaxRegistrationType('taxregtype', 'taxid');
+        $this->assertEquals('taxregtype', $taxregtype->getID()->getSchemeID());
+        $this->assertEquals('taxid', $taxregtype->getID());
     }
 
     public function testGetTaxRegistrationTypeAllNull(): void
@@ -792,7 +794,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TaxRegistrationType
          */
-        $taxregtype = self::$objectHelper->getTaxRegistrationType("taxregtype", null);
+        $taxregtype = self::$objectHelper->getTaxRegistrationType('taxregtype', null);
         $this->assertNull($taxregtype);
     }
 
@@ -801,7 +803,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TaxRegistrationType
          */
-        $taxregtype = self::$objectHelper->getTaxRegistrationType(null, "taxid");
+        $taxregtype = self::$objectHelper->getTaxRegistrationType(null, 'taxid');
         $this->assertNull($taxregtype);
     }
 
@@ -811,7 +813,7 @@ class ObjectHelperExtendedTest extends TestCase
          * @var \horstoeko\zugferd\entities\extended\qdt\DeliveryTermsCodeType
          */
         $devterms = self::$objectHelper->getTradeDeliveryTermsCodeType('code');
-        $this->assertEquals("code", $devterms->value());
+        $this->assertEquals('code', $devterms->value());
     }
 
     public function testGetTradeDeliveryTermsTypeCodeAllNull(): void
@@ -829,7 +831,7 @@ class ObjectHelperExtendedTest extends TestCase
          * @var \horstoeko\zugferd\entities\extended\ram\TradeDeliveryTermsType
          */
         $devterms = self::$objectHelper->getTradeDeliveryTermsType('code');
-        $this->assertEquals("code", $devterms->getDeliveryTypeCode());
+        $this->assertEquals('code', $devterms->getDeliveryTypeCode());
     }
 
     public function testGetTradeDeliveryTermsTypeAllNull(): void
@@ -846,9 +848,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\ProcuringProjectType
          */
-        $project = self::$objectHelper->getProcuringProjectType("projectid", "projectname");
-        $this->assertEquals("projectid", $project->getID());
-        $this->assertEquals("projectname", $project->getName());
+        $project = self::$objectHelper->getProcuringProjectType('projectid', 'projectname');
+        $this->assertEquals('projectid', $project->getID());
+        $this->assertEquals('projectname', $project->getName());
     }
 
     public function testGetProcuringProjectTypeIdNull(): void
@@ -856,7 +858,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\ProcuringProjectType
          */
-        $project = self::$objectHelper->getProcuringProjectType(null, "projectname");
+        $project = self::$objectHelper->getProcuringProjectType(null, 'projectname');
         $this->assertNull($project);
     }
 
@@ -865,7 +867,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\ProcuringProjectType
          */
-        $project = self::$objectHelper->getProcuringProjectType("projectid", null);
+        $project = self::$objectHelper->getProcuringProjectType('projectid', null);
         $this->assertNull($project);
     }
 
@@ -884,8 +886,8 @@ class ObjectHelperExtendedTest extends TestCase
          * @var \horstoeko\zugferd\entities\extended\ram\SupplyChainEventType
          */
         $supplychainevent = self::$objectHelper->getSupplyChainEventType(new \DateTime());
-        $this->assertEquals((new \DateTime())->format("Ymd"), $supplychainevent->getOccurrenceDateTime()->getDateTimeString());
-        $this->assertEquals("102", $supplychainevent->getOccurrenceDateTime()->getDateTimeString()->getFormat());
+        $this->assertEquals((new \DateTime())->format('Ymd'), $supplychainevent->getOccurrenceDateTime()->getDateTimeString());
+        $this->assertEquals('102', $supplychainevent->getOccurrenceDateTime()->getDateTimeString()->getFormat());
     }
 
     public function testGetSupplyChainEventTypeAllNull(): void
@@ -902,10 +904,10 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradeSettlementFinancialCardType
          */
-        $fincard = self::$objectHelper->getTradeSettlementFinancialCardType("type", "6759 6498 2643 8453", "name");
-        $this->assertEquals("type", $fincard->getID()->getSchemeID());
-        $this->assertEquals("6759 68453", $fincard->getID());
-        $this->assertEquals("name", $fincard->getCardholderName());
+        $fincard = self::$objectHelper->getTradeSettlementFinancialCardType('type', '6759 6498 2643 8453', 'name');
+        $this->assertEquals('type', $fincard->getID()->getSchemeID());
+        $this->assertEquals('6759 68453', $fincard->getID());
+        $this->assertEquals('name', $fincard->getCardholderName());
     }
 
     public function testGetTradeSettlementFinancialCardType4DigitValue(): void
@@ -913,10 +915,10 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\en16931\ram\TradeSettlementFinancialCardType
          */
-        $fincard = self::$objectHelper->getTradeSettlementFinancialCardType("type", "8453", "name");
-        $this->assertEquals("type", $fincard->getID()->getSchemeID());
-        $this->assertEquals("8453", $fincard->getID());
-        $this->assertEquals("name", $fincard->getCardholderName());
+        $fincard = self::$objectHelper->getTradeSettlementFinancialCardType('type', '8453', 'name');
+        $this->assertEquals('type', $fincard->getID()->getSchemeID());
+        $this->assertEquals('8453', $fincard->getID());
+        $this->assertEquals('name', $fincard->getCardholderName());
     }
 
     public function testGetTradeSettlementFinancialCardTypeAllNull(): void
@@ -933,8 +935,8 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\DebtorFinancialAccountType
          */
-        $finacc = self::$objectHelper->getDebtorFinancialAccountType("iban");
-        $this->assertEquals("iban", $finacc->getIBANID());
+        $finacc = self::$objectHelper->getDebtorFinancialAccountType('iban');
+        $this->assertEquals('iban', $finacc->getIBANID());
     }
 
     public function testGetDebtorFinancialAccountTypeAllNull(): void
@@ -951,10 +953,10 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\CreditorFinancialAccountType
          */
-        $finacc = self::$objectHelper->getCreditorFinancialAccountType("iban", "accname", "propid");
-        $this->assertEquals("iban", $finacc->getIBANID());
-        $this->assertEquals("accname", $finacc->getAccountName());
-        $this->assertEquals("propid", $finacc->getProprietaryID());
+        $finacc = self::$objectHelper->getCreditorFinancialAccountType('iban', 'accname', 'propid');
+        $this->assertEquals('iban', $finacc->getIBANID());
+        $this->assertEquals('accname', $finacc->getAccountName());
+        $this->assertEquals('propid', $finacc->getProprietaryID());
     }
 
     public function testGetCreditorFinancialAccountTypeAllNull(): void
@@ -971,8 +973,8 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\CreditorFinancialInstitutionType
          */
-        $fininst = self::$objectHelper->getCreditorFinancialInstitutionType("bic");
-        $this->assertEquals("bic", $fininst->getBICID());
+        $fininst = self::$objectHelper->getCreditorFinancialInstitutionType('bic');
+        $this->assertEquals('bic', $fininst->getBICID());
     }
 
     public function testGetCreditorFinancialInstitutionTypeAllNull(): void
@@ -989,8 +991,8 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradeSettlementPaymentMeansType
          */
-        $paymentmeans = self::$objectHelper->getTradeSettlementPaymentMeansType("code", "info");
-        $this->assertEquals("code", $paymentmeans->getTypeCode());
+        $paymentmeans = self::$objectHelper->getTradeSettlementPaymentMeansType('code', 'info');
+        $this->assertEquals('code', $paymentmeans->getTypeCode());
     }
 
     public function testGetTradeSettlementPaymentMeansTypeAllNull(): void
@@ -1007,9 +1009,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradePaymentTermsType
          */
-        $paymentterms = self::$objectHelper->getTradePaymentTermsType("description", new \DateTime(), "mandate");
-        $this->assertEquals((new \DateTime())->format("Ymd"), $paymentterms->getDueDateDateTime()->getDateTimeString());
-        $this->assertEquals("102", $paymentterms->getDueDateDateTime()->getDateTimeString()->getFormat());
+        $paymentterms = self::$objectHelper->getTradePaymentTermsType('description', new \DateTime(), 'mandate');
+        $this->assertEquals((new \DateTime())->format('Ymd'), $paymentterms->getDueDateDateTime()->getDateTimeString());
+        $this->assertEquals('102', $paymentterms->getDueDateDateTime()->getDateTimeString()->getFormat());
     }
 
     public function testGetTradePaymentTermsTypeAllNull(): void
@@ -1026,17 +1028,17 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradePaymentDiscountTermsType
          */
-        $discountterms = self::$objectHelper->getTradePaymentDiscountTermsType(new \DateTime(), 2, "DAY", 1, 1, 1);
+        $discountterms = self::$objectHelper->getTradePaymentDiscountTermsType(new \DateTime(), 2, 'DAY', 1, 1, 1);
 
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\PercentType
          */
         $calculationpercent = $discountterms->getCalculationPercent();
 
-        $this->assertEquals((new \DateTime())->format("Ymd"), $discountterms->getBasisDateTime()->getDateTimeString());
-        $this->assertEquals("102", $discountterms->getBasisDateTime()->getDateTimeString()->getFormat());
+        $this->assertEquals((new \DateTime())->format('Ymd'), $discountterms->getBasisDateTime()->getDateTimeString());
+        $this->assertEquals('102', $discountterms->getBasisDateTime()->getDateTimeString()->getFormat());
         $this->assertEquals(2, $discountterms->getBasisPeriodMeasure()->value());
-        $this->assertEquals("DAY", $discountterms->getBasisPeriodMeasure()->getUnitCode());
+        $this->assertEquals('DAY', $discountterms->getBasisPeriodMeasure()->getUnitCode());
         $this->assertEquals(1, $discountterms->getBasisAmount()->value());
         $this->assertEquals(1, $calculationpercent->value());
         $this->assertEquals(1, $discountterms->getActualDiscountAmount()->value());
@@ -1056,17 +1058,17 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradePaymentPenaltyTermsType
          */
-        $penaltyterms = self::$objectHelper->getTradePaymentPenaltyTermsType(new \DateTime(), 2, "DAY", 1, 1, 1);
+        $penaltyterms = self::$objectHelper->getTradePaymentPenaltyTermsType(new \DateTime(), 2, 'DAY', 1, 1, 1);
 
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\PercentType
          */
         $calculationpercent = $penaltyterms->getCalculationPercent();
 
-        $this->assertEquals((new \DateTime())->format("Ymd"), $penaltyterms->getBasisDateTime()->getDateTimeString());
-        $this->assertEquals("102", $penaltyterms->getBasisDateTime()->getDateTimeString()->getFormat());
+        $this->assertEquals((new \DateTime())->format('Ymd'), $penaltyterms->getBasisDateTime()->getDateTimeString());
+        $this->assertEquals('102', $penaltyterms->getBasisDateTime()->getDateTimeString()->getFormat());
         $this->assertEquals(2, $penaltyterms->getBasisPeriodMeasure()->value());
-        $this->assertEquals("DAY", $penaltyterms->getBasisPeriodMeasure()->getUnitCode());
+        $this->assertEquals('DAY', $penaltyterms->getBasisPeriodMeasure()->getUnitCode());
         $this->assertEquals(1, $penaltyterms->getBasisAmount()->value());
         $this->assertEquals(1, $calculationpercent->value());
         $this->assertEquals(1, $penaltyterms->getActualPenaltyAmount()->value());
@@ -1086,20 +1088,20 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradeTaxType
          */
-        $tax = self::$objectHelper->getTradeTaxType("category", "type", 100, 19, 19, "reason", "reasoncode", 100, 10, new \DateTime(), "duedatecode");
+        $tax = self::$objectHelper->getTradeTaxType('category', 'type', 100, 19, 19, 'reason', 'reasoncode', 100, 10, new \DateTime(), 'duedatecode');
 
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\PercentType
          */
         $rateapplicablepercent = $tax->getRateApplicablePercent();
 
-        $this->assertEquals("category", $tax->getCategoryCode());
-        $this->assertEquals("type", $tax->getTypeCode());
+        $this->assertEquals('category', $tax->getCategoryCode());
+        $this->assertEquals('type', $tax->getTypeCode());
         $this->assertEqualsWithDelta(100.0, $tax->getBasisAmount()->value(), PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(19.0, $tax->getCalculatedAmount()->value(), PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(19.0, $rateapplicablepercent->value(), PHP_FLOAT_EPSILON);
-        $this->assertEquals("reasoncode", $tax->getExemptionReasonCode());
-        $this->assertEquals("reason", $tax->getExemptionReason());
+        $this->assertEquals('reasoncode', $tax->getExemptionReasonCode());
+        $this->assertEquals('reason', $tax->getExemptionReason());
         $this->assertEquals(100, $tax->getLineTotalBasisAmount()->value());
         $this->assertEquals(10, $tax->getAllowanceChargeBasisAmount()->value());
     }
@@ -1118,7 +1120,7 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradeAllowanceChargeType
          */
-        $allowancecharge = self::$objectHelper->getTradeAllowanceChargeType(10, true, "taxtype", "taxcategory", 19.0, 1, 2.0, 1.0, 1.0, "C62", "reasoncode", "reason");
+        $allowancecharge = self::$objectHelper->getTradeAllowanceChargeType(10, true, 'taxtype', 'taxcategory', 19.0, 1, 2.0, 1.0, 1.0, 'C62', 'reasoncode', 'reason');
 
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\PercentType
@@ -1137,15 +1139,15 @@ class ObjectHelperExtendedTest extends TestCase
 
         $this->assertEqualsWithDelta(10.0, $allowancecharge->getActualAmount()->value(), PHP_FLOAT_EPSILON);
         $this->assertTrue($allowancecharge->getChargeIndicator()->getIndicator());
-        $this->assertEquals("taxtype", $allowancecharge->getCategoryTradeTax()->getTypeCode());
-        $this->assertEquals("taxcategory", $allowancecharge->getCategoryTradeTax()->getCategoryCode());
+        $this->assertEquals('taxtype', $allowancecharge->getCategoryTradeTax()->getTypeCode());
+        $this->assertEquals('taxcategory', $allowancecharge->getCategoryTradeTax()->getCategoryCode());
         $this->assertEqualsWithDelta(19.0, $rateapplicablepercent->value(), PHP_FLOAT_EPSILON);
         $this->assertEquals(2, $sequenceNumeric->value());
         $this->assertEqualsWithDelta(2.0, $calculationpercent->value(), PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(1.0, $allowancecharge->getBasisQuantity()->value(), PHP_FLOAT_EPSILON);
-        $this->assertEquals("C62", $allowancecharge->getBasisQuantity()->getUnitCode());
-        $this->assertEquals("reason", $allowancecharge->getReason());
-        $this->assertEquals("reasoncode", $allowancecharge->getReasonCode());
+        $this->assertEquals('C62', $allowancecharge->getBasisQuantity()->getUnitCode());
+        $this->assertEquals('reason', $allowancecharge->getReason());
+        $this->assertEquals('reasoncode', $allowancecharge->getReasonCode());
     }
 
     public function testGetTradeAllowanceChargeTypeAllNull(): void
@@ -1162,8 +1164,8 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\LogisticsServiceChargeType
          */
-        $logcharge = self::$objectHelper->getLogisticsServiceChargeType("description", 10.0, ["taxtype"], ["taxcategpry"], [19]);
-        $this->assertEquals("description", $logcharge->getDescription());
+        $logcharge = self::$objectHelper->getLogisticsServiceChargeType('description', 10.0, ['taxtype'], ['taxcategpry'], [19]);
+        $this->assertEquals('description', $logcharge->getDescription());
         $this->assertEqualsWithDelta(10.0, $logcharge->getAppliedAmount()->value(), PHP_FLOAT_EPSILON);
     }
 
@@ -1215,9 +1217,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradeAccountingAccountType
          */
-        $accaccount = self::$objectHelper->getTradeAccountingAccountType("accid", "acctype");
-        $this->assertEquals("accid", $accaccount->getID());
-        $this->assertEquals("acctype", $accaccount->getTypeCode());
+        $accaccount = self::$objectHelper->getTradeAccountingAccountType('accid', 'acctype');
+        $this->assertEquals('accid', $accaccount->getID());
+        $this->assertEquals('acctype', $accaccount->getTypeCode());
     }
 
     public function testGetTradeAccountingAccountTypeAllNull(): void
@@ -1234,8 +1236,8 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\DocumentLineDocumentType
          */
-        $doclinedoctype = self::$objectHelper->getDocumentLineDocumentType("lineid");
-        $this->assertEquals("lineid", $doclinedoctype->getLineID());
+        $doclinedoctype = self::$objectHelper->getDocumentLineDocumentType('lineid');
+        $this->assertEquals('lineid', $doclinedoctype->getLineID());
     }
 
     public function testGetDocumentLineDocumentTypeAllNull(): void
@@ -1252,9 +1254,9 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\SupplyChainTradeLineItemType
          */
-        $line = self::$objectHelper->getSupplyChainTradeLineItemType("lineid", "linestatuscode", "linestatusreasoncode");
+        $line = self::$objectHelper->getSupplyChainTradeLineItemType('lineid', 'linestatuscode', 'linestatusreasoncode');
         $this->assertNotNull($line);
-        $this->assertEquals("lineid", $line->getAssociatedDocumentLineDocument()->getLineID());
+        $this->assertEquals('lineid', $line->getAssociatedDocumentLineDocument()->getLineID());
     }
 
     public function testGetSupplyChainTradeLineItemTypeAllNull(): void
@@ -1271,13 +1273,13 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradeProductType
          */
-        $product = self::$objectHelper->getTradeProductType("name", "description", "sellerid", "buyerid", "globalidtype", "globalid");
-        $this->assertEquals("name", $product->getName());
-        $this->assertEquals("description", $product->getDescription());
-        $this->assertEquals("sellerid", $product->getSellerAssignedID());
-        $this->assertEquals("buyerid", $product->getBuyerAssignedID());
-        $this->assertEquals("globalidtype", $product->getGlobalID()->getSchemeID());
-        $this->assertEquals("globalid", $product->getGlobalID());
+        $product = self::$objectHelper->getTradeProductType('name', 'description', 'sellerid', 'buyerid', 'globalidtype', 'globalid');
+        $this->assertEquals('name', $product->getName());
+        $this->assertEquals('description', $product->getDescription());
+        $this->assertEquals('sellerid', $product->getSellerAssignedID());
+        $this->assertEquals('buyerid', $product->getBuyerAssignedID());
+        $this->assertEquals('globalidtype', $product->getGlobalID()->getSchemeID());
+        $this->assertEquals('globalid', $product->getGlobalID());
     }
 
     public function testGetTradeProductTypeAllNull(): void
@@ -1294,12 +1296,12 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\ProductCharacteristicType
          */
-        $productCharacteristic = self::$objectHelper->getProductCharacteristicType("typecode", "description", 10.2, "valuemeasureunit", "value");
-        $this->assertEquals("description", $productCharacteristic->getDescription());
-        $this->assertEquals("value", $productCharacteristic->getValue());
+        $productCharacteristic = self::$objectHelper->getProductCharacteristicType('typecode', 'description', 10.2, 'valuemeasureunit', 'value');
+        $this->assertEquals('description', $productCharacteristic->getDescription());
+        $this->assertEquals('value', $productCharacteristic->getValue());
         $this->assertEqualsWithDelta(10.2, $productCharacteristic->getValueMeasure()->value(), PHP_FLOAT_EPSILON);
-        $this->assertEquals("valuemeasureunit", $productCharacteristic->getValueMeasure()->getUnitCode());
-        $this->assertEquals("typecode", $productCharacteristic->getTypeCode()->value());
+        $this->assertEquals('valuemeasureunit', $productCharacteristic->getValueMeasure()->getUnitCode());
+        $this->assertEquals('typecode', $productCharacteristic->getTypeCode()->value());
     }
 
     public function testGetProductClassificationType(): void
@@ -1307,11 +1309,11 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\ProductClassificationType
          */
-        $productClassification = self::$objectHelper->getProductClassificationType("classcode", "classname", "listid", "listversionid");
-        $this->assertEquals("classcode", $productClassification->getClassCode()->value());
-        $this->assertEquals("listid", $productClassification->getClassCode()->getListID());
-        $this->assertEquals("listversionid", $productClassification->getClassCode()->getListVersionID());
-        $this->assertEquals("classname", $productClassification->getClassName());
+        $productClassification = self::$objectHelper->getProductClassificationType('classcode', 'classname', 'listid', 'listversionid');
+        $this->assertEquals('classcode', $productClassification->getClassCode()->value());
+        $this->assertEquals('listid', $productClassification->getClassCode()->getListID());
+        $this->assertEquals('listversionid', $productClassification->getClassCode()->getListVersionID());
+        $this->assertEquals('classname', $productClassification->getClassName());
 
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\ProductCharacteristicType
@@ -1325,16 +1327,16 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\ReferencedProductType
          */
-        $referencedProduct = self::$objectHelper->getReferencedProductType("globalid", "globalidtype", "sellerid", "buyerid", "industryid", "name", "description", 10, "C62");
-        $this->assertEquals("globalid", $referencedProduct->getGlobalID()[0]->value());
-        $this->assertEquals("globalidtype", $referencedProduct->getGlobalID()[0]->getSchemeID());
-        $this->assertEquals("sellerid", $referencedProduct->getSellerAssignedID()->value());
-        $this->assertEquals("buyerid", $referencedProduct->getBuyerAssignedID()->value());
-        $this->assertEquals("industryid", $referencedProduct->getIndustryAssignedID()->value());
-        $this->assertEquals("name", $referencedProduct->getName());
-        $this->assertEquals("description", $referencedProduct->getDescription());
+        $referencedProduct = self::$objectHelper->getReferencedProductType('globalid', 'globalidtype', 'sellerid', 'buyerid', 'industryid', 'name', 'description', 10, 'C62');
+        $this->assertEquals('globalid', $referencedProduct->getGlobalID()[0]->value());
+        $this->assertEquals('globalidtype', $referencedProduct->getGlobalID()[0]->getSchemeID());
+        $this->assertEquals('sellerid', $referencedProduct->getSellerAssignedID()->value());
+        $this->assertEquals('buyerid', $referencedProduct->getBuyerAssignedID()->value());
+        $this->assertEquals('industryid', $referencedProduct->getIndustryAssignedID()->value());
+        $this->assertEquals('name', $referencedProduct->getName());
+        $this->assertEquals('description', $referencedProduct->getDescription());
         $this->assertEquals(10, $referencedProduct->getUnitQuantity()->value());
-        $this->assertEquals("C62", $referencedProduct->getUnitQuantity()->getUnitCode());
+        $this->assertEquals('C62', $referencedProduct->getUnitQuantity()->getUnitCode());
 
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\ReferencedProductType
@@ -1348,10 +1350,10 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradePriceType
          */
-        $price = self::$objectHelper->getTradePriceType(1.0, 2.0, "C62");
+        $price = self::$objectHelper->getTradePriceType(1.0, 2.0, 'C62');
         $this->assertEqualsWithDelta(1.0, $price->getChargeAmount()->value(), PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(2.0, $price->getBasisQuantity()->value(), PHP_FLOAT_EPSILON);
-        $this->assertEquals("C62", $price->getBasisQuantity()->getUnitCode());
+        $this->assertEquals('C62', $price->getBasisQuantity()->getUnitCode());
     }
 
     public function testGetTradePriceTypeAllNull(): void
@@ -1388,44 +1390,44 @@ class ObjectHelperExtendedTest extends TestCase
 
     public function testToDateTimeGeneral(): void
     {
-        $this->assertEquals("20200202", self::$objectHelper->toDateTime("20200202", "102")->format("Ymd"));
-        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime("", "102"));
-        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime("20200202", ""));
-        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime(null, "102"));
-        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime("20200202", null));
-        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime("", ""));
+        $this->assertEquals('20200202', self::$objectHelper->toDateTime('20200202', '102')->format('Ymd'));
+        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime('', '102'));
+        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime('20200202', ''));
+        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime(null, '102'));
+        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime('20200202', null));
+        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime('', ''));
         $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime(null, null));
-        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime("", null));
-        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime(null, ""));
+        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime('', null));
+        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime(null, ''));
         $this->assertNull(self::$objectHelper->toDateTime(null, null));
         $this->expectException(ZugferdUnknownDateFormatException::class);
-        $this->expectExceptionMessage("Invalid date format 999");
-        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime("20200202", "999"));
+        $this->expectExceptionMessage('Invalid date format 999');
+        $this->assertNotInstanceOf(\DateTime::class, self::$objectHelper->toDateTime('20200202', '999'));
     }
 
     public function testToDateTime101(): void
     {
-        $this->assertEquals("20200202", self::$objectHelper->toDateTime("200202", "101")->format("Ymd"));
+        $this->assertEquals('20200202', self::$objectHelper->toDateTime('200202', '101')->format('Ymd'));
     }
 
     public function testToDateTime201(): void
     {
-        $this->assertEquals("2002021031", self::$objectHelper->toDateTime("2002021031", "201")->format("ymdHi"));
+        $this->assertEquals('2002021031', self::$objectHelper->toDateTime('2002021031', '201')->format('ymdHi'));
     }
 
     public function testToDateTime202(): void
     {
-        $this->assertEquals("200202103145", self::$objectHelper->toDateTime("200202103145", "202")->format("ymdHis"));
+        $this->assertEquals('200202103145', self::$objectHelper->toDateTime('200202103145', '202')->format('ymdHis'));
     }
 
     public function testToDateTime203(): void
     {
-        $this->assertEquals("202002021031", self::$objectHelper->toDateTime("202002021031", "203")->format("YmdHi"));
+        $this->assertEquals('202002021031', self::$objectHelper->toDateTime('202002021031', '203')->format('YmdHi'));
     }
 
     public function testToDateTime204(): void
     {
-        $this->assertEquals("20200202103145", self::$objectHelper->toDateTime("20200202103145", "204")->format("YmdHis"));
+        $this->assertEquals('20200202103145', self::$objectHelper->toDateTime('20200202103145', '204')->format('YmdHis'));
     }
 
     public function testGetRateType(): void
@@ -1442,17 +1444,17 @@ class ObjectHelperExtendedTest extends TestCase
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradeCurrencyExchangeType
          */
-        $currencyExchangeType = self::$objectHelper->getTaxApplicableTradeCurrencyExchangeType("EUR", "USD", 10.0, DateTime::createFromFormat("Ymd", "20180305"));
+        $currencyExchangeType = self::$objectHelper->getTaxApplicableTradeCurrencyExchangeType('EUR', 'USD', 10.0, DateTime::createFromFormat('Ymd', '20180305'));
         $this->assertNotNull($currencyExchangeType);
-        $this->assertEquals("EUR", $currencyExchangeType->getSourceCurrencyCode());
-        $this->assertEquals("USD", $currencyExchangeType->getTargetCurrencyCode());
+        $this->assertEquals('EUR', $currencyExchangeType->getSourceCurrencyCode());
+        $this->assertEquals('USD', $currencyExchangeType->getTargetCurrencyCode());
         /**
          * @var \horstoeko\zugferd\entities\extended\udt\RateType
          */
         $rate = $currencyExchangeType->getConversionRate();
         $this->assertEqualsWithDelta(10.0, $rate->value(), PHP_FLOAT_EPSILON);
-        $this->assertEquals("20180305", $currencyExchangeType->getConversionRateDateTime()->getDateTimeString()->value());
-        $this->assertEquals("102", $currencyExchangeType->getConversionRateDateTime()->getDateTimeString()->getFormat());
+        $this->assertEquals('20180305', $currencyExchangeType->getConversionRateDateTime()->getDateTimeString()->value());
+        $this->assertEquals('102', $currencyExchangeType->getConversionRateDateTime()->getDateTimeString()->getFormat());
 
         /**
          * @var \horstoeko\zugferd\entities\extended\ram\TradeCurrencyExchangeType

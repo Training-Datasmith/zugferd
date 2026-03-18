@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use horstoeko\zugferd\codelists\ZugferdCountryCodes;
 use horstoeko\zugferd\codelists\ZugferdCurrencyCodes;
 use horstoeko\zugferd\codelists\ZugferdElectronicAddressScheme;
@@ -11,8 +13,8 @@ use horstoeko\zugferd\codelists\ZugferdVatTypeCodes;
 use horstoeko\zugferd\ZugferdDocumentBuilder;
 use horstoeko\zugferd\ZugferdProfiles;
 
-require __DIR__ . "/../vendor/autoload.php";
-require __DIR__ . "/00_ExampleHelpers.php";
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/00_ExampleHelpers.php';
 
 // First we create a new invoice in EN16931-Profile (== COMFORT-Profile)
 
@@ -21,10 +23,10 @@ $documentBuilder = ZugferdDocumentBuilder::createNew(ZugferdProfiles::PROFILE_EN
 // General invoice Information
 
 $documentBuilder->setDocumentInformation(
-  'R-2024/00001',                                     // Invoice number (BT-1)
-  ZugferdInvoiceType::INVOICE,                        // Type "Invoice" (BT-3)
-  DateTime::createFromFormat('Ymd', '20241231'),      // Invoice fate (BT-2)
-  ZugferdCurrencyCodes::EURO                          // Invoice currency is EUR (Euro) (BT-5)
+    'R-2024/00001',                                     // Invoice number (BT-1)
+    ZugferdInvoiceType::INVOICE,                        // Type "Invoice" (BT-3)
+    DateTime::createFromFormat('Ymd', '20241231'),      // Invoice fate (BT-2)
+    ZugferdCurrencyCodes::EURO                          // Invoice currency is EUR (Euro) (BT-5)
 );
 
 // Not mandatory, but welcome are details such as managing director, commercial register entry or similar
@@ -193,4 +195,3 @@ $someStringVariable = $documentBuilder->getContent();
 $validationResult = validateUsingKositValidator($documentBuilder);
 
 echo $validationResult === 0 ? 'Validation is disabled' : ($validationResult == 1 ? 'The document is valid' : 'The document is not valid');
-

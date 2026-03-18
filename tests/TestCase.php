@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests;
 
+use PHPUnit\Framework\TestCase as PhpUnitTestCase;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionProperty;
-use PHPUnit\Framework\TestCase as PhpUnitTestCase;
 
 class TestCase extends PhpUnitTestCase
 {

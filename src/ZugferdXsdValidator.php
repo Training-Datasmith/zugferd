@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -11,12 +13,10 @@ namespace horstoeko\zugferd;
 
 use DOMDocument;
 use Exception;
-use LibXMLError;
-use Throwable;
 use horstoeko\stringmanagement\PathUtils;
 use horstoeko\zugferd\exception\ZugferdFileNotFoundException;
-use horstoeko\zugferd\ZugferdDocument;
-use horstoeko\zugferd\ZugferdSettings;
+use LibXMLError;
+use Throwable;
 
 /**
  * Class representing the validator against XSD for documents

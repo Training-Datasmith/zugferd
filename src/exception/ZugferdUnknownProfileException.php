@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -27,6 +29,6 @@ class ZugferdUnknownProfileException extends ZugferdBaseException
      */
     public function __construct(string $profileString, ?Throwable $previous = null)
     {
-        parent::__construct(sprintf("Cannot determain the profile by %s", $profileString), ZugferdExceptionCodes::UNKNOWNPROFILE, $previous);
+        parent::__construct(sprintf('Cannot determain the profile by %s', $profileString), ZugferdExceptionCodes::UNKNOWNPROFILE, $previous);
     }
 }

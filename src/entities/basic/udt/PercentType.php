@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\basic\udt;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\basic\udt;
  */
 class PercentType
 {
-
     /**
      * @var float $__value
      */

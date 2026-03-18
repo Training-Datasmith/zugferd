@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\testcases;
 
 use horstoeko\zugferd\exception\ZugferdExceptionCodes;
@@ -17,7 +19,7 @@ class PdfReaderGeneralTest extends TestCase
     {
         $this->expectException(ZugferdFileNotFoundException::class);
 
-        ZugferdDocumentPdfReader::readAndGuessFromFile(__DIR__ . "/../assets/unknown.pdf");
+        ZugferdDocumentPdfReader::readAndGuessFromFile(__DIR__ . '/../assets/unknown.pdf');
     }
 
     public function testReadFromFileWhichHasNoValidAttachment(): void
@@ -26,12 +28,12 @@ class PdfReaderGeneralTest extends TestCase
         $this->expectExceptionMessage('No PDF attachment found');
         $this->expectExceptionCode(ZugferdExceptionCodes::NOPDFATTACHMENTFOUND);
 
-        ZugferdDocumentPdfReader::readAndGuessFromFile(__DIR__ . "/../assets/pdf_invalid.pdf");
+        ZugferdDocumentPdfReader::readAndGuessFromFile(__DIR__ . '/../assets/pdf_invalid.pdf');
     }
 
     public function testReadFromFileWhichExistsAndHasValidAttachment(): void
     {
-        $document = ZugferdDocumentPdfReader::readAndGuessFromFile(__DIR__ . "/../assets/pdf_zf_en16931_1.pdf");
+        $document = ZugferdDocumentPdfReader::readAndGuessFromFile(__DIR__ . '/../assets/pdf_zf_en16931_1.pdf');
 
         $this->assertInstanceOf(ZugferdDocument::class, $document);
     }
@@ -44,14 +46,14 @@ class PdfReaderGeneralTest extends TestCase
         $this->expectExceptionMessage('No PDF attachment found');
         $this->expectExceptionCode(ZugferdExceptionCodes::NOPDFATTACHMENTFOUND);
 
-        $pdfContent = file_get_contents(__DIR__ . "/../assets/pdf_invalid.pdf");
+        $pdfContent = file_get_contents(__DIR__ . '/../assets/pdf_invalid.pdf');
 
         ZugferdDocumentPdfReader::readAndGuessFromContent($pdfContent);
     }
 
     public function testReadFromContentWhichHasValidAttachment(): void
     {
-        $pdfContent = file_get_contents(__DIR__ . "/../assets/pdf_zf_en16931_1.pdf");
+        $pdfContent = file_get_contents(__DIR__ . '/../assets/pdf_zf_en16931_1.pdf');
 
         $document = ZugferdDocumentPdfReader::readAndGuessFromContent($pdfContent);
 
@@ -64,7 +66,7 @@ class PdfReaderGeneralTest extends TestCase
     {
         $this->expectException(ZugferdFileNotFoundException::class);
 
-        ZugferdDocumentPdfReader::getXmlFromFile(__DIR__ . "/../assets/unknown.pdf");
+        ZugferdDocumentPdfReader::getXmlFromFile(__DIR__ . '/../assets/unknown.pdf');
     }
 
     public function testGetXmlFromFileWhichHasNoValidAttachment(): void
@@ -73,16 +75,16 @@ class PdfReaderGeneralTest extends TestCase
         $this->expectExceptionMessage('No PDF attachment found');
         $this->expectExceptionCode(ZugferdExceptionCodes::NOPDFATTACHMENTFOUND);
 
-        ZugferdDocumentPdfReader::getXmlFromFile(__DIR__ . "/../assets/pdf_invalid.pdf");
+        ZugferdDocumentPdfReader::getXmlFromFile(__DIR__ . '/../assets/pdf_invalid.pdf');
     }
 
     public function testGetXmlFromFileWhichExistsAndHasValidAttachment(): void
     {
-        $xmlString = ZugferdDocumentPdfReader::getXmlFromFile(__DIR__ . "/../assets/pdf_zf_en16931_1.pdf");
+        $xmlString = ZugferdDocumentPdfReader::getXmlFromFile(__DIR__ . '/../assets/pdf_zf_en16931_1.pdf');
 
         $this->assertStringContainsString("<?xml version='1.0'", $xmlString);
-        $this->assertStringContainsString("<rsm:CrossIndustryInvoice", $xmlString);
-        $this->assertStringContainsString("</rsm:CrossIndustryInvoice>", $xmlString);
+        $this->assertStringContainsString('<rsm:CrossIndustryInvoice', $xmlString);
+        $this->assertStringContainsString('</rsm:CrossIndustryInvoice>', $xmlString);
     }
 
     /* ZugferdPdfReader::getXmlFromContent */
@@ -93,19 +95,19 @@ class PdfReaderGeneralTest extends TestCase
         $this->expectExceptionMessage('No PDF attachment found');
         $this->expectExceptionCode(ZugferdExceptionCodes::NOPDFATTACHMENTFOUND);
 
-        $pdfContent = file_get_contents(__DIR__ . "/../assets/pdf_invalid.pdf");
+        $pdfContent = file_get_contents(__DIR__ . '/../assets/pdf_invalid.pdf');
 
         ZugferdDocumentPdfReader::getXmlFromContent($pdfContent);
     }
 
     public function testGetXmlFromContentWhichHasValidAttachment(): void
     {
-        $pdfContent = file_get_contents(__DIR__ . "/../assets/pdf_zf_en16931_1.pdf");
+        $pdfContent = file_get_contents(__DIR__ . '/../assets/pdf_zf_en16931_1.pdf');
 
         $xmlString = ZugferdDocumentPdfReader::getXmlFromContent($pdfContent);
 
         $this->assertStringContainsString("<?xml version='1.0'", $xmlString);
-        $this->assertStringContainsString("<rsm:CrossIndustryInvoice", $xmlString);
-        $this->assertStringContainsString("</rsm:CrossIndustryInvoice>", $xmlString);
+        $this->assertStringContainsString('<rsm:CrossIndustryInvoice', $xmlString);
+        $this->assertStringContainsString('</rsm:CrossIndustryInvoice>', $xmlString);
     }
 }

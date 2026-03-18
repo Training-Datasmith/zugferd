@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -11,9 +13,9 @@ namespace horstoeko\zugferd\quick;
 
 use DateTime;
 use horstoeko\stringmanagement\StringUtils;
-use horstoeko\zugferd\ZugferdDocumentBuilder;
 use horstoeko\zugferd\codelists\ZugferdInvoiceType;
 use horstoeko\zugferd\codelists\ZugferdPaymentMeans;
+use horstoeko\zugferd\ZugferdDocumentBuilder;
 use horstoeko\zugferd\ZugferdProfiles;
 
 /**
@@ -124,7 +126,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string    $currency              __BT-5, From MINIMUM__ Code for the invoice currency
      * @param  string    $creditMemoNoReference __BT-83, From BASIC WL__ Intended use for refund. If null the number of the credit memo is used
      */
-    public function doCreateCreditMemo(string $creditMemoNo, \DateTime $invoiceDate, string $currency, string $creditMemoNoReference = ""): ZugferdQuickDescriptor
+    public function doCreateCreditMemo(string $creditMemoNo, \DateTime $invoiceDate, string $currency, string $creditMemoNoReference = ''): ZugferdQuickDescriptor
     {
         $this->setDocumentInformation($creditMemoNo, ZugferdInvoiceType::CREDITNOTE, $invoiceDate, $currency);
         $this->setDocumentGeneralPaymentInformation(null, StringUtils::stringIsNullOrEmpty($creditMemoNoReference) ? $creditMemoNo : $creditMemoNoReference);
@@ -385,7 +387,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $uri       __BT-49, From BASIC WL__ Specifies the buyer's electronic address to which the invoice is sent
      * @param  string $uriScheme __BT-49-1, From BASIC WL__ The identifier for the identification scheme of the buyer's electronic address (Default: EM)
      */
-    public function doSetBuyerElectronicCommunication(string $uri, string $uriScheme = "EM"): ZugferdQuickDescriptor
+    public function doSetBuyerElectronicCommunication(string $uri, string $uriScheme = 'EM'): ZugferdQuickDescriptor
     {
         $this->setDocumentBuyerCommunication($uriScheme, $uri);
         return $this;
@@ -452,7 +454,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $uri       __BT-34, From BASIC WL__ Specifies the electronic address of the seller to which the response to the invoice can be sent at application level
      * @param  string $uriScheme __BT-34-1, From BASIC WL__ The identifier for the identification scheme of the seller's electronic address (Default: EM)
      */
-    public function doSetSellerElectronicCommunication(string $uri, string $uriScheme = "EM"): ZugferdQuickDescriptor
+    public function doSetSellerElectronicCommunication(string $uri, string $uriScheme = 'EM'): ZugferdQuickDescriptor
     {
         $this->setDocumentSellerCommunication($uriScheme, $uri);
         return $this;
@@ -648,7 +650,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      */
     public function doAddApplicableTradeTax(float $basisAmount, float $percent, string $categoryCode, ?string $typeCode = null, ?float $allowanceChargeBasisAmount = null, ?string $exemptionReasonCode = null, ?string $exemptionReason = null): ZugferdQuickDescriptor
     {
-        $this->addDocumentTax($categoryCode, $typeCode ?? "VAT", $basisAmount, round(0.01 * $percent * $basisAmount, 2), $percent, $exemptionReason, $exemptionReasonCode, null, $allowanceChargeBasisAmount);
+        $this->addDocumentTax($categoryCode, $typeCode ?? 'VAT', $basisAmount, round(0.01 * $percent * $basisAmount, 2), $percent, $exemptionReason, $exemptionReasonCode, null, $allowanceChargeBasisAmount);
         return $this;
     }
 
@@ -665,7 +667,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      */
     public function doAddApplicableTradeTax2(float $basisAmount, float $calculatedAmount, string $categoryCode, ?string $typeCode = null, ?float $allowanceChargeBasisAmount = null, ?string $exemptionReasonCode = null, ?string $exemptionReason = null): ZugferdQuickDescriptor
     {
-        $this->addDocumentTax($categoryCode, $typeCode ?? "VAT", $basisAmount, $calculatedAmount, round($calculatedAmount * 100.0 / $basisAmount, 2), $exemptionReason, $exemptionReasonCode, null, $allowanceChargeBasisAmount);
+        $this->addDocumentTax($categoryCode, $typeCode ?? 'VAT', $basisAmount, $calculatedAmount, round($calculatedAmount * 100.0 / $basisAmount, 2), $exemptionReason, $exemptionReasonCode, null, $allowanceChargeBasisAmount);
         return $this;
     }
 
@@ -715,7 +717,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      */
     protected function addToInternalVatBuffer(string $taxCategoryCode, string $taxTypeCode, float $taxPercent, float $lineTotalAmount, float $chargeAmount, float $allowanceAmount, float $logisticServiceCharge)
     {
-        $vatGroup = md5($taxCategoryCode . "_" . $taxTypeCode . "_" . number_format($taxPercent, 10, '_', '__'));
+        $vatGroup = md5($taxCategoryCode . '_' . $taxTypeCode . '_' . number_format($taxPercent, 10, '_', '__'));
 
         if (!isset($this->vatBreakdown[$vatGroup])) {
             $this->vatBreakdown[$vatGroup] = [
@@ -727,7 +729,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
                 self::VT_CHARGEAMOUNT => 0.0,
                 self::VT_ALLOWANCECHARGEAMOUNT => 0.0,
                 self::VT_CALCULATEDAMOUNT => 0.0,
-                self::VT_LOGSERVICECHARGE => 0.0
+                self::VT_LOGSERVICECHARGE => 0.0,
             ];
         }
 

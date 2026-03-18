@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -24,6 +26,6 @@ class ZugferdUnknownDateFormatException extends ZugferdBaseException
 {
     public function __construct(string $dateFormatCode, ?Throwable $previous = null)
     {
-        parent::__construct(sprintf("Invalid date format %s", $dateFormatCode), ZugferdExceptionCodes::UNKNOWNDATEFORMAT, $previous);
+        parent::__construct(sprintf('Invalid date format %s', $dateFormatCode), ZugferdExceptionCodes::UNKNOWNDATEFORMAT, $previous);
     }
 }

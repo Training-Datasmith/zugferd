@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -7,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
- namespace horstoeko\zugferd\exception;
+namespace horstoeko\zugferd\exception;
 
 /**
  * Class representing an exception for missing a file

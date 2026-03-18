@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -44,127 +46,127 @@ class ZugferdTypesHandler implements SubscribingHandlerInterface
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\minimum\udt\AmountType',
-                'method' => 'serializeAmountType'
+                'method' => 'serializeAmountType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\basic\udt\AmountType',
-                'method' => 'serializeAmountType'
+                'method' => 'serializeAmountType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\basicwl\udt\AmountType',
-                'method' => 'serializeAmountType'
+                'method' => 'serializeAmountType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\en16931\udt\AmountType',
-                'method' => 'serializeAmountType'
+                'method' => 'serializeAmountType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\extended\udt\AmountType',
-                'method' => 'serializeAmountType'
+                'method' => 'serializeAmountType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\basic\udt\QuantityType',
-                'method' => 'serializeQuantityType'
+                'method' => 'serializeQuantityType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\basicwl\udt\QuantityType',
-                'method' => 'serializeQuantityType'
+                'method' => 'serializeQuantityType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\en16931\udt\QuantityType',
-                'method' => 'serializeQuantityType'
+                'method' => 'serializeQuantityType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\extended\udt\QuantityType',
-                'method' => 'serializeQuantityType'
+                'method' => 'serializeQuantityType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\basic\udt\PercentType',
-                'method' => 'serializePercentType'
+                'method' => 'serializePercentType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\basicwl\udt\PercentType',
-                'method' => 'serializePercentType'
+                'method' => 'serializePercentType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\en16931\udt\PercentType',
-                'method' => 'serializePercentType'
+                'method' => 'serializePercentType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\extended\udt\PercentType',
-                'method' => 'serializePercentType'
+                'method' => 'serializePercentType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\basic\udt\IndicatorType',
-                'method' => 'serializeIndicatorType'
+                'method' => 'serializeIndicatorType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\basicwl\udt\IndicatorType',
-                'method' => 'serializeIndicatorType'
+                'method' => 'serializeIndicatorType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\en16931\udt\IndicatorType',
-                'method' => 'serializeIndicatorType'
+                'method' => 'serializeIndicatorType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\extended\udt\IndicatorType',
-                'method' => 'serializeIndicatorType'
+                'method' => 'serializeIndicatorType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\basic\udt\MeasureType',
-                'method' => 'serializeMeasureType'
+                'method' => 'serializeMeasureType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\basicwl\udt\MeasureType',
-                'method' => 'serializeMeasureType'
+                'method' => 'serializeMeasureType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\en16931\udt\MeasureType',
-                'method' => 'serializeMeasureType'
+                'method' => 'serializeMeasureType',
             ],
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
                 'type' => 'horstoeko\zugferd\entities\extended\udt\MeasureType',
-                'method' => 'serializeMeasureType'
+                'method' => 'serializeMeasureType',
             ],
         ];
     }
@@ -187,7 +189,7 @@ class ZugferdTypesHandler implements SubscribingHandlerInterface
         );
 
         if ($data->getCurrencyID() != null) {
-            $attr = $visitor->getDocument()->createAttribute("currencyID");
+            $attr = $visitor->getDocument()->createAttribute('currencyID');
             $attr->value = $data->getCurrencyID();
             $visitor->getCurrentNode()->appendChild($attr);
         }
@@ -213,7 +215,7 @@ class ZugferdTypesHandler implements SubscribingHandlerInterface
         );
 
         if ($data->getUnitCode() != null) {
-            $attr = $visitor->getDocument()->createAttribute("unitCode");
+            $attr = $visitor->getDocument()->createAttribute('unitCode');
             $attr->value = $data->getUnitCode();
             $visitor->getCurrentNode()->appendChild($attr);
         }
@@ -257,7 +259,7 @@ class ZugferdTypesHandler implements SubscribingHandlerInterface
         );
 
         if ($data->getUnitCode() != null) {
-            $attr = $visitor->getDocument()->createAttribute("unitCode");
+            $attr = $visitor->getDocument()->createAttribute('unitCode');
             $attr->value = $data->getUnitCode();
             $visitor->getCurrentNode()->appendChild($attr);
         }

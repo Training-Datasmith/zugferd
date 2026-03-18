@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -17,7 +19,6 @@ use horstoeko\stringmanagement\FileUtils;
 use horstoeko\stringmanagement\StringUtils;
 use horstoeko\zugferd\exception\ZugferdUnknownDateFormatException;
 use horstoeko\zugferd\exception\ZugferdUnsupportedMimetype;
-use horstoeko\zugferd\ZugferdProfileResolver;
 
 /**
  * Class representing a collection of common helpers and class factories
@@ -48,13 +49,13 @@ class ZugferdObjectHelper
      * A list of supported mimetypes by binaryattachments
      */
     public const SUPPORTEDTMIMETYPES = [
-        "application/pdf",
-        "image/png",
-        "image/jpeg",
-        "text/csv",
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        "application/vnd.oasis.opendocument.spreadsheet",
-        "application/xml",
+        'application/pdf',
+        'image/png',
+        'image/jpeg',
+        'text/csv',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'application/vnd.oasis.opendocument.spreadsheet',
+        'application/xml',
     ];
 
     /**
@@ -91,7 +92,7 @@ class ZugferdObjectHelper
 
         $idType = $this->createClassInstance('udt\IDType', $value);
 
-        $this->tryCall($idType, "setSchemeID", $schemeId);
+        $this->tryCall($idType, 'setSchemeID', $schemeId);
 
         return $idType;
     }
@@ -188,11 +189,11 @@ class ZugferdObjectHelper
         }
 
         $dateTimeStringAType = $this->createClassInstance('qdt\FormattedDateTimeType\DateTimeStringAType');
-        $this->tryCall($dateTimeStringAType, "value", $dateTime->format("Ymd"));
-        $this->tryCall($dateTimeStringAType, "setFormat", "102");
+        $this->tryCall($dateTimeStringAType, 'value', $dateTime->format('Ymd'));
+        $this->tryCall($dateTimeStringAType, 'setFormat', '102');
 
         $formattedDateTimeType = $this->createClassInstance('qdt\FormattedDateTimeType');
-        $this->tryCall($formattedDateTimeType, "setDateTimeString", $dateTimeStringAType);
+        $this->tryCall($formattedDateTimeType, 'setDateTimeString', $dateTimeStringAType);
 
         return $formattedDateTimeType;
     }
@@ -207,11 +208,11 @@ class ZugferdObjectHelper
         }
 
         $dateTimeStringAType = $this->createClassInstance('udt\DateTimeType\DateTimeStringAType');
-        $this->tryCall($dateTimeStringAType, "value", $dateTime->format("Ymd"));
-        $this->tryCall($dateTimeStringAType, "setFormat", "102");
+        $this->tryCall($dateTimeStringAType, 'value', $dateTime->format('Ymd'));
+        $this->tryCall($dateTimeStringAType, 'setFormat', '102');
 
         $dateTimeType = $this->createClassInstance('udt\DateTimeType');
-        $this->tryCall($dateTimeType, "setDateTimeString", $dateTimeStringAType);
+        $this->tryCall($dateTimeType, 'setDateTimeString', $dateTimeStringAType);
 
         return $dateTimeType;
     }
@@ -226,11 +227,11 @@ class ZugferdObjectHelper
         }
 
         $dateStringAType = $this->createClassInstance('udt\DateType\DateStringAType');
-        $this->tryCall($dateStringAType, "value", $dateTime->format("Ymd"));
-        $this->tryCall($dateStringAType, "setFormat", "102");
+        $this->tryCall($dateStringAType, 'value', $dateTime->format('Ymd'));
+        $this->tryCall($dateStringAType, 'setFormat', '102');
 
         $dateType = $this->createClassInstance('udt\DateType');
-        $this->tryCall($dateType, "setDateString", $dateStringAType);
+        $this->tryCall($dateType, 'setDateString', $dateStringAType);
 
         return $dateType;
     }
@@ -250,8 +251,8 @@ class ZugferdObjectHelper
 
         $amountType = $this->createClassInstance('udt\AmountType');
 
-        $this->tryCall($amountType, "value", $value);
-        $this->tryCall($amountType, "setCurrencyID", $currencyCode);
+        $this->tryCall($amountType, 'value', $value);
+        $this->tryCall($amountType, 'setCurrencyID', $currencyCode);
 
         return $amountType;
     }
@@ -267,7 +268,7 @@ class ZugferdObjectHelper
 
         $percentType = $this->createClassInstance('udt\PercentType');
 
-        $this->tryCall($percentType, "value", $value);
+        $this->tryCall($percentType, 'value', $value);
 
         return $percentType;
     }
@@ -287,8 +288,8 @@ class ZugferdObjectHelper
 
         $quantityType = $this->createClassInstance('udt\QuantityType');
 
-        $this->tryCall($quantityType, "value", $value);
-        $this->tryCall($quantityType, "setUnitCode", $unitCode);
+        $this->tryCall($quantityType, 'value', $value);
+        $this->tryCall($quantityType, 'setUnitCode', $unitCode);
 
         return $quantityType;
     }
@@ -308,8 +309,8 @@ class ZugferdObjectHelper
 
         $measureType = $this->createClassInstance('udt\MeasureType');
 
-        $this->tryCall($measureType, "value", $value);
-        $this->tryCall($measureType, "setUnitCode", $unitCode);
+        $this->tryCall($measureType, 'value', $value);
+        $this->tryCall($measureType, 'setUnitCode', $unitCode);
 
         return $measureType;
     }
@@ -341,7 +342,7 @@ class ZugferdObjectHelper
 
         $taxCategoryCodeType = $this->createClassInstance('qdt\TaxCategoryCodeType');
 
-        $this->tryCall($taxCategoryCodeType, "value", $taxCategoryCode);
+        $this->tryCall($taxCategoryCodeType, 'value', $taxCategoryCode);
 
         return $taxCategoryCodeType;
     }
@@ -357,7 +358,7 @@ class ZugferdObjectHelper
 
         $taxTypeCodeType = $this->createClassInstance('qdt\TaxTypeCodeType');
 
-        $this->tryCall($taxTypeCodeType, "value", $taxTypeCode);
+        $this->tryCall($taxTypeCodeType, 'value', $taxTypeCode);
 
         return $taxTypeCodeType;
     }
@@ -373,7 +374,7 @@ class ZugferdObjectHelper
 
         $timeReferenceCodeType = $this->createClassInstance('qdt\TimeReferenceCodeType');
 
-        $this->tryCall($timeReferenceCodeType, "value", $value);
+        $this->tryCall($timeReferenceCodeType, 'value', $value);
 
         return $timeReferenceCodeType;
     }
@@ -408,9 +409,9 @@ class ZugferdObjectHelper
 
         $binaryObjectType = $this->createClassInstance('udt\BinaryObjectType');
 
-        $this->tryCall($binaryObjectType, "value", $binaryData);
-        $this->tryCall($binaryObjectType, "setMimeCode", $mimetype);
-        $this->tryCall($binaryObjectType, "setFilename", $filename);
+        $this->tryCall($binaryObjectType, 'value', $binaryData);
+        $this->tryCall($binaryObjectType, 'setMimeCode', $mimetype);
+        $this->tryCall($binaryObjectType, 'setFilename', $filename);
 
         return $binaryObjectType;
     }
@@ -458,7 +459,9 @@ class ZugferdObjectHelper
                             $this->getBinaryObjectType(
                                 $base64EncodedData,
                                 $mimetype,
-                                FileUtils::getFilenameWithExtension(FileUtils::changeFileExtension(FileUtils::getFilenameWithExtension($binaryDataFilename), $fileExtension))));
+                                FileUtils::getFilenameWithExtension(FileUtils::changeFileExtension(FileUtils::getFilenameWithExtension($binaryDataFilename), $fileExtension))
+                            )
+                        );
                         $loadedFromBase64 = true;
                     } else {
                         throw new ZugferdUnsupportedMimetype();
@@ -571,9 +574,9 @@ class ZugferdObjectHelper
     {
         $tradePartyType = $this->createClassInstance('ram\TradePartyType');
 
-        $this->tryCall($tradePartyType, "addToID", $this->getIdType($id));
-        $this->tryCall($tradePartyType, "setName", $this->getTextType($name));
-        $this->tryCall($tradePartyType, "setDescription", $this->getTextType($description));
+        $this->tryCall($tradePartyType, 'addToID', $this->getIdType($id));
+        $this->tryCall($tradePartyType, 'setName', $this->getTextType($name));
+        $this->tryCall($tradePartyType, 'setDescription', $this->getTextType($description));
 
         return $tradePartyType;
     }
@@ -589,13 +592,13 @@ class ZugferdObjectHelper
 
         $tradeAddressType = $this->createClassInstance('ram\TradeAddressType');
 
-        $this->tryCall($tradeAddressType, "setLineOne", $this->getTextType($lineOne));
-        $this->tryCall($tradeAddressType, "setLineTwo", $this->getTextType($lineTwo));
-        $this->tryCall($tradeAddressType, "setLineThree", $this->getTextType($lineThree));
-        $this->tryCall($tradeAddressType, "setPostcodeCode", $this->getCodeType($postCode));
-        $this->tryCall($tradeAddressType, "setCityName", $this->getTextType($city));
-        $this->tryCall($tradeAddressType, "setCountryID", $this->getCountryIDType($country));
-        $this->tryCall($tradeAddressType, "setCountrySubDivisionName", $this->getTextType($subDivision));
+        $this->tryCall($tradeAddressType, 'setLineOne', $this->getTextType($lineOne));
+        $this->tryCall($tradeAddressType, 'setLineTwo', $this->getTextType($lineTwo));
+        $this->tryCall($tradeAddressType, 'setLineThree', $this->getTextType($lineThree));
+        $this->tryCall($tradeAddressType, 'setPostcodeCode', $this->getCodeType($postCode));
+        $this->tryCall($tradeAddressType, 'setCityName', $this->getTextType($city));
+        $this->tryCall($tradeAddressType, 'setCountryID', $this->getCountryIDType($country));
+        $this->tryCall($tradeAddressType, 'setCountrySubDivisionName', $this->getTextType($subDivision));
 
         return $tradeAddressType;
     }
@@ -611,8 +614,8 @@ class ZugferdObjectHelper
 
         $legalOrganizationType = $this->createClassInstance('ram\LegalOrganizationType', $legalOrgName);
 
-        $this->tryCall($legalOrganizationType, "setID", $this->getIdType($legalOrgId, $legalOrgType));
-        $this->tryCall($legalOrganizationType, "setTradingBusinessName", $this->getTextType($legalOrgName));
+        $this->tryCall($legalOrganizationType, 'setID', $this->getIdType($legalOrgId, $legalOrgType));
+        $this->tryCall($legalOrganizationType, 'setTradingBusinessName', $this->getTextType($legalOrgName));
 
         return $legalOrganizationType;
     }
@@ -632,11 +635,11 @@ class ZugferdObjectHelper
         $contactFaxNo = $this->getUniversalCommunicationType($contactFaxNo);
         $contactEmailAddress = $this->getUniversalCommunicationType(null, $contactEmailAddress);
 
-        $this->tryCall($tradeContactType, "setPersonName", $this->getTextType($contactPersonName));
-        $this->tryCall($tradeContactType, "setDepartmentName", $this->getTextType($contactDepartmentName));
-        $this->tryCall($tradeContactType, "setTelephoneUniversalCommunication", $contactPhoneNo);
-        $this->tryCall($tradeContactType, "setFaxUniversalCommunication", $contactFaxNo);
-        $this->tryCall($tradeContactType, "setEmailURIUniversalCommunication", $contactEmailAddress);
+        $this->tryCall($tradeContactType, 'setPersonName', $this->getTextType($contactPersonName));
+        $this->tryCall($tradeContactType, 'setDepartmentName', $this->getTextType($contactDepartmentName));
+        $this->tryCall($tradeContactType, 'setTelephoneUniversalCommunication', $contactPhoneNo);
+        $this->tryCall($tradeContactType, 'setFaxUniversalCommunication', $contactFaxNo);
+        $this->tryCall($tradeContactType, 'setEmailURIUniversalCommunication', $contactEmailAddress);
 
         return $tradeContactType;
     }
@@ -652,8 +655,8 @@ class ZugferdObjectHelper
 
         $communicationType = $this->createClassInstance('ram\UniversalCommunicationType');
 
-        $this->tryCall($communicationType, "setCompleteNumber", $this->getTextType($number));
-        $this->tryCall($communicationType, "setURIID", $this->getIdType($uriId, $uriScheme));
+        $this->tryCall($communicationType, 'setCompleteNumber', $this->getTextType($number));
+        $this->tryCall($communicationType, 'setURIID', $this->getIdType($uriId, $uriScheme));
 
         return $communicationType;
     }
@@ -673,7 +676,7 @@ class ZugferdObjectHelper
 
         $taxRegistrationType = $this->createClassInstance('ram\TaxRegistrationType');
 
-        $this->tryCall($taxRegistrationType, "setID", $this->getIdType($taxRegId, $taxRegType));
+        $this->tryCall($taxRegistrationType, 'setID', $this->getIdType($taxRegId, $taxRegType));
 
         return $taxRegistrationType;
     }
@@ -689,7 +692,7 @@ class ZugferdObjectHelper
 
         $tradeDeliveryTermsType = $this->createClassInstance('ram\TradeDeliveryTermsType');
 
-        $this->tryCall($tradeDeliveryTermsType, "setDeliveryTypeCode", $this->getTradeDeliveryTermsCodeType($code));
+        $this->tryCall($tradeDeliveryTermsType, 'setDeliveryTypeCode', $this->getTradeDeliveryTermsCodeType($code));
 
         return $tradeDeliveryTermsType;
     }
@@ -717,8 +720,8 @@ class ZugferdObjectHelper
 
         $procuringProjectType = $this->createClassInstance('ram\ProcuringProjectType');
 
-        $this->tryCall($procuringProjectType, "setID", $this->getIdType($id));
-        $this->tryCall($procuringProjectType, "setName", $this->getTextType($name));
+        $this->tryCall($procuringProjectType, 'setID', $this->getIdType($id));
+        $this->tryCall($procuringProjectType, 'setName', $this->getTextType($name));
 
         return $procuringProjectType;
     }
@@ -734,7 +737,7 @@ class ZugferdObjectHelper
 
         $supplyChainEventType = $this->createClassInstance('ram\SupplyChainEventType');
 
-        $this->tryCall($supplyChainEventType, "setOccurrenceDateTime", $this->getDateTimeType($date));
+        $this->tryCall($supplyChainEventType, 'setOccurrenceDateTime', $this->getDateTimeType($date));
 
         return $supplyChainEventType;
     }
@@ -755,8 +758,8 @@ class ZugferdObjectHelper
 
         $tradeSettlementFinancialCardType = $this->createClassInstance('ram\TradeSettlementFinancialCardType');
 
-        $this->tryCall($tradeSettlementFinancialCardType, "setID", $this->getIdType($id, $type));
-        $this->tryCall($tradeSettlementFinancialCardType, "setCardholderName", $this->getTextType($holderName));
+        $this->tryCall($tradeSettlementFinancialCardType, 'setID', $this->getIdType($id, $type));
+        $this->tryCall($tradeSettlementFinancialCardType, 'setCardholderName', $this->getTextType($holderName));
 
         return $tradeSettlementFinancialCardType;
     }
@@ -772,7 +775,7 @@ class ZugferdObjectHelper
 
         $debtorFinancialAccountType = $this->createClassInstance('ram\DebtorFinancialAccountType');
 
-        $this->tryCall($debtorFinancialAccountType, "setIBANID", $this->getIdType($iban));
+        $this->tryCall($debtorFinancialAccountType, 'setIBANID', $this->getIdType($iban));
 
         return $debtorFinancialAccountType;
     }
@@ -788,9 +791,9 @@ class ZugferdObjectHelper
 
         $creditorFinancialAccountType = $this->createClassInstance('ram\CreditorFinancialAccountType');
 
-        $this->tryCall($creditorFinancialAccountType, "setIBANID", $this->getIdType($iban));
-        $this->tryCall($creditorFinancialAccountType, "setAccountName", $this->getTextType($accountName));
-        $this->tryCall($creditorFinancialAccountType, "setProprietaryID", $this->getIdType($proprietaryId));
+        $this->tryCall($creditorFinancialAccountType, 'setIBANID', $this->getIdType($iban));
+        $this->tryCall($creditorFinancialAccountType, 'setAccountName', $this->getTextType($accountName));
+        $this->tryCall($creditorFinancialAccountType, 'setProprietaryID', $this->getIdType($proprietaryId));
 
         return $creditorFinancialAccountType;
     }
@@ -806,7 +809,7 @@ class ZugferdObjectHelper
 
         $creditorFinancialInstitutionType = $this->createClassInstance('ram\CreditorFinancialInstitutionType');
 
-        $this->tryCall($creditorFinancialInstitutionType, "setBICID", $this->getIdType($bic));
+        $this->tryCall($creditorFinancialInstitutionType, 'setBICID', $this->getIdType($bic));
 
         return $creditorFinancialInstitutionType;
     }
@@ -822,8 +825,8 @@ class ZugferdObjectHelper
 
         $tradeSettlementPaymentMeansType = $this->createClassInstance('ram\TradeSettlementPaymentMeansType');
 
-        $this->tryCall($tradeSettlementPaymentMeansType, "setTypeCode", $this->getCodeType($typeCode));
-        $this->tryCall($tradeSettlementPaymentMeansType, "setInformation", $this->getTextType($information));
+        $this->tryCall($tradeSettlementPaymentMeansType, 'setTypeCode', $this->getCodeType($typeCode));
+        $this->tryCall($tradeSettlementPaymentMeansType, 'setInformation', $this->getTextType($information));
 
         return $tradeSettlementPaymentMeansType;
     }
@@ -839,10 +842,10 @@ class ZugferdObjectHelper
 
         $tradePaymentTermsType = $this->createClassInstance('ram\TradePaymentTermsType');
 
-        $this->tryCall($tradePaymentTermsType, "setDescription", $this->getTextType($description));
-        $this->tryCall($tradePaymentTermsType, "setDueDateDateTime", $this->getDateTimeType($dueDate));
-        $this->tryCall($tradePaymentTermsType, "setDirectDebitMandateID", $this->getIdType($directDebitMandateID));
-        $this->tryCall($tradePaymentTermsType, "setPartialPaymentAmount", $this->getAmountType($partialPaymentAmount));
+        $this->tryCall($tradePaymentTermsType, 'setDescription', $this->getTextType($description));
+        $this->tryCall($tradePaymentTermsType, 'setDueDateDateTime', $this->getDateTimeType($dueDate));
+        $this->tryCall($tradePaymentTermsType, 'setDirectDebitMandateID', $this->getIdType($directDebitMandateID));
+        $this->tryCall($tradePaymentTermsType, 'setPartialPaymentAmount', $this->getAmountType($partialPaymentAmount));
 
         return $tradePaymentTermsType;
     }
@@ -858,11 +861,11 @@ class ZugferdObjectHelper
 
         $tradePaymentDiscountTermsType = $this->createClassInstance('ram\TradePaymentDiscountTermsType');
 
-        $this->tryCall($tradePaymentDiscountTermsType, "setBasisDateTime", $this->getDateTimeType($basisDateTime));
-        $this->tryCall($tradePaymentDiscountTermsType, "setBasisPeriodMeasure", $this->getMeasureType($basisPeriodMeasureValue, $basisPeriodMeasureUnitCode));
-        $this->tryCall($tradePaymentDiscountTermsType, "setBasisAmount", $this->getAmountType($basisAmount));
-        $this->tryCall($tradePaymentDiscountTermsType, "setCalculationPercent", $this->getPercentType($calculationPercent));
-        $this->tryCall($tradePaymentDiscountTermsType, "setActualDiscountAmount", $this->getAmountType($actualDiscountAmount));
+        $this->tryCall($tradePaymentDiscountTermsType, 'setBasisDateTime', $this->getDateTimeType($basisDateTime));
+        $this->tryCall($tradePaymentDiscountTermsType, 'setBasisPeriodMeasure', $this->getMeasureType($basisPeriodMeasureValue, $basisPeriodMeasureUnitCode));
+        $this->tryCall($tradePaymentDiscountTermsType, 'setBasisAmount', $this->getAmountType($basisAmount));
+        $this->tryCall($tradePaymentDiscountTermsType, 'setCalculationPercent', $this->getPercentType($calculationPercent));
+        $this->tryCall($tradePaymentDiscountTermsType, 'setActualDiscountAmount', $this->getAmountType($actualDiscountAmount));
 
         return $tradePaymentDiscountTermsType;
     }
@@ -878,11 +881,11 @@ class ZugferdObjectHelper
 
         $tradePaymentDiscountTermsType = $this->createClassInstance('ram\TradePaymentPenaltyTermsType');
 
-        $this->tryCall($tradePaymentDiscountTermsType, "setBasisDateTime", $this->getDateTimeType($basisDateTime));
-        $this->tryCall($tradePaymentDiscountTermsType, "setBasisPeriodMeasure", $this->getMeasureType($basisPeriodMeasureValue, $basisPeriodMeasureUnitCode));
-        $this->tryCall($tradePaymentDiscountTermsType, "setBasisAmount", $this->getAmountType($basisAmount));
-        $this->tryCall($tradePaymentDiscountTermsType, "setCalculationPercent", $this->getPercentType($calculationPercent));
-        $this->tryCall($tradePaymentDiscountTermsType, "setActualPenaltyAmount", $this->getAmountType($actualPenaltyAmount));
+        $this->tryCall($tradePaymentDiscountTermsType, 'setBasisDateTime', $this->getDateTimeType($basisDateTime));
+        $this->tryCall($tradePaymentDiscountTermsType, 'setBasisPeriodMeasure', $this->getMeasureType($basisPeriodMeasureValue, $basisPeriodMeasureUnitCode));
+        $this->tryCall($tradePaymentDiscountTermsType, 'setBasisAmount', $this->getAmountType($basisAmount));
+        $this->tryCall($tradePaymentDiscountTermsType, 'setCalculationPercent', $this->getPercentType($calculationPercent));
+        $this->tryCall($tradePaymentDiscountTermsType, 'setActualPenaltyAmount', $this->getAmountType($actualPenaltyAmount));
 
         return $tradePaymentDiscountTermsType;
     }
@@ -899,17 +902,17 @@ class ZugferdObjectHelper
 
         $tradeTaxType = $this->createClassInstance('ram\TradeTaxType');
 
-        $this->tryCall($tradeTaxType, "setCalculatedAmount", $this->getAmountType($calculatedAmount));
-        $this->tryCall($tradeTaxType, "setTypeCode", $this->getTaxTypeCodeType($typeCode));
-        $this->tryCall($tradeTaxType, "setExemptionReason", $this->getTextType($exemptionReason));
-        $this->tryCall($tradeTaxType, "setBasisAmount", $this->getAmountType($basisAmount));
-        $this->tryCall($tradeTaxType, "setLineTotalBasisAmount", $this->getAmountType($lineTotalBasisAmount));
-        $this->tryCall($tradeTaxType, "setAllowanceChargeBasisAmount", $this->getAmountType($allowanceChargeBasisAmount));
-        $this->tryCall($tradeTaxType, "setCategoryCode", $this->getTaxCategoryCodeType($categoryCode));
-        $this->tryCall($tradeTaxType, "setExemptionReasonCode", $this->getCodeType($exemptionReasonCode));
-        $this->tryCall($tradeTaxType, "setTaxPointDate", $this->getDateType($taxPointDate));
-        $this->tryCall($tradeTaxType, "setDueDateTypeCode", $this->getTimeReferenceCodeType($dueDateTypeCode));
-        $this->tryCall($tradeTaxType, "setRateApplicablePercent", $this->getPercentType($rateApplicablePercent));
+        $this->tryCall($tradeTaxType, 'setCalculatedAmount', $this->getAmountType($calculatedAmount));
+        $this->tryCall($tradeTaxType, 'setTypeCode', $this->getTaxTypeCodeType($typeCode));
+        $this->tryCall($tradeTaxType, 'setExemptionReason', $this->getTextType($exemptionReason));
+        $this->tryCall($tradeTaxType, 'setBasisAmount', $this->getAmountType($basisAmount));
+        $this->tryCall($tradeTaxType, 'setLineTotalBasisAmount', $this->getAmountType($lineTotalBasisAmount));
+        $this->tryCall($tradeTaxType, 'setAllowanceChargeBasisAmount', $this->getAmountType($allowanceChargeBasisAmount));
+        $this->tryCall($tradeTaxType, 'setCategoryCode', $this->getTaxCategoryCodeType($categoryCode));
+        $this->tryCall($tradeTaxType, 'setExemptionReasonCode', $this->getCodeType($exemptionReasonCode));
+        $this->tryCall($tradeTaxType, 'setTaxPointDate', $this->getDateType($taxPointDate));
+        $this->tryCall($tradeTaxType, 'setDueDateTypeCode', $this->getTimeReferenceCodeType($dueDateTypeCode));
+        $this->tryCall($tradeTaxType, 'setRateApplicablePercent', $this->getPercentType($rateApplicablePercent));
 
         return $tradeTaxType;
     }
@@ -926,17 +929,17 @@ class ZugferdObjectHelper
 
         $tradeAllowanceChargeType = $this->createClassInstance('ram\TradeAllowanceChargeType');
 
-        $this->tryCall($tradeAllowanceChargeType, "setChargeIndicator", $this->getIndicatorType($isCharge));
-        $this->tryCall($tradeAllowanceChargeType, "setSequenceNumeric", $this->getNumericType($sequence));
-        $this->tryCall($tradeAllowanceChargeType, "setCalculationPercent", $this->getPercentType($calculationPercent));
-        $this->tryCall($tradeAllowanceChargeType, "setBasisAmount", $this->getAmountType($basisAmount));
-        $this->tryCall($tradeAllowanceChargeType, "setBasisQuantity", $this->getQuantityType($basisQuantity, $basisQuantityUnitCode));
-        $this->tryCall($tradeAllowanceChargeType, "setActualAmount", $this->getAmountType($actualAmount));
-        $this->tryCall($tradeAllowanceChargeType, "setReasonCode", $this->getCodeType($reasonCode));
-        $this->tryCall($tradeAllowanceChargeType, "setReason", $this->getTextType($reason));
+        $this->tryCall($tradeAllowanceChargeType, 'setChargeIndicator', $this->getIndicatorType($isCharge));
+        $this->tryCall($tradeAllowanceChargeType, 'setSequenceNumeric', $this->getNumericType($sequence));
+        $this->tryCall($tradeAllowanceChargeType, 'setCalculationPercent', $this->getPercentType($calculationPercent));
+        $this->tryCall($tradeAllowanceChargeType, 'setBasisAmount', $this->getAmountType($basisAmount));
+        $this->tryCall($tradeAllowanceChargeType, 'setBasisQuantity', $this->getQuantityType($basisQuantity, $basisQuantityUnitCode));
+        $this->tryCall($tradeAllowanceChargeType, 'setActualAmount', $this->getAmountType($actualAmount));
+        $this->tryCall($tradeAllowanceChargeType, 'setReasonCode', $this->getCodeType($reasonCode));
+        $this->tryCall($tradeAllowanceChargeType, 'setReason', $this->getTextType($reason));
 
         if (!is_null($taxCategoryCode) && !is_null($taxTypeCode)) {
-            $this->tryCall($tradeAllowanceChargeType, "setCategoryTradeTax", $this->getTradeTaxType($taxCategoryCode, $taxTypeCode, null, null, $rateApplicablePercent));
+            $this->tryCall($tradeAllowanceChargeType, 'setCategoryTradeTax', $this->getTradeTaxType($taxCategoryCode, $taxTypeCode, null, null, $rateApplicablePercent));
         }
 
         return $tradeAllowanceChargeType;
@@ -953,13 +956,13 @@ class ZugferdObjectHelper
 
         $logisticsServiceChargeType = $this->createClassInstance('ram\LogisticsServiceChargeType');
 
-        $this->tryCall($logisticsServiceChargeType, "setDescription", $this->getTextType($description));
-        $this->tryCall($logisticsServiceChargeType, "setAppliedAmount", $this->getAmountType($appliedAmount));
+        $this->tryCall($logisticsServiceChargeType, 'setDescription', $this->getTextType($description));
+        $this->tryCall($logisticsServiceChargeType, 'setAppliedAmount', $this->getAmountType($appliedAmount));
 
         if (!is_null($taxCategoryCodes) && !is_null($taxTypeCodes) && !is_null($rateApplicablePercents)) {
             foreach ($rateApplicablePercents as $index => $rateApplicablePercent) {
                 $taxBreakdown = $this->getTradeTaxType($taxCategoryCodes[$index], $taxTypeCodes[$index], null, null, $rateApplicablePercent);
-                $this->tryCall($logisticsServiceChargeType, "addToAppliedTradeTax", $taxBreakdown);
+                $this->tryCall($logisticsServiceChargeType, 'addToAppliedTradeTax', $taxBreakdown);
             }
         }
 
@@ -977,15 +980,15 @@ class ZugferdObjectHelper
 
         $tradeSettlementHeaderMonetarySummationType = $this->createClassInstance('ram\TradeSettlementHeaderMonetarySummationType');
 
-        $this->tryCall($tradeSettlementHeaderMonetarySummationType, "setLineTotalAmount", $this->getAmountType($lineTotalAmount));
-        $this->tryCall($tradeSettlementHeaderMonetarySummationType, "setChargeTotalAmount", $this->getAmountType($chargeTotalAmount));
-        $this->tryCall($tradeSettlementHeaderMonetarySummationType, "setAllowanceTotalAmount", $this->getAmountType($allowanceTotalAmount));
-        $this->tryCall($tradeSettlementHeaderMonetarySummationType, "setTaxBasisTotalAmount", $this->getAmountType($taxBasisTotalAmount));
-        $this->tryCallAll($tradeSettlementHeaderMonetarySummationType, ["addToTaxTotalAmount", "setTaxTotalAmount"], $this->getAmountType($taxTotalAmount));
-        $this->tryCall($tradeSettlementHeaderMonetarySummationType, "setRoundingAmount", $this->getAmountType($roundingAmount));
-        $this->tryCall($tradeSettlementHeaderMonetarySummationType, "setGrandTotalAmount", $this->getAmountType($grandTotalAmount));
-        $this->tryCall($tradeSettlementHeaderMonetarySummationType, "setTotalPrepaidAmount", $this->getAmountType($totalPrepaidAmount));
-        $this->tryCall($tradeSettlementHeaderMonetarySummationType, "setDuePayableAmount", $this->getAmountType($duePayableAmount));
+        $this->tryCall($tradeSettlementHeaderMonetarySummationType, 'setLineTotalAmount', $this->getAmountType($lineTotalAmount));
+        $this->tryCall($tradeSettlementHeaderMonetarySummationType, 'setChargeTotalAmount', $this->getAmountType($chargeTotalAmount));
+        $this->tryCall($tradeSettlementHeaderMonetarySummationType, 'setAllowanceTotalAmount', $this->getAmountType($allowanceTotalAmount));
+        $this->tryCall($tradeSettlementHeaderMonetarySummationType, 'setTaxBasisTotalAmount', $this->getAmountType($taxBasisTotalAmount));
+        $this->tryCallAll($tradeSettlementHeaderMonetarySummationType, ['addToTaxTotalAmount', 'setTaxTotalAmount'], $this->getAmountType($taxTotalAmount));
+        $this->tryCall($tradeSettlementHeaderMonetarySummationType, 'setRoundingAmount', $this->getAmountType($roundingAmount));
+        $this->tryCall($tradeSettlementHeaderMonetarySummationType, 'setGrandTotalAmount', $this->getAmountType($grandTotalAmount));
+        $this->tryCall($tradeSettlementHeaderMonetarySummationType, 'setTotalPrepaidAmount', $this->getAmountType($totalPrepaidAmount));
+        $this->tryCall($tradeSettlementHeaderMonetarySummationType, 'setDuePayableAmount', $this->getAmountType($duePayableAmount));
 
         return $tradeSettlementHeaderMonetarySummationType;
     }
@@ -1009,8 +1012,8 @@ class ZugferdObjectHelper
 
         $tradeAccountingAccountType = $this->createClassInstance('ram\TradeAccountingAccountType');
 
-        $this->tryCall($tradeAccountingAccountType, "setID", $this->getIdType($id));
-        $this->tryCall($tradeAccountingAccountType, "setTypeCode", $this->getCodeType($typeCode));
+        $this->tryCall($tradeAccountingAccountType, 'setID', $this->getIdType($id));
+        $this->tryCall($tradeAccountingAccountType, 'setTypeCode', $this->getCodeType($typeCode));
 
         return $tradeAccountingAccountType;
     }
@@ -1026,7 +1029,7 @@ class ZugferdObjectHelper
 
         $documentLineDocumentType = $this->createClassInstance('ram\DocumentLineDocumentType');
 
-        $this->tryCall($documentLineDocumentType, "setLineID", $this->getIdType($lineId));
+        $this->tryCall($documentLineDocumentType, 'setLineID', $this->getIdType($lineId));
 
         return $documentLineDocumentType;
     }
@@ -1047,15 +1050,15 @@ class ZugferdObjectHelper
         $lineTradeDeliveryType = $this->createClassInstance('ram\LineTradeDeliveryType');
         $lineTradeSettlementType = $this->createClassInstance('ram\LineTradeSettlementType');
 
-        $this->tryCall($supplyChainTradeLineItemType, "setAssociatedDocumentLineDocument", $doclinedoc);
-        $this->tryCall($doclinedoc, "setLineStatusCode", $this->getCodeType($lineStatusCode));
-        $this->tryCall($doclinedoc, "setLineStatusReasonCode", $this->getCodeType($lineStatusReasonCode));
+        $this->tryCall($supplyChainTradeLineItemType, 'setAssociatedDocumentLineDocument', $doclinedoc);
+        $this->tryCall($doclinedoc, 'setLineStatusCode', $this->getCodeType($lineStatusCode));
+        $this->tryCall($doclinedoc, 'setLineStatusReasonCode', $this->getCodeType($lineStatusReasonCode));
         if ($isTextPosition == false) {
-            $this->tryCall($supplyChainTradeLineItemType, "setSpecifiedLineTradeAgreement", $lineTradeAgreementType);
-            $this->tryCall($supplyChainTradeLineItemType, "setSpecifiedLineTradeDelivery", $lineTradeDeliveryType);
+            $this->tryCall($supplyChainTradeLineItemType, 'setSpecifiedLineTradeAgreement', $lineTradeAgreementType);
+            $this->tryCall($supplyChainTradeLineItemType, 'setSpecifiedLineTradeDelivery', $lineTradeDeliveryType);
         }
 
-        $this->tryCall($supplyChainTradeLineItemType, "setSpecifiedLineTradeSettlement", $lineTradeSettlementType);
+        $this->tryCall($supplyChainTradeLineItemType, 'setSpecifiedLineTradeSettlement', $lineTradeSettlementType);
 
         return $supplyChainTradeLineItemType;
     }
@@ -1071,16 +1074,16 @@ class ZugferdObjectHelper
 
         $tradeProductType = $this->createClassInstance('ram\TradeProductType');
 
-        $this->tryCall($tradeProductType, "setGlobalID", $this->getIdType($globalID, $globalIDType));
-        $this->tryCall($tradeProductType, "setSellerAssignedID", $this->getIdType($sellerAssignedID));
-        $this->tryCall($tradeProductType, "setBuyerAssignedID", $this->getIdType($buyerAssignedID));
-        $this->tryCall($tradeProductType, "setName", $this->getTextType($name));
-        $this->tryCall($tradeProductType, "setDescription", $this->getTextType($description));
-        $this->tryCall($tradeProductType, "setIndustryAssignedID", $this->getIdType($industryAssignedID));
-        $this->tryCall($tradeProductType, "setModelID", $this->getIdType($modelID));
-        $this->tryCall($tradeProductType, "addToBatchID", $this->getIdType($batchID));
-        $this->tryCall($tradeProductType, "setBrandName", $this->getTextType($brandName));
-        $this->tryCall($tradeProductType, "setModelName", $this->getTextType($modelName));
+        $this->tryCall($tradeProductType, 'setGlobalID', $this->getIdType($globalID, $globalIDType));
+        $this->tryCall($tradeProductType, 'setSellerAssignedID', $this->getIdType($sellerAssignedID));
+        $this->tryCall($tradeProductType, 'setBuyerAssignedID', $this->getIdType($buyerAssignedID));
+        $this->tryCall($tradeProductType, 'setName', $this->getTextType($name));
+        $this->tryCall($tradeProductType, 'setDescription', $this->getTextType($description));
+        $this->tryCall($tradeProductType, 'setIndustryAssignedID', $this->getIdType($industryAssignedID));
+        $this->tryCall($tradeProductType, 'setModelID', $this->getIdType($modelID));
+        $this->tryCall($tradeProductType, 'addToBatchID', $this->getIdType($batchID));
+        $this->tryCall($tradeProductType, 'setBrandName', $this->getTextType($brandName));
+        $this->tryCall($tradeProductType, 'setModelName', $this->getTextType($modelName));
 
         return $tradeProductType;
     }
@@ -1096,10 +1099,10 @@ class ZugferdObjectHelper
 
         $productCharacteristicType = $this->createClassInstance('ram\ProductCharacteristicType');
 
-        $this->tryCall($productCharacteristicType, "setTypeCode", $this->getCodeType($typeCode));
-        $this->tryCall($productCharacteristicType, "setDescription", $this->getTextType($description));
-        $this->tryCall($productCharacteristicType, "setValueMeasure", $this->getMeasureType($valueMeasure, $valueMeasureUnitCode));
-        $this->tryCall($productCharacteristicType, "setValue", $this->getTextType($value));
+        $this->tryCall($productCharacteristicType, 'setTypeCode', $this->getCodeType($typeCode));
+        $this->tryCall($productCharacteristicType, 'setDescription', $this->getTextType($description));
+        $this->tryCall($productCharacteristicType, 'setValueMeasure', $this->getMeasureType($valueMeasure, $valueMeasureUnitCode));
+        $this->tryCall($productCharacteristicType, 'setValue', $this->getTextType($value));
 
         return $productCharacteristicType;
     }
@@ -1115,8 +1118,8 @@ class ZugferdObjectHelper
 
         $productClassificationType = $this->createClassInstance('ram\ProductClassificationType');
 
-        $this->tryCall($productClassificationType, "setClassCode", $this->getCodeType2($classCode, $listID, $listVersionID));
-        $this->tryCall($productClassificationType, "setClassName", $this->getTextType($className));
+        $this->tryCall($productClassificationType, 'setClassCode', $this->getCodeType2($classCode, $listID, $listVersionID));
+        $this->tryCall($productClassificationType, 'setClassName', $this->getTextType($className));
 
         return $productClassificationType;
     }
@@ -1132,13 +1135,13 @@ class ZugferdObjectHelper
 
         $referencedProductType = $this->createClassInstance('ram\ReferencedProductType');
 
-        $this->tryCallAll($referencedProductType, ["addToGlobalID", "setGlobalID"], $this->getIdType($globalID, $globalIDType));
-        $this->tryCall($referencedProductType, "setSellerAssignedID", $this->getIdType($sellerAssignedID));
-        $this->tryCall($referencedProductType, "setBuyerAssignedID", $this->getIdType($buyerAssignedID));
-        $this->tryCall($referencedProductType, "setIndustryAssignedID", $this->getIdType($industryAssignedID));
-        $this->tryCall($referencedProductType, "setName", $this->getTextType($name));
-        $this->tryCall($referencedProductType, "setDescription", $this->getTextType($description));
-        $this->tryCall($referencedProductType, "setUnitQuantity", $this->getQuantityType($unitQuantity, $unitCode));
+        $this->tryCallAll($referencedProductType, ['addToGlobalID', 'setGlobalID'], $this->getIdType($globalID, $globalIDType));
+        $this->tryCall($referencedProductType, 'setSellerAssignedID', $this->getIdType($sellerAssignedID));
+        $this->tryCall($referencedProductType, 'setBuyerAssignedID', $this->getIdType($buyerAssignedID));
+        $this->tryCall($referencedProductType, 'setIndustryAssignedID', $this->getIdType($industryAssignedID));
+        $this->tryCall($referencedProductType, 'setName', $this->getTextType($name));
+        $this->tryCall($referencedProductType, 'setDescription', $this->getTextType($description));
+        $this->tryCall($referencedProductType, 'setUnitQuantity', $this->getQuantityType($unitQuantity, $unitCode));
 
         return $referencedProductType;
     }
@@ -1154,8 +1157,8 @@ class ZugferdObjectHelper
 
         $tradePriceType = $this->createClassInstance('ram\TradePriceType');
 
-        $this->tryCall($tradePriceType, "setChargeAmount", $this->getAmountType($amount));
-        $this->tryCall($tradePriceType, "setBasisQuantity", $this->getQuantityType($basisQuantity, $basisQuantityUnitCode));
+        $this->tryCall($tradePriceType, 'setChargeAmount', $this->getAmountType($amount));
+        $this->tryCall($tradePriceType, 'setBasisQuantity', $this->getQuantityType($basisQuantity, $basisQuantityUnitCode));
 
         return $tradePriceType;
     }
@@ -1171,12 +1174,12 @@ class ZugferdObjectHelper
 
         $tradeSettlementLineMonetarySummationType = $this->createClassInstance('ram\TradeSettlementLineMonetarySummationType');
 
-        $this->tryCall($tradeSettlementLineMonetarySummationType, "setLineTotalAmount", $this->getAmountType($lineTotalAmount));
-        $this->tryCall($tradeSettlementLineMonetarySummationType, "setChargeTotalAmount", $this->getAmountType($chargeTotalAmount));
-        $this->tryCall($tradeSettlementLineMonetarySummationType, "setAllowanceTotalAmount", $this->getAmountType($allowanceTotalAmount));
-        $this->tryCall($tradeSettlementLineMonetarySummationType, "setTaxTotalAmount", $this->getAmountType($taxTotalAmount));
-        $this->tryCall($tradeSettlementLineMonetarySummationType, "setGrandTotalAmount", $this->getAmountType($grandTotalAmount));
-        $this->tryCall($tradeSettlementLineMonetarySummationType, "setTotalAllowanceChargeAmount", $this->getAmountType($totalAllowanceChargeAmount));
+        $this->tryCall($tradeSettlementLineMonetarySummationType, 'setLineTotalAmount', $this->getAmountType($lineTotalAmount));
+        $this->tryCall($tradeSettlementLineMonetarySummationType, 'setChargeTotalAmount', $this->getAmountType($chargeTotalAmount));
+        $this->tryCall($tradeSettlementLineMonetarySummationType, 'setAllowanceTotalAmount', $this->getAmountType($allowanceTotalAmount));
+        $this->tryCall($tradeSettlementLineMonetarySummationType, 'setTaxTotalAmount', $this->getAmountType($taxTotalAmount));
+        $this->tryCall($tradeSettlementLineMonetarySummationType, 'setGrandTotalAmount', $this->getAmountType($grandTotalAmount));
+        $this->tryCall($tradeSettlementLineMonetarySummationType, 'setTotalAllowanceChargeAmount', $this->getAmountType($totalAllowanceChargeAmount));
 
         return $tradeSettlementLineMonetarySummationType;
     }
@@ -1192,10 +1195,10 @@ class ZugferdObjectHelper
 
         $tradeCurrencyExchangeType = $this->createClassInstance('ram\TradeCurrencyExchangeType');
 
-        $this->tryCall($tradeCurrencyExchangeType, "setSourceCurrencyCode", $this->getIdType($sourceCurrencyCode));
-        $this->tryCall($tradeCurrencyExchangeType, "setTargetCurrencyCode", $this->getIdType($targetCurrencyCode));
-        $this->tryCall($tradeCurrencyExchangeType, "setConversionRate", $this->getRateType($rate));
-        $this->tryCall($tradeCurrencyExchangeType, "setConversionRateDateTime", $this->getDateTimeType($rateDateTime));
+        $this->tryCall($tradeCurrencyExchangeType, 'setSourceCurrencyCode', $this->getIdType($sourceCurrencyCode));
+        $this->tryCall($tradeCurrencyExchangeType, 'setTargetCurrencyCode', $this->getIdType($targetCurrencyCode));
+        $this->tryCall($tradeCurrencyExchangeType, 'setConversionRate', $this->getRateType($rate));
+        $this->tryCall($tradeCurrencyExchangeType, 'setConversionRateDateTime', $this->getDateTimeType($rateDateTime));
 
         return $tradeCurrencyExchangeType;
     }
@@ -1211,32 +1214,32 @@ class ZugferdObjectHelper
 
         $dateTimeString = trim($dateTimeString);
 
-        if ($format == "102") {
-            return DateTime::createFromFormat("Ymd", $dateTimeString);
+        if ($format == '102') {
+            return DateTime::createFromFormat('Ymd', $dateTimeString);
         }
 
-        if ($format == "101") {
-            return DateTime::createFromFormat("ymd", $dateTimeString);
+        if ($format == '101') {
+            return DateTime::createFromFormat('ymd', $dateTimeString);
         }
 
-        if ($format == "201") {
-            return DateTime::createFromFormat("ymdHi", $dateTimeString);
+        if ($format == '201') {
+            return DateTime::createFromFormat('ymdHi', $dateTimeString);
         }
 
-        if ($format == "202") {
-            return DateTime::createFromFormat("ymdHis", $dateTimeString);
+        if ($format == '202') {
+            return DateTime::createFromFormat('ymdHis', $dateTimeString);
         }
 
-        if ($format == "203") {
-            return DateTime::createFromFormat("YmdHi", $dateTimeString);
+        if ($format == '203') {
+            return DateTime::createFromFormat('YmdHi', $dateTimeString);
         }
 
-        if ($format == "204") {
-            return DateTime::createFromFormat("YmdHis", $dateTimeString);
+        if ($format == '204') {
+            return DateTime::createFromFormat('YmdHis', $dateTimeString);
         }
 
-        if ($format == "610") {
-            return DateTime::createFromFormat("Ym", $dateTimeString)->modify('first day of')->modify('midnight');
+        if ($format == '610') {
+            return DateTime::createFromFormat('Ym', $dateTimeString)->modify('first day of')->modify('midnight');
         }
 
         throw new ZugferdUnknownDateFormatException($format);
@@ -1249,7 +1252,7 @@ class ZugferdObjectHelper
     {
         $rateType = $this->createClassInstance('udt\RateType');
 
-        $this->tryCall($rateType, "value", $rateValue);
+        $this->tryCall($rateType, 'value', $rateValue);
 
         return $rateType;
     }
@@ -1262,7 +1265,7 @@ class ZugferdObjectHelper
      */
     public function createClassInstance($classname, $constructorvalue = null): ?object
     {
-        $className = 'horstoeko\zugferd\entities\\' . $this->profiledef["name"] . '\\' . $classname;
+        $className = 'horstoeko\zugferd\entities\\' . $this->profiledef['name'] . '\\' . $classname;
 
         if (!class_exists($className)) {
             return null;
@@ -1357,7 +1360,7 @@ class ZugferdObjectHelper
      */
     public function tryCallByPath($instance, string $methods, $value): void
     {
-        $methods = explode(".", $methods);
+        $methods = explode('.', $methods);
 
         foreach ($methods as $index => $method) {
             if ($index == count($methods) - 1) {
@@ -1377,7 +1380,7 @@ class ZugferdObjectHelper
     public function tryCallByPathAndReturn($instance, string $methods)
     {
         $result = null;
-        $methods = explode(".", $methods);
+        $methods = explode('.', $methods);
 
         foreach ($methods as $method) {
             $result = $this->tryCallAndReturn($instance, $method);
@@ -1465,7 +1468,7 @@ class ZugferdObjectHelper
             return true;
         }
 
-        return !is_object($value) && (string)$value === "";
+        return !is_object($value) && (string)$value === '';
     }
 
     /**

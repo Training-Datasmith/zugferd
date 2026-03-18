@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -39,7 +41,7 @@ class ZugferdDocumentPdfReaderExt
         'ZUGFeRD-invoice.xml'/*1.0*/,
         'zugferd-invoice.xml'/*2.0*/,
         'factur-x.xml'/*2.1*/,
-        'xrechnung.xml'
+        'xrechnung.xml',
     ];
 
     /**
@@ -301,7 +303,7 @@ class ZugferdDocumentPdfReaderExt
                 ZugferdDocumentPdfReaderExt::ATTACHMENT_KEY_TYPE => in_array($fileSpec->get('F')->getContent(), ZugferdDocumentPdfReaderExt::ATTACHMENT_FILENAMES) ? ZugferdDocumentPdfReaderExt::ATTACHMENT_TYPE_XMLINVOICE : ZugferdDocumentPdfReaderExt::ATTACHMENT_TYPE_ADDITIONAL,
                 ZugferdDocumentPdfReaderExt::ATTACHMENT_KEY_CONTENT => $fileSpec->get('EF')->get('F')->getContent(),
                 ZugferdDocumentPdfReaderExt::ATTACHMENT_KEY_FILENAME => $fileSpec->get('F')->getContent(),
-                ZugferdDocumentPdfReaderExt::ATTACHMENT_KEY_MIMETYPE => $fileSpec->get('EF')->get('F')->has('Subtype') ? (string)($fileSpec->get('EF')->get('F')->get('Subtype')->getContent()) : "",
+                ZugferdDocumentPdfReaderExt::ATTACHMENT_KEY_MIMETYPE => $fileSpec->get('EF')->get('F')->has('Subtype') ? (string)($fileSpec->get('EF')->get('F')->get('Subtype')->getContent()) : '',
             ];
         }
 

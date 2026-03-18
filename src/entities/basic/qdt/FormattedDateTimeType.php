@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\basic\qdt;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\basic\qdt;
  */
 class FormattedDateTimeType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\basic\qdt\FormattedDateTimeType\DateTimeStringAType $dateTimeString
      */

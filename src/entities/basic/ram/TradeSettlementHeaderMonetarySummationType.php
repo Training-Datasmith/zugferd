@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\basic\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\basic\ram;
  */
 class TradeSettlementHeaderMonetarySummationType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\AmountType $lineTotalAmount
      */
@@ -34,7 +35,7 @@ class TradeSettlementHeaderMonetarySummationType
      * @var \horstoeko\zugferd\entities\basic\udt\AmountType[] $taxTotalAmount
      */
     private $taxTotalAmount = [
-        
+
     ];
 
     /**

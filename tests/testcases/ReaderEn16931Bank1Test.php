@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\testcases;
 
 use horstoeko\zugferd\codelists\ZugferdInvoiceType;
@@ -17,7 +19,7 @@ class ReaderEn16931Bank1Test extends TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$document = ZugferdDocumentReader::readAndGuessFromFile(__DIR__ . "/../assets/xml_en16931_4.xml");
+        self::$document = ZugferdDocumentReader::readAndGuessFromFile(__DIR__ . '/../assets/xml_en16931_4.xml');
     }
 
     public function testDocumentProfile(): void
@@ -56,10 +58,10 @@ class ReaderEn16931Bank1Test extends TestCase
         $this->assertSame(ZugferdInvoiceType::INVOICE, $documenttypecode);
         $this->assertInstanceOf(\DateTime::class, $documentdate);
         $this->assertEquals((\DateTime::createFromFormat('Ymd', '20180305'))->format('Ymd'), $documentdate->format('Ymd'));
-        $this->assertSame("EUR", $invoiceCurrency);
-        $this->assertSame("", $taxCurrency);
-        $this->assertSame("", $documentname);
-        $this->assertSame("", $documentlanguage);
+        $this->assertSame('EUR', $invoiceCurrency);
+        $this->assertSame('', $taxCurrency);
+        $this->assertSame('', $documentname);
+        $this->assertSame('', $documentlanguage);
         $this->assertNotInstanceOf(\DateTime::class, $effectiveSpecifiedPeriod);
     }
 
@@ -78,8 +80,8 @@ class ReaderEn16931Bank1Test extends TestCase
     public function testDocumentGeneralPaymentInformation(): void
     {
         self::$document->getDocumentGeneralPaymentInformation($creditorReferenceID, $paymentReference);
-        $this->assertSame("DE98ZZZ09999999999", $creditorReferenceID);
-        $this->assertSame("", $paymentReference);
+        $this->assertSame('DE98ZZZ09999999999', $creditorReferenceID);
+        $this->assertSame('', $paymentReference);
     }
 
     public function testGetDocumentPaymentMeans(): void
@@ -87,15 +89,15 @@ class ReaderEn16931Bank1Test extends TestCase
         $this->assertTrue(self::$document->firstGetDocumentPaymentMeans());
         self::$document->getDocumentPaymentMeans($typeCode, $information, $cardType, $cardId, $cardHolderName, $buyerIban, $payeeIban, $payeeAccountName, $payeePropId, $payeeBic);
         $this->assertSame(ZugferdPaymentMeans::UNTDID_4461_59, $typeCode);
-        $this->assertSame("", $information);
-        $this->assertSame("", $cardType);
-        $this->assertSame("", $cardId);
-        $this->assertSame("", $cardHolderName);
-        $this->assertSame("DE21860000000086001055", $buyerIban);
-        $this->assertSame("", $payeeIban);
-        $this->assertSame("", $payeeAccountName);
-        $this->assertSame("", $payeePropId);
-        $this->assertSame("", $payeeBic);
+        $this->assertSame('', $information);
+        $this->assertSame('', $cardType);
+        $this->assertSame('', $cardId);
+        $this->assertSame('', $cardHolderName);
+        $this->assertSame('DE21860000000086001055', $buyerIban);
+        $this->assertSame('', $payeeIban);
+        $this->assertSame('', $payeeAccountName);
+        $this->assertSame('', $payeePropId);
+        $this->assertSame('', $payeeBic);
     }
 
     public function testtDocumentPaymentTerms(): void
@@ -105,18 +107,18 @@ class ReaderEn16931Bank1Test extends TestCase
         self::$document->getDiscountTermsFromPaymentTerm($dispercent, $discbasedatetime, $discmeasureval, $discmeasureunit, $discbaseamount, $discamount);
         self::$document->getPenaltyTermsFromPaymentTerm($penaltypercent, $penaltybasedatetime, $penaltymeasureval, $penaltymeasureunit, $penaltybaseamount, $penaltyamount);
 
-        $this->assertSame("Der Betrag in Höhe von EUR 529,87 wird am 20.03.2018 von Ihrem Konto per SEPA-Lastschrift eingezogen.", $termdescription);
+        $this->assertSame('Der Betrag in Höhe von EUR 529,87 wird am 20.03.2018 von Ihrem Konto per SEPA-Lastschrift eingezogen.', $termdescription);
         $this->assertNotInstanceOf(\DateTime::class, $termduedate);
-        $this->assertSame("REF A-123", $termmandate);
+        $this->assertSame('REF A-123', $termmandate);
         $this->assertEquals(0, $dispercent);
         $this->assertNotInstanceOf(\DateTime::class, $discbasedatetime);
         $this->assertEquals(0, $discmeasureval);
-        $this->assertSame("", $discmeasureunit);
+        $this->assertSame('', $discmeasureunit);
         $this->assertEquals(0, $discbaseamount);
         $this->assertEquals(0, $discamount);
         $this->assertNotInstanceOf(\DateTime::class, $penaltybasedatetime);
         $this->assertEquals(0, $penaltymeasureval);
-        $this->assertSame("", $penaltymeasureunit);
+        $this->assertSame('', $penaltymeasureunit);
         $this->assertEquals(0, $penaltybaseamount);
         $this->assertEquals(0, $penaltyamount);
 

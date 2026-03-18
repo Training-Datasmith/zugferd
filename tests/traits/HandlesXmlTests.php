@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\traits;
 
 trait HandlesXmlTests
@@ -225,6 +227,6 @@ trait HandlesXmlTests
 
     public function debugWriteFile(): void
     {
-        (self::$document)->writeFile(getcwd() . "/myfile_dbg.xml");
+        (self::$document)->writeFile(getcwd() . '/myfile_dbg.xml');
     }
 }

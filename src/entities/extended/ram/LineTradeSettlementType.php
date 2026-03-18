@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,12 +11,11 @@ namespace horstoeko\zugferd\entities\extended\ram;
  */
 class LineTradeSettlementType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeTaxType[] $applicableTradeTax
      */
     private $applicableTradeTax = [
-        
+
     ];
 
     /**
@@ -26,7 +27,7 @@ class LineTradeSettlementType
      * @var \horstoeko\zugferd\entities\extended\ram\TradeAllowanceChargeType[] $specifiedTradeAllowanceCharge
      */
     private $specifiedTradeAllowanceCharge = [
-        
+
     ];
 
     /**
@@ -43,7 +44,7 @@ class LineTradeSettlementType
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $additionalReferencedDocument
      */
     private $additionalReferencedDocument = [
-        
+
     ];
 
     /**

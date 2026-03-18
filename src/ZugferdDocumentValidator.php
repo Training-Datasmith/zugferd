@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -10,7 +12,6 @@
 namespace horstoeko\zugferd;
 
 use horstoeko\stringmanagement\PathUtils;
-use horstoeko\zugferd\ZugferdSettings;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 use Symfony\Component\Validator\Validation;
 

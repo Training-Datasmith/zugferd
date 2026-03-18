@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -27,6 +29,6 @@ class ZugferdUnknownXmlContentException extends ZugferdBaseException
      */
     public function __construct(?Throwable $previous = null)
     {
-        parent::__construct("The XML does not match the requirements for an XML in CII-Syntax", ZugferdExceptionCodes::UNKNOWNSYNTAX, $previous);
+        parent::__construct('The XML does not match the requirements for an XML in CII-Syntax', ZugferdExceptionCodes::UNKNOWNSYNTAX, $previous);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\en16931\rsm;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\en16931\rsm;
  */
 class CrossIndustryInvoiceType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\ExchangedDocumentContextType $exchangedDocumentContext
      */

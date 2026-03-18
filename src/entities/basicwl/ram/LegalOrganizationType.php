@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\basicwl\ram;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\basicwl\ram;
  */
 class LegalOrganizationType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\basicwl\udt\IDType $iD
      */

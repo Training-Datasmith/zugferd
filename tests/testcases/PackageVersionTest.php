@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\tests\testcases;
 
-use horstoeko\zugferd\ZugferdPackageVersion;
 use horstoeko\zugferd\tests\TestCase;
+use horstoeko\zugferd\ZugferdPackageVersion;
 
 class PackageVersionTest extends TestCase
 {

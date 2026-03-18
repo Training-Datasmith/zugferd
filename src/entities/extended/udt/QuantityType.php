@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\extended\udt;
 
 /**
@@ -9,7 +11,6 @@ namespace horstoeko\zugferd\entities\extended\udt;
  */
 class QuantityType
 {
-
     /**
      * @var float $__value
      */

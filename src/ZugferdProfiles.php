@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * This file is a part of horstoeko/zugferd.
  *
@@ -91,7 +93,7 @@ class ZugferdProfiles
             'xmpversion' => '1.0',
             'xsdfilename' => 'FACTUR-X_BASIC.xsd',
             'schematronfilename' => 'FACTUR-X_BASIC.sch',
-            'xsltfilename' => 'FACTUR-X_BASIC.xslt'
+            'xsltfilename' => 'FACTUR-X_BASIC.xslt',
         ],
         self::PROFILE_BASICWL => [
             'name' => 'basicwl',
@@ -107,7 +109,7 @@ class ZugferdProfiles
             'xmpversion' => '1.0',
             'xsdfilename' => 'FACTUR-X_BASIC-WL.xsd',
             'schematronfilename' => 'FACTUR-X_BASIC-WL.sch',
-            'xsltfilename' => 'FACTUR-X_BASIC-WL.xslt'
+            'xsltfilename' => 'FACTUR-X_BASIC-WL.xslt',
         ],
         self::PROFILE_EN16931 => [
             'name' => 'en16931',
@@ -122,7 +124,7 @@ class ZugferdProfiles
             'xmpversion' => '1.0',
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
-            'xsltfilename' => 'FACTUR-X_EN16931.xslt'
+            'xsltfilename' => 'FACTUR-X_EN16931.xslt',
         ],
         self::PROFILE_EXTENDED => [
             'name' => 'extended',
@@ -138,7 +140,7 @@ class ZugferdProfiles
             'xmpversion' => '1.0',
             'xsdfilename' => 'FACTUR-X_EXTENDED.xsd',
             'schematronfilename' => 'FACTUR-X_EXTENDED.sch',
-            'xsltfilename' => 'FACTUR-X_EXTENDED.xslt'
+            'xsltfilename' => 'FACTUR-X_EXTENDED.xslt',
         ],
         self::PROFILE_XRECHNUNG => [
             'name' => 'en16931',
@@ -154,7 +156,7 @@ class ZugferdProfiles
             'xmpversion' => '1.2',
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
-            'xsltfilename' => "FACTUR-X_EN16931.xslt"
+            'xsltfilename' => 'FACTUR-X_EN16931.xslt',
         ],
         self::PROFILE_XRECHNUNG_2 => [
             'name' => 'en16931',
@@ -170,7 +172,7 @@ class ZugferdProfiles
             'xmpversion' => '2.0',
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
-            'xsltfilename' => "FACTUR-X_EN16931.xslt"
+            'xsltfilename' => 'FACTUR-X_EN16931.xslt',
         ],
         self::PROFILE_XRECHNUNG_2_1 => [
             'name' => 'en16931',
@@ -186,7 +188,7 @@ class ZugferdProfiles
             'xmpversion' => '2.1',
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
-            'xsltfilename' => "FACTUR-X_EN16931.xslt"
+            'xsltfilename' => 'FACTUR-X_EN16931.xslt',
         ],
         self::PROFILE_XRECHNUNG_2_2 => [
             'name' => 'en16931',
@@ -202,7 +204,7 @@ class ZugferdProfiles
             'xmpversion' => '2.2',
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
-            'xsltfilename' => "FACTUR-X_EN16931.xslt"
+            'xsltfilename' => 'FACTUR-X_EN16931.xslt',
         ],
         self::PROFILE_MINIMUM => [
             'name' => 'minimum',
@@ -217,7 +219,7 @@ class ZugferdProfiles
             'xmpversion' => '1.0',
             'xsdfilename' => 'FACTUR-X_MINIMUM.xsd',
             'schematronfilename' => 'FACTUR-X_MINIMUM.sch',
-            'xsltfilename' => 'FACTUR-X_MINIMUM.xslt'
+            'xsltfilename' => 'FACTUR-X_MINIMUM.xslt',
         ],
         self::PROFILE_XRECHNUNG_2_3 => [
             'name' => 'en16931',
@@ -233,7 +235,7 @@ class ZugferdProfiles
             'xmpversion' => '2.3',
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
-            'xsltfilename' => "FACTUR-X_EN16931.xslt"
+            'xsltfilename' => 'FACTUR-X_EN16931.xslt',
         ],
         self::PROFILE_XRECHNUNG_3 => [
             'name' => 'en16931',
@@ -249,7 +251,7 @@ class ZugferdProfiles
             'xmpversion' => '3.0',
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
-            'xsltfilename' => "FACTUR-X_EN16931.xslt"
+            'xsltfilename' => 'FACTUR-X_EN16931.xslt',
         ],
     ];
 }

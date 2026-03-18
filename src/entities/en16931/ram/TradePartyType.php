@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,19 +11,18 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  */
 class TradePartyType
 {
-
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType[] $iD
      */
     private $iD = [
-        
+
     ];
 
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType[] $globalID
      */
     private $globalID = [
-        
+
     ];
 
     /**
@@ -58,7 +59,7 @@ class TradePartyType
      * @var \horstoeko\zugferd\entities\en16931\ram\TaxRegistrationType[] $specifiedTaxRegistration
      */
     private $specifiedTaxRegistration = [
-        
+
     ];
 
     /**
