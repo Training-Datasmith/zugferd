@@ -10,4 +10,4 @@ horstoeko\zugferd\entities\basicwl\qdt\FormattedDateTimeType:
             accessor:
                 getter: getDateTimeString
                 setter: setDateTimeString
-            type: horstoeko\zugferd\entities\basicwl\qdt\FormattedDateTimeType\DateTimeStringAType
+            type: horstoeko\zugferd\entities\basicwl\qdt\Formatted_Date_Time_Type\Date_Time_String_A_Type

@@ -1,4 +1,4 @@
-horstoeko\zugferd\entities\basicwl\udt\DateTimeType\DateTimeStringAType:
+horstoeko\zugferd\entities\basicwl\udt\Date_Time_Type\Date_Time_String_A_Type:
     properties:
         __value:
             expose: true

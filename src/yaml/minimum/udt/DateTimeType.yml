@@ -10,4 +10,4 @@ horstoeko\zugferd\entities\minimum\udt\DateTimeType:
             accessor:
                 getter: getDateTimeString
                 setter: setDateTimeString
-            type: horstoeko\zugferd\entities\minimum\udt\DateTimeType\DateTimeStringAType
+            type: horstoeko\zugferd\entities\minimum\udt\Date_Time_Type\Date_Time_String_A_Type

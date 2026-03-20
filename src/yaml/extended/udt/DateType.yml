@@ -10,4 +10,4 @@ horstoeko\zugferd\entities\extended\udt\DateType:
             accessor:
                 getter: getDateString
                 setter: setDateString
-            type: horstoeko\zugferd\entities\extended\udt\DateType\DateStringAType
+            type: horstoeko\zugferd\entities\extended\udt\Date_Type\Date_String_A_Type

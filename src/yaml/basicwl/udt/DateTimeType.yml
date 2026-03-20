@@ -10,4 +10,4 @@ horstoeko\zugferd\entities\basicwl\udt\DateTimeType:
             accessor:
                 getter: getDateTimeString
                 setter: setDateTimeString
-            type: horstoeko\zugferd\entities\basicwl\udt\DateTimeType\DateTimeStringAType
+            type: horstoeko\zugferd\entities\basicwl\udt\Date_Time_Type\Date_Time_String_A_Type
