@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\minimum\ram;
 
 /**
@@ -9,29 +8,27 @@ namespace horstoeko\zugferd\entities\minimum\ram;
  *
  * XSD Type: ReferencedDocumentType
  */
-class ReferencedDocumentType
+class Referenced_Document_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\minimum\udt\IDType $issuerAssignedID
      */
-    private $issuerAssignedID;
-
+    private $issuer_assigned_id;
     /**
      * Gets as issuerAssignedID
      *
      * @return \horstoeko\zugferd\entities\minimum\udt\IDType
      */
-    public function getIssuerAssignedID()
+    public function get_issuer_assigned_id()
     {
-        return $this->issuerAssignedID;
+        return $this->issuer_assigned_id;
     }
-
     /**
      * Sets a new issuerAssignedID
      */
-    public function setIssuerAssignedID(\horstoeko\zugferd\entities\minimum\udt\IDType $issuerAssignedID): self
+    public function set_issuer_assigned_id(\horstoeko\zugferd\entities\minimum\udt\Id_Type $issuer_assigned_id): self
     {
-        $this->issuerAssignedID = $issuerAssignedID;
+        $this->issuer_assigned_id = $issuer_assigned_id;
         return $this;
     }
 }

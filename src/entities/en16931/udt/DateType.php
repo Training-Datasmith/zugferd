@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\en16931\udt;
 
 /**
@@ -9,31 +8,29 @@ namespace horstoeko\zugferd\entities\en16931\udt;
  *
  * XSD Type: DateType
  */
-class DateType
+class Date_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\DateType\DateStringAType $dateString
      */
-    private $dateString;
-
+    private $date_string;
     /**
      * Gets as dateString
      *
      * @return \horstoeko\zugferd\entities\en16931\udt\DateType\DateStringAType
      */
-    public function getDateString()
+    public function get_date_string()
     {
-        return $this->dateString;
+        return $this->date_string;
     }
-
     /**
      * Sets a new dateString
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\DateType\DateStringAType $dateString
      */
-    public function setDateString(?\horstoeko\zugferd\entities\en16931\udt\DateType\DateStringAType $dateString = null): self
+    public function set_date_string(?\horstoeko\zugferd\entities\en16931\udt\Date_Type\Date_String_A_Type $date_string = null): self
     {
-        $this->dateString = $dateString;
+        $this->date_string = $date_string;
         return $this;
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,134 +8,118 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: SupplyChainTradeTransactionType
  */
-class SupplyChainTradeTransactionType
+class Supply_Chain_Trade_Transaction_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\SupplyChainTradeLineItemType[] $includedSupplyChainTradeLineItem
      */
-    private $includedSupplyChainTradeLineItem = [
-
-    ];
-
+    private $included_supply_chain_trade_line_item = [];
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\HeaderTradeAgreementType $applicableHeaderTradeAgreement
      */
-    private $applicableHeaderTradeAgreement;
-
+    private $applicable_header_trade_agreement;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\HeaderTradeDeliveryType $applicableHeaderTradeDelivery
      */
-    private $applicableHeaderTradeDelivery;
-
+    private $applicable_header_trade_delivery;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\HeaderTradeSettlementType $applicableHeaderTradeSettlement
      */
-    private $applicableHeaderTradeSettlement;
-
+    private $applicable_header_trade_settlement;
     /**
      * Adds as includedSupplyChainTradeLineItem
      */
-    public function addToIncludedSupplyChainTradeLineItem(\horstoeko\zugferd\entities\extended\ram\SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem): self
+    public function add_to_included_supply_chain_trade_line_item(\horstoeko\zugferd\entities\extended\ram\Supply_Chain_Trade_Line_Item_Type $included_supply_chain_trade_line_item): self
     {
-        $this->includedSupplyChainTradeLineItem[] = $includedSupplyChainTradeLineItem;
+        $this->included_supply_chain_trade_line_item[] = $included_supply_chain_trade_line_item;
         return $this;
     }
-
     /**
      * isset includedSupplyChainTradeLineItem
      *
      * @param  int|string $index
      */
-    public function issetIncludedSupplyChainTradeLineItem($index): bool
+    public function isset_included_supply_chain_trade_line_item($index): bool
     {
-        return isset($this->includedSupplyChainTradeLineItem[$index]);
+        return isset($this->included_supply_chain_trade_line_item[$index]);
     }
-
     /**
      * unset includedSupplyChainTradeLineItem
      *
      * @param  int|string $index
      */
-    public function unsetIncludedSupplyChainTradeLineItem($index): void
+    public function unset_included_supply_chain_trade_line_item($index): void
     {
-        unset($this->includedSupplyChainTradeLineItem[$index]);
+        unset($this->included_supply_chain_trade_line_item[$index]);
     }
-
     /**
      * Gets as includedSupplyChainTradeLineItem
      *
      * @return \horstoeko\zugferd\entities\extended\ram\SupplyChainTradeLineItemType[]
      */
-    public function getIncludedSupplyChainTradeLineItem()
+    public function get_included_supply_chain_trade_line_item()
     {
-        return $this->includedSupplyChainTradeLineItem;
+        return $this->included_supply_chain_trade_line_item;
     }
-
     /**
      * Sets a new includedSupplyChainTradeLineItem
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\SupplyChainTradeLineItemType[] $includedSupplyChainTradeLineItem
      */
-    public function setIncludedSupplyChainTradeLineItem(array $includedSupplyChainTradeLineItem): self
+    public function set_included_supply_chain_trade_line_item(array $included_supply_chain_trade_line_item): self
     {
-        $this->includedSupplyChainTradeLineItem = $includedSupplyChainTradeLineItem;
+        $this->included_supply_chain_trade_line_item = $included_supply_chain_trade_line_item;
         return $this;
     }
-
     /**
      * Gets as applicableHeaderTradeAgreement
      *
      * @return \horstoeko\zugferd\entities\extended\ram\HeaderTradeAgreementType
      */
-    public function getApplicableHeaderTradeAgreement()
+    public function get_applicable_header_trade_agreement()
     {
-        return $this->applicableHeaderTradeAgreement;
+        return $this->applicable_header_trade_agreement;
     }
-
     /**
      * Sets a new applicableHeaderTradeAgreement
      */
-    public function setApplicableHeaderTradeAgreement(\horstoeko\zugferd\entities\extended\ram\HeaderTradeAgreementType $applicableHeaderTradeAgreement): self
+    public function set_applicable_header_trade_agreement(\horstoeko\zugferd\entities\extended\ram\Header_Trade_Agreement_Type $applicable_header_trade_agreement): self
     {
-        $this->applicableHeaderTradeAgreement = $applicableHeaderTradeAgreement;
+        $this->applicable_header_trade_agreement = $applicable_header_trade_agreement;
         return $this;
     }
-
     /**
      * Gets as applicableHeaderTradeDelivery
      *
      * @return \horstoeko\zugferd\entities\extended\ram\HeaderTradeDeliveryType
      */
-    public function getApplicableHeaderTradeDelivery()
+    public function get_applicable_header_trade_delivery()
     {
-        return $this->applicableHeaderTradeDelivery;
+        return $this->applicable_header_trade_delivery;
     }
-
     /**
      * Sets a new applicableHeaderTradeDelivery
      */
-    public function setApplicableHeaderTradeDelivery(\horstoeko\zugferd\entities\extended\ram\HeaderTradeDeliveryType $applicableHeaderTradeDelivery): self
+    public function set_applicable_header_trade_delivery(\horstoeko\zugferd\entities\extended\ram\Header_Trade_Delivery_Type $applicable_header_trade_delivery): self
     {
-        $this->applicableHeaderTradeDelivery = $applicableHeaderTradeDelivery;
+        $this->applicable_header_trade_delivery = $applicable_header_trade_delivery;
         return $this;
     }
-
     /**
      * Gets as applicableHeaderTradeSettlement
      *
      * @return \horstoeko\zugferd\entities\extended\ram\HeaderTradeSettlementType
      */
-    public function getApplicableHeaderTradeSettlement()
+    public function get_applicable_header_trade_settlement()
     {
-        return $this->applicableHeaderTradeSettlement;
+        return $this->applicable_header_trade_settlement;
     }
-
     /**
      * Sets a new applicableHeaderTradeSettlement
      */
-    public function setApplicableHeaderTradeSettlement(\horstoeko\zugferd\entities\extended\ram\HeaderTradeSettlementType $applicableHeaderTradeSettlement): self
+    public function set_applicable_header_trade_settlement(\horstoeko\zugferd\entities\extended\ram\Header_Trade_Settlement_Type $applicable_header_trade_settlement): self
     {
-        $this->applicableHeaderTradeSettlement = $applicableHeaderTradeSettlement;
+        $this->applicable_header_trade_settlement = $applicable_header_trade_settlement;
         return $this;
     }
 }

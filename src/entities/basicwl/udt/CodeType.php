@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basicwl\udt;
 
 /**
@@ -9,13 +8,12 @@ namespace horstoeko\zugferd\entities\basicwl\udt;
  *
  * XSD Type: CodeType
  */
-class CodeType
+class Code_Type
 {
     /**
      * @var string $__value
      */
     private $__value;
-
     /**
      * Construct
      *
@@ -25,7 +23,6 @@ class CodeType
     {
         $this->value($value);
     }
-
     /**
      * Gets or sets the inner value
      *
@@ -39,7 +36,6 @@ class CodeType
         }
         return $this->__value;
     }
-
     /**
      * Gets a string value
      */

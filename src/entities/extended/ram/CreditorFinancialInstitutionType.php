@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,29 +8,27 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: CreditorFinancialInstitutionType
  */
-class CreditorFinancialInstitutionType
+class Creditor_Financial_Institution_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $bICID
      */
-    private $bICID;
-
+    private $b_icid;
     /**
      * Gets as bICID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getBICID()
+    public function get_bicid()
     {
-        return $this->bICID;
+        return $this->b_icid;
     }
-
     /**
      * Sets a new bICID
      */
-    public function setBICID(\horstoeko\zugferd\entities\extended\udt\IDType $bICID): self
+    public function set_bicid(\horstoeko\zugferd\entities\extended\udt\Id_Type $b_icid): self
     {
-        $this->bICID = $bICID;
+        $this->b_icid = $b_icid;
         return $this;
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basic\ram;
 
 /**
@@ -9,55 +8,50 @@ namespace horstoeko\zugferd\entities\basic\ram;
  *
  * XSD Type: LineTradeAgreementType
  */
-class LineTradeAgreementType
+class Line_Trade_Agreement_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradePriceType $grossPriceProductTradePrice
      */
-    private $grossPriceProductTradePrice;
-
+    private $gross_price_product_trade_price;
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradePriceType $netPriceProductTradePrice
      */
-    private $netPriceProductTradePrice;
-
+    private $net_price_product_trade_price;
     /**
      * Gets as grossPriceProductTradePrice
      *
      * @return \horstoeko\zugferd\entities\basic\ram\TradePriceType
      */
-    public function getGrossPriceProductTradePrice()
+    public function get_gross_price_product_trade_price()
     {
-        return $this->grossPriceProductTradePrice;
+        return $this->gross_price_product_trade_price;
     }
-
     /**
      * Sets a new grossPriceProductTradePrice
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\TradePriceType $grossPriceProductTradePrice
      */
-    public function setGrossPriceProductTradePrice(?\horstoeko\zugferd\entities\basic\ram\TradePriceType $grossPriceProductTradePrice = null): self
+    public function set_gross_price_product_trade_price(?\horstoeko\zugferd\entities\basic\ram\Trade_Price_Type $gross_price_product_trade_price = null): self
     {
-        $this->grossPriceProductTradePrice = $grossPriceProductTradePrice;
+        $this->gross_price_product_trade_price = $gross_price_product_trade_price;
         return $this;
     }
-
     /**
      * Gets as netPriceProductTradePrice
      *
      * @return \horstoeko\zugferd\entities\basic\ram\TradePriceType
      */
-    public function getNetPriceProductTradePrice()
+    public function get_net_price_product_trade_price()
     {
-        return $this->netPriceProductTradePrice;
+        return $this->net_price_product_trade_price;
     }
-
     /**
      * Sets a new netPriceProductTradePrice
      */
-    public function setNetPriceProductTradePrice(\horstoeko\zugferd\entities\basic\ram\TradePriceType $netPriceProductTradePrice): self
+    public function set_net_price_product_trade_price(\horstoeko\zugferd\entities\basic\ram\Trade_Price_Type $net_price_product_trade_price): self
     {
-        $this->netPriceProductTradePrice = $netPriceProductTradePrice;
+        $this->net_price_product_trade_price = $net_price_product_trade_price;
         return $this;
     }
 }

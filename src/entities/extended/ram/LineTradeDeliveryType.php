@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,237 +8,211 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: LineTradeDeliveryType
  */
-class LineTradeDeliveryType
+class Line_Trade_Delivery_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\QuantityType $billedQuantity
      */
-    private $billedQuantity;
-
+    private $billed_quantity;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\QuantityType $chargeFreeQuantity
      */
-    private $chargeFreeQuantity;
-
+    private $charge_free_quantity;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\QuantityType $packageQuantity
      */
-    private $packageQuantity;
-
+    private $package_quantity;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $shipToTradeParty
      */
-    private $shipToTradeParty;
-
+    private $ship_to_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $ultimateShipToTradeParty
      */
-    private $ultimateShipToTradeParty;
-
+    private $ultimate_ship_to_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
      */
-    private $actualDeliverySupplyChainEvent;
-
+    private $actual_delivery_supply_chain_event;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
      */
-    private $despatchAdviceReferencedDocument;
-
+    private $despatch_advice_referenced_document;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $receivingAdviceReferencedDocument
      */
-    private $receivingAdviceReferencedDocument;
-
+    private $receiving_advice_referenced_document;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $deliveryNoteReferencedDocument
      */
-    private $deliveryNoteReferencedDocument;
-
+    private $delivery_note_referenced_document;
     /**
      * Gets as billedQuantity
      *
      * @return \horstoeko\zugferd\entities\extended\udt\QuantityType
      */
-    public function getBilledQuantity()
+    public function get_billed_quantity()
     {
-        return $this->billedQuantity;
+        return $this->billed_quantity;
     }
-
     /**
      * Sets a new billedQuantity
      */
-    public function setBilledQuantity(\horstoeko\zugferd\entities\extended\udt\QuantityType $billedQuantity): self
+    public function set_billed_quantity(\horstoeko\zugferd\entities\extended\udt\Quantity_Type $billed_quantity): self
     {
-        $this->billedQuantity = $billedQuantity;
+        $this->billed_quantity = $billed_quantity;
         return $this;
     }
-
     /**
      * Gets as chargeFreeQuantity
      *
      * @return \horstoeko\zugferd\entities\extended\udt\QuantityType
      */
-    public function getChargeFreeQuantity()
+    public function get_charge_free_quantity()
     {
-        return $this->chargeFreeQuantity;
+        return $this->charge_free_quantity;
     }
-
     /**
      * Sets a new chargeFreeQuantity
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\QuantityType $chargeFreeQuantity
      */
-    public function setChargeFreeQuantity(?\horstoeko\zugferd\entities\extended\udt\QuantityType $chargeFreeQuantity = null): self
+    public function set_charge_free_quantity(?\horstoeko\zugferd\entities\extended\udt\Quantity_Type $charge_free_quantity = null): self
     {
-        $this->chargeFreeQuantity = $chargeFreeQuantity;
+        $this->charge_free_quantity = $charge_free_quantity;
         return $this;
     }
-
     /**
      * Gets as packageQuantity
      *
      * @return \horstoeko\zugferd\entities\extended\udt\QuantityType
      */
-    public function getPackageQuantity()
+    public function get_package_quantity()
     {
-        return $this->packageQuantity;
+        return $this->package_quantity;
     }
-
     /**
      * Sets a new packageQuantity
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\QuantityType $packageQuantity
      */
-    public function setPackageQuantity(?\horstoeko\zugferd\entities\extended\udt\QuantityType $packageQuantity = null): self
+    public function set_package_quantity(?\horstoeko\zugferd\entities\extended\udt\Quantity_Type $package_quantity = null): self
     {
-        $this->packageQuantity = $packageQuantity;
+        $this->package_quantity = $package_quantity;
         return $this;
     }
-
     /**
      * Gets as shipToTradeParty
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePartyType
      */
-    public function getShipToTradeParty()
+    public function get_ship_to_trade_party()
     {
-        return $this->shipToTradeParty;
+        return $this->ship_to_trade_party;
     }
-
     /**
      * Sets a new shipToTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $shipToTradeParty
      */
-    public function setShipToTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $shipToTradeParty = null): self
+    public function set_ship_to_trade_party(?\horstoeko\zugferd\entities\extended\ram\Trade_Party_Type $ship_to_trade_party = null): self
     {
-        $this->shipToTradeParty = $shipToTradeParty;
+        $this->ship_to_trade_party = $ship_to_trade_party;
         return $this;
     }
-
     /**
      * Gets as ultimateShipToTradeParty
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePartyType
      */
-    public function getUltimateShipToTradeParty()
+    public function get_ultimate_ship_to_trade_party()
     {
-        return $this->ultimateShipToTradeParty;
+        return $this->ultimate_ship_to_trade_party;
     }
-
     /**
      * Sets a new ultimateShipToTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $ultimateShipToTradeParty
      */
-    public function setUltimateShipToTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $ultimateShipToTradeParty = null): self
+    public function set_ultimate_ship_to_trade_party(?\horstoeko\zugferd\entities\extended\ram\Trade_Party_Type $ultimate_ship_to_trade_party = null): self
     {
-        $this->ultimateShipToTradeParty = $ultimateShipToTradeParty;
+        $this->ultimate_ship_to_trade_party = $ultimate_ship_to_trade_party;
         return $this;
     }
-
     /**
      * Gets as actualDeliverySupplyChainEvent
      *
      * @return \horstoeko\zugferd\entities\extended\ram\SupplyChainEventType
      */
-    public function getActualDeliverySupplyChainEvent()
+    public function get_actual_delivery_supply_chain_event()
     {
-        return $this->actualDeliverySupplyChainEvent;
+        return $this->actual_delivery_supply_chain_event;
     }
-
     /**
      * Sets a new actualDeliverySupplyChainEvent
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
      */
-    public function setActualDeliverySupplyChainEvent(?\horstoeko\zugferd\entities\extended\ram\SupplyChainEventType $actualDeliverySupplyChainEvent = null): self
+    public function set_actual_delivery_supply_chain_event(?\horstoeko\zugferd\entities\extended\ram\Supply_Chain_Event_Type $actual_delivery_supply_chain_event = null): self
     {
-        $this->actualDeliverySupplyChainEvent = $actualDeliverySupplyChainEvent;
+        $this->actual_delivery_supply_chain_event = $actual_delivery_supply_chain_event;
         return $this;
     }
-
     /**
      * Gets as despatchAdviceReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType
      */
-    public function getDespatchAdviceReferencedDocument()
+    public function get_despatch_advice_referenced_document()
     {
-        return $this->despatchAdviceReferencedDocument;
+        return $this->despatch_advice_referenced_document;
     }
-
     /**
      * Sets a new despatchAdviceReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
      */
-    public function setDespatchAdviceReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $despatchAdviceReferencedDocument = null): self
+    public function set_despatch_advice_referenced_document(?\horstoeko\zugferd\entities\extended\ram\Referenced_Document_Type $despatch_advice_referenced_document = null): self
     {
-        $this->despatchAdviceReferencedDocument = $despatchAdviceReferencedDocument;
+        $this->despatch_advice_referenced_document = $despatch_advice_referenced_document;
         return $this;
     }
-
     /**
      * Gets as receivingAdviceReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType
      */
-    public function getReceivingAdviceReferencedDocument()
+    public function get_receiving_advice_referenced_document()
     {
-        return $this->receivingAdviceReferencedDocument;
+        return $this->receiving_advice_referenced_document;
     }
-
     /**
      * Sets a new receivingAdviceReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $receivingAdviceReferencedDocument
      */
-    public function setReceivingAdviceReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $receivingAdviceReferencedDocument = null): self
+    public function set_receiving_advice_referenced_document(?\horstoeko\zugferd\entities\extended\ram\Referenced_Document_Type $receiving_advice_referenced_document = null): self
     {
-        $this->receivingAdviceReferencedDocument = $receivingAdviceReferencedDocument;
+        $this->receiving_advice_referenced_document = $receiving_advice_referenced_document;
         return $this;
     }
-
     /**
      * Gets as deliveryNoteReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType
      */
-    public function getDeliveryNoteReferencedDocument()
+    public function get_delivery_note_referenced_document()
     {
-        return $this->deliveryNoteReferencedDocument;
+        return $this->delivery_note_referenced_document;
     }
-
     /**
      * Sets a new deliveryNoteReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $deliveryNoteReferencedDocument
      */
-    public function setDeliveryNoteReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $deliveryNoteReferencedDocument = null): self
+    public function set_delivery_note_referenced_document(?\horstoeko\zugferd\entities\extended\ram\Referenced_Document_Type $delivery_note_referenced_document = null): self
     {
-        $this->deliveryNoteReferencedDocument = $deliveryNoteReferencedDocument;
+        $this->delivery_note_referenced_document = $delivery_note_referenced_document;
         return $this;
     }
 }

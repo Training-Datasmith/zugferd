@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\minimum\ram;
 
 /**
@@ -9,6 +8,6 @@ namespace horstoeko\zugferd\entities\minimum\ram;
  *
  * XSD Type: HeaderTradeDeliveryType
  */
-class HeaderTradeDeliveryType
+class Header_Trade_Delivery_Type
 {
 }

@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,389 +8,340 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: TradePartyType
  */
-class TradePartyType
+class Trade_Party_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType[] $iD
      */
-    private $iD = [
-
-    ];
-
+    private $i_d = [];
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType[] $globalID
      */
-    private $globalID = [
-
-    ];
-
+    private $global_id = [];
     /**
      * @var string $name
      */
     private $name;
-
     /**
      * @var string $roleCode
      */
-    private $roleCode;
-
+    private $role_code;
     /**
      * @var string $description
      */
     private $description;
-
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\LegalOrganizationType $specifiedLegalOrganization
      */
-    private $specifiedLegalOrganization;
-
+    private $specified_legal_organization;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeContactType[] $definedTradeContact
      */
-    private $definedTradeContact = [
-
-    ];
-
+    private $defined_trade_contact = [];
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeAddressType $postalTradeAddress
      */
-    private $postalTradeAddress;
-
+    private $postal_trade_address;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $uRIUniversalCommunication
      */
-    private $uRIUniversalCommunication;
-
+    private $u_ri_universal_communication;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TaxRegistrationType[] $specifiedTaxRegistration
      */
-    private $specifiedTaxRegistration = [
-
-    ];
-
+    private $specified_tax_registration = [];
     /**
      * Adds as iD
      */
-    public function addToID(\horstoeko\zugferd\entities\extended\udt\IDType $iD): self
+    public function add_to_id(\horstoeko\zugferd\entities\extended\udt\Id_Type $i_d): self
     {
-        $this->iD[] = $iD;
+        $this->i_d[] = $i_d;
         return $this;
     }
-
     /**
      * isset iD
      *
      * @param  int|string $index
      */
-    public function issetID($index): bool
+    public function isset_id($index): bool
     {
-        return isset($this->iD[$index]);
+        return isset($this->i_d[$index]);
     }
-
     /**
      * unset iD
      *
      * @param  int|string $index
      */
-    public function unsetID($index): void
+    public function unset_id($index): void
     {
-        unset($this->iD[$index]);
+        unset($this->i_d[$index]);
     }
-
     /**
      * Gets as iD
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType[]
      */
-    public function getID()
+    public function get_id()
     {
-        return $this->iD;
+        return $this->i_d;
     }
-
     /**
      * Sets a new iD
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType[] $iD
      */
-    public function setID(?array $iD = null): self
+    public function set_id(?array $i_d = null): self
     {
-        $this->iD = $iD;
+        $this->i_d = $i_d;
         return $this;
     }
-
     /**
      * Adds as globalID
      */
-    public function addToGlobalID(\horstoeko\zugferd\entities\extended\udt\IDType $globalID): self
+    public function add_to_global_id(\horstoeko\zugferd\entities\extended\udt\Id_Type $global_id): self
     {
-        $this->globalID[] = $globalID;
+        $this->global_id[] = $global_id;
         return $this;
     }
-
     /**
      * isset globalID
      *
      * @param  int|string $index
      */
-    public function issetGlobalID($index): bool
+    public function isset_global_id($index): bool
     {
-        return isset($this->globalID[$index]);
+        return isset($this->global_id[$index]);
     }
-
     /**
      * unset globalID
      *
      * @param  int|string $index
      */
-    public function unsetGlobalID($index): void
+    public function unset_global_id($index): void
     {
-        unset($this->globalID[$index]);
+        unset($this->global_id[$index]);
     }
-
     /**
      * Gets as globalID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType[]
      */
-    public function getGlobalID()
+    public function get_global_id()
     {
-        return $this->globalID;
+        return $this->global_id;
     }
-
     /**
      * Sets a new globalID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType[] $globalID
      */
-    public function setGlobalID(?array $globalID = null): self
+    public function set_global_id(?array $global_id = null): self
     {
-        $this->globalID = $globalID;
+        $this->global_id = $global_id;
         return $this;
     }
-
     /**
      * Gets as name
      *
      * @return string
      */
-    public function getName()
+    public function get_name()
     {
         return $this->name;
     }
-
     /**
      * Sets a new name
      *
      * @param  string $name
      */
-    public function setName($name): self
+    public function set_name($name): self
     {
         $this->name = $name;
         return $this;
     }
-
     /**
      * Gets as roleCode
      *
      * @return string
      */
-    public function getRoleCode()
+    public function get_role_code()
     {
-        return $this->roleCode;
+        return $this->role_code;
     }
-
     /**
      * Sets a new roleCode
      *
      * @param  string $roleCode
      */
-    public function setRoleCode($roleCode): self
+    public function set_role_code($role_code): self
     {
-        $this->roleCode = $roleCode;
+        $this->role_code = $role_code;
         return $this;
     }
-
     /**
      * Gets as description
      *
      * @return string
      */
-    public function getDescription()
+    public function get_description()
     {
         return $this->description;
     }
-
     /**
      * Sets a new description
      *
      * @param  string $description
      */
-    public function setDescription($description): self
+    public function set_description($description): self
     {
         $this->description = $description;
         return $this;
     }
-
     /**
      * Gets as specifiedLegalOrganization
      *
      * @return \horstoeko\zugferd\entities\extended\ram\LegalOrganizationType
      */
-    public function getSpecifiedLegalOrganization()
+    public function get_specified_legal_organization()
     {
-        return $this->specifiedLegalOrganization;
+        return $this->specified_legal_organization;
     }
-
     /**
      * Sets a new specifiedLegalOrganization
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\LegalOrganizationType $specifiedLegalOrganization
      */
-    public function setSpecifiedLegalOrganization(?\horstoeko\zugferd\entities\extended\ram\LegalOrganizationType $specifiedLegalOrganization = null): self
+    public function set_specified_legal_organization(?\horstoeko\zugferd\entities\extended\ram\Legal_Organization_Type $specified_legal_organization = null): self
     {
-        $this->specifiedLegalOrganization = $specifiedLegalOrganization;
+        $this->specified_legal_organization = $specified_legal_organization;
         return $this;
     }
-
     /**
      * Adds as definedTradeContact
      */
-    public function addToDefinedTradeContact(\horstoeko\zugferd\entities\extended\ram\TradeContactType $definedTradeContact): self
+    public function add_to_defined_trade_contact(\horstoeko\zugferd\entities\extended\ram\Trade_Contact_Type $defined_trade_contact): self
     {
-        $this->definedTradeContact[] = $definedTradeContact;
+        $this->defined_trade_contact[] = $defined_trade_contact;
         return $this;
     }
-
     /**
      * isset definedTradeContact
      *
      * @param  int|string $index
      */
-    public function issetDefinedTradeContact($index): bool
+    public function isset_defined_trade_contact($index): bool
     {
-        return isset($this->definedTradeContact[$index]);
+        return isset($this->defined_trade_contact[$index]);
     }
-
     /**
      * unset definedTradeContact
      *
      * @param  int|string $index
      */
-    public function unsetDefinedTradeContact($index): void
+    public function unset_defined_trade_contact($index): void
     {
-        unset($this->definedTradeContact[$index]);
+        unset($this->defined_trade_contact[$index]);
     }
-
     /**
      * Gets as definedTradeContact
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradeContactType[]
      */
-    public function getDefinedTradeContact()
+    public function get_defined_trade_contact()
     {
-        return $this->definedTradeContact;
+        return $this->defined_trade_contact;
     }
-
     /**
      * Sets a new definedTradeContact
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeContactType[] $definedTradeContact
      */
-    public function setDefinedTradeContact(?array $definedTradeContact = null): self
+    public function set_defined_trade_contact(?array $defined_trade_contact = null): self
     {
-        $this->definedTradeContact = $definedTradeContact;
+        $this->defined_trade_contact = $defined_trade_contact;
         return $this;
     }
-
     /**
      * Gets as postalTradeAddress
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradeAddressType
      */
-    public function getPostalTradeAddress()
+    public function get_postal_trade_address()
     {
-        return $this->postalTradeAddress;
+        return $this->postal_trade_address;
     }
-
     /**
      * Sets a new postalTradeAddress
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeAddressType $postalTradeAddress
      */
-    public function setPostalTradeAddress(?\horstoeko\zugferd\entities\extended\ram\TradeAddressType $postalTradeAddress = null): self
+    public function set_postal_trade_address(?\horstoeko\zugferd\entities\extended\ram\Trade_Address_Type $postal_trade_address = null): self
     {
-        $this->postalTradeAddress = $postalTradeAddress;
+        $this->postal_trade_address = $postal_trade_address;
         return $this;
     }
-
     /**
      * Gets as uRIUniversalCommunication
      *
      * @return \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType
      */
-    public function getURIUniversalCommunication()
+    public function get_uri_universal_communication()
     {
-        return $this->uRIUniversalCommunication;
+        return $this->u_ri_universal_communication;
     }
-
     /**
      * Sets a new uRIUniversalCommunication
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $uRIUniversalCommunication
      */
-    public function setURIUniversalCommunication(?\horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $uRIUniversalCommunication = null): self
+    public function set_uri_universal_communication(?\horstoeko\zugferd\entities\extended\ram\Universal_Communication_Type $u_ri_universal_communication = null): self
     {
-        $this->uRIUniversalCommunication = $uRIUniversalCommunication;
+        $this->u_ri_universal_communication = $u_ri_universal_communication;
         return $this;
     }
-
     /**
      * Adds as specifiedTaxRegistration
      */
-    public function addToSpecifiedTaxRegistration(\horstoeko\zugferd\entities\extended\ram\TaxRegistrationType $specifiedTaxRegistration): self
+    public function add_to_specified_tax_registration(\horstoeko\zugferd\entities\extended\ram\Tax_Registration_Type $specified_tax_registration): self
     {
-        $this->specifiedTaxRegistration[] = $specifiedTaxRegistration;
+        $this->specified_tax_registration[] = $specified_tax_registration;
         return $this;
     }
-
     /**
      * isset specifiedTaxRegistration
      *
      * @param  int|string $index
      */
-    public function issetSpecifiedTaxRegistration($index): bool
+    public function isset_specified_tax_registration($index): bool
     {
-        return isset($this->specifiedTaxRegistration[$index]);
+        return isset($this->specified_tax_registration[$index]);
     }
-
     /**
      * unset specifiedTaxRegistration
      *
      * @param  int|string $index
      */
-    public function unsetSpecifiedTaxRegistration($index): void
+    public function unset_specified_tax_registration($index): void
     {
-        unset($this->specifiedTaxRegistration[$index]);
+        unset($this->specified_tax_registration[$index]);
     }
-
     /**
      * Gets as specifiedTaxRegistration
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TaxRegistrationType[]
      */
-    public function getSpecifiedTaxRegistration()
+    public function get_specified_tax_registration()
     {
-        return $this->specifiedTaxRegistration;
+        return $this->specified_tax_registration;
     }
-
     /**
      * Sets a new specifiedTaxRegistration
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TaxRegistrationType[] $specifiedTaxRegistration
      */
-    public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null): self
+    public function set_specified_tax_registration(?array $specified_tax_registration = null): self
     {
-        $this->specifiedTaxRegistration = $specifiedTaxRegistration;
+        $this->specified_tax_registration = $specified_tax_registration;
         return $this;
     }
 }

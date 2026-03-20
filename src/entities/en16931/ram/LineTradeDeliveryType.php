@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,29 +8,27 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  *
  * XSD Type: LineTradeDeliveryType
  */
-class LineTradeDeliveryType
+class Line_Trade_Delivery_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\QuantityType $billedQuantity
      */
-    private $billedQuantity;
-
+    private $billed_quantity;
     /**
      * Gets as billedQuantity
      *
      * @return \horstoeko\zugferd\entities\en16931\udt\QuantityType
      */
-    public function getBilledQuantity()
+    public function get_billed_quantity()
     {
-        return $this->billedQuantity;
+        return $this->billed_quantity;
     }
-
     /**
      * Sets a new billedQuantity
      */
-    public function setBilledQuantity(\horstoeko\zugferd\entities\en16931\udt\QuantityType $billedQuantity): self
+    public function set_billed_quantity(\horstoeko\zugferd\entities\en16931\udt\Quantity_Type $billed_quantity): self
     {
-        $this->billedQuantity = $billedQuantity;
+        $this->billed_quantity = $billed_quantity;
         return $this;
     }
 }

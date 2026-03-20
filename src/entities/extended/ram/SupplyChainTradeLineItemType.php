@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,125 +8,111 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: SupplyChainTradeLineItemType
  */
-class SupplyChainTradeLineItemType
+class Supply_Chain_Trade_Line_Item_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\DocumentLineDocumentType $associatedDocumentLineDocument
      */
-    private $associatedDocumentLineDocument;
-
+    private $associated_document_line_document;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeProductType $specifiedTradeProduct
      */
-    private $specifiedTradeProduct;
-
+    private $specified_trade_product;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\LineTradeAgreementType $specifiedLineTradeAgreement
      */
-    private $specifiedLineTradeAgreement;
-
+    private $specified_line_trade_agreement;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\LineTradeDeliveryType $specifiedLineTradeDelivery
      */
-    private $specifiedLineTradeDelivery;
-
+    private $specified_line_trade_delivery;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\LineTradeSettlementType $specifiedLineTradeSettlement
      */
-    private $specifiedLineTradeSettlement;
-
+    private $specified_line_trade_settlement;
     /**
      * Gets as associatedDocumentLineDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\DocumentLineDocumentType
      */
-    public function getAssociatedDocumentLineDocument()
+    public function get_associated_document_line_document()
     {
-        return $this->associatedDocumentLineDocument;
+        return $this->associated_document_line_document;
     }
-
     /**
      * Sets a new associatedDocumentLineDocument
      */
-    public function setAssociatedDocumentLineDocument(\horstoeko\zugferd\entities\extended\ram\DocumentLineDocumentType $associatedDocumentLineDocument): self
+    public function set_associated_document_line_document(\horstoeko\zugferd\entities\extended\ram\Document_Line_Document_Type $associated_document_line_document): self
     {
-        $this->associatedDocumentLineDocument = $associatedDocumentLineDocument;
+        $this->associated_document_line_document = $associated_document_line_document;
         return $this;
     }
-
     /**
      * Gets as specifiedTradeProduct
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradeProductType
      */
-    public function getSpecifiedTradeProduct()
+    public function get_specified_trade_product()
     {
-        return $this->specifiedTradeProduct;
+        return $this->specified_trade_product;
     }
-
     /**
      * Sets a new specifiedTradeProduct
      */
-    public function setSpecifiedTradeProduct(\horstoeko\zugferd\entities\extended\ram\TradeProductType $specifiedTradeProduct): self
+    public function set_specified_trade_product(\horstoeko\zugferd\entities\extended\ram\Trade_Product_Type $specified_trade_product): self
     {
-        $this->specifiedTradeProduct = $specifiedTradeProduct;
+        $this->specified_trade_product = $specified_trade_product;
         return $this;
     }
-
     /**
      * Gets as specifiedLineTradeAgreement
      *
      * @return \horstoeko\zugferd\entities\extended\ram\LineTradeAgreementType
      */
-    public function getSpecifiedLineTradeAgreement()
+    public function get_specified_line_trade_agreement()
     {
-        return $this->specifiedLineTradeAgreement;
+        return $this->specified_line_trade_agreement;
     }
-
     /**
      * Sets a new specifiedLineTradeAgreement
      */
-    public function setSpecifiedLineTradeAgreement(\horstoeko\zugferd\entities\extended\ram\LineTradeAgreementType $specifiedLineTradeAgreement): self
+    public function set_specified_line_trade_agreement(\horstoeko\zugferd\entities\extended\ram\Line_Trade_Agreement_Type $specified_line_trade_agreement): self
     {
-        $this->specifiedLineTradeAgreement = $specifiedLineTradeAgreement;
+        $this->specified_line_trade_agreement = $specified_line_trade_agreement;
         return $this;
     }
-
     /**
      * Gets as specifiedLineTradeDelivery
      *
      * @return \horstoeko\zugferd\entities\extended\ram\LineTradeDeliveryType
      */
-    public function getSpecifiedLineTradeDelivery()
+    public function get_specified_line_trade_delivery()
     {
-        return $this->specifiedLineTradeDelivery;
+        return $this->specified_line_trade_delivery;
     }
-
     /**
      * Sets a new specifiedLineTradeDelivery
      */
-    public function setSpecifiedLineTradeDelivery(\horstoeko\zugferd\entities\extended\ram\LineTradeDeliveryType $specifiedLineTradeDelivery): self
+    public function set_specified_line_trade_delivery(\horstoeko\zugferd\entities\extended\ram\Line_Trade_Delivery_Type $specified_line_trade_delivery): self
     {
-        $this->specifiedLineTradeDelivery = $specifiedLineTradeDelivery;
+        $this->specified_line_trade_delivery = $specified_line_trade_delivery;
         return $this;
     }
-
     /**
      * Gets as specifiedLineTradeSettlement
      *
      * @return \horstoeko\zugferd\entities\extended\ram\LineTradeSettlementType
      */
-    public function getSpecifiedLineTradeSettlement()
+    public function get_specified_line_trade_settlement()
     {
-        return $this->specifiedLineTradeSettlement;
+        return $this->specified_line_trade_settlement;
     }
-
     /**
      * Sets a new specifiedLineTradeSettlement
      */
-    public function setSpecifiedLineTradeSettlement(\horstoeko\zugferd\entities\extended\ram\LineTradeSettlementType $specifiedLineTradeSettlement): self
+    public function set_specified_line_trade_settlement(\horstoeko\zugferd\entities\extended\ram\Line_Trade_Settlement_Type $specified_line_trade_settlement): self
     {
-        $this->specifiedLineTradeSettlement = $specifiedLineTradeSettlement;
+        $this->specified_line_trade_settlement = $specified_line_trade_settlement;
         return $this;
     }
 }

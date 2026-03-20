@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\minimum\ram;
 
 /**
@@ -9,31 +8,29 @@ namespace horstoeko\zugferd\entities\minimum\ram;
  *
  * XSD Type: LegalOrganizationType
  */
-class LegalOrganizationType
+class Legal_Organization_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\minimum\udt\IDType $iD
      */
-    private $iD;
-
+    private $i_d;
     /**
      * Gets as iD
      *
      * @return \horstoeko\zugferd\entities\minimum\udt\IDType
      */
-    public function getID()
+    public function get_id()
     {
-        return $this->iD;
+        return $this->i_d;
     }
-
     /**
      * Sets a new iD
      *
      * @param  \horstoeko\zugferd\entities\minimum\udt\IDType $iD
      */
-    public function setID(?\horstoeko\zugferd\entities\minimum\udt\IDType $iD = null): self
+    public function set_id(?\horstoeko\zugferd\entities\minimum\udt\Id_Type $i_d = null): self
     {
-        $this->iD = $iD;
+        $this->i_d = $i_d;
         return $this;
     }
 }

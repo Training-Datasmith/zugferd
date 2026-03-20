@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,161 +8,144 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  *
  * XSD Type: TradeSettlementPaymentMeansType
  */
-class TradeSettlementPaymentMeansType
+class Trade_Settlement_Payment_Means_Type
 {
     /**
      * @var string $typeCode
      */
-    private $typeCode;
-
+    private $type_code;
     /**
      * @var string $information
      */
     private $information;
-
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard
      */
-    private $applicableTradeSettlementFinancialCard;
-
+    private $applicable_trade_settlement_financial_card;
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount
      */
-    private $payerPartyDebtorFinancialAccount;
-
+    private $payer_party_debtor_financial_account;
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount
      */
-    private $payeePartyCreditorFinancialAccount;
-
+    private $payee_party_creditor_financial_account;
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution
      */
-    private $payeeSpecifiedCreditorFinancialInstitution;
-
+    private $payee_specified_creditor_financial_institution;
     /**
      * Gets as typeCode
      *
      * @return string
      */
-    public function getTypeCode()
+    public function get_type_code()
     {
-        return $this->typeCode;
+        return $this->type_code;
     }
-
     /**
      * Sets a new typeCode
      *
      * @param  string $typeCode
      */
-    public function setTypeCode($typeCode): self
+    public function set_type_code($type_code): self
     {
-        $this->typeCode = $typeCode;
+        $this->type_code = $type_code;
         return $this;
     }
-
     /**
      * Gets as information
      *
      * @return string
      */
-    public function getInformation()
+    public function get_information()
     {
         return $this->information;
     }
-
     /**
      * Sets a new information
      *
      * @param  string $information
      */
-    public function setInformation($information): self
+    public function set_information($information): self
     {
         $this->information = $information;
         return $this;
     }
-
     /**
      * Gets as applicableTradeSettlementFinancialCard
      *
      * @return \horstoeko\zugferd\entities\en16931\ram\TradeSettlementFinancialCardType
      */
-    public function getApplicableTradeSettlementFinancialCard()
+    public function get_applicable_trade_settlement_financial_card()
     {
-        return $this->applicableTradeSettlementFinancialCard;
+        return $this->applicable_trade_settlement_financial_card;
     }
-
     /**
      * Sets a new applicableTradeSettlementFinancialCard
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard
      */
-    public function setApplicableTradeSettlementFinancialCard(?\horstoeko\zugferd\entities\en16931\ram\TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard = null): self
+    public function set_applicable_trade_settlement_financial_card(?\horstoeko\zugferd\entities\en16931\ram\Trade_Settlement_Financial_Card_Type $applicable_trade_settlement_financial_card = null): self
     {
-        $this->applicableTradeSettlementFinancialCard = $applicableTradeSettlementFinancialCard;
+        $this->applicable_trade_settlement_financial_card = $applicable_trade_settlement_financial_card;
         return $this;
     }
-
     /**
      * Gets as payerPartyDebtorFinancialAccount
      *
      * @return \horstoeko\zugferd\entities\en16931\ram\DebtorFinancialAccountType
      */
-    public function getPayerPartyDebtorFinancialAccount()
+    public function get_payer_party_debtor_financial_account()
     {
-        return $this->payerPartyDebtorFinancialAccount;
+        return $this->payer_party_debtor_financial_account;
     }
-
     /**
      * Sets a new payerPartyDebtorFinancialAccount
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount
      */
-    public function setPayerPartyDebtorFinancialAccount(?\horstoeko\zugferd\entities\en16931\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount = null): self
+    public function set_payer_party_debtor_financial_account(?\horstoeko\zugferd\entities\en16931\ram\Debtor_Financial_Account_Type $payer_party_debtor_financial_account = null): self
     {
-        $this->payerPartyDebtorFinancialAccount = $payerPartyDebtorFinancialAccount;
+        $this->payer_party_debtor_financial_account = $payer_party_debtor_financial_account;
         return $this;
     }
-
     /**
      * Gets as payeePartyCreditorFinancialAccount
      *
      * @return \horstoeko\zugferd\entities\en16931\ram\CreditorFinancialAccountType
      */
-    public function getPayeePartyCreditorFinancialAccount()
+    public function get_payee_party_creditor_financial_account()
     {
-        return $this->payeePartyCreditorFinancialAccount;
+        return $this->payee_party_creditor_financial_account;
     }
-
     /**
      * Sets a new payeePartyCreditorFinancialAccount
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount
      */
-    public function setPayeePartyCreditorFinancialAccount(?\horstoeko\zugferd\entities\en16931\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount = null): self
+    public function set_payee_party_creditor_financial_account(?\horstoeko\zugferd\entities\en16931\ram\Creditor_Financial_Account_Type $payee_party_creditor_financial_account = null): self
     {
-        $this->payeePartyCreditorFinancialAccount = $payeePartyCreditorFinancialAccount;
+        $this->payee_party_creditor_financial_account = $payee_party_creditor_financial_account;
         return $this;
     }
-
     /**
      * Gets as payeeSpecifiedCreditorFinancialInstitution
      *
      * @return \horstoeko\zugferd\entities\en16931\ram\CreditorFinancialInstitutionType
      */
-    public function getPayeeSpecifiedCreditorFinancialInstitution()
+    public function get_payee_specified_creditor_financial_institution()
     {
-        return $this->payeeSpecifiedCreditorFinancialInstitution;
+        return $this->payee_specified_creditor_financial_institution;
     }
-
     /**
      * Sets a new payeeSpecifiedCreditorFinancialInstitution
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution
      */
-    public function setPayeeSpecifiedCreditorFinancialInstitution(?\horstoeko\zugferd\entities\en16931\ram\CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution = null): self
+    public function set_payee_specified_creditor_financial_institution(?\horstoeko\zugferd\entities\en16931\ram\Creditor_Financial_Institution_Type $payee_specified_creditor_financial_institution = null): self
     {
-        $this->payeeSpecifiedCreditorFinancialInstitution = $payeeSpecifiedCreditorFinancialInstitution;
+        $this->payee_specified_creditor_financial_institution = $payee_specified_creditor_financial_institution;
         return $this;
     }
 }

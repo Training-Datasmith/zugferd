@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,138 +8,122 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: AdvancePaymentType
  */
-class AdvancePaymentType
+class Advance_Payment_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $paidAmount
      */
-    private $paidAmount;
-
+    private $paid_amount;
     /**
      * @var \horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType $formattedReceivedDateTime
      */
-    private $formattedReceivedDateTime;
-
+    private $formatted_received_date_time;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeTaxType[] $includedTradeTax
      */
-    private $includedTradeTax = [
-
-    ];
-
+    private $included_trade_tax = [];
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $invoiceSpecifiedReferencedDocument
      */
-    private $invoiceSpecifiedReferencedDocument;
-
+    private $invoice_specified_referenced_document;
     /**
      * Gets as paidAmount
      *
      * @return \horstoeko\zugferd\entities\extended\udt\AmountType
      */
-    public function getPaidAmount()
+    public function get_paid_amount()
     {
-        return $this->paidAmount;
+        return $this->paid_amount;
     }
-
     /**
      * Sets a new paidAmount
      */
-    public function setPaidAmount(\horstoeko\zugferd\entities\extended\udt\AmountType $paidAmount): self
+    public function set_paid_amount(\horstoeko\zugferd\entities\extended\udt\Amount_Type $paid_amount): self
     {
-        $this->paidAmount = $paidAmount;
+        $this->paid_amount = $paid_amount;
         return $this;
     }
-
     /**
      * Gets as formattedReceivedDateTime
      *
      * @return \horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType
      */
-    public function getFormattedReceivedDateTime()
+    public function get_formatted_received_date_time()
     {
-        return $this->formattedReceivedDateTime;
+        return $this->formatted_received_date_time;
     }
-
     /**
      * Sets a new formattedReceivedDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType $formattedReceivedDateTime
      */
-    public function setFormattedReceivedDateTime(?\horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType $formattedReceivedDateTime = null): self
+    public function set_formatted_received_date_time(?\horstoeko\zugferd\entities\extended\qdt\Formatted_Date_Time_Type $formatted_received_date_time = null): self
     {
-        $this->formattedReceivedDateTime = $formattedReceivedDateTime;
+        $this->formatted_received_date_time = $formatted_received_date_time;
         return $this;
     }
-
     /**
      * Adds as includedTradeTax
      */
-    public function addToIncludedTradeTax(\horstoeko\zugferd\entities\extended\ram\TradeTaxType $includedTradeTax): self
+    public function add_to_included_trade_tax(\horstoeko\zugferd\entities\extended\ram\Trade_Tax_Type $included_trade_tax): self
     {
-        $this->includedTradeTax[] = $includedTradeTax;
+        $this->included_trade_tax[] = $included_trade_tax;
         return $this;
     }
-
     /**
      * isset includedTradeTax
      *
      * @param  int|string $index
      */
-    public function issetIncludedTradeTax($index): bool
+    public function isset_included_trade_tax($index): bool
     {
-        return isset($this->includedTradeTax[$index]);
+        return isset($this->included_trade_tax[$index]);
     }
-
     /**
      * unset includedTradeTax
      *
      * @param  int|string $index
      */
-    public function unsetIncludedTradeTax($index): void
+    public function unset_included_trade_tax($index): void
     {
-        unset($this->includedTradeTax[$index]);
+        unset($this->included_trade_tax[$index]);
     }
-
     /**
      * Gets as includedTradeTax
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradeTaxType[]
      */
-    public function getIncludedTradeTax()
+    public function get_included_trade_tax()
     {
-        return $this->includedTradeTax;
+        return $this->included_trade_tax;
     }
-
     /**
      * Sets a new includedTradeTax
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeTaxType[] $includedTradeTax
      */
-    public function setIncludedTradeTax(array $includedTradeTax): self
+    public function set_included_trade_tax(array $included_trade_tax): self
     {
-        $this->includedTradeTax = $includedTradeTax;
+        $this->included_trade_tax = $included_trade_tax;
         return $this;
     }
-
     /**
      * Gets as invoiceSpecifiedReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType
      */
-    public function getInvoiceSpecifiedReferencedDocument()
+    public function get_invoice_specified_referenced_document()
     {
-        return $this->invoiceSpecifiedReferencedDocument;
+        return $this->invoice_specified_referenced_document;
     }
-
     /**
      * Sets a new invoiceSpecifiedReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $invoiceSpecifiedReferencedDocument
      */
-    public function setInvoiceSpecifiedReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $invoiceSpecifiedReferencedDocument = null): self
+    public function set_invoice_specified_referenced_document(?\horstoeko\zugferd\entities\extended\ram\Referenced_Document_Type $invoice_specified_referenced_document = null): self
     {
-        $this->invoiceSpecifiedReferencedDocument = $invoiceSpecifiedReferencedDocument;
+        $this->invoice_specified_referenced_document = $invoice_specified_referenced_document;
         return $this;
     }
 }

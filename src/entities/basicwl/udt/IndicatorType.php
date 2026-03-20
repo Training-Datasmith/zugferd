@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basicwl\udt;
 
 /**
@@ -9,29 +8,27 @@ namespace horstoeko\zugferd\entities\basicwl\udt;
  *
  * XSD Type: IndicatorType
  */
-class IndicatorType
+class Indicator_Type
 {
     /**
      * @var bool $indicator
      */
     private $indicator;
-
     /**
      * Gets as indicator
      *
      * @return bool
      */
-    public function getIndicator()
+    public function get_indicator()
     {
         return $this->indicator;
     }
-
     /**
      * Sets a new indicator
      *
      * @param  bool $indicator
      */
-    public function setIndicator($indicator): self
+    public function set_indicator($indicator): self
     {
         $this->indicator = $indicator;
         return $this;

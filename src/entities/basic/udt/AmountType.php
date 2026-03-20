@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basic\udt;
 
 /**
@@ -9,18 +8,16 @@ namespace horstoeko\zugferd\entities\basic\udt;
  *
  * XSD Type: AmountType
  */
-class AmountType
+class Amount_Type
 {
     /**
      * @var float $__value
      */
     private $__value;
-
     /**
      * @var string $currencyID
      */
-    private $currencyID;
-
+    private $currency_id;
     /**
      * Construct
      *
@@ -30,7 +27,6 @@ class AmountType
     {
         $this->value($value);
     }
-
     /**
      * Gets or sets the inner value
      *
@@ -44,7 +40,6 @@ class AmountType
         }
         return $this->__value;
     }
-
     /**
      * Gets a string value
      */
@@ -52,25 +47,23 @@ class AmountType
     {
         return strval($this->__value);
     }
-
     /**
      * Gets as currencyID
      *
      * @return string
      */
-    public function getCurrencyID()
+    public function get_currency_id()
     {
-        return $this->currencyID;
+        return $this->currency_id;
     }
-
     /**
      * Sets a new currencyID
      *
      * @param  string $currencyID
      */
-    public function setCurrencyID($currencyID): self
+    public function set_currency_id($currency_id): self
     {
-        $this->currencyID = $currencyID;
+        $this->currency_id = $currency_id;
         return $this;
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basicwl\ram;
 
 /**
@@ -9,29 +8,27 @@ namespace horstoeko\zugferd\entities\basicwl\ram;
  *
  * XSD Type: DebtorFinancialAccountType
  */
-class DebtorFinancialAccountType
+class Debtor_Financial_Account_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\basicwl\udt\IDType $iBANID
      */
-    private $iBANID;
-
+    private $i_banid;
     /**
      * Gets as iBANID
      *
      * @return \horstoeko\zugferd\entities\basicwl\udt\IDType
      */
-    public function getIBANID()
+    public function get_ibanid()
     {
-        return $this->iBANID;
+        return $this->i_banid;
     }
-
     /**
      * Sets a new iBANID
      */
-    public function setIBANID(\horstoeko\zugferd\entities\basicwl\udt\IDType $iBANID): self
+    public function set_ibanid(\horstoeko\zugferd\entities\basicwl\udt\Id_Type $i_banid): self
     {
-        $this->iBANID = $iBANID;
+        $this->i_banid = $i_banid;
         return $this;
     }
 }

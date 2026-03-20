@@ -1,23 +1,20 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /**
  * This file is a part of horstoeko/zugferd.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace horstoeko\zugferd\quick;
 
 use DateTime;
-use horstoeko\stringmanagement\StringUtils;
-use horstoeko\zugferd\codelists\ZugferdInvoiceType;
-use horstoeko\zugferd\codelists\ZugferdPaymentMeans;
-use horstoeko\zugferd\ZugferdDocumentBuilder;
-use horstoeko\zugferd\ZugferdProfiles;
-
+use horstoeko\stringmanagement\String_Utils;
+use horstoeko\zugferd\codelists\Zugferd_Invoice_Type;
+use horstoeko\zugferd\codelists\Zugferd_Payment_Means;
+use horstoeko\zugferd\Zugferd_Document_Builder;
+use horstoeko\zugferd\Zugferd_Profiles;
 /**
  * Class representing the base class of all document descriptors.
  *
@@ -33,76 +30,60 @@ use horstoeko\zugferd\ZugferdProfiles;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/zugferd
  */
-class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
+class Zugferd_Quick_Descriptor extends Zugferd_Document_Builder
 {
     private const VT_TAXCATEGORY = 0;
-
     private const VT_TAXTYPE = 1;
-
     private const VT_TAXPERCENT = 2;
-
     private const VT_LINETOTALBASISAMOUNT = 3;
-
     private const VT_ALLOWANCEAMOUNT = 4;
-
     private const VT_CHARGEAMOUNT = 5;
-
     private const VT_ALLOWANCECHARGEAMOUNT = 6;
-
     private const VT_BASISAMOUNT = 7;
-
     private const VT_CALCULATEDAMOUNT = 8;
-
     private const VT_LOGSERVICECHARGE = 9;
-
     /**
      * Used for internal vat summation
      *
      * @var array
      */
-    protected $vatBreakdown = [];
-
+    protected $vat_breakdown = [];
     /**
      * Internal storage for the prepaid amount. Will be used
      * in summation calculation
      *
      * @var float
      */
-    protected $totalPrepaidAmount = 0.0;
-
+    protected $total_prepaid_amount = 0.0;
     /**
      * Internal flag to see if the totals are alread calculated
      *
      * @var boolean
      */
-    protected $totalsAreCalculated = false;
-
+    protected $totals_are_calculated = false;
     /**
      * Returns the profile of the descriptor
      */
-    protected static function getProfile(): int
+    protected static function get_profile(): int
     {
-        return ZugferdProfiles::PROFILE_EN16931;
+        return Zugferd_Profiles::PROFILE_EN16931;
     }
-
     /**
      * Creates a new ZugferdDocumentBuilder with profile EN16931
      */
-    public static function doCreateNew(): ZugferdQuickDescriptor
+    public static function do_create_new(): Zugferd_Quick_Descriptor
     {
-        return static::createNew(static::getProfile());
+        return static::create_new(static::get_profile());
     }
-
     /**
      * @inheritDoc
      *
      * @return void
      */
-    protected function onBeforeGetContent()
+    protected function on_before_get_content()
     {
-        $this->doCalcTotals();
+        $this->do_calc_totals();
     }
-
     /**
      * Create a new invoice
      *
@@ -111,13 +92,12 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string      $currency           __BT-5, From MINIMUM__ Code for the invoice currency
      * @param  string|null $invoiceNoReference __BT-83, From BASIC WL__ Intended use for payment
      */
-    public function doCreateInvoice(string $invoiceNo, \DateTime $invoiceDate, string $currency, ?string $invoiceNoReference = null): ZugferdQuickDescriptor
+    public function do_create_invoice(string $invoice_no, \DateTime $invoice_date, string $currency, ?string $invoice_no_reference = null): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentInformation($invoiceNo, ZugferdInvoiceType::INVOICE, $invoiceDate, $currency);
-        $this->setDocumentGeneralPaymentInformation(null, $invoiceNoReference ?? $invoiceNo);
+        $this->set_document_information($invoice_no, Zugferd_Invoice_Type::INVOICE, $invoice_date, $currency);
+        $this->set_document_general_payment_information(null, $invoice_no_reference ?? $invoice_no);
         return $this;
     }
-
     /**
      * Create a new credit memo
      *
@@ -126,25 +106,23 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string    $currency              __BT-5, From MINIMUM__ Code for the invoice currency
      * @param  string    $creditMemoNoReference __BT-83, From BASIC WL__ Intended use for refund. If null the number of the credit memo is used
      */
-    public function doCreateCreditMemo(string $creditMemoNo, \DateTime $invoiceDate, string $currency, string $creditMemoNoReference = ''): ZugferdQuickDescriptor
+    public function do_create_credit_memo(string $credit_memo_no, \DateTime $invoice_date, string $currency, string $credit_memo_no_reference = ''): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentInformation($creditMemoNo, ZugferdInvoiceType::CREDITNOTE, $invoiceDate, $currency);
-        $this->setDocumentGeneralPaymentInformation(null, StringUtils::stringIsNullOrEmpty($creditMemoNoReference) ? $creditMemoNo : $creditMemoNoReference);
+        $this->set_document_information($credit_memo_no, Zugferd_Invoice_Type::CREDITNOTE, $invoice_date, $currency);
+        $this->set_document_general_payment_information(null, String_Utils::string_is_null_or_empty($credit_memo_no_reference) ? $credit_memo_no : $credit_memo_no_reference);
         return $this;
     }
-
     /**
      * Add a payment term
      *
      * @param  string|null   $description __BT-20, From _BASIC WL__ A text description of the payment terms that apply to the payment amount due (including a description of possible penalties). Note: This element can contain multiple lines and multiple conditions.
      * @param  DateTime|null $dueDate     __BT-9, From BASIC WL__ The date by which payment is due Note: The payment due date reflects the net payment due date. In the case of partial payments, this indicates the first due date of a net payment. The corresponding description of more complex payment terms can be given in BT-20.
      */
-    public function doSetPaymentTerms(string $description, ?DateTime $dueDate = null): ZugferdQuickDescriptor
+    public function do_set_payment_terms(string $description, ?DateTime $due_date = null): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentPaymentTerm($description, $dueDate);
+        $this->add_document_payment_term($description, $due_date);
         return $this;
     }
-
     /**
      * Set payment means to "direct debit"
      *
@@ -154,12 +132,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  boolean $isSEPA    __BT-81, From BASIC WL__ The expected or used means of payment, expressed as a code. The entries from the UNTDID 4461 code list must be used. A distinction should be made between SEPA and non-SEPA payments as well as between credit payments, direct debits, card payments and other means of payment In particular, the following codes can be used:
      * @param  string  $buyerIban __BT-91, From BASIC WL__ The account to be debited by the direct debit
      */
-    public function doSetPaymentMeansForDebitTransfer(bool $isSEPA, string $buyerIban): ZugferdQuickDescriptor
+    public function do_set_payment_means_for_debit_transfer(bool $is_sepa, string $buyer_iban): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentPaymentMean($isSEPA === false ? ZugferdPaymentMeans::UNTDID_4461_31 : ZugferdPaymentMeans::UNTDID_4461_59, null, null, null, null, $buyerIban);
+        $this->add_document_payment_mean($is_sepa === false ? Zugferd_Payment_Means::UNTDID_4461_31 : Zugferd_Payment_Means::UNTDID_4461_59, null, null, null, null, $buyer_iban);
         return $this;
     }
-
     /**
      * Set payment means to "credit transfer"
      *
@@ -172,12 +149,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $payeePropId      __BT-BT-84-0, From BASIC WL__ National account number (not for SEPA)
      * @param  string|null $payeeBic         __BT-86, From EN 16931__ An identifier for the payment service provider with which the payment account is held
      */
-    public function doSetPaymentMeansForCreditTransfer(bool $isSEPA, string $payeeIban, ?string $payeeAccountName = null, ?string $payeePropId = null, ?string $payeeBic = null): ZugferdQuickDescriptor
+    public function do_set_payment_means_for_credit_transfer(bool $is_sepa, string $payee_iban, ?string $payee_account_name = null, ?string $payee_prop_id = null, ?string $payee_bic = null): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentPaymentMean($isSEPA === false ? ZugferdPaymentMeans::UNTDID_4461_30 : ZugferdPaymentMeans::UNTDID_4461_58, null, null, null, null, null, $payeeIban, $payeeAccountName, $payeePropId, $payeeBic);
+        $this->add_document_payment_mean($is_sepa === false ? Zugferd_Payment_Means::UNTDID_4461_30 : Zugferd_Payment_Means::UNTDID_4461_58, null, null, null, null, null, $payee_iban, $payee_account_name, $payee_prop_id, $payee_bic);
         return $this;
     }
-
     /**
      * Set payment means to "Bank Card"
      *
@@ -185,12 +161,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $cardId         __BT-87, From EN 16931__ The primary account number (PAN) to which the card used for payment belongs. In accordance with card payment security standards, an invoice should never contain a full payment card master account number. The following specification of the PCI Security Standards Council currently applies: The first 6 and last 4 digits at most are to be displayed
      * @param  string $cardHolderName __BT-88, From EN 16931__ Name of the payment card holder
      */
-    public function doSetPaymentMeansForBankCard(string $cardType, string $cardId, string $cardHolderName): ZugferdQuickDescriptor
+    public function do_set_payment_means_for_bank_card(string $card_type, string $card_id, string $card_holder_name): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentPaymentMean(ZugferdPaymentMeans::UNTDID_4461_48, null, $cardType, $cardId, $cardHolderName);
+        $this->add_document_payment_mean(Zugferd_Payment_Means::UNTDID_4461_48, null, $card_type, $card_id, $card_holder_name);
         return $this;
     }
-
     /**
      * Set payment means to "Credit Card"
      *
@@ -198,12 +173,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $cardId         __BT-87, From EN 16931__ The primary account number (PAN) to which the card used for payment belongs. In accordance with card payment security standards, an invoice should never contain a full payment card master account number. The following specification of the PCI Security Standards Council currently applies: The first 6 and last 4 digits at most are to be displayed
      * @param  string $cardHolderName __BT-88, From EN 16931__ Name of the payment card holder
      */
-    public function doSetPaymentMeansForCreditCard(string $cardType, string $cardId, string $cardHolderName): ZugferdQuickDescriptor
+    public function do_set_payment_means_for_credit_card(string $card_type, string $card_id, string $card_holder_name): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentPaymentMean(ZugferdPaymentMeans::UNTDID_4461_54, null, $cardType, $cardId, $cardHolderName);
+        $this->add_document_payment_mean(Zugferd_Payment_Means::UNTDID_4461_54, null, $card_type, $card_id, $card_holder_name);
         return $this;
     }
-
     /**
      * Set payment means to "Debit Card"
      *
@@ -211,12 +185,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $cardId         __BT-87, From EN 16931__ The primary account number (PAN) to which the card used for payment belongs. In accordance with card payment security standards, an invoice should never contain a full payment card master account number. The following specification of the PCI Security Standards Council currently applies: The first 6 and last 4 digits at most are to be displayed
      * @param  string $cardHolderName __BT-88, From EN 16931__ Name of the payment card holder
      */
-    public function doSetPaymentMeansForDebitCard(string $cardType, string $cardId, string $cardHolderName): ZugferdQuickDescriptor
+    public function do_set_payment_means_for_debit_card(string $card_type, string $card_id, string $card_holder_name): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentPaymentMean(ZugferdPaymentMeans::UNTDID_4461_55, null, $cardType, $cardId, $cardHolderName);
+        $this->add_document_payment_mean(Zugferd_Payment_Means::UNTDID_4461_55, null, $card_type, $card_id, $card_holder_name);
         return $this;
     }
-
     /**
      * Add note to the document
      *
@@ -224,24 +197,22 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $subjectCode __BT-21, From BASIC WL__ The qualification of the free text for the invoice from BT-22
      * @param  string|null $contentCode __BT-X-5, From EXTENDED__ A code to classify the content of the free text of the invoice
      */
-    public function doAddNote(string $note, ?string $subjectCode = null, ?string $contentCode = null): ZugferdQuickDescriptor
+    public function do_add_note(string $note, ?string $subject_code = null, ?string $content_code = null): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentNote($note, $contentCode, $subjectCode);
+        $this->add_document_note($note, $content_code, $subject_code);
         return $this;
     }
-
     /**
      * Set details of the related buyer order
      *
      * @param  string   $orderNo   __BT-13, From MINIMUM__ An identifier issued by the buyer for a referenced order (order number)
      * @param  DateTime $orderDate __BT-X-147, From EXTENDED__ Date of order
      */
-    public function doSetBuyerOrderReferenceDocument(string $orderNo, DateTime $orderDate): ZugferdQuickDescriptor
+    public function do_set_buyer_order_reference_document(string $order_no, DateTime $order_date): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentBuyerOrderReferencedDocument($orderNo, $orderDate);
+        $this->set_document_buyer_order_referenced_document($order_no, $order_date);
         return $this;
     }
-
     /**
      * Set information about billing documents that provide evidence of claims made in the bill
      *
@@ -263,24 +234,22 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null   $referenceTypeCode __BT-, From __ The identifier for the identification scheme of the identifier of the item invoiced. If it is not clear to the recipient which scheme is used for the identifier, an identifier of the scheme should be used, which must be selected from UNTDID 1153 in accordance with the code list entries.
      * @param  string|null   $filename          __BT-125, From EN 16931__ Contains a file name of an attachment document embedded as a binary object
      */
-    public function doAddAdditionalReferencedDocument(string $issuerAssignedID, ?DateTime $issueDateTime = null, ?string $typeCode = null, ?string $name = null, ?string $referenceTypeCode = null, ?string $filename = null): ZugferdQuickDescriptor
+    public function do_add_additional_referenced_document(string $issuer_assigned_id, ?DateTime $issue_date_time = null, ?string $type_code = null, ?string $name = null, ?string $reference_type_code = null, ?string $filename = null): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentAdditionalReferencedDocument($issuerAssignedID, $typeCode, null, $name, $referenceTypeCode, $issueDateTime, $filename);
+        $this->add_document_additional_referenced_document($issuer_assigned_id, $type_code, null, $name, $reference_type_code, $issue_date_time, $filename);
         return $this;
     }
-
     /**
      * Set detailed information on the associated delivery note
      *
      * @param  string   $deliveryNoteNo   __BT-X-202, From EXTENDED__ Delivery slip number
      * @param  DateTime $deliveryNoteDate __BT-X-203, From EXTENDED__ Delivery slip date
      */
-    public function doSetDeliveryNoteReferenceDocument(string $deliveryNoteNo, DateTime $deliveryNoteDate): ZugferdQuickDescriptor
+    public function do_set_delivery_note_reference_document(string $delivery_note_no, DateTime $delivery_note_date): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentDeliveryNoteReferencedDocument($deliveryNoteNo, $deliveryNoteDate);
+        $this->set_document_delivery_note_referenced_document($delivery_note_no, $delivery_note_date);
         return $this;
     }
-
     /**
      * Set a Reference to the previous invoice
      *
@@ -292,35 +261,32 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string        $id            __BT-25, From BASIC WL__ The identification of an invoice previously sent by the seller
      * @param  DateTime|null $issueDateTime __BT-26, From BASIC WL__ Date of the previous invoice
      */
-    public function doSetInvoiceReferencedDocument(string $id, ?DateTime $issueDateTime = null): ZugferdQuickDescriptor
+    public function do_set_invoice_referenced_document(string $id, ?DateTime $issue_date_time = null): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentInvoiceReferencedDocument($id, null, $issueDateTime);
+        $this->set_document_invoice_referenced_document($id, null, $issue_date_time);
         return $this;
     }
-
     /**
      * Set Details of a project reference
      *
      * @param  string $id   __BT-11, From EN 16931__ The identifier of the project to which the invoice relates
      * @param  string $name __BT-11-0, From EN 16931__  The name of the project to which the invoice relates
      */
-    public function doSetSpecifiedProcuringProject(string $id, string $name): ZugferdQuickDescriptor
+    public function do_set_specified_procuring_project(string $id, string $name): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentProcuringProject($id, $name);
+        $this->set_document_procuring_project($id, $name);
         return $this;
     }
-
     /**
      * Set detailed information on the actual delivery
      *
      * @param  DateTime|null $date __BT-72, From BASIC WL__ Actual delivery time
      */
-    public function doSetSupplyChainEvent(?DateTime $date): ZugferdQuickDescriptor
+    public function do_set_supply_chain_event(?DateTime $date): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentSupplyChainEvent($date);
+        $this->set_document_supply_chain_event($date);
         return $this;
     }
-
     /**
      * Detailed information about the buyer (service recipient)
      *
@@ -335,18 +301,16 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $globalID       __BT-46-0, From BASIC WL__ The buyers's identifier identification scheme is an identifier uniquely assigned to a buyer by a global registration organization.
      * @param  string|null $globalIDscheme __BT-46-1, From BASIC WL__ If the identifier is used for the identification scheme, it must be selected from the entries in the list published by the ISO / IEC 6523 Maintenance Agency.
      */
-    public function doSetBuyer(string $name, string $postcode, string $city, string $street, string $country, ?string $buyerReference = null, ?string $id = null, ?string $globalID = null, ?string $globalIDscheme = null): ZugferdQuickDescriptor
+    public function do_set_buyer(string $name, string $postcode, string $city, string $street, string $country, ?string $buyer_reference = null, ?string $id = null, ?string $global_id = null, ?string $global_i_dscheme = null): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentBuyer($name, $id);
-        $this->setDocumentBuyerAddress($street, null, null, $postcode, $city, $country);
-        $this->addDocumentBuyerGlobalId($globalID, $globalIDscheme);
-        if ($buyerReference != null) {
-            $this->setDocumentBuyerReference($buyerReference);
+        $this->set_document_buyer($name, $id);
+        $this->set_document_buyer_address($street, null, null, $postcode, $city, $country);
+        $this->add_document_buyer_global_id($global_id, $global_i_dscheme);
+        if ($buyer_reference != null) {
+            $this->set_document_buyer_reference($buyer_reference);
         }
-
         return $this;
     }
-
     /**
      * Set contact of the buyer party
      *
@@ -356,12 +320,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $phoneno      __BT-57, From EN 16931__ A telephone number for the contact point
      * @param  string|null $faxno        __BT-X-115, From EXTENDED__ A fax number of the contact point
      */
-    public function doSetBuyerContact(string $name, ?string $orgunit = null, ?string $emailAddress = null, ?string $phoneno = null, ?string $faxno = null): ZugferdQuickDescriptor
+    public function do_set_buyer_contact(string $name, ?string $orgunit = null, ?string $email_address = null, ?string $phoneno = null, ?string $faxno = null): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentBuyerContact($name, $orgunit, $phoneno, $faxno, $emailAddress);
+        $this->set_document_buyer_contact($name, $orgunit, $phoneno, $faxno, $email_address);
         return $this;
     }
-
     /**
      * Add detailed information on the buyers's tax information
      *
@@ -375,24 +338,22 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $no       __BT-48-0, From BASIC WL__ Type of tax number (FC = Tax number, VA = Sales tax identification number)
      * @param  string $schemeID __BT-48, From BASIC WL__ Tax number or sales tax identification number
      */
-    public function doAddBuyerTaxRegistration(string $no, string $schemeID): ZugferdQuickDescriptor
+    public function do_add_buyer_tax_registration(string $no, string $scheme_id): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentBuyerTaxRegistration($schemeID, $no);
+        $this->add_document_buyer_tax_registration($scheme_id, $no);
         return $this;
     }
-
     /**
      * Set Buyers electronic communication information
      *
      * @param  string $uri       __BT-49, From BASIC WL__ Specifies the buyer's electronic address to which the invoice is sent
      * @param  string $uriScheme __BT-49-1, From BASIC WL__ The identifier for the identification scheme of the buyer's electronic address (Default: EM)
      */
-    public function doSetBuyerElectronicCommunication(string $uri, string $uriScheme = 'EM'): ZugferdQuickDescriptor
+    public function do_set_buyer_electronic_communication(string $uri, string $uri_scheme = 'EM'): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentBuyerCommunication($uriScheme, $uri);
+        $this->set_document_buyer_communication($uri_scheme, $uri);
         return $this;
     }
-
     /**
      * Detailed information about the seller (=service provider)
      *
@@ -406,14 +367,13 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $globalID       __BT-29/BT-29-0, From BASIC WL__ The seller's identifier identification scheme is an identifier uniquely assigned to a seller by a global registration organization.
      * @param  string|null $globalIDscheme __BT-29-1, From BASIC WL__ If the identifier is used for the identification scheme, it must be selected from the entries in the list published by the ISO / IEC 6523 Maintenance Agency.
      */
-    public function doSetSeller(string $name, string $postcode, string $city, string $street, string $country, ?string $id = null, ?string $globalID = null, ?string $globalIDscheme = null): ZugferdQuickDescriptor
+    public function do_set_seller(string $name, string $postcode, string $city, string $street, string $country, ?string $id = null, ?string $global_id = null, ?string $global_i_dscheme = null): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentSeller($name, $id);
-        $this->setDocumentSellerAddress($street, null, null, $postcode, $city, $country);
-        $this->addDocumentSellerGlobalId($globalID, $globalIDscheme);
+        $this->set_document_seller($name, $id);
+        $this->set_document_seller_address($street, null, null, $postcode, $city, $country);
+        $this->add_document_seller_global_id($global_id, $global_i_dscheme);
         return $this;
     }
-
     /**
      * Set contact of the seller party
      *
@@ -423,12 +383,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $phoneno      __BT-42, From EN 16931__ A telephone number for the contact point
      * @param  string|null $faxno        __BT-X-107, From EXTENDED__ A fax number of the contact point
      */
-    public function doSetSellerContact(string $name, ?string $orgunit = null, ?string $emailAddress = null, ?string $phoneno = null, ?string $faxno = null): ZugferdQuickDescriptor
+    public function do_set_seller_contact(string $name, ?string $orgunit = null, ?string $email_address = null, ?string $phoneno = null, ?string $faxno = null): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentSellerContact($name, $orgunit, $phoneno, $faxno, $emailAddress);
+        $this->set_document_seller_contact($name, $orgunit, $phoneno, $faxno, $email_address);
         return $this;
     }
-
     /**
      * Add detailed information on the seller's tax information
      *
@@ -442,24 +401,22 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $no       __BT-31/32, From MINIMUM/EN 16931__ Tax number of the seller or sales tax identification number of the seller
      * @param  string $schemeID __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax number of the seller (FC = Tax number, VA = Sales tax identification number)
      */
-    public function doAddSellerTaxRegistration(string $no, string $schemeID): ZugferdQuickDescriptor
+    public function do_add_seller_tax_registration(string $no, string $scheme_id): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentSellerTaxRegistration($no, $schemeID);
+        $this->add_document_seller_tax_registration($no, $scheme_id);
         return $this;
     }
-
     /**
      * Set Sellers electronic communication information
      *
      * @param  string $uri       __BT-34, From BASIC WL__ Specifies the electronic address of the seller to which the response to the invoice can be sent at application level
      * @param  string $uriScheme __BT-34-1, From BASIC WL__ The identifier for the identification scheme of the seller's electronic address (Default: EM)
      */
-    public function doSetSellerElectronicCommunication(string $uri, string $uriScheme = 'EM'): ZugferdQuickDescriptor
+    public function do_set_seller_electronic_communication(string $uri, string $uri_scheme = 'EM'): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentSellerCommunication($uriScheme, $uri);
+        $this->set_document_seller_communication($uri_scheme, $uri);
         return $this;
     }
-
     /**
      * Add a new text position
      *
@@ -467,13 +424,12 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param      string $comment __BT-127, From BASIC__ A free text that contains unstructured information that is relevant to the invoice item
      * @deprecated 1.0.75
      */
-    public function doAddTradeLineCommentItem(string $lineId, string $comment): ZugferdQuickDescriptor
+    public function do_add_trade_line_comment_item(string $line_id, string $comment): Zugferd_Quick_Descriptor
     {
-        $this->addNewTextPosition($lineId);
-        $this->setDocumentPositionNote($comment);
+        $this->add_new_text_position($line_id);
+        $this->set_document_position_note($comment);
         return $this;
     }
-
     /**
      * Adds a new position (line) to document
      *
@@ -489,51 +445,36 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *                                       UNTDID 5153.
      * @param  float  $taxPercent            __BT-152, From BASIC__ The VAT rate applicable to the item invoiced and expressed as a percentage. Note: The code of the sales tax category and the category-specific sales tax rate  must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
      */
-    public function doAddTradeLineItem(string $lineId, string $productName, float $unitPrice, float $quantity, string $unitCode, float $allowanceChargeAmount, string $allowanceChargeReason, string $taxCategoryCode, string $taxTypeCode, float $taxPercent): ZugferdQuickDescriptor
+    public function do_add_trade_line_item(string $line_id, string $product_name, float $unit_price, float $quantity, string $unit_code, float $allowance_charge_amount, string $allowance_charge_reason, string $tax_category_code, string $tax_type_code, float $tax_percent): Zugferd_Quick_Descriptor
     {
-        $hasChargeAmountIsAllowance = $allowanceChargeAmount != 0.0;
-        $allowanceChargeAmountIsAllowance = $allowanceChargeAmount < 0.0;
-        $allowanceAmount = $allowanceChargeAmountIsAllowance ? abs($allowanceChargeAmount) : 0.0;
-        $chargeAmount = $allowanceChargeAmountIsAllowance === false ? abs($allowanceChargeAmount) : 0.0;
-        $allowanceChargeAmount = abs($allowanceChargeAmount);
-        $lineTotalAmount = round($unitPrice * $quantity + $chargeAmount - $allowanceAmount, 2);
-
-        $this->addNewPosition($lineId);
-        $this->setDocumentPositionProductDetails($productName);
-        $this->setDocumentPositionNetPrice($unitPrice);
-        $this->setDocumentPositionQuantity($quantity, $unitCode);
-        $this->addDocumentPositionTax($taxCategoryCode, $taxTypeCode, $taxPercent);
-        $this->setDocumentPositionLineSummation($lineTotalAmount);
-
-        if ($hasChargeAmountIsAllowance == true) {
-            $this->addDocumentPositionAllowanceCharge($allowanceChargeAmount, $allowanceChargeAmountIsAllowance === false, null, null, null, $allowanceChargeReason);
+        $has_charge_amount_is_allowance = $allowance_charge_amount != 0.0;
+        $allowance_charge_amount_is_allowance = $allowance_charge_amount < 0.0;
+        $allowance_amount = $allowance_charge_amount_is_allowance ? abs($allowance_charge_amount) : 0.0;
+        $charge_amount = $allowance_charge_amount_is_allowance === false ? abs($allowance_charge_amount) : 0.0;
+        $allowance_charge_amount = abs($allowance_charge_amount);
+        $line_total_amount = round($unit_price * $quantity + $charge_amount - $allowance_amount, 2);
+        $this->add_new_position($line_id);
+        $this->set_document_position_product_details($product_name);
+        $this->set_document_position_net_price($unit_price);
+        $this->set_document_position_quantity($quantity, $unit_code);
+        $this->add_document_position_tax($tax_category_code, $tax_type_code, $tax_percent);
+        $this->set_document_position_line_summation($line_total_amount);
+        if ($has_charge_amount_is_allowance == true) {
+            $this->add_document_position_allowance_charge($allowance_charge_amount, $allowance_charge_amount_is_allowance === false, null, null, null, $allowance_charge_reason);
         }
-
-        $this->addToInternalVatBuffer(
-            $taxCategoryCode,
-            $taxTypeCode,
-            $taxPercent,
-            $lineTotalAmount,
-            0.0,
-            0.0,
-            0.0
-        );
-
+        $this->add_to_internal_vat_buffer($tax_category_code, $tax_type_code, $tax_percent, $line_total_amount, 0.0, 0.0, 0.0);
         return $this;
     }
-
     /**
      * Add detailed information on the free text on the position
      *
      * @param  string $content __BT-127, From BASIC__ A free text that contains unstructured information that is relevant to the invoice item
      */
-    public function doSetDocumentPositionNote(string $content): ZugferdQuickDescriptor
+    public function do_set_document_position_note(string $content): Zugferd_Quick_Descriptor
     {
-        $this->setDocumentPositionNote($content);
-
+        $this->set_document_position_note($content);
         return $this;
     }
-
     /**
      * Adds a new position (line) to document with a surcharge amount
      *
@@ -549,12 +490,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *                                 UNTDID 5153.
      * @param  float  $taxPercent      __BT-152, From BASIC__ The VAT rate applicable to the item invoiced and expressed as a percentage. Note: The code of the sales tax category and the category-specific sales tax rate  must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
      */
-    public function doAddTradeLineItemWithSurcharge(string $lineId, string $productName, float $unitPrice, float $chargeAmount, string $chargeReason, float $quantity, string $unitCode, string $taxCategoryCode, string $taxTypeCode, float $taxPercent): ZugferdQuickDescriptor
+    public function do_add_trade_line_item_with_surcharge(string $line_id, string $product_name, float $unit_price, float $charge_amount, string $charge_reason, float $quantity, string $unit_code, string $tax_category_code, string $tax_type_code, float $tax_percent): Zugferd_Quick_Descriptor
     {
-        $this->doAddTradeLineItem($lineId, $productName, $unitPrice, $quantity, $unitCode, abs($chargeAmount), $chargeReason, $taxCategoryCode, $taxTypeCode, $taxPercent);
+        $this->do_add_trade_line_item($line_id, $product_name, $unit_price, $quantity, $unit_code, abs($charge_amount), $charge_reason, $tax_category_code, $tax_type_code, $tax_percent);
         return $this;
     }
-
     /**
      * Adds a new position (line) to document with a discount amount
      *
@@ -570,12 +510,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      *                                 UNTDID 5153.
      * @param  float  $taxPercent      __BT-152, From BASIC__ The VAT rate applicable to the item invoiced and expressed as a percentage. Note: The code of the sales tax category and the category-specific sales tax rate  must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
      */
-    public function doAddTradeLineItemWithDiscount(string $lineId, string $productName, float $unitPrice, float $discountAmount, string $discountReason, float $quantity, string $unitCode, string $taxCategoryCode, string $taxTypeCode, float $taxPercent): ZugferdQuickDescriptor
+    public function do_add_trade_line_item_with_discount(string $line_id, string $product_name, float $unit_price, float $discount_amount, string $discount_reason, float $quantity, string $unit_code, string $tax_category_code, string $tax_type_code, float $tax_percent): Zugferd_Quick_Descriptor
     {
-        $this->doAddTradeLineItem($lineId, $productName, $unitPrice, $quantity, $unitCode, -abs($discountAmount), $discountReason, $taxCategoryCode, $taxTypeCode, $taxPercent);
+        $this->do_add_trade_line_item($line_id, $product_name, $unit_price, $quantity, $unit_code, -abs($discount_amount), $discount_reason, $tax_category_code, $tax_type_code, $tax_percent);
         return $this;
     }
-
     /**
      * Add a logistical service fees (On document level)
      *
@@ -585,23 +524,12 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $taxCategoryCode __BT-X-273, From EXTENDED__ Code of the VAT category
      * @param  float  $taxPercent      __BT-X-274, From EXTENDED__ The sales tax rate, expressed as the percentage applicable to the sales tax category in question. Note: The code of the sales tax category and the category-specific sales tax rate must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
      */
-    public function doAddLogisticsServiceCharge(float $amount, string $description, string $taxTypeCode, string $taxCategoryCode, float $taxPercent): ZugferdQuickDescriptor
+    public function do_add_logistics_service_charge(float $amount, string $description, string $tax_type_code, string $tax_category_code, float $tax_percent): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentLogisticsServiceCharge($description, $amount, [$taxTypeCode], [$taxCategoryCode], [$taxPercent]);
-
-        $this->addToInternalVatBuffer(
-            $taxCategoryCode,
-            $taxTypeCode,
-            $taxPercent,
-            0.0,
-            0.0,
-            0.0,
-            $amount
-        );
-
+        $this->add_document_logistics_service_charge($description, $amount, [$tax_type_code], [$tax_category_code], [$tax_percent]);
+        $this->add_to_internal_vat_buffer($tax_category_code, $tax_type_code, $tax_percent, 0.0, 0.0, 0.0, $amount);
         return $this;
     }
-
     /**
      * Add information about surcharges and charges applicable to the bill as a whole, Deductions,
      * such as for withheld taxes may also be specified in this group
@@ -612,31 +540,18 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string $taxTypeCode     __BT-95-0/BT-102-0, From BASIC WL__ Code for the VAT category of the surcharge or charge at document level. Note: Fixed value = "VAT"
      * @param  float  $taxPercent      __BT-96/BT-103, From BASIC WL__ VAT rate for the surcharge or discount on document level. Note: The code of the sales tax category and the category-specific sales tax rate must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
      */
-    public function doAddTradeAllowanceCharge(float $actualAmount, string $reason, string $taxCategoryCode, string $taxTypeCode, float $taxPercent): ZugferdQuickDescriptor
+    public function do_add_trade_allowance_charge(float $actual_amount, string $reason, string $tax_category_code, string $tax_type_code, float $tax_percent): Zugferd_Quick_Descriptor
     {
-        if ($actualAmount == 0.0) {
+        if ($actual_amount == 0.0) {
             return $this;
         }
-
-        $allowanceChargeAmountIsAllowance = $actualAmount < 0.0;
-        $allowanceAmount = $allowanceChargeAmountIsAllowance ? abs($actualAmount) : 0.0;
-        $chargeAmount = $allowanceChargeAmountIsAllowance === false ? abs($actualAmount) : 0.0;
-
-        $this->addDocumentAllowanceCharge(abs($actualAmount), $allowanceChargeAmountIsAllowance == false, $taxCategoryCode, $taxTypeCode, $taxPercent, null, null, null, null, null, null, $reason);
-
-        $this->addToInternalVatBuffer(
-            $taxCategoryCode,
-            $taxTypeCode,
-            $taxPercent,
-            0.0,
-            $chargeAmount,
-            $allowanceAmount,
-            0.0
-        );
-
+        $allowance_charge_amount_is_allowance = $actual_amount < 0.0;
+        $allowance_amount = $allowance_charge_amount_is_allowance ? abs($actual_amount) : 0.0;
+        $charge_amount = $allowance_charge_amount_is_allowance === false ? abs($actual_amount) : 0.0;
+        $this->add_document_allowance_charge(abs($actual_amount), $allowance_charge_amount_is_allowance == false, $tax_category_code, $tax_type_code, $tax_percent, null, null, null, null, null, null, $reason);
+        $this->add_to_internal_vat_buffer($tax_category_code, $tax_type_code, $tax_percent, 0.0, $charge_amount, $allowance_amount, 0.0);
         return $this;
     }
-
     /**
      * Add a VAT breakdown (at document level)
      *
@@ -648,12 +563,11 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $exemptionReasonCode        __BT-121, From BASIC WL__ Reason given in code form for the exemption of the amount from VAT. Note: Code list issued and maintained by the Connecting Europe Facility.
      * @param  string|null $exemptionReason            __BT-120, From BASIC WL__ Reason for tax exemption (free text)
      */
-    public function doAddApplicableTradeTax(float $basisAmount, float $percent, string $categoryCode, ?string $typeCode = null, ?float $allowanceChargeBasisAmount = null, ?string $exemptionReasonCode = null, ?string $exemptionReason = null): ZugferdQuickDescriptor
+    public function do_add_applicable_trade_tax(float $basis_amount, float $percent, string $category_code, ?string $type_code = null, ?float $allowance_charge_basis_amount = null, ?string $exemption_reason_code = null, ?string $exemption_reason = null): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentTax($categoryCode, $typeCode ?? 'VAT', $basisAmount, round(0.01 * $percent * $basisAmount, 2), $percent, $exemptionReason, $exemptionReasonCode, null, $allowanceChargeBasisAmount);
+        $this->add_document_tax($category_code, $type_code ?? 'VAT', $basis_amount, round(0.01 * $percent * $basis_amount, 2), $percent, $exemption_reason, $exemption_reason_code, null, $allowance_charge_basis_amount);
         return $this;
     }
-
     /**
      * Add a VAT breakdown (at document level)
      *
@@ -665,124 +579,72 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      * @param  string|null $exemptionReasonCode        __BT-121, From BASIC WL__ Reason given in code form for the exemption of the amount from VAT. Note: Code list issued and maintained by the Connecting Europe Facility.
      * @param  string|null $exemptionReason            __BT-120, From BASIC WL__ Reason for tax exemption (free text)
      */
-    public function doAddApplicableTradeTax2(float $basisAmount, float $calculatedAmount, string $categoryCode, ?string $typeCode = null, ?float $allowanceChargeBasisAmount = null, ?string $exemptionReasonCode = null, ?string $exemptionReason = null): ZugferdQuickDescriptor
+    public function do_add_applicable_trade_tax2(float $basis_amount, float $calculated_amount, string $category_code, ?string $type_code = null, ?float $allowance_charge_basis_amount = null, ?string $exemption_reason_code = null, ?string $exemption_reason = null): Zugferd_Quick_Descriptor
     {
-        $this->addDocumentTax($categoryCode, $typeCode ?? 'VAT', $basisAmount, $calculatedAmount, round($calculatedAmount * 100.0 / $basisAmount, 2), $exemptionReason, $exemptionReasonCode, null, $allowanceChargeBasisAmount);
+        $this->add_document_tax($category_code, $type_code ?? 'VAT', $basis_amount, $calculated_amount, round($calculated_amount * 100.0 / $basis_amount, 2), $exemption_reason, $exemption_reason_code, null, $allowance_charge_basis_amount);
         return $this;
     }
-
     /**
      * Sets the prepaid amount
      *
      * @param  float $totalPrepaidAmount __BT-113, From BASIC WL__ Prepayment amount
      */
-    public function doSetPrepaidAmount(float $totalPrepaidAmount = 0.0): ZugferdQuickDescriptor
+    public function do_set_prepaid_amount(float $total_prepaid_amount = 0.0): Zugferd_Quick_Descriptor
     {
-        $this->totalPrepaidAmount = $totalPrepaidAmount;
+        $this->total_prepaid_amount = $total_prepaid_amount;
         return $this;
     }
-
     /**
      * Writes the vat breakdowns and the summation of the document
      */
-    protected function doCalcTotals(): ZugferdQuickDescriptor
+    protected function do_calc_totals(): Zugferd_Quick_Descriptor
     {
-        if ($this->totalsAreCalculated !== false) {
+        if ($this->totals_are_calculated !== false) {
             return $this;
         }
-
-        $this->writeVatBreakDown();
-        $this->setDocumentSummation(
-            $this->summarizeVatTableElement(self::VT_BASISAMOUNT) + $this->summarizeVatTableElement(self::VT_CALCULATEDAMOUNT),
-            $this->summarizeVatTableElement(self::VT_BASISAMOUNT) + $this->summarizeVatTableElement(self::VT_CALCULATEDAMOUNT) - $this->totalPrepaidAmount,
-            $this->summarizeVatTableElement(self::VT_LINETOTALBASISAMOUNT),
-            $this->summarizeVatTableElement(self::VT_CHARGEAMOUNT) + $this->summarizeVatTableElement(self::VT_LOGSERVICECHARGE),
-            $this->summarizeVatTableElement(self::VT_ALLOWANCEAMOUNT),
-            $this->summarizeVatTableElement(self::VT_BASISAMOUNT),
-            $this->summarizeVatTableElement(self::VT_CALCULATEDAMOUNT),
-            0.0,
-            $this->totalPrepaidAmount
-        );
-
-        $this->totalsAreCalculated = true;
-
+        $this->write_vat_break_down();
+        $this->set_document_summation($this->summarize_vat_table_element(self::VT_BASISAMOUNT) + $this->summarize_vat_table_element(self::VT_CALCULATEDAMOUNT), $this->summarize_vat_table_element(self::VT_BASISAMOUNT) + $this->summarize_vat_table_element(self::VT_CALCULATEDAMOUNT) - $this->total_prepaid_amount, $this->summarize_vat_table_element(self::VT_LINETOTALBASISAMOUNT), $this->summarize_vat_table_element(self::VT_CHARGEAMOUNT) + $this->summarize_vat_table_element(self::VT_LOGSERVICECHARGE), $this->summarize_vat_table_element(self::VT_ALLOWANCEAMOUNT), $this->summarize_vat_table_element(self::VT_BASISAMOUNT), $this->summarize_vat_table_element(self::VT_CALCULATEDAMOUNT), 0.0, $this->total_prepaid_amount);
+        $this->totals_are_calculated = true;
         return $this;
     }
-
     /**
      * Insert into internal vat table for later using, e.g. when creating
      * the vat breakdown
      *
      * @return void
      */
-    protected function addToInternalVatBuffer(string $taxCategoryCode, string $taxTypeCode, float $taxPercent, float $lineTotalAmount, float $chargeAmount, float $allowanceAmount, float $logisticServiceCharge)
+    protected function add_to_internal_vat_buffer(string $tax_category_code, string $tax_type_code, float $tax_percent, float $line_total_amount, float $charge_amount, float $allowance_amount, float $logistic_service_charge)
     {
-        $vatGroup = md5($taxCategoryCode . '_' . $taxTypeCode . '_' . number_format($taxPercent, 10, '_', '__'));
-
-        if (!isset($this->vatBreakdown[$vatGroup])) {
-            $this->vatBreakdown[$vatGroup] = [
-                self::VT_TAXCATEGORY => $taxCategoryCode,
-                self::VT_TAXTYPE => $taxTypeCode,
-                self::VT_TAXPERCENT => $taxPercent,
-                self::VT_LINETOTALBASISAMOUNT => 0.0,
-                self::VT_ALLOWANCEAMOUNT => 0.0,
-                self::VT_CHARGEAMOUNT => 0.0,
-                self::VT_ALLOWANCECHARGEAMOUNT => 0.0,
-                self::VT_CALCULATEDAMOUNT => 0.0,
-                self::VT_LOGSERVICECHARGE => 0.0,
-            ];
+        $vat_group = md5($tax_category_code . '_' . $tax_type_code . '_' . number_format($tax_percent, 10, '_', '__'));
+        if (!isset($this->vat_breakdown[$vat_group])) {
+            $this->vat_breakdown[$vat_group] = [self::VT_TAXCATEGORY => $tax_category_code, self::VT_TAXTYPE => $tax_type_code, self::VT_TAXPERCENT => $tax_percent, self::VT_LINETOTALBASISAMOUNT => 0.0, self::VT_ALLOWANCEAMOUNT => 0.0, self::VT_CHARGEAMOUNT => 0.0, self::VT_ALLOWANCECHARGEAMOUNT => 0.0, self::VT_CALCULATEDAMOUNT => 0.0, self::VT_LOGSERVICECHARGE => 0.0];
         }
-
-        $this->vatBreakdown[$vatGroup][self::VT_LINETOTALBASISAMOUNT] += $lineTotalAmount;
-        $this->vatBreakdown[$vatGroup][self::VT_ALLOWANCEAMOUNT] += $allowanceAmount;
-        $this->vatBreakdown[$vatGroup][self::VT_CHARGEAMOUNT] += $chargeAmount;
-        $this->vatBreakdown[$vatGroup][self::VT_LOGSERVICECHARGE] += $logisticServiceCharge;
-        $this->vatBreakdown[$vatGroup][self::VT_ALLOWANCECHARGEAMOUNT] =
-            $this->vatBreakdown[$vatGroup][self::VT_CHARGEAMOUNT] -
-            $this->vatBreakdown[$vatGroup][self::VT_ALLOWANCEAMOUNT] +
-            $this->vatBreakdown[$vatGroup][self::VT_LOGSERVICECHARGE];
-        $this->vatBreakdown[$vatGroup][self::VT_BASISAMOUNT] =
-            $this->vatBreakdown[$vatGroup][self::VT_LINETOTALBASISAMOUNT] +
-            $this->vatBreakdown[$vatGroup][self::VT_ALLOWANCECHARGEAMOUNT];
-        $this->vatBreakdown[$vatGroup][self::VT_CALCULATEDAMOUNT] =
-            round(
-                $this->vatBreakdown[$vatGroup][self::VT_BASISAMOUNT] *
-                    $this->vatBreakdown[$vatGroup][self::VT_TAXPERCENT] / 100.0,
-                2
-            );
+        $this->vat_breakdown[$vat_group][self::VT_LINETOTALBASISAMOUNT] += $line_total_amount;
+        $this->vat_breakdown[$vat_group][self::VT_ALLOWANCEAMOUNT] += $allowance_amount;
+        $this->vat_breakdown[$vat_group][self::VT_CHARGEAMOUNT] += $charge_amount;
+        $this->vat_breakdown[$vat_group][self::VT_LOGSERVICECHARGE] += $logistic_service_charge;
+        $this->vat_breakdown[$vat_group][self::VT_ALLOWANCECHARGEAMOUNT] = $this->vat_breakdown[$vat_group][self::VT_CHARGEAMOUNT] - $this->vat_breakdown[$vat_group][self::VT_ALLOWANCEAMOUNT] + $this->vat_breakdown[$vat_group][self::VT_LOGSERVICECHARGE];
+        $this->vat_breakdown[$vat_group][self::VT_BASISAMOUNT] = $this->vat_breakdown[$vat_group][self::VT_LINETOTALBASISAMOUNT] + $this->vat_breakdown[$vat_group][self::VT_ALLOWANCECHARGEAMOUNT];
+        $this->vat_breakdown[$vat_group][self::VT_CALCULATEDAMOUNT] = round($this->vat_breakdown[$vat_group][self::VT_BASISAMOUNT] * $this->vat_breakdown[$vat_group][self::VT_TAXPERCENT] / 100.0, 2);
     }
-
     /**
      * Writes the document vat breakdown from the internal vat buffer
      */
-    protected function writeVatBreakDown(): void
+    protected function write_vat_break_down(): void
     {
-        foreach ($this->vatBreakdown as $item) {
-            $this->addDocumentTax(
-                $item[self::VT_TAXCATEGORY],
-                $item[self::VT_TAXTYPE],
-                $item[self::VT_BASISAMOUNT],
-                $item[self::VT_CALCULATEDAMOUNT],
-                $item[self::VT_TAXPERCENT],
-                null,
-                null,
-                $item[self::VT_LINETOTALBASISAMOUNT],
-                $item[self::VT_ALLOWANCECHARGEAMOUNT]
-            );
+        foreach ($this->vat_breakdown as $item) {
+            $this->add_document_tax($item[self::VT_TAXCATEGORY], $item[self::VT_TAXTYPE], $item[self::VT_BASISAMOUNT], $item[self::VT_CALCULATEDAMOUNT], $item[self::VT_TAXPERCENT], null, null, $item[self::VT_LINETOTALBASISAMOUNT], $item[self::VT_ALLOWANCECHARGEAMOUNT]);
         }
     }
-
     /**
      * Summarizes an array element in the internal vat table
      */
-    protected function summarizeVatTableElement(int $index): float
+    protected function summarize_vat_table_element(int $index): float
     {
         $sum = 0.0;
-
-        foreach ($this->vatBreakdown as $item) {
+        foreach ($this->vat_breakdown as $item) {
             $sum += $item[$index];
         }
-
         return $sum;
     }
 }

@@ -1,18 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /**
  * This file is a part of horstoeko/zugferd.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace horstoeko\zugferd\exception;
 
 use Throwable;
-
 /**
  * Class representing an exception for missing a file
  *
@@ -22,13 +19,13 @@ use Throwable;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/zugferd
  */
-class ZugferdFileNotFoundException extends ZugferdBaseException
+class Zugferd_File_Not_Found_Exception extends Zugferd_Base_Exception
 {
     /**
      * Constructor
      */
     public function __construct(string $filename, ?Throwable $previous = null)
     {
-        parent::__construct(sprintf('The file %s was not found', $filename), ZugferdExceptionCodes::FILENOTFOUND, $previous);
+        parent::__construct(sprintf('The file %s was not found', $filename), Zugferd_Exception_Codes::FILENOTFOUND, $previous);
     }
 }

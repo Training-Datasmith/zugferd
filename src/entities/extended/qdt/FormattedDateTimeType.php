@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\qdt;
 
 /**
@@ -9,29 +8,27 @@ namespace horstoeko\zugferd\entities\extended\qdt;
  *
  * XSD Type: FormattedDateTimeType
  */
-class FormattedDateTimeType
+class Formatted_Date_Time_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType\DateTimeStringAType $dateTimeString
      */
-    private $dateTimeString;
-
+    private $date_time_string;
     /**
      * Gets as dateTimeString
      *
      * @return \horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType\DateTimeStringAType
      */
-    public function getDateTimeString()
+    public function get_date_time_string()
     {
-        return $this->dateTimeString;
+        return $this->date_time_string;
     }
-
     /**
      * Sets a new dateTimeString
      */
-    public function setDateTimeString(\horstoeko\zugferd\entities\extended\qdt\FormattedDateTimeType\DateTimeStringAType $dateTimeString): self
+    public function set_date_time_string(\horstoeko\zugferd\entities\extended\qdt\Formatted_Date_Time_Type\Date_Time_String_A_Type $date_time_string): self
     {
-        $this->dateTimeString = $dateTimeString;
+        $this->date_time_string = $date_time_string;
         return $this;
     }
 }

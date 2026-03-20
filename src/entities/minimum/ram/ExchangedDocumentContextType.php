@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\minimum\ram;
 
 /**
@@ -9,55 +8,50 @@ namespace horstoeko\zugferd\entities\minimum\ram;
  *
  * XSD Type: ExchangedDocumentContextType
  */
-class ExchangedDocumentContextType
+class Exchanged_Document_Context_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter
      */
-    private $businessProcessSpecifiedDocumentContextParameter;
-
+    private $business_process_specified_document_context_parameter;
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter
      */
-    private $guidelineSpecifiedDocumentContextParameter;
-
+    private $guideline_specified_document_context_parameter;
     /**
      * Gets as businessProcessSpecifiedDocumentContextParameter
      *
      * @return \horstoeko\zugferd\entities\minimum\ram\DocumentContextParameterType
      */
-    public function getBusinessProcessSpecifiedDocumentContextParameter()
+    public function get_business_process_specified_document_context_parameter()
     {
-        return $this->businessProcessSpecifiedDocumentContextParameter;
+        return $this->business_process_specified_document_context_parameter;
     }
-
     /**
      * Sets a new businessProcessSpecifiedDocumentContextParameter
      *
      * @param  \horstoeko\zugferd\entities\minimum\ram\DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter
      */
-    public function setBusinessProcessSpecifiedDocumentContextParameter(?\horstoeko\zugferd\entities\minimum\ram\DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter = null): self
+    public function set_business_process_specified_document_context_parameter(?\horstoeko\zugferd\entities\minimum\ram\Document_Context_Parameter_Type $business_process_specified_document_context_parameter = null): self
     {
-        $this->businessProcessSpecifiedDocumentContextParameter = $businessProcessSpecifiedDocumentContextParameter;
+        $this->business_process_specified_document_context_parameter = $business_process_specified_document_context_parameter;
         return $this;
     }
-
     /**
      * Gets as guidelineSpecifiedDocumentContextParameter
      *
      * @return \horstoeko\zugferd\entities\minimum\ram\DocumentContextParameterType
      */
-    public function getGuidelineSpecifiedDocumentContextParameter()
+    public function get_guideline_specified_document_context_parameter()
     {
-        return $this->guidelineSpecifiedDocumentContextParameter;
+        return $this->guideline_specified_document_context_parameter;
     }
-
     /**
      * Sets a new guidelineSpecifiedDocumentContextParameter
      */
-    public function setGuidelineSpecifiedDocumentContextParameter(\horstoeko\zugferd\entities\minimum\ram\DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter): self
+    public function set_guideline_specified_document_context_parameter(\horstoeko\zugferd\entities\minimum\ram\Document_Context_Parameter_Type $guideline_specified_document_context_parameter): self
     {
-        $this->guidelineSpecifiedDocumentContextParameter = $guidelineSpecifiedDocumentContextParameter;
+        $this->guideline_specified_document_context_parameter = $guideline_specified_document_context_parameter;
         return $this;
     }
 }

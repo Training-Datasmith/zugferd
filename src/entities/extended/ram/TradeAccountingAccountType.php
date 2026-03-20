@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,55 +8,50 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: TradeAccountingAccountType
  */
-class TradeAccountingAccountType
+class Trade_Accounting_Account_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iD
      */
-    private $iD;
-
+    private $i_d;
     /**
      * @var string $typeCode
      */
-    private $typeCode;
-
+    private $type_code;
     /**
      * Gets as iD
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getID()
+    public function get_id()
     {
-        return $this->iD;
+        return $this->i_d;
     }
-
     /**
      * Sets a new iD
      */
-    public function setID(\horstoeko\zugferd\entities\extended\udt\IDType $iD): self
+    public function set_id(\horstoeko\zugferd\entities\extended\udt\Id_Type $i_d): self
     {
-        $this->iD = $iD;
+        $this->i_d = $i_d;
         return $this;
     }
-
     /**
      * Gets as typeCode
      *
      * @return string
      */
-    public function getTypeCode()
+    public function get_type_code()
     {
-        return $this->typeCode;
+        return $this->type_code;
     }
-
     /**
      * Sets a new typeCode
      *
      * @param  string $typeCode
      */
-    public function setTypeCode($typeCode): self
+    public function set_type_code($type_code): self
     {
-        $this->typeCode = $typeCode;
+        $this->type_code = $type_code;
         return $this;
     }
 }

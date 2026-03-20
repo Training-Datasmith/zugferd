@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,31 +8,29 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: TradeDeliveryTermsType
  */
-class TradeDeliveryTermsType
+class Trade_Delivery_Terms_Type
 {
     /**
      * @var string $deliveryTypeCode
      */
-    private $deliveryTypeCode;
-
+    private $delivery_type_code;
     /**
      * Gets as deliveryTypeCode
      *
      * @return string
      */
-    public function getDeliveryTypeCode()
+    public function get_delivery_type_code()
     {
-        return $this->deliveryTypeCode;
+        return $this->delivery_type_code;
     }
-
     /**
      * Sets a new deliveryTypeCode
      *
      * @param  string $deliveryTypeCode
      */
-    public function setDeliveryTypeCode($deliveryTypeCode): self
+    public function set_delivery_type_code($delivery_type_code): self
     {
-        $this->deliveryTypeCode = $deliveryTypeCode;
+        $this->delivery_type_code = $delivery_type_code;
         return $this;
     }
 }

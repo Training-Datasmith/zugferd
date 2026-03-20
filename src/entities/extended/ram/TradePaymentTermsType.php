@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,187 +8,167 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: TradePaymentTermsType
  */
-class TradePaymentTermsType
+class Trade_Payment_Terms_Type
 {
     /**
      * @var string $description
      */
     private $description;
-
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $dueDateDateTime
      */
-    private $dueDateDateTime;
-
+    private $due_date_date_time;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $directDebitMandateID
      */
-    private $directDebitMandateID;
-
+    private $direct_debit_mandate_id;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $partialPaymentAmount
      */
-    private $partialPaymentAmount;
-
+    private $partial_payment_amount;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePaymentPenaltyTermsType $applicableTradePaymentPenaltyTerms
      */
-    private $applicableTradePaymentPenaltyTerms;
-
+    private $applicable_trade_payment_penalty_terms;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePaymentDiscountTermsType $applicableTradePaymentDiscountTerms
      */
-    private $applicableTradePaymentDiscountTerms;
-
+    private $applicable_trade_payment_discount_terms;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $payeeTradeParty
      */
-    private $payeeTradeParty;
-
+    private $payee_trade_party;
     /**
      * Gets as description
      *
      * @return string
      */
-    public function getDescription()
+    public function get_description()
     {
         return $this->description;
     }
-
     /**
      * Sets a new description
      *
      * @param  string $description
      */
-    public function setDescription($description): self
+    public function set_description($description): self
     {
         $this->description = $description;
         return $this;
     }
-
     /**
      * Gets as dueDateDateTime
      *
      * @return \horstoeko\zugferd\entities\extended\udt\DateTimeType
      */
-    public function getDueDateDateTime()
+    public function get_due_date_date_time()
     {
-        return $this->dueDateDateTime;
+        return $this->due_date_date_time;
     }
-
     /**
      * Sets a new dueDateDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $dueDateDateTime
      */
-    public function setDueDateDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $dueDateDateTime = null): self
+    public function set_due_date_date_time(?\horstoeko\zugferd\entities\extended\udt\Date_Time_Type $due_date_date_time = null): self
     {
-        $this->dueDateDateTime = $dueDateDateTime;
+        $this->due_date_date_time = $due_date_date_time;
         return $this;
     }
-
     /**
      * Gets as directDebitMandateID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getDirectDebitMandateID()
+    public function get_direct_debit_mandate_id()
     {
-        return $this->directDebitMandateID;
+        return $this->direct_debit_mandate_id;
     }
-
     /**
      * Sets a new directDebitMandateID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $directDebitMandateID
      */
-    public function setDirectDebitMandateID(?\horstoeko\zugferd\entities\extended\udt\IDType $directDebitMandateID = null): self
+    public function set_direct_debit_mandate_id(?\horstoeko\zugferd\entities\extended\udt\Id_Type $direct_debit_mandate_id = null): self
     {
-        $this->directDebitMandateID = $directDebitMandateID;
+        $this->direct_debit_mandate_id = $direct_debit_mandate_id;
         return $this;
     }
-
     /**
      * Gets as partialPaymentAmount
      *
      * @return \horstoeko\zugferd\entities\extended\udt\AmountType
      */
-    public function getPartialPaymentAmount()
+    public function get_partial_payment_amount()
     {
-        return $this->partialPaymentAmount;
+        return $this->partial_payment_amount;
     }
-
     /**
      * Sets a new partialPaymentAmount
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\AmountType $partialPaymentAmount
      */
-    public function setPartialPaymentAmount(?\horstoeko\zugferd\entities\extended\udt\AmountType $partialPaymentAmount = null): self
+    public function set_partial_payment_amount(?\horstoeko\zugferd\entities\extended\udt\Amount_Type $partial_payment_amount = null): self
     {
-        $this->partialPaymentAmount = $partialPaymentAmount;
+        $this->partial_payment_amount = $partial_payment_amount;
         return $this;
     }
-
     /**
      * Gets as applicableTradePaymentPenaltyTerms
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePaymentPenaltyTermsType
      */
-    public function getApplicableTradePaymentPenaltyTerms()
+    public function get_applicable_trade_payment_penalty_terms()
     {
-        return $this->applicableTradePaymentPenaltyTerms;
+        return $this->applicable_trade_payment_penalty_terms;
     }
-
     /**
      * Sets a new applicableTradePaymentPenaltyTerms
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePaymentPenaltyTermsType $applicableTradePaymentPenaltyTerms
      */
-    public function setApplicableTradePaymentPenaltyTerms(?\horstoeko\zugferd\entities\extended\ram\TradePaymentPenaltyTermsType $applicableTradePaymentPenaltyTerms = null): self
+    public function set_applicable_trade_payment_penalty_terms(?\horstoeko\zugferd\entities\extended\ram\Trade_Payment_Penalty_Terms_Type $applicable_trade_payment_penalty_terms = null): self
     {
-        $this->applicableTradePaymentPenaltyTerms = $applicableTradePaymentPenaltyTerms;
+        $this->applicable_trade_payment_penalty_terms = $applicable_trade_payment_penalty_terms;
         return $this;
     }
-
     /**
      * Gets as applicableTradePaymentDiscountTerms
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePaymentDiscountTermsType
      */
-    public function getApplicableTradePaymentDiscountTerms()
+    public function get_applicable_trade_payment_discount_terms()
     {
-        return $this->applicableTradePaymentDiscountTerms;
+        return $this->applicable_trade_payment_discount_terms;
     }
-
     /**
      * Sets a new applicableTradePaymentDiscountTerms
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePaymentDiscountTermsType $applicableTradePaymentDiscountTerms
      */
-    public function setApplicableTradePaymentDiscountTerms(?\horstoeko\zugferd\entities\extended\ram\TradePaymentDiscountTermsType $applicableTradePaymentDiscountTerms = null): self
+    public function set_applicable_trade_payment_discount_terms(?\horstoeko\zugferd\entities\extended\ram\Trade_Payment_Discount_Terms_Type $applicable_trade_payment_discount_terms = null): self
     {
-        $this->applicableTradePaymentDiscountTerms = $applicableTradePaymentDiscountTerms;
+        $this->applicable_trade_payment_discount_terms = $applicable_trade_payment_discount_terms;
         return $this;
     }
-
     /**
      * Gets as payeeTradeParty
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePartyType
      */
-    public function getPayeeTradeParty()
+    public function get_payee_trade_party()
     {
-        return $this->payeeTradeParty;
+        return $this->payee_trade_party;
     }
-
     /**
      * Sets a new payeeTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $payeeTradeParty
      */
-    public function setPayeeTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $payeeTradeParty = null): self
+    public function set_payee_trade_party(?\horstoeko\zugferd\entities\extended\ram\Trade_Party_Type $payee_trade_party = null): self
     {
-        $this->payeeTradeParty = $payeeTradeParty;
+        $this->payee_trade_party = $payee_trade_party;
         return $this;
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,109 +8,98 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  *
  * XSD Type: HeaderTradeDeliveryType
  */
-class HeaderTradeDeliveryType
+class Header_Trade_Delivery_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\TradePartyType $shipToTradeParty
      */
-    private $shipToTradeParty;
-
+    private $ship_to_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
      */
-    private $actualDeliverySupplyChainEvent;
-
+    private $actual_delivery_supply_chain_event;
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
      */
-    private $despatchAdviceReferencedDocument;
-
+    private $despatch_advice_referenced_document;
     /**
      * @var \horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType $receivingAdviceReferencedDocument
      */
-    private $receivingAdviceReferencedDocument;
-
+    private $receiving_advice_referenced_document;
     /**
      * Gets as shipToTradeParty
      *
      * @return \horstoeko\zugferd\entities\en16931\ram\TradePartyType
      */
-    public function getShipToTradeParty()
+    public function get_ship_to_trade_party()
     {
-        return $this->shipToTradeParty;
+        return $this->ship_to_trade_party;
     }
-
     /**
      * Sets a new shipToTradeParty
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\TradePartyType $shipToTradeParty
      */
-    public function setShipToTradeParty(?\horstoeko\zugferd\entities\en16931\ram\TradePartyType $shipToTradeParty = null): self
+    public function set_ship_to_trade_party(?\horstoeko\zugferd\entities\en16931\ram\Trade_Party_Type $ship_to_trade_party = null): self
     {
-        $this->shipToTradeParty = $shipToTradeParty;
+        $this->ship_to_trade_party = $ship_to_trade_party;
         return $this;
     }
-
     /**
      * Gets as actualDeliverySupplyChainEvent
      *
      * @return \horstoeko\zugferd\entities\en16931\ram\SupplyChainEventType
      */
-    public function getActualDeliverySupplyChainEvent()
+    public function get_actual_delivery_supply_chain_event()
     {
-        return $this->actualDeliverySupplyChainEvent;
+        return $this->actual_delivery_supply_chain_event;
     }
-
     /**
      * Sets a new actualDeliverySupplyChainEvent
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
      */
-    public function setActualDeliverySupplyChainEvent(?\horstoeko\zugferd\entities\en16931\ram\SupplyChainEventType $actualDeliverySupplyChainEvent = null): self
+    public function set_actual_delivery_supply_chain_event(?\horstoeko\zugferd\entities\en16931\ram\Supply_Chain_Event_Type $actual_delivery_supply_chain_event = null): self
     {
-        $this->actualDeliverySupplyChainEvent = $actualDeliverySupplyChainEvent;
+        $this->actual_delivery_supply_chain_event = $actual_delivery_supply_chain_event;
         return $this;
     }
-
     /**
      * Gets as despatchAdviceReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType
      */
-    public function getDespatchAdviceReferencedDocument()
+    public function get_despatch_advice_referenced_document()
     {
-        return $this->despatchAdviceReferencedDocument;
+        return $this->despatch_advice_referenced_document;
     }
-
     /**
      * Sets a new despatchAdviceReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
      */
-    public function setDespatchAdviceReferencedDocument(?\horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType $despatchAdviceReferencedDocument = null): self
+    public function set_despatch_advice_referenced_document(?\horstoeko\zugferd\entities\en16931\ram\Referenced_Document_Type $despatch_advice_referenced_document = null): self
     {
-        $this->despatchAdviceReferencedDocument = $despatchAdviceReferencedDocument;
+        $this->despatch_advice_referenced_document = $despatch_advice_referenced_document;
         return $this;
     }
-
     /**
      * Gets as receivingAdviceReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType
      */
-    public function getReceivingAdviceReferencedDocument()
+    public function get_receiving_advice_referenced_document()
     {
-        return $this->receivingAdviceReferencedDocument;
+        return $this->receiving_advice_referenced_document;
     }
-
     /**
      * Sets a new receivingAdviceReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType $receivingAdviceReferencedDocument
      */
-    public function setReceivingAdviceReferencedDocument(?\horstoeko\zugferd\entities\en16931\ram\ReferencedDocumentType $receivingAdviceReferencedDocument = null): self
+    public function set_receiving_advice_referenced_document(?\horstoeko\zugferd\entities\en16931\ram\Referenced_Document_Type $receiving_advice_referenced_document = null): self
     {
-        $this->receivingAdviceReferencedDocument = $receivingAdviceReferencedDocument;
+        $this->receiving_advice_referenced_document = $receiving_advice_referenced_document;
         return $this;
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,53 +8,48 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  *
  * XSD Type: ProcuringProjectType
  */
-class ProcuringProjectType
+class Procuring_Project_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType $iD
      */
-    private $iD;
-
+    private $i_d;
     /**
      * @var string $name
      */
     private $name;
-
     /**
      * Gets as iD
      *
      * @return \horstoeko\zugferd\entities\en16931\udt\IDType
      */
-    public function getID()
+    public function get_id()
     {
-        return $this->iD;
+        return $this->i_d;
     }
-
     /**
      * Sets a new iD
      */
-    public function setID(\horstoeko\zugferd\entities\en16931\udt\IDType $iD): self
+    public function set_id(\horstoeko\zugferd\entities\en16931\udt\Id_Type $i_d): self
     {
-        $this->iD = $iD;
+        $this->i_d = $i_d;
         return $this;
     }
-
     /**
      * Gets as name
      *
      * @return string
      */
-    public function getName()
+    public function get_name()
     {
         return $this->name;
     }
-
     /**
      * Sets a new name
      *
      * @param  string $name
      */
-    public function setName($name): self
+    public function set_name($name): self
     {
         $this->name = $name;
         return $this;

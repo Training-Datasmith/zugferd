@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basic\ram;
 
 /**
@@ -9,57 +8,52 @@ namespace horstoeko\zugferd\entities\basic\ram;
  *
  * XSD Type: LegalOrganizationType
  */
-class LegalOrganizationType
+class Legal_Organization_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\IDType $iD
      */
-    private $iD;
-
+    private $i_d;
     /**
      * @var string $tradingBusinessName
      */
-    private $tradingBusinessName;
-
+    private $trading_business_name;
     /**
      * Gets as iD
      *
      * @return \horstoeko\zugferd\entities\basic\udt\IDType
      */
-    public function getID()
+    public function get_id()
     {
-        return $this->iD;
+        return $this->i_d;
     }
-
     /**
      * Sets a new iD
      *
      * @param  \horstoeko\zugferd\entities\basic\udt\IDType $iD
      */
-    public function setID(?\horstoeko\zugferd\entities\basic\udt\IDType $iD = null): self
+    public function set_id(?\horstoeko\zugferd\entities\basic\udt\Id_Type $i_d = null): self
     {
-        $this->iD = $iD;
+        $this->i_d = $i_d;
         return $this;
     }
-
     /**
      * Gets as tradingBusinessName
      *
      * @return string
      */
-    public function getTradingBusinessName()
+    public function get_trading_business_name()
     {
-        return $this->tradingBusinessName;
+        return $this->trading_business_name;
     }
-
     /**
      * Sets a new tradingBusinessName
      *
      * @param  string $tradingBusinessName
      */
-    public function setTradingBusinessName($tradingBusinessName): self
+    public function set_trading_business_name($trading_business_name): self
     {
-        $this->tradingBusinessName = $tradingBusinessName;
+        $this->trading_business_name = $trading_business_name;
         return $this;
     }
 }

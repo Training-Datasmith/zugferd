@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,55 +8,50 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  *
  * XSD Type: ProductCharacteristicType
  */
-class ProductCharacteristicType
+class Product_Characteristic_Type
 {
     /**
      * @var string $description
      */
     private $description;
-
     /**
      * @var string $value
      */
     private $value;
-
     /**
      * Gets as description
      *
      * @return string
      */
-    public function getDescription()
+    public function get_description()
     {
         return $this->description;
     }
-
     /**
      * Sets a new description
      *
      * @param  string $description
      */
-    public function setDescription($description): self
+    public function set_description($description): self
     {
         $this->description = $description;
         return $this;
     }
-
     /**
      * Gets as value
      *
      * @return string
      */
-    public function getValue()
+    public function get_value()
     {
         return $this->value;
     }
-
     /**
      * Sets a new value
      *
      * @param  string $value
      */
-    public function setValue($value): self
+    public function set_value($value): self
     {
         $this->value = $value;
         return $this;

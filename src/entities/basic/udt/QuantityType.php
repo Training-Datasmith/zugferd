@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basic\udt;
 
 /**
@@ -9,18 +8,16 @@ namespace horstoeko\zugferd\entities\basic\udt;
  *
  * XSD Type: QuantityType
  */
-class QuantityType
+class Quantity_Type
 {
     /**
      * @var float $__value
      */
     private $__value;
-
     /**
      * @var string $unitCode
      */
-    private $unitCode;
-
+    private $unit_code;
     /**
      * Construct
      *
@@ -30,7 +27,6 @@ class QuantityType
     {
         $this->value($value);
     }
-
     /**
      * Gets or sets the inner value
      *
@@ -44,7 +40,6 @@ class QuantityType
         }
         return $this->__value;
     }
-
     /**
      * Gets a string value
      */
@@ -52,25 +47,23 @@ class QuantityType
     {
         return strval($this->__value);
     }
-
     /**
      * Gets as unitCode
      *
      * @return string
      */
-    public function getUnitCode()
+    public function get_unit_code()
     {
-        return $this->unitCode;
+        return $this->unit_code;
     }
-
     /**
      * Sets a new unitCode
      *
      * @param  string $unitCode
      */
-    public function setUnitCode($unitCode): self
+    public function set_unit_code($unit_code): self
     {
-        $this->unitCode = $unitCode;
+        $this->unit_code = $unit_code;
         return $this;
     }
 }

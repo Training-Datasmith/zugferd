@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\udt;
 
 /**
@@ -9,23 +8,20 @@ namespace horstoeko\zugferd\entities\extended\udt;
  *
  * XSD Type: BinaryObjectType
  */
-class BinaryObjectType
+class Binary_Object_Type
 {
     /**
      * @var string $__value
      */
     private $__value;
-
     /**
      * @var string $mimeCode
      */
-    private $mimeCode;
-
+    private $mime_code;
     /**
      * @var string $filename
      */
     private $filename;
-
     /**
      * Construct
      *
@@ -35,7 +31,6 @@ class BinaryObjectType
     {
         $this->value($value);
     }
-
     /**
      * Gets or sets the inner value
      *
@@ -49,7 +44,6 @@ class BinaryObjectType
         }
         return $this->__value;
     }
-
     /**
      * Gets a string value
      */
@@ -57,44 +51,40 @@ class BinaryObjectType
     {
         return strval($this->__value);
     }
-
     /**
      * Gets as mimeCode
      *
      * @return string
      */
-    public function getMimeCode()
+    public function get_mime_code()
     {
-        return $this->mimeCode;
+        return $this->mime_code;
     }
-
     /**
      * Sets a new mimeCode
      *
      * @param  string $mimeCode
      */
-    public function setMimeCode($mimeCode): self
+    public function set_mime_code($mime_code): self
     {
-        $this->mimeCode = $mimeCode;
+        $this->mime_code = $mime_code;
         return $this;
     }
-
     /**
      * Gets as filename
      *
      * @return string
      */
-    public function getFilename()
+    public function get_filename()
     {
         return $this->filename;
     }
-
     /**
      * Sets a new filename
      *
      * @param  string $filename
      */
-    public function setFilename($filename): self
+    public function set_filename($filename): self
     {
         $this->filename = $filename;
         return $this;

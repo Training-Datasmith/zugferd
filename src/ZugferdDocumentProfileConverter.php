@@ -1,25 +1,22 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /**
  * This file is a part of horstoeko/zugferd.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace horstoeko\zugferd;
 
-use horstoeko\zugferd\exception\ZugferdFileNotFoundException;
-use horstoeko\zugferd\exception\ZugferdFileNotReadableException;
-use horstoeko\zugferd\exception\ZugferdUnknownProfileException;
-use horstoeko\zugferd\exception\ZugferdUnknownProfileIdException;
-use horstoeko\zugferd\exception\ZugferdUnknownProfileParameterException;
-use horstoeko\zugferd\exception\ZugferdUnknownXmlContentException;
+use horstoeko\zugferd\exception\Zugferd_File_Not_Found_Exception;
+use horstoeko\zugferd\exception\Zugferd_File_Not_Readable_Exception;
+use horstoeko\zugferd\exception\Zugferd_Unknown_Profile_Exception;
+use horstoeko\zugferd\exception\Zugferd_Unknown_Profile_Id_Exception;
+use horstoeko\zugferd\exception\Zugferd_Unknown_Profile_Parameter_Exception;
+use horstoeko\zugferd\exception\Zugferd_Unknown_Xml_Content_Exception;
 use JMS\Serializer\Exception\InvalidArgumentException;
 use JMS\Serializer\Exception\RuntimeException;
-
 /**
  * Class representing a converter to change a document's profile to another profile
  *
@@ -29,37 +26,32 @@ use JMS\Serializer\Exception\RuntimeException;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/zugferd
  */
-class ZugferdDocumentProfileConverter extends ZugferdDocument
+class Zugferd_Document_Profile_Converter extends Zugferd_Document
 {
     /**
      * The source
      *
      * @var string
      */
-    protected $convertFromContent = '';
-
+    protected $convert_from_content = '';
     /**
      * The new profile ID
      *
      * @var int
      */
-    protected $convertToProfileId = -1;
-
+    protected $convert_to_profile_id = -1;
     /**
      * Path to the profile id
      */
     protected const PATH_1 = 'getExchangedDocumentContext.getGuidelineSpecifiedDocumentContextParameter.setID';
-
     /**
      * Path to the context parameter
      */
     protected const PATH_2 = 'getExchangedDocumentContext.setBusinessProcessSpecifiedDocumentContextParameter';
-
     /**
      * Path to the context parameter id
      */
     protected const PATH_3 = 'getExchangedDocumentContext.getBusinessProcessSpecifiedDocumentContextParameter.setID';
-
     /**
      * Convert from file to file
      *
@@ -72,11 +64,10 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
      * @throws ZugferdUnknownProfileParameterException
      * @throws ZugferdUnknownXmlContentException
      */
-    public static function convertFromFileToFile(string $fromFilename, string $toFile, int $newProfileId): void
+    public static function convert_from_file_to_file(string $from_filename, string $to_file, int $new_profile_id): void
     {
-        static::convertFromFile($fromFilename, $newProfileId)->convertToFile($toFile);
+        static::convert_from_file($from_filename, $new_profile_id)->convert_to_file($to_file);
     }
-
     /**
      * Convert from file to string
      *
@@ -89,11 +80,10 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
      * @throws ZugferdUnknownProfileParameterException
      * @throws ZugferdUnknownXmlContentException
      */
-    public static function convertFromFileToString(string $fromFilename, int $newProfileId): string
+    public static function convert_from_file_to_string(string $from_filename, int $new_profile_id): string
     {
-        return static::convertFromFile($fromFilename, $newProfileId)->convertToString();
+        return static::convert_from_file($from_filename, $new_profile_id)->convert_to_string();
     }
-
     /**
      * Convert from content to file
      *
@@ -104,11 +94,10 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
      * @throws ZugferdUnknownProfileParameterException
      * @throws ZugferdUnknownXmlContentException
      */
-    public static function convertFromContentToFile(string $fromContent, string $toFile, int $newProfileId): void
+    public static function convert_from_content_to_file(string $from_content, string $to_file, int $new_profile_id): void
     {
-        static::convertFromContent($fromContent, $newProfileId)->convertToFile($toFile);
+        static::convert_from_content($from_content, $new_profile_id)->convert_to_file($to_file);
     }
-
     /**
      * Convert from content to string
      *
@@ -119,11 +108,10 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
      * @throws ZugferdUnknownProfileParameterException
      * @throws ZugferdUnknownXmlContentException
      */
-    public static function convertFromContentToString(string $fromContent, int $newProfileId): string
+    public static function convert_from_content_to_string(string $from_content, int $new_profile_id): string
     {
-        return static::convertFromContent($fromContent, $newProfileId)->convertToString();
+        return static::convert_from_content($from_content, $new_profile_id)->convert_to_string();
     }
-
     /**
      * Create an instance by filename
      *
@@ -132,58 +120,47 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
      * @throws ZugferdUnknownXmlContentException
      * @throws ZugferdUnknownProfileException
      */
-    protected static function convertFromFile(string $fromFilename, int $newProfileId): ZugferdDocumentProfileConverter
+    protected static function convert_from_file(string $from_filename, int $new_profile_id): Zugferd_Document_Profile_Converter
     {
-        if (!file_exists($fromFilename)) {
-            throw new ZugferdFileNotFoundException($fromFilename);
+        if (!file_exists($from_filename)) {
+            throw new Zugferd_File_Not_Found_Exception($from_filename);
         }
-
-        $fromContent = file_get_contents($fromFilename);
-
-        if ($fromContent === false) {
-            throw new ZugferdFileNotReadableException($fromFilename);
+        $from_content = file_get_contents($from_filename);
+        if ($from_content === false) {
+            throw new Zugferd_File_Not_Readable_Exception($from_filename);
         }
-
-        return static::convertFromContent($fromContent, $newProfileId);
+        return static::convert_from_content($from_content, $new_profile_id);
     }
-
     /**
      * Create an instance by cpntent
      *
      * @throws ZugferdUnknownXmlContentException
      * @throws ZugferdUnknownProfileException
      */
-    protected static function convertFromContent(string $fromContent, int $newProfileId): ZugferdDocumentProfileConverter
+    protected static function convert_from_content(string $from_content, int $new_profile_id): Zugferd_Document_Profile_Converter
     {
-        $fromProfileId = ZugferdProfileResolver::resolveProfileId($fromContent);
-
-        $profileConverter = new static($fromProfileId);
-        $profileConverter->setConvertFromContent($fromContent);
-        $profileConverter->setConvertToProfileId($newProfileId);
-
-        return $profileConverter;
+        $from_profile_id = Zugferd_Profile_Resolver::resolve_profile_id($from_content);
+        $profile_converter = new static($from_profile_id);
+        $profile_converter->set_convert_from_content($from_content);
+        $profile_converter->set_convert_to_profile_id($new_profile_id);
+        return $profile_converter;
     }
-
     /**
      * Set the destination (the new) profile id
      */
-    protected function setConvertToProfileId(int $toProfileId): ZugferdDocumentProfileConverter
+    protected function set_convert_to_profile_id(int $to_profile_id): Zugferd_Document_Profile_Converter
     {
-        $this->convertToProfileId = $toProfileId;
-
+        $this->convert_to_profile_id = $to_profile_id;
         return $this;
     }
-
     /**
      * Set the source-content
      */
-    protected function setConvertFromContent(string $fromContent): ZugferdDocumentProfileConverter
+    protected function set_convert_from_content(string $from_content): Zugferd_Document_Profile_Converter
     {
-        $this->convertFromContent = $fromContent;
-
+        $this->convert_from_content = $from_content;
         return $this;
     }
-
     /**
      * Convert and save to file
      *
@@ -192,13 +169,11 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
      * @throws ZugferdUnknownProfileIdException
      * @throws ZugferdUnknownProfileParameterException
      */
-    protected function convertToFile(string $toFile): ZugferdDocumentProfileConverter
+    protected function convert_to_file(string $to_file): Zugferd_Document_Profile_Converter
     {
-        file_put_contents($toFile, $this->performConversion()->convertToString());
-
+        file_put_contents($to_file, $this->perform_conversion()->convert_to_string());
         return $this;
     }
-
     /**
      * Convert and get xml content as string
      *
@@ -207,11 +182,10 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
      * @throws ZugferdUnknownProfileIdException
      * @throws ZugferdUnknownProfileParameterException
      */
-    protected function convertToString(): string
+    protected function convert_to_string(): string
     {
-        return $this->performConversion()->serializeAsXml();
+        return $this->perform_conversion()->serialize_as_xml();
     }
-
     /**
      * Internal conversion method
      *
@@ -220,44 +194,28 @@ class ZugferdDocumentProfileConverter extends ZugferdDocument
      * @throws ZugferdUnknownProfileIdException
      * @throws ZugferdUnknownProfileParameterException
      */
-    protected function performConversion(): ZugferdDocumentProfileConverter
+    protected function perform_conversion(): Zugferd_Document_Profile_Converter
     {
-        $this->initProfile($this->convertToProfileId);
-        $this->initObjectHelper();
-        $this->initSerialzer();
-        $this->deserialize($this->convertFromContent);
-        $this->updateProfileInInvoiceObject();
-
+        $this->init_profile($this->convert_to_profile_id);
+        $this->init_object_helper();
+        $this->init_serialzer();
+        $this->deserialize($this->convert_from_content);
+        $this->update_profile_in_invoice_object();
         return $this;
     }
-
     /**
      * Update profile parameters in the internal invoice object
      *
      * @return void
      * @throws ZugferdUnknownProfileIdException
      */
-    protected function updateProfileInInvoiceObject()
+    protected function update_profile_in_invoice_object()
     {
-        $profileDef = ZugferdProfileResolver::resolveProfileDefById($this->convertToProfileId);
-
-        $this->getObjectHelper()->tryCallByPath(
-            $this->getInvoiceObject(),
-            static::PATH_1,
-            $this->getObjectHelper()->getIdType($profileDef['contextparameter'])
-        );
-
-        if ($profileDef['businessprocess']) {
-            $this->getObjectHelper()->tryCallByPath(
-                $this->getInvoiceObject(),
-                static::PATH_2,
-                $this->getObjectHelper()->createClassInstance('ram\DocumentContextParameterType')
-            );
-            $this->getObjectHelper()->tryCallByPath(
-                $this->getInvoiceObject(),
-                static::PATH_3,
-                $this->getObjectHelper()->getIdType($profileDef['businessprocess'])
-            );
+        $profile_def = Zugferd_Profile_Resolver::resolve_profile_def_by_id($this->convert_to_profile_id);
+        $this->get_object_helper()->try_call_by_path($this->get_invoice_object(), static::PATH_1, $this->get_object_helper()->get_id_type($profile_def['contextparameter']));
+        if ($profile_def['businessprocess']) {
+            $this->get_object_helper()->try_call_by_path($this->get_invoice_object(), static::PATH_2, $this->get_object_helper()->create_class_instance('ram\DocumentContextParameterType'));
+            $this->get_object_helper()->try_call_by_path($this->get_invoice_object(), static::PATH_3, $this->get_object_helper()->get_id_type($profile_def['businessprocess']));
         }
     }
 }

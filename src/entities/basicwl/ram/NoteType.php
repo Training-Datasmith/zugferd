@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basicwl\ram;
 
 /**
@@ -9,57 +8,52 @@ namespace horstoeko\zugferd\entities\basicwl\ram;
  *
  * XSD Type: NoteType
  */
-class NoteType
+class Note_Type
 {
     /**
      * @var string $content
      */
     private $content;
-
     /**
      * @var string $subjectCode
      */
-    private $subjectCode;
-
+    private $subject_code;
     /**
      * Gets as content
      *
      * @return string
      */
-    public function getContent()
+    public function get_content()
     {
         return $this->content;
     }
-
     /**
      * Sets a new content
      *
      * @param  string $content
      */
-    public function setContent($content): self
+    public function set_content($content): self
     {
         $this->content = $content;
         return $this;
     }
-
     /**
      * Gets as subjectCode
      *
      * @return string
      */
-    public function getSubjectCode()
+    public function get_subject_code()
     {
-        return $this->subjectCode;
+        return $this->subject_code;
     }
-
     /**
      * Sets a new subjectCode
      *
      * @param  string $subjectCode
      */
-    public function setSubjectCode($subjectCode): self
+    public function set_subject_code($subject_code): self
     {
-        $this->subjectCode = $subjectCode;
+        $this->subject_code = $subject_code;
         return $this;
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basicwl\ram;
 
 /**
@@ -9,187 +8,167 @@ namespace horstoeko\zugferd\entities\basicwl\ram;
  *
  * XSD Type: TradeAddressType
  */
-class TradeAddressType
+class Trade_Address_Type
 {
     /**
      * @var string $postcodeCode
      */
-    private $postcodeCode;
-
+    private $postcode_code;
     /**
      * @var string $lineOne
      */
-    private $lineOne;
-
+    private $line_one;
     /**
      * @var string $lineTwo
      */
-    private $lineTwo;
-
+    private $line_two;
     /**
      * @var string $lineThree
      */
-    private $lineThree;
-
+    private $line_three;
     /**
      * @var string $cityName
      */
-    private $cityName;
-
+    private $city_name;
     /**
      * @var string $countryID
      */
-    private $countryID;
-
+    private $country_id;
     /**
      * @var string $countrySubDivisionName
      */
-    private $countrySubDivisionName;
-
+    private $country_sub_division_name;
     /**
      * Gets as postcodeCode
      *
      * @return string
      */
-    public function getPostcodeCode()
+    public function get_postcode_code()
     {
-        return $this->postcodeCode;
+        return $this->postcode_code;
     }
-
     /**
      * Sets a new postcodeCode
      *
      * @param  string $postcodeCode
      */
-    public function setPostcodeCode($postcodeCode): self
+    public function set_postcode_code($postcode_code): self
     {
-        $this->postcodeCode = $postcodeCode;
+        $this->postcode_code = $postcode_code;
         return $this;
     }
-
     /**
      * Gets as lineOne
      *
      * @return string
      */
-    public function getLineOne()
+    public function get_line_one()
     {
-        return $this->lineOne;
+        return $this->line_one;
     }
-
     /**
      * Sets a new lineOne
      *
      * @param  string $lineOne
      */
-    public function setLineOne($lineOne): self
+    public function set_line_one($line_one): self
     {
-        $this->lineOne = $lineOne;
+        $this->line_one = $line_one;
         return $this;
     }
-
     /**
      * Gets as lineTwo
      *
      * @return string
      */
-    public function getLineTwo()
+    public function get_line_two()
     {
-        return $this->lineTwo;
+        return $this->line_two;
     }
-
     /**
      * Sets a new lineTwo
      *
      * @param  string $lineTwo
      */
-    public function setLineTwo($lineTwo): self
+    public function set_line_two($line_two): self
     {
-        $this->lineTwo = $lineTwo;
+        $this->line_two = $line_two;
         return $this;
     }
-
     /**
      * Gets as lineThree
      *
      * @return string
      */
-    public function getLineThree()
+    public function get_line_three()
     {
-        return $this->lineThree;
+        return $this->line_three;
     }
-
     /**
      * Sets a new lineThree
      *
      * @param  string $lineThree
      */
-    public function setLineThree($lineThree): self
+    public function set_line_three($line_three): self
     {
-        $this->lineThree = $lineThree;
+        $this->line_three = $line_three;
         return $this;
     }
-
     /**
      * Gets as cityName
      *
      * @return string
      */
-    public function getCityName()
+    public function get_city_name()
     {
-        return $this->cityName;
+        return $this->city_name;
     }
-
     /**
      * Sets a new cityName
      *
      * @param  string $cityName
      */
-    public function setCityName($cityName): self
+    public function set_city_name($city_name): self
     {
-        $this->cityName = $cityName;
+        $this->city_name = $city_name;
         return $this;
     }
-
     /**
      * Gets as countryID
      *
      * @return string
      */
-    public function getCountryID()
+    public function get_country_id()
     {
-        return $this->countryID;
+        return $this->country_id;
     }
-
     /**
      * Sets a new countryID
      *
      * @param  string $countryID
      */
-    public function setCountryID($countryID): self
+    public function set_country_id($country_id): self
     {
-        $this->countryID = $countryID;
+        $this->country_id = $country_id;
         return $this;
     }
-
     /**
      * Gets as countrySubDivisionName
      *
      * @return string
      */
-    public function getCountrySubDivisionName()
+    public function get_country_sub_division_name()
     {
-        return $this->countrySubDivisionName;
+        return $this->country_sub_division_name;
     }
-
     /**
      * Sets a new countrySubDivisionName
      *
      * @param  string $countrySubDivisionName
      */
-    public function setCountrySubDivisionName($countrySubDivisionName): self
+    public function set_country_sub_division_name($country_sub_division_name): self
     {
-        $this->countrySubDivisionName = $countrySubDivisionName;
+        $this->country_sub_division_name = $country_sub_division_name;
         return $this;
     }
 }

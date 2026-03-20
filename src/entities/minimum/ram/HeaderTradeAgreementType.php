@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\minimum\ram;
 
 /**
@@ -9,105 +8,94 @@ namespace horstoeko\zugferd\entities\minimum\ram;
  *
  * XSD Type: HeaderTradeAgreementType
  */
-class HeaderTradeAgreementType
+class Header_Trade_Agreement_Type
 {
     /**
      * @var string $buyerReference
      */
-    private $buyerReference;
-
+    private $buyer_reference;
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\TradePartyType $sellerTradeParty
      */
-    private $sellerTradeParty;
-
+    private $seller_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\TradePartyType $buyerTradeParty
      */
-    private $buyerTradeParty;
-
+    private $buyer_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\ReferencedDocumentType $buyerOrderReferencedDocument
      */
-    private $buyerOrderReferencedDocument;
-
+    private $buyer_order_referenced_document;
     /**
      * Gets as buyerReference
      *
      * @return string
      */
-    public function getBuyerReference()
+    public function get_buyer_reference()
     {
-        return $this->buyerReference;
+        return $this->buyer_reference;
     }
-
     /**
      * Sets a new buyerReference
      *
      * @param  string $buyerReference
      */
-    public function setBuyerReference($buyerReference): self
+    public function set_buyer_reference($buyer_reference): self
     {
-        $this->buyerReference = $buyerReference;
+        $this->buyer_reference = $buyer_reference;
         return $this;
     }
-
     /**
      * Gets as sellerTradeParty
      *
      * @return \horstoeko\zugferd\entities\minimum\ram\TradePartyType
      */
-    public function getSellerTradeParty()
+    public function get_seller_trade_party()
     {
-        return $this->sellerTradeParty;
+        return $this->seller_trade_party;
     }
-
     /**
      * Sets a new sellerTradeParty
      */
-    public function setSellerTradeParty(\horstoeko\zugferd\entities\minimum\ram\TradePartyType $sellerTradeParty): self
+    public function set_seller_trade_party(\horstoeko\zugferd\entities\minimum\ram\Trade_Party_Type $seller_trade_party): self
     {
-        $this->sellerTradeParty = $sellerTradeParty;
+        $this->seller_trade_party = $seller_trade_party;
         return $this;
     }
-
     /**
      * Gets as buyerTradeParty
      *
      * @return \horstoeko\zugferd\entities\minimum\ram\TradePartyType
      */
-    public function getBuyerTradeParty()
+    public function get_buyer_trade_party()
     {
-        return $this->buyerTradeParty;
+        return $this->buyer_trade_party;
     }
-
     /**
      * Sets a new buyerTradeParty
      */
-    public function setBuyerTradeParty(\horstoeko\zugferd\entities\minimum\ram\TradePartyType $buyerTradeParty): self
+    public function set_buyer_trade_party(\horstoeko\zugferd\entities\minimum\ram\Trade_Party_Type $buyer_trade_party): self
     {
-        $this->buyerTradeParty = $buyerTradeParty;
+        $this->buyer_trade_party = $buyer_trade_party;
         return $this;
     }
-
     /**
      * Gets as buyerOrderReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\minimum\ram\ReferencedDocumentType
      */
-    public function getBuyerOrderReferencedDocument()
+    public function get_buyer_order_referenced_document()
     {
-        return $this->buyerOrderReferencedDocument;
+        return $this->buyer_order_referenced_document;
     }
-
     /**
      * Sets a new buyerOrderReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\minimum\ram\ReferencedDocumentType $buyerOrderReferencedDocument
      */
-    public function setBuyerOrderReferencedDocument(?\horstoeko\zugferd\entities\minimum\ram\ReferencedDocumentType $buyerOrderReferencedDocument = null): self
+    public function set_buyer_order_referenced_document(?\horstoeko\zugferd\entities\minimum\ram\Referenced_Document_Type $buyer_order_referenced_document = null): self
     {
-        $this->buyerOrderReferencedDocument = $buyerOrderReferencedDocument;
+        $this->buyer_order_referenced_document = $buyer_order_referenced_document;
         return $this;
     }
 }

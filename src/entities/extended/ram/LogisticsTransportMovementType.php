@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,31 +8,29 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: LogisticsTransportMovementType
  */
-class LogisticsTransportMovementType
+class Logistics_Transport_Movement_Type
 {
     /**
      * @var string $modeCode
      */
-    private $modeCode;
-
+    private $mode_code;
     /**
      * Gets as modeCode
      *
      * @return string
      */
-    public function getModeCode()
+    public function get_mode_code()
     {
-        return $this->modeCode;
+        return $this->mode_code;
     }
-
     /**
      * Sets a new modeCode
      *
      * @param  string $modeCode
      */
-    public function setModeCode($modeCode): self
+    public function set_mode_code($mode_code): self
     {
-        $this->modeCode = $modeCode;
+        $this->mode_code = $mode_code;
         return $this;
     }
 }

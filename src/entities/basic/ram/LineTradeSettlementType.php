@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basic\ram;
 
 /**
@@ -9,136 +8,120 @@ namespace horstoeko\zugferd\entities\basic\ram;
  *
  * XSD Type: LineTradeSettlementType
  */
-class LineTradeSettlementType
+class Line_Trade_Settlement_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradeTaxType $applicableTradeTax
      */
-    private $applicableTradeTax;
-
+    private $applicable_trade_tax;
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\SpecifiedPeriodType $billingSpecifiedPeriod
      */
-    private $billingSpecifiedPeriod;
-
+    private $billing_specified_period;
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradeAllowanceChargeType[] $specifiedTradeAllowanceCharge
      */
-    private $specifiedTradeAllowanceCharge = [
-
-    ];
-
+    private $specified_trade_allowance_charge = [];
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradeSettlementLineMonetarySummationType $specifiedTradeSettlementLineMonetarySummation
      */
-    private $specifiedTradeSettlementLineMonetarySummation;
-
+    private $specified_trade_settlement_line_monetary_summation;
     /**
      * Gets as applicableTradeTax
      *
      * @return \horstoeko\zugferd\entities\basic\ram\TradeTaxType
      */
-    public function getApplicableTradeTax()
+    public function get_applicable_trade_tax()
     {
-        return $this->applicableTradeTax;
+        return $this->applicable_trade_tax;
     }
-
     /**
      * Sets a new applicableTradeTax
      */
-    public function setApplicableTradeTax(\horstoeko\zugferd\entities\basic\ram\TradeTaxType $applicableTradeTax): self
+    public function set_applicable_trade_tax(\horstoeko\zugferd\entities\basic\ram\Trade_Tax_Type $applicable_trade_tax): self
     {
-        $this->applicableTradeTax = $applicableTradeTax;
+        $this->applicable_trade_tax = $applicable_trade_tax;
         return $this;
     }
-
     /**
      * Gets as billingSpecifiedPeriod
      *
      * @return \horstoeko\zugferd\entities\basic\ram\SpecifiedPeriodType
      */
-    public function getBillingSpecifiedPeriod()
+    public function get_billing_specified_period()
     {
-        return $this->billingSpecifiedPeriod;
+        return $this->billing_specified_period;
     }
-
     /**
      * Sets a new billingSpecifiedPeriod
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\SpecifiedPeriodType $billingSpecifiedPeriod
      */
-    public function setBillingSpecifiedPeriod(?\horstoeko\zugferd\entities\basic\ram\SpecifiedPeriodType $billingSpecifiedPeriod = null): self
+    public function set_billing_specified_period(?\horstoeko\zugferd\entities\basic\ram\Specified_Period_Type $billing_specified_period = null): self
     {
-        $this->billingSpecifiedPeriod = $billingSpecifiedPeriod;
+        $this->billing_specified_period = $billing_specified_period;
         return $this;
     }
-
     /**
      * Adds as specifiedTradeAllowanceCharge
      */
-    public function addToSpecifiedTradeAllowanceCharge(\horstoeko\zugferd\entities\basic\ram\TradeAllowanceChargeType $specifiedTradeAllowanceCharge): self
+    public function add_to_specified_trade_allowance_charge(\horstoeko\zugferd\entities\basic\ram\Trade_Allowance_Charge_Type $specified_trade_allowance_charge): self
     {
-        $this->specifiedTradeAllowanceCharge[] = $specifiedTradeAllowanceCharge;
+        $this->specified_trade_allowance_charge[] = $specified_trade_allowance_charge;
         return $this;
     }
-
     /**
      * isset specifiedTradeAllowanceCharge
      *
      * @param  int|string $index
      */
-    public function issetSpecifiedTradeAllowanceCharge($index): bool
+    public function isset_specified_trade_allowance_charge($index): bool
     {
-        return isset($this->specifiedTradeAllowanceCharge[$index]);
+        return isset($this->specified_trade_allowance_charge[$index]);
     }
-
     /**
      * unset specifiedTradeAllowanceCharge
      *
      * @param  int|string $index
      */
-    public function unsetSpecifiedTradeAllowanceCharge($index): void
+    public function unset_specified_trade_allowance_charge($index): void
     {
-        unset($this->specifiedTradeAllowanceCharge[$index]);
+        unset($this->specified_trade_allowance_charge[$index]);
     }
-
     /**
      * Gets as specifiedTradeAllowanceCharge
      *
      * @return \horstoeko\zugferd\entities\basic\ram\TradeAllowanceChargeType[]
      */
-    public function getSpecifiedTradeAllowanceCharge()
+    public function get_specified_trade_allowance_charge()
     {
-        return $this->specifiedTradeAllowanceCharge;
+        return $this->specified_trade_allowance_charge;
     }
-
     /**
      * Sets a new specifiedTradeAllowanceCharge
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\TradeAllowanceChargeType[] $specifiedTradeAllowanceCharge
      */
-    public function setSpecifiedTradeAllowanceCharge(?array $specifiedTradeAllowanceCharge = null): self
+    public function set_specified_trade_allowance_charge(?array $specified_trade_allowance_charge = null): self
     {
-        $this->specifiedTradeAllowanceCharge = $specifiedTradeAllowanceCharge;
+        $this->specified_trade_allowance_charge = $specified_trade_allowance_charge;
         return $this;
     }
-
     /**
      * Gets as specifiedTradeSettlementLineMonetarySummation
      *
      * @return \horstoeko\zugferd\entities\basic\ram\TradeSettlementLineMonetarySummationType
      */
-    public function getSpecifiedTradeSettlementLineMonetarySummation()
+    public function get_specified_trade_settlement_line_monetary_summation()
     {
-        return $this->specifiedTradeSettlementLineMonetarySummation;
+        return $this->specified_trade_settlement_line_monetary_summation;
     }
-
     /**
      * Sets a new specifiedTradeSettlementLineMonetarySummation
      */
-    public function setSpecifiedTradeSettlementLineMonetarySummation(\horstoeko\zugferd\entities\basic\ram\TradeSettlementLineMonetarySummationType $specifiedTradeSettlementLineMonetarySummation): self
+    public function set_specified_trade_settlement_line_monetary_summation(\horstoeko\zugferd\entities\basic\ram\Trade_Settlement_Line_Monetary_Summation_Type $specified_trade_settlement_line_monetary_summation): self
     {
-        $this->specifiedTradeSettlementLineMonetarySummation = $specifiedTradeSettlementLineMonetarySummation;
+        $this->specified_trade_settlement_line_monetary_summation = $specified_trade_settlement_line_monetary_summation;
         return $this;
     }
 }

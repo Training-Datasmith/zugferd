@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,109 +8,98 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: SpecifiedPeriodType
  */
-class SpecifiedPeriodType
+class Specified_Period_Type
 {
     /**
      * @var string $description
      */
     private $description;
-
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $startDateTime
      */
-    private $startDateTime;
-
+    private $start_date_time;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $endDateTime
      */
-    private $endDateTime;
-
+    private $end_date_time;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $completeDateTime
      */
-    private $completeDateTime;
-
+    private $complete_date_time;
     /**
      * Gets as description
      *
      * @return string
      */
-    public function getDescription()
+    public function get_description()
     {
         return $this->description;
     }
-
     /**
      * Sets a new description
      *
      * @param  string $description
      */
-    public function setDescription($description): self
+    public function set_description($description): self
     {
         $this->description = $description;
         return $this;
     }
-
     /**
      * Gets as startDateTime
      *
      * @return \horstoeko\zugferd\entities\extended\udt\DateTimeType
      */
-    public function getStartDateTime()
+    public function get_start_date_time()
     {
-        return $this->startDateTime;
+        return $this->start_date_time;
     }
-
     /**
      * Sets a new startDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $startDateTime
      */
-    public function setStartDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $startDateTime = null): self
+    public function set_start_date_time(?\horstoeko\zugferd\entities\extended\udt\Date_Time_Type $start_date_time = null): self
     {
-        $this->startDateTime = $startDateTime;
+        $this->start_date_time = $start_date_time;
         return $this;
     }
-
     /**
      * Gets as endDateTime
      *
      * @return \horstoeko\zugferd\entities\extended\udt\DateTimeType
      */
-    public function getEndDateTime()
+    public function get_end_date_time()
     {
-        return $this->endDateTime;
+        return $this->end_date_time;
     }
-
     /**
      * Sets a new endDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $endDateTime
      */
-    public function setEndDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $endDateTime = null): self
+    public function set_end_date_time(?\horstoeko\zugferd\entities\extended\udt\Date_Time_Type $end_date_time = null): self
     {
-        $this->endDateTime = $endDateTime;
+        $this->end_date_time = $end_date_time;
         return $this;
     }
-
     /**
      * Gets as completeDateTime
      *
      * @return \horstoeko\zugferd\entities\extended\udt\DateTimeType
      */
-    public function getCompleteDateTime()
+    public function get_complete_date_time()
     {
-        return $this->completeDateTime;
+        return $this->complete_date_time;
     }
-
     /**
      * Sets a new completeDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $completeDateTime
      */
-    public function setCompleteDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $completeDateTime = null): self
+    public function set_complete_date_time(?\horstoeko\zugferd\entities\extended\udt\Date_Time_Type $complete_date_time = null): self
     {
-        $this->completeDateTime = $completeDateTime;
+        $this->complete_date_time = $complete_date_time;
         return $this;
     }
 }

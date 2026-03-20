@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /**
  * This file is a part of horstoeko/zugferd.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace horstoeko\zugferd\codelists;
 
 /**
@@ -22,7 +20,7 @@ namespace horstoeko\zugferd\codelists;
  * @link     https://github.com/horstoeko/zugferd
  * @see      https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.5305_3
  */
-class ZugferdVatCategoryCodes
+class Zugferd_Vat_Category_Codes
 {
     /**
      * Canary Islands general indirect tax (L)
@@ -32,7 +30,6 @@ class ZugferdVatCategoryCodes
      * professionals, as well as on import of goods.
      */
     public const CANA_ISLA_GENE_INDI_TAX = 'L';
-
     /**
      * Duty paid by supplier (C)
      *
@@ -40,7 +37,6 @@ class ZugferdVatCategoryCodes
      * receives goods with duty paid.
      */
     public const DUTY_PAID_BY_SUPP = 'C';
-
     /**
      * Exempt for resale (AB)
      *
@@ -48,56 +44,48 @@ class ZugferdVatCategoryCodes
      * bought for future resale.
      */
     public const EXEM_FOR_RESA = 'AB';
-
     /**
      * Exempt from tax (E)
      *
      * Code specifying that taxes are not applicable.
      */
     public const EXEM_FROM_TAX = 'E';
-
     /**
      * Free export item, tax not charged (G)
      *
      * Code specifying that the item is free export and taxes are not charged.
      */
     public const FREE_EXPO_ITEM_TAX_NOT_CHAR = 'G';
-
     /**
      * Higher rate (H)
      *
      * Code specifying a higher rate of duty or tax or fee.
      */
     public const HIGH_RATE = 'H';
-
     /**
      * Lower rate (AA)
      *
      * Tax rate is lower than standard rate.
      */
     public const LOWE_RATE = 'AA';
-
     /**
      * Mixed tax rate (A)
      *
      * Code specifying that the rate is based on mixed tax.
      */
     public const MIXE_TAX_RATE = 'A';
-
     /**
      * Services outside scope of tax (O)
      *
      * Code specifying that taxes are not applicable to the services.
      */
     public const SERV_OUTS_SCOP_OF_TAX = 'O';
-
     /**
      * Standard rate (S)
      *
      * Code specifying the standard rate.
      */
     public const STAN_RATE = 'S';
-
     /**
      * Tax for production, services and importation in Ceuta and Melilla (M)
      *
@@ -107,7 +95,6 @@ class ZugferdVatCategoryCodes
      * transfer of immovable property located in the cities of Ceuta and Melilla.
      */
     public const TAX_FOR_PROD_SERV_AND_IMPO_IN_CEUT_AND_MELI = 'M';
-
     /**
      * Transferred (VAT) (B)
      *
@@ -115,7 +102,6 @@ class ZugferdVatCategoryCodes
      * tax authority.
      */
     public const TRAN_VAT = 'B';
-
     /**
      * Value Added Tax (VAT) due from a previous invoice (AD)
      *
@@ -123,7 +109,6 @@ class ZugferdVatCategoryCodes
      * invoice is to be paid.
      */
     public const VALU_ADDE_TAX_VAT_DUE_FROM_A_PREV_INVO = 'AD';
-
     /**
      * Value Added Tax (VAT) margin scheme - collector’s items and antiques (J)
      *
@@ -131,21 +116,18 @@ class ZugferdVatCategoryCodes
      * is applied.
      */
     public const VALU_ADDE_TAX_VAT_MARG_SCHE_COLL_ITEM_AND_ANTI = 'J';
-
     /**
      * Value Added Tax (VAT) margin scheme - second-hand goods (F)
      *
      * Indication that the VAT margin scheme for second-hand goods is applied.
      */
     public const VALU_ADDE_TAX_VAT_MARG_SCHE_SECO_GOOD = 'F';
-
     /**
      * Value Added Tax (VAT) margin scheme - travel agents (D)
      *
      * Indication that the VAT margin scheme for travel agents is applied.
      */
     public const VALU_ADDE_TAX_VAT_MARG_SCHE_TRAV_AGEN = 'D';
-
     /**
      * Value Added Tax (VAT) margin scheme - works of art Margin scheme — Works
      * of art (I)
@@ -153,7 +135,6 @@ class ZugferdVatCategoryCodes
      * Indication that the VAT margin scheme for works of art is applied.
      */
     public const VALU_ADDE_TAX_VAT_MARG_SCHE_WORK_OF_ART_MARG_SCHE_WORK_OF_ART = 'I';
-
     /**
      * Value Added Tax (VAT) not now due for payment (AC)
      *
@@ -162,7 +143,6 @@ class ZugferdVatCategoryCodes
      * request.
      */
     public const VALU_ADDE_TAX_VAT_NOT_NOW_DUE_FOR_PAYM = 'AC';
-
     /**
      * VAT exempt for EEA intra-community supply of goods and services (K)
      *
@@ -170,14 +150,12 @@ class ZugferdVatCategoryCodes
      * intra-community supply in the European Economic Area.
      */
     public const VAT_EXEM_FOR_EEA_INTR_SUPP_OF_GOOD_AND_SERV = 'K';
-
     /**
      * VAT Reverse Charge (AE)
      *
      * Code specifying that the standard VAT rate is levied from the invoicee.
      */
     public const VAT_REVE_CHAR = 'AE';
-
     /**
      * Zero rated goods (Z)
      *

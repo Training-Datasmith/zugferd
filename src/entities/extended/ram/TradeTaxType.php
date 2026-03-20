@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,291 +8,259 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: TradeTaxType
  */
-class TradeTaxType
+class Trade_Tax_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $calculatedAmount
      */
-    private $calculatedAmount;
-
+    private $calculated_amount;
     /**
      * @var string $typeCode
      */
-    private $typeCode;
-
+    private $type_code;
     /**
      * @var string $exemptionReason
      */
-    private $exemptionReason;
-
+    private $exemption_reason;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $basisAmount
      */
-    private $basisAmount;
-
+    private $basis_amount;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $lineTotalBasisAmount
      */
-    private $lineTotalBasisAmount;
-
+    private $line_total_basis_amount;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\AmountType $allowanceChargeBasisAmount
      */
-    private $allowanceChargeBasisAmount;
-
+    private $allowance_charge_basis_amount;
     /**
      * @var string $categoryCode
      */
-    private $categoryCode;
-
+    private $category_code;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\CodeType $exemptionReasonCode
      */
-    private $exemptionReasonCode;
-
+    private $exemption_reason_code;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateType $taxPointDate
      */
-    private $taxPointDate;
-
+    private $tax_point_date;
     /**
      * @var string $dueDateTypeCode
      */
-    private $dueDateTypeCode;
-
+    private $due_date_type_code;
     /**
      * @var float $rateApplicablePercent
      */
-    private $rateApplicablePercent;
-
+    private $rate_applicable_percent;
     /**
      * Gets as calculatedAmount
      *
      * @return \horstoeko\zugferd\entities\extended\udt\AmountType
      */
-    public function getCalculatedAmount()
+    public function get_calculated_amount()
     {
-        return $this->calculatedAmount;
+        return $this->calculated_amount;
     }
-
     /**
      * Sets a new calculatedAmount
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\AmountType $calculatedAmount
      */
-    public function setCalculatedAmount(?\horstoeko\zugferd\entities\extended\udt\AmountType $calculatedAmount = null): self
+    public function set_calculated_amount(?\horstoeko\zugferd\entities\extended\udt\Amount_Type $calculated_amount = null): self
     {
-        $this->calculatedAmount = $calculatedAmount;
+        $this->calculated_amount = $calculated_amount;
         return $this;
     }
-
     /**
      * Gets as typeCode
      *
      * @return string
      */
-    public function getTypeCode()
+    public function get_type_code()
     {
-        return $this->typeCode;
+        return $this->type_code;
     }
-
     /**
      * Sets a new typeCode
      *
      * @param  string $typeCode
      */
-    public function setTypeCode($typeCode): self
+    public function set_type_code($type_code): self
     {
-        $this->typeCode = $typeCode;
+        $this->type_code = $type_code;
         return $this;
     }
-
     /**
      * Gets as exemptionReason
      *
      * @return string
      */
-    public function getExemptionReason()
+    public function get_exemption_reason()
     {
-        return $this->exemptionReason;
+        return $this->exemption_reason;
     }
-
     /**
      * Sets a new exemptionReason
      *
      * @param  string $exemptionReason
      */
-    public function setExemptionReason($exemptionReason): self
+    public function set_exemption_reason($exemption_reason): self
     {
-        $this->exemptionReason = $exemptionReason;
+        $this->exemption_reason = $exemption_reason;
         return $this;
     }
-
     /**
      * Gets as basisAmount
      *
      * @return \horstoeko\zugferd\entities\extended\udt\AmountType
      */
-    public function getBasisAmount()
+    public function get_basis_amount()
     {
-        return $this->basisAmount;
+        return $this->basis_amount;
     }
-
     /**
      * Sets a new basisAmount
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\AmountType $basisAmount
      */
-    public function setBasisAmount(?\horstoeko\zugferd\entities\extended\udt\AmountType $basisAmount = null): self
+    public function set_basis_amount(?\horstoeko\zugferd\entities\extended\udt\Amount_Type $basis_amount = null): self
     {
-        $this->basisAmount = $basisAmount;
+        $this->basis_amount = $basis_amount;
         return $this;
     }
-
     /**
      * Gets as lineTotalBasisAmount
      *
      * @return \horstoeko\zugferd\entities\extended\udt\AmountType
      */
-    public function getLineTotalBasisAmount()
+    public function get_line_total_basis_amount()
     {
-        return $this->lineTotalBasisAmount;
+        return $this->line_total_basis_amount;
     }
-
     /**
      * Sets a new lineTotalBasisAmount
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\AmountType $lineTotalBasisAmount
      */
-    public function setLineTotalBasisAmount(?\horstoeko\zugferd\entities\extended\udt\AmountType $lineTotalBasisAmount = null): self
+    public function set_line_total_basis_amount(?\horstoeko\zugferd\entities\extended\udt\Amount_Type $line_total_basis_amount = null): self
     {
-        $this->lineTotalBasisAmount = $lineTotalBasisAmount;
+        $this->line_total_basis_amount = $line_total_basis_amount;
         return $this;
     }
-
     /**
      * Gets as allowanceChargeBasisAmount
      *
      * @return \horstoeko\zugferd\entities\extended\udt\AmountType
      */
-    public function getAllowanceChargeBasisAmount()
+    public function get_allowance_charge_basis_amount()
     {
-        return $this->allowanceChargeBasisAmount;
+        return $this->allowance_charge_basis_amount;
     }
-
     /**
      * Sets a new allowanceChargeBasisAmount
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\AmountType $allowanceChargeBasisAmount
      */
-    public function setAllowanceChargeBasisAmount(?\horstoeko\zugferd\entities\extended\udt\AmountType $allowanceChargeBasisAmount = null): self
+    public function set_allowance_charge_basis_amount(?\horstoeko\zugferd\entities\extended\udt\Amount_Type $allowance_charge_basis_amount = null): self
     {
-        $this->allowanceChargeBasisAmount = $allowanceChargeBasisAmount;
+        $this->allowance_charge_basis_amount = $allowance_charge_basis_amount;
         return $this;
     }
-
     /**
      * Gets as categoryCode
      *
      * @return string
      */
-    public function getCategoryCode()
+    public function get_category_code()
     {
-        return $this->categoryCode;
+        return $this->category_code;
     }
-
     /**
      * Sets a new categoryCode
      *
      * @param  string $categoryCode
      */
-    public function setCategoryCode($categoryCode): self
+    public function set_category_code($category_code): self
     {
-        $this->categoryCode = $categoryCode;
+        $this->category_code = $category_code;
         return $this;
     }
-
     /**
      * Gets as exemptionReasonCode
      *
      * @return \horstoeko\zugferd\entities\extended\udt\CodeType
      */
-    public function getExemptionReasonCode()
+    public function get_exemption_reason_code()
     {
-        return $this->exemptionReasonCode;
+        return $this->exemption_reason_code;
     }
-
     /**
      * Sets a new exemptionReasonCode
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\CodeType $exemptionReasonCode
      */
-    public function setExemptionReasonCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $exemptionReasonCode = null): self
+    public function set_exemption_reason_code(?\horstoeko\zugferd\entities\extended\udt\Code_Type $exemption_reason_code = null): self
     {
-        $this->exemptionReasonCode = $exemptionReasonCode;
+        $this->exemption_reason_code = $exemption_reason_code;
         return $this;
     }
-
     /**
      * Gets as taxPointDate
      *
      * @return \horstoeko\zugferd\entities\extended\udt\DateType
      */
-    public function getTaxPointDate()
+    public function get_tax_point_date()
     {
-        return $this->taxPointDate;
+        return $this->tax_point_date;
     }
-
     /**
      * Sets a new taxPointDate
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\DateType $taxPointDate
      */
-    public function setTaxPointDate(?\horstoeko\zugferd\entities\extended\udt\DateType $taxPointDate = null): self
+    public function set_tax_point_date(?\horstoeko\zugferd\entities\extended\udt\Date_Type $tax_point_date = null): self
     {
-        $this->taxPointDate = $taxPointDate;
+        $this->tax_point_date = $tax_point_date;
         return $this;
     }
-
     /**
      * Gets as dueDateTypeCode
      *
      * @return string
      */
-    public function getDueDateTypeCode()
+    public function get_due_date_type_code()
     {
-        return $this->dueDateTypeCode;
+        return $this->due_date_type_code;
     }
-
     /**
      * Sets a new dueDateTypeCode
      *
      * @param  string $dueDateTypeCode
      */
-    public function setDueDateTypeCode($dueDateTypeCode): self
+    public function set_due_date_type_code($due_date_type_code): self
     {
-        $this->dueDateTypeCode = $dueDateTypeCode;
+        $this->due_date_type_code = $due_date_type_code;
         return $this;
     }
-
     /**
      * Gets as rateApplicablePercent
      *
      * @return float
      */
-    public function getRateApplicablePercent()
+    public function get_rate_applicable_percent()
     {
-        return $this->rateApplicablePercent;
+        return $this->rate_applicable_percent;
     }
-
     /**
      * Sets a new rateApplicablePercent
      *
      * @param  float $rateApplicablePercent
      */
-    public function setRateApplicablePercent($rateApplicablePercent): self
+    public function set_rate_applicable_percent($rate_applicable_percent): self
     {
-        $this->rateApplicablePercent = $rateApplicablePercent;
+        $this->rate_applicable_percent = $rate_applicable_percent;
         return $this;
     }
 }

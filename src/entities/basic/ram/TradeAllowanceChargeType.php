@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basic\ram;
 
 /**
@@ -9,183 +8,163 @@ namespace horstoeko\zugferd\entities\basic\ram;
  *
  * XSD Type: TradeAllowanceChargeType
  */
-class TradeAllowanceChargeType
+class Trade_Allowance_Charge_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\IndicatorType $chargeIndicator
      */
-    private $chargeIndicator;
-
+    private $charge_indicator;
     /**
      * @var float $calculationPercent
      */
-    private $calculationPercent;
-
+    private $calculation_percent;
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\AmountType $basisAmount
      */
-    private $basisAmount;
-
+    private $basis_amount;
     /**
      * @var \horstoeko\zugferd\entities\basic\udt\AmountType $actualAmount
      */
-    private $actualAmount;
-
+    private $actual_amount;
     /**
      * @var string $reasonCode
      */
-    private $reasonCode;
-
+    private $reason_code;
     /**
      * @var string $reason
      */
     private $reason;
-
     /**
      * @var \horstoeko\zugferd\entities\basic\ram\TradeTaxType $categoryTradeTax
      */
-    private $categoryTradeTax;
-
+    private $category_trade_tax;
     /**
      * Gets as chargeIndicator
      *
      * @return \horstoeko\zugferd\entities\basic\udt\IndicatorType
      */
-    public function getChargeIndicator()
+    public function get_charge_indicator()
     {
-        return $this->chargeIndicator;
+        return $this->charge_indicator;
     }
-
     /**
      * Sets a new chargeIndicator
      */
-    public function setChargeIndicator(\horstoeko\zugferd\entities\basic\udt\IndicatorType $chargeIndicator): self
+    public function set_charge_indicator(\horstoeko\zugferd\entities\basic\udt\Indicator_Type $charge_indicator): self
     {
-        $this->chargeIndicator = $chargeIndicator;
+        $this->charge_indicator = $charge_indicator;
         return $this;
     }
-
     /**
      * Gets as calculationPercent
      *
      * @return float
      */
-    public function getCalculationPercent()
+    public function get_calculation_percent()
     {
-        return $this->calculationPercent;
+        return $this->calculation_percent;
     }
-
     /**
      * Sets a new calculationPercent
      *
      * @param  float $calculationPercent
      */
-    public function setCalculationPercent($calculationPercent): self
+    public function set_calculation_percent($calculation_percent): self
     {
-        $this->calculationPercent = $calculationPercent;
+        $this->calculation_percent = $calculation_percent;
         return $this;
     }
-
     /**
      * Gets as basisAmount
      *
      * @return \horstoeko\zugferd\entities\basic\udt\AmountType
      */
-    public function getBasisAmount()
+    public function get_basis_amount()
     {
-        return $this->basisAmount;
+        return $this->basis_amount;
     }
-
     /**
      * Sets a new basisAmount
      *
      * @param  \horstoeko\zugferd\entities\basic\udt\AmountType $basisAmount
      */
-    public function setBasisAmount(?\horstoeko\zugferd\entities\basic\udt\AmountType $basisAmount = null): self
+    public function set_basis_amount(?\horstoeko\zugferd\entities\basic\udt\Amount_Type $basis_amount = null): self
     {
-        $this->basisAmount = $basisAmount;
+        $this->basis_amount = $basis_amount;
         return $this;
     }
-
     /**
      * Gets as actualAmount
      *
      * @return \horstoeko\zugferd\entities\basic\udt\AmountType
      */
-    public function getActualAmount()
+    public function get_actual_amount()
     {
-        return $this->actualAmount;
+        return $this->actual_amount;
     }
-
     /**
      * Sets a new actualAmount
      */
-    public function setActualAmount(\horstoeko\zugferd\entities\basic\udt\AmountType $actualAmount): self
+    public function set_actual_amount(\horstoeko\zugferd\entities\basic\udt\Amount_Type $actual_amount): self
     {
-        $this->actualAmount = $actualAmount;
+        $this->actual_amount = $actual_amount;
         return $this;
     }
-
     /**
      * Gets as reasonCode
      *
      * @return string
      */
-    public function getReasonCode()
+    public function get_reason_code()
     {
-        return $this->reasonCode;
+        return $this->reason_code;
     }
-
     /**
      * Sets a new reasonCode
      *
      * @param  string $reasonCode
      */
-    public function setReasonCode($reasonCode): self
+    public function set_reason_code($reason_code): self
     {
-        $this->reasonCode = $reasonCode;
+        $this->reason_code = $reason_code;
         return $this;
     }
-
     /**
      * Gets as reason
      *
      * @return string
      */
-    public function getReason()
+    public function get_reason()
     {
         return $this->reason;
     }
-
     /**
      * Sets a new reason
      *
      * @param  string $reason
      */
-    public function setReason($reason): self
+    public function set_reason($reason): self
     {
         $this->reason = $reason;
         return $this;
     }
-
     /**
      * Gets as categoryTradeTax
      *
      * @return \horstoeko\zugferd\entities\basic\ram\TradeTaxType
      */
-    public function getCategoryTradeTax()
+    public function get_category_trade_tax()
     {
-        return $this->categoryTradeTax;
+        return $this->category_trade_tax;
     }
-
     /**
      * Sets a new categoryTradeTax
      *
      * @param  \horstoeko\zugferd\entities\basic\ram\TradeTaxType $categoryTradeTax
      */
-    public function setCategoryTradeTax(?\horstoeko\zugferd\entities\basic\ram\TradeTaxType $categoryTradeTax = null): self
+    public function set_category_trade_tax(?\horstoeko\zugferd\entities\basic\ram\Trade_Tax_Type $category_trade_tax = null): self
     {
-        $this->categoryTradeTax = $categoryTradeTax;
+        $this->category_trade_tax = $category_trade_tax;
         return $this;
     }
 }

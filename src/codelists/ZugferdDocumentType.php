@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /**
  * This file is a part of horstoeko/zugferd.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace horstoeko\zugferd\codelists;
 
 /**
@@ -22,7 +20,7 @@ namespace horstoeko\zugferd\codelists;
  * @link     https://github.com/horstoeko/zugferd
  * @see      https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.1001
  */
-class ZugferdDocumentType
+class Zugferd_Document_Type
 {
     /**
      * A claim for parts and/or labour charges (290)
@@ -30,21 +28,18 @@ class ZugferdDocumentType
      * A claim for parts and/or labour charges incurred .
      */
     public const A_CLAIM_FOR_PARTS_ANDOR_LABOUR_CHARGES = '290';
-
     /**
      * Accounting statement (832)
      *
      * Document specifying an accounting statement.
      */
     public const ACCOUNTING_STATEMENT = '832';
-
     /**
      * Accounting voucher (526)
      *
      * A document/message justifying an accounting entry.
      */
     public const ACCOUNTING_VOUCHER = '526';
-
     /**
      * Acknowledgement message (312)
      *
@@ -52,14 +47,12 @@ class ZugferdDocumentType
      * level concerning the processing of a message.
      */
     public const ACKNOWLEDGEMENT_MESSAGE = '312';
-
     /**
      * Acknowledgement of change of supplier (414)
      *
      * Acknowledgement of the change of supplier.
      */
     public const ACKNOWLEDGEMENT_OF_CHANGE_OF_SUPPLIER = '414';
-
     /**
      * Acknowledgement of order (320)
      *
@@ -67,21 +60,18 @@ class ZugferdDocumentType
      * confirming conditions or acceptance of conditions.
      */
     public const ACKNOWLEDGEMENT_OF_ORDER = '320';
-
     /**
      * Acknowledgment of receipt (767)
      *
      * Document/message confirming a receipt to the sending party.
      */
     public const ACKNOWLEDGMENT_OF_RECEIPT = '767';
-
     /**
      * Advice of an amendment of a documentary credit (198)
      *
      * Advice of an amendment of a documentary credit.
      */
     public const ADVICE_OF_AN_AMENDMENT_OF_A_DOCUMENTARY_CREDIT = '198';
-
     /**
      * Advice of collection (790)
      *
@@ -91,7 +81,6 @@ class ZugferdDocumentType
      * reimbursement of the consignor.
      */
     public const ADVICE_OF_COLLECTION = '790';
-
     /**
      * Advice of distribution of documents (370)
      *
@@ -101,14 +90,12 @@ class ZugferdDocumentType
      * each of them.
      */
     public const ADVICE_OF_DISTRIBUTION_OF_DOCUMENTS = '370';
-
     /**
      * Advice report (769)
      *
      * Document reporting advice.
      */
     public const ADVICE_REPORT = '769';
-
     /**
      * Advising items to be booked to a financial account (141)
      *
@@ -116,7 +103,6 @@ class ZugferdDocumentType
      * financial account.
      */
     public const ADVISING_ITEMS_TO_BE_BOOKED_TO_A_FINANCIAL_ACCOUNT = '141';
-
     /**
      * AEO Certificate Full (891)
      *
@@ -127,7 +113,6 @@ class ZugferdDocumentType
      * 952/2013).
      */
     public const AEO_CERTIFICATE_FULL = '891';
-
     /**
      * AEO Certificate of Conformity or Compliance (879)
      *
@@ -137,7 +122,6 @@ class ZugferdDocumentType
      * (AEOC) - Regulation (EU) No 952/2013).
      */
     public const AEO_CERTIFICATE_OF_CONFORMITY_OR_COMPLIANCE = '879';
-
     /**
      * AEO Certificate of Security and/or Safety (878)
      *
@@ -147,14 +131,12 @@ class ZugferdDocumentType
      * Safety (AEOS) - Regulation (EU) No 952/2013).
      */
     public const AEO_CERTIFICATE_OF_SECURITY_ANDOR_SAFETY = '878';
-
     /**
      * Agreement to pay (212)
      *
      * Document/message in which the debtor expresses the intention to pay.
      */
     public const AGREEMENT_TO_PAY = '212';
-
     /**
      * Air waybill (740)
      *
@@ -164,14 +146,12 @@ class ZugferdDocumentType
      * issuing the document plus a serial (IATA).
      */
     public const AIR_WAYBILL = '740';
-
     /**
      * Amicable agreement (846)
      *
      * Document specifying an amicable agreement.
      */
     public const AMICABLE_AGREEMENT = '846';
-
     /**
      * Announcement for returns (732)
      *
@@ -180,7 +160,6 @@ class ZugferdDocumentType
      * of damage, etc).
      */
     public const ANNOUNCEMENT_FOR_RETURNS = '732';
-
     /**
      * Application acknowledgement and error report (294)
      *
@@ -188,7 +167,6 @@ class ZugferdDocumentType
      * and/or to report any errors.
      */
     public const APPLICATION_ACKNOWLEDGEMENT_AND_ERROR_REPORT = '294';
-
     /**
      * Application error and acknowledgement (305)
      *
@@ -197,7 +175,6 @@ class ZugferdDocumentType
      * message has been rejected by the addressee's application.
      */
     public const APPLICATION_ERROR_AND_ACKNOWLEDGEMENT = '305';
-
     /**
      * Application error message (313)
      *
@@ -205,7 +182,6 @@ class ZugferdDocumentType
      * the application level.
      */
     public const APPLICATION_ERROR_MESSAGE = '313';
-
     /**
      * Application for banker's draft (412)
      *
@@ -214,7 +190,6 @@ class ZugferdDocumentType
      * country of payment.
      */
     public const APPLICATION_FOR_BANKERS_DRAFT = '412';
-
     /**
      * Application for banker's guarantee (429)
      *
@@ -223,21 +198,18 @@ class ZugferdDocumentType
      * currency and the specific conditions of the guarantee.
      */
     public const APPLICATION_FOR_BANKERS_GUARANTEE = '429';
-
     /**
      * Application for designation of berthing places (317)
      *
      * Document to apply for designation of berthing places.
      */
     public const APPLICATION_FOR_DESIGNATION_OF_BERTHING_PLACES = '317';
-
     /**
      * Application for documentary credit (996)
      *
      * Message with application for opening of a documentary credit.
      */
     public const APPLICATION_FOR_DOCUMENTARY_CREDIT = '996';
-
     /**
      * Application for exchange allocation (925)
      *
@@ -246,7 +218,6 @@ class ZugferdDocumentType
      * exporter/seller in payment for goods.
      */
     public const APPLICATION_FOR_EXCHANGE_ALLOCATION = '925';
-
     /**
      * Application for goods control certificate (840)
      *
@@ -256,7 +227,6 @@ class ZugferdDocumentType
      * country, or as specified in the contract.
      */
     public const APPLICATION_FOR_GOODS_CONTROL_CERTIFICATE = '840';
-
     /**
      * Application for inspection certificate (855)
      *
@@ -266,7 +236,6 @@ class ZugferdDocumentType
      * which it is required, or as specified in the contract.
      */
     public const APPLICATION_FOR_INSPECTION_CERTIFICATE = '855';
-
     /**
      * Application for phytosanitary certificate (850)
      *
@@ -274,28 +243,24 @@ class ZugferdDocumentType
      * Phytosanitary certificate to be issued.
      */
     public const APPLICATION_FOR_PHYTOSANITARY_CERTIFICATE = '850';
-
     /**
      * Application for shifting from the designated place in port (318)
      *
      * Document to apply for shifting from the designated place in port.
      */
     public const APPLICATION_FOR_SHIFTING_FROM_THE_DESIGNATED_PLACE_IN_PORT = '318';
-
     /**
      * Application for usage of berth or mooring facilities (316)
      *
      * Document to apply for usage of berth or mooring facilities.
      */
     public const APPLICATION_FOR_USAGE_OF_BERTH_OR_MOORING_FACILITIES = '316';
-
     /**
      * Application for vessel's entering into port area in night-time (353)
      *
      * Document to apply for vessel's entering into port area in night-time.
      */
     public const APPLICATION_FOR_VESSELS_ENTERING_INTO_PORT_AREA_IN_NIGHTTIME = '353';
-
     /**
      * Approved unpriced bill of quantity (216)
      *
@@ -303,14 +268,12 @@ class ZugferdDocumentType
      * specification (bill of quantity), in an unpriced form.
      */
     public const APPROVED_UNPRICED_BILL_OF_QUANTITY = '216';
-
     /**
      * Arrival information (98)
      *
      * Message reporting the arrival details of goods or cargo.
      */
     public const ARRIVAL_INFORMATION = '98';
-
     /**
      * Arrival notice (goods) (781)
      *
@@ -320,14 +283,12 @@ class ZugferdDocumentType
      * disposal at a specified point in the place of destination.
      */
     public const ARRIVAL_NOTICE_GOODS = '781';
-
     /**
      * Assessment report (818)
      *
      * Document reporting an assessment.
      */
     public const ASSESSMENT_REPORT = '818';
-
     /**
      * ATA carnet (955)
      *
@@ -340,7 +301,6 @@ class ZugferdDocumentType
      * international guarantee does not apply (CCC).
      */
     public const ATA_CARNET = '955';
-
     /**
      * Audio (859)
      *
@@ -348,7 +308,6 @@ class ZugferdDocumentType
      * alike).
      */
     public const AUDIO = '859';
-
     /**
      * Authorisation to plan and ship orders (173)
      *
@@ -356,7 +315,6 @@ class ZugferdDocumentType
      * on information in this message.
      */
     public const AUTHORISATION_TO_PLAN_AND_SHIP_ORDERS = '173';
-
     /**
      * Authorisation to plan and suggest orders (172)
      *
@@ -365,28 +323,24 @@ class ZugferdDocumentType
      * sender.
      */
     public const AUTHORISATION_TO_PLAN_AND_SUGGEST_ORDERS = '172';
-
     /**
      * Bailment contract (148)
      *
      * A document authorizing the bailing of goods.
      */
     public const BAILMENT_CONTRACT = '148';
-
     /**
      * Balance confirmation (182)
      *
      * Confirmation of a balance at an entry date.
      */
     public const BALANCE_CONFIRMATION = '182';
-
     /**
      * Bank to bank funds transfer (247)
      *
      * The message is a bank to bank funds transfer.
      */
     public const BANK_TO_BANK_FUNDS_TRANSFER = '247';
-
     /**
      * Banker's draft (485)
      *
@@ -397,7 +351,6 @@ class ZugferdDocumentType
      * payable.
      */
     public const BANKERS_DRAFT = '485';
-
     /**
      * Banker's guarantee (430)
      *
@@ -406,14 +359,12 @@ class ZugferdDocumentType
      * laid down in the Uniform Customs Practice).
      */
     public const BANKERS_GUARANTEE = '430';
-
     /**
      * Banking status (46)
      *
      * A banking status document and/or message.
      */
     public const BANKING_STATUS = '46';
-
     /**
      * Basic agreement (149)
      *
@@ -421,14 +372,12 @@ class ZugferdDocumentType
      * applicable to future contracts between two parties.
      */
     public const BASIC_AGREEMENT = '149';
-
     /**
      * Bayplan/stowage plan, full (658)
      *
      * A full bayplan containing all occupied and/or blocked stowage locations.
      */
     public const BAYPLANSTOWAGE_PLAN_FULL = '658';
-
     /**
      * Bayplan/stowage plan, partial (659)
      *
@@ -436,7 +385,6 @@ class ZugferdDocumentType
      * locations.
      */
     public const BAYPLANSTOWAGE_PLAN_PARTIAL = '659';
-
     /**
      * Bill of exchange (490)
      *
@@ -447,7 +395,6 @@ class ZugferdDocumentType
      * document itself.
      */
     public const BILL_OF_EXCHANGE = '490';
-
     /**
      * Bill of lading (705)
      *
@@ -458,14 +405,12 @@ class ZugferdDocumentType
      * person, or to order, or to bearer, constitutes such an undertaking.
      */
     public const BILL_OF_LADING = '705';
-
     /**
      * Bill of lading copy (707)
      *
      * A copy of the bill of lading issued by a transport company.
      */
     public const BILL_OF_LADING_COPY = '707';
-
     /**
      * Bill of lading original (706)
      *
@@ -473,7 +418,6 @@ class ZugferdDocumentType
      * issued by the maritime industry it could signify ownership of the cargo.
      */
     public const BILL_OF_LADING_ORIGINAL = '706';
-
     /**
      * Binding customer agreement for contract (772)
      *
@@ -481,14 +425,12 @@ class ZugferdDocumentType
      * such as an insurance contract.
      */
     public const BINDING_CUSTOMER_AGREEMENT_FOR_CONTRACT = '772';
-
     /**
      * Binding offer (771)
      *
      * Document which is a binding offer from one party to another.
      */
     public const BINDING_OFFER = '771';
-
     /**
      * Blanket order (221)
      *
@@ -496,7 +438,6 @@ class ZugferdDocumentType
      * quantities and delivery dates and maybe delivery locations.
      */
     public const BLANKET_ORDER = '221';
-
     /**
      * Booking confirmation (770)
      *
@@ -504,7 +445,6 @@ class ZugferdDocumentType
      * reserved for a consignment in means of transport.
      */
     public const BOOKING_CONFIRMATION = '770';
-
     /**
      * Booking request (335)
      *
@@ -513,7 +453,6 @@ class ZugferdDocumentType
      * despatch time, etc.
      */
     public const BOOKING_REQUEST = '335';
-
     /**
      * Bordereau (787)
      *
@@ -521,7 +460,6 @@ class ZugferdDocumentType
      * road vehicle, often referring to appended copies of Road consignment note.
      */
     public const BORDEREAU = '787';
-
     /**
      * Buy America certificate of compliance (168)
      *
@@ -529,7 +467,6 @@ class ZugferdDocumentType
      * attributed to US origin.
      */
     public const BUY_AMERICA_CERTIFICATE_OF_COMPLIANCE = '168';
-
     /**
      * Calculation note (844)
      *
@@ -537,7 +474,6 @@ class ZugferdDocumentType
      * calculation.
      */
     public const CALCULATION_NOTE = '844';
-
     /**
      * Call for tender (754)
      *
@@ -545,7 +481,6 @@ class ZugferdDocumentType
      * request suppliers to participate.
      */
     public const CALL_FOR_TENDER = '754';
-
     /**
      * Call off order (226)
      *
@@ -553,7 +488,6 @@ class ZugferdDocumentType
      * to a previous blanket order.
      */
     public const CALL_OFF_ORDER = '226';
-
     /**
      * Call-off delivery (76)
      *
@@ -561,14 +495,12 @@ class ZugferdDocumentType
      * to a previous delivery instruction.
      */
     public const CALLOFF_DELIVERY = '76';
-
     /**
      * Calling forward notice (775)
      *
      * Instructions for release or delivery of goods.
      */
     public const CALLING_FORWARD_NOTICE = '775';
-
     /**
      * Campaign price/sales catalogue (234)
      *
@@ -576,21 +508,18 @@ class ZugferdDocumentType
      * a specified period or under specified conditions.
      */
     public const CAMPAIGN_PRICESALES_CATALOGUE = '234';
-
     /**
      * Cargo acceptance order (170)
      *
      * Order to accept cargo to be delivered by a carrier.
      */
     public const CARGO_ACCEPTANCE_ORDER = '170';
-
     /**
      * Cargo analysis voyage report (260)
      *
      * An analysis of the cargo for a voyage.
      */
     public const CARGO_ANALYSIS_VOYAGE_REPORT = '260';
-
     /**
      * Cargo declaration (arrival) (933)
      *
@@ -599,7 +528,6 @@ class ZugferdDocumentType
      * cargo (freight) carried by commercial means of transport (CCC).
      */
     public const CARGO_DECLARATION_ARRIVAL = '933';
-
     /**
      * Cargo declaration (departure) (833)
      *
@@ -608,7 +536,6 @@ class ZugferdDocumentType
      * cargo (freight) carried by commercial means of transport (CCC).
      */
     public const CARGO_DECLARATION_DEPARTURE = '833';
-
     /**
      * Cargo manifest (785)
      *
@@ -619,7 +546,6 @@ class ZugferdDocumentType
      * of the goods.
      */
     public const CARGO_MANIFEST = '785';
-
     /**
      * Cargo movement event log (259)
      *
@@ -627,7 +553,6 @@ class ZugferdDocumentType
      * movement.
      */
     public const CARGO_MOVEMENT_EVENT_LOG = '259';
-
     /**
      * Cargo movement voyage summary (314)
      *
@@ -636,7 +561,6 @@ class ZugferdDocumentType
      * for a voyage.
      */
     public const CARGO_MOVEMENT_VOYAGE_SUMMARY = '314';
-
     /**
      * Cargo release notification (99)
      *
@@ -644,14 +568,12 @@ class ZugferdDocumentType
      * moved from a Customs controlled premise.
      */
     public const CARGO_RELEASE_NOTIFICATION = '99';
-
     /**
      * Cargo status (34)
      *
      * Message identifying the status of cargo.
      */
     public const CARGO_STATUS = '34';
-
     /**
      * Cargo vessel discharge order (145)
      *
@@ -659,7 +581,6 @@ class ZugferdDocumentType
      * vessel.
      */
     public const CARGO_VESSEL_DISCHARGE_ORDER = '145';
-
     /**
      * Cargo vessel loading order (146)
      *
@@ -667,7 +588,6 @@ class ZugferdDocumentType
      * loaded in or on a vessel.
      */
     public const CARGO_VESSEL_LOADING_ORDER = '146';
-
     /**
      * Cargo/goods handling and movement message (738)
      *
@@ -677,7 +597,6 @@ class ZugferdDocumentType
      * of the distribution centre or log.
      */
     public const CARGOGOODS_HANDLING_AND_MOVEMENT_MESSAGE = '738';
-
     /**
      * Cartage order (local transport) (343)
      *
@@ -686,14 +605,12 @@ class ZugferdDocumentType
      * further transport.
      */
     public const CARTAGE_ORDER_LOCAL_TRANSPORT = '343';
-
     /**
      * Cash pool financial statement (306)
      *
      * A financial statement for a cash pool.
      */
     public const CASH_POOL_FINANCIAL_STATEMENT = '306';
-
     /**
      * Casing sanitary certificate (93)
      *
@@ -702,7 +619,6 @@ class ZugferdDocumentType
      * the importing country.
      */
     public const CASING_SANITARY_CERTIFICATE = '93';
-
     /**
      * Certificate (16)
      *
@@ -710,14 +626,12 @@ class ZugferdDocumentType
      * conditions for the certificate and by whom the certificate is to be issued.
      */
     public const CERTIFICATE = '16';
-
     /**
      * Certificate of analysis (1)
      *
      * Certificate providing the values of an analysis.
      */
     public const CERTIFICATE_OF_ANALYSIS = '1';
-
     /**
      * Certificate of compliance with standards of the World Organization for
      * Animal Health (OIE) (648)
@@ -726,21 +640,18 @@ class ZugferdDocumentType
      * with the standards set by the World Organization for Animal Health (OIE).
      */
     public const CERTIFICATE_OF_COMPLIANCE_WITH_STANDARDS_OF_THE_WORLD_ORGANIZATION_FOR_ANIMAL_HEALTH_OIE = '648';
-
     /**
      * Certificate of conformity (2)
      *
      * Certificate certifying the conformity to predefined definitions.
      */
     public const CERTIFICATE_OF_CONFORMITY = '2';
-
     /**
      * Certificate of disembarkation permission (487)
      *
      * Document or message issuing permission to disembark.
      */
     public const CERTIFICATE_OF_DISEMBARKATION_PERMISSION = '487';
-
     /**
      * Certificate of food item transport readiness (642)
      *
@@ -748,7 +659,6 @@ class ZugferdDocumentType
      * a reservoir or hold to transport food items.
      */
     public const CERTIFICATE_OF_FOOD_ITEM_TRANSPORT_READINESS = '642';
-
     /**
      * Certificate of origin (861)
      *
@@ -760,7 +670,6 @@ class ZugferdDocumentType
      * supplier, exporter or other competent person.
      */
     public const CERTIFICATE_OF_ORIGIN = '861';
-
     /**
      * Certificate of origin form GSP (865)
      *
@@ -769,7 +678,6 @@ class ZugferdDocumentType
      * (includes a combined declaration of origin and certificate, form A).
      */
     public const CERTIFICATE_OF_ORIGIN_FORM_GSP = '865';
-
     /**
      * Certificate of origin, application for (860)
      *
@@ -778,28 +686,24 @@ class ZugferdDocumentType
      * criteria, and on the basis of evidence of the origin of the goods.
      */
     public const CERTIFICATE_OF_ORIGIN_APPLICATION_FOR = '860';
-
     /**
      * Certificate of paid insurance premium (835)
      *
      * Document certifying the payment of the insurance premium.
      */
     public const CERTIFICATE_OF_PAID_INSURANCE_PREMIUM = '835';
-
     /**
      * Certificate of quality (3)
      *
      * Certificate certifying the quality of goods, services etc.
      */
     public const CERTIFICATE_OF_QUALITY = '3';
-
     /**
      * Certificate of quantity (19)
      *
      * Certificate certifying the quantity of goods, services etc.
      */
     public const CERTIFICATE_OF_QUANTITY = '19';
-
     /**
      * Certificate of refrigerated transport equipment inspection (639)
      *
@@ -807,14 +711,12 @@ class ZugferdDocumentType
      * measured temperature is in good working condition.
      */
     public const CERTIFICATE_OF_REFRIGERATED_TRANSPORT_EQUIPMENT_INSPECTION = '639';
-
     /**
      * Certificate of registry (798)
      *
      * Official certificate stating the vessel's registry.
      */
     public const CERTIFICATE_OF_REGISTRY = '798';
-
     /**
      * Certificate of sealing of export meat lockers (33)
      *
@@ -822,7 +724,6 @@ class ZugferdDocumentType
      * evidencing the sealing of export meat lockers.
      */
     public const CERTIFICATE_OF_SEALING_OF_EXPORT_MEAT_LOCKERS = '33';
-
     /**
      * Certificate of shipment (375)
      *
@@ -830,7 +731,6 @@ class ZugferdDocumentType
      * shipped.
      */
     public const CERTIFICATE_OF_SHIPMENT = '375';
-
     /**
      * Certificate of suitability for transport of grains and legumes (638)
      *
@@ -838,14 +738,12 @@ class ZugferdDocumentType
      * suitability for transporting grains and legumes.
      */
     public const CERTIFICATE_OF_SUITABILITY_FOR_TRANSPORT_OF_GRAINS_AND_LEGUMES = '638';
-
     /**
      * Certificate of sustainability (753)
      *
      * Document/message issued by a competent body certifying sustainability.
      */
     public const CERTIFICATE_OF_SUSTAINABILITY = '753';
-
     /**
      * Certified cost and price data (159)
      *
@@ -853,14 +751,12 @@ class ZugferdDocumentType
      * certified.
      */
     public const CERTIFIED_COST_AND_PRICE_DATA = '159';
-
     /**
      * Certified inspection and test results (162)
      *
      * A certification as to the accuracy of inspection and test results.
      */
     public const CERTIFIED_INSPECTION_AND_TEST_RESULTS = '162';
-
     /**
      * Certified list of ingredients (634)
      *
@@ -868,7 +764,6 @@ class ZugferdDocumentType
      * of the product (food additive, detergent, disinfectant and sanitizer).
      */
     public const CERTIFIED_LIST_OF_INGREDIENTS = '634';
-
     /**
      * Chargeback (68)
      *
@@ -877,7 +772,6 @@ class ZugferdDocumentType
      * from buyers are charged back to clear the invoice(s) off the ledger.
      */
     public const CHARGEBACK = '68';
-
     /**
      * Charges note (789)
      *
@@ -888,7 +782,6 @@ class ZugferdDocumentType
      * as joined to the transport.
      */
     public const CHARGES_NOTE = '789';
-
     /**
      * Civil liability for oil certificate (794)
      *
@@ -896,35 +789,30 @@ class ZugferdDocumentType
      * on a vessel.
      */
     public const CIVIL_LIABILITY_FOR_OIL_CERTIFICATE = '794';
-
     /**
      * Civil status document (768)
      *
      * Document which confirms the civil status of a person.
      */
     public const CIVIL_STATUS_DOCUMENT = '768';
-
     /**
      * Claim history certificate (831)
      *
      * Document which certifies the history of claims.
      */
     public const CLAIM_HISTORY_CERTIFICATE = '831';
-
     /**
      * Claim notification (817)
      *
      * Document notifying a claim.
      */
     public const CLAIM_NOTIFICATION = '817';
-
     /**
      * Close of claim (827)
      *
      * Document reporting the closing of a claim file.
      */
     public const CLOSE_OF_CLAIM = '827';
-
     /**
      * Closing statement of an account (56)
      *
@@ -932,7 +820,6 @@ class ZugferdDocumentType
      * final balance of the last entry date.
      */
     public const CLOSING_STATEMENT_OF_AN_ACCOUNT = '56';
-
     /**
      * Co-insurance ceding bordereau (329)
      *
@@ -940,14 +827,12 @@ class ZugferdDocumentType
      * information.
      */
     public const COINSURANCE_CEDING_BORDEREAU = '329';
-
     /**
      * Code change request (273)
      *
      * Request a change to an existing code.
      */
     public const CODE_CHANGE_REQUEST = '273';
-
     /**
      * Collateral account (70)
      *
@@ -955,7 +840,6 @@ class ZugferdDocumentType
      * credit notes and payments of a seller's account.
      */
     public const COLLATERAL_ACCOUNT = '70';
-
     /**
      * Collection order (447)
      *
@@ -965,7 +849,6 @@ class ZugferdDocumentType
      * be specified.
      */
     public const COLLECTION_ORDER = '447';
-
     /**
      * Collection payment advice (425)
      *
@@ -973,7 +856,6 @@ class ZugferdDocumentType
      * giving details and methods of funds disposal.
      */
     public const COLLECTION_PAYMENT_ADVICE = '425';
-
     /**
      * Combined certificate of value and origin (17)
      *
@@ -983,7 +865,6 @@ class ZugferdDocumentType
      * the purpose of determining the customs origin.
      */
     public const COMBINED_CERTIFICATE_OF_VALUE_AND_ORIGIN = '17';
-
     /**
      * Combined transport bill of lading/multimodal bill of lading (766)
      *
@@ -993,7 +874,6 @@ class ZugferdDocumentType
      * contract.
      */
     public const COMBINED_TRANSPORT_BILL_OF_LADINGMULTIMODAL_BILL_OF_LADING = '766';
-
     /**
      * Combined transport document (generic) (764)
      *
@@ -1006,7 +886,6 @@ class ZugferdDocumentType
      * Document (ICC Brochure No. 298)".
      */
     public const COMBINED_TRANSPORT_DOCUMENT_GENERIC = '764';
-
     /**
      * Commercial account summary (731)
      *
@@ -1014,7 +893,6 @@ class ZugferdDocumentType
      * made and outstanding items on an account over a period of time.
      */
     public const COMMERCIAL_ACCOUNT_SUMMARY = '731';
-
     /**
      * Commercial account summary response (397)
      *
@@ -1022,7 +900,6 @@ class ZugferdDocumentType
      * summary message.
      */
     public const COMMERCIAL_ACCOUNT_SUMMARY_RESPONSE = '397';
-
     /**
      * Commercial dispute (67)
      *
@@ -1030,7 +907,6 @@ class ZugferdDocumentType
      * or more invoices or one or more credit notes are disputed for payment.
      */
     public const COMMERCIAL_DISPUTE = '67';
-
     /**
      * Commercial invoice (380)
      *
@@ -1038,14 +914,12 @@ class ZugferdDocumentType
      * under conditions agreed between seller and buyer.
      */
     public const COMMERCIAL_INVOICE = '380';
-
     /**
      * Commercial invoice which includes a packing list (331)
      *
      * Commercial transaction (invoice) will include a packing list.
      */
     public const COMMERCIAL_INVOICE_WHICH_INCLUDES_A_PACKING_LIST = '331';
-
     /**
      * Commission note (382)
      *
@@ -1054,7 +928,6 @@ class ZugferdDocumentType
      * the calculation of the commission to which a sales agent is entitled.
      */
     public const COMMISSION_NOTE = '382';
-
     /**
      * Communication from opposite party (845)
      *
@@ -1062,21 +935,18 @@ class ZugferdDocumentType
      * legal action.
      */
     public const COMMUNICATION_FROM_OPPOSITE_PARTY = '845';
-
     /**
      * Composite data element change request (277)
      *
      * Request a change to an existing composite data element.
      */
     public const COMPOSITE_DATA_ELEMENT_CHANGE_REQUEST = '277';
-
     /**
      * Composite data element request (276)
      *
      * Requesting a new composite data element.
      */
     public const COMPOSITE_DATA_ELEMENT_REQUEST = '276';
-
     /**
      * Consignment despatch advice (748)
      *
@@ -1085,7 +955,6 @@ class ZugferdDocumentType
      * with agreement on payment when goods are sold out of this stock).
      */
     public const CONSIGNMENT_DESPATCH_ADVICE = '748';
-
     /**
      * Consignment invoice (395)
      *
@@ -1093,7 +962,6 @@ class ZugferdDocumentType
      * sale.
      */
     public const CONSIGNMENT_INVOICE = '395';
-
     /**
      * Consignment order (227)
      *
@@ -1101,14 +969,12 @@ class ZugferdDocumentType
      * sold out of this stock.
      */
     public const CONSIGNMENT_ORDER = '227';
-
     /**
      * Consignment status report (77)
      *
      * Message covers information about the consignment status.
      */
     public const CONSIGNMENT_STATUS_REPORT = '77';
-
     /**
      * Consignment unpack report (88)
      *
@@ -1116,7 +982,6 @@ class ZugferdDocumentType
      * consignment unpack report only.
      */
     public const CONSIGNMENT_UNPACK_REPORT = '88';
-
     /**
      * Consolidated credit note - goods and services (262)
      *
@@ -1124,7 +989,6 @@ class ZugferdDocumentType
      * involving more than one invoice.
      */
     public const CONSOLIDATED_CREDIT_NOTE_GOODS_AND_SERVICES = '262';
-
     /**
      * Consolidated invoice (385)
      *
@@ -1132,7 +996,6 @@ class ZugferdDocumentType
      * one vendor.
      */
     public const CONSOLIDATED_INVOICE = '385';
-
     /**
      * Consular invoice (870)
      *
@@ -1142,14 +1005,12 @@ class ZugferdDocumentType
      * of the goods described therein.
      */
     public const CONSULAR_INVOICE = '870';
-
     /**
      * Container discharge list (25)
      *
      * Message/document itemising containers to be discharged from vessel.
      */
     public const CONTAINER_DISCHARGE_LIST = '25';
-
     /**
      * Container list (235)
      *
@@ -1157,7 +1018,6 @@ class ZugferdDocumentType
      * they are responsible.
      */
     public const CONTAINER_LIST = '235';
-
     /**
      * Container manifest (unit packing list) (788)
      *
@@ -1166,35 +1026,30 @@ class ZugferdDocumentType
      * loading into the container or unit.
      */
     public const CONTAINER_MANIFEST_UNIT_PACKING_LIST = '788';
-
     /**
      * Container off-hire notice (169)
      *
      * Notice to return leased containers.
      */
     public const CONTAINER_OFFHIRE_NOTICE = '169';
-
     /**
      * Container stripping order (183)
      *
      * Order to unload goods from a container.
      */
     public const CONTAINER_STRIPPING_ORDER = '183';
-
     /**
      * Container stuffing order (184)
      *
      * Order to stuff specified goods or consignments in a container.
      */
     public const CONTAINER_STUFFING_ORDER = '184';
-
     /**
      * Container transfer note (976)
      *
      * Document for the carriage of containers. Syn: transfer note.
      */
     public const CONTAINER_TRANSFER_NOTE = '976';
-
     /**
      * Contract (315)
      *
@@ -1203,7 +1058,6 @@ class ZugferdDocumentType
      * those of an order followed by an acknowledgement of order.
      */
     public const CONTRACT = '315';
-
     /**
      * Contract bill of quantities - BOQ (207)
      *
@@ -1212,21 +1066,18 @@ class ZugferdDocumentType
      * means: Bill of quantity.
      */
     public const CONTRACT_BILL_OF_QUANTITIES_BOQ = '207';
-
     /**
      * Contract clauses (776)
      *
      * Document specifying the clauses applying to a contract.
      */
     public const CONTRACT_CLAUSES = '776';
-
     /**
      * Contract Funds Status Report (CFSR) (161)
      *
      * A report to provide the status of funds applicable to the contract.
      */
     public const CONTRACT_FUNDS_STATUS_REPORT_CFSR = '161';
-
     /**
      * Contract price and delivery quote (365)
      *
@@ -1234,7 +1085,6 @@ class ZugferdDocumentType
      * delivery conditions under which goods are offered.
      */
     public const CONTRACT_PRICE_AND_DELIVERY_QUOTE = '365';
-
     /**
      * Contract price quote (364)
      *
@@ -1242,7 +1092,6 @@ class ZugferdDocumentType
      * are offered.
      */
     public const CONTRACT_PRICE_QUOTE = '364';
-
     /**
      * Contract security classification specification (166)
      *
@@ -1250,7 +1099,6 @@ class ZugferdDocumentType
      * classification requirements for a contract.
      */
     public const CONTRACT_SECURITY_CLASSIFICATION_SPECIFICATION = '166';
-
     /**
      * Control document T5 (823)
      *
@@ -1259,7 +1107,6 @@ class ZugferdDocumentType
      * contract etc.
      */
     public const CONTROL_DOCUMENT_T = '823';
-
     /**
      * Convention on International Trade in Endangered Species of Wild Fauna and
      * Flora (CITES) Certificate (626)
@@ -1268,35 +1115,30 @@ class ZugferdDocumentType
      * the CITES convention.
      */
     public const CONVENTION_ON_INTERNATIONAL_TRADE_IN_ENDANGERED_SPECIES_OF_WILD_FAUNA_AND_FLORA_CITES_CERTIFICATE = '626';
-
     /**
      * Conveyance declaration (874)
      *
      * Declaration of the conveyance to a public authority.
      */
     public const CONVEYANCE_DECLARATION = '874';
-
     /**
      * Conveyance declaration (arrival) (185)
      *
      * Declaration to the public authority upon arrival of the conveyance.
      */
     public const CONVEYANCE_DECLARATION_ARRIVAL = '185';
-
     /**
      * Conveyance declaration (combined) (187)
      *
      * Combined declaration of arrival and departure to the public authority.
      */
     public const CONVEYANCE_DECLARATION_COMBINED = '187';
-
     /**
      * Conveyance declaration (departure) (186)
      *
      * Declaration to the public authority upon departure of the conveyance.
      */
     public const CONVEYANCE_DECLARATION_DEPARTURE = '186';
-
     /**
      * Copy accounting voucher (534)
      *
@@ -1304,7 +1146,6 @@ class ZugferdDocumentType
      * copy.
      */
     public const COPY_ACCOUNTING_VOUCHER = '534';
-
     /**
      * Corporate superannuation contributions advice (26)
      *
@@ -1312,14 +1153,12 @@ class ZugferdDocumentType
      * superannuation schemes.
      */
     public const CORPORATE_SUPERANNUATION_CONTRIBUTIONS_ADVICE = '26';
-
     /**
      * Corporate superannuation member maintenance message (28)
      *
      * Member maintenance message used for corporate superannuation schemes.
      */
     public const CORPORATE_SUPERANNUATION_MEMBER_MAINTENANCE_MESSAGE = '28';
-
     /**
      * Corrected invoice (384)
      *
@@ -1327,21 +1166,18 @@ class ZugferdDocumentType
      * earlier submission of the same invoice.
      */
     public const CORRECTED_INVOICE = '384';
-
     /**
      * Cost data summary (158)
      *
      * A document indicating a summary of cost data.
      */
     public const COST_DATA_SUMMARY = '158';
-
     /**
      * Cost performance report (304)
      *
      * A report to convey cost performance data for a project or contract.
      */
     public const COST_PERFORMANCE_REPORT = '304';
-
     /**
      * Cost Performance Report (CPR) format 5 (180)
      *
@@ -1349,7 +1185,6 @@ class ZugferdDocumentType
      * cost or schedule variances (format 5 - explanations and problem analysis).
      */
     public const COST_PERFORMANCE_REPORT_CPR_FORMAT = '180';
-
     /**
      * Cost Schedule Status Report (CSSR) (176)
      *
@@ -1357,14 +1192,12 @@ class ZugferdDocumentType
      * contract.
      */
     public const COST_SCHEDULE_STATUS_REPORT_CSSR = '176';
-
     /**
      * Court judgment (854)
      *
      * Document specifying a judgment of a court.
      */
     public const COURT_JUDGMENT = '854';
-
     /**
      * Cover note (580)
      *
@@ -1372,14 +1205,12 @@ class ZugferdDocumentType
      * notify the insured that his insurance have been carried out.
      */
     public const COVER_NOTE = '580';
-
     /**
      * Coverage confirmation note (773)
      *
      * Document confirming that insurance coverage is granted.
      */
     public const COVERAGE_CONFIRMATION_NOTE = '773';
-
     /**
      * Credit advice (454)
      *
@@ -1389,7 +1220,6 @@ class ZugferdDocumentType
      * indicated.
      */
     public const CREDIT_ADVICE = '454';
-
     /**
      * Credit cover (65)
      *
@@ -1397,7 +1227,6 @@ class ZugferdDocumentType
      * buyer, or by a seller to request a factor's credit cover.
      */
     public const CREDIT_COVER = '65';
-
     /**
      * Credit note (381)
      *
@@ -1405,14 +1234,12 @@ class ZugferdDocumentType
      * party.
      */
     public const CREDIT_NOTE = '381';
-
     /**
      * Credit note for price variation (296)
      *
      * A credit note which is issued against a price variation invoice.
      */
     public const CREDIT_NOTE_FOR_PRICE_VARIATION = '296';
-
     /**
      * Credit note related to financial adjustments (83)
      *
@@ -1420,7 +1247,6 @@ class ZugferdDocumentType
      * adjustments to the relevant party, e.g., bonuses.
      */
     public const CREDIT_NOTE_RELATED_TO_FINANCIAL_ADJUSTMENTS = '83';
-
     /**
      * Credit note related to goods or services (81)
      *
@@ -1428,14 +1254,12 @@ class ZugferdDocumentType
      * transaction for goods or services to the relevant party.
      */
     public const CREDIT_NOTE_RELATED_TO_GOODS_OR_SERVICES = '81';
-
     /**
      * Crew list declaration (250)
      *
      * Declaration regarding crew members aboard the conveyance.
      */
     public const CREW_LIST_DECLARATION = '250';
-
     /**
      * Crew's effects declaration (744)
      *
@@ -1443,7 +1267,6 @@ class ZugferdDocumentType
      * aboard the conveyance; equivalent to IMO FAL 4.
      */
     public const CREWS_EFFECTS_DECLARATION = '744';
-
     /**
      * Cross docking despatch advice (398)
      *
@@ -1452,14 +1275,12 @@ class ZugferdDocumentType
      * docking.
      */
     public const CROSS_DOCKING_DESPATCH_ADVICE = '398';
-
     /**
      * Cross docking services order (237)
      *
      * A document or message to order cross docking services.
      */
     public const CROSS_DOCKING_SERVICES_ORDER = '237';
-
     /**
      * Current account (66)
      *
@@ -1467,21 +1288,18 @@ class ZugferdDocumentType
      * seller's or another factor's account with him.
      */
     public const CURRENT_ACCOUNT = '66';
-
     /**
      * Customer payment order(s) (248)
      *
      * The message contains customer payment order(s).
      */
     public const CUSTOMER_PAYMENT_ORDERS = '248';
-
     /**
      * Customs clearance notice (132)
      *
      * Notification of customs clearance of cargo or items of transport equipment.
      */
     public const CUSTOMS_CLEARANCE_NOTICE = '132';
-
     /**
      * Customs crew and conveyance (336)
      *
@@ -1489,7 +1307,6 @@ class ZugferdDocumentType
      * conveyance.
      */
     public const CUSTOMS_CREW_AND_CONVEYANCE = '336';
-
     /**
      * Customs declaration (post parcels) (936)
      *
@@ -1498,28 +1315,24 @@ class ZugferdDocumentType
      * parcels and in which the contents of such parcels are specified.
      */
     public const CUSTOMS_DECLARATION_POST_PARCELS = '936';
-
     /**
      * Customs declaration for cargo examination (333)
      *
      * Declaration provided to customs for cargo examination.
      */
     public const CUSTOMS_DECLARATION_FOR_CARGO_EXAMINATION = '333';
-
     /**
      * Customs declaration for cargo examination, alternate (334)
      *
      * Alternate declaration provided to customs for cargo examination.
      */
     public const CUSTOMS_DECLARATION_FOR_CARGO_EXAMINATION_ALTERNATE = '334';
-
     /**
      * Customs declaration for TIR Carnet goods (587)
      *
      * A Customs declaration in which goods move under cover of TIR Carnets.
      */
     public const CUSTOMS_DECLARATION_FOR_TIR_CARNET_GOODS = '587';
-
     /**
      * Customs declaration with commercial and item detail (914)
      *
@@ -1527,7 +1340,6 @@ class ZugferdDocumentType
      * item detail sections of the message.
      */
     public const CUSTOMS_DECLARATION_WITH_COMMERCIAL_AND_ITEM_DETAIL = '914';
-
     /**
      * Customs declaration without commercial detail (913)
      *
@@ -1535,7 +1347,6 @@ class ZugferdDocumentType
      * section of the message.
      */
     public const CUSTOMS_DECLARATION_WITHOUT_COMMERCIAL_DETAIL = '913';
-
     /**
      * Customs declaration without item detail (915)
      *
@@ -1543,7 +1354,6 @@ class ZugferdDocumentType
      * of the message.
      */
     public const CUSTOMS_DECLARATION_WITHOUT_ITEM_DETAIL = '915';
-
     /**
      * Customs delivery note (932)
      *
@@ -1552,7 +1362,6 @@ class ZugferdDocumentType
      * Customs release note.
      */
     public const CUSTOMS_DELIVERY_NOTE = '932';
-
     /**
      * Customs documents expiration notice (133)
      *
@@ -1560,7 +1369,6 @@ class ZugferdDocumentType
      * items of transport equipment.
      */
     public const CUSTOMS_DOCUMENTS_EXPIRATION_NOTICE = '133';
-
     /**
      * Customs immediate release declaration (931)
      *
@@ -1570,7 +1378,6 @@ class ZugferdDocumentType
      * requesting authorization to do so.
      */
     public const CUSTOMS_IMMEDIATE_RELEASE_DECLARATION = '931';
-
     /**
      * Customs invoice (935)
      *
@@ -1581,7 +1388,6 @@ class ZugferdDocumentType
      * Customs value in the importing country of goods consigned to that country.
      */
     public const CUSTOMS_INVOICE = '935';
-
     /**
      * Customs manifest (85)
      *
@@ -1590,14 +1396,12 @@ class ZugferdDocumentType
      * presented to customs for formal report of cargo.
      */
     public const CUSTOMS_MANIFEST = '85';
-
     /**
      * Customs summary declaration with commercial detail, alternate (337)
      *
      * Alternate Customs declaration summary with commercial transaction details.
      */
     public const CUSTOMS_SUMMARY_DECLARATION_WITH_COMMERCIAL_DETAIL_ALTERNATE = '337';
-
     /**
      * Customs summary declaration without commercial detail, alternate (355)
      *
@@ -1605,7 +1409,6 @@ class ZugferdDocumentType
      * details.
      */
     public const CUSTOMS_SUMMARY_DECLARATION_WITHOUT_COMMERCIAL_DETAIL_ALTERNATE = '355';
-
     /**
      * Damage certification (49)
      *
@@ -1613,7 +1416,6 @@ class ZugferdDocumentType
      * been discovered.
      */
     public const DAMAGE_CERTIFICATION = '49';
-
     /**
      * Dangerous goods declaration (890)
      *
@@ -1624,14 +1426,12 @@ class ZugferdDocumentType
      * regulations.
      */
     public const DANGEROUS_GOODS_DECLARATION = '890';
-
     /**
      * Dangerous goods list (298)
      *
      * Listing of all details of dangerous goods carried.
      */
     public const DANGEROUS_GOODS_LIST = '298';
-
     /**
      * Dangerous Goods Notification for non-tanker vessel (523)
      *
@@ -1639,14 +1439,12 @@ class ZugferdDocumentType
      * liquid cargo.
      */
     public const DANGEROUS_GOODS_NOTIFICATION_FOR_NONTANKER_VESSEL = '523';
-
     /**
      * Dangerous Goods Notification for Tanker vessel (522)
      *
      * Dangerous Goods Notification for a vessel carrying liquid cargo in bulk.
      */
     public const DANGEROUS_GOODS_NOTIFICATION_FOR_TANKER_VESSEL = '522';
-
     /**
      * Data Plot Sheet (415)
      *
@@ -1654,28 +1452,24 @@ class ZugferdDocumentType
      * crop production.
      */
     public const DATA_PLOT_SHEET = '415';
-
     /**
      * Data protection regulations statement (868)
      *
      * Document specifying the terms of data protection regulations.
      */
     public const DATA_PROTECTION_REGULATIONS_STATEMENT = '868';
-
     /**
      * Debit advice (456)
      *
      * Advice on a debit.
      */
     public const DEBIT_ADVICE = '456';
-
     /**
      * Debit note (383)
      *
      * Document/message for providing debit information to the relevant party.
      */
     public const DEBIT_NOTE = '383';
-
     /**
      * Debit note related to financial adjustments (84)
      *
@@ -1683,7 +1477,6 @@ class ZugferdDocumentType
      * adjustments to the relevant party.
      */
     public const DEBIT_NOTE_RELATED_TO_FINANCIAL_ADJUSTMENTS = '84';
-
     /**
      * Debit note related to goods or services (80)
      *
@@ -1691,7 +1484,6 @@ class ZugferdDocumentType
      * relevant party.
      */
     public const DEBIT_NOTE_RELATED_TO_GOODS_OR_SERVICES = '80';
-
     /**
      * Declaration for radioactive material (654)
      *
@@ -1699,14 +1491,12 @@ class ZugferdDocumentType
      * material moves cross-border.
      */
     public const DECLARATION_FOR_RADIOACTIVE_MATERIAL = '654';
-
     /**
      * Declaration of final beneficiary (813)
      *
      * Declaration document to identify the final beneficiary of an asset.
      */
     public const DECLARATION_OF_FINAL_BENEFICIARY = '813';
-
     /**
      * Declaration of origin (862)
      *
@@ -1716,28 +1506,24 @@ class ZugferdDocumentType
      * relating to the goods (CCC).
      */
     public const DECLARATION_OF_ORIGIN = '862';
-
     /**
      * Declaration regarding the inward and outward movement of vessel (349)
      *
      * Document to declare inward and outward movement of a vessel.
      */
     public const DECLARATION_REGARDING_THE_INWARD_AND_OUTWARD_MOVEMENT_OF_VESSEL = '349';
-
     /**
      * Delcredere credit note (308)
      *
      * A credit note sent to the party paying on behalf of a number of buyers.
      */
     public const DELCREDERE_CREDIT_NOTE = '308';
-
     /**
      * Delcredere invoice (390)
      *
      * An invoice sent to the party paying for a number of buyers.
      */
     public const DELCREDERE_INVOICE = '390';
-
     /**
      * Delivery forecast (236)
      *
@@ -1745,21 +1531,18 @@ class ZugferdDocumentType
      * requirements.
      */
     public const DELIVERY_FORECAST = '236';
-
     /**
      * Delivery instructions (240)
      *
      * (1174) Document/message giving instruction regarding the delivery of goods.
      */
     public const DELIVERY_INSTRUCTIONS = '240';
-
     /**
      * Delivery just-in-time (242)
      *
      * Usage of DELJIT-message.
      */
     public const DELIVERY_JUSTINTIME = '242';
-
     /**
      * Delivery note (270)
      *
@@ -1767,7 +1550,6 @@ class ZugferdDocumentType
      * about contents of this consignment.
      */
     public const DELIVERY_NOTE = '270';
-
     /**
      * Delivery notice (goods) (784)
      *
@@ -1775,7 +1557,6 @@ class ZugferdDocumentType
      * at his request of the actual date of delivery of the goods.
      */
     public const DELIVERY_NOTICE_GOODS = '784';
-
     /**
      * Delivery notice (rail transport) (746)
      *
@@ -1785,7 +1566,6 @@ class ZugferdDocumentType
      * The document must be returned to the consignor or to the departure station.
      */
     public const DELIVERY_NOTICE_RAIL_TRANSPORT = '746';
-
     /**
      * Delivery order (640)
      *
@@ -1794,14 +1574,12 @@ class ZugferdDocumentType
      * custodian of the goods.
      */
     public const DELIVERY_ORDER = '640';
-
     /**
      * Delivery point list. (440)
      *
      * A list of delivery point addresses.
      */
     public const DELIVERY_POINT_LIST = '440';
-
     /**
      * Delivery quote (362)
      *
@@ -1809,7 +1587,6 @@ class ZugferdDocumentType
      * offered.
      */
     public const DELIVERY_QUOTE = '362';
-
     /**
      * Delivery release (245)
      *
@@ -1817,14 +1594,12 @@ class ZugferdDocumentType
      * receipt of the Ready for despatch advice from the seller.
      */
     public const DELIVERY_RELEASE = '245';
-
     /**
      * Delivery schedule (241)
      *
      * Usage of DELFOR-message.
      */
     public const DELIVERY_SCHEDULE = '241';
-
     /**
      * Delivery schedule response (291)
      *
@@ -1832,7 +1607,6 @@ class ZugferdDocumentType
      * schedule.
      */
     public const DELIVERY_SCHEDULE_RESPONSE = '291';
-
     /**
      * Delivery verification certificate (901)
      *
@@ -1840,14 +1614,12 @@ class ZugferdDocumentType
      * certifies that goods have been delivered.
      */
     public const DELIVERY_VERIFICATION_CERTIFICATE = '901';
-
     /**
      * Derat document (796)
      *
      * Document certifying that a ship is free of rats, valid to a specified date.
      */
     public const DERAT_DOCUMENT = '796';
-
     /**
      * Deratting exemption certificate (488)
      *
@@ -1855,7 +1627,6 @@ class ZugferdDocumentType
      * that it is exempt from a deratting statement.
      */
     public const DERATTING_EXEMPTION_CERTIFICATE = '488';
-
     /**
      * Despatch advice (351)
      *
@@ -1863,7 +1634,6 @@ class ZugferdDocumentType
      * consignee about the despatch of goods.
      */
     public const DESPATCH_ADVICE = '351';
-
     /**
      * Despatch note (post parcels) (750)
      *
@@ -1872,7 +1642,6 @@ class ZugferdDocumentType
      * parcels.
      */
     public const DESPATCH_NOTE_POST_PARCELS = '750';
-
     /**
      * Despatch note model T2 (822)
      *
@@ -1880,7 +1649,6 @@ class ZugferdDocumentType
      * European Union (EU) country.
      */
     public const DESPATCH_NOTE_MODEL_T = '822';
-
     /**
      * Despatch note model T2L (825)
      *
@@ -1890,7 +1658,6 @@ class ZugferdDocumentType
      * delivery point.
      */
     public const DESPATCH_NOTE_MODEL_TL = '825';
-
     /**
      * Despatch order (350)
      *
@@ -1898,7 +1665,6 @@ class ZugferdDocumentType
      * buyer (consignee).
      */
     public const DESPATCH_ORDER = '350';
-
     /**
      * Direct debit authorisation (838)
      *
@@ -1906,7 +1672,6 @@ class ZugferdDocumentType
      * authorizing party.
      */
     public const DIRECT_DEBIT_AUTHORISATION = '838';
-
     /**
      * Direct delivery (transport) (494)
      *
@@ -1914,7 +1679,6 @@ class ZugferdDocumentType
      * means of transport into another means of transport in one movement.
      */
     public const DIRECT_DELIVERY_TRANSPORT = '494';
-
     /**
      * Direct payment valuation (202)
      *
@@ -1922,14 +1686,12 @@ class ZugferdDocumentType
      * owner, in order that a direct payment be made to a subcontractor.
      */
     public const DIRECT_PAYMENT_VALUATION = '202';
-
     /**
      * Direct payment valuation request (201)
      *
      * Request to establish a direct payment valuation.
      */
     public const DIRECT_PAYMENT_VALUATION_REQUEST = '201';
-
     /**
      * Document for establishing the Customs Status of goods for San Marino
      * (T2LSM) (586)
@@ -1939,7 +1701,6 @@ class ZugferdDocumentType
      * ("T2LSM" under EU Legislation).
      */
     public const DOCUMENT_FOR_ESTABLISHING_THE_CUSTOMS_STATUS_OF_GOODS_FOR_SAN_MARINO_TLSM = '586';
-
     /**
      * Document response (Customs) (962)
      *
@@ -1947,7 +1708,6 @@ class ZugferdDocumentType
      * the transmitter of the previous message.
      */
     public const DOCUMENT_RESPONSE_CUSTOMS = '962';
-
     /**
      * Documentary credit (465)
      *
@@ -1958,7 +1718,6 @@ class ZugferdDocumentType
      * The credit may or may not be confirmed by another bank.
      */
     public const DOCUMENTARY_CREDIT = '465';
-
     /**
      * Documentary credit acceptance advice (427)
      *
@@ -1966,7 +1725,6 @@ class ZugferdDocumentType
      * credit.
      */
     public const DOCUMENTARY_CREDIT_ACCEPTANCE_ADVICE = '427';
-
     /**
      * Documentary credit amendment (469)
      *
@@ -1974,14 +1732,12 @@ class ZugferdDocumentType
      * amendment to the terms and conditions of a documentary credit.
      */
     public const DOCUMENTARY_CREDIT_AMENDMENT = '469';
-
     /**
      * Documentary credit amendment information (197)
      *
      * Documentary credit amendment information.
      */
     public const DOCUMENTARY_CREDIT_AMENDMENT_INFORMATION = '197';
-
     /**
      * Documentary credit amendment notification (468)
      *
@@ -1989,7 +1745,6 @@ class ZugferdDocumentType
      * documentary credit have been amended.
      */
     public const DOCUMENTARY_CREDIT_AMENDMENT_NOTIFICATION = '468';
-
     /**
      * Documentary credit application (460)
      *
@@ -1997,21 +1752,18 @@ class ZugferdDocumentType
      * on the conditions specified therein.
      */
     public const DOCUMENTARY_CREDIT_APPLICATION = '460';
-
     /**
      * Documentary credit collection instruction (195)
      *
      * Instruction for the collection of the documentary credit.
      */
     public const DOCUMENTARY_CREDIT_COLLECTION_INSTRUCTION = '195';
-
     /**
      * Documentary credit issuance information (200)
      *
      * Provides information on documentary credit issuance.
      */
     public const DOCUMENTARY_CREDIT_ISSUANCE_INFORMATION = '200';
-
     /**
      * Documentary credit letter of indemnity (431)
      *
@@ -2021,7 +1773,6 @@ class ZugferdDocumentType
      * interest and charges accrued.
      */
     public const DOCUMENTARY_CREDIT_LETTER_OF_INDEMNITY = '431';
-
     /**
      * Documentary credit negotiation advice (428)
      *
@@ -2029,7 +1780,6 @@ class ZugferdDocumentType
      * credit.
      */
     public const DOCUMENTARY_CREDIT_NEGOTIATION_ADVICE = '428';
-
     /**
      * Documentary credit notification (466)
      *
@@ -2037,14 +1787,12 @@ class ZugferdDocumentType
      * documentary credit to a beneficiary, or to another advising bank.
      */
     public const DOCUMENTARY_CREDIT_NOTIFICATION = '466';
-
     /**
      * Documentary credit payment advice (426)
      *
      * Document/message whereby a bank advises payment under a documentary credit.
      */
     public const DOCUMENTARY_CREDIT_PAYMENT_ADVICE = '426';
-
     /**
      * Documentary credit transfer advice (467)
      *
@@ -2052,7 +1800,6 @@ class ZugferdDocumentType
      * is being or has been transferred in favour of a second beneficiary.
      */
     public const DOCUMENTARY_CREDIT_TRANSFER_ADVICE = '467';
-
     /**
      * Documents presentation form (448)
      *
@@ -2061,7 +1808,6 @@ class ZugferdDocumentType
      * payment or collection, whether or not against a documentary credit.
      */
     public const DOCUMENTS_PRESENTATION_FORM = '448';
-
     /**
      * Draft bill of quantity (194)
      *
@@ -2069,14 +1815,12 @@ class ZugferdDocumentType
      * form.
      */
     public const DRAFT_BILL_OF_QUANTITY = '194';
-
     /**
      * Drawing (174)
      *
      * The document or message is a drawing.
      */
     public const DRAWING = '174';
-
     /**
      * Driving licence (international) (41)
      *
@@ -2084,7 +1828,6 @@ class ZugferdDocumentType
      * vehicle in certain other countries.
      */
     public const DRIVING_LICENCE_INTERNATIONAL = '41';
-
     /**
      * Driving licence (national) (40)
      *
@@ -2092,7 +1835,6 @@ class ZugferdDocumentType
      * country.
      */
     public const DRIVING_LICENCE_NATIONAL = '40';
-
     /**
      * Drug shelf life study report (647)
      *
@@ -2102,7 +1844,6 @@ class ZugferdDocumentType
      * specifications; its identity, strength, quality and purity.
      */
     public const DRUG_SHELF_LIFE_STUDY_REPORT = '647';
-
     /**
      * Duty suspended goods (974)
      *
@@ -2110,7 +1851,6 @@ class ZugferdDocumentType
      * duty-suspended basis.
      */
     public const DUTY_SUSPENDED_GOODS = '974';
-
     /**
      * EC carnet (953)
      *
@@ -2118,7 +1858,6 @@ class ZugferdDocumentType
      * and/or temporary user of goods within the EC.
      */
     public const EC_CARNET = '953';
-
     /**
      * EDI associated object administration message (344)
      *
@@ -2126,35 +1865,30 @@ class ZugferdDocumentType
      * associated object.
      */
     public const EDI_ASSOCIATED_OBJECT_ADMINISTRATION_MESSAGE = '344';
-
     /**
      * Embargo permit (941)
      *
      * Document/message giving the permission to export specified goods.
      */
     public const EMBARGO_PERMIT = '941';
-
     /**
      * Empty container bill (708)
      *
      * Bill of lading indicating an empty container.
      */
     public const EMPTY_CONTAINER_BILL = '708';
-
     /**
      * Empty container disposition order (144)
      *
      * Order to make available empty containers.
      */
     public const EMPTY_CONTAINER_DISPOSITION_ORDER = '144';
-
     /**
      * End use authorization (990)
      *
      * Document issued by Customs granting the end-use Customs procedure.
      */
     public const END_USE_AUTHORIZATION = '990';
-
     /**
      * Enquiry (210)
      *
@@ -2164,7 +1898,6 @@ class ZugferdDocumentType
      * obtaining an offer.
      */
     public const ENQUIRY = '210';
-
     /**
      * Error response (Customs) (963)
      *
@@ -2172,7 +1905,6 @@ class ZugferdDocumentType
      * transmitter of the previous message.
      */
     public const ERROR_RESPONSE_CUSTOMS = '963';
-
     /**
      * Escort official recognition (723)
      *
@@ -2181,7 +1913,6 @@ class ZugferdDocumentType
      * is transported.
      */
     public const ESCORT_OFFICIAL_RECOGNITION = '723';
-
     /**
      * Estimated priced bill of quantity (193)
      *
@@ -2189,7 +1920,6 @@ class ZugferdDocumentType
      * quantity).
      */
     public const ESTIMATED_PRICED_BILL_OF_QUANTITY = '193';
-
     /**
      * EU Customs declaration for External Community Transit (T1) (578)
      *
@@ -2198,7 +1928,6 @@ class ZugferdDocumentType
      * and EC-EFTA "Transit Convention").
      */
     public const EU_CUSTOMS_DECLARATION_FOR_EXTERNAL_COMMUNITY_TRANSIT_T = '578';
-
     /**
      * EU Customs declaration for internal Community Transit (T2) (579)
      *
@@ -2207,7 +1936,6 @@ class ZugferdDocumentType
      * EC-EFTA "Transit Convention").
      */
     public const EU_CUSTOMS_DECLARATION_FOR_INTERNAL_COMMUNITY_TRANSIT_T = '579';
-
     /**
      * EU Customs declaration for internal transit to San Marino (T2SM) (582)
      *
@@ -2216,7 +1944,6 @@ class ZugferdDocumentType
      * Legislation).
      */
     public const EU_CUSTOMS_DECLARATION_FOR_INTERNAL_TRANSIT_TO_SAN_MARINO_TSM = '582';
-
     /**
      * EU Customs declaration for mixed consignments (T) (583)
      *
@@ -2225,7 +1952,6 @@ class ZugferdDocumentType
      * statuses, like "T1" and "T2") ("T" under EU Legislation).
      */
     public const EU_CUSTOMS_DECLARATION_FOR_MIXED_CONSIGNMENTS_T = '583';
-
     /**
      * EU Customs declaration for non-fiscal area internal Community Transit (T2F) (581)
      *
@@ -2236,7 +1962,6 @@ class ZugferdDocumentType
      * and between those territories. ("T2F" under EU Legislation).
      */
     public const EU_CUSTOMS_DECLARATION_FOR_NONFISCAL_AREA_INTERNAL_COMMUNITY_TRANSIT_TF = '581';
-
     /**
      * EU Document for establishing the Community status of goods (T2L) (584)
      *
@@ -2244,7 +1969,6 @@ class ZugferdDocumentType
      * Legislation).
      */
     public const EU_DOCUMENT_FOR_ESTABLISHING_THE_COMMUNITY_STATUS_OF_GOODS_TL = '584';
-
     /**
      * EU Document for establishing the Community status of goods for certain
      * fiscal purposes (T2LF) (585)
@@ -2256,7 +1980,6 @@ class ZugferdDocumentType
      * territories ("T2LF" under EU Legislation).
      */
     public const EU_DOCUMENT_FOR_ESTABLISHING_THE_COMMUNITY_STATUS_OF_GOODS_FOR_CERTAIN_FISCAL_PURPOSES_TLF = '585';
-
     /**
      * EUR 1 certificate of origin (954)
      *
@@ -2264,7 +1987,6 @@ class ZugferdDocumentType
      * countries and EC external countries.
      */
     public const EUR__CERTIFICATE_OF_ORIGIN = '954';
-
     /**
      * European Single Procurement Document (759)
      *
@@ -2272,7 +1994,6 @@ class ZugferdDocumentType
      * preliminary evidence during the tendering phase.
      */
     public const EUROPEAN_SINGLE_PROCUREMENT_DOCUMENT = '759';
-
     /**
      * European Single Procurement Document request (756)
      *
@@ -2280,14 +2001,12 @@ class ZugferdDocumentType
      * providing preliminary evidence during the tendering phase.
      */
     public const EUROPEAN_SINGLE_PROCUREMENT_DOCUMENT_REQUEST = '756';
-
     /**
      * Exceptional order (400)
      *
      * An order which falls outside the framework of an agreement.
      */
     public const EXCEPTIONAL_ORDER = '400';
-
     /**
      * Exchange control declaration (import) (927)
      *
@@ -2298,7 +2017,6 @@ class ZugferdDocumentType
      * control regulations in force.
      */
     public const EXCHANGE_CONTROL_DECLARATION_IMPORT = '927';
-
     /**
      * Exchange control declaration, export (812)
      *
@@ -2308,7 +2026,6 @@ class ZugferdDocumentType
      * payment and exchange control regulations in force.
      */
     public const EXCHANGE_CONTROL_DECLARATION_EXPORT = '812';
-
     /**
      * Excise certificate (100)
      *
@@ -2317,7 +2034,6 @@ class ZugferdDocumentType
      * in case of import traffic.
      */
     public const EXCISE_CERTIFICATE = '100';
-
     /**
      * Exclusive brokerage mandate (869)
      *
@@ -2325,7 +2041,6 @@ class ZugferdDocumentType
      * mandated broker.
      */
     public const EXCLUSIVE_BROKERAGE_MANDATE = '869';
-
     /**
      * Export licence (811)
      *
@@ -2334,7 +2049,6 @@ class ZugferdDocumentType
      * destination, etc. Synonym: Embargo permit.
      */
     public const EXPORT_LICENCE = '811';
-
     /**
      * Export licence, application for (810)
      *
@@ -2343,7 +2057,6 @@ class ZugferdDocumentType
      * quantity, country of destination, etc.
      */
     public const EXPORT_LICENCE_APPLICATION_FOR = '810';
-
     /**
      * Export price certificate (645)
      *
@@ -2351,7 +2064,6 @@ class ZugferdDocumentType
      * exportation stating the export price of the goods.
      */
     public const EXPORT_PRICE_CERTIFICATE = '645';
-
     /**
      * Extended credit advice (455)
      *
@@ -2362,7 +2074,6 @@ class ZugferdDocumentType
      * relevant remittance advice.
      */
     public const EXTENDED_CREDIT_ADVICE = '455';
-
     /**
      * Extended payment order (451)
      *
@@ -2373,7 +2084,6 @@ class ZugferdDocumentType
      * of one specified amount to the beneficiary.
      */
     public const EXTENDED_PAYMENT_ORDER = '451';
-
     /**
      * Extra-Community trade statistical declaration (47)
      *
@@ -2383,35 +2093,30 @@ class ZugferdDocumentType
      * with a country outside the European Union.
      */
     public const EXTRACOMMUNITY_TRADE_STATISTICAL_DECLARATION = '47';
-
     /**
      * Factored credit note (396)
      *
      * Credit note related to assigned invoice(s).
      */
     public const FACTORED_CREDIT_NOTE = '396';
-
     /**
      * Factored invoice (393)
      *
      * Invoice assigned to a third party for collection.
      */
     public const FACTORED_INVOICE = '393';
-
     /**
      * Farmyard manure analysis (417)
      *
      * Farmyard manure analysis document.
      */
     public const FARMYARD_MANURE_ANALYSIS = '417';
-
     /**
      * Federal label approval (11)
      *
      * A pre-approved document relating to federal label approval requirements.
      */
     public const FEDERAL_LABEL_APPROVAL = '11';
-
     /**
      * Final construction invoice (877)
      *
@@ -2419,7 +2124,6 @@ class ZugferdDocumentType
      * construction invoices in the context of a specific construction project.
      */
     public const FINAL_CONSTRUCTION_INVOICE = '877';
-
     /**
      * Final payment request based on completion of work (218)
      *
@@ -2427,14 +2131,12 @@ class ZugferdDocumentType
      * completion of all the work.
      */
     public const FINAL_PAYMENT_REQUEST_BASED_ON_COMPLETION_OF_WORK = '218';
-
     /**
      * First sample test report (8)
      *
      * Document/message describes the test report of the first sample.
      */
     public const FIRST_SAMPLE_TEST_REPORT = '8';
-
     /**
      * Food grade certificate (637)
      *
@@ -2442,7 +2144,6 @@ class ZugferdDocumentType
      * disinfectant and sanitizer) is suitable to be used in the food industry.
      */
     public const FOOD_GRADE_CERTIFICATE = '637';
-
     /**
      * Food packaging contact certificate (643)
      *
@@ -2450,7 +2151,6 @@ class ZugferdDocumentType
      * packaging product is safe to come into contact with food.
      */
     public const FOOD_PACKAGING_CONTACT_CERTIFICATE = '643';
-
     /**
      * Foreign exchange permit (926)
      *
@@ -2459,7 +2159,6 @@ class ZugferdDocumentType
      * for goods.
      */
     public const FOREIGN_EXCHANGE_PERMIT = '926';
-
     /**
      * Forwarder's advice to exporter (622)
      *
@@ -2467,7 +2166,6 @@ class ZugferdDocumentType
      * action taken in fulfillment of instructions received.
      */
     public const FORWARDERS_ADVICE_TO_EXPORTER = '622';
-
     /**
      * Forwarder's advice to import agent (621)
      *
@@ -2476,7 +2174,6 @@ class ZugferdDocumentType
      * goods described therein.
      */
     public const FORWARDERS_ADVICE_TO_IMPORT_AGENT = '621';
-
     /**
      * Forwarder's bill of lading (716)
      *
@@ -2486,7 +2183,6 @@ class ZugferdDocumentType
      * undertakes to deliver the goods to the consignee named in the document.
      */
     public const FORWARDERS_BILL_OF_LADING = '716';
-
     /**
      * Forwarder's certificate of receipt (624)
      *
@@ -2496,7 +2192,6 @@ class ZugferdDocumentType
      * disposal. E.g. FIATA-FCR.
      */
     public const FORWARDERS_CERTIFICATE_OF_RECEIPT = '624';
-
     /**
      * Forwarder's certificate of transport (763)
      *
@@ -2508,7 +2203,6 @@ class ZugferdDocumentType
      * E.g. FIATA-FCT.
      */
     public const FORWARDERS_CERTIFICATE_OF_TRANSPORT = '763';
-
     /**
      * Forwarder's invoice (623)
      *
@@ -2516,7 +2210,6 @@ class ZugferdDocumentType
      * costs incurred and claiming payment therefore.
      */
     public const FORWARDERS_INVOICE = '623';
-
     /**
      * Forwarder's warehouse receipt (631)
      *
@@ -2527,14 +2220,12 @@ class ZugferdDocumentType
      * holders-by-endorsement, transfer of ownership, etc. E.g. FIATA-FWR.
      */
     public const FORWARDERS_WAREHOUSE_RECEIPT = '631';
-
     /**
      * Forwarder’s credit note (532)
      *
      * Document/message for providing credit information to the relevant party.
      */
     public const FORWARDERS_CREDIT_NOTE = '532';
-
     /**
      * Forwarder’s invoice discrepancy report (553)
      *
@@ -2542,7 +2233,6 @@ class ZugferdDocumentType
      * forwarder.
      */
     public const FORWARDERS_INVOICE_DISCREPANCY_REPORT = '553';
-
     /**
      * Forwarding instructions (610)
      *
@@ -2551,7 +2241,6 @@ class ZugferdDocumentType
      * goods described therein.
      */
     public const FORWARDING_INSTRUCTIONS = '610';
-
     /**
      * Framework Agreement (539)
      *
@@ -2561,14 +2250,12 @@ class ZugferdDocumentType
      * regard to price and, where appropriate, the quantity envisaged.
      */
     public const FRAMEWORK_AGREEMENT = '539';
-
     /**
      * Free pass (42)
      *
      * A document giving free access to a service.
      */
     public const FREE_PASS = '42';
-
     /**
      * Free Sale Certificate in the Country of Origin (627)
      *
@@ -2576,7 +2263,6 @@ class ZugferdDocumentType
      * country of origin.
      */
     public const FREE_SALE_CERTIFICATE_IN_THE_COUNTRY_OF_ORIGIN = '627';
-
     /**
      * Freight invoice (780)
      *
@@ -2585,7 +2271,6 @@ class ZugferdDocumentType
      * payment.
      */
     public const FREIGHT_INVOICE = '780';
-
     /**
      * Freight manifest (786)
      *
@@ -2593,14 +2278,12 @@ class ZugferdDocumentType
      * additional details on freight amounts, charges, etc.
      */
     public const FREIGHT_MANIFEST = '786';
-
     /**
      * Fumigation certificate (267)
      *
      * Certificate attesting that fumigation has been performed.
      */
     public const FUMIGATION_CERTIFICATE = '267';
-
     /**
      * Gate pass (655)
      *
@@ -2608,7 +2291,6 @@ class ZugferdDocumentType
      * fenced-in port or terminal area.
      */
     public const GATE_PASS = '655';
-
     /**
      * General cargo summary manifest report (87)
      *
@@ -2616,14 +2298,12 @@ class ZugferdDocumentType
      * manifest information for general cargo.
      */
     public const GENERAL_CARGO_SUMMARY_MANIFEST_REPORT = '87';
-
     /**
      * General message (719)
      *
      * Document/message providing agreed textual information.
      */
     public const GENERAL_MESSAGE = '719';
-
     /**
      * General response (Customs) (961)
      *
@@ -2631,14 +2311,12 @@ class ZugferdDocumentType
      * transmitter of the previous message.
      */
     public const GENERAL_RESPONSE_CUSTOMS = '961';
-
     /**
      * General terms and conditions (774)
      *
      * Document specifying general terms and conditions.
      */
     public const GENERAL_TERMS_AND_CONDITIONS = '774';
-
     /**
      * Good Manufacturing Practice (GMP) Certificate (538)
      *
@@ -2646,7 +2324,6 @@ class ZugferdDocumentType
      * products, medications, cosmetics, etc.
      */
     public const GOOD_MANUFACTURING_PRACTICE_GMP_CERTIFICATE = '538';
-
     /**
      * Goods control certificate (841)
      *
@@ -2656,7 +2333,6 @@ class ZugferdDocumentType
      * specified in the contract.
      */
     public const GOODS_CONTROL_CERTIFICATE = '841';
-
     /**
      * Goods declaration for Customs transit (950)
      *
@@ -2665,7 +2341,6 @@ class ZugferdDocumentType
      * (CCC).
      */
     public const GOODS_DECLARATION_FOR_CUSTOMS_TRANSIT = '950';
-
     /**
      * Goods declaration for exportation (830)
      *
@@ -2675,7 +2350,6 @@ class ZugferdDocumentType
      * "for despatch" may have the same meaning as "for exportation".
      */
     public const GOODS_DECLARATION_FOR_EXPORTATION = '830';
-
     /**
      * Goods declaration for home use (930)
      *
@@ -2684,7 +2358,6 @@ class ZugferdDocumentType
      * convention (CCC).
      */
     public const GOODS_DECLARATION_FOR_HOME_USE = '930';
-
     /**
      * Goods declaration for importation (929)
      *
@@ -2692,7 +2365,6 @@ class ZugferdDocumentType
      * [sister entry of 830].
      */
     public const GOODS_DECLARATION_FOR_IMPORTATION = '929';
-
     /**
      * Goods receipt (632)
      *
@@ -2700,7 +2372,6 @@ class ZugferdDocumentType
      * indicate receiving conditions.
      */
     public const GOODS_RECEIPT = '632';
-
     /**
      * Goods receipt, carriage (702)
      *
@@ -2710,28 +2381,24 @@ class ZugferdDocumentType
      * document.
      */
     public const GOODS_RECEIPT_CARRIAGE = '702';
-
     /**
      * Government contract (991)
      *
      * Document/message describing a contract with a government authority.
      */
     public const GOVERNMENT_CONTRACT = '991';
-
     /**
      * Grant (151)
      *
      * A document indicating the granting of funds.
      */
     public const GRANT = '151';
-
     /**
      * Group insurance rules (778)
      *
      * Document stating the rules of a group insurance contract.
      */
     public const GROUP_INSURANCE_RULES = '778';
-
     /**
      * Group pension commitment information (816)
      *
@@ -2739,7 +2406,6 @@ class ZugferdDocumentType
      * person.
      */
     public const GROUP_PENSION_COMMITMENT_INFORMATION = '816';
-
     /**
      * Guarantee of cost acceptance (826)
      *
@@ -2747,7 +2413,6 @@ class ZugferdDocumentType
      * for costs of the addressee, e.g. the costs for repairing a vehicle.
      */
     public const GUARANTEE_OF_COST_ACCEPTANCE = '826';
-
     /**
      * Halal Slaughtering Certificate (589)
      *
@@ -2755,7 +2420,6 @@ class ZugferdDocumentType
      * accordance with Islamic laws and practices.
      */
     public const HALAL_SLAUGHTERING_CERTIFICATE = '589';
-
     /**
      * Handling order (650)
      *
@@ -2764,7 +2428,6 @@ class ZugferdDocumentType
      * of goods under their care.
      */
     public const HANDLING_ORDER = '650';
-
     /**
      * Health certificate (636)
      *
@@ -2774,21 +2437,18 @@ class ZugferdDocumentType
      * with sanitary and phytosanitary measures.
      */
     public const HEALTH_CERTIFICATE = '636';
-
     /**
      * Healthcare discharge report, final (309)
      *
      * Final discharge report by healthcare provider.
      */
     public const HEALTHCARE_DISCHARGE_REPORT_FINAL = '309';
-
     /**
      * Healthcare discharge report, preliminary (358)
      *
      * Preliminary discharge report by healthcare provider.
      */
     public const HEALTHCARE_DISCHARGE_REPORT_PRELIMINARY = '358';
-
     /**
      * Heat Treatment Certificate (625)
      *
@@ -2799,7 +2459,6 @@ class ZugferdDocumentType
      * as milk).
      */
     public const HEAT_TREATMENT_CERTIFICATE = '625';
-
     /**
      * Hire invoice (387)
      *
@@ -2807,14 +2466,12 @@ class ZugferdDocumentType
      * goods or equipment.
      */
     public const HIRE_INVOICE = '387';
-
     /**
      * Hire order (232)
      *
      * Document/message for hiring human resources or renting goods or equipment.
      */
     public const HIRE_ORDER = '232';
-
     /**
      * Horsemeat sanitary certificate (92)
      *
@@ -2823,7 +2480,6 @@ class ZugferdDocumentType
      * by the importing country.
      */
     public const HORSEMEAT_SANITARY_CERTIFICATE = '92';
-
     /**
      * House bill of lading (714)
      *
@@ -2831,7 +2487,6 @@ class ZugferdDocumentType
      * forwarder/consolidator known by the carrier.
      */
     public const HOUSE_BILL_OF_LADING = '714';
-
     /**
      * House waybill (703)
      *
@@ -2840,35 +2495,30 @@ class ZugferdDocumentType
      * carriage of goods.
      */
     public const HOUSE_WAYBILL = '703';
-
     /**
      * Identification match (449)
      *
      * Message related to conducting a search for an identification match.
      */
     public const IDENTIFICATION_MATCH = '449';
-
     /**
      * Identity card (36)
      *
      * Official document to identify a person.
      */
     public const IDENTITY_CARD = '36';
-
     /**
      * Image (858)
      *
      * Document consisting of an image.
      */
     public const IMAGE = '858';
-
     /**
      * Impending arrival (96)
      *
      * Notification of impending arrival details for vessel.
      */
     public const IMPENDING_ARRIVAL = '96';
-
     /**
      * Implementation guideline (302)
      *
@@ -2876,7 +2526,6 @@ class ZugferdDocumentType
      * in an electronic data interchange syntax.
      */
     public const IMPLEMENTATION_GUIDELINE = '302';
-
     /**
      * Import licence (911)
      *
@@ -2887,7 +2536,6 @@ class ZugferdDocumentType
      * specified in the document.
      */
     public const IMPORT_LICENCE = '911';
-
     /**
      * Import licence, application for (910)
      *
@@ -2898,7 +2546,6 @@ class ZugferdDocumentType
      * etc.
      */
     public const IMPORT_LICENCE_APPLICATION_FOR = '910';
-
     /**
      * Indefinite delivery definite quantity contract (153)
      *
@@ -2906,7 +2553,6 @@ class ZugferdDocumentType
      * definite quantities.
      */
     public const INDEFINITE_DELIVERY_DEFINITE_QUANTITY_CONTRACT = '153';
-
     /**
      * Indefinite delivery indefinite quantity contract (152)
      *
@@ -2914,7 +2560,6 @@ class ZugferdDocumentType
      * indefinite quantities of goods.
      */
     public const INDEFINITE_DELIVERY_INDEFINITE_QUANTITY_CONTRACT = '152';
-
     /**
      * Industry superannuation contributions advice (27)
      *
@@ -2922,14 +2567,12 @@ class ZugferdDocumentType
      * schemes which are industry wide.
      */
     public const INDUSTRY_SUPERANNUATION_CONTRIBUTIONS_ADVICE = '27';
-
     /**
      * Industry superannuation member maintenance message (29)
      *
      * Member maintenance message used for industry wide superannuation schemes.
      */
     public const INDUSTRY_SUPERANNUATION_MEMBER_MAINTENANCE_MESSAGE = '29';
-
     /**
      * Inedible sanitary certificate (95)
      *
@@ -2938,14 +2581,12 @@ class ZugferdDocumentType
      * by the importing country.
      */
     public const INEDIBLE_SANITARY_CERTIFICATE = '95';
-
     /**
      * Infrastructure condition (413)
      *
      * Information about components in an infrastructure.
      */
     public const INFRASTRUCTURE_CONDITION = '413';
-
     /**
      * Inland waterway bill of lading (711)
      *
@@ -2954,14 +2595,12 @@ class ZugferdDocumentType
      * goods.
      */
     public const INLAND_WATERWAY_BILL_OF_LADING = '711';
-
     /**
      * Inquiry (251)
      *
      * This is a request for information.
      */
     public const INQUIRY = '251';
-
     /**
      * Inquiry mandate (871)
      *
@@ -2969,7 +2608,6 @@ class ZugferdDocumentType
      * mandated provider.
      */
     public const INQUIRY_MANDATE = '871';
-
     /**
      * Inspection certificate (856)
      *
@@ -2979,21 +2617,18 @@ class ZugferdDocumentType
      * which the inspection is required, or as specified in the contract.
      */
     public const INSPECTION_CERTIFICATE = '856';
-
     /**
      * Inspection report (293)
      *
      * A message informing a party of the results of an inspection.
      */
     public const INSPECTION_REPORT = '293';
-
     /**
      * Inspection request (292)
      *
      * A message requesting a party to inspect items.
      */
     public const INSPECTION_REQUEST = '292';
-
     /**
      * Instruction for returns (733)
      *
@@ -3001,14 +2636,12 @@ class ZugferdDocumentType
      * shall be returned.
      */
     public const INSTRUCTION_FOR_RETURNS = '733';
-
     /**
      * Instruction to collect (297)
      *
      * A message instructing a party to collect goods.
      */
     public const INSTRUCTION_TO_COLLECT = '297';
-
     /**
      * Instructions for bank transfer (409)
      *
@@ -3018,7 +2651,6 @@ class ZugferdDocumentType
      * the discretion of the bank.
      */
     public const INSTRUCTIONS_FOR_BANK_TRANSFER = '409';
-
     /**
      * Insurance certificate (520)
      *
@@ -3029,7 +2661,6 @@ class ZugferdDocumentType
      * exchanged for a policy.
      */
     public const INSURANCE_CERTIFICATE = '520';
-
     /**
      * Insurance declaration sheet (bordereau) (550)
      *
@@ -3038,7 +2669,6 @@ class ZugferdDocumentType
      * cover or a floating policy - between the parties.
      */
     public const INSURANCE_DECLARATION_SHEET_BORDEREAU = '550';
-
     /**
      * Insurance policy (530)
      *
@@ -3048,14 +2678,12 @@ class ZugferdDocumentType
      * losses arising out of the perils and accidents specified in the contract.
      */
     public const INSURANCE_POLICY = '530';
-
     /**
      * Insured party payment report (836)
      *
      * Report about payments done towards an insured party.
      */
     public const INSURED_PARTY_PAYMENT_REPORT = '836';
-
     /**
      * Insured status report (815)
      *
@@ -3063,7 +2691,6 @@ class ZugferdDocumentType
      * insurance contract.
      */
     public const INSURED_STATUS_REPORT = '815';
-
     /**
      * Insurer's invoice (575)
      *
@@ -3071,7 +2698,6 @@ class ZugferdDocumentType
      * which has been effected and claiming payment therefore.
      */
     public const INSURERS_INVOICE = '575';
-
     /**
      * Interim application for payment (211)
      *
@@ -3079,7 +2705,6 @@ class ZugferdDocumentType
      * request for payment for completed work for a construction contract.
      */
     public const INTERIM_APPLICATION_FOR_PAYMENT = '211';
-
     /**
      * Interim International Ship Security Certificate (537)
      *
@@ -3088,7 +2713,6 @@ class ZugferdDocumentType
      * code).
      */
     public const INTERIM_INTERNATIONAL_SHIP_SECURITY_CERTIFICATE = '537';
-
     /**
      * Intermediate handling cross docking despatch advice (464)
      *
@@ -3098,7 +2722,6 @@ class ZugferdDocumentType
      * to final delivery location requirements.
      */
     public const INTERMEDIATE_HANDLING_CROSS_DOCKING_DESPATCH_ADVICE = '464';
-
     /**
      * Intermediate handling cross docking order (402)
      *
@@ -3107,7 +2730,6 @@ class ZugferdDocumentType
      * location requirements.
      */
     public const INTERMEDIATE_HANDLING_CROSS_DOCKING_ORDER = '402';
-
     /**
      * Internal transport order (150)
      *
@@ -3115,7 +2737,6 @@ class ZugferdDocumentType
      * enterprise.
      */
     public const INTERNAL_TRANSPORT_ORDER = '150';
-
     /**
      * International Ship Security Certificate (536)
      *
@@ -3123,7 +2744,6 @@ class ZugferdDocumentType
      * the Security of Ships and of Port facilities (ISPS code).
      */
     public const INTERNATIONAL_SHIP_SECURITY_CERTIFICATE = '536';
-
     /**
      * INTRASTAT declaration (896)
      *
@@ -3131,7 +2751,6 @@ class ZugferdDocumentType
      * required by the body responsible for the collection of trade statistics.
      */
     public const INTRASTAT_DECLARATION = '896';
-
     /**
      * Introductory letter (867)
      *
@@ -3139,35 +2758,30 @@ class ZugferdDocumentType
      * as an insurance policy.
      */
     public const INTRODUCTORY_LETTER = '867';
-
     /**
      * Inventory adjustment status report (263)
      *
      * A message detailing statuses related to the adjustment of inventory.
      */
     public const INVENTORY_ADJUSTMENT_STATUS_REPORT = '263';
-
     /**
      * Inventory movement advice (78)
      *
      * Advice of inventory movements.
      */
     public const INVENTORY_MOVEMENT_ADVICE = '78';
-
     /**
      * Inventory report (35)
      *
      * A message specifying information relating to held inventories.
      */
     public const INVENTORY_REPORT = '35';
-
     /**
      * Inventory status advice (79)
      *
      * Advice of stock on hand.
      */
     public const INVENTORY_STATUS_ADVICE = '79';
-
     /**
      * Invitation to tender (755)
      *
@@ -3175,7 +2789,6 @@ class ZugferdDocumentType
      * request specific suppliers to participate.
      */
     public const INVITATION_TO_TENDER = '755';
-
     /**
      * Invoice information for accounting purposes (751)
      *
@@ -3185,7 +2798,6 @@ class ZugferdDocumentType
      * item information might be excluded.
      */
     public const INVOICE_INFORMATION_FOR_ACCOUNTING_PURPOSES = '751';
-
     /**
      * Invoicing data sheet (130)
      *
@@ -3193,42 +2805,36 @@ class ZugferdDocumentType
      * sold, to be used as the basis for the preparation of an invoice.
      */
     public const INVOICING_DATA_SHEET = '130';
-
     /**
      * Items booked to a financial account report (338)
      *
      * A message reporting items which have been booked to a financial account.
      */
     public const ITEMS_BOOKED_TO_A_FINANCIAL_ACCOUNT_REPORT = '338';
-
     /**
      * Kanban schedule (288)
      *
      * Message to describe a Kanban schedule.
      */
     public const KANBAN_SCHEDULE = '288';
-
     /**
      * Lease invoice (394)
      *
      * Usage of INVOIC-message for goods in leasing contracts.
      */
     public const LEASE_INVOICE = '394';
-
     /**
      * Lease order (223)
      *
      * Document/message for goods in leasing contracts.
      */
     public const LEASE_ORDER = '223';
-
     /**
      * Legal action (848)
      *
      * Document specifying a legal action at court.
      */
     public const LEGAL_ACTION = '848';
-
     /**
      * Legal statement of an account (54)
      *
@@ -3236,7 +2842,6 @@ class ZugferdDocumentType
      * the account servicing financial institution.
      */
     public const LEGAL_STATEMENT_OF_AN_ACCOUNT = '54';
-
     /**
      * Letter of indemnity for non-surrender of bill of lading (715)
      *
@@ -3245,7 +2850,6 @@ class ZugferdDocumentType
      * accordance with the terms thereof.
      */
     public const LETTER_OF_INDEMNITY_FOR_NONSURRENDER_OF_BILL_OF_LADING = '715';
-
     /**
      * Letter of intent (215)
      *
@@ -3253,14 +2857,12 @@ class ZugferdDocumentType
      * intends to enter into contractual negotiations.
      */
     public const LETTER_OF_INTENT = '215';
-
     /**
      * Life insurance payroll deductions advice (30)
      *
      * Payroll deductions advice used in the life insurance industry.
      */
     public const LIFE_INSURANCE_PAYROLL_DEDUCTIONS_ADVICE = '30';
-
     /**
      * Listing statement of an account (55)
      *
@@ -3268,7 +2870,6 @@ class ZugferdDocumentType
      * items pending to be booked.
      */
     public const LISTING_STATEMENT_OF_AN_ACCOUNT = '55';
-
     /**
      * Loadline document (795)
      *
@@ -3276,14 +2877,12 @@ class ZugferdDocumentType
      * conditions.
      */
     public const LOADLINE_DOCUMENT = '795';
-
     /**
      * Loss statement (819)
      *
      * Document specifying the value of a loss.
      */
     public const LOSS_STATEMENT = '819';
-
     /**
      * Low risk country formal letter (652)
      *
@@ -3292,14 +2891,12 @@ class ZugferdDocumentType
      * products in the local market with certain favorable considerations.
      */
     public const LOW_RISK_COUNTRY_FORMAL_LETTER = '652';
-
     /**
      * Low value payment order(s) (249)
      *
      * The message contains low value payment order(s) only.
      */
     public const LOW_VALUE_PAYMENT_ORDERS = '249';
-
     /**
      * Make or buy plan (156)
      *
@@ -3307,7 +2904,6 @@ class ZugferdDocumentType
      * which items will be bought.
      */
     public const MAKE_OR_BUY_PLAN = '156';
-
     /**
      * Manufacturer raised consignment order (726)
      *
@@ -3315,7 +2911,6 @@ class ZugferdDocumentType
      * raised by a manufacturer.
      */
     public const MANUFACTURER_RAISED_CONSIGNMENT_ORDER = '726';
-
     /**
      * Manufacturer raised order (725)
      *
@@ -3323,7 +2918,6 @@ class ZugferdDocumentType
      * manufacturer.
      */
     public const MANUFACTURER_RAISED_ORDER = '725';
-
     /**
      * Manufacturing instructions (110)
      *
@@ -3331,7 +2925,6 @@ class ZugferdDocumentType
      * goods to be offered for sale.
      */
     public const MANUFACTURING_INSTRUCTIONS = '110';
-
     /**
      * Manufacturing license (651)
      *
@@ -3339,7 +2932,6 @@ class ZugferdDocumentType
      * of specific products.
      */
     public const MANUFACTURING_LICENSE = '651';
-
     /**
      * Manufacturing specification (167)
      *
@@ -3347,7 +2939,6 @@ class ZugferdDocumentType
      * manufactured.
      */
     public const MANUFACTURING_SPECIFICATION = '167';
-
     /**
      * Maritime declaration of health (797)
      *
@@ -3355,7 +2946,6 @@ class ZugferdDocumentType
      * specified date.
      */
     public const MARITIME_DECLARATION_OF_HEALTH = '797';
-
     /**
      * Master air waybill (741)
      *
@@ -3365,7 +2955,6 @@ class ZugferdDocumentType
      * consisting of goods originated by more than one shipper (IATA).
      */
     public const MASTER_AIR_WAYBILL = '741';
-
     /**
      * Master bill of lading (704)
      *
@@ -3373,7 +2962,6 @@ class ZugferdDocumentType
      * or charterer of the vessel). It could cover a number of house bills.
      */
     public const MASTER_BILL_OF_LADING = '704';
-
     /**
      * Mate's receipt (713)
      *
@@ -3382,7 +2970,6 @@ class ZugferdDocumentType
      * of the goods; enabling the carrier to issue a Bill of lading.
      */
     public const MATES_RECEIPT = '713';
-
     /**
      * Material inspection and receiving report (163)
      *
@@ -3390,28 +2977,24 @@ class ZugferdDocumentType
      * document.
      */
     public const MATERIAL_INSPECTION_AND_RECEIVING_REPORT = '163';
-
     /**
      * Means of transport advice (97)
      *
      * Message reporting the means of transport used to carry goods or cargo.
      */
     public const MEANS_OF_TRANSPORT_ADVICE = '97';
-
     /**
      * Means of transportation availability information (403)
      *
      * Information giving the various availabilities of a means of transportation.
      */
     public const MEANS_OF_TRANSPORTATION_AVAILABILITY_INFORMATION = '403';
-
     /**
      * Means of transportation schedule information (404)
      *
      * Information giving the various schedules of a means of transportation.
      */
     public const MEANS_OF_TRANSPORTATION_SCHEDULE_INFORMATION = '404';
-
     /**
      * Meat and meat by-products sanitary certificate (89)
      *
@@ -3420,7 +3003,6 @@ class ZugferdDocumentType
      * requirements set by the importing country.
      */
     public const MEAT_AND_MEAT_BYPRODUCTS_SANITARY_CERTIFICATE = '89';
-
     /**
      * Meat food products sanitary certificate (90)
      *
@@ -3429,28 +3011,24 @@ class ZugferdDocumentType
      * by the importing country.
      */
     public const MEAT_FOOD_PRODUCTS_SANITARY_CERTIFICATE = '90';
-
     /**
      * Medical certificate (842)
      *
      * Document certifying a medical condition.
      */
     public const MEDICAL_CERTIFICATE = '842';
-
     /**
      * Message in development request (281)
      *
      * Requesting a Message in Development (MiD).
      */
     public const MESSAGE_IN_DEVELOPMENT_REQUEST = '281';
-
     /**
      * Metered services consumption report (742)
      *
      * Document/message providing metered consumption details.
      */
     public const METERED_SERVICES_CONSUMPTION_REPORT = '742';
-
     /**
      * Metered services consumption report supporting an invoice (739)
      *
@@ -3458,7 +3036,6 @@ class ZugferdDocumentType
      * invoice.
      */
     public const METERED_SERVICES_CONSUMPTION_REPORT_SUPPORTING_AN_INVOICE = '739';
-
     /**
      * Metered services invoice (82)
      *
@@ -3467,14 +3044,12 @@ class ZugferdDocumentType
      * measured over a period of time.
      */
     public const METERED_SERVICES_INVOICE = '82';
-
     /**
      * Metering point information response (391)
      *
      * Response to a request for information about a metering point.
      */
     public const METERING_POINT_INFORMATION_RESPONSE = '391';
-
     /**
      * Military Identification Card (528)
      *
@@ -3482,21 +3057,18 @@ class ZugferdDocumentType
      * substituting a passport.
      */
     public const MILITARY_IDENTIFICATION_CARD = '528';
-
     /**
      * Mill certificate (12)
      *
      * Certificate certifying a specific quality of agricultural products.
      */
     public const MILL_CERTIFICATE = '12';
-
     /**
      * Modification of existing message (282)
      *
      * Requesting a change to an existing message.
      */
     public const MODIFICATION_OF_EXISTING_MESSAGE = '282';
-
     /**
      * Movement certificate A.TR.1 (18)
      *
@@ -3504,7 +3076,6 @@ class ZugferdDocumentType
      * certificate).
      */
     public const MOVEMENT_CERTIFICATE_ATR = '18';
-
     /**
      * Multidrop order (147)
      *
@@ -3512,7 +3083,6 @@ class ZugferdDocumentType
      * associated delivery points for each.
      */
     public const MULTIDROP_ORDER = '147';
-
     /**
      * Multimodal transport document (generic) (765)
      *
@@ -3522,7 +3092,6 @@ class ZugferdDocumentType
      * contract. (International Convention on Multimodal Transport of Goods).
      */
     public const MULTIMODAL_TRANSPORT_DOCUMENT_GENERIC = '765';
-
     /**
      * Multimodal/combined transport document (generic) (760)
      *
@@ -3534,7 +3103,6 @@ class ZugferdDocumentType
      * move ends and the conveyances involved.
      */
     public const MULTIMODALCOMBINED_TRANSPORT_DOCUMENT_GENERIC = '760';
-
     /**
      * Multiple direct debit (486)
      *
@@ -3542,7 +3110,6 @@ class ZugferdDocumentType
      * and to debit one or more debtors.
      */
     public const MULTIPLE_DIRECT_DEBIT = '486';
-
     /**
      * Multiple direct debit request (484)
      *
@@ -3550,7 +3117,6 @@ class ZugferdDocumentType
      * accounts and to debit one or more debtors.
      */
     public const MULTIPLE_DIRECT_DEBIT_REQUEST = '484';
-
     /**
      * Multiple payment order (452)
      *
@@ -3558,14 +3124,12 @@ class ZugferdDocumentType
      * and to credit one or more beneficiaries.
      */
     public const MULTIPLE_PAYMENT_ORDER = '452';
-
     /**
      * Name/product plate (328)
      *
      * Plates on goods identifying and describing an article.
      */
     public const NAMEPRODUCT_PLATE = '328';
-
     /**
      * NATO transit document (977)
      *
@@ -3573,21 +3137,18 @@ class ZugferdDocumentType
      * forces under Customs supervision.
      */
     public const NATO_TRANSIT_DOCUMENT = '977';
-
     /**
      * New code request (272)
      *
      * Requesting a new code.
      */
     public const NEW_CODE_REQUEST = '272';
-
     /**
      * New message request (280)
      *
      * Request for a new message (NMR).
      */
     public const NEW_MESSAGE_REQUEST = '280';
-
     /**
      * Non-negotiable maritime transport document (generic) (712)
      *
@@ -3598,21 +3159,18 @@ class ZugferdDocumentType
      * or "non-negotiable Bill of lading" used in certain countries, e.g. Canada.
      */
     public const NONNEGOTIABLE_MARITIME_TRANSPORT_DOCUMENT_GENERIC = '712';
-
     /**
      * Non-pre-authorised direct debit request(s) (244)
      *
      * The message contains non-pre-authorised direct debit request(s).
      */
     public const NONPREAUTHORISED_DIRECT_DEBIT_REQUESTS = '244';
-
     /**
      * Non-pre-authorised direct debit(s) (238)
      *
      * The message contains non-pre-authorised direct debit(s).
      */
     public const NONPREAUTHORISED_DIRECT_DEBITS = '238';
-
     /**
      * Notice of circumstances preventing delivery (goods) (782)
      *
@@ -3622,7 +3180,6 @@ class ZugferdDocumentType
      * requested by the consignor in the transport document.
      */
     public const NOTICE_OF_CIRCUMSTANCES_PREVENTING_DELIVERY_GOODS = '782';
-
     /**
      * Notice of circumstances preventing transport (goods) (783)
      *
@@ -3632,7 +3189,6 @@ class ZugferdDocumentType
      * consignment concerned.
      */
     public const NOTICE_OF_CIRCUMSTANCES_PREVENTING_TRANSPORT_GOODS = '783';
-
     /**
      * Notice that circumstances prevent payment of delivered goods (453)
      *
@@ -3640,21 +3196,18 @@ class ZugferdDocumentType
      * to circumstances which prevent payment.
      */
     public const NOTICE_THAT_CIRCUMSTANCES_PREVENT_PAYMENT_OF_DELIVERED_GOODS = '453';
-
     /**
      * Notification of balance responsible entity change (434)
      *
      * Notification of a change of balance responsible entity.
      */
     public const NOTIFICATION_OF_BALANCE_RESPONSIBLE_ENTITY_CHANGE = '434';
-
     /**
      * Notification of change of supplier (392)
      *
      * A notification of a change of supplier.
      */
     public const NOTIFICATION_OF_CHANGE_OF_SUPPLIER = '392';
-
     /**
      * Notification of emergency shifting from the designated place in port (354)
      *
@@ -3662,56 +3215,48 @@ class ZugferdDocumentType
      * the designated place.
      */
     public const NOTIFICATION_OF_EMERGENCY_SHIFTING_FROM_THE_DESIGNATED_PLACE_IN_PORT = '354';
-
     /**
      * Notification of meter change (408)
      *
      * Notification about the change of a meter.
      */
     public const NOTIFICATION_OF_METER_CHANGE = '408';
-
     /**
      * Notification of metering point identification change (410)
      *
      * Notification of the change of metering point identification.
      */
     public const NOTIFICATION_OF_METERING_POINT_IDENTIFICATION_CHANGE = '410';
-
     /**
      * Notification of usage of berth or mooring facilities (352)
      *
      * Document to notify usage of berth or mooring facilities.
      */
     public const NOTIFICATION_OF_USAGE_OF_BERTH_OR_MOORING_FACILITIES = '352';
-
     /**
      * Notification to grid operator of contract termination (432)
      *
      * Notification to the grid operator regarding the termination of a contract.
      */
     public const NOTIFICATION_TO_GRID_OPERATOR_OF_CONTRACT_TERMINATION = '432';
-
     /**
      * Notification to grid operator of metering point changes (433)
      *
      * Notification to the grid operator about changes regarding a metering point.
      */
     public const NOTIFICATION_TO_GRID_OPERATOR_OF_METERING_POINT_CHANGES = '433';
-
     /**
      * Notification to supplier of contract termination (406)
      *
      * Notification to the supplier regarding the termination of a contract.
      */
     public const NOTIFICATION_TO_SUPPLIER_OF_CONTRACT_TERMINATION = '406';
-
     /**
      * Notification to supplier of metering point changes (407)
      *
      * Notification to the supplier about changes regarding a metering point.
      */
     public const NOTIFICATION_TO_SUPPLIER_OF_METERING_POINT_CHANGES = '407';
-
     /**
      * Offer / quotation (310)
      *
@@ -3719,21 +3264,18 @@ class ZugferdDocumentType
      * out the conditions under which the goods are offered.
      */
     public const OFFER_QUOTATION = '310';
-
     /**
      * Operating instructions (327)
      *
      * Document/message describing instructions for operation.
      */
     public const OPERATING_INSTRUCTIONS = '327';
-
     /**
      * Optical Character Reading (OCR) payment (322)
      *
      * Payment effected by an Optical Character Reading (OCR) document.
      */
     public const OPTICAL_CHARACTER_READING_OCR_PAYMENT = '322';
-
     /**
      * Optical Character Reading (OCR) payment credit note (420)
      *
@@ -3741,7 +3283,6 @@ class ZugferdDocumentType
      * document.
      */
     public const OPTICAL_CHARACTER_READING_OCR_PAYMENT_CREDIT_NOTE = '420';
-
     /**
      * Order (220)
      *
@@ -3750,21 +3291,18 @@ class ZugferdDocumentType
      * conditions set out in an offer, or otherwise known to the buyer.
      */
     public const ORDER = '220';
-
     /**
      * Order status enquiry (347)
      *
      * A message enquiring the status of previously sent orders.
      */
     public const ORDER_STATUS_ENQUIRY = '347';
-
     /**
      * Order status report (348)
      *
      * A message reporting the status of previously sent orders.
      */
     public const ORDER_STATUS_REPORT = '348';
-
     /**
      * Original accounting voucher (533)
      *
@@ -3772,14 +3310,12 @@ class ZugferdDocumentType
      * original.
      */
     public const ORIGINAL_ACCOUNTING_VOUCHER = '533';
-
     /**
      * Out of court settlement (847)
      *
      * Document which specifies an out of court settlement.
      */
     public const OUT_OF_COURT_SETTLEMENT = '847';
-
     /**
      * Package response (Customs) (964)
      *
@@ -3787,7 +3323,6 @@ class ZugferdDocumentType
      * transmitter of the previous message.
      */
     public const PACKAGE_RESPONSE_CUSTOMS = '964';
-
     /**
      * Packaging material composition report (644)
      *
@@ -3795,7 +3330,6 @@ class ZugferdDocumentType
      * material.
      */
     public const PACKAGING_MATERIAL_COMPOSITION_REPORT = '644';
-
     /**
      * Packing instructions (140)
      *
@@ -3803,7 +3337,6 @@ class ZugferdDocumentType
      * to be packed.
      */
     public const PACKING_INSTRUCTIONS = '140';
-
     /**
      * Packing list (271)
      *
@@ -3812,14 +3345,12 @@ class ZugferdDocumentType
      * packing list).
      */
     public const PACKING_LIST = '271';
-
     /**
      * Partial construction invoice (875)
      *
      * Partial invoice in the context of a specific construction project.
      */
     public const PARTIAL_CONSTRUCTION_INVOICE = '875';
-
     /**
      * Partial final construction invoice (876)
      *
@@ -3828,14 +3359,12 @@ class ZugferdDocumentType
      * construction project.
      */
     public const PARTIAL_FINAL_CONSTRUCTION_INVOICE = '876';
-
     /**
      * Partial invoice (326)
      *
      * Document/message specifying details of an incomplete invoice.
      */
     public const PARTIAL_INVOICE = '326';
-
     /**
      * Party credit information (377)
      *
@@ -3843,14 +3372,12 @@ class ZugferdDocumentType
      * party.
      */
     public const PARTY_CREDIT_INFORMATION = '377';
-
     /**
      * Party information (10)
      *
      * Document/message providing basic data concerning a party.
      */
     public const PARTY_INFORMATION = '10';
-
     /**
      * Party payment behaviour information (378)
      *
@@ -3858,7 +3385,6 @@ class ZugferdDocumentType
      * party.
      */
     public const PARTY_PAYMENT_BEHAVIOUR_INFORMATION = '378';
-
     /**
      * Passenger list (745)
      *
@@ -3866,28 +3392,24 @@ class ZugferdDocumentType
      * equivalent to IMO FAL 6.
      */
     public const PASSENGER_LIST = '745';
-
     /**
      * Passport (39)
      *
      * An official document giving permission to travel in foreign countries.
      */
     public const PASSPORT = '39';
-
     /**
      * Payment bond (357)
      *
      * A document that guarantees the payment of monies.
      */
     public const PAYMENT_BOND = '357';
-
     /**
      * Payment card (461)
      *
      * The document is a credit, guarantee or charge card.
      */
     public const PAYMENT_CARD = '461';
-
     /**
      * Payment or performance bond (165)
      *
@@ -3895,7 +3417,6 @@ class ZugferdDocumentType
      * performance.
      */
     public const PAYMENT_OR_PERFORMANCE_BOND = '165';
-
     /**
      * Payment order (450)
      *
@@ -3905,21 +3426,18 @@ class ZugferdDocumentType
      * arrange for the payment of one specified amount to the beneficiary.
      */
     public const PAYMENT_ORDER = '450';
-
     /**
      * Payment receipt confirmation (834)
      *
      * Document confirming the receipt of a payment.
      */
     public const PAYMENT_RECEIPT_CONFIRMATION = '834';
-
     /**
      * Payment request for completed units (219)
      *
      * A request for payment for completed units.
      */
     public const PAYMENT_REQUEST_FOR_COMPLETED_UNITS = '219';
-
     /**
      * Payment valuation (204)
      *
@@ -3927,14 +3445,12 @@ class ZugferdDocumentType
      * works.
      */
     public const PAYMENT_VALUATION = '204';
-
     /**
      * Payment valuation for unscheduled items (217)
      *
      * A payment valuation for unscheduled items.
      */
     public const PAYMENT_VALUATION_FOR_UNSCHEDULED_ITEMS = '217';
-
     /**
      * Payroll deductions advice (747)
      *
@@ -3943,14 +3459,12 @@ class ZugferdDocumentType
      * of its employees to the service providing organisation.
      */
     public const PAYROLL_DEDUCTIONS_ADVICE = '747';
-
     /**
      * Performance bond (356)
      *
      * A document that guarantees performance.
      */
     public const PERFORMANCE_BOND = '356';
-
     /**
      * Pharmaceutical sanitary certificate (94)
      *
@@ -3959,14 +3473,12 @@ class ZugferdDocumentType
      * requirements set by the importing country.
      */
     public const PHARMACEUTICAL_SANITARY_CERTIFICATE = '94';
-
     /**
      * Physician report (839)
      *
      * Report issued by a medical doctor.
      */
     public const PHYSICIAN_REPORT = '839';
-
     /**
      * Phytosanitary certificate (851)
      *
@@ -3974,7 +3486,6 @@ class ZugferdDocumentType
      * attesting that a consignment meets phytosanitary import requirements.
      */
     public const PHYTOSANITARY_CERTIFICATE = '851';
-
     /**
      * Phytosanitary Re-export Certificate (657)
      *
@@ -3983,7 +3494,6 @@ class ZugferdDocumentType
      * import requirements.
      */
     public const PHYTOSANITARY_REEXPORT_CERTIFICATE = '657';
-
     /**
      * Pick-up notice (171)
      *
@@ -3991,14 +3501,12 @@ class ZugferdDocumentType
      * certain address.
      */
     public const PICKUP_NOTICE = '171';
-
     /**
      * Plan for provision of health service (371)
      *
      * Document containing a plan for provision of health service.
      */
     public const PLAN_FOR_PROVISION_OF_HEALTH_SERVICE = '371';
-
     /**
      * Plant Passport (752)
      *
@@ -4006,7 +3514,6 @@ class ZugferdDocumentType
      * status of plants or plant products for international trade.
      */
     public const PLANT_PASSPORT = '752';
-
     /**
      * Port authority waste disposal report (482)
      *
@@ -4014,7 +3521,6 @@ class ZugferdDocumentType
      * reporting information on waste disposal.
      */
     public const PORT_AUTHORITY_WASTE_DISPOSAL_REPORT = '482';
-
     /**
      * Port charges documents (633)
      *
@@ -4023,7 +3529,6 @@ class ZugferdDocumentType
      * therein.
      */
     public const PORT_CHARGES_DOCUMENTS = '633';
-
     /**
      * Post receipt (13)
      *
@@ -4031,7 +3536,6 @@ class ZugferdDocumentType
      * parcel, etc.).
      */
     public const POST_RECEIPT = '13';
-
     /**
      * Poultry sanitary certificate (91)
      *
@@ -4040,21 +3544,18 @@ class ZugferdDocumentType
      * by the importing country.
      */
     public const POULTRY_SANITARY_CERTIFICATE = '91';
-
     /**
      * Pre-authorised direct debit request(s) (243)
      *
      * The message contains pre-authorised direct debit request(s).
      */
     public const PREAUTHORISED_DIRECT_DEBIT_REQUESTS = '243';
-
     /**
      * Pre-authorised direct debit(s) (214)
      *
      * The message contains pre-authorised direct debit(s).
      */
     public const PREAUTHORISED_DIRECT_DEBITS = '214';
-
     /**
      * Pre-packed cross docking consignment order (898)
      *
@@ -4063,7 +3564,6 @@ class ZugferdDocumentType
      * distribution centre without further handling.
      */
     public const PREPACKED_CROSS_DOCKING_CONSIGNMENT_ORDER = '898';
-
     /**
      * Pre-packed cross docking despatch advice (463)
      *
@@ -4073,7 +3573,6 @@ class ZugferdDocumentType
      * across a dock in a distribution centre without further handling.
      */
     public const PREPACKED_CROSS_DOCKING_DESPATCH_ADVICE = '463';
-
     /**
      * Pre-packed cross docking order (401)
      *
@@ -4082,14 +3581,12 @@ class ZugferdDocumentType
      * without further handling.
      */
     public const PREPACKED_CROSS_DOCKING_ORDER = '401';
-
     /**
      * Preadvice of a credit (435)
      *
      * Preadvice indicating a credit to happen in the future.
      */
     public const PREADVICE_OF_A_CREDIT = '435';
-
     /**
      * Preference certificate of origin (864)
      *
@@ -4097,7 +3594,6 @@ class ZugferdDocumentType
      * requirements for preferential treatment.
      */
     public const PREFERENCE_CERTIFICATE_OF_ORIGIN = '864';
-
     /**
      * Preliminary credit assessment (64)
      *
@@ -4106,14 +3602,12 @@ class ZugferdDocumentType
      * preliminary credit assessment on a buyer.
      */
     public const PRELIMINARY_CREDIT_ASSESSMENT = '64';
-
     /**
      * Preliminary sales report (323)
      *
      * Preliminary sales report sent before all the information is available.
      */
     public const PRELIMINARY_SALES_REPORT = '323';
-
     /**
      * Prepayment invoice (386)
      *
@@ -4121,14 +3615,12 @@ class ZugferdDocumentType
      * will be subtracted from the final invoice.
      */
     public const PREPAYMENT_INVOICE = '386';
-
     /**
      * Prescription (372)
      *
      * Instructions for the dispensing and use of medicine or remedy.
      */
     public const PRESCRIPTION = '372';
-
     /**
      * Prescription dispensing report (374)
      *
@@ -4136,21 +3628,18 @@ class ZugferdDocumentType
      * prescription.
      */
     public const PRESCRIPTION_DISPENSING_REPORT = '374';
-
     /**
      * Prescription request (373)
      *
      * Request to issue a prescription for medicine or remedy.
      */
     public const PRESCRIPTION_REQUEST = '373';
-
     /**
      * Previous correspondence (653)
      *
      * Correspondence previously exchanged.
      */
     public const PREVIOUS_CORRESPONDENCE = '653';
-
     /**
      * Previous Customs document/message (998)
      *
@@ -4158,14 +3647,12 @@ class ZugferdDocumentType
      * transaction.
      */
     public const PREVIOUS_CUSTOMS_DOCUMENTMESSAGE = '998';
-
     /**
      * Previous transport document (499)
      *
      * Identification of the previous transport document.
      */
     public const PREVIOUS_TRANSPORT_DOCUMENT = '499';
-
     /**
      * Price and delivery quote (363)
      *
@@ -4173,7 +3660,6 @@ class ZugferdDocumentType
      * are offered.
      */
     public const PRICE_AND_DELIVERY_QUOTE = '363';
-
     /**
      * Price and delivery quote, ship and debit (369)
      *
@@ -4183,7 +3669,6 @@ class ZugferdDocumentType
      * for loss of inventory value.
      */
     public const PRICE_AND_DELIVERY_QUOTE_SHIP_AND_DEBIT = '369';
-
     /**
      * Price and delivery quote, specified end-customer (367)
      *
@@ -4192,21 +3677,18 @@ class ZugferdDocumentType
      * specified on the quote.
      */
     public const PRICE_AND_DELIVERY_QUOTE_SPECIFIED_ENDCUSTOMER = '367';
-
     /**
      * Price negotiation result (52)
      *
      * A document providing the result of price negotiations.
      */
     public const PRICE_NEGOTIATION_RESULT = '52';
-
     /**
      * Price quote (361)
      *
      * Document/message confirming price conditions under which goods are offered.
      */
     public const PRICE_QUOTE = '361';
-
     /**
      * Price quote, ship and debit (368)
      *
@@ -4216,7 +3698,6 @@ class ZugferdDocumentType
      * value.
      */
     public const PRICE_QUOTE_SHIP_AND_DEBIT = '368';
-
     /**
      * Price quote, specified end-customer (366)
      *
@@ -4224,7 +3705,6 @@ class ZugferdDocumentType
      * provided that they are sold to the end-customer specified on the quote.
      */
     public const PRICE_QUOTE_SPECIFIED_ENDCUSTOMER = '366';
-
     /**
      * Price variation invoice (295)
      *
@@ -4233,7 +3713,6 @@ class ZugferdDocumentType
      * formula.
      */
     public const PRICE_VARIATION_INVOICE = '295';
-
     /**
      * Price/sales catalogue (9)
      *
@@ -4242,7 +3721,6 @@ class ZugferdDocumentType
      * a buyer.
      */
     public const PRICESALES_CATALOGUE = '9';
-
     /**
      * Price/sales catalogue containing commercial information (728)
      *
@@ -4250,7 +3728,6 @@ class ZugferdDocumentType
      * conditions data.
      */
     public const PRICESALES_CATALOGUE_CONTAINING_COMMERCIAL_INFORMATION = '728';
-
     /**
      * Price/sales catalogue not containing commercial information (727)
      *
@@ -4258,21 +3735,18 @@ class ZugferdDocumentType
      * as prices, terms or conditions.
      */
     public const PRICESALES_CATALOGUE_NOT_CONTAINING_COMMERCIAL_INFORMATION = '727';
-
     /**
      * Price/sales catalogue response (51)
      *
      * A document providing a response to a previously sent price/sales catalogue.
      */
     public const PRICESALES_CATALOGUE_RESPONSE = '51';
-
     /**
      * Priced alternate tender bill of quantity (192)
      *
      * A priced tender based upon an alternate specification.
      */
     public const PRICED_ALTERNATE_TENDER_BILL_OF_QUANTITY = '192';
-
     /**
      * Priced tender BOQ (209)
      *
@@ -4281,7 +3755,6 @@ class ZugferdDocumentType
      * contract. BOQ means: Bill of quantity.
      */
     public const PRICED_TENDER_BOQ = '209';
-
     /**
      * Pro-forma accounting voucher (535)
      *
@@ -4289,14 +3762,12 @@ class ZugferdDocumentType
      * pro-forma.
      */
     public const PROFORMA_ACCOUNTING_VOUCHER = '535';
-
     /**
      * Process data report (7)
      *
      * Reports on events during production process.
      */
     public const PROCESS_DATA_REPORT = '7';
-
     /**
      * Product data message (289)
      *
@@ -4305,7 +3776,6 @@ class ZugferdDocumentType
      * customer or buyer.
      */
     public const PRODUCT_DATA_MESSAGE = '289';
-
     /**
      * Product data response (721)
      *
@@ -4313,21 +3783,18 @@ class ZugferdDocumentType
      * document/message.
      */
     public const PRODUCT_DATA_RESPONSE = '721';
-
     /**
      * Product performance report (5)
      *
      * Report specifying the performance values of products.
      */
     public const PRODUCT_PERFORMANCE_REPORT = '5';
-
     /**
      * Product specification report (6)
      *
      * Report providing specification values of products.
      */
     public const PRODUCT_SPECIFICATION_REPORT = '6';
-
     /**
      * Production facility license (649)
      *
@@ -4335,7 +3802,6 @@ class ZugferdDocumentType
      * manufacturing specific products.
      */
     public const PRODUCTION_FACILITY_LICENSE = '649';
-
     /**
      * Proforma invoice (325)
      *
@@ -4344,7 +3810,6 @@ class ZugferdDocumentType
      * claiming payment.
      */
     public const PROFORMA_INVOICE = '325';
-
     /**
      * Progressive discharge report (181)
      *
@@ -4353,14 +3818,12 @@ class ZugferdDocumentType
      * discharged from a specific vessel at that point in time.
      */
     public const PROGRESSIVE_DISCHARGE_REPORT = '181';
-
     /**
      * Project master plan (253)
      *
      * A high level, all encompassing master plan to complete a project.
      */
     public const PROJECT_MASTER_PLAN = '253';
-
     /**
      * Project master schedule (191)
      *
@@ -4368,49 +3831,42 @@ class ZugferdDocumentType
      * project.
      */
     public const PROJECT_MASTER_SCHEDULE = '191';
-
     /**
      * Project plan (254)
      *
      * A plan for project work to be completed.
      */
     public const PROJECT_PLAN = '254';
-
     /**
      * Project planning available resources (256)
      *
      * Available resources for project planning purposes.
      */
     public const PROJECT_PLANNING_AVAILABLE_RESOURCES = '256';
-
     /**
      * Project planning calendar (257)
      *
      * Work calendar information for project planning purposes.
      */
     public const PROJECT_PLANNING_CALENDAR = '257';
-
     /**
      * Project production plan (189)
      *
      * A project plan for the production of goods.
      */
     public const PROJECT_PRODUCTION_PLAN = '189';
-
     /**
      * Project recovery plan (188)
      *
      * A project plan for recovery after a delay or problem resolution.
      */
     public const PROJECT_RECOVERY_PLAN = '188';
-
     /**
      * Project schedule (255)
      *
      * A schedule of project activities to be completed.
      */
     public const PROJECT_SCHEDULE = '255';
-
     /**
      * Promissory note (491)
      *
@@ -4420,7 +3876,6 @@ class ZugferdDocumentType
      * demand or at a definite time, against the surrender of the document itself.
      */
     public const PROMISSORY_NOTE = '491';
-
     /**
      * Proof of delivery (737)
      *
@@ -4428,21 +3883,18 @@ class ZugferdDocumentType
      * a consignment.
      */
     public const PROOF_OF_DELIVERY = '737';
-
     /**
      * Proof of transit declaration (975)
      *
      * A document providing proof that a transit declaration has been accepted.
      */
     public const PROOF_OF_TRANSIT_DECLARATION = '975';
-
     /**
      * Provisional payment valuation (203)
      *
      * Document/message establishing a provisional payment valuation.
      */
     public const PROVISIONAL_PAYMENT_VALUATION = '203';
-
     /**
      * Public price certificate (646)
      *
@@ -4450,7 +3902,6 @@ class ZugferdDocumentType
      * production stating the price of the goods to the general public.
      */
     public const PUBLIC_PRICE_CERTIFICATE = '646';
-
     /**
      * Purchase order (105)
      *
@@ -4459,14 +3910,12 @@ class ZugferdDocumentType
      * of goods to be offered for sale or otherwise supplied to customers.
      */
     public const PURCHASE_ORDER = '105';
-
     /**
      * Purchase order change request (230)
      *
      * Change to an purchase order already sent.
      */
     public const PURCHASE_ORDER_CHANGE_REQUEST = '230';
-
     /**
      * Purchase Order Financing Request (892)
      *
@@ -4474,7 +3923,6 @@ class ZugferdDocumentType
      * by the First Agent.
      */
     public const PURCHASE_ORDER_FINANCING_REQUEST = '892';
-
     /**
      * Purchase Order Financing Request Cancellation (894)
      *
@@ -4482,7 +3930,6 @@ class ZugferdDocumentType
      * cancel a previously sent purchase order financing request.
      */
     public const PURCHASE_ORDER_FINANCING_REQUEST_CANCELLATION = '894';
-
     /**
      * Purchase Order Financing Request Status (893)
      *
@@ -4492,28 +3939,24 @@ class ZugferdDocumentType
      * Requestor itself.
      */
     public const PURCHASE_ORDER_FINANCING_REQUEST_STATUS = '893';
-
     /**
      * Purchase order response (231)
      *
      * Response to an purchase order already received.
      */
     public const PURCHASE_ORDER_RESPONSE = '231';
-
     /**
      * Purchasing specification (164)
      *
      * A document indicating a specification used to purchase an item.
      */
     public const PURCHASING_SPECIFICATION = '164';
-
     /**
      * Quality data message (20)
      *
      * Usage of QALITY-message.
      */
     public const QUALITY_DATA_MESSAGE = '20';
-
     /**
      * Quantity valuation (205)
      *
@@ -4521,7 +3964,6 @@ class ZugferdDocumentType
      * completed work for a construction contract.
      */
     public const QUANTITY_VALUATION = '205';
-
     /**
      * Quantity valuation request (206)
      *
@@ -4529,21 +3971,18 @@ class ZugferdDocumentType
      * completed work for a construction contract.
      */
     public const QUANTITY_VALUATION_REQUEST = '206';
-
     /**
      * Query (21)
      *
      * Request information based on defined criteria.
      */
     public const QUERY = '21';
-
     /**
      * Questionnaire (779)
      *
      * Document consisting of a series of questions.
      */
     public const QUESTIONNAIRE = '779';
-
     /**
      * Quota prior allocation certificate (966)
      *
@@ -4551,7 +3990,6 @@ class ZugferdDocumentType
      * quota.
      */
     public const QUOTA_PRIOR_ALLOCATION_CERTIFICATE = '966';
-
     /**
      * Rail consignment note (generic term) (720)
      *
@@ -4562,7 +4000,6 @@ class ZugferdDocumentType
      * Convention, SMGS Convention.
      */
     public const RAIL_CONSIGNMENT_NOTE_GENERIC_TERM = '720';
-
     /**
      * Rail consignment note forwarder copy (972)
      *
@@ -4570,14 +4007,12 @@ class ZugferdDocumentType
      * for the need of the forwarder.
      */
     public const RAIL_CONSIGNMENT_NOTE_FORWARDER_COPY = '972';
-
     /**
      * Re-Entry Permit (529)
      *
      * A permit to re-enter a country.
      */
     public const REENTRY_PERMIT = '529';
-
     /**
      * Re-sending consignment note (824)
      *
@@ -4585,7 +4020,6 @@ class ZugferdDocumentType
      * eventual return to the origin of the goods.
      */
     public const RESENDING_CONSIGNMENT_NOTE = '824';
-
     /**
      * Ready for despatch advice (345)
      *
@@ -4593,14 +4027,12 @@ class ZugferdDocumentType
      * are ready for despatch.
      */
     public const READY_FOR_DESPATCH_ADVICE = '345';
-
     /**
      * Ready for transshipment despatch advice (462)
      *
      * Document to advise that the goods ordered are ready for transshipment.
      */
     public const READY_FOR_TRANSSHIPMENT_DESPATCH_ADVICE = '462';
-
     /**
      * Reassignment (69)
      *
@@ -4608,14 +4040,12 @@ class ZugferdDocumentType
      * reassign an invoice or credit note previously assigned to him.
      */
     public const REASSIGNMENT = '69';
-
     /**
      * Receipt (Customs) (917)
      *
      * Receipt for Customs duty/tax/fee paid.
      */
     public const RECEIPT_CUSTOMS = '917';
-
     /**
      * Recharging document (724)
      *
@@ -4625,28 +4055,24 @@ class ZugferdDocumentType
      * environment).
      */
     public const RECHARGING_DOCUMENT = '724';
-
     /**
      * Reefer connection order (489)
      *
      * Order to connect a reefer container to a reefer point.
      */
     public const REEFER_CONNECTION_ORDER = '489';
-
     /**
      * Refugee Permit (531)
      *
      * Document identifying a refugee recognized by a country.
      */
     public const REFUGEE_PERMIT = '531';
-
     /**
      * Refusal of claim (828)
      *
      * Document stating the refusal of a claim.
      */
     public const REFUSAL_OF_CLAIM = '828';
-
     /**
      * Regional appellation certificate (863)
      *
@@ -4656,7 +4082,6 @@ class ZugferdDocumentType
      * Parmesan cheese).
      */
     public const REGIONAL_APPELLATION_CERTIFICATE = '863';
-
     /**
      * Registration change (300)
      *
@@ -4664,14 +4089,12 @@ class ZugferdDocumentType
      * information.
      */
     public const REGISTRATION_CHANGE = '300';
-
     /**
      * Registration document (101)
      *
      * An official document providing registration details.
      */
     public const REGISTRATION_DOCUMENT = '101';
-
     /**
      * Registration renewal (299)
      *
@@ -4679,42 +4102,36 @@ class ZugferdDocumentType
      * information.
      */
     public const REGISTRATION_RENEWAL = '299';
-
     /**
      * Rejected direct debit(s) (239)
      *
      * The message contains rejected direct debit(s).
      */
     public const REJECTED_DIRECT_DEBITS = '239';
-
     /**
      * Related document (916)
      *
      * Document that has a relationship with the stated document/message.
      */
     public const RELATED_DOCUMENT = '916';
-
     /**
      * Remittance advice (481)
      *
      * Document/message advising of the remittance of payment.
      */
     public const REMITTANCE_ADVICE = '481';
-
     /**
      * Repair order (225)
      *
      * Document/message to order repair of goods.
      */
     public const REPAIR_ORDER = '225';
-
     /**
      * Report of transactions for information only (342)
      *
      * A message reporting transactions for information only.
      */
     public const REPORT_OF_TRANSACTIONS_FOR_INFORMATION_ONLY = '342';
-
     /**
      * Report of transactions which need further information from the receiver (339)
      *
@@ -4722,14 +4139,12 @@ class ZugferdDocumentType
      * receiver.
      */
     public const REPORT_OF_TRANSACTIONS_WHICH_NEED_FURTHER_INFORMATION_FROM_THE_RECEIVER = '339';
-
     /**
      * Request for an amendment of a documentary credit (196)
      *
      * Request for an amendment of a documentary credit.
      */
     public const REQUEST_FOR_AN_AMENDMENT_OF_A_DOCUMENTARY_CREDIT = '196';
-
     /**
      * Request for contract price and delivery quote (445)
      *
@@ -4737,7 +4152,6 @@ class ZugferdDocumentType
      * delivery conditions under which goods are offered.
      */
     public const REQUEST_FOR_CONTRACT_PRICE_AND_DELIVERY_QUOTE = '445';
-
     /**
      * Request for contract price quote (444)
      *
@@ -4745,7 +4159,6 @@ class ZugferdDocumentType
      * are offered.
      */
     public const REQUEST_FOR_CONTRACT_PRICE_QUOTE = '444';
-
     /**
      * Request for delivery instructions (330)
      *
@@ -4753,7 +4166,6 @@ class ZugferdDocumentType
      * buyer regarding the details of the delivery of goods ordered.
      */
     public const REQUEST_FOR_DELIVERY_INSTRUCTIONS = '330';
-
     /**
      * Request for delivery quote (442)
      *
@@ -4761,21 +4173,18 @@ class ZugferdDocumentType
      * offered.
      */
     public const REQUEST_FOR_DELIVERY_QUOTE = '442';
-
     /**
      * Request for financial cancellation (213)
      *
      * The message is a request for financial cancellation.
      */
     public const REQUEST_FOR_FINANCIAL_CANCELLATION = '213';
-
     /**
      * Request for metering point information (379)
      *
      * Message to request information about a metering point.
      */
     public const REQUEST_FOR_METERING_POINT_INFORMATION = '379';
-
     /**
      * Request for payment (71)
      *
@@ -4783,7 +4192,6 @@ class ZugferdDocumentType
      * or more invoices past due.
      */
     public const REQUEST_FOR_PAYMENT = '71';
-
     /**
      * Request for price and delivery quote (443)
      *
@@ -4791,7 +4199,6 @@ class ZugferdDocumentType
      * are offered.
      */
     public const REQUEST_FOR_PRICE_AND_DELIVERY_QUOTE = '443';
-
     /**
      * Request for price and delivery quote, ship and debit (439)
      *
@@ -4801,7 +4208,6 @@ class ZugferdDocumentType
      * compensation for loss of inventory value.
      */
     public const REQUEST_FOR_PRICE_AND_DELIVERY_QUOTE_SHIP_AND_DEBIT = '439';
-
     /**
      * Request for price and delivery quote, specified end-user (437)
      *
@@ -4810,14 +4216,12 @@ class ZugferdDocumentType
      * specified on the request for quote.
      */
     public const REQUEST_FOR_PRICE_AND_DELIVERY_QUOTE_SPECIFIED_ENDUSER = '437';
-
     /**
      * Request for price quote (360)
      *
      * Document/message requesting price conditions under which goods are offered.
      */
     public const REQUEST_FOR_PRICE_QUOTE = '360';
-
     /**
      * Request for price quote, ship and debit (438)
      *
@@ -4827,7 +4231,6 @@ class ZugferdDocumentType
      * of inventory value.
      */
     public const REQUEST_FOR_PRICE_QUOTE_SHIP_AND_DEBIT = '438';
-
     /**
      * Request for price quote, specified end-customer (446)
      *
@@ -4836,35 +4239,30 @@ class ZugferdDocumentType
      * for quote.
      */
     public const REQUEST_FOR_PRICE_QUOTE_SPECIFIED_ENDCUSTOMER = '446';
-
     /**
      * Request for provision of a health service (359)
      *
      * Document containing request for provision of a health service.
      */
     public const REQUEST_FOR_PROVISION_OF_A_HEALTH_SERVICE = '359';
-
     /**
      * Request for quote (311)
      *
      * Document/message requesting a quote on specified goods or services.
      */
     public const REQUEST_FOR_QUOTE = '311';
-
     /**
      * Request for statistical data (75)
      *
      * Request for one or more items or data sets of statistical data.
      */
     public const REQUEST_FOR_STATISTICAL_DATA = '75';
-
     /**
      * Request for transfer (303)
      *
      * Document/message is a request for transfer.
      */
     public const REQUEST_FOR_TRANSFER = '303';
-
     /**
      * Requirements contract (154)
      *
@@ -4872,21 +4270,18 @@ class ZugferdDocumentType
      * of all purchase requirements during a specified contract period.
      */
     public const REQUIREMENTS_CONTRACT = '154';
-
     /**
      * Resale information (656)
      *
      * Document/message providing information on a resale.
      */
     public const RESALE_INFORMATION = '656';
-
     /**
      * Residence permit (717)
      *
      * A document authorizing residence.
      */
     public const RESIDENCE_PERMIT = '717';
-
     /**
      * Response to a trade statistics message (37)
      *
@@ -4895,35 +4290,30 @@ class ZugferdDocumentType
      * for European statistical purposes.
      */
     public const RESPONSE_TO_A_TRADE_STATISTICS_MESSAGE = '37';
-
     /**
      * Response to an amendment of a documentary credit (199)
      *
      * Response to an amendment of a documentary credit.
      */
     public const RESPONSE_TO_AN_AMENDMENT_OF_A_DOCUMENTARY_CREDIT = '199';
-
     /**
      * Response to previous banking status message (252)
      *
      * A response to a previously sent banking status message.
      */
     public const RESPONSE_TO_PREVIOUS_BANKING_STATUS_MESSAGE = '252';
-
     /**
      * Response to query (22)
      *
      * Document/message returned as an answer to a question.
      */
     public const RESPONSE_TO_QUERY = '22';
-
     /**
      * Response to registration (301)
      *
      * Code specifying a response to an occurrence of a registration message.
      */
     public const RESPONSE_TO_REGISTRATION = '301';
-
     /**
      * Restow (24)
      *
@@ -4931,7 +4321,6 @@ class ZugferdDocumentType
      * reloaded onto the same means of transport.
      */
     public const RESTOW = '24';
-
     /**
      * Returns advice (729)
      *
@@ -4939,28 +4328,24 @@ class ZugferdDocumentType
      * despatch of returned goods.
      */
     public const RETURNS_ADVICE = '729';
-
     /**
      * Reversal of credit (458)
      *
      * Reversal of credit accounting entry by bank.
      */
     public const REVERSAL_OF_CREDIT = '458';
-
     /**
      * Reversal of debit (457)
      *
      * Reversal of debit accounting entry by bank.
      */
     public const REVERSAL_OF_DEBIT = '457';
-
     /**
      * Risk analysis (872)
      *
      * Document specifying the analysis of risks.
      */
     public const RISK_ANALYSIS = '872';
-
     /**
      * Road consignment note (730)
      *
@@ -4971,7 +4356,6 @@ class ZugferdDocumentType
      * international carriage of goods by road (CMR).
      */
     public const ROAD_CONSIGNMENT_NOTE = '730';
-
     /**
      * Road list-SMGS (722)
      *
@@ -4980,14 +4364,12 @@ class ZugferdDocumentType
      * transport document.
      */
     public const ROAD_LISTSMGS = '722';
-
     /**
      * Rush order (224)
      *
      * Document/message for urgent ordering.
      */
     public const RUSH_ORDER = '224';
-
     /**
      * Safety and hazard data sheet (53)
      *
@@ -4997,14 +4379,12 @@ class ZugferdDocumentType
      * these material.
      */
     public const SAFETY_AND_HAZARD_DATA_SHEET = '53';
-
     /**
      * Safety of equipment certificate (793)
      *
      * Document certifying the safety of a ship's equipment to a specified date.
      */
     public const SAFETY_OF_EQUIPMENT_CERTIFICATE = '793';
-
     /**
      * Safety of radio certificate (792)
      *
@@ -5012,14 +4392,12 @@ class ZugferdDocumentType
      * date.
      */
     public const SAFETY_OF_RADIO_CERTIFICATE = '792';
-
     /**
      * Safety of ship certificate (791)
      *
      * Document certifying a ship's safety to a specified date.
      */
     public const SAFETY_OF_SHIP_CERTIFICATE = '791';
-
     /**
      * Sales data report (735)
      *
@@ -5029,7 +4407,6 @@ class ZugferdDocumentType
      * information. It enables the recipient to p.
      */
     public const SALES_DATA_REPORT = '735';
-
     /**
      * Sales forecast report (734)
      *
@@ -5039,14 +4416,12 @@ class ZugferdDocumentType
      * quantity information. It enables the recip.
      */
     public const SALES_FORECAST_REPORT = '734';
-
     /**
      * Sample order (228)
      *
      * Document/message to order samples.
      */
     public const SAMPLE_ORDER = '228';
-
     /**
      * Sanitary certificate (852)
      *
@@ -5056,7 +4431,6 @@ class ZugferdDocumentType
      * undertaken.
      */
     public const SANITARY_CERTIFICATE = '852';
-
     /**
      * Sea waybill (710)
      *
@@ -5066,7 +4440,6 @@ class ZugferdDocumentType
      * document.
      */
     public const SEA_WAYBILL = '710';
-
     /**
      * Seaman’s book (718)
      *
@@ -5074,28 +4447,24 @@ class ZugferdDocumentType
      * record of their rank and service career.
      */
     public const SEAMANS_BOOK = '718';
-
     /**
      * Season ticket (43)
      *
      * A document giving access to a service for a determined period of time.
      */
     public const SEASON_TICKET = '43';
-
     /**
      * Segment change request (279)
      *
      * Requesting a change to an existing segment.
      */
     public const SEGMENT_CHANGE_REQUEST = '279';
-
     /**
      * Segment request (278)
      *
      * Request a new segment.
      */
     public const SEGMENT_REQUEST = '278';
-
     /**
      * Self billed credit note (261)
      *
@@ -5103,7 +4472,6 @@ class ZugferdDocumentType
      * billing environment.
      */
     public const SELF_BILLED_CREDIT_NOTE = '261';
-
     /**
      * Self billed debit note (527)
      *
@@ -5111,21 +4479,18 @@ class ZugferdDocumentType
      * billing environment.
      */
     public const SELF_BILLED_DEBIT_NOTE = '527';
-
     /**
      * Self-billed invoice (389)
      *
      * An invoice the invoicee is producing instead of the seller.
      */
     public const SELFBILLED_INVOICE = '389';
-
     /**
      * Sequenced delivery schedule (307)
      *
      * Message to describe a sequence of product delivery.
      */
     public const SEQUENCED_DELIVERY_SCHEDULE = '307';
-
     /**
      * Service directory definition (286)
      *
@@ -5133,14 +4498,12 @@ class ZugferdDocumentType
      * thereof.
      */
     public const SERVICE_DIRECTORY_DEFINITION = '286';
-
     /**
      * Settlement of a letter of credit (246)
      *
      * Settlement of a letter of credit.
      */
     public const SETTLEMENT_OF_A_LETTER_OF_CREDIT = '246';
-
     /**
      * Ship Security Plan (552)
      *
@@ -5149,7 +4512,6 @@ class ZugferdDocumentType
      * crew.
      */
     public const SHIP_SECURITY_PLAN = '552';
-
     /**
      * Ship's stores declaration (799)
      *
@@ -5160,7 +4522,6 @@ class ZugferdDocumentType
      * including fuel/lubricants, excluding spare parts/equipment (IMO).
      */
     public const SHIPS_STORES_DECLARATION = '799';
-
     /**
      * Shipper's letter of instructions (air) (341)
      *
@@ -5169,7 +4530,6 @@ class ZugferdDocumentType
      * waybill.
      */
     public const SHIPPERS_LETTER_OF_INSTRUCTIONS_AIR = '341';
-
     /**
      * Shipping instructions (340)
      *
@@ -5177,7 +4537,6 @@ class ZugferdDocumentType
      * requirements for its physical movement.
      */
     public const SHIPPING_INSTRUCTIONS = '340';
-
     /**
      * Shipping note (630)
      *
@@ -5189,21 +4548,18 @@ class ZugferdDocumentType
      * the functions of document 632, 633, 650 and 655.
      */
     public const SHIPPING_NOTE = '630';
-
     /**
      * Simple data element change request (275)
      *
      * Request a change to an existing simple data element.
      */
     public const SIMPLE_DATA_ELEMENT_CHANGE_REQUEST = '275';
-
     /**
      * Simple data element request (274)
      *
      * Requesting a new simple data element.
      */
     public const SIMPLE_DATA_ELEMENT_REQUEST = '274';
-
     /**
      * Single administrative document (960)
      *
@@ -5211,21 +4567,18 @@ class ZugferdDocumentType
      * declaration within the EC, implemented on 01-01-1988.
      */
     public const SINGLE_ADMINISTRATIVE_DOCUMENT = '960';
-
     /**
      * Soil analysis (416)
      *
      * Soil analysis document.
      */
     public const SOIL_ANALYSIS = '416';
-
     /**
      * Spare parts order (233)
      *
      * Document/message to order spare parts.
      */
     public const SPARE_PARTS_ORDER = '233';
-
     /**
      * Special requirements permit related to the transport of cargo (521)
      *
@@ -5233,7 +4586,6 @@ class ZugferdDocumentType
      * under the conditions as specifically required.
      */
     public const SPECIAL_REQUIREMENTS_PERMIT_RELATED_TO_THE_TRANSPORT_OF_CARGO = '521';
-
     /**
      * Specific contract conditions (777)
      *
@@ -5241,14 +4593,12 @@ class ZugferdDocumentType
      * specific contract.
      */
     public const SPECIFIC_CONTRACT_CONDITIONS = '777';
-
     /**
      * Spot order (222)
      *
      * Document/message ordering the remainder of a production's batch.
      */
     public const SPOT_ORDER = '222';
-
     /**
      * Standing inquiry on complete product information (736)
      *
@@ -5258,28 +4608,24 @@ class ZugferdDocumentType
      * complete download of the respe.
      */
     public const STANDING_INQUIRY_ON_COMPLETE_PRODUCT_INFORMATION = '736';
-
     /**
      * Standing inquiry on product information (376)
      *
      * A product inquiry which stands until it is cancelled.
      */
     public const STANDING_INQUIRY_ON_PRODUCT_INFORMATION = '376';
-
     /**
      * Standing order (258)
      *
      * An order to supply fixed quantities of products at fixed regular intervals.
      */
     public const STANDING_ORDER = '258';
-
     /**
      * Statement of account message (493)
      *
      * Usage of STATAC-message.
      */
     public const STATEMENT_OF_ACCOUNT_MESSAGE = '493';
-
     /**
      * Statistical and other administrative internal documents (190)
      *
@@ -5288,21 +4634,18 @@ class ZugferdDocumentType
      * administration purposes.
      */
     public const STATISTICAL_AND_OTHER_ADMINISTRATIVE_INTERNAL_DOCUMENTS = '190';
-
     /**
      * Statistical data (74)
      *
      * Transmission of one or more items of data or data sets.
      */
     public const STATISTICAL_DATA = '74';
-
     /**
      * Statistical definitions (73)
      *
      * Transmission of one or more statistical definitions.
      */
     public const STATISTICAL_DEFINITIONS = '73';
-
     /**
      * Statistical document, export (895)
      *
@@ -5311,7 +4654,6 @@ class ZugferdDocumentType
      * trade statistics.
      */
     public const STATISTICAL_DOCUMENT_EXPORT = '895';
-
     /**
      * Statistical document, import (995)
      *
@@ -5319,35 +4661,30 @@ class ZugferdDocumentType
      * purposes.
      */
     public const STATISTICAL_DOCUMENT_IMPORT = '995';
-
     /**
      * Status information (23)
      *
      * Information regarding the status of a related message.
      */
     public const STATUS_INFORMATION = '23';
-
     /**
      * Status report (287)
      *
      * Message covers information about the status.
      */
     public const STATUS_REPORT = '287';
-
     /**
      * Storage capacity offer (554)
      *
      * Offering of capacity to store goods.
      */
     public const STORAGE_CAPACITY_OFFER = '554';
-
     /**
      * Storage capacity request (576)
      *
      * Request for capacity to store goods.
      */
     public const STORAGE_CAPACITY_REQUEST = '576';
-
     /**
      * Stores requisition (120)
      *
@@ -5355,7 +4692,6 @@ class ZugferdDocumentType
      * stock of goods.
      */
     public const STORES_REQUISITION = '120';
-
     /**
      * Subcontractor plan (157)
      *
@@ -5363,7 +4699,6 @@ class ZugferdDocumentType
      * subcontracting strategy for a specific contract.
      */
     public const SUBCONTRACTOR_PLAN = '157';
-
     /**
      * Substitute air waybill (743)
      *
@@ -5371,21 +4706,18 @@ class ZugferdDocumentType
      * the absence of the original.
      */
     public const SUBSTITUTE_AIR_WAYBILL = '743';
-
     /**
      * Summary sales report (346)
      *
      * Sales report containing summaries for several earlier sent sales reports.
      */
     public const SUMMARY_SALES_REPORT = '346';
-
     /**
      * Summons (849)
      *
      * Document specifying a summons to court.
      */
     public const SUMMONS = '849';
-
     /**
      * Supplementary document for application for cargo operation of dangerous
      * goods (319)
@@ -5393,14 +4725,12 @@ class ZugferdDocumentType
      * Supplementary document to apply for cargo operation of dangerous goods.
      */
     public const SUPPLEMENTARY_DOCUMENT_FOR_APPLICATION_FOR_CARGO_OPERATION_OF_DANGEROUS_GOODS = '319';
-
     /**
      * Supplementary document for application for transport of dangerous goods (321)
      *
      * Supplementary document to apply for transport of dangerous goods.
      */
     public const SUPPLEMENTARY_DOCUMENT_FOR_APPLICATION_FOR_TRANSPORT_OF_DANGEROUS_GOODS = '321';
-
     /**
      * Sustainability data request (900)
      *
@@ -5408,7 +4738,6 @@ class ZugferdDocumentType
      * sustainability.
      */
     public const SUSTAINABILITY_DATA_REQUEST = '900';
-
     /**
      * Sustainability data response (902)
      *
@@ -5416,21 +4745,18 @@ class ZugferdDocumentType
      * sustainability.
      */
     public const SUSTAINABILITY_DATA_RESPONSE = '902';
-
     /**
      * Sustainability Inspection request (903)
      *
      * Document/message requesting a sustainability inspection.
      */
     public const SUSTAINABILITY_INSPECTION_REQUEST = '903';
-
     /**
      * Sustainability Inspection response (904)
      *
      * Document/message reporting the results of a sustainability inspection.
      */
     public const SUSTAINABILITY_INSPECTION_RESPONSE = '904';
-
     /**
      * Swap order (229)
      *
@@ -5438,14 +4764,12 @@ class ZugferdDocumentType
      * previously ordered.
      */
     public const SWAP_ORDER = '229';
-
     /**
      * Tanker bill of lading (709)
      *
      * Document which evidences a transport of liquid bulk cargo.
      */
     public const TANKER_BILL_OF_LADING = '709';
-
     /**
      * Task order (155)
      *
@@ -5453,7 +4777,6 @@ class ZugferdDocumentType
      * specified function.
      */
     public const TASK_ORDER = '155';
-
     /**
      * Tax calculation/confirmation response (Customs) (965)
      *
@@ -5461,14 +4784,12 @@ class ZugferdDocumentType
      * data from Customs to the transmitter of the previous message.
      */
     public const TAX_CALCULATIONCONFIRMATION_RESPONSE_CUSTOMS = '965';
-
     /**
      * Tax declaration (general) (938)
      *
      * Document/message containing a general tax declaration.
      */
     public const TAX_DECLARATION_GENERAL = '938';
-
     /**
      * Tax declaration (value added tax) (937)
      *
@@ -5476,35 +4797,30 @@ class ZugferdDocumentType
      * required by the competent body for assessment of value-added tax.
      */
     public const TAX_DECLARATION_VALUE_ADDED_TAX = '937';
-
     /**
      * Tax demand (940)
      *
      * Document/message containing the demand of tax.
      */
     public const TAX_DEMAND = '940';
-
     /**
      * Tax invoice (388)
      *
      * An invoice for tax purposes.
      */
     public const TAX_INVOICE = '388';
-
     /**
      * Tax notification (102)
      *
      * Used to specify that the message is a tax notification.
      */
     public const TAX_NOTIFICATION = '102';
-
     /**
      * Tender (758)
      *
      * A document/message used by a supplier to bid in a procurement procedure.
      */
     public const TENDER = '758';
-
     /**
      * Tendering price/sales catalogue (762)
      *
@@ -5512,7 +4828,6 @@ class ZugferdDocumentType
      * details for goods and/or services to be offered as part of a tender.
      */
     public const TENDERING_PRICESALES_CATALOGUE = '762';
-
     /**
      * Tendering price/sales catalogue request (757)
      *
@@ -5520,28 +4835,24 @@ class ZugferdDocumentType
      * details for goods and/or services to be offered as part of a tender.
      */
     public const TENDERING_PRICESALES_CATALOGUE_REQUEST = '757';
-
     /**
      * Test report (4)
      *
      * Report providing the results of a test session.
      */
     public const TEST_REPORT = '4';
-
     /**
      * Thermographic reading report (641)
      *
      * A report of temperature readings over a period.
      */
     public const THERMOGRAPHIC_READING_REPORT = '641';
-
     /**
      * Third party payment report (837)
      *
      * Report about payments done towards a third party.
      */
     public const THIRD_PARTY_PAYMENT_REPORT = '837';
-
     /**
      * Through bill of lading (761)
      *
@@ -5551,7 +4862,6 @@ class ZugferdDocumentType
      * set forth in the through bill of lading.
      */
     public const THROUGH_BILL_OF_LADING = '761';
-
     /**
      * TIF form (951)
      *
@@ -5561,7 +4871,6 @@ class ZugferdDocumentType
      * carried by rail (TIF Convention of UIC).
      */
     public const TIF_FORM = '951';
-
     /**
      * TIR carnet (952)
      *
@@ -5573,28 +4882,24 @@ class ZugferdDocumentType
      * of TIR Carnets (UN/ECE).
      */
     public const TIR_CARNET = '952';
-
     /**
      * Traceability event declaration (899)
      *
      * Document/message declaring a traceability event.
      */
     public const TRACEABILITY_EVENT_DECLARATION = '899';
-
     /**
      * Tracking number assignment report (283)
      *
      * Report of assigned tracking numbers.
      */
     public const TRACKING_NUMBER_ASSIGNMENT_REPORT = '283';
-
     /**
      * Trade data (332)
      *
      * Document/message is for trade data.
      */
     public const TRADE_DATA = '332';
-
     /**
      * Transfrontier waste shipment authorization (978)
      *
@@ -5602,7 +4907,6 @@ class ZugferdDocumentType
      * international carriage of waste. Syn: Transfrontier waste shipment permit.
      */
     public const TRANSFRONTIER_WASTE_SHIPMENT_AUTHORIZATION = '978';
-
     /**
      * Transfrontier waste shipment movement document (979)
      *
@@ -5610,14 +4914,12 @@ class ZugferdDocumentType
      * international carriage of waste.
      */
     public const TRANSFRONTIER_WASTE_SHIPMENT_MOVEMENT_DOCUMENT = '979';
-
     /**
      * Transit certificate of approval (897)
      *
      * Certificate of approval for the transport of goods under customs seal
      */
     public const TRANSIT_CERTIFICATE_OF_APPROVAL = '897';
-
     /**
      * Transit Conveyor Document (971)
      *
@@ -5626,7 +4928,6 @@ class ZugferdDocumentType
      * invoice the expenses for its part of the transport.
      */
     public const TRANSIT_CONVEYOR_DOCUMENT = '971';
-
     /**
      * Transit license (628)
      *
@@ -5635,21 +4936,18 @@ class ZugferdDocumentType
      * articles under customs procedure.
      */
     public const TRANSIT_LICENSE = '628';
-
     /**
      * Transport capacity offer (551)
      *
      * Offering of capacity for the transport of goods for a date and a route.
      */
     public const TRANSPORT_CAPACITY_OFFER = '551';
-
     /**
      * Transport capacity request (577)
      *
      * Request for capacity for the transport of goods for a date and a route.
      */
     public const TRANSPORT_CAPACITY_REQUEST = '577';
-
     /**
      * Transport cargo release order (129)
      *
@@ -5657,14 +4955,12 @@ class ZugferdDocumentType
      * party.
      */
     public const TRANSPORT_CARGO_RELEASE_ORDER = '129';
-
     /**
      * Transport departure report (124)
      *
      * Report of the departure of a means of transport from a particular facility.
      */
     public const TRANSPORT_DEPARTURE_REPORT = '124';
-
     /**
      * Transport discharge instruction (118)
      *
@@ -5672,7 +4968,6 @@ class ZugferdDocumentType
      * from a means of transport.
      */
     public const TRANSPORT_DISCHARGE_INSTRUCTION = '118';
-
     /**
      * Transport discharge report (119)
      *
@@ -5680,7 +4975,6 @@ class ZugferdDocumentType
      * particular means of transport.
      */
     public const TRANSPORT_DISCHARGE_REPORT = '119';
-
     /**
      * Transport emergency card (324)
      *
@@ -5689,7 +4983,6 @@ class ZugferdDocumentType
      * of accident, spillage or fire and first aid to be given.
      */
     public const TRANSPORT_EMERGENCY_CARD = '324';
-
     /**
      * Transport empty equipment advice (125)
      *
@@ -5697,7 +4990,6 @@ class ZugferdDocumentType
      * return.
      */
     public const TRANSPORT_EMPTY_EQUIPMENT_ADVICE = '125';
-
     /**
      * Transport equipment acceptance order (126)
      *
@@ -5705,21 +4997,18 @@ class ZugferdDocumentType
      * an inland carrier (rail, road or barge) to a specified facility.
      */
     public const TRANSPORT_EQUIPMENT_ACCEPTANCE_ORDER = '126';
-
     /**
      * Transport equipment damage report (106)
      *
      * Report of damaged items of transport equipment that have been returned.
      */
     public const TRANSPORT_EQUIPMENT_DAMAGE_REPORT = '106';
-
     /**
      * Transport equipment delivery notice (405)
      *
      * Notification regarding the delivery of transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_DELIVERY_NOTICE = '405';
-
     /**
      * Transport equipment direct interchange report (103)
      *
@@ -5727,7 +5016,6 @@ class ZugferdDocumentType
      * being exchanged, establishing relevant rental periods.
      */
     public const TRANSPORT_EQUIPMENT_DIRECT_INTERCHANGE_REPORT = '103';
-
     /**
      * Transport equipment empty release instruction (108)
      *
@@ -5735,7 +5023,6 @@ class ZugferdDocumentType
      * party or parties.
      */
     public const TRANSPORT_EQUIPMENT_EMPTY_RELEASE_INSTRUCTION = '108';
-
     /**
      * Transport equipment gross mass verification message (749)
      *
@@ -5743,7 +5030,6 @@ class ZugferdDocumentType
      * transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_GROSS_MASS_VERIFICATION_MESSAGE = '749';
-
     /**
      * Transport equipment impending arrival advice (104)
      *
@@ -5751,7 +5037,6 @@ class ZugferdDocumentType
      * expected to be delivered to a certain location.
      */
     public const TRANSPORT_EQUIPMENT_IMPENDING_ARRIVAL_ADVICE = '104';
-
     /**
      * Transport equipment maintenance and repair notice (143)
      *
@@ -5759,7 +5044,6 @@ class ZugferdDocumentType
      * maintenance performed.
      */
     public const TRANSPORT_EQUIPMENT_MAINTENANCE_AND_REPAIR_NOTICE = '143';
-
     /**
      * Transport equipment maintenance and repair work authorisation (123)
      *
@@ -5767,7 +5051,6 @@ class ZugferdDocumentType
      * performed.
      */
     public const TRANSPORT_EQUIPMENT_MAINTENANCE_AND_REPAIR_WORK_AUTHORISATION = '123';
-
     /**
      * Transport equipment maintenance and repair work estimate advice (107)
      *
@@ -5775,7 +5058,6 @@ class ZugferdDocumentType
      * costs.
      */
     public const TRANSPORT_EQUIPMENT_MAINTENANCE_AND_REPAIR_WORK_ESTIMATE_ADVICE = '107';
-
     /**
      * Transport equipment maintenance and repair work estimate order (142)
      *
@@ -5783,7 +5065,6 @@ class ZugferdDocumentType
      * transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_MAINTENANCE_AND_REPAIR_WORK_ESTIMATE_ORDER = '142';
-
     /**
      * Transport equipment movement instruction (264)
      *
@@ -5791,14 +5072,12 @@ class ZugferdDocumentType
      * equipment.
      */
     public const TRANSPORT_EQUIPMENT_MOVEMENT_INSTRUCTION = '264';
-
     /**
      * Transport equipment movement report (265)
      *
      * Report on one or more different movements of transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_MOVEMENT_REPORT = '265';
-
     /**
      * Transport equipment movement report, partial (873)
      *
@@ -5806,7 +5085,6 @@ class ZugferdDocumentType
      * part of the movements of transport equipment for a vessel in a port.
      */
     public const TRANSPORT_EQUIPMENT_MOVEMENT_REPORT_PARTIAL = '873';
-
     /**
      * Transport equipment off-hire report (58)
      *
@@ -5815,7 +5093,6 @@ class ZugferdDocumentType
      * period.
      */
     public const TRANSPORT_EQUIPMENT_OFFHIRE_REPORT = '58';
-
     /**
      * Transport equipment off-hire request (136)
      *
@@ -5823,7 +5100,6 @@ class ZugferdDocumentType
      * specified time.
      */
     public const TRANSPORT_EQUIPMENT_OFFHIRE_REQUEST = '136';
-
     /**
      * Transport equipment on-hire order (135)
      *
@@ -5831,7 +5107,6 @@ class ZugferdDocumentType
      * lessee, and authorising collection by or on behalf of a specified party.
      */
     public const TRANSPORT_EQUIPMENT_ONHIRE_ORDER = '135';
-
     /**
      * Transport equipment on-hire report (57)
      *
@@ -5840,14 +5115,12 @@ class ZugferdDocumentType
      * rental period.
      */
     public const TRANSPORT_EQUIPMENT_ONHIRE_REPORT = '57';
-
     /**
      * Transport equipment on-hire request (134)
      *
      * Request for transport equipment to be made available for hire.
      */
     public const TRANSPORT_EQUIPMENT_ONHIRE_REQUEST = '134';
-
     /**
      * Transport equipment packing instruction (131)
      *
@@ -5855,7 +5128,6 @@ class ZugferdDocumentType
      * equipment.
      */
     public const TRANSPORT_EQUIPMENT_PACKING_INSTRUCTION = '131';
-
     /**
      * Transport equipment pick-up availability confirmation (115)
      *
@@ -5863,7 +5135,6 @@ class ZugferdDocumentType
      * collection.
      */
     public const TRANSPORT_EQUIPMENT_PICKUP_AVAILABILITY_CONFIRMATION = '115';
-
     /**
      * Transport equipment pick-up availability request (114)
      *
@@ -5871,21 +5142,18 @@ class ZugferdDocumentType
      * available for collection.
      */
     public const TRANSPORT_EQUIPMENT_PICKUP_AVAILABILITY_REQUEST = '114';
-
     /**
      * Transport equipment pick-up report (116)
      *
      * Report that an item of transport equipment has been collected.
      */
     public const TRANSPORT_EQUIPMENT_PICKUP_REPORT = '116';
-
     /**
      * Transport equipment profile report (436)
      *
      * Report on the profile of transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_PROFILE_REPORT = '436';
-
     /**
      * Transport equipment shift report (117)
      *
@@ -5893,7 +5161,6 @@ class ZugferdDocumentType
      * facility.
      */
     public const TRANSPORT_EQUIPMENT_SHIFT_REPORT = '117';
-
     /**
      * Transport equipment special service instruction (127)
      *
@@ -5901,7 +5168,6 @@ class ZugferdDocumentType
      * of transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_SPECIAL_SERVICE_INSTRUCTION = '127';
-
     /**
      * Transport equipment status change report (266)
      *
@@ -5909,7 +5175,6 @@ class ZugferdDocumentType
      * transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_STATUS_CHANGE_REPORT = '266';
-
     /**
      * Transport equipment stock report (128)
      *
@@ -5917,28 +5182,24 @@ class ZugferdDocumentType
      * locations.
      */
     public const TRANSPORT_EQUIPMENT_STOCK_REPORT = '128';
-
     /**
      * Transport equipment survey order (137)
      *
      * Order to perform a survey on specified items of transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_SURVEY_ORDER = '137';
-
     /**
      * Transport equipment survey order response (138)
      *
      * Response to an order to conduct a survey of transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_SURVEY_ORDER_RESPONSE = '138';
-
     /**
      * Transport equipment survey report (139)
      *
      * Survey report of specified items of transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_SURVEY_REPORT = '139';
-
     /**
      * Transport equipment unpacking instruction (112)
      *
@@ -5946,7 +5207,6 @@ class ZugferdDocumentType
      * items of transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_UNPACKING_INSTRUCTION = '112';
-
     /**
      * Transport equipment unpacking report (113)
      *
@@ -5954,7 +5214,6 @@ class ZugferdDocumentType
      * of transport equipment.
      */
     public const TRANSPORT_EQUIPMENT_UNPACKING_REPORT = '113';
-
     /**
      * Transport loading instruction (121)
      *
@@ -5962,7 +5221,6 @@ class ZugferdDocumentType
      * of transport.
      */
     public const TRANSPORT_LOADING_INSTRUCTION = '121';
-
     /**
      * Transport loading report (122)
      *
@@ -5970,7 +5228,6 @@ class ZugferdDocumentType
      * equipment onto a means of transport.
      */
     public const TRANSPORT_LOADING_REPORT = '122';
-
     /**
      * Transport Means Security Report (588)
      *
@@ -5978,7 +5235,6 @@ class ZugferdDocumentType
      * of transport.
      */
     public const TRANSPORT_MEANS_SECURITY_REPORT = '588';
-
     /**
      * Transport movement gate in report (109)
      *
@@ -5987,7 +5243,6 @@ class ZugferdDocumentType
      * carrier.
      */
     public const TRANSPORT_MOVEMENT_GATE_IN_REPORT = '109';
-
     /**
      * Transport movement gate out report (111)
      *
@@ -5996,14 +5251,12 @@ class ZugferdDocumentType
      * inland carrier.
      */
     public const TRANSPORT_MOVEMENT_GATE_OUT_REPORT = '111';
-
     /**
      * Transport routing information (441)
      *
      * Document specifying the routes for transport between locations.
      */
     public const TRANSPORT_ROUTING_INFORMATION = '441';
-
     /**
      * Transport status report (44)
      *
@@ -6011,7 +5264,6 @@ class ZugferdDocumentType
      * transport status (i.e. event) between agreed parties.
      */
     public const TRANSPORT_STATUS_REPORT = '44';
-
     /**
      * Transport status request (45)
      *
@@ -6019,7 +5271,6 @@ class ZugferdDocumentType
      * national multimodal status report message IFSTA).
      */
     public const TRANSPORT_STATUS_REQUEST = '45';
-
     /**
      * Transshipment despatch advice (399)
      *
@@ -6028,14 +5279,12 @@ class ZugferdDocumentType
      * transshipment.
      */
     public const TRANSSHIPMENT_DESPATCH_ADVICE = '399';
-
     /**
      * Travel ticket (459)
      *
      * The document is a ticket giving access to a travel service.
      */
     public const TRAVEL_TICKET = '459';
-
     /**
      * Treatment - nil outturn (59)
      *
@@ -6043,21 +5292,18 @@ class ZugferdDocumentType
      * unpacking.
      */
     public const TREATMENT_NIL_OUTTURN = '59';
-
     /**
      * Treatment - personal effect (62)
      *
      * Cargo consists of personal effects.
      */
     public const TREATMENT_PERSONAL_EFFECT = '62';
-
     /**
      * Treatment - timber (63)
      *
      * Cargo consists of timber.
      */
     public const TREATMENT_TIMBER = '63';
-
     /**
      * Treatment - time-up underbond (60)
      *
@@ -6065,7 +5311,6 @@ class ZugferdDocumentType
      * warehousing due to being time-up.
      */
     public const TREATMENT_TIMEUP_UNDERBOND = '60';
-
     /**
      * Treatment - underbond by sea (61)
      *
@@ -6073,7 +5318,6 @@ class ZugferdDocumentType
      * a customs office where formalities will be completed.
      */
     public const TREATMENT_UNDERBOND_BY_SEA = '61';
-
     /**
      * Underbond approval (32)
      *
@@ -6081,7 +5325,6 @@ class ZugferdDocumentType
      * control point to another.
      */
     public const UNDERBOND_APPROVAL = '32';
-
     /**
      * Underbond request (31)
      *
@@ -6089,14 +5332,12 @@ class ZugferdDocumentType
      * to another.
      */
     public const UNDERBOND_REQUEST = '31';
-
     /**
      * United Nations standard message request (285)
      *
      * Requesting a United Nations Standard Message (UNSM).
      */
     public const UNITED_NATIONS_STANDARD_MESSAGE_REQUEST = '285';
-
     /**
      * Universal (multipurpose) transport document (701)
      *
@@ -6108,7 +5349,6 @@ class ZugferdDocumentType
      * referred to in the document.
      */
     public const UNIVERSAL_MULTIPURPOSE_TRANSPORT_DOCUMENT = '701';
-
     /**
      * Unpriced bill of quantity (208)
      *
@@ -6116,14 +5356,12 @@ class ZugferdDocumentType
      * in an unpriced form to invite tender prices.
      */
     public const UNPRICED_BILL_OF_QUANTITY = '208';
-
     /**
      * Unship permit (72)
      *
      * A message or document issuing permission to unship cargo.
      */
     public const UNSHIP_PERMIT = '72';
-
     /**
      * US, FATCA statement (814)
      *
@@ -6131,7 +5369,6 @@ class ZugferdDocumentType
      * United States of America.
      */
     public const US_FATCA_STATEMENT = '814';
-
     /**
      * User directory definition (284)
      *
@@ -6139,7 +5376,6 @@ class ZugferdDocumentType
      * thereof.
      */
     public const USER_DIRECTORY_DEFINITION = '284';
-
     /**
      * Utilities time series message (411)
      *
@@ -6148,28 +5384,24 @@ class ZugferdDocumentType
      * connected technical and/or administrative information.
      */
     public const UTILITIES_TIME_SERIES_MESSAGE = '411';
-
     /**
      * Vaccination certificate (38)
      *
      * Official document proving immunisation against certain diseases.
      */
     public const VACCINATION_CERTIFICATE = '38';
-
     /**
      * Validated priced tender (50)
      *
      * A validated priced tender.
      */
     public const VALIDATED_PRICED_TENDER = '50';
-
     /**
      * Valuation report (829)
      *
      * Document reporting a valuation.
      */
     public const VALUATION_REPORT = '829';
-
     /**
      * Value declaration (934)
      *
@@ -6180,14 +5412,12 @@ class ZugferdDocumentType
      * of determining the Customs value of goods imported.
      */
     public const VALUE_DECLARATION = '934';
-
     /**
      * Vehicle aboard document (857)
      *
      * Document which must be aboard the vehicle.
      */
     public const VEHICLE_ABOARD_DOCUMENT = '857';
-
     /**
      * Vessel unpack report (86)
      *
@@ -6196,7 +5426,6 @@ class ZugferdDocumentType
      * discharging port.
      */
     public const VESSEL_UNPACK_REPORT = '86';
-
     /**
      * Veterinary certificate (853)
      *
@@ -6206,7 +5435,6 @@ class ZugferdDocumentType
      * and other treatment to which they have been subjected.
      */
     public const VETERINARY_CERTIFICATE = '853';
-
     /**
      * Veterinary quarantine certificate (629)
      *
@@ -6215,14 +5443,12 @@ class ZugferdDocumentType
      * determined by veterinary quarantine instructions.
      */
     public const VETERINARY_QUARANTINE_CERTIFICATE = '629';
-
     /**
      * Video (866)
      *
      * Document consisting of a video.
      */
     public const VIDEO = '866';
-
     /**
      * Visa (483)
      *
@@ -6231,14 +5457,12 @@ class ZugferdDocumentType
      * permitting the holder to enter or leave a country.
      */
     public const VISA = '483';
-
     /**
      * Wage determination (160)
      *
      * A document indicating a determination of the wages to be paid.
      */
     public const WAGE_DETERMINATION = '160';
-
     /**
      * Wagon report (970)
      *
@@ -6246,7 +5470,6 @@ class ZugferdDocumentType
      * their lading in a case of a multiple wagon consignment.
      */
     public const WAGON_REPORT = '970';
-
     /**
      * Warehouse warrant (635)
      *
@@ -6254,7 +5477,6 @@ class ZugferdDocumentType
      * placing goods in a warehouse and conferring title to the goods stored.
      */
     public const WAREHOUSE_WARRANT = '635';
-
     /**
      * Waste disposal report (470)
      *
@@ -6262,14 +5484,12 @@ class ZugferdDocumentType
      * information on waste disposal.
      */
     public const WASTE_DISPOSAL_REPORT = '470';
-
     /**
      * Waybill (700)
      *
      * Non-negotiable document evidencing the contract for the transport of cargo.
      */
     public const WAYBILL = '700';
-
     /**
      * WCO Cargo Report Export, Air or Maritime (419)
      *
@@ -6278,7 +5498,6 @@ class ZugferdDocumentType
      * over water or through the air, e.g. vessel or aircraft.
      */
     public const WCO_CARGO_REPORT_EXPORT_AIR_OR_MARITIME = '419';
-
     /**
      * WCO Cargo Report Export, Rail or Road (418)
      *
@@ -6287,7 +5506,6 @@ class ZugferdDocumentType
      * over land, e.g. truck or train.
      */
     public const WCO_CARGO_REPORT_EXPORT_RAIL_OR_ROAD = '418';
-
     /**
      * WCO Cargo Report Import, Air or Maritime (422)
      *
@@ -6296,7 +5514,6 @@ class ZugferdDocumentType
      * over water or through the air, e.g. vessel or aircraft.
      */
     public const WCO_CARGO_REPORT_IMPORT_AIR_OR_MARITIME = '422';
-
     /**
      * WCO Cargo Report Import, Rail or Road (421)
      *
@@ -6305,7 +5522,6 @@ class ZugferdDocumentType
      * over land, e.g. truck or train.
      */
     public const WCO_CARGO_REPORT_IMPORT_RAIL_OR_ROAD = '421';
-
     /**
      * WCO Conveyance Arrival Report (524)
      *
@@ -6313,7 +5529,6 @@ class ZugferdDocumentType
      * regarding the conveyance arriving in a Customs territory.
      */
     public const WCO_CONVEYANCE_ARRIVAL_REPORT = '524';
-
     /**
      * WCO Conveyance Departure Report (525)
      *
@@ -6321,7 +5536,6 @@ class ZugferdDocumentType
      * regarding the conveyance departing a Customs territory.
      */
     public const WCO_CONVEYANCE_DEPARTURE_REPORT = '525';
-
     /**
      * WCO first step of two-step export declaration (424)
      *
@@ -6330,7 +5544,6 @@ class ZugferdDocumentType
      * procedure based on the 1999 Kyoto Convention.
      */
     public const WCO_FIRST_STEP_OF_TWOSTEP_EXPORT_DECLARATION = '424';
-
     /**
      * WCO first step of two-step import declaration (497)
      *
@@ -6339,7 +5552,6 @@ class ZugferdDocumentType
      * procedure based on the 1999 Kyoto Convention.
      */
     public const WCO_FIRST_STEP_OF_TWOSTEP_IMPORT_DECLARATION = '497';
-
     /**
      * WCO one-step export declaration (423)
      *
@@ -6348,7 +5560,6 @@ class ZugferdDocumentType
      * the 1999 Kyoto Convention.
      */
     public const WCO_ONESTEP_EXPORT_DECLARATION = '423';
-
     /**
      * WCO one-step import declaration (496)
      *
@@ -6357,7 +5568,6 @@ class ZugferdDocumentType
      * the 1999 Kyoto Convention.
      */
     public const WCO_ONESTEP_IMPORT_DECLARATION = '496';
-
     /**
      * WCO second step of two-step export declaration (495)
      *
@@ -6366,7 +5576,6 @@ class ZugferdDocumentType
      * procedure based on the 1999 Kyoto Convention.
      */
     public const WCO_SECOND_STEP_OF_TWOSTEP_EXPORT_DECLARATION = '495';
-
     /**
      * WCO second step of two-step import declaration (498)
      *
@@ -6375,35 +5584,30 @@ class ZugferdDocumentType
      * procedure based on the 1999 Kyoto Convention.
      */
     public const WCO_SECOND_STEP_OF_TWOSTEP_IMPORT_DECLARATION = '498';
-
     /**
      * Weight certificate (14)
      *
      * Certificate certifying the weight of goods.
      */
     public const WEIGHT_CERTIFICATE = '14';
-
     /**
      * Weight list (15)
      *
      * Document/message specifying the weight of goods.
      */
     public const WEIGHT_LIST = '15';
-
     /**
      * Wine certificate (268)
      *
      * Certificate attesting to the quality, origin or appellation of wine.
      */
     public const WINE_CERTIFICATE = '268';
-
     /**
      * Witness report (843)
      *
      * Document containing a report of a witness.
      */
     public const WITNESS_REPORT = '843';
-
     /**
      * Wool health certificate (269)
      *
@@ -6411,7 +5615,6 @@ class ZugferdDocumentType
      * animal health.
      */
     public const WOOL_HEALTH_CERTIFICATE = '269';
-
     /**
      * Written instructions in conformance with ADR article number 10385 (48)
      *

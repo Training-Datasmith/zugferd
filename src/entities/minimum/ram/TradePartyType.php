@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\minimum\ram;
 
 /**
@@ -9,140 +8,124 @@ namespace horstoeko\zugferd\entities\minimum\ram;
  *
  * XSD Type: TradePartyType
  */
-class TradePartyType
+class Trade_Party_Type
 {
     /**
      * @var string $name
      */
     private $name;
-
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\LegalOrganizationType $specifiedLegalOrganization
      */
-    private $specifiedLegalOrganization;
-
+    private $specified_legal_organization;
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\TradeAddressType $postalTradeAddress
      */
-    private $postalTradeAddress;
-
+    private $postal_trade_address;
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\TaxRegistrationType[] $specifiedTaxRegistration
      */
-    private $specifiedTaxRegistration = [
-
-    ];
-
+    private $specified_tax_registration = [];
     /**
      * Gets as name
      *
      * @return string
      */
-    public function getName()
+    public function get_name()
     {
         return $this->name;
     }
-
     /**
      * Sets a new name
      *
      * @param  string $name
      */
-    public function setName($name): self
+    public function set_name($name): self
     {
         $this->name = $name;
         return $this;
     }
-
     /**
      * Gets as specifiedLegalOrganization
      *
      * @return \horstoeko\zugferd\entities\minimum\ram\LegalOrganizationType
      */
-    public function getSpecifiedLegalOrganization()
+    public function get_specified_legal_organization()
     {
-        return $this->specifiedLegalOrganization;
+        return $this->specified_legal_organization;
     }
-
     /**
      * Sets a new specifiedLegalOrganization
      *
      * @param  \horstoeko\zugferd\entities\minimum\ram\LegalOrganizationType $specifiedLegalOrganization
      */
-    public function setSpecifiedLegalOrganization(?\horstoeko\zugferd\entities\minimum\ram\LegalOrganizationType $specifiedLegalOrganization = null): self
+    public function set_specified_legal_organization(?\horstoeko\zugferd\entities\minimum\ram\Legal_Organization_Type $specified_legal_organization = null): self
     {
-        $this->specifiedLegalOrganization = $specifiedLegalOrganization;
+        $this->specified_legal_organization = $specified_legal_organization;
         return $this;
     }
-
     /**
      * Gets as postalTradeAddress
      *
      * @return \horstoeko\zugferd\entities\minimum\ram\TradeAddressType
      */
-    public function getPostalTradeAddress()
+    public function get_postal_trade_address()
     {
-        return $this->postalTradeAddress;
+        return $this->postal_trade_address;
     }
-
     /**
      * Sets a new postalTradeAddress
      *
      * @param  \horstoeko\zugferd\entities\minimum\ram\TradeAddressType $postalTradeAddress
      */
-    public function setPostalTradeAddress(?\horstoeko\zugferd\entities\minimum\ram\TradeAddressType $postalTradeAddress = null): self
+    public function set_postal_trade_address(?\horstoeko\zugferd\entities\minimum\ram\Trade_Address_Type $postal_trade_address = null): self
     {
-        $this->postalTradeAddress = $postalTradeAddress;
+        $this->postal_trade_address = $postal_trade_address;
         return $this;
     }
-
     /**
      * Adds as specifiedTaxRegistration
      */
-    public function addToSpecifiedTaxRegistration(\horstoeko\zugferd\entities\minimum\ram\TaxRegistrationType $specifiedTaxRegistration): self
+    public function add_to_specified_tax_registration(\horstoeko\zugferd\entities\minimum\ram\Tax_Registration_Type $specified_tax_registration): self
     {
-        $this->specifiedTaxRegistration[] = $specifiedTaxRegistration;
+        $this->specified_tax_registration[] = $specified_tax_registration;
         return $this;
     }
-
     /**
      * isset specifiedTaxRegistration
      *
      * @param  int|string $index
      */
-    public function issetSpecifiedTaxRegistration($index): bool
+    public function isset_specified_tax_registration($index): bool
     {
-        return isset($this->specifiedTaxRegistration[$index]);
+        return isset($this->specified_tax_registration[$index]);
     }
-
     /**
      * unset specifiedTaxRegistration
      *
      * @param  int|string $index
      */
-    public function unsetSpecifiedTaxRegistration($index): void
+    public function unset_specified_tax_registration($index): void
     {
-        unset($this->specifiedTaxRegistration[$index]);
+        unset($this->specified_tax_registration[$index]);
     }
-
     /**
      * Gets as specifiedTaxRegistration
      *
      * @return \horstoeko\zugferd\entities\minimum\ram\TaxRegistrationType[]
      */
-    public function getSpecifiedTaxRegistration()
+    public function get_specified_tax_registration()
     {
-        return $this->specifiedTaxRegistration;
+        return $this->specified_tax_registration;
     }
-
     /**
      * Sets a new specifiedTaxRegistration
      *
      * @param  \horstoeko\zugferd\entities\minimum\ram\TaxRegistrationType[] $specifiedTaxRegistration
      */
-    public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null): self
+    public function set_specified_tax_registration(?array $specified_tax_registration = null): self
     {
-        $this->specifiedTaxRegistration = $specifiedTaxRegistration;
+        $this->specified_tax_registration = $specified_tax_registration;
         return $this;
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,107 +8,96 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: ProductCharacteristicType
  */
-class ProductCharacteristicType
+class Product_Characteristic_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\CodeType $typeCode
      */
-    private $typeCode;
-
+    private $type_code;
     /**
      * @var string $description
      */
     private $description;
-
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\MeasureType $valueMeasure
      */
-    private $valueMeasure;
-
+    private $value_measure;
     /**
      * @var string $value
      */
     private $value;
-
     /**
      * Gets as typeCode
      *
      * @return \horstoeko\zugferd\entities\extended\udt\CodeType
      */
-    public function getTypeCode()
+    public function get_type_code()
     {
-        return $this->typeCode;
+        return $this->type_code;
     }
-
     /**
      * Sets a new typeCode
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\CodeType $typeCode
      */
-    public function setTypeCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $typeCode = null): self
+    public function set_type_code(?\horstoeko\zugferd\entities\extended\udt\Code_Type $type_code = null): self
     {
-        $this->typeCode = $typeCode;
+        $this->type_code = $type_code;
         return $this;
     }
-
     /**
      * Gets as description
      *
      * @return string
      */
-    public function getDescription()
+    public function get_description()
     {
         return $this->description;
     }
-
     /**
      * Sets a new description
      *
      * @param  string $description
      */
-    public function setDescription($description): self
+    public function set_description($description): self
     {
         $this->description = $description;
         return $this;
     }
-
     /**
      * Gets as valueMeasure
      *
      * @return \horstoeko\zugferd\entities\extended\udt\MeasureType
      */
-    public function getValueMeasure()
+    public function get_value_measure()
     {
-        return $this->valueMeasure;
+        return $this->value_measure;
     }
-
     /**
      * Sets a new valueMeasure
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\MeasureType $valueMeasure
      */
-    public function setValueMeasure(?\horstoeko\zugferd\entities\extended\udt\MeasureType $valueMeasure = null): self
+    public function set_value_measure(?\horstoeko\zugferd\entities\extended\udt\Measure_Type $value_measure = null): self
     {
-        $this->valueMeasure = $valueMeasure;
+        $this->value_measure = $value_measure;
         return $this;
     }
-
     /**
      * Gets as value
      *
      * @return string
      */
-    public function getValue()
+    public function get_value()
     {
         return $this->value;
     }
-
     /**
      * Sets a new value
      *
      * @param  string $value
      */
-    public function setValue($value): self
+    public function set_value($value): self
     {
         $this->value = $value;
         return $this;

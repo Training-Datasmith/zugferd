@@ -1,23 +1,20 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /**
  * This file is a part of horstoeko/zugferd.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace horstoeko\zugferd;
 
-use DOMDocument;
+use Dom_Document;
 use Exception;
-use horstoeko\stringmanagement\PathUtils;
-use horstoeko\zugferd\exception\ZugferdFileNotFoundException;
-use LibXMLError;
+use horstoeko\stringmanagement\Path_Utils;
+use horstoeko\zugferd\exception\Zugferd_File_Not_Found_Exception;
+use Lib_Xml_Error;
 use Throwable;
-
 /**
  * Class representing the validator against XSD for documents
  *
@@ -27,7 +24,7 @@ use Throwable;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/zugferd
  */
-class ZugferdXsdValidator
+class Zugferd_Xsd_Validator
 {
     /**
      * The invoice document reference
@@ -35,173 +32,149 @@ class ZugferdXsdValidator
      * @var ZugferdDocument
      */
     private $document;
-
     /**
      * Internal error bag
      *
      * @var array
      */
-    private $errorBag = [];
-
+    private $error_bag = [];
     /**
      * Constructor
      */
-    public function __construct(ZugferdDocument $document)
+    public function __construct(Zugferd_Document $document)
     {
         $this->document = $document;
     }
-
     /**
      * Perform validation of document
      */
-    public function validate(): ZugferdXsdValidator
+    public function validate(): Zugferd_Xsd_Validator
     {
-        $this->clearErrorBag();
-        $this->initLibXml();
-
+        $this->clear_error_bag();
+        $this->init_lib_xml();
         try {
-            if (!$this->getDocumentContentAsDomDocument()->schemaValidate($this->getDocumentXsdFilename())) {
-                $this->pushLibXmlErrorsToErrorBag();
+            if (!$this->get_document_content_as_dom_document()->schema_validate($this->get_document_xsd_filename())) {
+                $this->push_lib_xml_errors_to_error_bag();
             }
         } catch (Exception $exception) {
-            $this->addToErrorBag($exception);
+            $this->add_to_error_bag($exception);
         } finally {
-            $this->finalizeLibXml();
+            $this->finalize_lib_xml();
         }
-
         return $this;
     }
-
     /**
      * Returns true if validation passed otherwise false
      *
      * @deprecated 1.0.65 Use hasNoValidationErrors instead
      */
-    public function validationPased(): bool
+    public function validation_pased(): bool
     {
-        return $this->errorBag === [];
+        return $this->error_bag === [];
     }
-
     /**
      * Returns true if validation failed otherwise false
      *
      * @deprecated 1.0.65 Use hasValidationErrors instead
      */
-    public function validationFailed(): bool
+    public function validation_failed(): bool
     {
-        return !$this->validationPased();
+        return !$this->validation_pased();
     }
-
     /**
      * Returns true if validation passed otherwise false
      */
-    public function hasNoValidationErrors(): bool
+    public function has_no_validation_errors(): bool
     {
-        return $this->errorBag === [];
+        return $this->error_bag === [];
     }
-
     /**
      * Returns true if validation errors are present otherwise false
      */
-    public function hasValidationErrors(): bool
+    public function has_validation_errors(): bool
     {
-        return !$this->hasNoValidationErrors();
+        return !$this->has_no_validation_errors();
     }
-
     /**
      * Returns an array of all validation errors
      */
-    public function validationErrors(): array
+    public function validation_errors(): array
     {
-        return $this->errorBag;
+        return $this->error_bag;
     }
-
     /**
      * Initialize LibXML
      */
-    private function initLibXml(): void
+    private function init_lib_xml(): void
     {
         libxml_use_internal_errors(true);
     }
-
     /**
      * Finalize LibXML
      */
-    private function finalizeLibXml(): void
+    private function finalize_lib_xml(): void
     {
         libxml_clear_errors();
         libxml_use_internal_errors(false);
     }
-
     /**
      * Get the content of the document
      */
-    private function getDocumentContent(): string
+    private function get_document_content(): string
     {
-        return $this->document->serializeAsXml();
+        return $this->document->serialize_as_xml();
     }
-
     /**
      * Get the content of the document as a DOMDocument
      */
-    private function getDocumentContentAsDomDocument(): DOMDocument
+    private function get_document_content_as_dom_document(): Dom_Document
     {
-        $doc = new DOMDocument();
-        $doc->loadXML($this->getDocumentContent());
-
+        $doc = new Dom_Document();
+        $doc->load_xml($this->get_document_content());
         return $doc;
     }
-
     /**
      * Get the XSD file (schema definition) for the document
      */
-    private function getDocumentXsdFilename(): string
+    private function get_document_xsd_filename(): string
     {
-        $xsdFilename = PathUtils::combineAllPaths(
-            ZugferdSettings::getSchemaDirectory(),
-            $this->document->getProfileDefinitionParameter('xsdfilename')
-        );
-
-        if (!file_exists($xsdFilename)) {
-            throw new ZugferdFileNotFoundException($xsdFilename);
+        $xsd_filename = Path_Utils::combine_all_paths(Zugferd_Settings::get_schema_directory(), $this->document->get_profile_definition_parameter('xsdfilename'));
+        if (!file_exists($xsd_filename)) {
+            throw new Zugferd_File_Not_Found_Exception($xsd_filename);
         }
-
-        return $xsdFilename;
+        return $xsd_filename;
     }
-
     /**
      * Clear the internal error bag
      */
-    private function clearErrorBag(): void
+    private function clear_error_bag(): void
     {
-        $this->errorBag = [];
+        $this->error_bag = [];
     }
-
     /**
      * Add message to error bag
      *
      * @param  string|Exception|Throwable|LibXMLError $error
      */
-    private function addToErrorBag($error): void
+    private function add_to_error_bag($error): void
     {
         if (is_string($error)) {
-            $this->errorBag[] = $error;
+            $this->error_bag[] = $error;
         } elseif ($error instanceof Exception) {
-            $this->errorBag[] = $error->getMessage();
+            $this->error_bag[] = $error->get_message();
         } elseif ($error instanceof Throwable) {
-            $this->errorBag[] = $error->getMessage();
-        } elseif ($error instanceof LibXMLError) {
-            $this->errorBag[] = sprintf('[line %d] %s : %s', $error->line, $error->code, $error->message);
+            $this->error_bag[] = $error->get_message();
+        } elseif ($error instanceof Lib_Xml_Error) {
+            $this->error_bag[] = sprintf('[line %d] %s : %s', $error->line, $error->code, $error->message);
         }
     }
-
     /**
      * Pushes validation errors to error bag
      */
-    private function pushLibXmlErrorsToErrorBag(): void
+    private function push_lib_xml_errors_to_error_bag(): void
     {
-        foreach (libxml_get_errors() as $xmlError) {
-            $this->addToErrorBag($xmlError);
+        foreach (libxml_get_errors() as $xml_error) {
+            $this->add_to_error_bag($xml_error);
         }
     }
 }

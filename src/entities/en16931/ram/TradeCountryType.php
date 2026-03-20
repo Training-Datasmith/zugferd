@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,31 +8,29 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  *
  * XSD Type: TradeCountryType
  */
-class TradeCountryType
+class Trade_Country_Type
 {
     /**
      * @var string $iD
      */
-    private $iD;
-
+    private $i_d;
     /**
      * Gets as iD
      *
      * @return string
      */
-    public function getID()
+    public function get_id()
     {
-        return $this->iD;
+        return $this->i_d;
     }
-
     /**
      * Sets a new iD
      *
      * @param  string $iD
      */
-    public function setID($iD): self
+    public function set_id($i_d): self
     {
-        $this->iD = $iD;
+        $this->i_d = $i_d;
         return $this;
     }
 }

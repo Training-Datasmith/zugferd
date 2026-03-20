@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,479 +8,422 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: HeaderTradeAgreementType
  */
-class HeaderTradeAgreementType
+class Header_Trade_Agreement_Type
 {
     /**
      * @var string $buyerReference
      */
-    private $buyerReference;
-
+    private $buyer_reference;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $sellerTradeParty
      */
-    private $sellerTradeParty;
-
+    private $seller_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $buyerTradeParty
      */
-    private $buyerTradeParty;
-
+    private $buyer_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $salesAgentTradeParty
      */
-    private $salesAgentTradeParty;
-
+    private $sales_agent_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $buyerTaxRepresentativeTradeParty
      */
-    private $buyerTaxRepresentativeTradeParty;
-
+    private $buyer_tax_representative_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $sellerTaxRepresentativeTradeParty
      */
-    private $sellerTaxRepresentativeTradeParty;
-
+    private $seller_tax_representative_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $productEndUserTradeParty
      */
-    private $productEndUserTradeParty;
-
+    private $product_end_user_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeDeliveryTermsType $applicableTradeDeliveryTerms
      */
-    private $applicableTradeDeliveryTerms;
-
+    private $applicable_trade_delivery_terms;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $sellerOrderReferencedDocument
      */
-    private $sellerOrderReferencedDocument;
-
+    private $seller_order_referenced_document;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $buyerOrderReferencedDocument
      */
-    private $buyerOrderReferencedDocument;
-
+    private $buyer_order_referenced_document;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $quotationReferencedDocument
      */
-    private $quotationReferencedDocument;
-
+    private $quotation_referenced_document;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $contractReferencedDocument
      */
-    private $contractReferencedDocument;
-
+    private $contract_referenced_document;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $additionalReferencedDocument
      */
-    private $additionalReferencedDocument = [
-
-    ];
-
+    private $additional_referenced_document = [];
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradePartyType $buyerAgentTradeParty
      */
-    private $buyerAgentTradeParty;
-
+    private $buyer_agent_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ProcuringProjectType $specifiedProcuringProject
      */
-    private $specifiedProcuringProject;
-
+    private $specified_procuring_project;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $ultimateCustomerOrderReferencedDocument
      */
-    private $ultimateCustomerOrderReferencedDocument = [
-
-    ];
-
+    private $ultimate_customer_order_referenced_document = [];
     /**
      * Gets as buyerReference
      *
      * @return string
      */
-    public function getBuyerReference()
+    public function get_buyer_reference()
     {
-        return $this->buyerReference;
+        return $this->buyer_reference;
     }
-
     /**
      * Sets a new buyerReference
      *
      * @param  string $buyerReference
      */
-    public function setBuyerReference($buyerReference): self
+    public function set_buyer_reference($buyer_reference): self
     {
-        $this->buyerReference = $buyerReference;
+        $this->buyer_reference = $buyer_reference;
         return $this;
     }
-
     /**
      * Gets as sellerTradeParty
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePartyType
      */
-    public function getSellerTradeParty()
+    public function get_seller_trade_party()
     {
-        return $this->sellerTradeParty;
+        return $this->seller_trade_party;
     }
-
     /**
      * Sets a new sellerTradeParty
      */
-    public function setSellerTradeParty(\horstoeko\zugferd\entities\extended\ram\TradePartyType $sellerTradeParty): self
+    public function set_seller_trade_party(\horstoeko\zugferd\entities\extended\ram\Trade_Party_Type $seller_trade_party): self
     {
-        $this->sellerTradeParty = $sellerTradeParty;
+        $this->seller_trade_party = $seller_trade_party;
         return $this;
     }
-
     /**
      * Gets as buyerTradeParty
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePartyType
      */
-    public function getBuyerTradeParty()
+    public function get_buyer_trade_party()
     {
-        return $this->buyerTradeParty;
+        return $this->buyer_trade_party;
     }
-
     /**
      * Sets a new buyerTradeParty
      */
-    public function setBuyerTradeParty(\horstoeko\zugferd\entities\extended\ram\TradePartyType $buyerTradeParty): self
+    public function set_buyer_trade_party(\horstoeko\zugferd\entities\extended\ram\Trade_Party_Type $buyer_trade_party): self
     {
-        $this->buyerTradeParty = $buyerTradeParty;
+        $this->buyer_trade_party = $buyer_trade_party;
         return $this;
     }
-
     /**
      * Gets as salesAgentTradeParty
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePartyType
      */
-    public function getSalesAgentTradeParty()
+    public function get_sales_agent_trade_party()
     {
-        return $this->salesAgentTradeParty;
+        return $this->sales_agent_trade_party;
     }
-
     /**
      * Sets a new salesAgentTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $salesAgentTradeParty
      */
-    public function setSalesAgentTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $salesAgentTradeParty = null): self
+    public function set_sales_agent_trade_party(?\horstoeko\zugferd\entities\extended\ram\Trade_Party_Type $sales_agent_trade_party = null): self
     {
-        $this->salesAgentTradeParty = $salesAgentTradeParty;
+        $this->sales_agent_trade_party = $sales_agent_trade_party;
         return $this;
     }
-
     /**
      * Gets as buyerTaxRepresentativeTradeParty
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePartyType
      */
-    public function getBuyerTaxRepresentativeTradeParty()
+    public function get_buyer_tax_representative_trade_party()
     {
-        return $this->buyerTaxRepresentativeTradeParty;
+        return $this->buyer_tax_representative_trade_party;
     }
-
     /**
      * Sets a new buyerTaxRepresentativeTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $buyerTaxRepresentativeTradeParty
      */
-    public function setBuyerTaxRepresentativeTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $buyerTaxRepresentativeTradeParty = null): self
+    public function set_buyer_tax_representative_trade_party(?\horstoeko\zugferd\entities\extended\ram\Trade_Party_Type $buyer_tax_representative_trade_party = null): self
     {
-        $this->buyerTaxRepresentativeTradeParty = $buyerTaxRepresentativeTradeParty;
+        $this->buyer_tax_representative_trade_party = $buyer_tax_representative_trade_party;
         return $this;
     }
-
     /**
      * Gets as sellerTaxRepresentativeTradeParty
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePartyType
      */
-    public function getSellerTaxRepresentativeTradeParty()
+    public function get_seller_tax_representative_trade_party()
     {
-        return $this->sellerTaxRepresentativeTradeParty;
+        return $this->seller_tax_representative_trade_party;
     }
-
     /**
      * Sets a new sellerTaxRepresentativeTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $sellerTaxRepresentativeTradeParty
      */
-    public function setSellerTaxRepresentativeTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $sellerTaxRepresentativeTradeParty = null): self
+    public function set_seller_tax_representative_trade_party(?\horstoeko\zugferd\entities\extended\ram\Trade_Party_Type $seller_tax_representative_trade_party = null): self
     {
-        $this->sellerTaxRepresentativeTradeParty = $sellerTaxRepresentativeTradeParty;
+        $this->seller_tax_representative_trade_party = $seller_tax_representative_trade_party;
         return $this;
     }
-
     /**
      * Gets as productEndUserTradeParty
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePartyType
      */
-    public function getProductEndUserTradeParty()
+    public function get_product_end_user_trade_party()
     {
-        return $this->productEndUserTradeParty;
+        return $this->product_end_user_trade_party;
     }
-
     /**
      * Sets a new productEndUserTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $productEndUserTradeParty
      */
-    public function setProductEndUserTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $productEndUserTradeParty = null): self
+    public function set_product_end_user_trade_party(?\horstoeko\zugferd\entities\extended\ram\Trade_Party_Type $product_end_user_trade_party = null): self
     {
-        $this->productEndUserTradeParty = $productEndUserTradeParty;
+        $this->product_end_user_trade_party = $product_end_user_trade_party;
         return $this;
     }
-
     /**
      * Gets as applicableTradeDeliveryTerms
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradeDeliveryTermsType
      */
-    public function getApplicableTradeDeliveryTerms()
+    public function get_applicable_trade_delivery_terms()
     {
-        return $this->applicableTradeDeliveryTerms;
+        return $this->applicable_trade_delivery_terms;
     }
-
     /**
      * Sets a new applicableTradeDeliveryTerms
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeDeliveryTermsType $applicableTradeDeliveryTerms
      */
-    public function setApplicableTradeDeliveryTerms(?\horstoeko\zugferd\entities\extended\ram\TradeDeliveryTermsType $applicableTradeDeliveryTerms = null): self
+    public function set_applicable_trade_delivery_terms(?\horstoeko\zugferd\entities\extended\ram\Trade_Delivery_Terms_Type $applicable_trade_delivery_terms = null): self
     {
-        $this->applicableTradeDeliveryTerms = $applicableTradeDeliveryTerms;
+        $this->applicable_trade_delivery_terms = $applicable_trade_delivery_terms;
         return $this;
     }
-
     /**
      * Gets as sellerOrderReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType
      */
-    public function getSellerOrderReferencedDocument()
+    public function get_seller_order_referenced_document()
     {
-        return $this->sellerOrderReferencedDocument;
+        return $this->seller_order_referenced_document;
     }
-
     /**
      * Sets a new sellerOrderReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $sellerOrderReferencedDocument
      */
-    public function setSellerOrderReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $sellerOrderReferencedDocument = null): self
+    public function set_seller_order_referenced_document(?\horstoeko\zugferd\entities\extended\ram\Referenced_Document_Type $seller_order_referenced_document = null): self
     {
-        $this->sellerOrderReferencedDocument = $sellerOrderReferencedDocument;
+        $this->seller_order_referenced_document = $seller_order_referenced_document;
         return $this;
     }
-
     /**
      * Gets as buyerOrderReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType
      */
-    public function getBuyerOrderReferencedDocument()
+    public function get_buyer_order_referenced_document()
     {
-        return $this->buyerOrderReferencedDocument;
+        return $this->buyer_order_referenced_document;
     }
-
     /**
      * Sets a new buyerOrderReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $buyerOrderReferencedDocument
      */
-    public function setBuyerOrderReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $buyerOrderReferencedDocument = null): self
+    public function set_buyer_order_referenced_document(?\horstoeko\zugferd\entities\extended\ram\Referenced_Document_Type $buyer_order_referenced_document = null): self
     {
-        $this->buyerOrderReferencedDocument = $buyerOrderReferencedDocument;
+        $this->buyer_order_referenced_document = $buyer_order_referenced_document;
         return $this;
     }
-
     /**
      * Gets as quotationReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType
      */
-    public function getQuotationReferencedDocument()
+    public function get_quotation_referenced_document()
     {
-        return $this->quotationReferencedDocument;
+        return $this->quotation_referenced_document;
     }
-
     /**
      * Sets a new quotationReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $quotationReferencedDocument
      */
-    public function setQuotationReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $quotationReferencedDocument = null): self
+    public function set_quotation_referenced_document(?\horstoeko\zugferd\entities\extended\ram\Referenced_Document_Type $quotation_referenced_document = null): self
     {
-        $this->quotationReferencedDocument = $quotationReferencedDocument;
+        $this->quotation_referenced_document = $quotation_referenced_document;
         return $this;
     }
-
     /**
      * Gets as contractReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType
      */
-    public function getContractReferencedDocument()
+    public function get_contract_referenced_document()
     {
-        return $this->contractReferencedDocument;
+        return $this->contract_referenced_document;
     }
-
     /**
      * Sets a new contractReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $contractReferencedDocument
      */
-    public function setContractReferencedDocument(?\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $contractReferencedDocument = null): self
+    public function set_contract_referenced_document(?\horstoeko\zugferd\entities\extended\ram\Referenced_Document_Type $contract_referenced_document = null): self
     {
-        $this->contractReferencedDocument = $contractReferencedDocument;
+        $this->contract_referenced_document = $contract_referenced_document;
         return $this;
     }
-
     /**
      * Adds as additionalReferencedDocument
      */
-    public function addToAdditionalReferencedDocument(\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $additionalReferencedDocument): self
+    public function add_to_additional_referenced_document(\horstoeko\zugferd\entities\extended\ram\Referenced_Document_Type $additional_referenced_document): self
     {
-        $this->additionalReferencedDocument[] = $additionalReferencedDocument;
+        $this->additional_referenced_document[] = $additional_referenced_document;
         return $this;
     }
-
     /**
      * isset additionalReferencedDocument
      *
      * @param  int|string $index
      */
-    public function issetAdditionalReferencedDocument($index): bool
+    public function isset_additional_referenced_document($index): bool
     {
-        return isset($this->additionalReferencedDocument[$index]);
+        return isset($this->additional_referenced_document[$index]);
     }
-
     /**
      * unset additionalReferencedDocument
      *
      * @param  int|string $index
      */
-    public function unsetAdditionalReferencedDocument($index): void
+    public function unset_additional_referenced_document($index): void
     {
-        unset($this->additionalReferencedDocument[$index]);
+        unset($this->additional_referenced_document[$index]);
     }
-
     /**
      * Gets as additionalReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[]
      */
-    public function getAdditionalReferencedDocument()
+    public function get_additional_referenced_document()
     {
-        return $this->additionalReferencedDocument;
+        return $this->additional_referenced_document;
     }
-
     /**
      * Sets a new additionalReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $additionalReferencedDocument
      */
-    public function setAdditionalReferencedDocument(?array $additionalReferencedDocument = null): self
+    public function set_additional_referenced_document(?array $additional_referenced_document = null): self
     {
-        $this->additionalReferencedDocument = $additionalReferencedDocument;
+        $this->additional_referenced_document = $additional_referenced_document;
         return $this;
     }
-
     /**
      * Gets as buyerAgentTradeParty
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradePartyType
      */
-    public function getBuyerAgentTradeParty()
+    public function get_buyer_agent_trade_party()
     {
-        return $this->buyerAgentTradeParty;
+        return $this->buyer_agent_trade_party;
     }
-
     /**
      * Sets a new buyerAgentTradeParty
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradePartyType $buyerAgentTradeParty
      */
-    public function setBuyerAgentTradeParty(?\horstoeko\zugferd\entities\extended\ram\TradePartyType $buyerAgentTradeParty = null): self
+    public function set_buyer_agent_trade_party(?\horstoeko\zugferd\entities\extended\ram\Trade_Party_Type $buyer_agent_trade_party = null): self
     {
-        $this->buyerAgentTradeParty = $buyerAgentTradeParty;
+        $this->buyer_agent_trade_party = $buyer_agent_trade_party;
         return $this;
     }
-
     /**
      * Gets as specifiedProcuringProject
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ProcuringProjectType
      */
-    public function getSpecifiedProcuringProject()
+    public function get_specified_procuring_project()
     {
-        return $this->specifiedProcuringProject;
+        return $this->specified_procuring_project;
     }
-
     /**
      * Sets a new specifiedProcuringProject
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ProcuringProjectType $specifiedProcuringProject
      */
-    public function setSpecifiedProcuringProject(?\horstoeko\zugferd\entities\extended\ram\ProcuringProjectType $specifiedProcuringProject = null): self
+    public function set_specified_procuring_project(?\horstoeko\zugferd\entities\extended\ram\Procuring_Project_Type $specified_procuring_project = null): self
     {
-        $this->specifiedProcuringProject = $specifiedProcuringProject;
+        $this->specified_procuring_project = $specified_procuring_project;
         return $this;
     }
-
     /**
      * Adds as ultimateCustomerOrderReferencedDocument
      */
-    public function addToUltimateCustomerOrderReferencedDocument(\horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType $ultimateCustomerOrderReferencedDocument): self
+    public function add_to_ultimate_customer_order_referenced_document(\horstoeko\zugferd\entities\extended\ram\Referenced_Document_Type $ultimate_customer_order_referenced_document): self
     {
-        $this->ultimateCustomerOrderReferencedDocument[] = $ultimateCustomerOrderReferencedDocument;
+        $this->ultimate_customer_order_referenced_document[] = $ultimate_customer_order_referenced_document;
         return $this;
     }
-
     /**
      * isset ultimateCustomerOrderReferencedDocument
      *
      * @param  int|string $index
      */
-    public function issetUltimateCustomerOrderReferencedDocument($index): bool
+    public function isset_ultimate_customer_order_referenced_document($index): bool
     {
-        return isset($this->ultimateCustomerOrderReferencedDocument[$index]);
+        return isset($this->ultimate_customer_order_referenced_document[$index]);
     }
-
     /**
      * unset ultimateCustomerOrderReferencedDocument
      *
      * @param  int|string $index
      */
-    public function unsetUltimateCustomerOrderReferencedDocument($index): void
+    public function unset_ultimate_customer_order_referenced_document($index): void
     {
-        unset($this->ultimateCustomerOrderReferencedDocument[$index]);
+        unset($this->ultimate_customer_order_referenced_document[$index]);
     }
-
     /**
      * Gets as ultimateCustomerOrderReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[]
      */
-    public function getUltimateCustomerOrderReferencedDocument()
+    public function get_ultimate_customer_order_referenced_document()
     {
-        return $this->ultimateCustomerOrderReferencedDocument;
+        return $this->ultimate_customer_order_referenced_document;
     }
-
     /**
      * Sets a new ultimateCustomerOrderReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedDocumentType[] $ultimateCustomerOrderReferencedDocument
      */
-    public function setUltimateCustomerOrderReferencedDocument(?array $ultimateCustomerOrderReferencedDocument = null): self
+    public function set_ultimate_customer_order_referenced_document(?array $ultimate_customer_order_referenced_document = null): self
     {
-        $this->ultimateCustomerOrderReferencedDocument = $ultimateCustomerOrderReferencedDocument;
+        $this->ultimate_customer_order_referenced_document = $ultimate_customer_order_referenced_document;
         return $this;
     }
 }

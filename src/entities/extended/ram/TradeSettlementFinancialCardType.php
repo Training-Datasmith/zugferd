@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,55 +8,50 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: TradeSettlementFinancialCardType
  */
-class TradeSettlementFinancialCardType
+class Trade_Settlement_Financial_Card_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iD
      */
-    private $iD;
-
+    private $i_d;
     /**
      * @var string $cardholderName
      */
-    private $cardholderName;
-
+    private $cardholder_name;
     /**
      * Gets as iD
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getID()
+    public function get_id()
     {
-        return $this->iD;
+        return $this->i_d;
     }
-
     /**
      * Sets a new iD
      */
-    public function setID(\horstoeko\zugferd\entities\extended\udt\IDType $iD): self
+    public function set_id(\horstoeko\zugferd\entities\extended\udt\Id_Type $i_d): self
     {
-        $this->iD = $iD;
+        $this->i_d = $i_d;
         return $this;
     }
-
     /**
      * Gets as cardholderName
      *
      * @return string
      */
-    public function getCardholderName()
+    public function get_cardholder_name()
     {
-        return $this->cardholderName;
+        return $this->cardholder_name;
     }
-
     /**
      * Sets a new cardholderName
      *
      * @param  string $cardholderName
      */
-    public function setCardholderName($cardholderName): self
+    public function set_cardholder_name($cardholder_name): self
     {
-        $this->cardholderName = $cardholderName;
+        $this->cardholder_name = $cardholder_name;
         return $this;
     }
 }

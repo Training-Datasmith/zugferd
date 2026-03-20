@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,576 +8,504 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: TradeProductType
  */
-class TradeProductType
+class Trade_Product_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iD
      */
-    private $iD;
-
+    private $i_d;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $globalID
      */
-    private $globalID;
-
+    private $global_id;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $sellerAssignedID
      */
-    private $sellerAssignedID;
-
+    private $seller_assigned_id;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $buyerAssignedID
      */
-    private $buyerAssignedID;
-
+    private $buyer_assigned_id;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $industryAssignedID
      */
-    private $industryAssignedID;
-
+    private $industry_assigned_id;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $modelID
      */
-    private $modelID;
-
+    private $model_id;
     /**
      * @var string $name
      */
     private $name;
-
     /**
      * @var string $description
      */
     private $description;
-
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType[] $batchID
      */
-    private $batchID = [
-
-    ];
-
+    private $batch_id = [];
     /**
      * @var string $brandName
      */
-    private $brandName;
-
+    private $brand_name;
     /**
      * @var string $modelName
      */
-    private $modelName;
-
+    private $model_name;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ProductCharacteristicType[] $applicableProductCharacteristic
      */
-    private $applicableProductCharacteristic = [
-
-    ];
-
+    private $applicable_product_characteristic = [];
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ProductClassificationType[] $designatedProductClassification
      */
-    private $designatedProductClassification = [
-
-    ];
-
+    private $designated_product_classification = [];
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeProductInstanceType[] $individualTradeProductInstance
      */
-    private $individualTradeProductInstance = [
-
-    ];
-
+    private $individual_trade_product_instance = [];
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\TradeCountryType $originTradeCountry
      */
-    private $originTradeCountry;
-
+    private $origin_trade_country;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ReferencedProductType[] $includedReferencedProduct
      */
-    private $includedReferencedProduct = [
-
-    ];
-
+    private $included_referenced_product = [];
     /**
      * Gets as iD
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getID()
+    public function get_id()
     {
-        return $this->iD;
+        return $this->i_d;
     }
-
     /**
      * Sets a new iD
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $iD
      */
-    public function setID(?\horstoeko\zugferd\entities\extended\udt\IDType $iD = null): self
+    public function set_id(?\horstoeko\zugferd\entities\extended\udt\Id_Type $i_d = null): self
     {
-        $this->iD = $iD;
+        $this->i_d = $i_d;
         return $this;
     }
-
     /**
      * Gets as globalID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getGlobalID()
+    public function get_global_id()
     {
-        return $this->globalID;
+        return $this->global_id;
     }
-
     /**
      * Sets a new globalID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $globalID
      */
-    public function setGlobalID(?\horstoeko\zugferd\entities\extended\udt\IDType $globalID = null): self
+    public function set_global_id(?\horstoeko\zugferd\entities\extended\udt\Id_Type $global_id = null): self
     {
-        $this->globalID = $globalID;
+        $this->global_id = $global_id;
         return $this;
     }
-
     /**
      * Gets as sellerAssignedID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getSellerAssignedID()
+    public function get_seller_assigned_id()
     {
-        return $this->sellerAssignedID;
+        return $this->seller_assigned_id;
     }
-
     /**
      * Sets a new sellerAssignedID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $sellerAssignedID
      */
-    public function setSellerAssignedID(?\horstoeko\zugferd\entities\extended\udt\IDType $sellerAssignedID = null): self
+    public function set_seller_assigned_id(?\horstoeko\zugferd\entities\extended\udt\Id_Type $seller_assigned_id = null): self
     {
-        $this->sellerAssignedID = $sellerAssignedID;
+        $this->seller_assigned_id = $seller_assigned_id;
         return $this;
     }
-
     /**
      * Gets as buyerAssignedID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getBuyerAssignedID()
+    public function get_buyer_assigned_id()
     {
-        return $this->buyerAssignedID;
+        return $this->buyer_assigned_id;
     }
-
     /**
      * Sets a new buyerAssignedID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $buyerAssignedID
      */
-    public function setBuyerAssignedID(?\horstoeko\zugferd\entities\extended\udt\IDType $buyerAssignedID = null): self
+    public function set_buyer_assigned_id(?\horstoeko\zugferd\entities\extended\udt\Id_Type $buyer_assigned_id = null): self
     {
-        $this->buyerAssignedID = $buyerAssignedID;
+        $this->buyer_assigned_id = $buyer_assigned_id;
         return $this;
     }
-
     /**
      * Gets as industryAssignedID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getIndustryAssignedID()
+    public function get_industry_assigned_id()
     {
-        return $this->industryAssignedID;
+        return $this->industry_assigned_id;
     }
-
     /**
      * Sets a new industryAssignedID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $industryAssignedID
      */
-    public function setIndustryAssignedID(?\horstoeko\zugferd\entities\extended\udt\IDType $industryAssignedID = null): self
+    public function set_industry_assigned_id(?\horstoeko\zugferd\entities\extended\udt\Id_Type $industry_assigned_id = null): self
     {
-        $this->industryAssignedID = $industryAssignedID;
+        $this->industry_assigned_id = $industry_assigned_id;
         return $this;
     }
-
     /**
      * Gets as modelID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getModelID()
+    public function get_model_id()
     {
-        return $this->modelID;
+        return $this->model_id;
     }
-
     /**
      * Sets a new modelID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $modelID
      */
-    public function setModelID(?\horstoeko\zugferd\entities\extended\udt\IDType $modelID = null): self
+    public function set_model_id(?\horstoeko\zugferd\entities\extended\udt\Id_Type $model_id = null): self
     {
-        $this->modelID = $modelID;
+        $this->model_id = $model_id;
         return $this;
     }
-
     /**
      * Gets as name
      *
      * @return string
      */
-    public function getName()
+    public function get_name()
     {
         return $this->name;
     }
-
     /**
      * Sets a new name
      *
      * @param  string $name
      */
-    public function setName($name): self
+    public function set_name($name): self
     {
         $this->name = $name;
         return $this;
     }
-
     /**
      * Gets as description
      *
      * @return string
      */
-    public function getDescription()
+    public function get_description()
     {
         return $this->description;
     }
-
     /**
      * Sets a new description
      *
      * @param  string $description
      */
-    public function setDescription($description): self
+    public function set_description($description): self
     {
         $this->description = $description;
         return $this;
     }
-
     /**
      * Adds as batchID
      */
-    public function addToBatchID(\horstoeko\zugferd\entities\extended\udt\IDType $batchID): self
+    public function add_to_batch_id(\horstoeko\zugferd\entities\extended\udt\Id_Type $batch_id): self
     {
-        $this->batchID[] = $batchID;
+        $this->batch_id[] = $batch_id;
         return $this;
     }
-
     /**
      * isset batchID
      *
      * @param  int|string $index
      */
-    public function issetBatchID($index): bool
+    public function isset_batch_id($index): bool
     {
-        return isset($this->batchID[$index]);
+        return isset($this->batch_id[$index]);
     }
-
     /**
      * unset batchID
      *
      * @param  int|string $index
      */
-    public function unsetBatchID($index): void
+    public function unset_batch_id($index): void
     {
-        unset($this->batchID[$index]);
+        unset($this->batch_id[$index]);
     }
-
     /**
      * Gets as batchID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType[]
      */
-    public function getBatchID()
+    public function get_batch_id()
     {
-        return $this->batchID;
+        return $this->batch_id;
     }
-
     /**
      * Sets a new batchID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType[] $batchID
      */
-    public function setBatchID(?array $batchID = null): self
+    public function set_batch_id(?array $batch_id = null): self
     {
-        $this->batchID = $batchID;
+        $this->batch_id = $batch_id;
         return $this;
     }
-
     /**
      * Gets as brandName
      *
      * @return string
      */
-    public function getBrandName()
+    public function get_brand_name()
     {
-        return $this->brandName;
+        return $this->brand_name;
     }
-
     /**
      * Sets a new brandName
      *
      * @param  string $brandName
      */
-    public function setBrandName($brandName): self
+    public function set_brand_name($brand_name): self
     {
-        $this->brandName = $brandName;
+        $this->brand_name = $brand_name;
         return $this;
     }
-
     /**
      * Gets as modelName
      *
      * @return string
      */
-    public function getModelName()
+    public function get_model_name()
     {
-        return $this->modelName;
+        return $this->model_name;
     }
-
     /**
      * Sets a new modelName
      *
      * @param  string $modelName
      */
-    public function setModelName($modelName): self
+    public function set_model_name($model_name): self
     {
-        $this->modelName = $modelName;
+        $this->model_name = $model_name;
         return $this;
     }
-
     /**
      * Adds as applicableProductCharacteristic
      */
-    public function addToApplicableProductCharacteristic(\horstoeko\zugferd\entities\extended\ram\ProductCharacteristicType $applicableProductCharacteristic): self
+    public function add_to_applicable_product_characteristic(\horstoeko\zugferd\entities\extended\ram\Product_Characteristic_Type $applicable_product_characteristic): self
     {
-        $this->applicableProductCharacteristic[] = $applicableProductCharacteristic;
+        $this->applicable_product_characteristic[] = $applicable_product_characteristic;
         return $this;
     }
-
     /**
      * isset applicableProductCharacteristic
      *
      * @param  int|string $index
      */
-    public function issetApplicableProductCharacteristic($index): bool
+    public function isset_applicable_product_characteristic($index): bool
     {
-        return isset($this->applicableProductCharacteristic[$index]);
+        return isset($this->applicable_product_characteristic[$index]);
     }
-
     /**
      * unset applicableProductCharacteristic
      *
      * @param  int|string $index
      */
-    public function unsetApplicableProductCharacteristic($index): void
+    public function unset_applicable_product_characteristic($index): void
     {
-        unset($this->applicableProductCharacteristic[$index]);
+        unset($this->applicable_product_characteristic[$index]);
     }
-
     /**
      * Gets as applicableProductCharacteristic
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ProductCharacteristicType[]
      */
-    public function getApplicableProductCharacteristic()
+    public function get_applicable_product_characteristic()
     {
-        return $this->applicableProductCharacteristic;
+        return $this->applicable_product_characteristic;
     }
-
     /**
      * Sets a new applicableProductCharacteristic
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ProductCharacteristicType[] $applicableProductCharacteristic
      */
-    public function setApplicableProductCharacteristic(?array $applicableProductCharacteristic = null): self
+    public function set_applicable_product_characteristic(?array $applicable_product_characteristic = null): self
     {
-        $this->applicableProductCharacteristic = $applicableProductCharacteristic;
+        $this->applicable_product_characteristic = $applicable_product_characteristic;
         return $this;
     }
-
     /**
      * Adds as designatedProductClassification
      */
-    public function addToDesignatedProductClassification(\horstoeko\zugferd\entities\extended\ram\ProductClassificationType $designatedProductClassification): self
+    public function add_to_designated_product_classification(\horstoeko\zugferd\entities\extended\ram\Product_Classification_Type $designated_product_classification): self
     {
-        $this->designatedProductClassification[] = $designatedProductClassification;
+        $this->designated_product_classification[] = $designated_product_classification;
         return $this;
     }
-
     /**
      * isset designatedProductClassification
      *
      * @param  int|string $index
      */
-    public function issetDesignatedProductClassification($index): bool
+    public function isset_designated_product_classification($index): bool
     {
-        return isset($this->designatedProductClassification[$index]);
+        return isset($this->designated_product_classification[$index]);
     }
-
     /**
      * unset designatedProductClassification
      *
      * @param  int|string $index
      */
-    public function unsetDesignatedProductClassification($index): void
+    public function unset_designated_product_classification($index): void
     {
-        unset($this->designatedProductClassification[$index]);
+        unset($this->designated_product_classification[$index]);
     }
-
     /**
      * Gets as designatedProductClassification
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ProductClassificationType[]
      */
-    public function getDesignatedProductClassification()
+    public function get_designated_product_classification()
     {
-        return $this->designatedProductClassification;
+        return $this->designated_product_classification;
     }
-
     /**
      * Sets a new designatedProductClassification
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ProductClassificationType[] $designatedProductClassification
      */
-    public function setDesignatedProductClassification(?array $designatedProductClassification = null): self
+    public function set_designated_product_classification(?array $designated_product_classification = null): self
     {
-        $this->designatedProductClassification = $designatedProductClassification;
+        $this->designated_product_classification = $designated_product_classification;
         return $this;
     }
-
     /**
      * Adds as individualTradeProductInstance
      */
-    public function addToIndividualTradeProductInstance(\horstoeko\zugferd\entities\extended\ram\TradeProductInstanceType $individualTradeProductInstance): self
+    public function add_to_individual_trade_product_instance(\horstoeko\zugferd\entities\extended\ram\Trade_Product_Instance_Type $individual_trade_product_instance): self
     {
-        $this->individualTradeProductInstance[] = $individualTradeProductInstance;
+        $this->individual_trade_product_instance[] = $individual_trade_product_instance;
         return $this;
     }
-
     /**
      * isset individualTradeProductInstance
      *
      * @param  int|string $index
      */
-    public function issetIndividualTradeProductInstance($index): bool
+    public function isset_individual_trade_product_instance($index): bool
     {
-        return isset($this->individualTradeProductInstance[$index]);
+        return isset($this->individual_trade_product_instance[$index]);
     }
-
     /**
      * unset individualTradeProductInstance
      *
      * @param  int|string $index
      */
-    public function unsetIndividualTradeProductInstance($index): void
+    public function unset_individual_trade_product_instance($index): void
     {
-        unset($this->individualTradeProductInstance[$index]);
+        unset($this->individual_trade_product_instance[$index]);
     }
-
     /**
      * Gets as individualTradeProductInstance
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradeProductInstanceType[]
      */
-    public function getIndividualTradeProductInstance()
+    public function get_individual_trade_product_instance()
     {
-        return $this->individualTradeProductInstance;
+        return $this->individual_trade_product_instance;
     }
-
     /**
      * Sets a new individualTradeProductInstance
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeProductInstanceType[] $individualTradeProductInstance
      */
-    public function setIndividualTradeProductInstance(?array $individualTradeProductInstance = null): self
+    public function set_individual_trade_product_instance(?array $individual_trade_product_instance = null): self
     {
-        $this->individualTradeProductInstance = $individualTradeProductInstance;
+        $this->individual_trade_product_instance = $individual_trade_product_instance;
         return $this;
     }
-
     /**
      * Gets as originTradeCountry
      *
      * @return \horstoeko\zugferd\entities\extended\ram\TradeCountryType
      */
-    public function getOriginTradeCountry()
+    public function get_origin_trade_country()
     {
-        return $this->originTradeCountry;
+        return $this->origin_trade_country;
     }
-
     /**
      * Sets a new originTradeCountry
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\TradeCountryType $originTradeCountry
      */
-    public function setOriginTradeCountry(?\horstoeko\zugferd\entities\extended\ram\TradeCountryType $originTradeCountry = null): self
+    public function set_origin_trade_country(?\horstoeko\zugferd\entities\extended\ram\Trade_Country_Type $origin_trade_country = null): self
     {
-        $this->originTradeCountry = $originTradeCountry;
+        $this->origin_trade_country = $origin_trade_country;
         return $this;
     }
-
     /**
      * Adds as includedReferencedProduct
      */
-    public function addToIncludedReferencedProduct(\horstoeko\zugferd\entities\extended\ram\ReferencedProductType $includedReferencedProduct): self
+    public function add_to_included_referenced_product(\horstoeko\zugferd\entities\extended\ram\Referenced_Product_Type $included_referenced_product): self
     {
-        $this->includedReferencedProduct[] = $includedReferencedProduct;
+        $this->included_referenced_product[] = $included_referenced_product;
         return $this;
     }
-
     /**
      * isset includedReferencedProduct
      *
      * @param  int|string $index
      */
-    public function issetIncludedReferencedProduct($index): bool
+    public function isset_included_referenced_product($index): bool
     {
-        return isset($this->includedReferencedProduct[$index]);
+        return isset($this->included_referenced_product[$index]);
     }
-
     /**
      * unset includedReferencedProduct
      *
      * @param  int|string $index
      */
-    public function unsetIncludedReferencedProduct($index): void
+    public function unset_included_referenced_product($index): void
     {
-        unset($this->includedReferencedProduct[$index]);
+        unset($this->included_referenced_product[$index]);
     }
-
     /**
      * Gets as includedReferencedProduct
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ReferencedProductType[]
      */
-    public function getIncludedReferencedProduct()
+    public function get_included_referenced_product()
     {
-        return $this->includedReferencedProduct;
+        return $this->included_referenced_product;
     }
-
     /**
      * Sets a new includedReferencedProduct
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\ReferencedProductType[] $includedReferencedProduct
      */
-    public function setIncludedReferencedProduct(?array $includedReferencedProduct = null): self
+    public function set_included_referenced_product(?array $included_referenced_product = null): self
     {
-        $this->includedReferencedProduct = $includedReferencedProduct;
+        $this->included_referenced_product = $included_referenced_product;
         return $this;
     }
 }

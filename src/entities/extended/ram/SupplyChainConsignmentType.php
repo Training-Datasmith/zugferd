@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,62 +8,55 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: SupplyChainConsignmentType
  */
-class SupplyChainConsignmentType
+class Supply_Chain_Consignment_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType[] $specifiedLogisticsTransportMovement
      */
-    private $specifiedLogisticsTransportMovement = [
-
-    ];
-
+    private $specified_logistics_transport_movement = [];
     /**
      * Adds as specifiedLogisticsTransportMovement
      */
-    public function addToSpecifiedLogisticsTransportMovement(\horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType $specifiedLogisticsTransportMovement): self
+    public function add_to_specified_logistics_transport_movement(\horstoeko\zugferd\entities\extended\ram\Logistics_Transport_Movement_Type $specified_logistics_transport_movement): self
     {
-        $this->specifiedLogisticsTransportMovement[] = $specifiedLogisticsTransportMovement;
+        $this->specified_logistics_transport_movement[] = $specified_logistics_transport_movement;
         return $this;
     }
-
     /**
      * isset specifiedLogisticsTransportMovement
      *
      * @param  int|string $index
      */
-    public function issetSpecifiedLogisticsTransportMovement($index): bool
+    public function isset_specified_logistics_transport_movement($index): bool
     {
-        return isset($this->specifiedLogisticsTransportMovement[$index]);
+        return isset($this->specified_logistics_transport_movement[$index]);
     }
-
     /**
      * unset specifiedLogisticsTransportMovement
      *
      * @param  int|string $index
      */
-    public function unsetSpecifiedLogisticsTransportMovement($index): void
+    public function unset_specified_logistics_transport_movement($index): void
     {
-        unset($this->specifiedLogisticsTransportMovement[$index]);
+        unset($this->specified_logistics_transport_movement[$index]);
     }
-
     /**
      * Gets as specifiedLogisticsTransportMovement
      *
      * @return \horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType[]
      */
-    public function getSpecifiedLogisticsTransportMovement()
+    public function get_specified_logistics_transport_movement()
     {
-        return $this->specifiedLogisticsTransportMovement;
+        return $this->specified_logistics_transport_movement;
     }
-
     /**
      * Sets a new specifiedLogisticsTransportMovement
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\LogisticsTransportMovementType[] $specifiedLogisticsTransportMovement
      */
-    public function setSpecifiedLogisticsTransportMovement(?array $specifiedLogisticsTransportMovement = null): self
+    public function set_specified_logistics_transport_movement(?array $specified_logistics_transport_movement = null): self
     {
-        $this->specifiedLogisticsTransportMovement = $specifiedLogisticsTransportMovement;
+        $this->specified_logistics_transport_movement = $specified_logistics_transport_movement;
         return $this;
     }
 }

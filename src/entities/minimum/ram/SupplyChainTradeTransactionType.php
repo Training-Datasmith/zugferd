@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\minimum\ram;
 
 /**
@@ -9,77 +8,69 @@ namespace horstoeko\zugferd\entities\minimum\ram;
  *
  * XSD Type: SupplyChainTradeTransactionType
  */
-class SupplyChainTradeTransactionType
+class Supply_Chain_Trade_Transaction_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\HeaderTradeAgreementType $applicableHeaderTradeAgreement
      */
-    private $applicableHeaderTradeAgreement;
-
+    private $applicable_header_trade_agreement;
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\HeaderTradeDeliveryType $applicableHeaderTradeDelivery
      */
-    private $applicableHeaderTradeDelivery;
-
+    private $applicable_header_trade_delivery;
     /**
      * @var \horstoeko\zugferd\entities\minimum\ram\HeaderTradeSettlementType $applicableHeaderTradeSettlement
      */
-    private $applicableHeaderTradeSettlement;
-
+    private $applicable_header_trade_settlement;
     /**
      * Gets as applicableHeaderTradeAgreement
      *
      * @return \horstoeko\zugferd\entities\minimum\ram\HeaderTradeAgreementType
      */
-    public function getApplicableHeaderTradeAgreement()
+    public function get_applicable_header_trade_agreement()
     {
-        return $this->applicableHeaderTradeAgreement;
+        return $this->applicable_header_trade_agreement;
     }
-
     /**
      * Sets a new applicableHeaderTradeAgreement
      */
-    public function setApplicableHeaderTradeAgreement(\horstoeko\zugferd\entities\minimum\ram\HeaderTradeAgreementType $applicableHeaderTradeAgreement): self
+    public function set_applicable_header_trade_agreement(\horstoeko\zugferd\entities\minimum\ram\Header_Trade_Agreement_Type $applicable_header_trade_agreement): self
     {
-        $this->applicableHeaderTradeAgreement = $applicableHeaderTradeAgreement;
+        $this->applicable_header_trade_agreement = $applicable_header_trade_agreement;
         return $this;
     }
-
     /**
      * Gets as applicableHeaderTradeDelivery
      *
      * @return \horstoeko\zugferd\entities\minimum\ram\HeaderTradeDeliveryType
      */
-    public function getApplicableHeaderTradeDelivery()
+    public function get_applicable_header_trade_delivery()
     {
-        return $this->applicableHeaderTradeDelivery;
+        return $this->applicable_header_trade_delivery;
     }
-
     /**
      * Sets a new applicableHeaderTradeDelivery
      */
-    public function setApplicableHeaderTradeDelivery(\horstoeko\zugferd\entities\minimum\ram\HeaderTradeDeliveryType $applicableHeaderTradeDelivery): self
+    public function set_applicable_header_trade_delivery(\horstoeko\zugferd\entities\minimum\ram\Header_Trade_Delivery_Type $applicable_header_trade_delivery): self
     {
-        $this->applicableHeaderTradeDelivery = $applicableHeaderTradeDelivery;
+        $this->applicable_header_trade_delivery = $applicable_header_trade_delivery;
         return $this;
     }
-
     /**
      * Gets as applicableHeaderTradeSettlement
      *
      * @return \horstoeko\zugferd\entities\minimum\ram\HeaderTradeSettlementType
      */
-    public function getApplicableHeaderTradeSettlement()
+    public function get_applicable_header_trade_settlement()
     {
-        return $this->applicableHeaderTradeSettlement;
+        return $this->applicable_header_trade_settlement;
     }
-
     /**
      * Sets a new applicableHeaderTradeSettlement
      */
-    public function setApplicableHeaderTradeSettlement(\horstoeko\zugferd\entities\minimum\ram\HeaderTradeSettlementType $applicableHeaderTradeSettlement): self
+    public function set_applicable_header_trade_settlement(\horstoeko\zugferd\entities\minimum\ram\Header_Trade_Settlement_Type $applicable_header_trade_settlement): self
     {
-        $this->applicableHeaderTradeSettlement = $applicableHeaderTradeSettlement;
+        $this->applicable_header_trade_settlement = $applicable_header_trade_settlement;
         return $this;
     }
 }

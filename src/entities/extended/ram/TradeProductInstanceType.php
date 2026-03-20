@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,57 +8,52 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: TradeProductInstanceType
  */
-class TradeProductInstanceType
+class Trade_Product_Instance_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $batchID
      */
-    private $batchID;
-
+    private $batch_id;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $supplierAssignedSerialID
      */
-    private $supplierAssignedSerialID;
-
+    private $supplier_assigned_serial_id;
     /**
      * Gets as batchID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getBatchID()
+    public function get_batch_id()
     {
-        return $this->batchID;
+        return $this->batch_id;
     }
-
     /**
      * Sets a new batchID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $batchID
      */
-    public function setBatchID(?\horstoeko\zugferd\entities\extended\udt\IDType $batchID = null): self
+    public function set_batch_id(?\horstoeko\zugferd\entities\extended\udt\Id_Type $batch_id = null): self
     {
-        $this->batchID = $batchID;
+        $this->batch_id = $batch_id;
         return $this;
     }
-
     /**
      * Gets as supplierAssignedSerialID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getSupplierAssignedSerialID()
+    public function get_supplier_assigned_serial_id()
     {
-        return $this->supplierAssignedSerialID;
+        return $this->supplier_assigned_serial_id;
     }
-
     /**
      * Sets a new supplierAssignedSerialID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $supplierAssignedSerialID
      */
-    public function setSupplierAssignedSerialID(?\horstoeko\zugferd\entities\extended\udt\IDType $supplierAssignedSerialID = null): self
+    public function set_supplier_assigned_serial_id(?\horstoeko\zugferd\entities\extended\udt\Id_Type $supplier_assigned_serial_id = null): self
     {
-        $this->supplierAssignedSerialID = $supplierAssignedSerialID;
+        $this->supplier_assigned_serial_id = $supplier_assigned_serial_id;
         return $this;
     }
 }

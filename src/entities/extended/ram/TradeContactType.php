@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,161 +8,144 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: TradeContactType
  */
-class TradeContactType
+class Trade_Contact_Type
 {
     /**
      * @var string $personName
      */
-    private $personName;
-
+    private $person_name;
     /**
      * @var string $departmentName
      */
-    private $departmentName;
-
+    private $department_name;
     /**
      * @var string $typeCode
      */
-    private $typeCode;
-
+    private $type_code;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $telephoneUniversalCommunication
      */
-    private $telephoneUniversalCommunication;
-
+    private $telephone_universal_communication;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $faxUniversalCommunication
      */
-    private $faxUniversalCommunication;
-
+    private $fax_universal_communication;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $emailURIUniversalCommunication
      */
-    private $emailURIUniversalCommunication;
-
+    private $email_uri_universal_communication;
     /**
      * Gets as personName
      *
      * @return string
      */
-    public function getPersonName()
+    public function get_person_name()
     {
-        return $this->personName;
+        return $this->person_name;
     }
-
     /**
      * Sets a new personName
      *
      * @param  string $personName
      */
-    public function setPersonName($personName): self
+    public function set_person_name($person_name): self
     {
-        $this->personName = $personName;
+        $this->person_name = $person_name;
         return $this;
     }
-
     /**
      * Gets as departmentName
      *
      * @return string
      */
-    public function getDepartmentName()
+    public function get_department_name()
     {
-        return $this->departmentName;
+        return $this->department_name;
     }
-
     /**
      * Sets a new departmentName
      *
      * @param  string $departmentName
      */
-    public function setDepartmentName($departmentName): self
+    public function set_department_name($department_name): self
     {
-        $this->departmentName = $departmentName;
+        $this->department_name = $department_name;
         return $this;
     }
-
     /**
      * Gets as typeCode
      *
      * @return string
      */
-    public function getTypeCode()
+    public function get_type_code()
     {
-        return $this->typeCode;
+        return $this->type_code;
     }
-
     /**
      * Sets a new typeCode
      *
      * @param  string $typeCode
      */
-    public function setTypeCode($typeCode): self
+    public function set_type_code($type_code): self
     {
-        $this->typeCode = $typeCode;
+        $this->type_code = $type_code;
         return $this;
     }
-
     /**
      * Gets as telephoneUniversalCommunication
      *
      * @return \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType
      */
-    public function getTelephoneUniversalCommunication()
+    public function get_telephone_universal_communication()
     {
-        return $this->telephoneUniversalCommunication;
+        return $this->telephone_universal_communication;
     }
-
     /**
      * Sets a new telephoneUniversalCommunication
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $telephoneUniversalCommunication
      */
-    public function setTelephoneUniversalCommunication(?\horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $telephoneUniversalCommunication = null): self
+    public function set_telephone_universal_communication(?\horstoeko\zugferd\entities\extended\ram\Universal_Communication_Type $telephone_universal_communication = null): self
     {
-        $this->telephoneUniversalCommunication = $telephoneUniversalCommunication;
+        $this->telephone_universal_communication = $telephone_universal_communication;
         return $this;
     }
-
     /**
      * Gets as faxUniversalCommunication
      *
      * @return \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType
      */
-    public function getFaxUniversalCommunication()
+    public function get_fax_universal_communication()
     {
-        return $this->faxUniversalCommunication;
+        return $this->fax_universal_communication;
     }
-
     /**
      * Sets a new faxUniversalCommunication
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $faxUniversalCommunication
      */
-    public function setFaxUniversalCommunication(?\horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $faxUniversalCommunication = null): self
+    public function set_fax_universal_communication(?\horstoeko\zugferd\entities\extended\ram\Universal_Communication_Type $fax_universal_communication = null): self
     {
-        $this->faxUniversalCommunication = $faxUniversalCommunication;
+        $this->fax_universal_communication = $fax_universal_communication;
         return $this;
     }
-
     /**
      * Gets as emailURIUniversalCommunication
      *
      * @return \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType
      */
-    public function getEmailURIUniversalCommunication()
+    public function get_email_uri_universal_communication()
     {
-        return $this->emailURIUniversalCommunication;
+        return $this->email_uri_universal_communication;
     }
-
     /**
      * Sets a new emailURIUniversalCommunication
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $emailURIUniversalCommunication
      */
-    public function setEmailURIUniversalCommunication(?\horstoeko\zugferd\entities\extended\ram\UniversalCommunicationType $emailURIUniversalCommunication = null): self
+    public function set_email_uri_universal_communication(?\horstoeko\zugferd\entities\extended\ram\Universal_Communication_Type $email_uri_universal_communication = null): self
     {
-        $this->emailURIUniversalCommunication = $emailURIUniversalCommunication;
+        $this->email_uri_universal_communication = $email_uri_universal_communication;
         return $this;
     }
 }

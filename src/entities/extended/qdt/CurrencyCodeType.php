@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\qdt;
 
 /**
@@ -9,13 +8,12 @@ namespace horstoeko\zugferd\entities\extended\qdt;
  *
  * XSD Type: CurrencyCodeType
  */
-class CurrencyCodeType
+class Currency_Code_Type
 {
     /**
      * @var string $__value
      */
     private $__value;
-
     /**
      * Construct
      *
@@ -25,7 +23,6 @@ class CurrencyCodeType
     {
         $this->value($value);
     }
-
     /**
      * Gets or sets the inner value
      *
@@ -39,7 +36,6 @@ class CurrencyCodeType
         }
         return $this->__value;
     }
-
     /**
      * Gets a string value
      */

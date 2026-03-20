@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\rsm;
 
 /**
@@ -9,77 +8,69 @@ namespace horstoeko\zugferd\entities\extended\rsm;
  *
  * XSD Type: CrossIndustryInvoiceType
  */
-class CrossIndustryInvoiceType
+class Cross_Industry_Invoice_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ExchangedDocumentContextType $exchangedDocumentContext
      */
-    private $exchangedDocumentContext;
-
+    private $exchanged_document_context;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\ExchangedDocumentType $exchangedDocument
      */
-    private $exchangedDocument;
-
+    private $exchanged_document;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\SupplyChainTradeTransactionType $supplyChainTradeTransaction
      */
-    private $supplyChainTradeTransaction;
-
+    private $supply_chain_trade_transaction;
     /**
      * Gets as exchangedDocumentContext
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ExchangedDocumentContextType
      */
-    public function getExchangedDocumentContext()
+    public function get_exchanged_document_context()
     {
-        return $this->exchangedDocumentContext;
+        return $this->exchanged_document_context;
     }
-
     /**
      * Sets a new exchangedDocumentContext
      */
-    public function setExchangedDocumentContext(\horstoeko\zugferd\entities\extended\ram\ExchangedDocumentContextType $exchangedDocumentContext): self
+    public function set_exchanged_document_context(\horstoeko\zugferd\entities\extended\ram\Exchanged_Document_Context_Type $exchanged_document_context): self
     {
-        $this->exchangedDocumentContext = $exchangedDocumentContext;
+        $this->exchanged_document_context = $exchanged_document_context;
         return $this;
     }
-
     /**
      * Gets as exchangedDocument
      *
      * @return \horstoeko\zugferd\entities\extended\ram\ExchangedDocumentType
      */
-    public function getExchangedDocument()
+    public function get_exchanged_document()
     {
-        return $this->exchangedDocument;
+        return $this->exchanged_document;
     }
-
     /**
      * Sets a new exchangedDocument
      */
-    public function setExchangedDocument(\horstoeko\zugferd\entities\extended\ram\ExchangedDocumentType $exchangedDocument): self
+    public function set_exchanged_document(\horstoeko\zugferd\entities\extended\ram\Exchanged_Document_Type $exchanged_document): self
     {
-        $this->exchangedDocument = $exchangedDocument;
+        $this->exchanged_document = $exchanged_document;
         return $this;
     }
-
     /**
      * Gets as supplyChainTradeTransaction
      *
      * @return \horstoeko\zugferd\entities\extended\ram\SupplyChainTradeTransactionType
      */
-    public function getSupplyChainTradeTransaction()
+    public function get_supply_chain_trade_transaction()
     {
-        return $this->supplyChainTradeTransaction;
+        return $this->supply_chain_trade_transaction;
     }
-
     /**
      * Sets a new supplyChainTradeTransaction
      */
-    public function setSupplyChainTradeTransaction(\horstoeko\zugferd\entities\extended\ram\SupplyChainTradeTransactionType $supplyChainTradeTransaction): self
+    public function set_supply_chain_trade_transaction(\horstoeko\zugferd\entities\extended\ram\Supply_Chain_Trade_Transaction_Type $supply_chain_trade_transaction): self
     {
-        $this->supplyChainTradeTransaction = $supplyChainTradeTransaction;
+        $this->supply_chain_trade_transaction = $supply_chain_trade_transaction;
         return $this;
     }
 }

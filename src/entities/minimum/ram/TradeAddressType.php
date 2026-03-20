@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\minimum\ram;
 
 /**
@@ -9,31 +8,29 @@ namespace horstoeko\zugferd\entities\minimum\ram;
  *
  * XSD Type: TradeAddressType
  */
-class TradeAddressType
+class Trade_Address_Type
 {
     /**
      * @var string $countryID
      */
-    private $countryID;
-
+    private $country_id;
     /**
      * Gets as countryID
      *
      * @return string
      */
-    public function getCountryID()
+    public function get_country_id()
     {
-        return $this->countryID;
+        return $this->country_id;
     }
-
     /**
      * Sets a new countryID
      *
      * @param  string $countryID
      */
-    public function setCountryID($countryID): self
+    public function set_country_id($country_id): self
     {
-        $this->countryID = $countryID;
+        $this->country_id = $country_id;
         return $this;
     }
 }

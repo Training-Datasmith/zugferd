@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\udt;
 
 /**
@@ -9,13 +8,12 @@ namespace horstoeko\zugferd\entities\extended\udt;
  *
  * XSD Type: RateType
  */
-class RateType
+class Rate_Type
 {
     /**
      * @var float $__value
      */
     private $__value;
-
     /**
      * Construct
      *
@@ -25,7 +23,6 @@ class RateType
     {
         $this->value($value);
     }
-
     /**
      * Gets or sets the inner value
      *
@@ -39,7 +36,6 @@ class RateType
         }
         return $this->__value;
     }
-
     /**
      * Gets a string value
      */

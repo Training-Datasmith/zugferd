@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,83 +8,75 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: CreditorFinancialAccountType
  */
-class CreditorFinancialAccountType
+class Creditor_Financial_Account_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $iBANID
      */
-    private $iBANID;
-
+    private $i_banid;
     /**
      * @var string $accountName
      */
-    private $accountName;
-
+    private $account_name;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $proprietaryID
      */
-    private $proprietaryID;
-
+    private $proprietary_id;
     /**
      * Gets as iBANID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getIBANID()
+    public function get_ibanid()
     {
-        return $this->iBANID;
+        return $this->i_banid;
     }
-
     /**
      * Sets a new iBANID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $iBANID
      */
-    public function setIBANID(?\horstoeko\zugferd\entities\extended\udt\IDType $iBANID = null): self
+    public function set_ibanid(?\horstoeko\zugferd\entities\extended\udt\Id_Type $i_banid = null): self
     {
-        $this->iBANID = $iBANID;
+        $this->i_banid = $i_banid;
         return $this;
     }
-
     /**
      * Gets as accountName
      *
      * @return string
      */
-    public function getAccountName()
+    public function get_account_name()
     {
-        return $this->accountName;
+        return $this->account_name;
     }
-
     /**
      * Sets a new accountName
      *
      * @param  string $accountName
      */
-    public function setAccountName($accountName): self
+    public function set_account_name($account_name): self
     {
-        $this->accountName = $accountName;
+        $this->account_name = $account_name;
         return $this;
     }
-
     /**
      * Gets as proprietaryID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getProprietaryID()
+    public function get_proprietary_id()
     {
-        return $this->proprietaryID;
+        return $this->proprietary_id;
     }
-
     /**
      * Sets a new proprietaryID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $proprietaryID
      */
-    public function setProprietaryID(?\horstoeko\zugferd\entities\extended\udt\IDType $proprietaryID = null): self
+    public function set_proprietary_id(?\horstoeko\zugferd\entities\extended\udt\Id_Type $proprietary_id = null): self
     {
-        $this->proprietaryID = $proprietaryID;
+        $this->proprietary_id = $proprietary_id;
         return $this;
     }
 }

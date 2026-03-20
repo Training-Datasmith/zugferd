@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,109 +8,98 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: TradeCurrencyExchangeType
  */
-class TradeCurrencyExchangeType
+class Trade_Currency_Exchange_Type
 {
     /**
      * @var string $sourceCurrencyCode
      */
-    private $sourceCurrencyCode;
-
+    private $source_currency_code;
     /**
      * @var string $targetCurrencyCode
      */
-    private $targetCurrencyCode;
-
+    private $target_currency_code;
     /**
      * @var float $conversionRate
      */
-    private $conversionRate;
-
+    private $conversion_rate;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\DateTimeType $conversionRateDateTime
      */
-    private $conversionRateDateTime;
-
+    private $conversion_rate_date_time;
     /**
      * Gets as sourceCurrencyCode
      *
      * @return string
      */
-    public function getSourceCurrencyCode()
+    public function get_source_currency_code()
     {
-        return $this->sourceCurrencyCode;
+        return $this->source_currency_code;
     }
-
     /**
      * Sets a new sourceCurrencyCode
      *
      * @param  string $sourceCurrencyCode
      */
-    public function setSourceCurrencyCode($sourceCurrencyCode): self
+    public function set_source_currency_code($source_currency_code): self
     {
-        $this->sourceCurrencyCode = $sourceCurrencyCode;
+        $this->source_currency_code = $source_currency_code;
         return $this;
     }
-
     /**
      * Gets as targetCurrencyCode
      *
      * @return string
      */
-    public function getTargetCurrencyCode()
+    public function get_target_currency_code()
     {
-        return $this->targetCurrencyCode;
+        return $this->target_currency_code;
     }
-
     /**
      * Sets a new targetCurrencyCode
      *
      * @param  string $targetCurrencyCode
      */
-    public function setTargetCurrencyCode($targetCurrencyCode): self
+    public function set_target_currency_code($target_currency_code): self
     {
-        $this->targetCurrencyCode = $targetCurrencyCode;
+        $this->target_currency_code = $target_currency_code;
         return $this;
     }
-
     /**
      * Gets as conversionRate
      *
      * @return float
      */
-    public function getConversionRate()
+    public function get_conversion_rate()
     {
-        return $this->conversionRate;
+        return $this->conversion_rate;
     }
-
     /**
      * Sets a new conversionRate
      *
      * @param  float $conversionRate
      */
-    public function setConversionRate($conversionRate): self
+    public function set_conversion_rate($conversion_rate): self
     {
-        $this->conversionRate = $conversionRate;
+        $this->conversion_rate = $conversion_rate;
         return $this;
     }
-
     /**
      * Gets as conversionRateDateTime
      *
      * @return \horstoeko\zugferd\entities\extended\udt\DateTimeType
      */
-    public function getConversionRateDateTime()
+    public function get_conversion_rate_date_time()
     {
-        return $this->conversionRateDateTime;
+        return $this->conversion_rate_date_time;
     }
-
     /**
      * Sets a new conversionRateDateTime
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\DateTimeType $conversionRateDateTime
      */
-    public function setConversionRateDateTime(?\horstoeko\zugferd\entities\extended\udt\DateTimeType $conversionRateDateTime = null): self
+    public function set_conversion_rate_date_time(?\horstoeko\zugferd\entities\extended\udt\Date_Time_Type $conversion_rate_date_time = null): self
     {
-        $this->conversionRateDateTime = $conversionRateDateTime;
+        $this->conversion_rate_date_time = $conversion_rate_date_time;
         return $this;
     }
 }

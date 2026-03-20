@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basicwl\ram;
 
 /**
@@ -9,83 +8,75 @@ namespace horstoeko\zugferd\entities\basicwl\ram;
  *
  * XSD Type: HeaderTradeDeliveryType
  */
-class HeaderTradeDeliveryType
+class Header_Trade_Delivery_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\basicwl\ram\TradePartyType $shipToTradeParty
      */
-    private $shipToTradeParty;
-
+    private $ship_to_trade_party;
     /**
      * @var \horstoeko\zugferd\entities\basicwl\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
      */
-    private $actualDeliverySupplyChainEvent;
-
+    private $actual_delivery_supply_chain_event;
     /**
      * @var \horstoeko\zugferd\entities\basicwl\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
      */
-    private $despatchAdviceReferencedDocument;
-
+    private $despatch_advice_referenced_document;
     /**
      * Gets as shipToTradeParty
      *
      * @return \horstoeko\zugferd\entities\basicwl\ram\TradePartyType
      */
-    public function getShipToTradeParty()
+    public function get_ship_to_trade_party()
     {
-        return $this->shipToTradeParty;
+        return $this->ship_to_trade_party;
     }
-
     /**
      * Sets a new shipToTradeParty
      *
      * @param  \horstoeko\zugferd\entities\basicwl\ram\TradePartyType $shipToTradeParty
      */
-    public function setShipToTradeParty(?\horstoeko\zugferd\entities\basicwl\ram\TradePartyType $shipToTradeParty = null): self
+    public function set_ship_to_trade_party(?\horstoeko\zugferd\entities\basicwl\ram\Trade_Party_Type $ship_to_trade_party = null): self
     {
-        $this->shipToTradeParty = $shipToTradeParty;
+        $this->ship_to_trade_party = $ship_to_trade_party;
         return $this;
     }
-
     /**
      * Gets as actualDeliverySupplyChainEvent
      *
      * @return \horstoeko\zugferd\entities\basicwl\ram\SupplyChainEventType
      */
-    public function getActualDeliverySupplyChainEvent()
+    public function get_actual_delivery_supply_chain_event()
     {
-        return $this->actualDeliverySupplyChainEvent;
+        return $this->actual_delivery_supply_chain_event;
     }
-
     /**
      * Sets a new actualDeliverySupplyChainEvent
      *
      * @param  \horstoeko\zugferd\entities\basicwl\ram\SupplyChainEventType $actualDeliverySupplyChainEvent
      */
-    public function setActualDeliverySupplyChainEvent(?\horstoeko\zugferd\entities\basicwl\ram\SupplyChainEventType $actualDeliverySupplyChainEvent = null): self
+    public function set_actual_delivery_supply_chain_event(?\horstoeko\zugferd\entities\basicwl\ram\Supply_Chain_Event_Type $actual_delivery_supply_chain_event = null): self
     {
-        $this->actualDeliverySupplyChainEvent = $actualDeliverySupplyChainEvent;
+        $this->actual_delivery_supply_chain_event = $actual_delivery_supply_chain_event;
         return $this;
     }
-
     /**
      * Gets as despatchAdviceReferencedDocument
      *
      * @return \horstoeko\zugferd\entities\basicwl\ram\ReferencedDocumentType
      */
-    public function getDespatchAdviceReferencedDocument()
+    public function get_despatch_advice_referenced_document()
     {
-        return $this->despatchAdviceReferencedDocument;
+        return $this->despatch_advice_referenced_document;
     }
-
     /**
      * Sets a new despatchAdviceReferencedDocument
      *
      * @param  \horstoeko\zugferd\entities\basicwl\ram\ReferencedDocumentType $despatchAdviceReferencedDocument
      */
-    public function setDespatchAdviceReferencedDocument(?\horstoeko\zugferd\entities\basicwl\ram\ReferencedDocumentType $despatchAdviceReferencedDocument = null): self
+    public function set_despatch_advice_referenced_document(?\horstoeko\zugferd\entities\basicwl\ram\Referenced_Document_Type $despatch_advice_referenced_document = null): self
     {
-        $this->despatchAdviceReferencedDocument = $despatchAdviceReferencedDocument;
+        $this->despatch_advice_referenced_document = $despatch_advice_referenced_document;
         return $this;
     }
 }

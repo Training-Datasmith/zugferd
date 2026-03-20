@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,164 +8,145 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: DocumentLineDocumentType
  */
-class DocumentLineDocumentType
+class Document_Line_Document_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $lineID
      */
-    private $lineID;
-
+    private $line_id;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\IDType $parentLineID
      */
-    private $parentLineID;
-
+    private $parent_line_id;
     /**
      * @var string $lineStatusCode
      */
-    private $lineStatusCode;
-
+    private $line_status_code;
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\CodeType $lineStatusReasonCode
      */
-    private $lineStatusReasonCode;
-
+    private $line_status_reason_code;
     /**
      * @var \horstoeko\zugferd\entities\extended\ram\NoteType[] $includedNote
      */
-    private $includedNote = [
-
-    ];
-
+    private $included_note = [];
     /**
      * Gets as lineID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getLineID()
+    public function get_line_id()
     {
-        return $this->lineID;
+        return $this->line_id;
     }
-
     /**
      * Sets a new lineID
      */
-    public function setLineID(\horstoeko\zugferd\entities\extended\udt\IDType $lineID): self
+    public function set_line_id(\horstoeko\zugferd\entities\extended\udt\Id_Type $line_id): self
     {
-        $this->lineID = $lineID;
+        $this->line_id = $line_id;
         return $this;
     }
-
     /**
      * Gets as parentLineID
      *
      * @return \horstoeko\zugferd\entities\extended\udt\IDType
      */
-    public function getParentLineID()
+    public function get_parent_line_id()
     {
-        return $this->parentLineID;
+        return $this->parent_line_id;
     }
-
     /**
      * Sets a new parentLineID
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\IDType $parentLineID
      */
-    public function setParentLineID(?\horstoeko\zugferd\entities\extended\udt\IDType $parentLineID = null): self
+    public function set_parent_line_id(?\horstoeko\zugferd\entities\extended\udt\Id_Type $parent_line_id = null): self
     {
-        $this->parentLineID = $parentLineID;
+        $this->parent_line_id = $parent_line_id;
         return $this;
     }
-
     /**
      * Gets as lineStatusCode
      *
      * @return string
      */
-    public function getLineStatusCode()
+    public function get_line_status_code()
     {
-        return $this->lineStatusCode;
+        return $this->line_status_code;
     }
-
     /**
      * Sets a new lineStatusCode
      *
      * @param  string $lineStatusCode
      */
-    public function setLineStatusCode($lineStatusCode): self
+    public function set_line_status_code($line_status_code): self
     {
-        $this->lineStatusCode = $lineStatusCode;
+        $this->line_status_code = $line_status_code;
         return $this;
     }
-
     /**
      * Gets as lineStatusReasonCode
      *
      * @return \horstoeko\zugferd\entities\extended\udt\CodeType
      */
-    public function getLineStatusReasonCode()
+    public function get_line_status_reason_code()
     {
-        return $this->lineStatusReasonCode;
+        return $this->line_status_reason_code;
     }
-
     /**
      * Sets a new lineStatusReasonCode
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\CodeType $lineStatusReasonCode
      */
-    public function setLineStatusReasonCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $lineStatusReasonCode = null): self
+    public function set_line_status_reason_code(?\horstoeko\zugferd\entities\extended\udt\Code_Type $line_status_reason_code = null): self
     {
-        $this->lineStatusReasonCode = $lineStatusReasonCode;
+        $this->line_status_reason_code = $line_status_reason_code;
         return $this;
     }
-
     /**
      * Adds as includedNote
      */
-    public function addToIncludedNote(\horstoeko\zugferd\entities\extended\ram\NoteType $includedNote): self
+    public function add_to_included_note(\horstoeko\zugferd\entities\extended\ram\Note_Type $included_note): self
     {
-        $this->includedNote[] = $includedNote;
+        $this->included_note[] = $included_note;
         return $this;
     }
-
     /**
      * isset includedNote
      *
      * @param  int|string $index
      */
-    public function issetIncludedNote($index): bool
+    public function isset_included_note($index): bool
     {
-        return isset($this->includedNote[$index]);
+        return isset($this->included_note[$index]);
     }
-
     /**
      * unset includedNote
      *
      * @param  int|string $index
      */
-    public function unsetIncludedNote($index): void
+    public function unset_included_note($index): void
     {
-        unset($this->includedNote[$index]);
+        unset($this->included_note[$index]);
     }
-
     /**
      * Gets as includedNote
      *
      * @return \horstoeko\zugferd\entities\extended\ram\NoteType[]
      */
-    public function getIncludedNote()
+    public function get_included_note()
     {
-        return $this->includedNote;
+        return $this->included_note;
     }
-
     /**
      * Sets a new includedNote
      *
      * @param  \horstoeko\zugferd\entities\extended\ram\NoteType[] $includedNote
      */
-    public function setIncludedNote(?array $includedNote = null): self
+    public function set_included_note(?array $included_note = null): self
     {
-        $this->includedNote = $includedNote;
+        $this->included_note = $included_note;
         return $this;
     }
 }

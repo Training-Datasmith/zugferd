@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\basicwl\udt;
 
 /**
@@ -9,18 +8,16 @@ namespace horstoeko\zugferd\entities\basicwl\udt;
  *
  * XSD Type: IDType
  */
-class IDType
+class Id_Type
 {
     /**
      * @var string $__value
      */
     private $__value;
-
     /**
      * @var string $schemeID
      */
-    private $schemeID;
-
+    private $scheme_id;
     /**
      * Construct
      *
@@ -30,7 +27,6 @@ class IDType
     {
         $this->value($value);
     }
-
     /**
      * Gets or sets the inner value
      *
@@ -44,7 +40,6 @@ class IDType
         }
         return $this->__value;
     }
-
     /**
      * Gets a string value
      */
@@ -52,25 +47,23 @@ class IDType
     {
         return strval($this->__value);
     }
-
     /**
      * Gets as schemeID
      *
      * @return string
      */
-    public function getSchemeID()
+    public function get_scheme_id()
     {
-        return $this->schemeID;
+        return $this->scheme_id;
     }
-
     /**
      * Sets a new schemeID
      *
      * @param  string $schemeID
      */
-    public function setSchemeID($schemeID): self
+    public function set_scheme_id($scheme_id): self
     {
-        $this->schemeID = $schemeID;
+        $this->scheme_id = $scheme_id;
         return $this;
     }
 }

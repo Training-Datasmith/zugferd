@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,57 +8,52 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  *
  * XSD Type: UniversalCommunicationType
  */
-class UniversalCommunicationType
+class Universal_Communication_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType $uRIID
      */
-    private $uRIID;
-
+    private $u_riid;
     /**
      * @var string $completeNumber
      */
-    private $completeNumber;
-
+    private $complete_number;
     /**
      * Gets as uRIID
      *
      * @return \horstoeko\zugferd\entities\en16931\udt\IDType
      */
-    public function getURIID()
+    public function get_uriid()
     {
-        return $this->uRIID;
+        return $this->u_riid;
     }
-
     /**
      * Sets a new uRIID
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\IDType $uRIID
      */
-    public function setURIID(?\horstoeko\zugferd\entities\en16931\udt\IDType $uRIID = null): self
+    public function set_uriid(?\horstoeko\zugferd\entities\en16931\udt\Id_Type $u_riid = null): self
     {
-        $this->uRIID = $uRIID;
+        $this->u_riid = $u_riid;
         return $this;
     }
-
     /**
      * Gets as completeNumber
      *
      * @return string
      */
-    public function getCompleteNumber()
+    public function get_complete_number()
     {
-        return $this->completeNumber;
+        return $this->complete_number;
     }
-
     /**
      * Sets a new completeNumber
      *
      * @param  string $completeNumber
      */
-    public function setCompleteNumber($completeNumber): self
+    public function set_complete_number($complete_number): self
     {
-        $this->completeNumber = $completeNumber;
+        $this->complete_number = $complete_number;
         return $this;
     }
 }

@@ -1,22 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /**
  * This file is a part of horstoeko/zugferd.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace horstoeko\zugferd;
 
-use horstoeko\zugferd\exception\ZugferdFileNotReadableException;
-use horstoeko\zugferd\exception\ZugferdUnknownProfileException;
-use horstoeko\zugferd\exception\ZugferdUnknownProfileParameterException;
-use horstoeko\zugferd\exception\ZugferdUnknownXmlContentException;
+use horstoeko\zugferd\exception\Zugferd_File_Not_Readable_Exception;
+use horstoeko\zugferd\exception\Zugferd_Unknown_Profile_Exception;
+use horstoeko\zugferd\exception\Zugferd_Unknown_Profile_Parameter_Exception;
+use horstoeko\zugferd\exception\Zugferd_Unknown_Xml_Content_Exception;
 use Throwable;
-
 /**
  * Class representing the facillity adding existing XML data (file or data-string)
  * to an existing PDF with conversion to PDF/A
@@ -27,22 +24,20 @@ use Throwable;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/zugferd
  */
-class ZugferdDocumentPdfMerger extends ZugferdDocumentPdfBuilderAbstract
+class Zugferd_Document_Pdf_Merger extends Zugferd_Document_Pdf_Builder_Abstract
 {
     /**
      * Internal reference to the xml data (file or data-string)
      *
      * @var string
      */
-    private $xmlDataOrFilename = '';
-
+    private $xml_data_or_filename = '';
     /**
      * Cached XML data
      *
      * @var string
      */
-    private $xmlDataCache = '';
-
+    private $xml_data_cache = '';
     /**
      * Constructor
      *
@@ -53,73 +48,63 @@ class ZugferdDocumentPdfMerger extends ZugferdDocumentPdfBuilderAbstract
      * The full filename or a string containing the binary pdf data. This
      * is the original PDF (e.g. created by a ERP system)
      */
-    public function __construct(string $xmlDataOrFilename, string $pdfData)
+    public function __construct(string $xml_data_or_filename, string $pdf_data)
     {
-        $this->xmlDataOrFilename = $xmlDataOrFilename;
-
-        parent::__construct($pdfData);
+        $this->xml_data_or_filename = $xml_data_or_filename;
+        parent::__construct($pdf_data);
     }
-
     /**
      * @inheritDoc
      */
-    protected function getXmlContent(): string
+    protected function get_xml_content(): string
     {
-        if ($this->xmlDataCache) {
-            return $this->xmlDataCache;
+        if ($this->xml_data_cache) {
+            return $this->xml_data_cache;
         }
-
-        if ($this->xmlDataIsFile()) {
-            $xmlContent = file_get_contents($this->xmlDataOrFilename);
-            if ($xmlContent === false) {
-                throw new ZugferdFileNotReadableException($this->xmlDataOrFilename);
+        if ($this->xml_data_is_file()) {
+            $xml_content = file_get_contents($this->xml_data_or_filename);
+            if ($xml_content === false) {
+                throw new Zugferd_File_Not_Readable_Exception($this->xml_data_or_filename);
             }
         } else {
-            $xmlContent = $this->xmlDataOrFilename;
+            $xml_content = $this->xml_data_or_filename;
         }
-
-        $this->xmlDataCache = $xmlContent;
-
-        return $xmlContent;
+        $this->xml_data_cache = $xml_content;
+        return $xml_content;
     }
-
     /**
      * @inheritDoc
      */
-    protected function getXmlAttachmentFilename(): string
+    protected function get_xml_attachment_filename(): string
     {
-        return $this->getProfileDefinitionParameter('attachmentfilename');
+        return $this->get_profile_definition_parameter('attachmentfilename');
     }
-
     /**
      * @inheritDoc
      */
-    protected function getXmlAttachmentXmpName(): string
+    protected function get_xml_attachment_xmp_name(): string
     {
-        return $this->getProfileDefinitionParameter('xmpname');
+        return $this->get_profile_definition_parameter('xmpname');
     }
-
     /**
      * @inheritDoc
      */
-    protected function getXmlAttachmentXmpVersion(): string
+    protected function get_xml_attachment_xmp_version(): string
     {
-        return $this->getProfileDefinitionParameter('xmpversion');
+        return $this->get_profile_definition_parameter('xmpversion');
     }
-
     /**
      * Returns true if the submitted $xmlDataOrFilename is a valid file.
      * Otherwise it will return false
      */
-    protected function xmlDataIsFile(): bool
+    protected function xml_data_is_file(): bool
     {
         try {
-            return @is_file($this->xmlDataOrFilename);
+            return @is_file($this->xml_data_or_filename);
         } catch (Throwable $throwable) {
             return false;
         }
     }
-
     /**
      * Guess the profile type of the readden xml document
      *
@@ -127,11 +112,10 @@ class ZugferdDocumentPdfMerger extends ZugferdDocumentPdfBuilderAbstract
      * @throws ZugferdUnknownXmlContentException
      * @throws ZugferdUnknownProfileException
      */
-    private function getProfileDefinition(): array
+    private function get_profile_definition(): array
     {
-        return ZugferdProfileResolver::resolveProfileDef($this->getXmlContent());
+        return Zugferd_Profile_Resolver::resolve_profile_def($this->get_xml_content());
     }
-
     /**
      * Get a parameter from profile definition
      *
@@ -141,14 +125,12 @@ class ZugferdDocumentPdfMerger extends ZugferdDocumentPdfBuilderAbstract
      * @throws ZugferdUnknownProfileException
      * @throws ZugferdUnknownProfileParameterException
      */
-    private function getProfileDefinitionParameter(string $parameterName)
+    private function get_profile_definition_parameter(string $parameter_name)
     {
-        $profileDefinition = $this->getProfileDefinition();
-
-        if (isset($profileDefinition[$parameterName])) {
-            return $profileDefinition[$parameterName];
+        $profile_definition = $this->get_profile_definition();
+        if (isset($profile_definition[$parameter_name])) {
+            return $profile_definition[$parameter_name];
         }
-
-        throw new ZugferdUnknownProfileParameterException($parameterName);
+        throw new Zugferd_Unknown_Profile_Parameter_Exception($parameter_name);
     }
 }

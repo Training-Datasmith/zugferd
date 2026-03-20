@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\extended\ram;
 
 /**
@@ -9,57 +8,52 @@ namespace horstoeko\zugferd\entities\extended\ram;
  *
  * XSD Type: ProductClassificationType
  */
-class ProductClassificationType
+class Product_Classification_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\extended\udt\CodeType $classCode
      */
-    private $classCode;
-
+    private $class_code;
     /**
      * @var string $className
      */
-    private $className;
-
+    private $class_name;
     /**
      * Gets as classCode
      *
      * @return \horstoeko\zugferd\entities\extended\udt\CodeType
      */
-    public function getClassCode()
+    public function get_class_code()
     {
-        return $this->classCode;
+        return $this->class_code;
     }
-
     /**
      * Sets a new classCode
      *
      * @param  \horstoeko\zugferd\entities\extended\udt\CodeType $classCode
      */
-    public function setClassCode(?\horstoeko\zugferd\entities\extended\udt\CodeType $classCode = null): self
+    public function set_class_code(?\horstoeko\zugferd\entities\extended\udt\Code_Type $class_code = null): self
     {
-        $this->classCode = $classCode;
+        $this->class_code = $class_code;
         return $this;
     }
-
     /**
      * Gets as className
      *
      * @return string
      */
-    public function getClassName()
+    public function get_class_name()
     {
-        return $this->className;
+        return $this->class_name;
     }
-
     /**
      * Sets a new className
      *
      * @param  string $className
      */
-    public function setClassName($className): self
+    public function set_class_name($class_name): self
     {
-        $this->className = $className;
+        $this->class_name = $class_name;
         return $this;
     }
 }

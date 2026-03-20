@@ -1,24 +1,21 @@
 <?php
 
-declare(strict_types=1);
-
-namespace horstoeko\zugferd\entities\extended\udt\DateTimeType;
+declare (strict_types=1);
+namespace horstoeko\zugferd\entities\extended\udt\Date_Time_Type;
 
 /**
  * Class representing DateTimeStringAType
  */
-class DateTimeStringAType
+class Date_Time_String_A_Type
 {
     /**
      * @var string $__value
      */
     private $__value;
-
     /**
      * @var string $format
      */
     private $format;
-
     /**
      * Construct
      *
@@ -28,7 +25,6 @@ class DateTimeStringAType
     {
         $this->value($value);
     }
-
     /**
      * Gets or sets the inner value
      *
@@ -42,7 +38,6 @@ class DateTimeStringAType
         }
         return $this->__value;
     }
-
     /**
      * Gets a string value
      */
@@ -50,23 +45,21 @@ class DateTimeStringAType
     {
         return strval($this->__value);
     }
-
     /**
      * Gets as format
      *
      * @return string
      */
-    public function getFormat()
+    public function get_format()
     {
         return $this->format;
     }
-
     /**
      * Sets a new format
      *
      * @param  string $format
      */
-    public function setFormat($format): self
+    public function set_format($format): self
     {
         $this->format = $format;
         return $this;

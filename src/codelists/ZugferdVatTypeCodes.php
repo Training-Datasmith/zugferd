@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /**
  * This file is a part of horstoeko/zugferd.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace horstoeko\zugferd\codelists;
 
 /**
@@ -22,7 +20,7 @@ namespace horstoeko\zugferd\codelists;
  * @link     https://github.com/horstoeko/zugferd
  * @see      https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.5305_3
  */
-class ZugferdVatTypeCodes
+class Zugferd_Vat_Type_Codes
 {
     /**
      * Value added tax (VAT)

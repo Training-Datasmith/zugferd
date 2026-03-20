@@ -1,20 +1,17 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 /**
  * This file is a part of horstoeko/zugferd.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace horstoeko\zugferd;
 
-use horstoeko\stringmanagement\PathUtils;
-use Symfony\Component\Validator\ConstraintViolationListInterface;
+use horstoeko\stringmanagement\Path_Utils;
+use Symfony\Component\Validator\Constraint_Violation_List_Interface;
 use Symfony\Component\Validator\Validation;
-
 /**
  * Class representing the document validator for incoming documents
  *
@@ -24,85 +21,65 @@ use Symfony\Component\Validator\Validation;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/zugferd
  */
-class ZugferdDocumentValidator
+class Zugferd_Document_Validator
 {
     /**
      * The invoice document reference
      */
     private $document;
-
     /**
      * The validator instance
      */
     private $validator;
-
     /**
      * Constructor
      */
-    public function __construct(ZugferdDocument $document)
+    public function __construct(Zugferd_Document $document)
     {
         $this->document = $document;
-        $this->initValidator();
+        $this->init_validator();
     }
-
     /**
      * Perform the validation of the document
      */
-    public function validateDocument(): ConstraintViolationListInterface
+    public function validate_document(): Constraint_Violation_List_Interface
     {
-        return $this->validator->validate($this->getDocumentInvoiceObject(), null, ['xsd_rules']);
+        return $this->validator->validate($this->get_document_invoice_object(), null, ['xsd_rules']);
     }
-
     /**
      * Initialize the internal validator object
      */
-    private function initValidator(): void
+    private function init_validator(): void
     {
-        $validatorBuilder = Validation::createValidatorBuilder();
-
-        $validatorYamlFiles = PathUtils::combinePathWithFile(
-            PathUtils::combineAllPaths(
-                ZugferdSettings::getValidationDirectory(),
-                $this->document->getProfileDefinitionParameter('name')
-            ),
-            '*.yml'
-        );
-
-        $validatorYamlFiles = $this->globRecursive($validatorYamlFiles);
-
-        foreach ($validatorYamlFiles as $validatorYamlFile) {
-            $validatorBuilder->addYamlMapping($validatorYamlFile);
+        $validator_builder = Validation::create_validator_builder();
+        $validator_yaml_files = Path_Utils::combine_path_with_file(Path_Utils::combine_all_paths(Zugferd_Settings::get_validation_directory(), $this->document->get_profile_definition_parameter('name')), '*.yml');
+        $validator_yaml_files = $this->glob_recursive($validator_yaml_files);
+        foreach ($validator_yaml_files as $validator_yaml_file) {
+            $validator_builder->add_yaml_mapping($validator_yaml_file);
         }
-
-        $this->validator = $validatorBuilder->getValidator();
+        $this->validator = $validator_builder->get_validator();
     }
-
     /**
      * Helper for find all files by pattern
      */
-    private function globRecursive(string $pattern, int $flags = 0): array
+    private function glob_recursive(string $pattern, int $flags = 0): array
     {
         $files = glob($pattern, $flags);
-
         foreach (glob(dirname($pattern) . '/*', GLOB_ONLYDIR | GLOB_NOSORT) as $dir) {
-            $files = array_merge($files, $this->globRecursive($dir . '/' . basename($pattern), $flags));
+            $files = array_merge($files, $this->glob_recursive($dir . '/' . basename($pattern), $flags));
         }
-
         return $files;
     }
-
     /**
      * Returns the internal invoice object from the document
      *
      * @return object
      */
-    private function getDocumentInvoiceObject()
+    private function get_document_invoice_object()
     {
         $reflector = new \ReflectionClass($this->document);
-
-        $method = $reflector->getMethod('getInvoiceObject');
-        $method->setAccessible(true);
-
+        $method = $reflector->get_method('getInvoiceObject');
+        $method->set_accessible(true);
         return $method->invoke($this->document);
     }
 }

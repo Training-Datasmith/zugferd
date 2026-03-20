@@ -1,7 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace horstoeko\zugferd\entities\en16931\ram;
 
 /**
@@ -9,213 +8,190 @@ namespace horstoeko\zugferd\entities\en16931\ram;
  *
  * XSD Type: ReferencedDocumentType
  */
-class ReferencedDocumentType
+class Referenced_Document_Type
 {
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType $issuerAssignedID
      */
-    private $issuerAssignedID;
-
+    private $issuer_assigned_id;
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType $uRIID
      */
-    private $uRIID;
-
+    private $u_riid;
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\IDType $lineID
      */
-    private $lineID;
-
+    private $line_id;
     /**
      * @var string $typeCode
      */
-    private $typeCode;
-
+    private $type_code;
     /**
      * @var string $name
      */
     private $name;
-
     /**
      * @var \horstoeko\zugferd\entities\en16931\udt\BinaryObjectType $attachmentBinaryObject
      */
-    private $attachmentBinaryObject;
-
+    private $attachment_binary_object;
     /**
      * @var string $referenceTypeCode
      */
-    private $referenceTypeCode;
-
+    private $reference_type_code;
     /**
      * @var \horstoeko\zugferd\entities\en16931\qdt\FormattedDateTimeType $formattedIssueDateTime
      */
-    private $formattedIssueDateTime;
-
+    private $formatted_issue_date_time;
     /**
      * Gets as issuerAssignedID
      *
      * @return \horstoeko\zugferd\entities\en16931\udt\IDType
      */
-    public function getIssuerAssignedID()
+    public function get_issuer_assigned_id()
     {
-        return $this->issuerAssignedID;
+        return $this->issuer_assigned_id;
     }
-
     /**
      * Sets a new issuerAssignedID
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\IDType $issuerAssignedID
      */
-    public function setIssuerAssignedID(?\horstoeko\zugferd\entities\en16931\udt\IDType $issuerAssignedID = null): self
+    public function set_issuer_assigned_id(?\horstoeko\zugferd\entities\en16931\udt\Id_Type $issuer_assigned_id = null): self
     {
-        $this->issuerAssignedID = $issuerAssignedID;
+        $this->issuer_assigned_id = $issuer_assigned_id;
         return $this;
     }
-
     /**
      * Gets as uRIID
      *
      * @return \horstoeko\zugferd\entities\en16931\udt\IDType
      */
-    public function getURIID()
+    public function get_uriid()
     {
-        return $this->uRIID;
+        return $this->u_riid;
     }
-
     /**
      * Sets a new uRIID
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\IDType $uRIID
      */
-    public function setURIID(?\horstoeko\zugferd\entities\en16931\udt\IDType $uRIID = null): self
+    public function set_uriid(?\horstoeko\zugferd\entities\en16931\udt\Id_Type $u_riid = null): self
     {
-        $this->uRIID = $uRIID;
+        $this->u_riid = $u_riid;
         return $this;
     }
-
     /**
      * Gets as lineID
      *
      * @return \horstoeko\zugferd\entities\en16931\udt\IDType
      */
-    public function getLineID()
+    public function get_line_id()
     {
-        return $this->lineID;
+        return $this->line_id;
     }
-
     /**
      * Sets a new lineID
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\IDType $lineID
      */
-    public function setLineID(?\horstoeko\zugferd\entities\en16931\udt\IDType $lineID = null): self
+    public function set_line_id(?\horstoeko\zugferd\entities\en16931\udt\Id_Type $line_id = null): self
     {
-        $this->lineID = $lineID;
+        $this->line_id = $line_id;
         return $this;
     }
-
     /**
      * Gets as typeCode
      *
      * @return string
      */
-    public function getTypeCode()
+    public function get_type_code()
     {
-        return $this->typeCode;
+        return $this->type_code;
     }
-
     /**
      * Sets a new typeCode
      *
      * @param  string $typeCode
      */
-    public function setTypeCode($typeCode): self
+    public function set_type_code($type_code): self
     {
-        $this->typeCode = $typeCode;
+        $this->type_code = $type_code;
         return $this;
     }
-
     /**
      * Gets as name
      *
      * @return string
      */
-    public function getName()
+    public function get_name()
     {
         return $this->name;
     }
-
     /**
      * Sets a new name
      *
      * @param  string $name
      */
-    public function setName($name): self
+    public function set_name($name): self
     {
         $this->name = $name;
         return $this;
     }
-
     /**
      * Gets as attachmentBinaryObject
      *
      * @return \horstoeko\zugferd\entities\en16931\udt\BinaryObjectType
      */
-    public function getAttachmentBinaryObject()
+    public function get_attachment_binary_object()
     {
-        return $this->attachmentBinaryObject;
+        return $this->attachment_binary_object;
     }
-
     /**
      * Sets a new attachmentBinaryObject
      *
      * @param  \horstoeko\zugferd\entities\en16931\udt\BinaryObjectType $attachmentBinaryObject
      */
-    public function setAttachmentBinaryObject(?\horstoeko\zugferd\entities\en16931\udt\BinaryObjectType $attachmentBinaryObject = null): self
+    public function set_attachment_binary_object(?\horstoeko\zugferd\entities\en16931\udt\Binary_Object_Type $attachment_binary_object = null): self
     {
-        $this->attachmentBinaryObject = $attachmentBinaryObject;
+        $this->attachment_binary_object = $attachment_binary_object;
         return $this;
     }
-
     /**
      * Gets as referenceTypeCode
      *
      * @return string
      */
-    public function getReferenceTypeCode()
+    public function get_reference_type_code()
     {
-        return $this->referenceTypeCode;
+        return $this->reference_type_code;
     }
-
     /**
      * Sets a new referenceTypeCode
      *
      * @param  string $referenceTypeCode
      */
-    public function setReferenceTypeCode($referenceTypeCode): self
+    public function set_reference_type_code($reference_type_code): self
     {
-        $this->referenceTypeCode = $referenceTypeCode;
+        $this->reference_type_code = $reference_type_code;
         return $this;
     }
-
     /**
      * Gets as formattedIssueDateTime
      *
      * @return \horstoeko\zugferd\entities\en16931\qdt\FormattedDateTimeType
      */
-    public function getFormattedIssueDateTime()
+    public function get_formatted_issue_date_time()
     {
-        return $this->formattedIssueDateTime;
+        return $this->formatted_issue_date_time;
     }
-
     /**
      * Sets a new formattedIssueDateTime
      *
      * @param  \horstoeko\zugferd\entities\en16931\qdt\FormattedDateTimeType $formattedIssueDateTime
      */
-    public function setFormattedIssueDateTime(?\horstoeko\zugferd\entities\en16931\qdt\FormattedDateTimeType $formattedIssueDateTime = null): self
+    public function set_formatted_issue_date_time(?\horstoeko\zugferd\entities\en16931\qdt\Formatted_Date_Time_Type $formatted_issue_date_time = null): self
     {
-        $this->formattedIssueDateTime = $formattedIssueDateTime;
+        $this->formatted_issue_date_time = $formatted_issue_date_time;
         return $this;
     }
 }
